@@ -4,7 +4,8 @@ import { RichText, Date } from 'prismic-reactjs'
 import { client } from '../prismic-configuration'
 
 const HomePage = props => {
-console.log(props)
+  const doc = props.home.data;
+console.log(doc)
   return (
   <div>
     <h1>hello</h1>
