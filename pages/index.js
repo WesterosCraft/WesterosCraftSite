@@ -1,23 +1,22 @@
-import React from 'react'
-import Prismic from 'prismic-javascript'
-import { RichText, Date } from 'prismic-reactjs'
-import { client } from '../prismic-configuration'
+import React from "react";
+import { RichText } from "prismic-reactjs";
+import { Text } from "rebass";
+import { client } from "../prismic-configuration";
 
 const HomePage = props => {
-  const doc = props.home.data;
-console.log(doc)
-  return (
-  <div>
-    <h1>hello</h1>
-  </div>
+  const { data } = props.home;
 
-  )
-}
+  return (
+    <div>
+      <Text color="brand_red" variant='paragraph'>{RichText.asText(data.heading)}</Text>
+    </div>
+  );
+};
 
 HomePage.getInitialProps = async context => {
-  const home = await client.getSingle('home_page')
+  const home = await client.getSingle("home_page");
 
-  return { home }
-}
+  return { home };
+};
 
-export default HomePage
+export default HomePage;
