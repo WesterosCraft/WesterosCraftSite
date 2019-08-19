@@ -34,6 +34,12 @@ export default class MyApp extends App {
               margin: 0;
               padding: 0;
             }
+            h1 {
+              ${theme.text.heading1}
+            }
+            h2 {
+              ${theme.text.heading2}
+            }
           `}
         />
         {this.renderHead()}
