@@ -1,8 +1,8 @@
-import App from "next/app";
-import React from "react";
-import Head from "next/head";
-import { ThemeProvider } from "emotion-theming";
-import theme from "../theme/theme";
+import App from 'next/app';
+import React from 'react';
+import Head from 'next/head';
+import { ThemeProvider } from 'emotion-theming';
+import theme from '../theme/theme';
 
 export default class MyApp extends App {
   renderHead() {
