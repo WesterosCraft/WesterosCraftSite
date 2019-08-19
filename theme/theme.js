@@ -6,14 +6,14 @@ const theme = {
   colors: {
     white: '#FFFFFF',
     brand_red: '#9B1313',
-    brand_yellow: '',
+    brand_yellow: '#FBC000',
     brand_blue: '',
     text_color: 'red',
-    background_color: '',
+    background_color: '#141514',
   },
   font: {
-    primary_font: '',
-    secondary_font: '',
+    primary_font: 'Cinzel, serif',
+    secondary_font: 'Montserrat, sans-serif',
   },
   text: {
     paragraph: {
@@ -21,10 +21,12 @@ const theme = {
       color: 'brand_red',
     },
     h1: {
+      fontFamily: 'Cinzel, serif',
       fontSize: [9, 10],
       color: 'white',
     },
     h6: {
+      fontFamily: 'Montserrat, sans-serif',
       fontSize: [3, 4],
       fontWeight: 700,
       color: 'white',

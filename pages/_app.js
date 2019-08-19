@@ -2,6 +2,7 @@ import App from 'next/app';
 import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from 'emotion-theming';
+import { Global, css } from '@emotion/core';
 import theme from '../theme/theme';
 
 export default class MyApp extends App {
@@ -21,6 +22,20 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <ThemeProvider theme={theme}>
+        <Global
+          styles={css`
+            * {
+              font-family: ${theme.font.secondary_font};
+            }
+            body,
+            html {
+              background-color: ${theme.colors.background_color};
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+          `}
+        />
         {this.renderHead()}
         <Component {...pageProps} />
       </ThemeProvider>
