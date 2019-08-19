@@ -6,15 +6,12 @@ import { client } from '../prismic-configuration';
 const HomePage = props => {
   const { data } = props.home;
 
+  console.log(data);
+
   return (
     <div>
-      <Text
-        sx={{
-          color: 'brand_red',
-        }}
-      >
-        {RichText.asText(data.heading)}
-      </Text>
+      <Text variant="h1">{RichText.asText(data.heading)}</Text>
+      <Text variant="h6">{RichText.asText(data.subheading)}</Text>
     </div>
   );
 };

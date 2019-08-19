@@ -17,9 +17,17 @@ const theme = {
   },
   text: {
     paragraph: {
-      fontSize: 6,
+      fontSize: [3, 4],
       color: 'brand_red',
-      p: 4,
+    },
+    h1: {
+      fontSize: [9, 10],
+      color: 'white',
+    },
+    h6: {
+      fontSize: [3, 4],
+      fontWeight: 700,
+      color: 'white',
     },
   },
 };
