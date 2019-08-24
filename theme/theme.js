@@ -5,31 +5,48 @@ const theme = {
   fontSizes: [8, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 44, 48],
   colors: {
     white: '#FFFFFF',
-    brand_red: '#9B1313',
-    brand_yellow: '#FBC000',
-    brand_blue: '',
-    text_color: 'red',
-    background_color: '#141514',
+    primaryColor: '#333333',
+    brandRed: '#9B1313',
+    brandYellow: '#FBC000',
+    brandBlue: '',
+    textColor: 'red',
+    backgroundColor: '#141514',
+    textGray: '#494849',
   },
   font: {
-    primary_font: 'Cinzel, serif',
-    secondary_font: 'Montserrat, sans-serif',
+    primaryFont: 'Cinzel, serif',
+    secondaryFont: 'Montserrat, sans-serif',
   },
   text: {
     paragraph: {
+      fontFamily: 'Montserrat, sans-serif',
       fontSize: [3, 4],
       color: 'brand_red',
+      lineHeight: 1.7,
     },
-    h1: {
+    heading1: {
       fontFamily: 'Cinzel, serif',
       fontSize: [9, 10],
       color: 'white',
     },
-    h6: {
+    heading2: {
+      fontFamily: 'Cinzel, serif',
+      fontSize: [8, 9],
+      fontWeight: 500,
+      // color: 'white',
+    },
+    heading6: {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: [3, 4],
       fontWeight: 700,
       color: 'white',
+    },
+  },
+  buttons: {
+    link: {
+      backgroundColor: 'transparent',
+      paddingX: '0',
+      paddingY: '0',
     },
   },
 };

@@ -25,19 +25,18 @@ export default class MyApp extends App {
         <Global
           styles={css`
             * {
-              font-family: ${theme.font.secondary_font};
+              font-family: ${theme.font.secondaryFont};
             }
             body,
             html {
-              background-color: ${theme.colors.background_color};
+              background-color: ${theme.colors.backgroundColor};
               height: 100%;
               margin: 0;
               padding: 0;
             }
           `}
-        />
-        {this.renderHead()}
-        <Component {...pageProps} />
+        />{' '}
+        {this.renderHead()} <Component {...pageProps} />{' '}
       </ThemeProvider>
     );
   }

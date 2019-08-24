@@ -19,9 +19,10 @@
     "next": "^9.0.3",
     "prismic-javascript": "^2.1.1",
     "prismic-reactjs": "^1.0.0",
-    "react": "^16.8.6",
+    "react": "^16.9.0",
     "react-dom": "^16.8.6",
-    "rebass": "^4.0.3"
+    "rebass": "^4.0.3",
+    "styled-system": "^5.1.1"
   },
   "devDependencies": {
     "babel-plugin-emotion": "^10.0.16",
