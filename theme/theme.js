@@ -27,6 +27,7 @@ const theme = {
     heading1: {
       fontFamily: 'Cinzel, serif',
       fontSize: [9, 10],
+      fontWeight: 700,
       color: 'white',
     },
     heading2: {
@@ -38,8 +39,9 @@ const theme = {
     heading6: {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: [3, 4],
-      fontWeight: 700,
+      fontWeight: 500,
       color: 'white',
+      lineHeight: 1.7,
     },
   },
   buttons: {
