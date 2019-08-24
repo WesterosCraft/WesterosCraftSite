@@ -46,9 +46,13 @@ const theme = {
   },
   buttons: {
     link: {
+      cursor: 'pointer',
       backgroundColor: 'transparent',
       paddingX: '0',
       paddingY: '0',
+      '&:hover': {
+        color: '#FBC000',
+      },
     },
   },
 };

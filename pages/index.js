@@ -11,15 +11,18 @@ const HomePage = props => {
   return data ? (
     <>
       <HomePageTemplate background={data.background_image}>
-        <Flex flexDirection="row" maxWidth={1024} mx="auto">
-          <Box width={1 / 2}>
-            <Text variant="heading1"> {RichText.asText(data.heading)} </Text>{' '}
+        <Flex flexDirection={['column', 'row']} maxWidth={1178} mx="auto">
+          <Box width={[1, 1 / 2]}>
+            <Text variant="heading1" textAlign={['center', 'left']}>
+              {' '}
+              {RichText.asText(data.heading)}{' '}
+            </Text>{' '}
             <Text variant="paragraph" mt={9} color="white">
               {' '}
               {RichText.asText(data.subheading)}{' '}
             </Text>{' '}
           </Box>{' '}
-          <Box width={1 / 2}> </Box>{' '}
+          <Box width={[1, 1 / 2]}> </Box>{' '}
         </Flex>{' '}
       </HomePageTemplate>{' '}
       <SliceZone slices={data.body} />{' '}

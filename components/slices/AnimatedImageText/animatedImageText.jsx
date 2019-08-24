@@ -11,13 +11,19 @@ const AnimatedImageText = ({ input }) => {
 
   return (
     <Flex
-      flexDirection="row"
-      maxWidth={1024}
+      flexDirection={['column', null, 'row']}
+      justifyContent="center"
+      alignItems="center"
+      maxWidth={1178}
       mx="auto"
       mt={primary.margin_top}
       mb={primary.margin_bottom}
     >
-      <Column width={1 / 2} sx={{ position: 'relative', order: boxOrder ? '1' : '2' }} px={10}>
+      <Column
+        width={[1, null, 1 / 2]}
+        sx={{ position: 'relative', order: boxOrder ? '1' : '2' }}
+        px={10}
+      >
         <Box
           sx={{
             position: 'absolute',
@@ -41,7 +47,7 @@ const AnimatedImageText = ({ input }) => {
         </Box>
       </Column>
 
-      <Column width={1 / 2} sx={{ order: boxOrder ? '2' : '1' }} />
+      <Column width={[1, null, 1 / 2]} sx={{ order: boxOrder ? '2' : '1' }} />
     </Flex>
   );
 };
