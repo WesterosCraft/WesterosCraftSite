@@ -7,7 +7,6 @@ import Button from '../../atoms/button/button';
 const AnimatedImageText = ({ input }) => {
   const { primary } = input;
   const boxOrder = input.primary.order === 'Text First';
-  console.log('animtext', primary);
 
   return (
     <Flex
