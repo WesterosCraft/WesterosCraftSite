@@ -1,12 +1,5 @@
-import styled from 'styled-components';
-import { Heading, Box } from 'rebass';
-import { getColor } from '../../../theme/theme';
-
-export const Caption = styled(Heading)`
-  text-align: center;
-  font-weight: 400;
-  color: ${getColor('alt__primary__color')};
-`;
+import styled from '@emotion/styled';
+import { Box } from 'rebass';
 
 export const Container = styled(Box)`
   width: 100%;

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
-import { VideoWrapper, VideoThumbnail, VideoOverlay } from './StyledVideo';
-import PlayButton from '../../atoms/PlayButton/PlayButton';
+import { VideoWrapper, VideoThumbnail, VideoOverlay } from './styledVideo';
+import PlayButton from '../../atoms/playButton/playButton';
 
-const Video = ({ video, thumb }) => {
+const Video = ({ video }) => {
   const [isPlaying, setPlaying] = useState(false);
+
+  console.log(video);
+
   return (
     <VideoWrapper
       alignItems="center"
@@ -14,7 +17,7 @@ const Video = ({ video, thumb }) => {
     >
       <ReactPlayer
         className="react-player"
-        url={video.embed_url}
+        url={video.video.embed_url}
         playing={isPlaying}
         width="100%"
         height="100%"

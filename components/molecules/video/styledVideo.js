@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Flex } from 'rebass';
 
 export const VideoThumbnail = styled.img`
