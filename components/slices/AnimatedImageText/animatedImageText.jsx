@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Flex, Text, Box } from 'rebass';
 import { RichText } from 'prismic-reactjs';
-import { motion } from 'framer-motion';
-import { Column, MotionImg } from './styledAnimatedImageText';
+import { motion, useViewportScroll } from 'framer-motion';
+import { Column } from './styledAnimatedImageText';
 import Button from '../../atoms/button/button';
 
 const AnimatedImageText = ({ input }) => {
   const { primary } = input;
   const boxOrder = input.primary.order === 'Text First';
+  const { scrollY } = useViewportScroll();
+  const [position, setPosition] = useState(false);
 
-  console.log(primary);
+  useEffect(() => scrollY.onChange(e => (e >= 500 ? setPosition(true) : null)));
 
   return (
     <Flex
@@ -51,34 +53,36 @@ const AnimatedImageText = ({ input }) => {
 
       <Column width={[1, null, 1 / 2]} sx={{ order: boxOrder ? '2' : '1' }}>
         <Box sx={{ position: 'relative' }} width={458} height={482}>
-          <motion.div
-            animate={{ height: 482, opacity: 1 }}
-            transition={{ duration: 2, type: 'tween', ease: 'anticipate' }}
-            style={{
-              position: 'absolute',
-              left: 0,
-              bottom: 0,
-              overflow: 'hidden',
-              width: '458px',
-              opacity: 0,
-            }}
-          >
-            <motion.img
-              src={primary.image.url}
-              transition={{ duration: 2.5, type: 'tween' }}
-              animate={{ scale: 1, opacity: 1 }}
-              initial={{ scale: 1.2 }}
+          {position ? (
+            <motion.div
+              animate={{ height: 482, opacity: 1 }}
+              transition={{ duration: 2, type: 'tween', ease: 'anticipate' }}
               style={{
                 position: 'absolute',
                 left: 0,
                 bottom: 0,
                 overflow: 'hidden',
                 width: '458px',
-                height: '482px',
                 opacity: 0,
               }}
-            />
-          </motion.div>
+            >
+              <motion.img
+                src={primary.image.url}
+                transition={{ duration: 2.5, type: 'tween' }}
+                animate={{ scale: 1, opacity: 1 }}
+                initial={{ scale: 1.2 }}
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  bottom: 0,
+                  overflow: 'hidden',
+                  width: '458px',
+                  height: '482px',
+                  opacity: 0,
+                }}
+              />
+            </motion.div>
+          ) : null}
         </Box>
       </Column>
     </Flex>
