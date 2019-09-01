@@ -6,8 +6,6 @@ import PlayButton from '../../atoms/playButton/playButton';
 const Video = ({ video }) => {
   const [isPlaying, setPlaying] = useState(false);
 
-  console.log(video);
-
   return (
     <VideoWrapper
       alignItems="center"
@@ -25,7 +23,7 @@ const Video = ({ video }) => {
       />
       <PlayButton display={isPlaying ? 1 : 0} />
       <VideoOverlay display={isPlaying ? 1 : 0} />
-      <VideoThumbnail display={isPlaying ? 1 : 0} src={thumb.url} />
+      <VideoThumbnail display={isPlaying ? 1 : 0} src={video.thumbnail_image.url} />
     </VideoWrapper>
   );
 };

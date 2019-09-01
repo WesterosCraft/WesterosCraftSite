@@ -8,7 +8,6 @@ export const VideoThumbnail = styled.img`
   width: 100%;
   height: 100%;
   visibility: ${props => (props.display ? 'hidden' : 'visible')};
-  filter: blur(2px);
   transition: all 150ms linear 0s;
 `;
 
@@ -21,10 +20,6 @@ export const VideoWrapper = styled(Flex)`
     position: absolute;
     top: 0;
     left: 0;
-  }
-
-  &:hover ${VideoThumbnail} {
-    filter: blur(0px);
   }
 
   &:hover .play-button {
@@ -41,6 +36,5 @@ export const VideoOverlay = styled.div`
   height: 100%;
   opacity: 0.9;
   z-index: 500;
-  background: linear-gradient(109.6deg, rgb(127, 228, 152) 11.2%, rgb(42, 186, 140) 91.1%);
-  /* background-image: linear-gradient(to bottom, #7fe498, #2aba8c); */
+  /* background: linear-gradient(109.6deg, rgb(127, 228, 152) 11.2%, rgb(42, 186, 140) 91.1%); */
 `;
