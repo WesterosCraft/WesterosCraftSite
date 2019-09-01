@@ -53,7 +53,7 @@ const AnimatedImageText = ({ input }) => {
         <Box sx={{ position: 'relative' }} width={458} height={482}>
           <motion.div
             animate={{ height: 482, opacity: 1 }}
-            transition={{ duration: 1.75, type: 'tween', ease: 'anticipate' }}
+            transition={{ duration: 2, type: 'tween', ease: 'anticipate' }}
             style={{
               position: 'absolute',
               left: 0,
@@ -63,7 +63,21 @@ const AnimatedImageText = ({ input }) => {
               opacity: 0,
             }}
           >
-            <MotionImg src={primary.image.url} transition={{ duration: 1.75, type: 'tween', ease: 'anticipate' }} animate={{ scale: 0.9, opacity: 1 }} initial={{ scale: 1 }} />
+            <motion.img
+              src={primary.image.url}
+              transition={{ duration: 2.5, type: 'tween' }}
+              animate={{ scale: 1, opacity: 1 }}
+              initial={{ scale: 1.2 }}
+              style={{
+                position: 'absolute',
+                left: 0,
+                bottom: 0,
+                overflow: 'hidden',
+                width: '458px',
+                height: '482px',
+                opacity: 0,
+              }}
+            />
           </motion.div>
         </Box>
       </Column>
