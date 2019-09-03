@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Flex, Text, Box } from 'rebass';
 import { RichText } from 'prismic-reactjs';
-import { motion, useViewportScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Column } from './styledAnimatedImageText';
 import Button from '../../atoms/button/button';
 
 const AnimatedImageText = ({ input }) => {
   const { primary } = input;
   const boxOrder = input.primary.order === 'Text First';
-  const { scrollY } = useViewportScroll();
-  const [position, setPosition] = useState(false);
-
-  useEffect(() => scrollY.onChange(e => (e >= 500 ? setPosition(true) : null)));
+  const [ref, inView, entry] = useInView({ threshold: 0, triggerOnce: true });
 
   return (
     <Flex
@@ -52,8 +50,8 @@ const AnimatedImageText = ({ input }) => {
       </Column>
 
       <Column width={[1, null, 1 / 2]} sx={{ order: boxOrder ? '2' : '1' }}>
-        <Box sx={{ position: 'relative' }} width={458} height={482}>
-          {position ? (
+        <Box sx={{ position: 'relative' }} width={458} height={482} ref={ref}>
+          {inView ? (
             <motion.div
               animate={{ height: 482, opacity: 1 }}
               transition={{ duration: 2, type: 'tween', ease: 'anticipate' }}

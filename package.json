@@ -21,13 +21,14 @@
     "prismic-reactjs": "^1.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.8.6",
+    "react-intersection-observer": "^8.24.1",
     "react-player": "^1.12.0",
     "rebass": "^4.0.3",
     "styled-system": "^5.1.1"
   },
   "devDependencies": {
-    "babel-plugin-emotion": "^10.0.16",
     "babel-eslint": "^10.0.2",
+    "babel-plugin-emotion": "^10.0.16",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.0.0",
