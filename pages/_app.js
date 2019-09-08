@@ -4,6 +4,8 @@ import Head from 'next/head';
 import { ThemeProvider } from 'emotion-theming';
 import { Global, css } from '@emotion/core';
 import theme from '../theme/theme';
+import Navigation from '../components/organisms/navigation/navigation';
+import { client } from '../prismic-configuration';
 
 export default class MyApp extends App {
   renderHead() {
@@ -19,7 +21,8 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, nav } = this.props;
+
     return (
       <ThemeProvider theme={theme}>
         <Global
@@ -42,8 +45,30 @@ export default class MyApp extends App {
             }
           `}
         />{' '}
-        {this.renderHead()} <Component {...pageProps} />{' '}
+        {this.renderHead()}{' '}
+        <>
+          <Navigation nav={nav} /> <Component {...pageProps} />{' '}
+        </>{' '}
       </ThemeProvider>
     );
   }
 }
+
+MyApp.getInitialProps = async ({ Component, router, ctx }) => {
+  try {
+    const nav = await client.getSingle('navigation');
+    console.log(nav);
+    let pageProps = {};
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+    return {
+      pageProps,
+      nav,
+    };
+  } catch (error) {
+    return {
+      error: true,
+    };
+  }
+};

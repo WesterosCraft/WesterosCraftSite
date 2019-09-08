@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Flex, Text, Box } from 'rebass';
 import { RichText } from 'prismic-reactjs';
 import { motion } from 'framer-motion';
