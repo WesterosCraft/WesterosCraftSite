@@ -1,4 +1,15 @@
 import Prismic from 'prismic-javascript';
+import { PrismicLink } from 'apollo-link-prismic';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import ApolloClient from 'apollo-client';
+import gql from 'graphql-tag';
+
+export const aclient = new ApolloClient({
+  link: PrismicLink({
+    uri: 'https://westeroscraft.prismic.io/graphql',
+  }),
+  cache: new InMemoryCache(),
+});
 
 // -- Prismic API endpoint
 // Determines which repository to query and fetch data from
@@ -29,4 +40,6 @@ export const hrefResolver = doc => {
 
 // -- Client method to query Prismic
 // Connects to the given repository to facilitate data queries
-export const client = Prismic.client(apiEndpoint, { accessToken });
+export const client = Prismic.client(apiEndpoint, {
+  accessToken,
+});

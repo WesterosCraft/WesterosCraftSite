@@ -1,11 +1,12 @@
 import React from 'react';
 import { Flex, Image, Box, Text } from 'rebass';
 import { RichText } from 'prismic-reactjs';
+import gql from 'graphql-tag';
+import { aclient } from '../../../prismic-configuration';
 
 const Navigation = ({ nav }) => {
   const { data } = nav;
 
-  console.log(data);
   return (
     <Flex
       as="nav"
@@ -35,3 +36,25 @@ const Navigation = ({ nav }) => {
 };
 
 export default Navigation;
+
+aclient
+  .query({
+    query: gql`
+      query {
+        allNavigations {
+          edges {
+            node {
+              logo
+              _linkType
+            }
+          }
+        }
+      }
+    `,
+  })
+  .then(response => {
+    console.log('GQL', response);
+  })
+  .catch(error => {
+    console.error(error);
+  });
