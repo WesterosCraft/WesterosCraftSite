@@ -1,43 +1,62 @@
 import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import { Text, Box, Flex } from 'rebass';
-import { client } from '../prismic-configuration';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
 
-const HomePage = props => {
-  const { data } = props.home;
+const HomePage = ({ home }) => {
+  const test = useQuery(`query {
+    allHome_pages {
+      edges {
+        node {
+          heading
+          subheading
+          background_image
+          body {
+            ... on Home_pageBodyText {
+              type
+              primary {
+                text
+                color
+                alignment
+                margin_top
+                margin_bottom
+                padding_top
+                padding_bottom
+              }
+            }
+            ... on Home_pageBodyVideo {
+              type
+              primary {
+                margin_top
+                padding_top
+                margin_bottom
+                padding_bottom
+                thumbnail_image
+                video
+              }
+            }
+            ... on Home_pageBodyAnimated_image_text {
+              type
+              primary {
+                image
+                margin_top
+                margin_bottom
+                padding_top
+                padding_bottom
+              }
+            }
+            __typename
+          }
+        }
+      }
+    }
+  }`);
 
-  return data ? (
-    <>
-      <HomePageTemplate background={data.background_image}>
-        <Flex flexDirection={['column', 'row']} maxWidth={1178} mx="auto">
-          <Box width={[1, 1 / 2]}>
-            <Text variant="heading1" textAlign={['center', 'left']}>
-              {' '}
-              {RichText.asText(data.heading)}{' '}
-            </Text>{' '}
-            <Text variant="paragraph" mt={9} color="white">
-              {' '}
-              {RichText.asText(data.subheading)}{' '}
-            </Text>{' '}
-          </Box>{' '}
-          <Box width={[1, 1 / 2]}> </Box>{' '}
-        </Flex>{' '}
-      </HomePageTemplate>{' '}
-      <SliceZone slices={data.body} />{' '}
-    </>
-  ) : (
-    'Loading...'
-  );
-};
-
-HomePage.getInitialProps = async context => {
-  const home = await client.getSingle('home_page');
-
-  return {
-    home,
-  };
+  console.log('TEST: ', test);
+  return <h1> test </h1>;
 };
 
 export default HomePage;
