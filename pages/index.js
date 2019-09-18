@@ -1,62 +1,39 @@
 import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import { Text, Box, Flex } from 'rebass';
-import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
+import homeQuery from '../queries/home.graphql';
 
-const HomePage = ({ home }) => {
-  const test = useQuery(`query {
-    allHome_pages {
-      edges {
-        node {
-          heading
-          subheading
-          background_image
-          body {
-            ... on Home_pageBodyText {
-              type
-              primary {
-                text
-                color
-                alignment
-                margin_top
-                margin_bottom
-                padding_top
-                padding_bottom
-              }
-            }
-            ... on Home_pageBodyVideo {
-              type
-              primary {
-                margin_top
-                padding_top
-                margin_bottom
-                padding_bottom
-                thumbnail_image
-                video
-              }
-            }
-            ... on Home_pageBodyAnimated_image_text {
-              type
-              primary {
-                image
-                margin_top
-                margin_bottom
-                padding_top
-                padding_bottom
-              }
-            }
-            __typename
-          }
-        }
-      }
-    }
-  }`);
+const HomePage = () => {
+  const { loading, error, data } = useQuery(homeQuery);
+  if (error) return <h1> error! </h1>;
+  if (loading) return <h1> Loading... </h1>;
+  // if (!page) return throw404();
 
-  console.log('TEST: ', test);
-  return <h1> test </h1>;
+  const page = data.allHome_pages.edges[0].node;
+
+  return (
+    <>
+      <HomePageTemplate background={page.background_image}>
+        <Flex flexDirection={['column', 'row']} maxWidth={1178} mx="auto">
+          <Box width={[1, 1 / 2]}>
+            <Text variant="heading1" textAlign={['center', 'left']}>
+              {' '}
+              {RichText.asText(page.heading)}{' '}
+            </Text>{' '}
+            <Text variant="paragraph" mt={9} color="white">
+              {' '}
+              {RichText.asText(page.subheading)}{' '}
+            </Text>{' '}
+          </Box>{' '}
+          <Box width={[1, 1 / 2]}> </Box>{' '}
+        </Flex>{' '}
+      </HomePageTemplate>{' '}
+      <SliceZone slices={page.body} />{' '}
+    </>
+  );
 };
 
 export default HomePage;

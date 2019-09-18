@@ -5,8 +5,8 @@ import { ThemeProvider } from 'emotion-theming';
 import { Global, css } from '@emotion/core';
 import { ApolloProvider } from '@apollo/react-hooks';
 import theme from '../theme/theme';
-import Navigation from '../components/organisms/navigation/navigation';
 import withApollo from '../lib/apollo';
+import PageWrapper from '../components/atoms/pageWrapper/pageWrapper';
 
 class MyApp extends App {
   renderHead() {
@@ -22,7 +22,7 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, nav, apollo } = this.props;
+    const { Component, pageProps, apollo } = this.props;
 
     return (
       <ApolloProvider client={apollo}>
@@ -48,11 +48,9 @@ class MyApp extends App {
             `}
           />{' '}
           {this.renderHead()}{' '}
-          <>
-            {' '}
-            {/* <Navigation nav={nav.data.allNavigations.edges[0].node} /> */}{' '}
+          <PageWrapper>
             <Component {...pageProps} />{' '}
-          </>{' '}
+          </PageWrapper>{' '}
         </ThemeProvider>{' '}
       </ApolloProvider>
     );

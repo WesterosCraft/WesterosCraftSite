@@ -1,0 +1,18 @@
+#import "./fragments.graphql"
+query {
+  allHome_pages {
+    edges {
+      node {
+        heading
+        subheading
+        background_image
+        body {
+          ...text
+          ...video
+          ...animtext
+          __typename
+        }
+      }
+    }
+  }
+}

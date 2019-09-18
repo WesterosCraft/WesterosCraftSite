@@ -1,0 +1,17 @@
+query {
+  allLocation_wiki_entrys {
+    edges {
+      node {
+        location_name
+        region
+        status
+        type
+        date_started
+        date_completed
+        server_build
+        redo_available
+        _linkType
+      }
+    }
+  }
+}
