@@ -1,5 +1,11 @@
 query {
   allLocation_wiki_entrys {
+     pageInfo{
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
     edges {
       node {
         location_name

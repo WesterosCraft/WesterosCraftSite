@@ -11,7 +11,7 @@ const Navigation = ({ nav }) => {
       width={1}
       sx={{
         position: 'fixed',
-        zIndex: 9999,
+        zIndex: 9999
       }}
     >
       <Box>
