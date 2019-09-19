@@ -1,11 +1,7 @@
 import React from 'react';
 import { Flex, Image, Box, Text } from 'rebass';
-import { RichText } from 'prismic-reactjs';
 
 const Navigation = ({ nav }) => {
-  const { data } = nav;
-
-  console.log(data);
   return (
     <Flex
       as="nav"
@@ -15,15 +11,15 @@ const Navigation = ({ nav }) => {
       width={1}
       sx={{
         position: 'fixed',
-        zIndex: 9999,
+        zIndex: 9999
       }}
     >
       <Box>
-        <Image src={data.logo.url} height={30} width={212} alt={data.logo.alt} />
+        <Image src={nav.logo.url} height={30} width={212} alt={nav.logo.alt} />
       </Box>
       <Box>
         <Flex flexDirection="row">
-          {data.navlink.map(link => (
+          {nav.navlink.map(link => (
             <Text key={link.navigation_label} variant="heading6">
               {link.navigation_label}
             </Text>

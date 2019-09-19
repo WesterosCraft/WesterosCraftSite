@@ -1,0 +1,10 @@
+query {
+  allWiki_pages {
+    edges {
+      node {
+        title
+        _linkType
+      }
+    }
+  }
+}

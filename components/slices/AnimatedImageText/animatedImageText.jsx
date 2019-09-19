@@ -9,7 +9,7 @@ import Button from '../../atoms/button/button';
 const AnimatedImageText = ({ input }) => {
   const { primary } = input;
   const boxOrder = input.primary.order === 'Text First';
-  const [ref, inView, entry] = useInView({ threshold: 0, triggerOnce: true });
+  const [ref, inView] = useInView({ threshold: 0, triggerOnce: true });
 
   return (
     <Flex

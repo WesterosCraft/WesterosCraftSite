@@ -1,43 +1,39 @@
 import React from 'react';
 import { RichText } from 'prismic-reactjs';
 import { Text, Box, Flex } from 'rebass';
-import { client } from '../prismic-configuration';
+import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
+import homeQuery from '../queries/home.graphql';
 
-const HomePage = props => {
-  const { data } = props.home;
+const HomePage = () => {
+  const { loading, error, data } = useQuery(homeQuery);
+  if (error) return <h1> error! </h1>;
+  if (loading) return <h1> Loading... </h1>;
+  // if (!page) return throw404();
 
-  return data ? (
+  const page = data.allHome_pages.edges[0].node;
+
+  return (
     <>
-      <HomePageTemplate background={data.background_image}>
+      <HomePageTemplate background={page.background_image}>
         <Flex flexDirection={['column', 'row']} maxWidth={1178} mx="auto">
           <Box width={[1, 1 / 2]}>
             <Text variant="heading1" textAlign={['center', 'left']}>
               {' '}
-              {RichText.asText(data.heading)}{' '}
+              {RichText.asText(page.heading)}{' '}
             </Text>{' '}
             <Text variant="paragraph" mt={9} color="white">
               {' '}
-              {RichText.asText(data.subheading)}{' '}
+              {RichText.asText(page.subheading)}{' '}
             </Text>{' '}
           </Box>{' '}
           <Box width={[1, 1 / 2]}> </Box>{' '}
         </Flex>{' '}
       </HomePageTemplate>{' '}
-      <SliceZone slices={data.body} />{' '}
+      <SliceZone slices={page.body} />{' '}
     </>
-  ) : (
-    'Loading...'
   );
-};
-
-HomePage.getInitialProps = async context => {
-  const home = await client.getSingle('home_page');
-
-  return {
-    home,
-  };
 };
 
 export default HomePage;
