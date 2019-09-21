@@ -48,9 +48,9 @@ class MyApp extends App {
             `}
           />{' '}
           {this.renderHead()}{' '}
-          <PageWrapper>
+          {/* <PageWrapper> */}
             <Component {...pageProps} />{' '}
-          </PageWrapper>{' '}
+          {/* </PageWrapper>{' '} */}
         </ThemeProvider>{' '}
       </ApolloProvider>
     );

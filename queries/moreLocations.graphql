@@ -1,0 +1,26 @@
+
+query moreLocations($cursor: String){
+
+  allLocation_wiki_entrys(after: $cursor) {
+     pageInfo{
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    edges {
+      cursor
+      node {
+        location_name
+        region
+        status
+        type
+        date_started
+        date_completed
+        server_build
+        redo_available
+        _linkType
+      }
+    }
+    }
+}
