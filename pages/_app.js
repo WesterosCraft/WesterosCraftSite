@@ -8,6 +8,7 @@ import theme from '../theme/theme';
 import withApollo from '../lib/apollo';
 import PageWrapper from '../components/atoms/pageWrapper/pageWrapper';
 
+
 class MyApp extends App {
   renderHead() {
     return (

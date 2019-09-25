@@ -18,7 +18,7 @@ const ProgressPage = () => {
 
   return (
     <Flex flexDirection="row">
-      <Box>
+      <Box  sx={{ borderRadius: "8px"}} mx="auto" bg="white" mt={200}>
         <LocationTable pages={allLocation_wiki_entrys.edges || []} />
         <Button
           onClick={() =>
