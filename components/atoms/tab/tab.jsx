@@ -15,6 +15,9 @@ const Tab = ({ onClick, activeTab, label }) => {
       height="48px"
       onClick={setActiveTab}
       bg={activeTab === label ? 'white' : '#FAFAFE'}
+      style={{
+        borderBottom: activeTab === label ? '1px solid white' : '1px solid #d4d4d5',
+      }}
     >
       O
     </Flex>
