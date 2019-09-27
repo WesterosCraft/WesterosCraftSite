@@ -3,7 +3,7 @@ import { Text, Box } from 'rebass';
 
 const TableTitle = () => (
   <Box
-    textAlign="center"
+    textAlign="left"
     bg="#F3F4FB"
     sx={{
       display: 'grid',

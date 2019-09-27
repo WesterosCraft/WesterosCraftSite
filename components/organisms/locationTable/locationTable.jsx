@@ -19,7 +19,7 @@ const LocationTable = ({ pages }) => {
         {pages.map((page, i) => (
           <Box
             key={RichText.asText(page.node.location_name)}
-            textAlign="center"
+            textAlign="left"
             sx={{
               display: 'grid',
               gridTemplateColumns: '2fr 2fr 2fr 2fr 1fr 1fr',
