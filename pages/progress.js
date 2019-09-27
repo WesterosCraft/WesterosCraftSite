@@ -13,18 +13,27 @@ const ProgressPage = () => {
     fetchMore,
   } = useQuery(locationsQuery);
 
-  if (error) return <h1> error! </h1>;
   if (loading) return <h1> Loading... </h1>;
+  if (error) return <h1> error! </h1>;
 
   return (
     <Flex flexDirection="row">
-      <Box>
-        <LocationTable pages={allLocation_wiki_entrys.edges || []} />
+      <Box
+        sx={{
+          borderRadius: '8px',
+        }}
+        mx="auto"
+        bg="white"
+        mt={200}
+      >
+        <LocationTable pages={allLocation_wiki_entrys.edges || []} />{' '}
         <Button
           onClick={() =>
             fetchMore({
               query: moreLocations,
-              variables: { cursor: allLocation_wiki_entrys.pageInfo.endCursor },
+              variables: {
+                cursor: allLocation_wiki_entrys.pageInfo.endCursor,
+              },
               updateQuery: (previousResult, { fetchMoreResult }) => {
                 const newEdges = fetchMoreResult.allLocation_wiki_entrys.edges;
                 const { pageInfo } = fetchMoreResult.allLocation_wiki_entrys;
@@ -42,9 +51,9 @@ const ProgressPage = () => {
             })
           }
         >
-          test
-        </Button>
-      </Box>
+          test{' '}
+        </Button>{' '}
+      </Box>{' '}
     </Flex>
   );
 };

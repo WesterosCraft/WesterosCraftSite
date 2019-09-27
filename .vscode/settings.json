@@ -1,9 +1,9 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
-  "eslint.autoFixOnSave": false,
+  "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
