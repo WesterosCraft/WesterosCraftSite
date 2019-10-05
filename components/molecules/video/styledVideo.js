@@ -36,9 +36,5 @@ export const VideoOverlay = styled.div`
   height: 100%;
   opacity: 0.9;
   z-index: 500;
-  background: linear-gradient(
-    109.6deg,
-    rgb(229, 105, 105) 91.1%rgb (155, 19, 19) 11.2%,
-    rgb(229, 105, 105) 91.1%
-  );
+  background: linear-gradient(270deg, rgba(155, 19, 19, 0.9) 0%, rgba(230, 105, 105, 0.6) 100%);
 `;

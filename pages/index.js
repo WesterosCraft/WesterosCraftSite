@@ -31,7 +31,6 @@ const HomePage = () => {
           </Box>{' '}
           <Box width={[1, 1 / 2]}> </Box>{' '}
         </Flex>{' '}
-        <Blocks />
       </HomePageTemplate>{' '}
       <SliceZone slices={page.body} />{' '}
     </>
