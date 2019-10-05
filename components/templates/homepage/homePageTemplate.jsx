@@ -10,6 +10,7 @@ const HomePageTemplate = ({ children, background }) => {
         backgroundImage: `url(${background.url})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
+        position: 'relative',
       }}
     >
       <Flex flexDirection="column" justifyContent="center" height="100%">

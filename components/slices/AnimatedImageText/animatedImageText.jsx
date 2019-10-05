@@ -34,15 +34,13 @@ const AnimatedImageText = ({ input }) => {
             left: '0',
           }}
         >
-          <Text color="textGray" fontSize={144} fontWeight="bold">
+          <Text color="textGray" fontSize={144} fontWeight="bold" opacity={0.2}>
             {primary.sequence}
           </Text>
         </Box>
         <Box sx={{ zIndex: 10, position: 'relative' }}>
-          <Text variant="heading2" color="white">
-            {RichText.asText(primary.title)}
-          </Text>
-          <Text variant="paragraph" color="white" mt={10} maxWidth={400}>
+          <Text variant="heading2">{RichText.asText(primary.title)}</Text>
+          <Text variant="paragraph" mt={10} maxWidth={400}>
             {RichText.asText(primary.copy)}
           </Text>
           <Button label={primary.button_label} variant="link" mt={6} />
