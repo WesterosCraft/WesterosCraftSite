@@ -3,7 +3,10 @@ import { Box } from 'rebass';
 
 export const Section = styled(Box)`
   height: 800px;
+  position: relative;
+`;
 
+export const Background = styled(Box)`
   &::before {
     content: '';
     position: absolute;
