@@ -5,19 +5,25 @@ import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
 import homeQuery from '../queries/home.graphql';
+import navQuery from '../queries/nav.graphql';
 import Blocks from '../components/atoms/blocks/blocks';
 
 const HomePage = () => {
-  const { loading, error, data } = useQuery(homeQuery);
+  // const { loading, error, data } = useQuery(homeQuery);
+  const { loading, error, data } = useQuery(navQuery);
+
+  console.log(data);
+
   if (error) return <h1> error! </h1>;
   if (loading) return <h1> Loading... </h1>;
   // if (!page) return throw404();
 
-  const page = data.allHome_pages.edges[0].node;
+  // const page = data.allHome_pages.edges[0].node;
 
   return (
     <>
-      <HomePageTemplate background={page.background_image}>
+      <h1>heello</h1>
+      {/* <HomePageTemplate background={page.background_image}>
         <Flex flexDirection={['column', 'row']} maxWidth={1178} mx="auto">
           <Box width={[1, 1 / 2]}>
             <Text variant="heading1" textAlign={['center', 'left']} color="white">
@@ -32,7 +38,7 @@ const HomePage = () => {
           <Box width={[1, 1 / 2]}> </Box>{' '}
         </Flex>{' '}
       </HomePageTemplate>{' '}
-      <SliceZone slices={page.body} />{' '}
+      <SliceZone slices={page.body} />{' '} */}
     </>
   );
 };

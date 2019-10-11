@@ -8,7 +8,6 @@ import theme from '../theme/theme';
 import withApollo from '../lib/apollo';
 import PageWrapper from '../components/atoms/pageWrapper/pageWrapper';
 
-
 class MyApp extends App {
   renderHead() {
     return (
@@ -48,10 +47,8 @@ class MyApp extends App {
               }
             `}
           />{' '}
-          {this.renderHead()}{' '}
-          {/* <PageWrapper> */}
-            <Component {...pageProps} />{' '}
-          {/* </PageWrapper>{' '} */}
+          {this.renderHead()} {/* <PageWrapper> */}
+          <Component {...pageProps} /> {/* </PageWrapper>{' '} */}
         </ThemeProvider>{' '}
       </ApolloProvider>
     );

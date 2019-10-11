@@ -1,0 +1,12 @@
+query getNav($handle: [String]) {
+  globalSets(handle: $handle) {
+    ... on nav_GlobalSet {
+      navLink {
+        ... on navLink_mainNavItem_BlockType {
+          mainNavLink
+          mainNavLabel
+        }
+      }
+    }
+  }
+}
