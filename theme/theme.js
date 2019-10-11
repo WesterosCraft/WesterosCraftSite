@@ -9,8 +9,8 @@ const theme = {
     brandRed: '#9B1313',
     brandYellow: '#FBC000',
     brandBlue: '',
-    textColor: 'red',
-    backgroundColor: '#141514',
+    textColor: '#000000',
+    backgroundColor: '#333333',
     textGray: '#494849',
     black: '#000000',
     success: '#2CA42C',
@@ -26,14 +26,14 @@ const theme = {
     paragraph: {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: [3, 4],
-      color: 'brand_red',
+      color: 'textColor',
       lineHeight: 1.7,
     },
     heading1: {
       fontFamily: 'Cinzel, serif',
       fontSize: [9, 10],
       fontWeight: 700,
-      color: 'white',
+      color: 'textColor',
     },
     heading2: {
       fontFamily: 'Cinzel, serif',
@@ -45,7 +45,7 @@ const theme = {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: [3, 4],
       fontWeight: 500,
-      color: 'white',
+      color: 'textColor',
       lineHeight: 1.7,
     },
     progress: {

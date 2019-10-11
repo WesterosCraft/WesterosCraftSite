@@ -6,15 +6,12 @@ import moreLocations from '../queries/moreLocations.graphql';
 import LocationTable from '../components/organisms/locationTable/locationTable';
 
 const ProgressPage = () => {
-  const {
-    loading,
-    error,
-    data: { allLocation_wiki_entrys },
-    fetchMore,
-  } = useQuery(locationsQuery);
+  const { loading, error, data: { allLocation_wiki_entrys } = {}, fetchMore } = useQuery(
+    locationsQuery
+  );
 
-  if (loading) return <h1> Loading... </h1>;
   if (error) return <h1> error! </h1>;
+  if (loading) return <h1> Loading... </h1>;
 
   return (
     <Flex flexDirection="row">
