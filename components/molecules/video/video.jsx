@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import { VideoWrapper, VideoThumbnail, VideoOverlay } from './styledVideo';
 import PlayButton from '../../atoms/playButton/playButton';
 
-const Video = ({ video }) => {
+const Video = ({ video, thumbnail }) => {
   const [isPlaying, setPlaying] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ const Video = ({ video }) => {
     >
       <ReactPlayer
         className="react-player"
-        url={video.video.embed_url}
+        url={video}
         playing={isPlaying}
         width="100%"
         height="100%"
@@ -23,7 +23,7 @@ const Video = ({ video }) => {
       />
       <PlayButton display={isPlaying ? 1 : 0} />
       <VideoOverlay display={isPlaying ? 1 : 0} />
-      <VideoThumbnail display={isPlaying ? 1 : 0} src={video.thumbnail_image.url} />
+      <VideoThumbnail display={isPlaying ? 1 : 0} src={thumbnail} />
     </VideoWrapper>
   );
 };

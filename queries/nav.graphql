@@ -5,8 +5,23 @@ query getNav($handle: [String]) {
         ... on navLink_mainNavItem_BlockType {
           mainNavLink
           mainNavLabel
+          dropdownItems {
+            ... on dropdownItems_BlockType {
+              dropdownLabel
+              dropdownLink
+              dropdownIcon {
+                path
+              }
+            }
+          }
         }
       }
+    }
+  }
+  __schema {
+    types {
+      name
+      description
     }
   }
 }

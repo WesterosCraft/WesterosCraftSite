@@ -36,3 +36,8 @@ fragment animtext on Home_pageBodyAnimated_image_text {
     padding_bottom
   }
 }
+
+fragment nav on navLink_mainNavItem_BlockType {
+  mainNavLink
+  mainNavLabel
+}

@@ -1,16 +1,28 @@
-#import "./fragments.graphql"
-query {
-  allHome_pages {
-    edges {
-      node {
-        heading
-        subheading
-        background_image
-        body {
-          ...text
-          ...video
-          ...animtext
-          __typename
+{
+  entries {
+    ... on homePage_homePage_Entry {
+      heading
+      subheading
+      backgroundImage {
+        path
+      }
+      ctaGroup {
+        ... on ctaGroup_cta_BlockType {
+          buttonLink
+          buttonType
+          buttonLabel
+        }
+      }
+      slices {
+        ... on slices_video_BlockType {
+          videoEmbed
+          thumbnail {
+            url
+          }
+          marginTop
+          marginBottom
+          paddingTop
+          paddingBottom
         }
       }
     }
