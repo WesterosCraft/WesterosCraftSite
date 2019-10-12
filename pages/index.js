@@ -14,10 +14,12 @@ const HomePage = () => {
 
   const page = data.entries[0];
 
+  console.log(page);
+
   return (
     page && (
       <>
-        <HomePageTemplate background="">
+        <HomePageTemplate background={page.backgroundImage[0].url}>
           <Flex flexDirection={['column', 'row']} maxWidth={1178} mx="auto">
             <Box width={[1, 1 / 2]}>
               <Text variant="heading1" textAlign={['center', 'left']} color="white">

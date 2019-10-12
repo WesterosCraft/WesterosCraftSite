@@ -9,8 +9,8 @@ const VideoPlayer = ({ input }) => {
       justifyContent="center"
       alignItems="center"
       flexDirection="column"
-      mt={input.marginTop}
-      mb={input.marginBottom}
+      mt={[input.marginTop]}
+      mb={[input.marginBottom]}
       pt={input.paddingTop}
       pb={input.paddingBottom}
     >

@@ -9,10 +9,10 @@ const HomePageTemplate = ({ children, background }) => {
         width={1}
         height="100%"
         sx={{
-          backgroundImage: `url(${background.url})`,
+          backgroundImage: `url(${background})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          position: 'relative',
+          position: 'relative'
         }}
       />
       <Flex
