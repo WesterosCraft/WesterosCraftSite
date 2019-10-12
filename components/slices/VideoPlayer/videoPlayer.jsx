@@ -15,7 +15,7 @@ const VideoPlayer = ({ input }) => {
       pb={input.paddingBottom}
     >
       <Container mt={[2, 1, 0]} px={[8, 0]}>
-        <Video video={input.videoEmbed} thumbnail={input.thumbnail} />
+        <Video video={input.videoEmbed} thumbnail={input.thumbnail[0].url} />
       </Container>
     </Flex>
   ) : (

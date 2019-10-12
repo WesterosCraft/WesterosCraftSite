@@ -4,7 +4,7 @@
       heading
       subheading
       backgroundImage {
-        path
+        url
       }
       ctaGroup {
         ... on ctaGroup_cta_BlockType {
@@ -16,13 +16,13 @@
       slices {
         ... on slices_video_BlockType {
           videoEmbed
-          thumbnail {
-            url
-          }
           marginTop
           marginBottom
           paddingTop
           paddingBottom
+          thumbnail {
+            url
+          }
         }
       }
     }
