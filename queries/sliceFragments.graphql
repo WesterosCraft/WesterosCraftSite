@@ -1,0 +1,28 @@
+fragment video on slices_video_BlockType {
+  videoEmbed
+  marginTop
+  marginBottom
+  paddingTop
+  paddingBottom
+  thumbnail {
+    url
+    title
+  }
+}
+
+fragment animatedImageWithText on slices_animatedImageWithText_BlockType {
+  sequence
+  heading
+  copy
+  buttonLabel
+  buttonLink
+  image {
+    url
+    title
+  }
+  order
+  marginTop
+  marginBottom
+  paddingTop
+  paddingBottom
+}

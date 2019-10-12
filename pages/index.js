@@ -8,13 +8,14 @@ import homeQuery from '../queries/home.graphql';
 const HomePage = () => {
   const { loading, error, data } = useQuery(homeQuery);
 
-  if (error) return <h1> error! </h1>;
+  if (error) {
+    console.log('error', error);
+    return <h1> error! </h1>;
+  }
   if (loading) return <h1> Loading... </h1>;
   // if (!page) return throw404();
 
   const page = data.entries[0];
-
-  console.log(page);
 
   return (
     page && (

@@ -7,8 +7,7 @@ import { Column } from './styledAnimatedImageText';
 import Button from '../../atoms/button/button';
 
 const AnimatedImageText = ({ input }) => {
-  const { primary } = input;
-  const boxOrder = input.primary.order === 'Text First';
+  const boxOrder = input.order === 'textFirst';
   const [ref, inView] = useInView({ threshold: 0, triggerOnce: true });
 
   return (
@@ -18,8 +17,10 @@ const AnimatedImageText = ({ input }) => {
       alignItems="center"
       maxWidth={1178}
       mx="auto"
-      mt={primary.margin_top}
-      mb={primary.margin_bottom}
+      mt={input.marginTop}
+      mb={input.marginBottom}
+      pt={input.paddingTop}
+      pb={input.paddingBottom}
     >
       <Column
         width={[1, null, 1 / 2]}
@@ -35,17 +36,17 @@ const AnimatedImageText = ({ input }) => {
           }}
         >
           <Text color="textGray" fontSize={144} fontWeight="bold">
-            {primary.sequence}
+            {input.sequence}
           </Text>
         </Box>
         <Box sx={{ zIndex: 10, position: 'relative' }}>
           <Text variant="heading2" color="white">
-            {RichText.asText(primary.title)}
+            {input.heading}
           </Text>
           <Text variant="paragraph" color="white" mt={10} maxWidth={400}>
-            {RichText.asText(primary.copy)}
+            {input.copy}
           </Text>
-          <Button label={primary.button_label} variant="link" mt={6} />
+          <Button label={input.buttonLabel} variant="link" mt={6} />
         </Box>
       </Column>
 
@@ -65,7 +66,7 @@ const AnimatedImageText = ({ input }) => {
               }}
             >
               <motion.img
-                src={primary.image.url}
+                src={input.image[0].url || ''}
                 transition={{ duration: 2.5, type: 'tween' }}
                 animate={{ scale: 1, opacity: 1 }}
                 initial={{ scale: 1.2 }}
@@ -78,6 +79,7 @@ const AnimatedImageText = ({ input }) => {
                   height: '482px',
                   opacity: 0,
                 }}
+                alt={input.image[0].title}
               />
             </motion.div>
           ) : null}

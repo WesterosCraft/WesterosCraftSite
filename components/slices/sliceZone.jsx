@@ -6,11 +6,11 @@ import VideoPlayer from './VideoPlayer/videoPlayer';
 
 const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
-    console.log(slice);
+    console.log('slice', slice);
     switch (slice.__typename) {
       case 'text':
         return <TextSlice input={slice} key={index} />;
-      case 'animated_image_text':
+      case 'slices_animatedImageWithText_BlockType':
         return <AnimatedImageText input={slice} key={index} />;
       case 'slices_video_BlockType':
         return <VideoPlayer input={slice} key={index} />;
