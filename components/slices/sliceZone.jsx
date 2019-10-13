@@ -1,12 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
+import { Box } from 'rebass';
 import TextSlice from './Text/text';
 import AnimatedImageText from './AnimatedImageText/animatedImageText';
 import VideoPlayer from './VideoPlayer/videoPlayer';
 
 const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
-    console.log('slice', slice);
     switch (slice.__typename) {
       case 'text':
         return <TextSlice input={slice} key={index} />;
@@ -18,7 +18,7 @@ const SliceZone = ({ slices }) => {
         return null;
     }
   });
-  return <>{module}</>;
+  return <Box px={[5, 8]}>{module}</Box>;
 };
 
 export default SliceZone;

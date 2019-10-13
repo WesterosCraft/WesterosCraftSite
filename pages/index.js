@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
 import homeQuery from '../queries/home.graphql';
+import Layout from '../components/templates/layout/layout';
 
 const HomePage = () => {
   const { loading, error, data } = useQuery(homeQuery);
@@ -19,7 +20,7 @@ const HomePage = () => {
 
   return (
     page && (
-      <>
+      <Layout>
         <HomePageTemplate background={page.backgroundImage[0].url}>
           <Flex flexDirection={['column', 'row']} maxWidth={1178} mx="auto">
             <Box width={[1, 1 / 2]}>
@@ -34,7 +35,7 @@ const HomePage = () => {
           </Flex>
         </HomePageTemplate>
         <SliceZone slices={page.slices} />
-      </>
+      </Layout>
     )
   );
 };

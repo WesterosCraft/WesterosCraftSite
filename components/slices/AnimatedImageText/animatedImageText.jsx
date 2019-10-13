@@ -1,6 +1,5 @@
 import React from 'react';
 import { Flex, Text, Box } from 'rebass';
-import { RichText } from 'prismic-reactjs';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Column } from './styledAnimatedImageText';
@@ -22,9 +21,9 @@ const AnimatedImageText = ({ input }) => {
       pt={input.paddingTop}
       pb={input.paddingBottom}
     >
-      <Column
-        width={[1, null, 1 / 2]}
-        sx={{ position: 'relative', order: boxOrder ? '1' : '2' }}
+      <Flex
+        order={boxOrder ? '2' : '1'}
+        sx={{ position: 'relative', width: ['100%', null, '50%'] }}
         px={10}
       >
         <Box
@@ -39,29 +38,40 @@ const AnimatedImageText = ({ input }) => {
             {input.sequence}
           </Text>
         </Box>
-        <Box sx={{ zIndex: 10, position: 'relative' }}>
+        <Box
+          sx={{ zIndex: 10, position: 'relative' }}
+          maxWidth={400}
+          mx={['auto', null, 'inherit']}
+        >
           <Text variant="heading2" color="white">
             {input.heading}
           </Text>
-          <Text variant="paragraph" color="white" mt={10} maxWidth={400}>
+          <Text variant="paragraph" color="white" mt={10}>
             {input.copy}
           </Text>
           <Button label={input.buttonLabel} variant="link" mt={6} />
         </Box>
-      </Column>
+      </Flex>
 
-      <Column width={[1, null, 1 / 2]} sx={{ order: boxOrder ? '2' : '1' }}>
-        <Box sx={{ position: 'relative' }} width={458} height={482} ref={ref}>
+      <Flex order={boxOrder ? '2' : '1'} sx={{ width: ['100%', null, '50%'] }}>
+        <Box
+          sx={{ position: 'relative' }}
+          minWidth="100%"
+          maxWidth={458}
+          height={482}
+          ref={ref}
+          mx="auto"
+        >
           {inView ? (
             <motion.div
-              animate={{ height: 482, opacity: 1 }}
+              animate={{ height: '100%', opacity: 1 }}
               transition={{ duration: 2, type: 'tween', ease: 'anticipate' }}
               style={{
                 position: 'absolute',
                 left: 0,
                 bottom: 0,
                 overflow: 'hidden',
-                width: '458px',
+                width: '100%',
                 opacity: 0,
               }}
             >
@@ -84,7 +94,7 @@ const AnimatedImageText = ({ input }) => {
             </motion.div>
           ) : null}
         </Box>
-      </Column>
+      </Flex>
     </Flex>
   );
 };

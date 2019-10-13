@@ -10,7 +10,7 @@ const theme = {
     brandYellow: '#FBC000',
     brandBlue: '',
     textColor: '#000000',
-    backgroundColor: '#333333',
+    backgroundColor: '#000000',
     textGray: '#494849',
     black: '#000000',
     success: '#2CA42C',

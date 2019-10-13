@@ -1,5 +1,5 @@
-query getNav($handle: [String]) {
-  globalSets(handle: $handle) {
+{
+  globalSets {
     ... on nav_GlobalSet {
       navLink {
         ... on navLink_mainNavItem_BlockType {
