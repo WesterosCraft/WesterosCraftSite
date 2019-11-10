@@ -2,7 +2,6 @@ import React from 'react';
 import { Flex, Text, Box } from 'rebass';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Column } from './styledAnimatedImageText';
 import Button from '../../atoms/button/button';
 
 const AnimatedImageText = ({ input }) => {
@@ -22,7 +21,7 @@ const AnimatedImageText = ({ input }) => {
       pb={input.paddingBottom}
     >
       <Flex
-        order={boxOrder ? '2' : '1'}
+        order={boxOrder ? '1' : '2'}
         sx={{ position: 'relative', width: ['100%', null, '50%'] }}
         px={10}
       >
@@ -34,7 +33,7 @@ const AnimatedImageText = ({ input }) => {
             left: '0',
           }}
         >
-          <Text color="textGray" fontSize={144} fontWeight="bold">
+          <Text color="textGray" fontSize={144} fontWeight="bold" opacity="0.2">
             {input.sequence}
           </Text>
         </Box>
@@ -43,10 +42,10 @@ const AnimatedImageText = ({ input }) => {
           maxWidth={400}
           mx={['auto', null, 'inherit']}
         >
-          <Text variant="heading2" color="white">
+          <Text variant="heading2" color="textColor">
             {input.heading}
           </Text>
-          <Text variant="paragraph" color="white" mt={10}>
+          <Text variant="paragraph" color="textColor" mt={10}>
             {input.copy}
           </Text>
           <Button label={input.buttonLabel} variant="link" mt={6} />
