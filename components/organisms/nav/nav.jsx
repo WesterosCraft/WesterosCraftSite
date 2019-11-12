@@ -23,16 +23,16 @@ const Nav = () => {
       justifyContent="space-between"
     >
       <Box>
-        <Image src={navLogo[0].url} />
+        <Image src={navLogo[0].url} width={294} />
       </Box>
       <Box as="ul">
-        {navdata.map(item =>
+        {navdata.map((item, index) =>
           item.dropdownItems && item.dropdownItems.length < 1 ? (
-            <a href={item.mainNavLink}>
-              <NavLink key={item.mainNavLabel}>{item.mainNavLabel}</NavLink>
-            </a>
+            <NavLink id={index} link={item.mainNavLink}>
+              {item.mainNavLabel}
+            </NavLink>
           ) : (
-            <NavLink key={item.mainNavLabel}>{item.mainNavLabel}</NavLink>
+            <NavLink id={index}>{item.mainNavLabel}</NavLink>
           )
         )}
       </Box>
