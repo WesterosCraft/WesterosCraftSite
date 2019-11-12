@@ -1,6 +1,9 @@
 {
   globalSets {
     ... on nav_GlobalSet {
+      navLogo {
+        url
+      }
       navLink {
         ... on navLink_mainNavItem_BlockType {
           mainNavLink
@@ -10,7 +13,7 @@
               dropdownLabel
               dropdownLink
               dropdownIcon {
-                path
+                url
               }
             }
           }
