@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Button } from 'rebass';
 
-const NavLink = ({ children, id, link }) =>
+const NavLink = ({ children, id, link, onMouseEnter }) =>
   link ? (
     <a href={link} key={id}>
       <Text
@@ -16,7 +16,7 @@ const NavLink = ({ children, id, link }) =>
             color: 'brandRed',
           },
         }}
-        px={[6]}
+        px={[4]}
       >
         {children}
       </Text>
@@ -26,6 +26,7 @@ const NavLink = ({ children, id, link }) =>
       sx={{
         outline: 'none',
       }}
+      onMouseEnter={onMouseEnter}
     >
       <Text
         as="span"
@@ -40,7 +41,7 @@ const NavLink = ({ children, id, link }) =>
             color: 'brandRed',
           },
         }}
-        px={[6]}
+        px={[4]}
       >
         {children}
       </Text>
