@@ -1,24 +1,50 @@
 import React from 'react';
-import { Text } from 'rebass';
+import { Text, Button } from 'rebass';
 
 const NavLink = ({ children, id, link }) =>
   link ? (
     <a href={link} key={id}>
-      <Text color="textColor" fontSize={[3]} sx={{ textTransform: 'uppercase' }} as="span" px={[6]}>
+      <Text
+        as="span"
+        color="textColor"
+        fontSize={[3]}
+        lineHeight="50px"
+        sx={{
+          textTransform: 'uppercase',
+          display: 'block',
+          '&:hover': {
+            color: 'brandRed',
+          },
+        }}
+        px={[6]}
+      >
         {children}
       </Text>
     </a>
   ) : (
-    <Text
-      key={id}
-      color="textColor"
-      fontSize={[3]}
-      sx={{ textTransform: 'uppercase' }}
-      as="span"
-      px={[6]}
+    <Button
+      sx={{
+        outline: 'none',
+      }}
     >
-      {children}
-    </Text>
+      <Text
+        as="span"
+        key={id}
+        color="textColor"
+        fontSize={[3]}
+        lineHeight="50px"
+        sx={{
+          textTransform: 'uppercase',
+          display: 'block',
+          '&:hover': {
+            color: 'brandRed',
+          },
+        }}
+        px={[6]}
+      >
+        {children}
+      </Text>
+    </Button>
   );
 
 export default NavLink;

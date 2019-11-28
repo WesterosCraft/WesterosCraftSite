@@ -13,19 +13,19 @@ const Nav = () => {
   const navdata = data && data.globalSets && data.globalSets[0].navLink;
   const navLogo = data && data.globalSets && data.globalSets[0].navLogo;
 
-  console.log(navLogo);
-
   return navdata ? (
     <Flex
       width={1}
-      sx={{ position: 'fixed', zIndex: 9999 }}
+      sx={{ position: 'absolute', zIndex: 9999 }}
       as="header"
+      alignItems="center"
       justifyContent="space-between"
+      px={[5]}
     >
       <Box>
-        <Image src={navLogo[0].url} width={294} />
+        <Image src={navLogo[0].url} width={194} />
       </Box>
-      <Box as="ul">
+      <Flex flexDirection="row" alignItems="center">
         {navdata.map((item, index) =>
           item.dropdownItems && item.dropdownItems.length < 1 ? (
             <NavLink id={index} link={item.mainNavLink}>
@@ -35,7 +35,7 @@ const Nav = () => {
             <NavLink id={index}>{item.mainNavLabel}</NavLink>
           )
         )}
-      </Box>
+      </Flex>
     </Flex>
   ) : (
     ''
