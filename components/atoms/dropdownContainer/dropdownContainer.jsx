@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from 'rebass';
 import styled from '@emotion/styled';
 
 const Caret = styled.div`
@@ -14,7 +15,7 @@ const Caret = styled.div`
   z-index: 1;
 `;
 
-const DropdownBackground = styled.div`
+const DropdownBackground = styled(Box)`
   transform-origin: 0 0;
   background-color: #fff;
   border-radius: 4px;
@@ -24,11 +25,11 @@ const DropdownBackground = styled.div`
     0 5px 15px rgba(0, 0, 0, 0.1);
 `;
 
-const DropdownContainer = ({ children, className }) => {
+const DropdownContainer = ({ children, className, ...props }) => {
   return (
     <>
       <Caret />
-      <DropdownBackground className={`dropdown-container ${className} `} height="100px">
+      <DropdownBackground className={`dropdown-container ${className} `} {...props}>
         {children}
       </DropdownBackground>
     </>

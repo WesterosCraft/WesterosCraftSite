@@ -12,6 +12,8 @@
             ... on dropdownItems_BlockType {
               dropdownLabel
               dropdownLink
+              dropdownDescription
+              dropdownSubtitle
               dropdownIcon {
                 url
               }

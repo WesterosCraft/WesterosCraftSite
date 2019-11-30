@@ -38,9 +38,22 @@ const AnimatedNavbar = () => {
     setCurrentIndex(activeIndices[activeIndices.length - 1]);
 
     if (typeof currentIndex === 'number') {
-      setActiveDropdown(navbarConfig[currentIndex].dropdown);
+      setActiveDropdown(navbarConfig[currentIndex].title);
     }
   }, [currentIndex, activeIndices]);
+
+  const renderSwitch = (item, dropdownData) => {
+    switch (item) {
+      case 'About':
+        return <AboutDropdown data={dropdownData} />;
+      case 'Community':
+        return <CommunityDropdown />;
+      case 'Wiki':
+        return <WikiDropdown />;
+      default:
+        return 'foo';
+    }
+  };
 
   if (loading) return null;
   if (error) return null;
@@ -67,7 +80,9 @@ const AnimatedNavbar = () => {
           </NavbarItemEl>
         ) : (
           <NavbarItem title={n.mainNavLabel} index={index} onMouseEnter={onMouseEnter}>
-            {currentIndex === index && <DropdownContainer>{activeDropdown}</DropdownContainer>}
+            {currentIndex === index && (
+              <DropdownContainer>{renderSwitch(activeDropdown, n.dropdownItems)}</DropdownContainer>
+            )}
           </NavbarItem>
         )
       )}
