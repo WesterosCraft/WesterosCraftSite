@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Button } from 'rebass';
 
-const NavbarItemTitle = styled.button`
+export const NavbarItemTitle = styled(Button)`
   background: transparent;
   border: 0;
-  font-weight: bold;
-  font-size: 18px;
   padding: 1.5rem 1.5rem 1.2rem 1.5rem;
-  color: black;
-  font-family: inherit;
   display: flex;
   justify-content: center;
   transition: opacity 250ms;
@@ -16,13 +13,8 @@ const NavbarItemTitle = styled.button`
   /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
   position: relative;
   z-index: 2;
-  &:hover,
-  &:focus {
-    opacity: 0.7;
-    outline: none;
-  }
 `;
-const NavbarItemEl = styled.li`
+export const NavbarItemEl = styled.li`
   position: relative;
   margin-left: 0.5rem;
   &::first-of-type {
@@ -43,7 +35,19 @@ const NavbarItem = ({ title, children, onMouseEnter, index }) => {
   };
   return (
     <NavbarItemEl onMouseEnter={onMouseEnterFunc} onFocus={onMouseEnterFunc}>
-      <NavbarItemTitle>{title}</NavbarItemTitle>
+      <NavbarItemTitle
+        color="textColor"
+        fontSize={3}
+        sx={{
+          textTransform: 'uppercase',
+          display: 'block',
+          '&:hover, &:focus': {
+            color: 'brandRed',
+          },
+        }}
+      >
+        {title}
+      </NavbarItemTitle>
       <DropdownSlot>{children}</DropdownSlot>
     </NavbarItemEl>
   );
