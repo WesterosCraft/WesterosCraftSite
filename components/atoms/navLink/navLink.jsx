@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Button } from 'rebass';
 
-const NavLink = ({ children, id, link, onMouseEnter }) =>
+const NavLink = ({ children, id, link, onMouseEnter, onMouseLeave }) =>
   link ? (
     <a href={link} key={id}>
       <Text
@@ -26,6 +26,7 @@ const NavLink = ({ children, id, link, onMouseEnter }) =>
       sx={{
         outline: 'none',
       }}
+      onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
     >
       <Text

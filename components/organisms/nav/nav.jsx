@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Flex, Text, Box, Image } from 'rebass';
 import { useQuery } from '@apollo/react-hooks';
 import navQuery from '../../../queries/nav.graphql';
@@ -7,6 +7,7 @@ import DropdownRoot from '../dropdownRoot/dropdownRoot';
 
 const Nav = () => {
   const { loading, error, data } = useQuery(navQuery);
+  const [currentNav, setCurrentNav] = useState(null);
 
   if (loading) return null;
   if (error) return null;
@@ -29,20 +30,17 @@ const Nav = () => {
         <Flex flexDirection="row" alignItems="center">
           {navdata.map((item, index) =>
             item.dropdownItems && item.dropdownItems.length < 1 ? (
-              <NavLink
-                id={index}
-                link={item.mainNavLink}
-                onMouseEnter={() => {
-                  console.log('mouseenter');
-                }}
-              >
+              <NavLink id={index} link={item.mainNavLink}>
                 {item.mainNavLabel}
               </NavLink>
             ) : (
               <NavLink
                 id={index}
                 onMouseEnter={() => {
-                  console.log('mouseenter');
+                  setCurrentNav(item.mainNavLabel);
+                }}
+                onMouseLeave={() => {
+                  setCurrentNav(null);
                 }}
               >
                 {item.mainNavLabel}
@@ -51,7 +49,7 @@ const Nav = () => {
           )}
         </Flex>
       </Flex>
-      <DropdownRoot />
+      <DropdownRoot currentNav={currentNav} />
     </Flex>
   ) : (
     ''
