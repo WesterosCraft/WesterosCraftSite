@@ -4,6 +4,8 @@ import { Box } from 'rebass';
 import TextSlice from './Text/text';
 import AnimatedImageText from './AnimatedImageText/animatedImageText';
 import VideoPlayer from './VideoPlayer/videoPlayer';
+import FeaturedBanner from './FeaturedBanner/featuredBanner';
+import TextBanner from './TextBanner/textBanner';
 
 const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -14,6 +16,10 @@ const SliceZone = ({ slices }) => {
         return <AnimatedImageText input={slice} key={index} />;
       case 'slices_video_BlockType':
         return <VideoPlayer input={slice} key={index} />;
+      case 'slices_featureBanner_BlockType':
+        return <FeaturedBanner input={slice} key={index} />;
+      case 'slices_textBanner_BlockType':
+        return <TextBanner input={slice} key={index} />;
       default:
         return null;
     }

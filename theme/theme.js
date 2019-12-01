@@ -58,12 +58,28 @@ const theme = {
   },
   buttons: {
     link: {
-      cursor: 'pointer',
       backgroundColor: 'transparent',
       paddingX: '0',
       paddingY: '0',
       '&:hover': {
         color: '#FBC000',
+      },
+    },
+    primary: {
+      backgroundColor: 'brandRed',
+      color: 'white',
+      textTransform: 'uppercase',
+      fontWeight: 'bold',
+      paddingY: '4',
+      paddingX: '6',
+      transition: 'all 150ms ease-out 0s',
+      '&:hover': {
+        transform: 'translate3d(0px, -2px, 0px)',
+        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
+      },
+      '&:focus': {
+        transform: 'translate3d(0px, 0px, 0px)',
+        boxShadow: 'rgba(255, 71, 133, 0.4) 0px 1px 9px 2px',
       },
     },
   },

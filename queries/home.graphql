@@ -18,6 +18,8 @@
       slices {
         ...video
         ...animatedImageWithText
+        ...featuredBanner
+        ...textBanner
       }
     }
   }

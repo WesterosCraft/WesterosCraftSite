@@ -26,3 +26,27 @@ fragment animatedImageWithText on slices_animatedImageWithText_BlockType {
   paddingTop
   paddingBottom
 }
+
+fragment featuredBanner on slices_featureBanner_BlockType {
+  heading
+  logo {
+    ... on logo_BlockType {
+      imageHeight
+      imageWidth
+      image {
+        url
+      }
+    }
+  }
+}
+
+fragment textBanner on slices_textBanner_BlockType {
+  heading
+  subtitle
+  buttonType
+  buttonText
+  marginTop
+  marginBottom
+  paddingTop
+  paddingBottom
+}
