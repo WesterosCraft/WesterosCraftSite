@@ -15,9 +15,9 @@ const navbarConfig = [
 ];
 
 const AnimatedNavbar = () => {
-  const [activeIndices, setActiveIndices] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState();
-  const [activeDropdown, setActiveDropdown] = useState('');
+  const [activeIndices, setActiveIndices] = useState([1]);
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [activeDropdown, setActiveDropdown] = useState('Community');
   const { loading, error, data } = useQuery(navQuery);
 
   const navdata = data && data.globalSets && data.globalSets[0].navLink;
@@ -47,9 +47,9 @@ const AnimatedNavbar = () => {
       case 'About':
         return <AboutDropdown data={dropdownData} />;
       case 'Community':
-        return <CommunityDropdown />;
+        return <CommunityDropdown data={dropdownData} />;
       case 'Wiki':
-        return <WikiDropdown />;
+        return <WikiDropdown data={dropdownData} />;
       default:
         return 'foo';
     }
@@ -58,7 +58,10 @@ const AnimatedNavbar = () => {
   if (loading) return null;
   if (error) return null;
   return (
-    <Navbar onMouseLeave={onMouseLeave} navLogo={navLogo}>
+    <Navbar
+      // onMouseLeave={onMouseLeave}
+      navLogo={navLogo}
+    >
       {navdata.map((n, index) =>
         n.dropdownItems && n.dropdownItems.length < 1 ? (
           <NavbarItemEl>

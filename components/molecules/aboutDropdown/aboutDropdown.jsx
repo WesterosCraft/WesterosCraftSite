@@ -3,7 +3,6 @@ import { Box, Text, Flex, Image } from 'rebass';
 import DropdownContainer from '../../atoms/dropdownContainer/dropdownContainer';
 
 const AboutDropdown = ({ data }) => {
-  console.log(data);
   return (
     <DropdownContainer width={400} className="about-dropdown" sx={{ transform: 'translateX(0px)' }}>
       <Box p={5}>
