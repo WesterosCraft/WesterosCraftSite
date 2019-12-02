@@ -39,7 +39,11 @@ const theme = {
       fontFamily: 'Cinzel, serif',
       fontSize: [8, 9],
       fontWeight: 500,
-      // color: 'white',
+    },
+    heading3: {
+      fontFamily: 'Cinzel, serif',
+      fontSize: [5, 6],
+      fontWeight: 500,
     },
     heading6: {
       fontFamily: 'Montserrat, sans-serif',

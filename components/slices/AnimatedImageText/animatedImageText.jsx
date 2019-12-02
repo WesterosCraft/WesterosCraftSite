@@ -33,7 +33,7 @@ const AnimatedImageText = ({ input }) => {
             left: '0',
           }}
         >
-          <Text color="textGray" fontSize={144} fontWeight="bold" opacity="0.2">
+          <Text color="textGray" fontSize={144} fontWeight="bold" opacity="0.1">
             {input.sequence}
           </Text>
         </Box>
@@ -42,7 +42,7 @@ const AnimatedImageText = ({ input }) => {
           maxWidth={400}
           mx={['auto', null, 'inherit']}
         >
-          <Text variant="heading2" color="textColor">
+          <Text variant="heading2" color="textColor" fontWeight="bold">
             {input.heading}
           </Text>
           <Text variant="paragraph" color="textColor" mt={10}>

@@ -29,6 +29,9 @@ fragment animatedImageWithText on slices_animatedImageWithText_BlockType {
 
 fragment featuredBanner on slices_featureBanner_BlockType {
   heading
+  buttonType
+  buttonLabel
+  buttonUrl
   logo {
     ... on logo_BlockType {
       imageHeight

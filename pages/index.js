@@ -27,7 +27,7 @@ const HomePage = () => {
               {' '}
               {page.heading}{' '}
             </Text>{' '}
-            <Text variant="paragraph" mt={6} fontWeight="bold">
+            <Text variant="heading3" mt={6} fontWeight="bold" fontFamily="Cinzel, serif">
               {' '}
               {page.subheading}{' '}
             </Text>{' '}
