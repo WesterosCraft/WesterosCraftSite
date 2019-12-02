@@ -28,12 +28,16 @@ const DropdownSlot = styled.div`
   perspective: 1000px;
 `;
 
-const NavbarItem = ({ title, children, onMouseEnter, index }) => {
+const NavbarItem = ({ title, children, onMouseEnter, index, onMouseLeave }) => {
   const onMouseEnterFunc = () => {
     onMouseEnter(index);
   };
   return (
-    <NavbarItemEl onMouseEnter={onMouseEnterFunc} onFocus={onMouseEnterFunc}>
+    <NavbarItemEl
+      onMouseEnter={onMouseEnterFunc}
+      onFocus={onMouseEnterFunc}
+      onMouseLeave={onMouseLeave}
+    >
       <NavbarItemTitle
         color="textColor"
         fontSize={3}

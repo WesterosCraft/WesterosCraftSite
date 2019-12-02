@@ -31,6 +31,8 @@ const AnimatedNavbar = () => {
   };
 
   const onMouseLeave = () => {
+    setActiveDropdown('');
+    setCurrentIndex(null);
     setActiveIndices([]);
   };
 
@@ -51,7 +53,7 @@ const AnimatedNavbar = () => {
       case 'Wiki':
         return <WikiDropdown data={dropdownData} />;
       default:
-        return 'foo';
+        return null;
     }
   };
 
@@ -79,7 +81,12 @@ const AnimatedNavbar = () => {
             </NavbarItemTitle>
           </NavbarItemEl>
         ) : (
-          <NavbarItem title={n.mainNavLabel} index={index} onMouseEnter={onMouseEnter}>
+          <NavbarItem
+            title={n.mainNavLabel}
+            index={index}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
             {currentIndex === index && (
               <DropdownContainer>{renderSwitch(activeDropdown, n.dropdownItems)}</DropdownContainer>
             )}
