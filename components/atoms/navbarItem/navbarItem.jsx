@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Button } from 'rebass';
 
-export const NavbarItemTitle = styled(Button)`
+export const NavbarItemTitle = styled.button`
   background: transparent;
   border: 0;
   padding: 1.5rem 1.5rem 1.2rem 1.5rem;
