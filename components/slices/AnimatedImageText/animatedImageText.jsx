@@ -3,6 +3,7 @@ import { Flex, Text, Box } from 'rebass';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Button from '../../atoms/button/button';
+import { MotionImage, MotionImageContainer } from './styledAnimatedImageText';
 
 const AnimatedImageText = ({ input }) => {
   const boxOrder = input.order === 'textFirst';
@@ -21,16 +22,18 @@ const AnimatedImageText = ({ input }) => {
       pb={input.paddingBottom}
     >
       <Flex
-        order={boxOrder ? '1' : '2'}
+        order={boxOrder ? '1' : ['1', '2']}
         sx={{ position: 'relative', width: ['100%', null, '50%'] }}
         px={10}
+        className="animatedImageText-textColumn"
       >
         <Box
+          className="animatedImageText-sequenceContainer"
           sx={{
             position: 'absolute',
             zIndex: 5,
             top: '-80px',
-            left: '0',
+            left: boxOrder ? '0' : '105px',
           }}
         >
           <Text color="textGray" fontSize={144} fontWeight="bold" opacity="0.1">
@@ -38,9 +41,13 @@ const AnimatedImageText = ({ input }) => {
           </Text>
         </Box>
         <Box
-          sx={{ zIndex: 10, position: 'relative' }}
+          sx={{
+            zIndex: 10,
+            position: 'relative',
+          }}
+          ml={boxOrder ? 'inherit' : 'auto'}
           maxWidth={400}
-          mx={['auto', null, 'inherit']}
+          className="animatedImageText-textContainer"
         >
           <Text variant="heading2" color="textColor" fontWeight="bold">
             {input.heading}
@@ -52,10 +59,14 @@ const AnimatedImageText = ({ input }) => {
         </Box>
       </Flex>
 
-      <Flex order={boxOrder ? '2' : '1'} sx={{ width: ['100%', null, '50%'] }}>
-        <Box sx={{ position: 'relative' }} width={458} height={482} ref={ref} mx="auto">
+      <Flex
+        order={boxOrder ? ['1', '2'] : '1'}
+        sx={{ width: ['100%', null, '50%'] }}
+        className="animatedImageText-imageColumn"
+      >
+        <Box sx={{ position: 'relative' }} width={[372, 458]} height={482} ref={ref} mx="auto">
           {inView ? (
-            <motion.div
+            <MotionImageContainer
               animate={{ height: '100%', opacity: 1 }}
               transition={{ duration: 2, type: 'tween', ease: 'anticipate' }}
               style={{
@@ -67,23 +78,14 @@ const AnimatedImageText = ({ input }) => {
                 opacity: 0,
               }}
             >
-              <motion.img
+              <MotionImage
                 src={input.image[0].url || ''}
                 transition={{ duration: 2.5, type: 'tween' }}
                 animate={{ scale: 1, opacity: 1 }}
                 initial={{ scale: 1.2 }}
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  bottom: 0,
-                  overflow: 'hidden',
-                  width: '458px',
-                  height: '482px',
-                  opacity: 0,
-                }}
                 alt={input.image[0].title}
               />
-            </motion.div>
+            </MotionImageContainer>
           ) : null}
         </Box>
       </Flex>

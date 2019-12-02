@@ -1,7 +1,30 @@
 import styled from '@emotion/styled';
-import { Box } from 'rebass';
-import { flexbox } from 'styled-system';
+import { motion } from 'framer-motion';
 
-export const Column = styled(Box)`
-  ${flexbox}
+export const MotionImage = styled(motion.img)`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 372px;
+  height: 482px;
+  opacity: 0;
+
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    width: 458px;
+  }
+`;
+
+export const MotionImageContainer = styled(motion.div)`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 372px;
+
+  opacity: 0;
+
+  @media screen and (min-width: ${props => props.theme.breakpoints[0]}) {
+    width: 458px;
+  }
 `;

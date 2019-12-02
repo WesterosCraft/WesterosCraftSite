@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Box, Flex } from 'rebass';
+import { Text, Flex } from 'rebass';
 import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
@@ -23,17 +23,15 @@ const HomePage = () => {
       <Layout>
         <HomePageTemplate background={page.backgroundImage[0].url}>
           <Flex flexDirection="column" width={1} mx="auto" textAlign="center">
-            <Text fontSize={[60]} maxWidth={540} mx="auto" fontWeight="bold">
-              {' '}
-              {page.heading}{' '}
-            </Text>{' '}
+            <Text fontSize={[42, 60]} maxWidth={540} mx="auto" fontWeight="bold">
+              {page.heading}
+            </Text>
             <Text variant="heading3" mt={6} fontWeight="bold" fontFamily="Cinzel, serif">
-              {' '}
-              {page.subheading}{' '}
-            </Text>{' '}
-          </Flex>{' '}
-        </HomePageTemplate>{' '}
-        <SliceZone slices={page.slices} />{' '}
+              {page.subheading}
+            </Text>
+          </Flex>
+        </HomePageTemplate>
+        <SliceZone slices={page.slices} />
       </Layout>
     )
   );

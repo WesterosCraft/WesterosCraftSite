@@ -1,7 +1,8 @@
 import React from 'react';
-import { Flex, Box, Image } from 'rebass';
+import { Flex, Box } from 'rebass';
+import WesterosCraftLogo from '../../atoms/westeroscraftLogo/westeroscraftLogo';
 
-const Navbar = ({ children, onMouseLeave, navLogo }) => (
+const Navbar = ({ children, onMouseLeave }) => (
   <Flex
     onMouseLeave={onMouseLeave}
     width={1}
@@ -12,7 +13,7 @@ const Navbar = ({ children, onMouseLeave, navLogo }) => (
   >
     <Flex flexDirection="row" justifyContent="space-between" alignItems="center">
       <Box>
-        <Image src={navLogo[0].url} width={194} />
+        <WesterosCraftLogo style={{ width: '194px' }} color="black" />
       </Box>
       <Flex flexDirection="row" alignItems="center" as="ul">
         {children}
