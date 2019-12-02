@@ -1,18 +1,5 @@
 import React from 'react';
-import { Flex, Text, Box, Image } from 'rebass';
-
-import styled from '@emotion/styled';
-
-const NavbarEl = styled.nav`
-  margin: 0 auto;
-`;
-
-const NavbarList = styled.ul`
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-`;
+import { Flex, Box, Image } from 'rebass';
 
 const Navbar = ({ children, onMouseLeave, navLogo }) => (
   <Flex

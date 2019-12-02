@@ -40,7 +40,7 @@ const AnimatedNavbar = () => {
     if (typeof currentIndex === 'number') {
       setActiveDropdown(navbarConfig[currentIndex].title);
     }
-  }, [currentIndex, activeIndices]);
+  }, [activeIndices, currentIndex]);
 
   const renderSwitch = (item, dropdownData) => {
     switch (item) {
