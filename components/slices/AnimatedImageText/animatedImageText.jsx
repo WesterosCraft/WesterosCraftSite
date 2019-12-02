@@ -53,14 +53,7 @@ const AnimatedImageText = ({ input }) => {
       </Flex>
 
       <Flex order={boxOrder ? '2' : '1'} sx={{ width: ['100%', null, '50%'] }}>
-        <Box
-          sx={{ position: 'relative' }}
-          minWidth="100%"
-          maxWidth={458}
-          height={482}
-          ref={ref}
-          mx="auto"
-        >
+        <Box sx={{ position: 'relative' }} width={458} height={482} ref={ref} mx="auto">
           {inView ? (
             <motion.div
               animate={{ height: '100%', opacity: 1 }}
@@ -70,7 +63,7 @@ const AnimatedImageText = ({ input }) => {
                 left: 0,
                 bottom: 0,
                 overflow: 'hidden',
-                width: '100%',
+                width: '458px',
                 opacity: 0,
               }}
             >
