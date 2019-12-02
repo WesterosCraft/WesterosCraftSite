@@ -19,6 +19,8 @@
     "apollo-client": "^2.6.4",
     "apollo-link-http": "^1.5.16",
     "apollo-link-prismic": "^1.0.4",
+    "babylonjs": "^4.0.3",
+    "babylonjs-loaders": "^4.0.3",
     "emotion-theming": "^10.0.14",
     "framer-motion": "^1.5.0",
     "graphql": "^14.5.6",
