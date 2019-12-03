@@ -25,12 +25,12 @@
     "framer-motion": "^1.5.0",
     "graphql": "^14.5.6",
     "graphql-tag": "^2.10.1",
-    "next": "^9.0.3",
+    "next": "^9.1.4",
     "next-with-apollo-hooks": "^3.4.0",
     "prismic-javascript": "^2.1.1",
     "prismic-reactjs": "^1.0.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.8.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-intersection-observer": "^8.24.1",
     "react-player": "^1.12.0",
     "rebass": "^4.0.3",
@@ -48,7 +48,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "now": "^15.5.0",
+    "now": "^16.6.0",
     "prettier": "1.18.2"
   }
 }

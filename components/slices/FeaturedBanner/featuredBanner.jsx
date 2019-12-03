@@ -35,8 +35,8 @@ const FeaturedBanner = ({ input }) => {
           maxWidth={1240}
           mx="auto"
         >
-          {input.logo.map(image => (
-            <Image height={64} width={image.imageWidth} src={image.image[0].url} p={3} />
+          {input.logo.map((image, i) => (
+            <Image height={64} width={image.imageWidth} src={image.image[0].url} p={3} key={i} />
           ))}
         </Flex>
       </Flex>

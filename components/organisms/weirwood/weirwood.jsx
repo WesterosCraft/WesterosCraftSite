@@ -4,7 +4,7 @@ import 'babylonjs-loaders';
 
 import Scene from './scene'; // import the component above linking to file we just created.
 
-export default class Tree extends React.Component {
+export default class Weirwood extends React.Component {
   setup = e => {
     const { canvas, scene } = e;
 
@@ -31,7 +31,7 @@ export default class Tree extends React.Component {
 
     this.setup(e);
 
-    BABYLON.SceneLoader.Append('tree/', 'scene.gltf', scene, function(meshes) {
+    BABYLON.SceneLoader.Append('/', 'scene.glb', scene, function(meshes) {
       const model = scene.getMeshByName('__root__');
 
       model.rotate(BABYLON.Axis.Y, Math.PI / 2, BABYLON.Space.WORLD);

@@ -5,6 +5,7 @@ import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
 import homeQuery from '../queries/home.graphql';
 import Layout from '../components/templates/layout/layout';
+import Weirwood from '../components/organisms/weirwood/weirwood';
 
 const HomePage = () => {
   const { loading, error, data } = useQuery(homeQuery);
@@ -31,6 +32,7 @@ const HomePage = () => {
               {' '}
               {page.subheading}{' '}
             </Text>{' '}
+            <Weirwood />
           </Flex>{' '}
         </HomePageTemplate>{' '}
         <SliceZone slices={page.slices} />{' '}

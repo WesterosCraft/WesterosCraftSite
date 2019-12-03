@@ -63,7 +63,7 @@ const AnimatedNavbar = () => {
     <Navbar onMouseLeave={onMouseLeave} navLogo={navLogo}>
       {navdata.map((n, index) =>
         n.dropdownItems && n.dropdownItems.length < 1 ? (
-          <NavbarItemEl>
+          <NavbarItemEl key={index}>
             <NavbarItemTitle
               color="textColor"
               fontSize={3}
@@ -86,6 +86,7 @@ const AnimatedNavbar = () => {
             index={index}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            key={index}
           >
             {currentIndex === index && (
               <DropdownContainer>{renderSwitch(activeDropdown, n.dropdownItems)}</DropdownContainer>

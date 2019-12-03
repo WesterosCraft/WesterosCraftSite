@@ -4469,7 +4469,7 @@ next-with-apollo-hooks@^3.4.0:
   dependencies:
     isomorphic-unfetch "^3.0.0"
 
-next@^9.0.3:
+next@^9.1.4:
   version "9.1.4"
   resolved "https://registry.yarnpkg.com/next/-/next-9.1.4.tgz#32991dd6b49adca4bac302828eb5a1b3654591b6"
   integrity sha512-NJA6bBdqEWLDksQEylUQ/R2PO0fXb63pOldEvkqggbhcB8j7TGe/UnyZeC0kipatez8h52emJEfoeYPdnTxxVQ==
@@ -4659,10 +4659,10 @@ normalize-url@1.9.1:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
-now@^15.5.0:
-  version "15.8.7"
-  resolved "https://registry.yarnpkg.com/now/-/now-15.8.7.tgz#bce7fb56a1583cede88196bf0f17e7e3c2764cf0"
-  integrity sha512-jrqfRhCiOND+hdIc7zPtRHXBlrBCFAxSGRZYMN+8LSKNlixrSe+pUDG/Lp732nDP+33+GYFjXY8jxLi5qu5yJA==
+now@^16.6.0:
+  version "16.6.0"
+  resolved "https://registry.yarnpkg.com/now/-/now-16.6.0.tgz#09c7752eacfe6a2f571b8be378a685b2b066a9fc"
+  integrity sha512-OHWgh7QOgXi7IDI68yJ7SBTcQZr8rFGdM4w2W5CdOyCoISletVhb1+KO4g4iBQGVFVNp1W6hv4qJGAOODmib5Q==
 
 npm-bundled@^1.0.1:
   version "1.0.6"
@@ -5728,7 +5728,7 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.8.6:
+react-dom@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.12.0.tgz#0da4b714b8d13c2038c9396b54a92baea633fe11"
   integrity sha512-LMxFfAGrcS3kETtQaCkTKjMiifahaMySFDn71fZUNpPHZQEzmk/GiAeIT8JSOrHB23fnuCOMruL2a8NYlw+8Gw==
@@ -5769,7 +5769,7 @@ react-player@^1.12.0:
     load-script "^1.0.0"
     prop-types "^15.7.2"
 
-react@^16.9.0:
+react@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
   integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
