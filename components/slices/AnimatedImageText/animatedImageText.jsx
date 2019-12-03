@@ -33,7 +33,7 @@ const AnimatedImageText = ({ input }) => {
             position: 'absolute',
             zIndex: 5,
             top: '-80px',
-            left: textFirst ? '0' : ['0px', '105px'],
+            left: textFirst ? '0' : ['0px', null, null, '20px'],
           }}
         >
           <Text color="textGray" fontSize={144} fontWeight="bold" opacity="0.1">
