@@ -2,12 +2,6 @@ import * as BABYLON from 'babylonjs';
 import React from 'react';
 
 export default class Scene extends React.Component {
-  onResizeWindow = () => {
-    if (this.engine) {
-      this.engine.resize();
-    }
-  };
-
   componentDidMount() {
     this.engine = new BABYLON.Engine(
       this.canvas,
@@ -37,6 +31,12 @@ export default class Scene extends React.Component {
     window.removeEventListener('resize', this.onResizeWindow);
   }
 
+  onResizeWindow = () => {
+    if (this.engine) {
+      this.engine.resize();
+    }
+  };
+
   onCanvasLoaded = c => {
     if (c !== null) {
       this.canvas = c;
@@ -44,8 +44,6 @@ export default class Scene extends React.Component {
   };
 
   render() {
-    // 'rest' can contain additional properties that you can flow through to canvas:
-    // (id, className, etc.)
     const { width, height, ...rest } = this.props;
 
     let opts;
@@ -55,6 +53,13 @@ export default class Scene extends React.Component {
       opts.height = height;
     }
 
-    return <canvas id="renderCanvas" {...opts} ref={this.onCanvasLoaded} />;
+    return (
+      <canvas
+        id="renderCanvas"
+        {...opts}
+        ref={this.onCanvasLoaded}
+        style={{ width: '100%', height: '100%' }}
+      />
+    );
   }
 }

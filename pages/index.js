@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Flex } from 'rebass';
+import { Text, Flex, Box } from 'rebass';
 import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
@@ -32,8 +32,16 @@ const HomePage = () => {
               {' '}
               {page.subheading}{' '}
             </Text>{' '}
-            <Weirwood />
           </Flex>{' '}
+          <Box
+            sx={{
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+            }}
+          >
+            <Weirwood />
+          </Box>{' '}
         </HomePageTemplate>{' '}
         <SliceZone slices={page.slices} />{' '}
       </Layout>

@@ -1,6 +1,7 @@
 import React from 'react';
 import * as BABYLON from 'babylonjs';
 import 'babylonjs-loaders';
+import { Box } from 'rebass';
 
 import Scene from './scene'; // import the component above linking to file we just created.
 
@@ -31,17 +32,18 @@ export default class Weirwood extends React.Component {
 
     this.setup(e);
 
-    BABYLON.SceneLoader.Append('/', 'scene.glb', scene, function(meshes) {
+    BABYLON.SceneLoader.Append('/', 'scene.glb', scene, meshes => {
       const model = scene.getMeshByName('__root__');
 
-      model.rotate(BABYLON.Axis.Y, Math.PI / 2, BABYLON.Space.WORLD);
-      scene.createDefaultEnvironment({
-        createSkybox: false,
-        createGround: false,
-      });
+      model.rotate(BABYLON.Axis.Y, -195, BABYLON.Space.WORLD);
+      // scene.createDefaultEnvironment({
+      //   createSkybox: false,
+      //   createGround: false,
+      // });
       scene.createDefaultCameraOrLight(true, true, true);
     });
 
+    scene.clearColor = BABYLON.Color3.Blue();
     scene.autoClear = false;
 
     this.run(e);
@@ -49,9 +51,17 @@ export default class Weirwood extends React.Component {
 
   render() {
     return (
-      <div>
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          top: 0,
+          left: 0,
+        }}
+      >
         <Scene onSceneMount={this.onSceneMount} />
-      </div>
+      </Box>
     );
   }
 }
