@@ -14,3 +14,10 @@ export const statusColor = status => {
 
   return 'black';
 };
+
+export const sizeParser = string => {
+  if (string) {
+    return !string.includes(',') ? string : string.split(',');
+  }
+  return string;
+};

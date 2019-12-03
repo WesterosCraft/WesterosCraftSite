@@ -1,28 +1,30 @@
 import React from 'react';
 import { Flex, Text, Box } from 'rebass';
-import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Button from '../../atoms/button/button';
 import { MotionImage, MotionImageContainer } from './styledAnimatedImageText';
+import { sizeParser } from '../../../utility/helpers';
 
 const AnimatedImageText = ({ input }) => {
-  const boxOrder = input.order === 'textFirst';
+  const textFirst = input.order === 'textFirst';
   const [ref, inView] = useInView({ threshold: 0, triggerOnce: true });
+
+  console.log('sizeParaser: ', sizeParser(input.marginBottom));
 
   return (
     <Flex
-      flexDirection={['column', null, 'row']}
+      flexDirection={['column', null, null, 'row']}
       justifyContent="center"
       alignItems="center"
       maxWidth={1178}
       mx="auto"
-      mt={input.marginTop}
-      mb={input.marginBottom}
-      pt={input.paddingTop}
-      pb={input.paddingBottom}
+      mt={sizeParser(input.marginTop)}
+      mb={sizeParser(input.marginBottom)}
+      pt={sizeParser(input.paddingTop)}
+      pb={sizeParser(input.paddingBottom)}
     >
       <Flex
-        order={boxOrder ? '1' : ['1', '2']}
+        order={textFirst ? '1' : ['1', null, null, '2']}
         sx={{ position: 'relative', width: ['100%', null, '50%'] }}
         px={10}
         className="animatedImageText-textColumn"
@@ -33,7 +35,7 @@ const AnimatedImageText = ({ input }) => {
             position: 'absolute',
             zIndex: 5,
             top: '-80px',
-            left: boxOrder ? '0' : '105px',
+            left: textFirst ? '0' : ['0px', '105px'],
           }}
         >
           <Text color="textGray" fontSize={144} fontWeight="bold" opacity="0.1">
@@ -45,7 +47,7 @@ const AnimatedImageText = ({ input }) => {
             zIndex: 10,
             position: 'relative',
           }}
-          ml={boxOrder ? 'inherit' : 'auto'}
+          ml={textFirst ? 'inherit' : 'auto'}
           maxWidth={400}
           className="animatedImageText-textContainer"
         >
@@ -60,8 +62,10 @@ const AnimatedImageText = ({ input }) => {
       </Flex>
 
       <Flex
-        order={boxOrder ? ['1', '2'] : '1'}
-        sx={{ width: ['100%', null, '50%'] }}
+        sx={{
+          width: ['100%', null, '50%'],
+          order: textFirst ? '2' : ['2', null, null, '1'],
+        }}
         className="animatedImageText-imageColumn"
       >
         <Box sx={{ position: 'relative' }} width={[372, 458]} height={482} ref={ref} mx="auto">
