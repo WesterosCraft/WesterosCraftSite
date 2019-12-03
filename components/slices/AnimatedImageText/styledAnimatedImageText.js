@@ -6,7 +6,7 @@ export const MotionImage = styled(motion.img)`
   left: 0;
   bottom: 0;
   overflow: hidden;
-  width: 372px;
+  width: 335px;
   height: 482px;
   opacity: 0;
 
@@ -20,7 +20,7 @@ export const MotionImageContainer = styled(motion.div)`
   left: 0;
   bottom: 0;
   overflow: hidden;
-  width: 372px;
+  width: 335px;
 
   opacity: 0;
 

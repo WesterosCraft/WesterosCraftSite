@@ -9,8 +9,6 @@ const AnimatedImageText = ({ input }) => {
   const textFirst = input.order === 'textFirst';
   const [ref, inView] = useInView({ threshold: 0, triggerOnce: true });
 
-  console.log('sizeParaser: ', sizeParser(input.marginBottom));
-
   return (
     <Flex
       flexDirection={['column', null, null, 'row']}
@@ -48,6 +46,7 @@ const AnimatedImageText = ({ input }) => {
             position: 'relative',
           }}
           ml={textFirst ? 'inherit' : 'auto'}
+          mr={['auto', null, 'inherit']}
           maxWidth={400}
           className="animatedImageText-textContainer"
         >
@@ -63,12 +62,12 @@ const AnimatedImageText = ({ input }) => {
 
       <Flex
         sx={{
-          width: ['100%', null, '50%'],
+          width: ['100%', null, null, '50%'],
           order: textFirst ? '2' : ['2', null, null, '1'],
         }}
         className="animatedImageText-imageColumn"
       >
-        <Box sx={{ position: 'relative' }} width={[372, 458]} height={482} ref={ref} mx="auto">
+        <Box sx={{ position: 'relative' }} width={[335, 458]} height={482} ref={ref} mx="auto">
           {inView ? (
             <MotionImageContainer
               animate={{ height: '100%', opacity: 1 }}
