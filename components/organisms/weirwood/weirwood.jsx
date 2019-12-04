@@ -32,29 +32,32 @@ export default class Weirwood extends React.Component {
 
     this.setup(e);
 
-    BABYLON.SceneLoader.Append('/', 'dragongtl.glb', scene, meshes => {
-      const model = scene.getMeshByName('dragongtl');
+    BABYLON.SceneLoader.ImportMesh('', '', 'dragongtl.glb', scene, meshes => {
+      const dragon = meshes[0];
 
-      model.position = new BABYLON.Vector3(10, 10, 10);
+      // dragon.rotationQuaternion = undefined;
 
+      // dragon.rotation.y = Math.PI / 7.5;
+      // dragon.rotation.z = -Math.PI / 2.25;
+
+      var axis = new BABYLON.Vector3(1, 1, 1);
+      var angle = Math.PI / 8;
+      var quaternion = new BABYLON.Quaternion.RotationAxis(axis, angle);
+      dragon.rotationQuaternion = quaternion;
+      dragon.position = new BABYLON.Vector3(-30, -30, -40);
+      // const model = scene.getMeshByName('dragongtl');
+      // console.log('model', model);
+      // model.position = new BABYLON.Vector3(10, 10, 10);
+      // model.translate(new BABYLON.Vector3(5, 0, 0), -180);
       // model.rotate(BABYLON.Axis.X, 0, BABYLON.Space.WORLD);
       // model.rotate(BABYLON.Axis.Y, 0, BABYLON.Space.WORLD);
       // model.rotate(BABYLON.Axis.Z, 0, BABYLON.Space.WORLD);
-      scene.createDefaultEnvironment({
-        createSkybox: false,
-        createGround: false,
-      });
-      scene.createDefaultCameraOrLight(true, true, true);
+      // scene.createDefaultCameraOrLight(true, true, true);
     });
 
-    BABYLON.SceneLoader.Append('/', 'dragon2gtl.glb', scene, meshes => {
-      const model = scene.getMeshByName('__root__');
-
-      model.rotate(BABYLON.Axis.Y, -195, BABYLON.Space.WORLD);
-      scene.createDefaultEnvironment({
-        createSkybox: false,
-        createGround: false,
-      });
+    BABYLON.SceneLoader.ImportMesh('', '', 'dragon2gtl.glb', scene, meshes => {
+      // const model = scene.getMeshByName('__root__');
+      // model.rotate(BABYLON.Axis.Y, -195, BABYLON.Space.WORLD);
       scene.createDefaultCameraOrLight(true, true, true);
     });
 
@@ -73,7 +76,7 @@ export default class Weirwood extends React.Component {
           height: '100%',
           top: 0,
           left: 0,
-          pointerEvents: 'none',
+          pointerEvents: 'none'
         }}
       >
         <Scene onSceneMount={this.onSceneMount} />
