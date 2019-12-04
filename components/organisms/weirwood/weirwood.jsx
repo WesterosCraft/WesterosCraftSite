@@ -32,14 +32,29 @@ export default class Weirwood extends React.Component {
 
     this.setup(e);
 
-    BABYLON.SceneLoader.Append('/', 'scene.glb', scene, meshes => {
+    BABYLON.SceneLoader.Append('/', 'dragongtl.glb', scene, meshes => {
+      const model = scene.getMeshByName('dragongtl');
+
+      model.position = new BABYLON.Vector3(10, 10, 10);
+
+      // model.rotate(BABYLON.Axis.X, 0, BABYLON.Space.WORLD);
+      // model.rotate(BABYLON.Axis.Y, 0, BABYLON.Space.WORLD);
+      // model.rotate(BABYLON.Axis.Z, 0, BABYLON.Space.WORLD);
+      scene.createDefaultEnvironment({
+        createSkybox: false,
+        createGround: false,
+      });
+      scene.createDefaultCameraOrLight(true, true, true);
+    });
+
+    BABYLON.SceneLoader.Append('/', 'dragon2gtl.glb', scene, meshes => {
       const model = scene.getMeshByName('__root__');
 
       model.rotate(BABYLON.Axis.Y, -195, BABYLON.Space.WORLD);
-      // scene.createDefaultEnvironment({
-      //   createSkybox: false,
-      //   createGround: false,
-      // });
+      scene.createDefaultEnvironment({
+        createSkybox: false,
+        createGround: false,
+      });
       scene.createDefaultCameraOrLight(true, true, true);
     });
 
@@ -53,11 +68,12 @@ export default class Weirwood extends React.Component {
     return (
       <Box
         sx={{
-          position: 'absolute',
+          position: 'fixed',
           width: '100%',
           height: '100%',
           top: 0,
           left: 0,
+          pointerEvents: 'none',
         }}
       >
         <Scene onSceneMount={this.onSceneMount} />

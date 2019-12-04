@@ -33,15 +33,7 @@ const HomePage = () => {
               {page.subheading}{' '}
             </Text>{' '}
           </Flex>{' '}
-          <Box
-            sx={{
-              position: 'relative',
-              width: '100%',
-              height: '100%',
-            }}
-          >
-            <Weirwood />
-          </Box>{' '}
+          <Weirwood />
         </HomePageTemplate>{' '}
         <SliceZone slices={page.slices} />{' '}
       </Layout>
