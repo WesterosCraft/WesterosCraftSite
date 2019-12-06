@@ -53,3 +53,14 @@ fragment textBanner on slices_textBanner_BlockType {
   paddingTop
   paddingBottom
 }
+
+fragment text on slices_text_BlockType {
+  text
+  variant
+  fontWeight
+  textAlign
+  marginTop
+  marginBottom
+  paddingTop
+  paddingBottom
+}

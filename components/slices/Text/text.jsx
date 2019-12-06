@@ -1,18 +1,19 @@
 import React from 'react';
-import { RichText } from 'prismic-reactjs';
 import { Text } from 'rebass';
+import { sizeParser } from '../../../utility/helpers';
 
 const TextSlice = ({ input }) => {
-  const { primary } = input;
   return (
     <Text
-      variant={primary.text[0].type}
-      textAlign={primary.alignment}
-      color={primary.color}
-      mt={primary.margin_top}
-      mb={primary.margin_bottom}
+      variant={input.variant}
+      fontWeight={input.fontWeight}
+      textAlign={input.textAlign}
+      mt={sizeParser(input.marginTop)}
+      mb={sizeParser(input.marginBottom)}
+      pt={sizeParser(input.paddingTop)}
+      pb={sizeParser(input.paddingBottom)}
     >
-      {RichText.asText(primary.text)}
+      {input.text}
     </Text>
   );
 };

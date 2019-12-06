@@ -10,7 +10,7 @@ import TextBanner from './TextBanner/textBanner';
 const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
     switch (slice.__typename) {
-      case 'text':
+      case 'slices_text_BlockType':
         return <TextSlice input={slice} key={index} />;
       case 'slices_animatedImageWithText_BlockType':
         return <AnimatedImageText input={slice} key={index} />;

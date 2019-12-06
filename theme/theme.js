@@ -17,6 +17,7 @@ const theme = {
     warning: '#FFB305',
     abandoned: '#48C8F0',
     gray: '#C4C4C4',
+    gray2: '#231F20',
   },
   font: {
     primaryFont: 'Cinzel, serif',
@@ -44,6 +45,10 @@ const theme = {
       fontFamily: 'Cinzel, serif',
       fontSize: [5, 6],
       fontWeight: 500,
+    },
+    heading4: {
+      fontFamily: 'Montserrat, sans-serif',
+      fontSize: [5, 6],
     },
     heading6: {
       fontFamily: 'Montserrat, sans-serif',

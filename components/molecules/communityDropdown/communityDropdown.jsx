@@ -5,9 +5,11 @@ import DropdownContainer from '../../atoms/dropdownContainer/dropdownContainer';
 const CommunityDropdown = ({ data }) => {
   return (
     <DropdownContainer className="community-dropdown" sx={{ transform: 'translateX(0px)' }}>
-      <Box p={5}>
+      <Box p={8}>
         {data.map((item, i) => (
-          <Text variant="heading6">{item.dropdownLabel}</Text>
+          <Text variant="heading6" key={i}>
+            {item.dropdownLabel}
+          </Text>
         ))}
         <Flex flexDirection="row" my={4}>
           {Array(5)
