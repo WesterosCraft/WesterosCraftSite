@@ -12,6 +12,10 @@ export const NavbarItemTitle = styled.button`
   /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
   position: relative;
   z-index: 2;
+
+  &:visited {
+    color: black;
+  }
 `;
 export const NavbarItemEl = styled.li`
   position: relative;

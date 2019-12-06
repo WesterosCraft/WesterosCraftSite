@@ -4,7 +4,6 @@ import Link from 'next/link';
 import DropdownContainer from '../../atoms/dropdownContainer/dropdownContainer';
 
 const WikiDropdown = ({ data }) => {
-  console.log(data);
   return (
     <DropdownContainer className="wiki-dropdown" sx={{ transform: 'translateX(0px)' }}>
       <Box p={8}>
