@@ -13,7 +13,9 @@ const Navbar = ({ children, onMouseLeave }) => (
   >
     <Flex flexDirection="row" justifyContent="space-between" alignItems="center">
       <Box>
-        <WesterosCraftLogo style={{ width: '194px' }} color="black" />
+        <a href="/">
+          <WesterosCraftLogo style={{ width: '194px' }} color="black" />
+        </a>
       </Box>
       <Flex flexDirection="row" alignItems="center" as="ul">
         {children}
