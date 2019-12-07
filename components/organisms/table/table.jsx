@@ -16,8 +16,12 @@ const Table = ({ columns, data }) => {
         maxHeight: '80vh',
         overflowY: 'scroll',
         position: 'relative',
+        borderRadius: '4px',
       }}
     >
+      <Flex className="progress-table-searchbar" flexDirection="row" alignItems="center" p={4}>
+        <Text variant="heading4">Build Progress</Text>
+      </Flex>
       <Flex
         className="progress-table-columns"
         flexDirection="row"
@@ -28,6 +32,7 @@ const Table = ({ columns, data }) => {
         bg="white"
         sx={{
           borderBottom: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
+          borderTop: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
           position: 'sticky',
           top: 0,
         }}

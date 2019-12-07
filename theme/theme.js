@@ -49,6 +49,7 @@ const theme = {
     heading4: {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: [5, 6],
+      lineHeight: 1.5,
     },
     heading6: {
       fontFamily: 'Montserrat, sans-serif',

@@ -16,7 +16,7 @@ const ProgressPage = () => {
       <Flex flexDirection="row">
         <Box width={1}>
           <Table
-            columns={['Name', 'Region', 'Status', 'Type', 'Date Started', 'Date Completed']}
+            columns={['Destination', 'Region', 'Status', 'Type', 'Date Started', 'Date Completed']}
             data={data.entries}
           />{' '}
         </Box>{' '}
