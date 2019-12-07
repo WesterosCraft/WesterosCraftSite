@@ -15,7 +15,7 @@ const theme = {
     black: '#000000',
     success: '#2CA42C',
     warning: '#FFB305',
-    abandoned: '#48C8F0',
+    orphaned: '#48C8F0',
     gray: '#C4C4C4',
     gray2: '#231F20',
   },

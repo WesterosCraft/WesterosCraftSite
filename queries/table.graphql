@@ -1,0 +1,14 @@
+{
+  entries {
+    ... on wikiDestination_wikiDestination_Entry {
+      title
+      region
+      redoAvailabe
+      serverBuild
+      locationStatus
+      locationType
+      dateStarted
+      dateCompleted
+    }
+  }
+}
