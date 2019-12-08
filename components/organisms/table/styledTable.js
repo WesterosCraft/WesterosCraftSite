@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { Flex, Text, Box } from 'rebass';
 import { IoMdFunnel } from 'react-icons/io';
@@ -21,30 +21,43 @@ export const TableHeaderContainer = ({ children, ...props }) => (
     }}
     {...props}
   >
+    {' '}
     {children}{' '}
   </Flex>
 );
 
-export const TableHeader = ({ children, ...props }) => (
-  <Flex flexDirection="row" width={1} px={4} alignItems="center" {...props}>
-    <Text
-      variant="progress"
-      fontWeight="bold"
-      color="textGray"
-      mr={2}
-      sx={{
-        textTransform: 'uppercase',
-      }}
+export const TableHeader = ({ children, ...props }) => {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <Flex
+      flexDirection="row"
+      width={1}
+      px={4}
+      alignItems="center"
+      {...props}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      {children}{' '}
-    </Text>{' '}
-    <IoMdFunnel />
-  </Flex>
-);
+      <Text
+        variant="progress"
+        fontWeight="bold"
+        color={hovered ? 'brandRed' : 'textGray'}
+        mr={2}
+        sx={{
+          textTransform: 'uppercase',
+        }}
+      >
+        {' '}
+        {children}{' '}
+      </Text>{' '}
+      <IoMdFunnel color={hovered ? '#9B1313' : 'inherit'} />{' '}
+    </Flex>
+  );
+};
 
 export const TableCell = ({ children, key, ...props }) => (
-  <Box width={1} px={4} key={key}>
-    <Text variant="progress" color="textGray" {...props}>
+  <Box width={1} px={4} key={key} className="progress-table-cell">
+    <Text variant="progress" color="textGray" as="p" {...props}>
       {' '}
       {children}{' '}
     </Text>{' '}

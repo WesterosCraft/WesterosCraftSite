@@ -4,6 +4,7 @@ import { Select, Input } from '@rebass/forms';
 
 import hexToRgba from 'hex-to-rgba';
 import { useTable, useSortBy, usePagination } from 'react-table';
+import Badge from '../../atoms/badge/badge';
 import { statusColor, statusLabel, regionLabel } from '../../../utility/helpers';
 import { TableHeader, TableHeaderContainer, TableCell } from './styledTable';
 
@@ -39,7 +40,7 @@ const Table = ({ columns, data }) => {
       my={140}
       sx={{
         boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
-        maxHeight: '90vh',
+
         height: 'auto',
         borderRadius: '4px',
         overflowY: 'hidden',
@@ -61,9 +62,16 @@ const Table = ({ columns, data }) => {
           }}
           minWidth={120}
         >
-          {[10, 20, 30, 40, 50].map(pageSize => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
+          {[
+            { size: 10, label: 10 },
+            { size: 20, label: 20 },
+            { size: 30, label: 30 },
+            { size: 40, label: 40 },
+            { size: 50, label: 50 },
+            { size: data.length, label: 'All' },
+          ].map(pageSize => (
+            <option key={pageSize.size} value={pageSize.size}>
+              Show {pageSize.label}
             </option>
           ))}
         </Select>
@@ -74,7 +82,6 @@ const Table = ({ columns, data }) => {
         sx={{
           overflowY: 'auto',
           position: 'relative',
-          height: 'calc(90vh - 365px)',
         }}
       >
         {headerGroups.map(headerGroup => (
@@ -110,26 +117,9 @@ const Table = ({ columns, data }) => {
                     if (cell.column.Header === 'Status') {
                       return (
                         <Box width={1} px={4} key={cell.index}>
-                          <Box
-                            bg={hexToRgba(statusColor(cell.value), '0.1')}
-                            textAlign="center"
-                            width="fit-content"
-                            px={4}
-                            py={1}
-                            minWidth={120}
-                            sx={{
-                              borderRadius: '4px',
-                            }}
-                          >
-                            <Text
-                              variant="progress"
-                              color={statusColor(cell.value)}
-                              fontWeight="bold"
-                              {...cell.getCellProps()}
-                            >
-                              {statusLabel(cell.value)}
-                            </Text>
-                          </Box>
+                          <Badge variant={statusColor(cell.value)} {...cell.getCellProps()}>
+                            {statusLabel(cell.value)}
+                          </Badge>
                         </Box>
                       );
                     }
@@ -185,126 +175,5 @@ const Table = ({ columns, data }) => {
     </Box>
   );
 };
-
-// const Table = ({ columns, data }) => {
-//   return (
-//     <Box
-//       className="progress-table"
-//       maxWidth={1264}
-//       mx="auto"
-//       my={140}
-//       sx={{
-//         boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
-//         maxHeight: '90vh',
-//         height: 'auto',
-//         borderRadius: '4px',
-//         overflowY: 'hidden',
-//       }}
-//     >
-//       <Flex className="progress-table-searchbar" flexDirection="row" alignItems="center" p={4}>
-//         <Text variant="heading4">Build Progress</Text>
-//       </Flex>
-//       <Box
-//         className="progress-table-content"
-//         sx={{
-//           overflowY: 'scroll',
-//           position: 'relative',
-//           height: 'calc(90vh - 140px)',
-//         }}
-//       >
-//         <Flex
-//           className="progress-table-columns"
-//           flexDirection="row"
-//           alignItems="center"
-//           justifyContent="space-around"
-//           py={3}
-//           width={1}
-//           bg="white"
-//           sx={{
-//             borderBottom: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
-//             borderTop: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
-//             position: 'sticky',
-//             top: 0,
-//           }}
-//         >
-//           {columns.map(item => (
-//             <Box key={item} width={1} px={4}>
-//               <Text
-//                 variant="progress"
-//                 fontWeight="bold"
-//                 color="textGray"
-//                 sx={{
-//                   textTransform: 'uppercase',
-//                 }}
-//               >
-//                 {item}
-//               </Text>
-//             </Box>
-//           ))}
-//         </Flex>
-//         <Box className="progress-table-items">
-//           {data &&
-//             data.map(
-//               item =>
-//                 item.title && (
-//                   <Flex
-//                     flexDirection="row"
-//                     alignItems="center"
-//                     justifyContent="space-around"
-//                     key={item.title}
-//                     width={1}
-//                     sx={{
-//                       borderBottom: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
-//                       height: '48px',
-//                     }}
-//                   >
-//                     <Box width={1} px={4}>
-//                       <Text variant="progress" color="textGray" fontWeight="bold">
-//                         {item.title}
-//                       </Text>
-//                     </Box>
-//                     <Box width={1} px={4}>
-//                       <Text variant="progress">{regionLabel(item.region)}</Text>
-//                     </Box>
-//                     <Box width={1} px={4}>
-//                       <Box
-//                         bg={hexToRgba(statusColor(item.locationStatus), '0.1')}
-//                         textAlign="center"
-//                         width="fit-content"
-//                         px={4}
-//                         py={1}
-//                         minWidth={120}
-//                         sx={{
-//                           borderRadius: '4px',
-//                         }}
-//                       >
-//                         <Text
-//                           variant="progress"
-//                           color={statusColor(item.locationStatus)}
-//                           fontWeight="bold"
-//                           letterSpacing="1.1px"
-//                           as="p"
-//                         >
-//                           {statusLabel(item.locationStatus)}
-//                         </Text>
-//                       </Box>
-//                     </Box>
-//                     <Box width={1} px={4}>
-//                       <Text variant="progress">{item.locationType || 'N/A'}</Text>
-//                     </Box>
-//                     <Box width={1} px={4}>
-//                       <Text variant="progress">{item.dateStarted || 'N/A'}</Text>
-//                     </Box>
-//                     <Box width={1} px={4}>
-//                       <Text variant="progress">{item.dateCompleted || 'N/A'}</Text>
-//                     </Box>
-//                   </Flex>
-//                 )
-//             )}
-//         </Box>
-//       </Box>
-//     </Box>
-//   );
-// };
 
 export default Table;
