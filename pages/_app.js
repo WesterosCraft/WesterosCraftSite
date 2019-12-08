@@ -6,6 +6,7 @@ import { Global, css } from '@emotion/core';
 import { ApolloProvider } from '@apollo/react-hooks';
 import theme from '../theme/theme';
 import withApollo from '../lib/apollo';
+import 'semantic-ui-css/semantic.min.css';
 
 class MyApp extends App {
   renderHead() {
@@ -15,6 +16,10 @@ class MyApp extends App {
         <link
           href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400i,500,700&display=swap"
           rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
         />
       </Head>
     );

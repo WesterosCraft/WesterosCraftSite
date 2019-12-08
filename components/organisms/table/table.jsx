@@ -4,6 +4,7 @@ import { Select, Input } from '@rebass/forms';
 
 import hexToRgba from 'hex-to-rgba';
 import { useTable, useSortBy, usePagination } from 'react-table';
+import { Progress } from 'semantic-ui-react';
 import Badge from '../../atoms/badge/badge';
 import { statusColor, statusLabel, regionLabel } from '../../../utility/helpers';
 import { TableHeader, TableHeaderContainer, TableCell } from './styledTable';
@@ -40,13 +41,13 @@ const Table = ({ columns, data }) => {
       my={140}
       sx={{
         boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
-
         height: 'auto',
         borderRadius: '4px',
         overflowY: 'hidden',
       }}
       {...getTableProps()}
     >
+      <Progress progress percent={44} />
       <Flex
         className="progress-table-searchbar"
         flexDirection="row"
