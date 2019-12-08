@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Box, Flex, Button, Text } from 'rebass';
 import { useQuery } from '@apollo/react-hooks';
 import tableQuery from '../queries/table.graphql';
@@ -9,6 +9,38 @@ import Loader from '../components/atoms/loader/loader';
 const ProgressPage = () => {
   const { loading, error, data } = useQuery(tableQuery);
 
+  const columns = useMemo(
+    () => [
+      {
+        Header: 'Destination',
+        accessor: 'title',
+      },
+      {
+        Header: 'Region',
+        accessor: 'region',
+      },
+      {
+        Header: 'Status',
+        accessor: 'locationStatus',
+      },
+      {
+        Header: 'Type',
+        accessor: 'locationType',
+      },
+      {
+        Header: 'Date Started',
+        accessor: 'dateStarted',
+      },
+      {
+        Header: 'Date Completed',
+        accessor: 'dateCompleted',
+      },
+    ],
+    []
+  );
+
+  const memoData = useMemo(() => data && data.entries, []);
+
   if (error) return <h1> error! </h1>;
   if (loading) return <Loader />;
 
@@ -16,10 +48,8 @@ const ProgressPage = () => {
     <Layout title="WesterosCraft | Project Progress">
       <Flex flexDirection="row">
         <Box width={1}>
-          <Table
-            columns={['Destination', 'Region', 'Status', 'Type', 'Date Started', 'Date Completed']}
-            data={data.entries}
-          />{' '}
+          {' '}
+          <Table columns={columns} data={data.entries} />{' '}
         </Box>{' '}
       </Flex>{' '}
     </Layout>

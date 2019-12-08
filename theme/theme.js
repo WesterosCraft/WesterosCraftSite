@@ -66,15 +66,33 @@ const theme = {
       lineHeight: 1.7,
     },
   },
-  buttons: {
-    link: {
-      backgroundColor: 'transparent',
-      paddingX: '0',
-      paddingY: '0',
-      '&:hover': {
-        color: '#FBC000',
+  forms: {
+    select: {
+      borderRadius: 8,
+      width: '100%',
+      fontSize: 2,
+      borderColor: 'gray',
+      '&:focus': {
+        boxShadow: '0 0 0 2px #9B1313',
+        outline: 'none',
       },
     },
+    input: {
+      borderRadius: 8,
+      width: '100%',
+      fontSize: 2,
+      borderColor: 'gray',
+      '&:focus': {
+        boxShadow: '0 0 0 2px #9B1313',
+        outline: 'none',
+      },
+    },
+    textarea: {},
+    label: {},
+    radio: {},
+    checkbox: {},
+  },
+  buttons: {
     primary: {
       backgroundColor: 'brandRed',
       color: 'white',
@@ -90,6 +108,27 @@ const theme = {
       '&:focus': {
         transform: 'translate3d(0px, 0px, 0px)',
         boxShadow: 'rgba(255, 71, 133, 0.4) 0px 1px 9px 2px',
+      },
+    },
+    link: {
+      backgroundColor: 'transparent',
+      paddingX: '0',
+      paddingY: '0',
+      '&:hover': {
+        color: '#FBC000',
+      },
+    },
+    utility: {
+      color: 'brandRed',
+      backgroundColor: 'transparent',
+      paddingX: '0',
+      paddingY: '0',
+      cursor: 'pointer',
+      fontWeight: '600',
+      '&:disabled': {
+        color: 'brandRed',
+        cursor: 'inherit',
+        opacity: '0.7',
       },
     },
   },
