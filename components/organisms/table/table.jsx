@@ -5,6 +5,7 @@ import { Select, Input } from '@rebass/forms';
 import hexToRgba from 'hex-to-rgba';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import { statusColor, statusLabel, regionLabel } from '../../../utility/helpers';
+import { TableHeader, TableHeaderContainer, TableCell } from './styledTable';
 
 const Table = ({ columns, data }) => {
   const {
@@ -77,41 +78,17 @@ const Table = ({ columns, data }) => {
         }}
       >
         {headerGroups.map(headerGroup => (
-          <Flex
-            className="progress-table-columns"
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="space-around"
-            py={3}
-            width={1}
-            bg="white"
-            key={headerGroup.index}
-            sx={{
-              borderBottom: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
-              borderTop: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
-              position: 'sticky',
-              top: 0,
-            }}
-            {...headerGroup.getHeaderGroupProps()}
-          >
+          <TableHeaderContainer key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <Box key={column.index} width={1} px={4}>
-                <Text
-                  variant="progress"
-                  fontWeight="bold"
-                  color="textGray"
-                  sx={{
-                    textTransform: 'uppercase',
-                  }}
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                >
-                  {column.render('Header')}
-                </Text>
-              </Box>
+              <TableHeader
+                key={column.index}
+                {...column.getHeaderProps(column.getSortByToggleProps())}
+              >
+                {column.render('Header')}
+              </TableHeader>
             ))}
-          </Flex>
+          </TableHeaderContainer>
         ))}
-
         <Box className="progress-table-items" {...getTableBodyProps()}>
           {page.map(row => {
             prepareRow(row);
@@ -158,16 +135,9 @@ const Table = ({ columns, data }) => {
                     }
                     if (cell.column.Header === 'Destination') {
                       return (
-                        <Box width={1} px={4} key={cell.index}>
-                          <Text
-                            variant="progress"
-                            color="textGray"
-                            fontWeight="bold"
-                            {...cell.getCellProps()}
-                          >
-                            {cell.render('Cell')}
-                          </Text>
-                        </Box>
+                        <TableCell fontWeight="bold" key={cell.index}>
+                          {cell.render('Cell')}
+                        </TableCell>
                       );
                     }
                     if (cell.column.Header === 'Region') {
@@ -179,13 +149,7 @@ const Table = ({ columns, data }) => {
                         </Box>
                       );
                     }
-                    return (
-                      <Box width={1} px={4} key={cell.index}>
-                        <Text variant="progress" color="textGray" {...cell.getCellProps()}>
-                          {cell.render('Cell')}
-                        </Text>
-                      </Box>
-                    );
+                    return <TableCell key={cell.index}>{cell.render('Cell')}</TableCell>;
                   })}
                 </Flex>
               )
