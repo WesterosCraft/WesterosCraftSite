@@ -5,6 +5,7 @@ import tableQuery from '../queries/table.graphql';
 import Table from '../components/organisms/table/table';
 import Layout from '../components/templates/layout/layout';
 import Loader from '../components/atoms/loader/loader';
+import StatsBar from '../components/organisms/statsBar/statsBar';
 
 const ProgressPage = () => {
   const { loading, error, data } = useQuery(tableQuery);
@@ -47,9 +48,9 @@ const ProgressPage = () => {
   return (
     <Layout title="WesterosCraft | Project Progress">
       <Flex flexDirection="row">
-        <Box width={1}>
+        <Box width={1} mt={140}>
           {' '}
-          <Table columns={columns} data={data.entries} />{' '}
+          <StatsBar data={data.entries} /> <Table columns={columns} data={data.entries} />{' '}
         </Box>{' '}
       </Flex>{' '}
     </Layout>
