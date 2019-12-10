@@ -6,11 +6,11 @@ const Stat = ({ stat, label }) => (
     <Box>
       <Image />
     </Box>
-    <Flex flexDirection="column">
-      <Text variant="heading4" fontWeight="bold" as="h4">
+    <Flex flexDirection="column" justifyContent="center" alignItems="center">
+      <Text fontSize={['56px']} fontWeight="bold" as="h4">
         {stat}
       </Text>
-      <Text fontSize={[1, 2]} as="p">
+      <Text fontSize={[1, 2]} as="p" fontWeight={600}>
         {label}
       </Text>
     </Flex>

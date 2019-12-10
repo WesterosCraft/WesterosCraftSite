@@ -13,7 +13,7 @@ class MyApp extends App {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
-          href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400i,500,700&display=swap"
+          href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,400i,500,600,700,800, 900&display=swap"
           rel="stylesheet"
         />
         <link
