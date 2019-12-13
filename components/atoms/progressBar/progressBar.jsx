@@ -37,14 +37,21 @@ const BarText = styled(Text)`
   text-align: left;
 `;
 
-const ProgressBar = ({ progress }) => (
-  <ProgressUI className="progress-bar">
-    <Bar progress={progress} bg="brandRed">
-      <BarText fontSize={[1, 2]} color="white">
-        {progress}%
-      </BarText>
-    </Bar>
-  </ProgressUI>
+const ProgressBar = ({ progress, label }) => (
+  <>
+    <ProgressUI className="progress-bar">
+      <Bar progress={progress} bg="brandRed">
+        <BarText fontSize={[1, 2]} color="white">
+          {progress}%
+        </BarText>
+      </Bar>
+    </ProgressUI>
+    {label && (
+      <Text textAlign="center" mt={3} variant="heading6">
+        {label}
+      </Text>
+    )}
+  </>
 );
 
 export default ProgressBar;

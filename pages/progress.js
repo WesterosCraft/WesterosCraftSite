@@ -49,7 +49,14 @@ const ProgressPage = () => {
     <Layout title="WesterosCraft | Project Progress">
       <Flex flexDirection="row">
         <Box width={1} mt={140}>
-          {' '}
+          <Box mb={140} textAlign="center">
+            <Text variant="heading1" as="h1">
+              WesterosCraft Progress Tracker{' '}
+            </Text>{' '}
+            <Text variant="heading4" as="h4">
+              some text{' '}
+            </Text>{' '}
+          </Box>{' '}
           <StatsBar data={data.entries} /> <Table columns={columns} data={data.entries} />{' '}
         </Box>{' '}
       </Flex>{' '}

@@ -37,7 +37,7 @@ const Table = ({ columns, data }) => {
       className="progress-table"
       maxWidth={1264}
       mx="auto"
-      my={140}
+      mb={140}
       sx={{
         boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
         height: 'auto',
