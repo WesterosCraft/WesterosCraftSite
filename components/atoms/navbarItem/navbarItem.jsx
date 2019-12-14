@@ -12,6 +12,16 @@ export const NavbarItemTitle = styled.button`
   /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
   position: relative;
   z-index: 2;
+  font-weight: 500;
+
+  &:hover,
+  &:focus {
+    color: #9b1313;
+  }
+
+  &:focus {
+    outline: 0;
+  }
 
   &:visited {
     color: black;
@@ -37,11 +47,7 @@ const NavbarItem = ({ title, children, onMouseEnter, index, onMouseLeave }) => {
     onMouseEnter(index);
   };
   return (
-    <NavbarItemEl
-      onMouseEnter={onMouseEnterFunc}
-      onFocus={onMouseEnterFunc}
-      onMouseLeave={onMouseLeave}
-    >
+    <NavbarItemEl onMouseEnter={onMouseEnterFunc} onFocus={onMouseEnterFunc} onMouseLeave={onMouseLeave}>
       <NavbarItemTitle
         color="textColor"
         fontSize={3}

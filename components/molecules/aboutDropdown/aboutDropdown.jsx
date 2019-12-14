@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 import { Box, Text, Flex, Image } from 'rebass';
 import Link from 'next/link';
 import DropdownContainer from '../../atoms/dropdownContainer/dropdownContainer';
+import { NavLinkWrapper } from './styledAboutDropdown';
 
 const AboutDropdown = ({ data }) => {
-  console.log('data', data);
   return (
     <DropdownContainer width={400} className="about-dropdown" sx={{ transform: 'translateX(0px)' }}>
       <Box p={8}>
@@ -12,14 +12,13 @@ const AboutDropdown = ({ data }) => {
           item.dropdownDescription ? (
             <Fragment key={i}>
               <Text variant="heading6">{item.dropdownLabel}</Text>
-              <Text fontSize={[2]} fontWeight="normal">
+              <Text fontSize={[2]} fontWeight="normal" lineHeight={1.4} mb={2}>
                 {item.dropdownDescription}
               </Text>
             </Fragment>
-          ) : item.dropdownLinkType === 'internal' ||
-            item.dropdownLinkType === 'internalNewWindow' ? (
+          ) : item.dropdownLinkType === 'internal' || item.dropdownLinkType === 'internalNewWindow' ? (
             <Link href={item.dropdownLink} key={i}>
-              <Flex
+              <NavLinkWrapper
                 flexDirection="row"
                 alignItems="center"
                 justifyContent="flex-start"
@@ -35,16 +34,18 @@ const AboutDropdown = ({ data }) => {
                   height={['36px']}
                   sx={{ borderRadius: '100%' }}
                 />
-                <Box pl={[4]}>
-                  <Text variant="paragraph">{item.dropdownLabel}</Text>
-                  <Text fontSize={[2]} fontWeight="normal">
+                <Box pl={[4]} className="about-dropdown-wrapper">
+                  <Text variant="paragraph" fontWeight={500}>
+                    {item.dropdownLabel}
+                  </Text>
+                  <Text fontSize={[2]} fontWeight="normal" color="textColor">
                     {item.dropdownSubtitle}
                   </Text>
                 </Box>
-              </Flex>
+              </NavLinkWrapper>
             </Link>
           ) : (
-            <Flex
+            <NavLinkWrapper
               flexDirection="row"
               alignItems="center"
               justifyContent="flex-start"
@@ -53,19 +54,16 @@ const AboutDropdown = ({ data }) => {
               href={item.dropdownLink}
               key={i}
             >
-              <Image
-                src={item.dropdownIcon[0].url}
-                width={['36px']}
-                height={['36px']}
-                sx={{ borderRadius: '100%' }}
-              />
-              <Box pl={[4]}>
-                <Text variant="paragraph">{item.dropdownLabel}</Text>
-                <Text fontSize={[2]} fontWeight="normal">
+              <Image src={item.dropdownIcon[0].url} width={['36px']} height={['36px']} sx={{ borderRadius: '100%' }} />
+              <Box pl={[4]} className="about-dropdown-wrapper">
+                <Text variant="paragraph" fontWeight={500}>
+                  {item.dropdownLabel}
+                </Text>
+                <Text fontSize={[2]} fontWeight="normal" color="textColor">
                   {item.dropdownSubtitle}
                 </Text>
               </Box>
-            </Flex>
+            </NavLinkWrapper>
           )
         )}
       </Box>
