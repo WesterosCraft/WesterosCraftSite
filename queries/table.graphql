@@ -1,5 +1,12 @@
 {
   entries {
+    ... on progressPage_progressPage_Entry {
+      heading
+      subheading
+      backgroundImage {
+        url
+      }
+    }
     ... on wikiDestination_wikiDestination_Entry {
       title
       region

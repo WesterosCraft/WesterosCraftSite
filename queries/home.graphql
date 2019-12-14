@@ -8,13 +8,6 @@
       backgroundImage {
         url
       }
-      ctaGroup {
-        ... on ctaGroup_cta_BlockType {
-          buttonLink
-          buttonType
-          buttonLabel
-        }
-      }
       slices {
         ...video
         ...animatedImageWithText

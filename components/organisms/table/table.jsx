@@ -39,7 +39,14 @@ const Table = ({ columns, data }) => {
       mx="auto"
       mb={140}
       sx={{
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
+        boxShadow: `0 3.9px 3.5px rgba(0, 0, 0, 0.046),
+        0 9.4px 8.4px rgba(0, 0, 0, 0.065),
+        0 17.7px 15.9px rgba(0, 0, 0, 0.073),
+        0 31.5px 28.4px rgba(0, 0, 0, 0.076),
+        0 58.9px 53.1px rgba(0, 0, 0, 0.074),
+        0 141px 127px rgba(0, 0, 0, 0.07)
+      `,
+        border: '1px solid rgba(0, 0, 0, 0.07)',
         height: 'auto',
         borderRadius: '4px',
         overflowY: 'hidden',
@@ -86,10 +93,7 @@ const Table = ({ columns, data }) => {
         {headerGroups.map(headerGroup => (
           <TableHeaderContainer key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <TableHeader
-                key={column.index}
-                {...column.getHeaderProps(column.getSortByToggleProps())}
-              >
+              <TableHeader key={column.index} {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render('Header')}
               </TableHeader>
             ))}

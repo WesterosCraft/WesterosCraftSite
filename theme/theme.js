@@ -20,7 +20,7 @@ const theme = {
     gray2: '#231F20',
   },
   font: {
-    primaryFont: 'Cinzel, serif',
+    primaryFont: 'Montserrat, sans-serif',
     secondaryFont: 'Montserrat, sans-serif',
   },
   text: {
@@ -31,18 +31,18 @@ const theme = {
       lineHeight: 1.7,
     },
     heading1: {
-      fontFamily: 'Cinzel, serif',
+      fontFamily: 'Montserrat, sans-serif',
       fontSize: [9, 10],
       fontWeight: 700,
       color: 'textColor',
     },
     heading2: {
-      fontFamily: 'Cinzel, serif',
+      fontFamily: 'Montserrat, sans-serif',
       fontSize: [8, 9],
       fontWeight: 500,
     },
     heading3: {
-      fontFamily: 'Cinzel, serif',
+      fontFamily: 'Montserrat, sans-serif',
       fontSize: [5, 6],
       fontWeight: 500,
     },
