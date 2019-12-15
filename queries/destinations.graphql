@@ -1,6 +1,6 @@
-{
-  entries {
-    ... on wikiDestination_wikiDestination_Entry {
+query($section: [String]) {
+  entries(section: $section) {
+   ... on wikiDestination_wikiDestination_Entry {
       title
       region
       redoAvailabe

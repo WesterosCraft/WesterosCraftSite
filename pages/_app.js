@@ -16,10 +16,7 @@ class MyApp extends App {
           href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,400i,500,600,700,800, 900&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="stylesheet"
-          href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
-        />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
       </Head>
     );
   }
@@ -33,7 +30,7 @@ class MyApp extends App {
           <Global
             styles={css`
               * {
-                font-family: ${theme.font.secondaryFont};
+                font-family: ${theme.font.primaryFont};
               }
               body,
               html {
@@ -151,7 +148,7 @@ class MyApp extends App {
                 display: block;
               }
               body {
-                font-family: ${theme.font.secondaryFont};
+                font-family: ${theme.font.primaryFont};
                 line-height: 1;
               }
               ol,

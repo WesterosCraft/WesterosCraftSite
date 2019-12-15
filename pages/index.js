@@ -9,7 +9,7 @@ import Loader from '../components/atoms/loader/loader';
 import Weirwood from '../components/organisms/weirwood/weirwood';
 
 const HomePage = () => {
-  const { loading, error, data } = useQuery(homeQuery);
+  const { loading, error, data } = useQuery(homeQuery, { variables: { section: 'homePage' } });
 
   if (loading) return <Loader />;
   if (error) {
@@ -21,12 +21,12 @@ const HomePage = () => {
   return (
     page && (
       <Layout title="WesterosCraft">
-        <HomePageTemplate background={page.backgroundImage[0].url}>
+        <HomePageTemplate>
           <Flex flexDirection="column" width={1} mx="auto" textAlign="center" px={[5, 8]}>
             <Text fontSize={[42, 60]} maxWidth={540} mx="auto" fontWeight="bold">
               {page.heading}
             </Text>
-            <Text variant="heading3" mt={6} fontWeight="bold" fontFamily="Cinzel, serif">
+            <Text variant="heading3" mt={6} fontWeight="bold">
               {page.subheading}
             </Text>
           </Flex>

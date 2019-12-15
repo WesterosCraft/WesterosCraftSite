@@ -1,21 +1,12 @@
 #import "./sliceFragments.graphql"
 
-{
-  entries {
-    ... on homePage_homePage_Entry {
+query($section: [String]) {
+
+  entries(section: $section) {
+    ...on homePage_homePage_Entry {
       heading
       subheading
-      backgroundImage {
-        url
-      }
-      ctaGroup {
-        ... on ctaGroup_cta_BlockType {
-          buttonLink
-          buttonType
-          buttonLabel
-        }
-      }
-      slices {
+       slices {
         ...video
         ...animatedImageWithText
         ...featuredBanner
