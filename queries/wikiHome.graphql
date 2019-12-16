@@ -1,0 +1,23 @@
+query($section: [String]) {
+  entries(section: $section) {
+    ...on wikiPage_wikiPage_Entry {
+      heading
+      subheading
+      wikiCard {
+        ...on wikiCard_BlockType {
+          heading
+          subheading
+          wikiCardLinks {
+            ...on wikiCardLinks_wikiCardLink_BlockType {
+              wikiCardLabel
+              wikiCardLink
+              wikiCardLinkType
+            }
+          }
+          wikiCardLinkLabel
+          wikiCardLink
+        }
+      }
+    }
+  }
+}
