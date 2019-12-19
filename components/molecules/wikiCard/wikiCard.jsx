@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Flex, Text } from 'rebass';
+import Icon from '../../atoms/icon/icon';
 
 const WikiCard = ({ data }) => (
   <Card
@@ -13,6 +14,7 @@ const WikiCard = ({ data }) => (
     mx={6}
   >
     <Flex flexDirection="column" p={6}>
+      <Icon name={data.icon} width="36" height="36" />
       <Text>{data.heading}</Text>
       <Text>{data.subheading}</Text>
     </Flex>

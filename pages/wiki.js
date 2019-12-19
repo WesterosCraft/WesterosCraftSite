@@ -27,7 +27,7 @@ const WikiPage = () => {
           <Text variant="heading1">{page.heading}</Text>
           <Text>{page.subheading}</Text>
         </Flex>
-        <Flex flexDirection="row" justifyContent="center" flexWrap="wrap" mt={120}>
+        <Flex flexDirection="row" justifyContent="center" flexWrap="wrap" my={120}>
           {page.wikiCard.map(card => (
             <WikiCard data={card} />
           ))}

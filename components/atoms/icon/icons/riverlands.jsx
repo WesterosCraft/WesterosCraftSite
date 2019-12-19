@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Riverlands = props => (
-  <svg fill="none" {...props}>
+  <svg fill="none" {...props} viewBox="0 0 16 16">
     <path
       fillRule="evenodd"
       clipRule="evenodd"

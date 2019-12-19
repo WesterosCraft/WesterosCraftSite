@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Crownlands = props => (
-  <svg fill="none" {...props}>
+  <svg {...props} viewBox="0 0 16 16">
     <path
       fillRule="evenodd"
       clipRule="evenodd"

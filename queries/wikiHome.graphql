@@ -7,6 +7,7 @@ query($section: [String]) {
         ...on wikiCard_BlockType {
           heading
           subheading
+          icon
           wikiCardLinks {
             ...on wikiCardLinks_wikiCardLink_BlockType {
               wikiCardLabel
