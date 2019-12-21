@@ -1,13 +1,10 @@
 #import "./sliceFragments.graphql"
 
-{
-  entries {
+query($section: [String]) {
+  entries(section: $section) {
     ... on homePage_homePage_Entry {
       heading
       subheading
-      backgroundImage {
-        url
-      }
       slices {
         ...video
         ...animatedImageWithText

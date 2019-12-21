@@ -9,7 +9,11 @@ import Weirwood from '../components/organisms/weirwood/weirwood';
 import homeQuery from '../queries/home.graphql';
 
 const HomePage = () => {
-  const { loading, error, data } = useQuery(homeQuery);
+  const { loading, error, data } = useQuery(homeQuery, {
+    variables: {
+      section: 'homePage',
+    },
+  });
 
   if (loading) return <Loader />;
   if (error) {

@@ -1,0 +1,10 @@
+query($section: [String]) {
+
+  entries(section: $section) {
+    ...on progressPage_progressPage_Entry {
+      heading
+      subheading
+    }
+  }
+}
+

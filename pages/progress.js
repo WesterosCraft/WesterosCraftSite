@@ -1,14 +1,25 @@
 import React, { useMemo } from 'react';
-import { Box, Flex, Button, Text } from 'rebass';
+import { Box, Flex, Text } from 'rebass';
 import { useQuery } from '@apollo/react-hooks';
-import tableQuery from '../queries/table.graphql';
+import progressQuery from '../queries/progress.graphql';
+import destinationQuery from '../queries/destinations.graphql';
 import Table from '../components/organisms/table/table';
 import Layout from '../components/templates/layout/layout';
 import Loader from '../components/atoms/loader/loader';
 import StatsBar from '../components/organisms/statsBar/statsBar';
 
 const ProgressPage = () => {
-  const { loading, error, data } = useQuery(tableQuery);
+  const { loading, error, data } = useQuery(destinationQuery, {
+    variables: {
+      section: 'wikiDestination',
+    },
+  });
+
+  const { loading: loadingP, error: errorP, data: dataP } = useQuery(progressQuery, {
+    variables: {
+      section: 'progressPage',
+    },
+  });
 
   const columns = useMemo(
     () => [
@@ -42,24 +53,27 @@ const ProgressPage = () => {
 
   const memoData = useMemo(() => data && data.entries, []);
 
-  if (error) return <h1> error! </h1>;
-  if (loading) return <Loader />;
+  if (error || errorP) return <h1> error! </h1>;
+  if (loading || loadingP) return <Loader />;
+
+  const pageData = dataP && dataP.entries[0];
 
   return (
     <Layout title="WesterosCraft | Project Progress">
       <Flex flexDirection="row">
-        <Box width={1} mt={140}>
+        <Box width={1} mt={140} px={5}>
           <Box mb={140} textAlign="center">
-            <Text variant="heading1" as="h1">
-              WesterosCraft Progress Tracker{' '}
-            </Text>{' '}
-            <Text variant="heading4" as="h4">
-              some text{' '}
-            </Text>{' '}
-          </Box>{' '}
-          <StatsBar data={data.entries} /> <Table columns={columns} data={data.entries} />{' '}
-        </Box>{' '}
-      </Flex>{' '}
+            <Text variant="heading2" as="h2">
+              {pageData.heading}
+            </Text>
+            <Text variant="heading4" as="h4" mt={6}>
+              {pageData.subheading}
+            </Text>
+          </Box>
+          <StatsBar data={data.entries} />
+          <Table columns={columns} data={data.entries} />
+        </Box>
+      </Flex>
     </Layout>
   );
 };

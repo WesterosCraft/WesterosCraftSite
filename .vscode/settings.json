@@ -9,5 +9,8 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "eslint.enable": true
+  "eslint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

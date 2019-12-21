@@ -1,12 +1,5 @@
-{
-  entries {
-    ... on progressPage_progressPage_Entry {
-      heading
-      subheading
-      backgroundImage {
-        url
-      }
-    }
+query($section: [String]) {
+  entries(section: $section) {
     ... on wikiDestination_wikiDestination_Entry {
       title
       region

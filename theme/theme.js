@@ -21,49 +21,41 @@ const theme = {
   },
   font: {
     primaryFont: 'Montserrat, sans-serif',
-    secondaryFont: 'Montserrat, sans-serif',
   },
   text: {
     paragraph: {
-      fontFamily: 'Montserrat, sans-serif',
-      fontSize: [3, 4],
+      fontSize: [2, 3],
       color: 'textColor',
-      lineHeight: 1.7,
+      lineHeight: 1.5,
     },
     heading1: {
-      fontFamily: 'Montserrat, sans-serif',
       fontSize: [9, 10],
       fontWeight: 700,
       color: 'textColor',
     },
     heading2: {
-      fontFamily: 'Montserrat, sans-serif',
       fontSize: [8, 9],
-      fontWeight: 500,
+      fontWeight: 600,
     },
     heading3: {
-      fontFamily: 'Montserrat, sans-serif',
       fontSize: [5, 6],
       fontWeight: 500,
     },
     heading4: {
-      fontFamily: 'Montserrat, sans-serif',
       fontSize: [5, 6],
       lineHeight: 1.5,
+      fontWeight: 400,
     },
     heading5: {
-      fontFamily: 'Montserrat, sans-serif',
       fontSize: [4, 5],
     },
     heading6: {
-      fontFamily: 'Montserrat, sans-serif',
       fontSize: [3, 4],
       fontWeight: 500,
       color: 'textColor',
       lineHeight: 1.7,
     },
     progress: {
-      fontFamily: 'Montserrat, sans-serif',
       fontSize: [1],
       fontWeight: 500,
       color: 'black',
