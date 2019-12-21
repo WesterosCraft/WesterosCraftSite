@@ -24,9 +24,9 @@ const theme = {
   },
   text: {
     paragraph: {
-      fontSize: [3, 4],
+      fontSize: [2, 3],
       color: 'textColor',
-      lineHeight: 1.7,
+      lineHeight: 1.5,
     },
     heading1: {
       fontSize: [9, 10],

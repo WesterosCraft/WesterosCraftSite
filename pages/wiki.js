@@ -29,7 +29,7 @@ const WikiPage = () => {
         </Flex>
         <Flex flexDirection="row" justifyContent="center" flexWrap="wrap" my={120}>
           {page.wikiCard.map(card => (
-            <WikiCard data={card} />
+            <WikiCard data={card} key={card.heading} />
           ))}
         </Flex>
       </Flex>{' '}
