@@ -1,15 +1,15 @@
 query($section: [String]) {
   entries(section: $section) {
-    ...on wikiPage_wikiPage_Entry {
+    ... on wikiPage_wikiPage_Entry {
       heading
       subheading
       wikiCard {
-        ...on wikiCard_BlockType {
+        ... on wikiCard_BlockType {
           heading
           subheading
           icon
           wikiCardLinks {
-            ...on wikiCardLinks_wikiCardLink_BlockType {
+            ... on wikiCardLinks_wikiCardLink_BlockType {
               wikiCardLabel
               wikiCardLink
               wikiCardLinkType
@@ -17,6 +17,16 @@ query($section: [String]) {
           }
           wikiCardLinkLabel
           wikiCardLink
+        }
+      }
+      featuredWikiEntry {
+        ... on featuredWikiEntry_featuredWikiEntries_BlockType {
+          featuredWikiEntry {
+            ... on wikiDestination_wikiDestination_Entry {
+              title
+              url
+            }
+          }
         }
       }
     }
