@@ -35,7 +35,7 @@ const theme = {
     },
     heading2: {
       fontSize: [8, 9],
-      fontWeight: 500,
+      fontWeight: 600,
     },
     heading3: {
       fontSize: [5, 6],
@@ -44,6 +44,7 @@ const theme = {
     heading4: {
       fontSize: [5, 6],
       lineHeight: 1.5,
+      fontWeight: 400,
     },
     heading5: {
       fontSize: [4, 5],

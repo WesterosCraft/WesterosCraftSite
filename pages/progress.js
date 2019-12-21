@@ -63,10 +63,10 @@ const ProgressPage = () => {
       <Flex flexDirection="row">
         <Box width={1} mt={140} px={5}>
           <Box mb={140} textAlign="center">
-            <Text variant="heading1" as="h1">
+            <Text variant="heading2" as="h2">
               {pageData.heading}
             </Text>
-            <Text variant="heading4" as="h4">
+            <Text variant="heading4" as="h4" mt={6}>
               {pageData.subheading}
             </Text>
           </Box>

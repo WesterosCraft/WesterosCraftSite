@@ -25,7 +25,18 @@ const WikiCard = ({ data }) => (
       <Box mt={8}>
         {data.wikiCardLinks.map((link, i) => (
           <Link href={link.wikiCardLink} key={i}>
-            <Text mb={6} color="brandRed" variant="paragraph" fontWeight="600" sx={{ cursor: 'pointer' }}>
+            <Text
+              mb={6}
+              color="brandRed"
+              variant="paragraph"
+              fontWeight="600"
+              sx={{
+                cursor: 'pointer',
+                '&:hover': {
+                  opacity: 0.7,
+                },
+              }}
+            >
               {link.wikiCardLabel}
             </Text>
           </Link>
@@ -33,7 +44,6 @@ const WikiCard = ({ data }) => (
       </Box>
     </Flex>
     <Flex
-      bg="red"
       mt="auto"
       width={1}
       height={48}
@@ -41,9 +51,19 @@ const WikiCard = ({ data }) => (
         position: 'absolute',
         bottom: 0,
         borderRadius: '0 0 4px 4px',
-        opacity: 0.1,
       }}
     >
+      <Box
+        bg="red"
+        width={1}
+        height={48}
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          borderRadius: '0 0 4px 4px',
+          opacity: 0.1,
+        }}
+      />
       <Text>{data.wikiCardLinkLabel}</Text>
     </Flex>
   </Card>

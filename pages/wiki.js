@@ -24,8 +24,12 @@ const WikiPage = () => {
     <Layout>
       <Flex flexDirection="column">
         <Flex mt={140} flexDirection="column" justifyContent="center" width={1} textAlign="center">
-          <Text variant="heading1">{page.heading}</Text>
-          <Text>{page.subheading}</Text>
+          <Text variant="heading2" as="h1">
+            {page.heading}
+          </Text>
+          <Text variant="heading4" as="h4" mt={6}>
+            {page.subheading}
+          </Text>
         </Flex>
         <Flex flexDirection="row" justifyContent="center" flexWrap="wrap" my={120}>
           {page.wikiCard.map(card => (
