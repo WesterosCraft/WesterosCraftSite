@@ -6,6 +6,7 @@ import wikiHomeQuery from '../queries/wikiHome.graphql';
 import Loader from '../components/atoms/loader/loader';
 import WikiCard from '../components/molecules/wikiCard/wikiCard';
 import FeaturedEntryCard from '../components/molecules/featuredEntryCard/featuredEntryCard';
+import SliceZone from '../components/slices/sliceZone';
 
 const WikiPage = () => {
   const { loading, error, data } = useQuery(wikiHomeQuery, {
@@ -14,7 +15,9 @@ const WikiPage = () => {
     },
   });
 
-  if (error) return null;
+  if (error) {
+    console.log(error);
+  }
   if (loading) return <Loader />;
 
   const page = data.entries[0];
@@ -26,33 +29,29 @@ const WikiPage = () => {
       <Flex flexDirection="column">
         <Flex mt={140} flexDirection="column" justifyContent="center" width={1} textAlign="center">
           <Text variant="heading2" as="h1">
-            {' '}
-            {page.heading}{' '}
-          </Text>{' '}
+            {page.heading}
+          </Text>
           <Text variant="heading4" as="h4" mt={6}>
-            {' '}
-            {page.subheading}{' '}
-          </Text>{' '}
-        </Flex>{' '}
+            {page.subheading}
+          </Text>
+        </Flex>
         <Flex flexDirection="row" justifyContent="center" flexWrap="wrap" my={120}>
-          {' '}
           {page.wikiCard.map(card => (
             <WikiCard data={card} key={card.heading} />
-          ))}{' '}
-        </Flex>{' '}
+          ))}
+        </Flex>
         <Flex flexDirection="column" justifyContent="center" maxWidth={1280} mx="auto" width={1}>
           <Text variant="heading3" textAlign="left" width={1} mx={3}>
-            {' '}
-            Featured Wiki Entries{' '}
-          </Text>{' '}
+            Featured Wiki Entries
+          </Text>
           <Flex flexDirection="row" flexWrap="wrap" justifyContent="center">
-            {' '}
-            {page.featuredWikiEntry[0].featuredWikiEntry.map(entry => (
-              <FeaturedEntryCard data={entry} />
-            ))}{' '}
-          </Flex>{' '}
-        </Flex>{' '}
-      </Flex>{' '}
+            {page.featuredWikiEntry[0].featuredWikiEntry.map((entry, i) => (
+              <FeaturedEntryCard data={entry} key={i} />
+            ))}
+          </Flex>
+        </Flex>
+        <SliceZone slices={page.slices} />
+      </Flex>
     </Layout>
   );
 };

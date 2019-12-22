@@ -3,7 +3,7 @@ import { Flex, Text, Box } from 'rebass';
 
 const Footer = () => {
   return (
-    <Flex bg="gray2" width={1} height={400} as="footer">
+    <Flex bg="gray2" width={1} height={400} as="footer" mt={[80, 140]}>
       <Flex maxWidth={1024} width={1} mx="auto">
         <Box width={1 / 3}>
           <Text color="white">FOOTER</Text>

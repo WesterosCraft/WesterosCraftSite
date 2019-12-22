@@ -1,11 +1,12 @@
 import React from 'react';
-import { Card, Flex, Text, Box } from 'rebass';
+import { Card, Flex, Text, Box, Image } from 'rebass';
+import _truncate from 'lodash/truncate';
 import Link from 'next/link';
 import Icon from '../../atoms/icon/icon';
 
 const FeaturedEntryCard = ({ data }) => (
   <Card
-    height={168}
+    height={296}
     width={296}
     sx={{
       boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
@@ -15,7 +16,53 @@ const FeaturedEntryCard = ({ data }) => (
     mx={3}
     my={7}
   >
-    {data.title}
+    <Flex flexDirection="column" height="100%">
+      <Box height="50%" bg="gray">
+        <Image />
+      </Box>
+      <Flex height="50%" flexDirection="column" sx={{ position: 'relative' }} p={5} pb={3}>
+        <Flex
+          sx={{
+            borderRadius: '50%',
+            border: '1px solid #E1E1E1',
+          }}
+          bg="white"
+          justifyContent="center"
+          alignItems="center"
+          width={42}
+          height={42}
+          mt={-41}
+        >
+          <Icon name={data.region.toLowerCase()} width="24px" />
+        </Flex>
+        <Flex flexDirection="column" height="100%" justifyContent="space-between">
+          <Text variant="heading6" as="h6" mt={1} lineHeight={1.5}>
+            {data.title}
+          </Text>
+          <Text variant="paragraph" fontSize={[1, 2]}>
+            {_truncate(data.synopsis, { length: 75 }) ||
+              _truncate(
+                'Pyke is the seat of blah blah blah blah blah blah blah a.jjjvk j jfj sdjf jhsd jfsdjfjdsdsaiasjd i ijassi dais iajsd ij..',
+                { length: 75 }
+              )}
+          </Text>
+          <Link href={data.url}>
+            <Text
+              variant="paragraph"
+              sx={{
+                cursor: 'pointer',
+                '&:hover': {
+                  opacity: 0.7,
+                },
+              }}
+              textAlign="right"
+              color="brandRed"
+              fontWeight="600"
+            >{`View Entry >`}</Text>
+          </Link>
+        </Flex>
+      </Flex>
+    </Flex>
   </Card>
 );
 

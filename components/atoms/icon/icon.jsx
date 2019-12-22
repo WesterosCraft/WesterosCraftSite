@@ -17,6 +17,7 @@ const Icon = props => {
       return <Dorne {...props} />;
     case 'riverlands':
       return <Riverlands {...props} />;
+    case 'thewall':
     case 'wall':
       return <Wall {...props} />;
     case 'north':

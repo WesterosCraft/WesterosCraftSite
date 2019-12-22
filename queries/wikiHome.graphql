@@ -1,3 +1,5 @@
+#import "./sliceFragments.graphql"
+
 query($section: [String]) {
   entries(section: $section) {
     ... on wikiPage_wikiPage_Entry {
@@ -25,9 +27,21 @@ query($section: [String]) {
             ... on wikiDestination_wikiDestination_Entry {
               title
               url
+              region
+              synopsis
+              mainImage {
+                url
+              }
             }
           }
         }
+      }
+      slices {
+          ...video
+        ...animatedImageWithText
+        ...featuredBanner
+        ...textBanner
+        ...text
       }
     }
   }
