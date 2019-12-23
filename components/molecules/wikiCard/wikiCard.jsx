@@ -8,7 +8,8 @@ const WikiCard = ({ data }) => (
     height={420}
     width={296}
     sx={{
-      boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
+      boxShadow:
+        '0px 4.5288px 3.62304px rgba(0, 0, 0, 0.0278729), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.04), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.0521271), 0px 100px 80px rgba(0, 0, 0, 0.08)',
       borderRadius: '4px',
       position: 'relative',
     }}

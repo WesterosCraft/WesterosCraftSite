@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, Flex, Box } from 'rebass';
+import { Input } from '@rebass/forms';
 import { useQuery } from '@apollo/react-hooks';
 import Layout from '../components/templates/layout/layout';
 import wikiHomeQuery from '../queries/wikiHome.graphql';
@@ -35,6 +36,9 @@ const WikiPage = () => {
             {page.subheading}
           </Text>
         </Flex>
+        <Box maxWidth={608} height={42} mx="auto" width={1} mt={12}>
+          <Input placeholder="Search Wiki..." />
+        </Box>
         <Flex flexDirection="row" justifyContent="center" flexWrap="wrap" my={120}>
           {page.wikiCard.map(card => (
             <WikiCard data={card} key={card.heading} />

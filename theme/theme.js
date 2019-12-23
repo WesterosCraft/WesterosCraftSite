@@ -78,6 +78,7 @@ const theme = {
       width: '100%',
       fontSize: 2,
       borderColor: 'gray',
+      height: '100%',
       '&:focus': {
         boxShadow: '0 0 0 2px #9B1313',
         outline: 'none',

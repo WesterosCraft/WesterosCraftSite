@@ -70,21 +70,30 @@ const AnimatedImageText = ({ input }) => {
         <Box sx={{ position: 'relative' }} width={[335, 458]} height={482} ref={ref} mx="auto">
           {inView ? (
             <MotionImageContainer
-              animate={{ height: '100%', opacity: 1 }}
+              animate={{
+                height: '100%',
+                opacity: 1,
+                boxShadow:
+                  '0px 4.5288px 3.62304px rgba(0, 0, 0, 0.0278729), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.04), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.0521271), 0px 100px 80px rgba(0, 0, 0, 0.08)',
+              }}
               transition={{ duration: 2, type: 'tween', ease: 'anticipate' }}
               style={{
                 position: 'absolute',
                 left: 0,
                 bottom: 0,
                 overflow: 'hidden',
-                width: '458px',
                 opacity: 0,
               }}
             >
               <MotionImage
                 src={input.image[0].url || ''}
                 transition={{ duration: 2.5, type: 'tween' }}
-                animate={{ scale: 1, opacity: 1 }}
+                animate={{
+                  scale: 1,
+                  opacity: 1,
+                  boxShadow:
+                    '0px 4.5288px 3.62304px rgba(0, 0, 0, 0.0278729), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.04), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.0521271), 0px 100px 80px rgba(0, 0, 0, 0.08)',
+                }}
                 initial={{ scale: 1.2 }}
                 alt={input.image[0].title}
               />
