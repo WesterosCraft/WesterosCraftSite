@@ -5,7 +5,7 @@ import { ThemeProvider } from 'emotion-theming';
 import { Global, css } from '@emotion/core';
 import { ApolloProvider } from '@apollo/react-hooks';
 import theme from '../theme/theme';
-import withApollo from '../lib/apollo';
+import { withApollo } from '../lib/apollo';
 
 class MyApp extends App {
   renderHead() {

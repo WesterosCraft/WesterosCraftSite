@@ -7,6 +7,7 @@ import Layout from '../components/templates/layout/layout';
 import Loader from '../components/atoms/loader/loader';
 import Weirwood from '../components/organisms/weirwood/weirwood';
 import homeQuery from '../queries/home.graphql';
+import { withApollo } from '../lib/apollo';
 
 const HomePage = () => {
   const { loading, error, data } = useQuery(homeQuery, {
@@ -44,4 +45,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default withApollo(HomePage);
