@@ -8,6 +8,7 @@ import Loader from '../components/atoms/loader/loader';
 import WikiCard from '../components/molecules/wikiCard/wikiCard';
 import FeaturedEntryCard from '../components/molecules/featuredEntryCard/featuredEntryCard';
 import SliceZone from '../components/slices/sliceZone';
+import { withApollo } from '../lib/apollo';
 
 const WikiPage = () => {
   const { loading, error, data } = useQuery(wikiHomeQuery, {
@@ -60,4 +61,4 @@ const WikiPage = () => {
   );
 };
 
-export default WikiPage;
+export default withApollo(WikiPage);
