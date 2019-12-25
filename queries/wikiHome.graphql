@@ -26,10 +26,10 @@ query($section: [String]) {
           featuredWikiEntry {
             ... on wikiDestination_wikiDestination_Entry {
               title
-              url
+              slug
               region
               synopsis
-              mainImage {
+              images {
                 url
               }
             }

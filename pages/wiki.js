@@ -28,7 +28,7 @@ const WikiPage = () => {
 
   return (
     <Layout>
-      <Flex flexDirection="column">
+      <Flex flexDirection="column" px={[4, 5]}>
         <Flex mt={140} flexDirection="column" justifyContent="center" width={1} textAlign="center">
           <Text variant="heading2" as="h1">
             {page.heading}

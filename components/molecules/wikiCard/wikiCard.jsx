@@ -13,7 +13,8 @@ const WikiCard = ({ data }) => (
       borderRadius: '4px',
       position: 'relative',
     }}
-    mx={6}
+    mx={[2, 6]}
+    my={7}
   >
     <Flex flexDirection="column" p={6}>
       <Icon name={data.icon} width="36" height="36" />

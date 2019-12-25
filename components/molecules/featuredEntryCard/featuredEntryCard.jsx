@@ -20,8 +20,15 @@ const FeaturedEntryCard = ({ data }) => (
     my={7}
   >
     <Flex flexDirection="column" height="100%">
-      <Box height="50%" bg="gray">
-        <Image />
+      <Box height="50%" maxHeight="50%" bg="gray">
+        <Box
+          width={1}
+          sx={{
+            backgroundImage: `url(${data && data.images[0] && data.images[0].url})`,
+            backgroundSize: 'cover',
+            height: '100%',
+          }}
+        />
       </Box>
       <Flex height="50%" flexDirection="column" sx={{ position: 'relative' }} p={5} pb={3}>
         <Flex
@@ -49,7 +56,7 @@ const FeaturedEntryCard = ({ data }) => (
                 { length: 75 }
               )}
           </Text>
-          <Link href={data.url}>
+          <Link href={`wiki/${data.slug}`}>
             <Text
               variant="paragraph"
               sx={{
