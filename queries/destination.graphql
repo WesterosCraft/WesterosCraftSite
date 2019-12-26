@@ -11,6 +11,7 @@ query($destination: [String]) {
       dateStarted
       dateCompleted
       copy
+      synopsis
       images {
         url
       }
