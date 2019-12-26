@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
 
+const LEFT_COLUMN_WIDTH = '45%';
+const RIGHT_COLUMN_WIDTH = '40%';
+
 const Redactor = styled.div`
   * {
     line-height: 1.5;
     font-family: ${props => props.theme.font.primaryFont};
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
   }
 
   p {
@@ -12,7 +17,7 @@ const Redactor = styled.div`
     margin-bottom: 24px;
 
     @media screen and (min-width: ${props => props.theme.breakpoints[3]}) {
-      margin-right: 50%;
+      margin-right: ${LEFT_COLUMN_WIDTH};
       padding-right: 20px;
     }
   }
@@ -25,9 +30,10 @@ const Redactor = styled.div`
     font-size: 24px;
     padding-top: 16px;
     margin-top: 32px;
+    font-weight: 600;
 
     @media screen and (min-width: ${props => props.theme.breakpoints[3]}) {
-      margin-right: 50%;
+      margin-right: ${LEFT_COLUMN_WIDTH};
       padding-right: 20px;
     }
   }
@@ -50,11 +56,25 @@ const Redactor = styled.div`
     list-style-type: disc;
   }
 
+  ul ul {
+    padding-left: 28px;
+  }
+
   > ul {
     @media screen and (min-width: ${props => props.theme.breakpoints[3]}) {
-      margin-right: 50%;
+      margin-right: ${LEFT_COLUMN_WIDTH};
       padding-right: 20px;
     }
+  }
+
+  ul + p {
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: ${props => props.theme.colors.brandRed};
+    cursor: pointer;
+    font-weight: 600;
   }
 
   strong {
@@ -65,6 +85,11 @@ const Redactor = styled.div`
     float: right !important;
     clear: right !important;
     margin-right: 0px !important;
+    width: ${RIGHT_COLUMN_WIDTH};
+  }
+
+  img {
+    width: 100%;
   }
 `;
 

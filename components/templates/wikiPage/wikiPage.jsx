@@ -30,13 +30,13 @@ const WikiPage = ({ data }) => {
           >
             <Box className="wiki-content" p={10}>
               <Box className="content-wrapper">
-                <Text variant="heading2" mr="50%">
+                <Text variant="heading2" mr={[0, 0, 0, 0, '50%']}>
                   {data.title}
                 </Text>
-                <Text variant="paragraph" mt={4} mr="50%">
+                <Text variant="paragraph" mt={4} mr={[0, 0, 0, 0, '50%']}>
                   {data.synopsis}
                 </Text>
-                <Image src={data.images[0].url} mt={8} mr="50%" />
+                <Image src={data.images[0].url} mt={8} mr={[0, 0, 0, 0, '50%']} mb={13} />
                 <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />
               </Box>
               <Box className="content-sidebar" />
