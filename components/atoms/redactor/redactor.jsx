@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const LEFT_COLUMN_WIDTH = '45%';
-const RIGHT_COLUMN_WIDTH = '40%';
+const RIGHT_COLUMN_WIDTH = '42%';
 
 const Redactor = styled.div`
   * {
@@ -81,11 +81,16 @@ const Redactor = styled.div`
     font-weight: 600;
   }
 
-  figure {
+  figure > img {
     float: right !important;
     clear: right !important;
     margin-right: 0px !important;
     width: ${RIGHT_COLUMN_WIDTH};
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;
+  }
+
+  figure > iframe {
+    margin-top: 8px;
   }
 
   img {
