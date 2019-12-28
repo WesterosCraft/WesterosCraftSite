@@ -87,6 +87,11 @@ const Redactor = styled.div`
     margin-right: 0px !important;
     width: ${RIGHT_COLUMN_WIDTH};
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;
+    margin: 8px;
+
+    @media screen and (min-width: ${props => props.theme.breakpoints[3]}) {
+      margin: 0px;
+    }
   }
 
   figure > iframe {
