@@ -1,0 +1,21 @@
+query($region: String) {
+  entries(search: $region) {
+    ... on wikiDestination_wikiDestination_Entry {
+      slug
+      title
+      region
+      redoAvailabe
+      serverBuild
+      locationStatus
+      locationType
+      dateStarted
+      dateCompleted
+      copy
+      synopsis
+      warp
+      images {
+        url
+      }
+    }
+  }
+}
