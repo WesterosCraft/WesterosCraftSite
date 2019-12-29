@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, Box } from 'rebass';
 
-const SidebarGroup = ({ label, children }) => {
-  const [isOpen, setOpen] = useState(false);
+const SidebarGroup = ({ label, children, open }) => {
+  const [isOpen, setOpen] = useState(open);
   return (
     <>
       <Text

@@ -4,15 +4,8 @@ query($region: String) {
       slug
       title
       region
-      redoAvailabe
-      serverBuild
-      locationStatus
       locationType
-      dateStarted
-      dateCompleted
-      copy
       synopsis
-      warp
       images {
         url
       }

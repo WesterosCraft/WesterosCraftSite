@@ -4,7 +4,7 @@ import _truncate from 'lodash/truncate';
 import Link from 'next/link';
 import Icon from '../../atoms/icon/icon';
 
-const FeaturedEntryCard = ({ data }) => (
+const RegionEntryCard = ({ data }) => (
   <Card
     height={296}
     width={296}
@@ -56,7 +56,7 @@ const FeaturedEntryCard = ({ data }) => (
                 { length: 75 }
               )}
           </Text>
-          <Link href={`wiki/${data.region}/${data.slug}`}>
+          <Link href={`/wiki/${data.region}/${data.slug}`}>
             <Text
               variant="paragraph"
               sx={{
@@ -76,4 +76,4 @@ const FeaturedEntryCard = ({ data }) => (
   </Card>
 );
 
-export default FeaturedEntryCard;
+export default RegionEntryCard;
