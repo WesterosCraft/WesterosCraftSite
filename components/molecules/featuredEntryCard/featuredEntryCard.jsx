@@ -56,7 +56,7 @@ const FeaturedEntryCard = ({ data }) => (
                 { length: 75 }
               )}
           </Text>
-          <Link href={`wiki/${data.slug}`}>
+          <Link href={`wiki/${data.region}/${data.slug}`}>
             <Text
               variant="paragraph"
               sx={{
