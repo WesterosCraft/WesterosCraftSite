@@ -12,6 +12,7 @@ query($destination: [String]) {
       dateCompleted
       copy
       synopsis
+      house
       warp
       images {
         url

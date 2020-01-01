@@ -39,11 +39,11 @@ const WikiSidebar = () => {
       >
         <Flex flexDirection="column" pl={[10]}>
           <Box>
-            <Link href='/wiki'>
-            <Text fontSize={['32px']} fontWeight="600" sx={{ cursor: 'pointer'}}>
-              Wiki
-            </Text>
-              </Link>
+            <Link href="/wiki">
+              <Text fontSize={['32px']} fontWeight="600" sx={{ cursor: 'pointer' }}>
+                Wiki
+              </Text>
+            </Link>
             <ColumnLabel variant="progress">Explore</ColumnLabel>
             <SidebarGroup label="Regions" open>
               {regions.map(region => (

@@ -46,7 +46,7 @@ const Destination = ({ destination }) => {
             Destination Warp
           </Text>
           <Text variant="paragraph" mt={3}>
-            {pageData.warp}
+            {pageData.warp || 'N/A'}
           </Text>
         </Flex>
         <Text variant="paragraph" mt={4} mr={[0, 0, 0, 0, '50%']}>
@@ -94,6 +94,14 @@ const Destination = ({ destination }) => {
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
+              <Text mt={1} fontWeight="600" width={150} pr={8} fontSize={2}>
+                House
+              </Text>
+              <Text mt={1} fontSize={2}>
+                {pageData.house || 'N/A'}
+              </Text>
+            </Flex>
+            <Flex flexDirection="row" py={1}>
               <Text mt={1} width={150} fontWeight="600" pr={8} fontSize={2}>
                 Date started
               </Text>
@@ -113,7 +121,12 @@ const Destination = ({ destination }) => {
           <Box />
         </Flex>
         <Box mr={[0, 0, 0, 0, '45%']}>
-          <Image src={pageData && pageData.images && pageData.images[0] && pageData.images[0].url || ''} mt={8} mr={[0, 0, 0, 0, '100%']} mb={13} />
+          <Image
+            src={(pageData && pageData.images && pageData.images[0] && pageData.images[0].url) || ''}
+            mt={8}
+            mr={[0, 0, 0, 0, '100%']}
+            mb={13}
+          />
         </Box>
         <Redactor dangerouslySetInnerHTML={{ __html: pageData.copy }} />
       </WikiPage>

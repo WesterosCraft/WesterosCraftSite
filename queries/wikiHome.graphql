@@ -29,6 +29,7 @@ query($section: [String]) {
               slug
               region
               synopsis
+              copy
               images {
                 url
               }

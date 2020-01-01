@@ -52,8 +52,10 @@ const FeaturedEntryCard = ({ data }) => (
           <Text variant="paragraph" fontSize={[1, 2]}>
             {_truncate(data.synopsis, { length: 75 }) ||
               _truncate(
-                'Pyke is the seat of blah blah blah blah blah blah blah a.jjjvk j jfj sdjf jhsd jfsdjfjdsdsaiasjd i ijassi dais iajsd ij..',
-                { length: 75 }
+                data.synopsis || (data.copy && data.copy.replace(/<[^>]*>?/gm, '')) || 'No description available',
+                {
+                  length: 75,
+                }
               )}
           </Text>
           <Link href={`wiki/${data.region}/${data.slug}`}>

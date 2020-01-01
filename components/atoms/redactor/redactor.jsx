@@ -53,6 +53,7 @@ const Redactor = styled.div`
   ul {
     padding-top: 16px;
     padding-bottom: 16px;
+    padding-left: 18px;
     list-style-type: disc;
   }
 
