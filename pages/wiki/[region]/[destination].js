@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { Box, Text, Flex, Image } from 'rebass';
+import { Box, Text, Flex, Image, Button } from 'rebass';
 import destinationQuery from '../../../queries/destination.graphql';
 import Loader from '../../../components/atoms/loader/loader';
 import Layout from '../../../components/templates/layout/layout';
@@ -26,9 +26,12 @@ const Destination = ({ destination }) => {
   return (
     <Layout>
       <WikiPage>
-        <Text variant="heading2" mr={[0, 0, 0, 0, '50%']}>
-          {pageData.title}
-        </Text>
+        <Flex flexDirection="row" justifyContent="space-between">
+          <Text variant="heading2" mr={[0, 0, 0, 0, '50%']}>
+            {pageData.title}
+          </Text>
+          <Button variant="utility">Edit page</Button>
+        </Flex>
         <Flex
           flexDirection="column"
           bg="#F9F9F9"

@@ -40,12 +40,12 @@ const ProgressPage = () => {
         accessor: 'locationType',
       },
       {
-        Header: 'Date Started',
-        accessor: 'dateStarted',
+        Header: 'House',
+        accessor: 'house',
       },
       {
-        Header: 'Date Completed',
-        accessor: 'dateCompleted',
+        Header: 'Warp',
+        accessor: 'warp',
       },
     ],
     []

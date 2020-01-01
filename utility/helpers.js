@@ -1,35 +1,31 @@
 export const statusColor = status => {
-  if (status.toLowerCase() === 'completed') {
-    return '#2CA42C';
+  switch (status.toLowerCase()) {
+    case 'completed':
+      return '#2CA42C';
+    case 'inprogress':
+      return '#FFB305';
+    case 'orphaned':
+      return '#48C8F0';
+    case 'notstarted':
+      return '#C4C4C4';
+    default:
+      return 'black';
   }
-  if (status.toLowerCase() === 'inprogress') {
-    return '#FFB305';
-  }
-  if (status.toLowerCase() === 'orphaned') {
-    return '#48C8F0';
-  }
-  if (status.toLowerCase() === 'notstarted') {
-    return '#C4C4C4';
-  }
-
-  return 'black';
 };
 
 export const statusLabel = status => {
-  if (status.toLowerCase() === 'completed') {
-    return 'Completed';
+  switch (status.toLowerCase()) {
+    case 'completed':
+      return 'Completed';
+    case 'inprogress':
+      return 'In Progress';
+    case 'orphaned':
+      return 'Orphaned';
+    case 'notstarted':
+      return 'Not Started';
+    default:
+      return 'Need status';
   }
-  if (status.toLowerCase() === 'inprogress') {
-    return 'In Progress';
-  }
-  if (status.toLowerCase() === 'orphaned') {
-    return 'Orphaned';
-  }
-  if (status.toLowerCase() === 'notstarted') {
-    return 'Not Started';
-  }
-
-  return 'Need Status';
 };
 
 // Used to convert strings from CraftCMS to arrays of values for responsive margins
@@ -41,39 +37,47 @@ export const sizeParser = string => {
 };
 
 export const regionLabel = status => {
-  if (status.toLowerCase() === 'beyondthewall') {
-    return 'Beyond The Wall';
+  switch (status.toLowerCase()) {
+    case 'beyondthewall':
+    case 'beyond-the-wall':
+      return 'Beyond The Wall';
+    case 'thewall':
+    case 'the-wall':
+      return 'The Wall';
+    case 'north':
+    case 'the-north':
+      return 'North';
+    case 'riverlands':
+      return 'Riverlands';
+    case 'vale':
+      return 'Vale';
+    case 'ironislands':
+    case 'iron-islands':
+      return 'Iron Islands';
+    case 'westerlands':
+      return 'Westerlands';
+    case 'crownlands':
+      return 'Crownlands';
+    case 'stormlands':
+      return 'Stormlands';
+    case 'reach':
+      return 'Reach';
+    case 'dorne':
+      return 'Dorne';
+    default:
+      return 'Need region';
   }
-  if (status.toLowerCase() === 'thewall') {
-    return 'The Wall';
-  }
-  if (status.toLowerCase() === 'north') {
-    return 'North';
-  }
-  if (status.toLowerCase() === 'riverlands') {
-    return 'Riverlands';
-  }
-  if (status.toLowerCase() === 'vale') {
-    return 'Vale';
-  }
-  if (status.toLowerCase() === 'ironislands') {
-    return 'Iron Islands';
-  }
-  if (status.toLowerCase() === 'westerlands') {
-    return 'Westerlands';
-  }
-  if (status.toLowerCase() === 'crownlands') {
-    return 'Crownlands';
-  }
-  if (status.toLowerCase() === 'stormlands') {
-    return 'Stormlands';
-  }
-  if (status.toLowerCase() === 'reach') {
-    return 'Reach';
-  }
-  if (status.toLowerCase() === 'dorne') {
-    return 'Dorne';
-  }
+};
 
-  return 'Need Region';
+export const projectTypeLabel = type => {
+  switch (type.toLowerCase()) {
+    case 'greatcastle':
+      return 'Great Castle';
+    case 'minorcastle':
+      return 'Minor Castle';
+    case 'ruin':
+      return 'Ruin';
+    default:
+      return 'Need type';
+  }
 };

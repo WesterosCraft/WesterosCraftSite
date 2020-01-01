@@ -5,7 +5,7 @@ import { Select, Input } from '@rebass/forms';
 import hexToRgba from 'hex-to-rgba';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import Badge from '../../atoms/badge/badge';
-import { statusColor, statusLabel, regionLabel } from '../../../utility/helpers';
+import { statusColor, statusLabel, regionLabel, projectTypeLabel } from '../../../utility/helpers';
 import { TableHeader, TableHeaderContainer, TableCell } from './styledTable';
 
 const Table = ({ columns, data }) => {
@@ -138,6 +138,15 @@ const Table = ({ columns, data }) => {
                         <Box width={1} px={4} key={cell.index}>
                           <Text variant="progress" color="textGray" {...cell.getCellProps()}>
                             {regionLabel(cell.value)}
+                          </Text>
+                        </Box>
+                      );
+                    }
+                    if (cell.column.Header === 'Type') {
+                      return (
+                        <Box width={1} px={4} key={cell.index}>
+                          <Text variant="progress" color="textGray" {...cell.getCellProps()}>
+                            {projectTypeLabel(cell.value)}
                           </Text>
                         </Box>
                       );

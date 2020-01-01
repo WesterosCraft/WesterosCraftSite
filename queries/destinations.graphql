@@ -7,8 +7,8 @@ query($section: [String]) {
       serverBuild
       locationStatus
       locationType
-      dateStarted
-      dateCompleted
+      house
+      warp
     }
   }
 }

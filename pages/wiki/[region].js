@@ -6,6 +6,7 @@ import Layout from '../../components/templates/layout/layout';
 import WikiPage from '../../components/templates/wikiPage/wikiPage';
 import regionQuery from '../../queries/region.graphql';
 import RegionEntryCard from '../../components/molecules/regionEntryCard/regionEntryCard';
+import { regionLabel } from '../../utility/helpers';
 
 const Region = ({ region }) => {
   const { loading, error, data } = useQuery(regionQuery, {
@@ -31,14 +32,13 @@ const Region = ({ region }) => {
       <WikiPage>
         <Flex width={1} flexWrap="wrap" flexDirection="column">
           <Text variant="heading2" ml={3}>
-            {' '}
-            {region}{' '}
+            {regionLabel(region)}
           </Text>
           <Flex width={1} flexWrap="wrap">
-            {pageData.map((entry, i) => entry.title && <RegionEntryCard data={entry} key={i} />)}{' '}
+            {pageData.map((entry, i) => entry.title && <RegionEntryCard data={entry} key={i} />)}
           </Flex>
-        </Flex>{' '}
-      </WikiPage>{' '}
+        </Flex>
+      </WikiPage>
     </Layout>
   );
 };
