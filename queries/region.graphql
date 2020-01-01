@@ -6,6 +6,7 @@ query($region: String) {
       region
       locationType
       synopsis
+      copy
       images {
         url
       }

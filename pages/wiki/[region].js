@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { Flex } from 'rebass';
+import { Flex, Text } from 'rebass';
 import Loader from '../../components/atoms/loader/loader';
 import Layout from '../../components/templates/layout/layout';
 import WikiPage from '../../components/templates/wikiPage/wikiPage';
@@ -29,10 +29,16 @@ const Region = ({ region }) => {
   return (
     <Layout>
       <WikiPage>
-        <Flex width={1} flexWrap="wrap">
-          {pageData.map((entry, i) => entry.title && <RegionEntryCard data={entry} key={i} />)}
-        </Flex>
-      </WikiPage>
+        <Flex width={1} flexWrap="wrap" flexDirection="column">
+          <Text variant="heading2" ml={3}>
+            {' '}
+            {region}{' '}
+          </Text>
+          <Flex width={1} flexWrap="wrap">
+            {pageData.map((entry, i) => entry.title && <RegionEntryCard data={entry} key={i} />)}{' '}
+          </Flex>
+        </Flex>{' '}
+      </WikiPage>{' '}
     </Layout>
   );
 };
