@@ -16,6 +16,18 @@ class MyApp extends App {
           href="https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,400i,500,600,700,800, 900&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charset="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
       </Head>
     );
@@ -38,6 +50,37 @@ class MyApp extends App {
                 height: 100%;
                 margin: 0;
                 padding: 0;
+              }
+              .slick-thumb li,
+              .slick-thumb a {
+                width: 60px;
+                height: 45px;
+              }
+              .slick-dots li,
+              .slick-dots li button {
+                cursor: pointer;
+              }
+              .slick-dots li {
+                position: relative;
+                display: inline-block;
+                margin: 0 5px;
+                padding: 0;
+              }
+              .slick-thumb {
+                bottom: -45px;
+              }
+              .slick-dots {
+                margin-left: 0;
+              }
+              .slick-dots {
+                position: absolute;
+                bottom: -25px;
+                display: block;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                text-align: center;
               }
               h1 {
                 ${theme.text.heading1}

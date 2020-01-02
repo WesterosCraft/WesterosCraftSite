@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { Box, Text, Flex, Image, Button } from 'rebass';
+import Script from 'react-load-script';
 import destinationQuery from '../../../queries/destination.graphql';
 import Loader from '../../../components/atoms/loader/loader';
 import Layout from '../../../components/templates/layout/layout';
 import WikiPage from '../../../components/templates/wikiPage/wikiPage';
 import Redactor from '../../../components/atoms/redactor/redactor';
-import { statusLabel, regionLabel } from '../../../utility/helpers';
+import { statusLabel, regionLabel, projectTypeLabel } from '../../../utility/helpers';
+import ImageSlider from '../../../components/molecules/imageSlider/imageSlider';
 
 const Destination = ({ destination }) => {
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [scriptError, setScriptError] = useState(false);
+
+  const handleScriptLoad = () => {
+    setScriptLoaded(true);
+  };
+
+  const handleScriptError = () => {
+    setScriptError(true);
+  };
   const { loading, error, data } = useQuery(destinationQuery, {
     variables: {
       destination,
@@ -85,7 +97,7 @@ const Destination = ({ destination }) => {
                 Project type
               </Text>
               <Text mt={1} fontSize={2}>
-                {pageData.locationType || 'N/A'}
+                {projectTypeLabel(pageData.locationType) || 'N/A'}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -123,13 +135,14 @@ const Destination = ({ destination }) => {
           </Flex>
           <Box />
         </Flex>
-        <Box mr={[0, 0, 0, 0, '45%']}>
-          <Image
+        <Box mr={[0, 0, 0, 0, '45%']} mt={8} mb={13}>
+          <ImageSlider images={pageData.images} />
+          {/* <Image
             src={(pageData && pageData.images && pageData.images[0] && pageData.images[0].url) || ''}
             mt={8}
             mr={[0, 0, 0, 0, '100%']}
             mb={13}
-          />
+          /> */}
         </Box>
         <Redactor dangerouslySetInnerHTML={{ __html: pageData.copy }} />
       </WikiPage>
