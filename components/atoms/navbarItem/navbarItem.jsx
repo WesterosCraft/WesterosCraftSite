@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Popup from 'reactjs-popup';
+import AboutDropdown from '../../molecules/aboutDropdown/aboutDropdown';
+import CommunityDropdown from '../../molecules/communityDropdown/communityDropdown';
+import WikiDropdown from '../../molecules/wikiDropdown/wikiDropdown';
 
 export const NavbarItemTitle = styled.button`
   background: transparent;
@@ -42,27 +46,47 @@ const DropdownSlot = styled.div`
   perspective: 1000px;
 `;
 
-const NavbarItem = ({ title, children, onMouseEnter, index, onMouseLeave }) => {
-  const onMouseEnterFunc = () => {
-    onMouseEnter(index);
+const NavbarItem = ({ title, children, dropdownData }) => {
+  const renderSwitch = (item, data) => {
+    switch (item) {
+      case 'About':
+        return <AboutDropdown data={data} />;
+      case 'Community':
+        return <CommunityDropdown data={data} />;
+      case 'Wiki':
+        return <WikiDropdown data={data} />;
+      default:
+        return null;
+    }
   };
   return (
-    <NavbarItemEl onMouseEnter={onMouseEnterFunc} onFocus={onMouseEnterFunc} onMouseLeave={onMouseLeave}>
-      <NavbarItemTitle
-        color="textColor"
-        fontSize={3}
-        sx={{
-          textTransform: 'uppercase',
-          display: 'block',
-          '&:hover, &:focus': {
-            color: 'brandRed',
-          },
-        }}
-      >
-        {title}
-      </NavbarItemTitle>
-      <DropdownSlot>{children}</DropdownSlot>
-    </NavbarItemEl>
+    <Popup
+      trigger={
+        <NavbarItemEl>
+          <NavbarItemTitle
+            color="textColor"
+            fontSize={3}
+            sx={{
+              textTransform: 'uppercase',
+              display: 'block',
+              '&:hover, &:focus': {
+                color: 'brandRed',
+              },
+            }}
+          >
+            {title}
+          </NavbarItemTitle>
+        </NavbarItemEl>
+      }
+      position="bottom center"
+      on="hover"
+      closeOnDocumentClick
+      mouseEnterDelay={0}
+      contentStyle={{ padding: '0px', border: 'none' }}
+      arrow={false}
+    >
+      {renderSwitch(title, dropdownData)}
+    </Popup>
   );
 };
 

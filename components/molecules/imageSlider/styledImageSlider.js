@@ -38,7 +38,12 @@ export const SliderWrapper = styled(Box)`
     justify-content: center;
   }
   .slick-slider-container {
-    max-height: 500px;
+    /* max-height: 500px; */
+  }
+
+  .slick-next:before,
+  .slick-prev:before {
+    color: black;
   }
 
   img {

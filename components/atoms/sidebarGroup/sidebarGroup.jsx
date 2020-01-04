@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Text, Box, Flex } from 'rebass';
 import { IoIosArrowUp } from 'react-icons/io';
 
@@ -20,7 +20,6 @@ const SidebarGroup = ({ label, children, open }) => {
         <Text variant="paragraph" color="brandRed" fontWeight="600" py={2}>
           {label}
         </Text>
-
         <IoIosArrowUp color="#9B1313" style={{ transform: `rotate(${isOpen ? '180deg' : '0deg'})` }} />
       </Flex>
 

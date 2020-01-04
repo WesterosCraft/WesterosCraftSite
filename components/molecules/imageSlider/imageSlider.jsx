@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Image } from 'rebass';
+import { Box, Image } from 'rebass';
 import { SliderWrapper } from './styledImageSlider';
 
 const ImageSlider = ({ images }) => {
@@ -16,7 +16,13 @@ const ImageSlider = ({ images }) => {
     customPaging(i) {
       return (
         <a>
-          <Image width={760} height="100%" src={images[i].url} />
+          <Box
+            height="100%"
+            sx={{
+              backgroundSize: 'cover',
+              backgroundImage: `url(${images[i].url})`,
+            }}
+          />
         </a>
       );
     },
@@ -26,6 +32,7 @@ const ImageSlider = ({ images }) => {
       <Slider {...settings}>
         {images.map((image, i) => (
           <Image
+            key={i}
             src={image.url}
             sx={{
               maxWidth: '100%',
