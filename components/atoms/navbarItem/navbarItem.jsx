@@ -17,6 +17,9 @@ export const NavbarItemTitle = styled.button`
   position: relative;
   z-index: 2;
   font-weight: 500;
+  &:visited {
+    color: black;
+  }
 
   &:hover,
   &:focus {
@@ -25,10 +28,6 @@ export const NavbarItemTitle = styled.button`
 
   &:focus {
     outline: 0;
-  }
-
-  &:visited {
-    color: black;
   }
 `;
 export const NavbarItemEl = styled.li`
@@ -39,14 +38,7 @@ export const NavbarItemEl = styled.li`
   }
 `;
 
-const DropdownSlot = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  perspective: 1000px;
-`;
-
-const NavbarItem = ({ title, children, dropdownData }) => {
+const NavbarItem = ({ title, dropdownData }) => {
   const renderSwitch = (item, data) => {
     switch (item) {
       case 'About':

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import Navbar from '../navbar/navbar';
-import NavbarItem, { NavbarItemTitle } from '../../atoms/navbarItem/navbarItem';
+import NavbarItem, { NavbarItemTitle, NavbarItemEl } from '../../atoms/navbarItem/navbarItem';
 import navQuery from '../../../queries/nav.graphql';
 
 const AnimatedNavbar = () => {
@@ -14,7 +14,7 @@ const AnimatedNavbar = () => {
     <Navbar>
       {navdata.map((n, index) =>
         n.dropdownItems && n.dropdownItems.length < 1 ? (
-          <NavbarItem key={index} title={n.mainNavLabel}>
+          <NavbarItemEl key={index} title={n.mainNavLabel}>
             <NavbarItemTitle
               color="textColor"
               fontSize={3}
@@ -26,11 +26,14 @@ const AnimatedNavbar = () => {
                 '&:hover, &:focus': {
                   color: 'brandRed',
                 },
+                '&:visited': {
+                  color: 'black',
+                },
               }}
             >
               {n.mainNavLabel}
             </NavbarItemTitle>
-          </NavbarItem>
+          </NavbarItemEl>
         ) : (
           <NavbarItem title={n.mainNavLabel} index={index} key={index} dropdownData={n.dropdownItems} />
         )
