@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { Text, Box } from 'rebass';
+import { Text, Box, Flex } from 'rebass';
+import { IoIosArrowUp } from 'react-icons/io';
 
 const SidebarGroup = ({ label, children, open }) => {
   const [isOpen, setOpen] = useState(open);
   return (
     <>
-      <Text
-        variant="paragraph"
+      <Flex
+        onClick={() => setOpen(!isOpen)}
+        justifyContent="space-between"
+        alignItems="center"
         sx={{
           cursor: 'pointer',
           '&:hover': {
             opacity: 0.7,
           },
         }}
-        color="brandRed"
-        fontWeight="600"
-        py={2}
-        onClick={() => setOpen(!isOpen)}
       >
-        {label}
-      </Text>
+        <Text variant="paragraph" color="brandRed" fontWeight="600" py={2}>
+          {label}
+        </Text>
+
+        <IoIosArrowUp color="#9B1313" style={{ transform: `rotate(${isOpen ? '180deg' : '0deg'})` }} />
+      </Flex>
+
       {isOpen && (
         <Box
           pl={4}

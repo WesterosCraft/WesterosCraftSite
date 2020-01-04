@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { Box, Text, Flex, Image, Button } from 'rebass';
-import Script from 'react-load-script';
+import { Box, Text, Flex, Button } from 'rebass';
+import Popup from 'reactjs-popup';
 import destinationQuery from '../../../queries/destination.graphql';
 import Loader from '../../../components/atoms/loader/loader';
 import Layout from '../../../components/templates/layout/layout';
@@ -11,16 +11,6 @@ import { statusLabel, regionLabel, projectTypeLabel } from '../../../utility/hel
 import ImageSlider from '../../../components/molecules/imageSlider/imageSlider';
 
 const Destination = ({ destination }) => {
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-  const [scriptError, setScriptError] = useState(false);
-
-  const handleScriptLoad = () => {
-    setScriptLoaded(true);
-  };
-
-  const handleScriptError = () => {
-    setScriptError(true);
-  };
   const { loading, error, data } = useQuery(destinationQuery, {
     variables: {
       destination,
@@ -42,7 +32,9 @@ const Destination = ({ destination }) => {
           <Text variant="heading2" mr={[0, 0, 0, 0, '50%']}>
             {pageData.title}
           </Text>
-          <Button variant="utility">Edit page</Button>
+          <Popup trigger={<Button variant="utility">Edit page</Button>} modal>
+            <Text>hello</Text>
+          </Popup>
         </Flex>
         <Flex
           flexDirection="column"
@@ -137,12 +129,6 @@ const Destination = ({ destination }) => {
         </Flex>
         <Box mr={[0, 0, 0, 0, '45%']} mt={8} mb={13}>
           <ImageSlider images={pageData.images} />
-          {/* <Image
-            src={(pageData && pageData.images && pageData.images[0] && pageData.images[0].url) || ''}
-            mt={8}
-            mr={[0, 0, 0, 0, '100%']}
-            mb={13}
-          /> */}
         </Box>
         <Redactor dangerouslySetInnerHTML={{ __html: pageData.copy }} />
       </WikiPage>

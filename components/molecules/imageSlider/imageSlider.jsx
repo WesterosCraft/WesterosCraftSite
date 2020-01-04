@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Image, Box } from 'rebass';
+import { Image } from 'rebass';
+import { SliderWrapper } from './styledImageSlider';
 
 const ImageSlider = ({ images }) => {
   const settings = {
@@ -10,21 +11,30 @@ const ImageSlider = ({ images }) => {
     initialSlide: 0,
     fade: true,
     dots: true,
+    className: 'slick-slider-container',
     dotsClass: 'slick-dots slick-thumb',
     customPaging(i) {
       return (
         <a>
-          <Image width={1} height="100%" src={images[i].url} />
+          <Image width={760} height="100%" src={images[i].url} />
         </a>
       );
     },
   };
   return (
-    <Slider {...settings}>
-      {images.map((image, i) => (
-        <Image src={image.url} width={1} height="100%" />
-      ))}
-    </Slider>
+    <SliderWrapper>
+      <Slider {...settings}>
+        {images.map((image, i) => (
+          <Image
+            src={image.url}
+            sx={{
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
+        ))}
+      </Slider>
+    </SliderWrapper>
   );
 };
 

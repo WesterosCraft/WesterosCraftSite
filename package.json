@@ -24,6 +24,7 @@
     "babylonjs": "^4.0.3",
     "babylonjs-loaders": "^4.0.3",
     "emotion-theming": "^10.0.14",
+    "formik": "^2.1.1",
     "framer-motion": "^1.5.0",
     "graphql": "^14.5.6",
     "graphql-tag": "^2.10.1",
@@ -43,8 +44,8 @@
     "react-player": "^1.12.0",
     "react-slick": "^0.25.2",
     "react-table": "^7.0.0-beta.20",
+    "reactjs-popup": "^1.5.0",
     "rebass": "^4.0.3",
-    "semantic-ui-react": "^0.88.1",
     "styled-system": "^5.1.1"
   },
   "devDependencies": {
