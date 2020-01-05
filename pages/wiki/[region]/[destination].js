@@ -47,6 +47,7 @@ const Destination = ({ destination }) => {
             clear: 'right',
             borderRadius: '4px',
             boxShadow: 'rgba(0, 0, 0, 0.08) 0px 4px 8px 0px',
+            border: '1px solid rgb(240, 240, 240)',
           }}
         >
           <Text variant="paragraph" color="brandRed" fontWeight={600}>
@@ -70,6 +71,7 @@ const Destination = ({ destination }) => {
             clear: 'right',
             borderRadius: '4px',
             boxShadow: 'rgba(0, 0, 0, 0.08) 0px 4px 8px 0px',
+            border: '1px solid rgb(240, 240, 240)',
           }}
         >
           <Text variant="paragraph" color="brandRed" fontWeight={600}>

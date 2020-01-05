@@ -34,7 +34,7 @@ const theme = {
       color: 'textColor',
     },
     heading2: {
-      fontSize: [8, 9],
+      fontSize: [7, 8, 9],
       fontWeight: 600,
     },
     heading3: {

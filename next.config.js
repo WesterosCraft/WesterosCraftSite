@@ -1,4 +1,6 @@
-module.exports = {
+const withCSS = require('@zeit/next-css');
+
+module.exports = withCSS({
   webpack: (config, {}) => {
     config.module.rules.push({
       test: /\.(graphql|gql)$/,
@@ -7,4 +9,4 @@ module.exports = {
     });
     return config;
   },
-};
+});

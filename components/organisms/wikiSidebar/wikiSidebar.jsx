@@ -26,7 +26,7 @@ const regions = [
 
 const WikiSidebar = () => {
   return (
-    <Flex as="aside" className="wiki-nav" width={[250, 300]} pr={5}>
+    <Box as="aside" className="wiki-nav" width={[250, 300]} pr={5} display={['none', null, 'flex']}>
       <Box
         width={1}
         sx={{
@@ -76,7 +76,7 @@ const WikiSidebar = () => {
           <Box />
         </Flex>
       </Box>
-    </Flex>
+    </Box>
   );
 };
 
