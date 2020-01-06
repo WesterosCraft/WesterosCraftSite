@@ -9,6 +9,7 @@ import WikiPage from '../../../components/templates/wikiPage/wikiPage';
 import Redactor from '../../../components/atoms/redactor/redactor';
 import { statusLabel, regionLabel, projectTypeLabel } from '../../../utility/helpers';
 import ImageSlider from '../../../components/molecules/imageSlider/imageSlider';
+import EditWikiForm from '../../../components/forms/editWikiForm';
 
 const Destination = ({ destination }) => {
   const { loading, error, data } = useQuery(destinationQuery, {
@@ -33,7 +34,7 @@ const Destination = ({ destination }) => {
             {pageData.title}
           </Text>
           <Popup trigger={<Button variant="utility">Edit page</Button>} modal>
-            <Text>hello</Text>
+            <EditWikiForm data={pageData} />
           </Popup>
         </Flex>
         <Flex
@@ -54,7 +55,7 @@ const Destination = ({ destination }) => {
             Destination Warp
           </Text>
           <Text variant="paragraph" mt={3}>
-            {pageData.warp || 'N/A'}
+            {pageData.warp || ''}
           </Text>
         </Flex>
         <Text variant="paragraph" mt={4} mr={[0, 0, 0, 0, '50%']}>
@@ -83,15 +84,15 @@ const Destination = ({ destination }) => {
                 Region
               </Text>
               <Text mt={1} fontSize={2}>
-                {regionLabel(pageData.region) || 'N/A'}
+                {regionLabel(pageData.region) || ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
               <Text mt={1} fontWeight="600" width={150} pr={8} fontSize={2}>
-                Project type
+                Category
               </Text>
               <Text mt={1} fontSize={2}>
-                {projectTypeLabel(pageData.locationType) || 'N/A'}
+                {projectTypeLabel(pageData.locationType) || ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -99,7 +100,7 @@ const Destination = ({ destination }) => {
                 Status
               </Text>
               <Text mt={1} fontSize={2}>
-                {statusLabel(pageData.locationStatus) || 'N/A'}
+                {statusLabel(pageData.locationStatus) || ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -107,7 +108,15 @@ const Destination = ({ destination }) => {
                 House
               </Text>
               <Text mt={1} fontSize={2}>
-                {pageData.house || 'N/A'}
+                {pageData.house || ''}
+              </Text>
+            </Flex>
+            <Flex flexDirection="row" py={1}>
+              <Text mt={1} fontWeight="600" width={150} pr={8} fontSize={2}>
+                Project Lead(s)
+              </Text>
+              <Text mt={1} fontSize={2}>
+                {pageData.projectLeads || ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -115,7 +124,7 @@ const Destination = ({ destination }) => {
                 Date started
               </Text>
               <Text mt={1} fontSize={2}>
-                {pageData.dateStarted || 'N/A'}
+                {pageData.dateStarted || ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -123,7 +132,7 @@ const Destination = ({ destination }) => {
                 Date completed
               </Text>
               <Text mt={1} fontSize={2}>
-                {pageData.dateCompleted || 'N/A'}
+                {pageData.dateCompleted || ''}
               </Text>
             </Flex>
           </Flex>
