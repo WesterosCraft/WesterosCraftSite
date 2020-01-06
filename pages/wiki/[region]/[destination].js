@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { Box, Text, Flex, Button } from 'rebass';
 import Popup from 'reactjs-popup';
+import { useRouter } from 'next/router';
 import destinationQuery from '../../../queries/destination.graphql';
 import Loader from '../../../components/atoms/loader/loader';
 import Layout from '../../../components/templates/layout/layout';
@@ -18,6 +19,10 @@ const Destination = ({ destination }) => {
     },
   });
 
+  const { asPath } = useRouter();
+
+  console.log(asPath);
+
   if (error) {
     console.log(error);
   }
@@ -33,7 +38,7 @@ const Destination = ({ destination }) => {
           <Text variant="heading2" mr={[0, 0, 0, 0, '50%']}>
             {pageData.title}
           </Text>
-          <Popup trigger={<Button variant="utility">Edit page</Button>} modal>
+          <Popup trigger={<Button variant="utility">Edit page</Button>} modal lockScroll={true}>
             <EditWikiForm data={pageData} />
           </Popup>
         </Flex>

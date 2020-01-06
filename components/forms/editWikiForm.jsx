@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, useField } from 'formik';
-import { Label, Input, Select } from '@rebass/forms';
+import { Label, Input, Select, Textarea } from '@rebass/forms';
 import { Text, Flex, Box } from 'rebass';
 import { GiFleurDeLys } from 'react-icons/gi';
 import { statusLabel, regionLabel, projectTypeLabel } from '../../utility/helpers';
@@ -29,10 +29,21 @@ const MySelectField = ({ label, children, defaultValue, ...props }) => {
   );
 };
 
+const MyTextarea = ({ label, ...props }) => {
+  const [field, meta, helpers] = useField(props);
+  return (
+    <Box py={2}>
+      <Label htmlFor={props.name}>{label}</Label>
+      <Textarea {...field} {...props} />
+      {meta.touched && meta.error ? <div className="error">{meta.error}</div> : null}
+    </Box>
+  );
+};
+
 const EditWikiForm = ({ data }) => {
   return (
     data && (
-      <Flex py={9} px={10} flexDirection="column" justifyContent="center" alignItems="center">
+      <Flex py={9} px={10} flexDirection="column" justifyContent="center" alignItems="center" sx={{ overflow: 'auto' }}>
         <Text variant="heading3" textAlign="center" mb={6}>
           Edit the Wiki page for {data.title}
         </Text>
@@ -48,6 +59,7 @@ const EditWikiForm = ({ data }) => {
             house: data.house || '',
             dateStarted: data.dateStarted || '',
             dateCompleted: data.dateCompleted || '',
+            copy: data.copy || '',
           }}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
@@ -78,6 +90,9 @@ const EditWikiForm = ({ data }) => {
                     <MyTextField name="dateCompleted" type="text" label="Date Completed" />
                   </Box>
                 </Flex>
+                <Box width={1} px={2}>
+                  <MyTextarea name="copy" type="textarea" label="Copy" minHeight={250} />
+                </Box>
 
                 <button type="submit" disabled={isSubmitting}>
                   Submit

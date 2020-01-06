@@ -87,7 +87,18 @@ const theme = {
         outline: 'none',
       },
     },
-    textarea: {},
+    textarea: {
+      borderRadius: 8,
+      width: '100%',
+      fontSize: 2,
+      borderColor: 'gray',
+      lineHeight: 1.5,
+
+      '&:focus': {
+        boxShadow: '0 0 0 2px #9B1313',
+        outline: 'none',
+      },
+    },
     label: {
       fontSize: 2,
       fontWeight: 600,
