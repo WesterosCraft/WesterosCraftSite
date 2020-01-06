@@ -89,7 +89,7 @@ const Destination = ({ destination }) => {
                 Region
               </Text>
               <Text mt={1} fontSize={2}>
-                {regionLabel(pageData.region) || ''}
+                {pageData.region ? regionLabel(pageData.region) : ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -97,7 +97,7 @@ const Destination = ({ destination }) => {
                 Category
               </Text>
               <Text mt={1} fontSize={2}>
-                {projectTypeLabel(pageData.locationType) || ''}
+                {pageData.locationType ? projectTypeLabel(pageData.locationType) : ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -105,7 +105,7 @@ const Destination = ({ destination }) => {
                 Status
               </Text>
               <Text mt={1} fontSize={2}>
-                {statusLabel(pageData.locationStatus) || ''}
+                {pageData.locationStatus ? statusLabel(pageData.locationStatus) : ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>

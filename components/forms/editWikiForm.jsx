@@ -40,6 +40,20 @@ const MyTextarea = ({ label, ...props }) => {
   );
 };
 
+const regions = [
+  'Beyond the Wall',
+  'Crownlands',
+  'Dorne',
+  'Iron Islands',
+  'Reach',
+  'Riverlands',
+  'Stormlands',
+  'The North',
+  'The Wall',
+  'Westerlands',
+  'Vale',
+];
+
 const EditWikiForm = ({ data }) => {
   return (
     data && (
@@ -74,8 +88,12 @@ const EditWikiForm = ({ data }) => {
                 <Flex flexDirection="row">
                   <Box width={[1 / 2]} px={2}>
                     <MyTextField name="warp" type="text" label="Warp" />
-                    <MyTextField name="region" type="text" label="Region" />
-                    <MySelectField name="status" type="text" label="Status" defaultValue="">
+                    <MySelectField name="region" type="text" label="Region">
+                      {regions.map((region, i) => (
+                        <option key={i}>{region}</option>
+                      ))}
+                    </MySelectField>
+                    <MySelectField name="status" type="text" label="Status">
                       <option>Completed</option>
                       <option>In Progress</option>
                       <option>Orphaned</option>

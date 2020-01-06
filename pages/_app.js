@@ -197,6 +197,10 @@ class MyApp extends App {
                 border: 0;
                 padding: 0;
               }
+
+              .carousel .thumb {
+                height: 80px;
+              }
             `}
           />{' '}
           {this.renderHead()} <Component {...pageProps} />{' '}
