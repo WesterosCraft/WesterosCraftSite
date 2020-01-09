@@ -85,8 +85,8 @@ const EditWikiForm = ({ data }) => {
           {({ isSubmitting }) => (
             <Form style={{ width: '100%' }}>
               <Flex flexDirection="column" justifyContent="center">
-                <Flex flexDirection="row">
-                  <Box width={[1 / 2]} px={2}>
+                <Flex flexDirection={['column', null, 'row']}>
+                  <Box width={[1, null, 1 / 2]} px={2}>
                     <MyTextField name="warp" type="text" label="Warp" />
                     <MySelectField name="region" type="text" label="Region">
                       {regions.map((region, i) => (
@@ -101,7 +101,7 @@ const EditWikiForm = ({ data }) => {
                     </MySelectField>
                     <MyTextField name="locationType" type="text" label="Category" />
                   </Box>
-                  <Box width={[1 / 2]} px={2}>
+                  <Box width={[1, null, 1 / 2]} px={2}>
                     <MyTextField name="house" type="text" label="House" />
                     <MyTextField name="projectLeads" type="text" label="Project Lead(s)" />
                     <MyTextField name="dateStarted" type="text" label="Date Started" />

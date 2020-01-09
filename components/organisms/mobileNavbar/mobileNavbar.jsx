@@ -12,7 +12,7 @@ const MobileNavbar = () => {
             <FaBars size={24} />
           </Box>
         }
-        position="bottom center"
+        position="bottom right"
         on="click"
         closeOnDocumentClick
         mouseEnterDelay={0}

@@ -8,7 +8,7 @@ const theme = {
     primaryColor: '#333333',
     brandRed: '#9B1313',
     brandYellow: '#FBC000',
-    brandBlue: '',
+    brandBlue: '#3282B8',
     textColor: '#000000',
     backgroundColor: '#FFFFFF',
     textGray: '#494849',

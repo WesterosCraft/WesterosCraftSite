@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { Box, Text, Flex, Button } from 'rebass';
 import Popup from 'reactjs-popup';
-import { useRouter } from 'next/router';
 import destinationQuery from '../../../queries/destination.graphql';
 import Loader from '../../../components/atoms/loader/loader';
 import Layout from '../../../components/templates/layout/layout';
@@ -11,6 +10,7 @@ import Redactor from '../../../components/atoms/redactor/redactor';
 import { statusLabel, regionLabel, projectTypeLabel } from '../../../utility/helpers';
 import ImageSlider from '../../../components/molecules/imageSlider/imageSlider';
 import EditWikiForm from '../../../components/forms/editWikiForm';
+import Modal from '../../../components/atoms/modal/modal';
 
 const Destination = ({ destination }) => {
   const { loading, error, data } = useQuery(destinationQuery, {
@@ -18,10 +18,6 @@ const Destination = ({ destination }) => {
       destination,
     },
   });
-
-  const { asPath } = useRouter();
-
-  console.log(asPath);
 
   if (error) {
     console.log(error);
@@ -38,9 +34,9 @@ const Destination = ({ destination }) => {
           <Text variant="heading2" mr={[0, 0, 0, 0, '50%']}>
             {pageData.title}
           </Text>
-          <Popup trigger={<Button variant="utility">Edit page</Button>} modal lockScroll={true}>
+          <Modal trigger={<Button variant="utility">Edit page</Button>} lockScroll>
             <EditWikiForm data={pageData} />
-          </Popup>
+          </Modal>
         </Flex>
         <Flex
           flexDirection="column"

@@ -53,6 +53,8 @@ const NavbarItem = ({ title, dropdownData }) => {
   };
   return (
     <Popup
+      mouseLeaveDelay={50}
+      arrow
       trigger={
         <NavbarItemEl>
           <NavbarItemTitle
@@ -75,7 +77,6 @@ const NavbarItem = ({ title, dropdownData }) => {
       closeOnDocumentClick
       mouseEnterDelay={0}
       contentStyle={{ padding: '0px', border: 'none' }}
-      arrow={false}
     >
       {renderSwitch(title, dropdownData)}
     </Popup>
