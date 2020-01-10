@@ -4,6 +4,15 @@ import _truncate from 'lodash/truncate';
 import Link from 'next/link';
 import Icon from '../../atoms/icon/icon';
 
+const regionLinkHelper = region => {
+  switch (region.replace(/\s+/g, '-').toLowerCase()) {
+    case 'north':
+      return 'the-north';
+    default:
+      return region;
+  }
+};
+
 const FeaturedEntryCard = ({ data }) => (
   <Card
     height={296}
@@ -55,7 +64,7 @@ const FeaturedEntryCard = ({ data }) => (
                 length: 75,
               })}
           </Text>
-          <Link href={`wiki/${data.region}/${data.slug}`}>
+          <Link href={`wiki/${regionLinkHelper(data.region)}/${data.slug}`}>
             <Text
               variant="paragraph"
               sx={{

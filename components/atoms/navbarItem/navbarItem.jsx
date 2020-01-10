@@ -72,11 +72,21 @@ const NavbarItem = ({ title, dropdownData }) => {
           </NavbarItemTitle>
         </NavbarItemEl>
       }
-      position="bottom center"
-      on="hover"
+      position="bottom right"
+      on="click"
       closeOnDocumentClick
       mouseEnterDelay={0}
-      contentStyle={{ padding: '0px', border: 'none' }}
+      contentStyle={{
+        padding: '0px',
+        width: 'fit-content',
+        border: 'none',
+        boxShadow:
+          '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
+      }}
+      arrowStyle={{
+        boxShadow:
+          '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
+      }}
     >
       {renderSwitch(title, dropdownData)}
     </Popup>
