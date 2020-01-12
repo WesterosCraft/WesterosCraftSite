@@ -3,7 +3,12 @@ import { Formik, Form, useField } from 'formik';
 import { Label, Input, Select, Textarea } from '@rebass/forms';
 import { Text, Flex, Box } from 'rebass';
 import { GiFleurDeLys } from 'react-icons/gi';
+import dynamic from 'next/dynamic';
+
 import { statusLabel, regionLabel, projectTypeLabel } from '../../utility/helpers';
+// import Wysiwyg from '../organisms/wysiwyg/wysiwyg';
+
+const Wysiwyg = dynamic(() => import('../organisms/wysiwyg/wysiwyg'), { ssr: false });
 
 const MyTextField = ({ label, ...props }) => {
   const [field, meta, helpers] = useField(props);
@@ -109,7 +114,8 @@ const EditWikiForm = ({ data }) => {
                   </Box>
                 </Flex>
                 <Box width={1} px={2}>
-                  <MyTextarea name="copy" type="textarea" label="Copy" minHeight={250} />
+                  <Wysiwyg data={data.copy || ''} />
+                  {/* <MyTextarea name="copy" type="textarea" label="Copy" minHeight={250} /> */}
                 </Box>
 
                 <button type="submit" disabled={isSubmitting}>

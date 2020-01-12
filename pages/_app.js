@@ -31,6 +31,7 @@ class MyApp extends App {
               * {
                 font-family: ${theme.font.primaryFont};
               }
+
               body,
               html {
                 background-color: ${theme.colors.backgroundColor};
@@ -44,6 +45,16 @@ class MyApp extends App {
               }
               h2 {
                 ${theme.text.heading2}
+              }
+
+              .flickity-viewport {
+                max-height: 500px;
+
+                img {
+                  max-width: 100%;
+                  height: auto;
+                  border: 0;
+                }
               }
 
               html,

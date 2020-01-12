@@ -19,8 +19,19 @@ const theme = {
     gray: '#C4C4C4',
     gray2: '#231F20',
   },
+
+  shadows: {
+    shadowSmallest: '0px 4px 8px rgba(0,0,0,0.12)',
+    shadowSmall: '0 5px 10px rgba(0,0,0,0.12)',
+    shadowMedium: '0 8px 30px rgba(0,0,0,0.12)',
+    shadowLarge: '0 30px 60px rgba(0,0,0,0.12)',
+    shadowHover: '0 30px 60px rgba(0,0,0,0.12)',
+  },
+
   font: {
     primaryFont: 'Montserrat, sans-serif',
+    // --font-sans: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    // --font-mono: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
   },
   text: {
     paragraph: {

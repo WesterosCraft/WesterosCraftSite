@@ -82,21 +82,23 @@ const Redactor = styled.div`
     font-weight: 600;
   }
 
-  figure > img {
-    float: right !important;
-    clear: right !important;
-    margin-right: 0px !important;
-    width: ${RIGHT_COLUMN_WIDTH};
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;
-    margin: 8px;
+  figure {
+    padding: 8px;
 
     @media screen and (min-width: ${props => props.theme.breakpoints[3]}) {
-      margin: 0px;
+      padding: 0px;
     }
   }
 
-  figure > iframe {
-    margin-top: 8px;
+  figure > img {
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;
+
+    @media screen and (min-width: ${props => props.theme.breakpoints[3]}) {
+      width: ${RIGHT_COLUMN_WIDTH};
+      float: right !important;
+      clear: right !important;
+      /* padding: 0px; */
+    }
   }
 
   img {

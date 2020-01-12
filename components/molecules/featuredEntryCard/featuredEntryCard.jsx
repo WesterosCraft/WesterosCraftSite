@@ -18,11 +18,11 @@ const FeaturedEntryCard = ({ data }) => (
     height={296}
     width={296}
     sx={{
-      boxShadow: 'rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;',
+      boxShadow: 'shadowSmall',
       borderRadius: '4px',
       position: 'relative',
       '&:hover': {
-        boxShadow: ' rgba(0, 0, 0, 0.08) 0px 8px 18px 0px',
+        boxShadow: 'shadowHover',
       },
     }}
     mx={3}
