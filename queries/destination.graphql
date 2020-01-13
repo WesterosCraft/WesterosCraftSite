@@ -1,6 +1,6 @@
 query($destination: [String]) {
   entries(slug: $destination) {
-    ... on wikiDestination_wikiDestination_Entry {
+    ... on wiki_wikiDestination_Entry {
       slug
       title
       region

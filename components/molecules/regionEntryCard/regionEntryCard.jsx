@@ -65,10 +65,9 @@ const RegionEntryCard = ({ data }) => (
             {data.title}
           </Text>
           <Text variant="paragraph" fontSize={[1, 2]}>
-            {_truncate(data.synopsis, { length: 75 }) ||
-              _truncate(data.synopsis || (data.copy && data.copy.replace(/<[^>]*>?/gm, '')) || '', {
-                length: 75,
-              })}
+            {_truncate((data.copy && data.copy.replace(/<[^>]*>?/gm, '')) || '', {
+              length: 75,
+            })}
           </Text>
           <Link href={`/wiki/${regionLinkHelper(data.region)}/${data.slug}`}>
             <Text

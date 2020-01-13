@@ -1,14 +1,20 @@
-query($region: String) {
-  entries(search: $region) {
-    ... on wikiDestination_wikiDestination_Entry {
+query($region: [String]) {
+  entries(slug: $region) {
+    ...on wiki_wikiRegion_Entry {
       slug
       title
-      region
-      locationType
-      synopsis
-      copy
-      images {
-        url
+      children {
+        ...on wiki_wikiDestination_Entry {
+          slug
+          title
+          region
+          locationType
+          synopsis
+          copy
+          images {
+            url
+          }
+        }
       }
     }
   }

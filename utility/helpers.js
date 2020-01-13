@@ -77,7 +77,34 @@ export const projectTypeLabel = type => {
       return 'Minor Castle';
     case 'ruin':
       return 'Ruin';
+    case 'city':
+      return 'City';
+    case 'landmark':
+      return 'Landmark';
+    case 'village':
+      return 'Village';
+    case 'town':
+      return 'Town';
+    case 'holdfast':
+      return 'Holdfast';
+    case 'keep':
+      return 'Keep';
+    case 'miscellaneous':
+      return 'Miscellaneous';
     default:
       return 'Need type';
   }
+};
+
+export const getFormattedDate = unformattedDate => {
+  const date = new Date(unformattedDate);
+  const year = date.getFullYear();
+
+  let month = (1 + date.getMonth()).toString();
+  month = month.length > 1 ? month : `0${month}`;
+
+  let day = date.getDate().toString();
+  day = day.length > 1 ? day : `0${day}`;
+
+  return `${month}/${day}/${year}`;
 };

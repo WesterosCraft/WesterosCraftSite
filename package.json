@@ -34,6 +34,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.15",
     "next": "^9.1.4",
+    "next-seo": "^3.3.0",
     "next-with-apollo-hooks": "^3.4.0",
     "prismic-javascript": "^2.1.1",
     "prismic-reactjs": "^1.0.0",

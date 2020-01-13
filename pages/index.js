@@ -23,8 +23,6 @@ const HomePage = () => {
 
   const page = data.entries[0];
 
-  console.log(data);
-
   return (
     page && (
       <Layout title="WesterosCraft">

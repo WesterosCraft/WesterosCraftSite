@@ -24,7 +24,7 @@ query($section: [String]) {
       featuredWikiEntry {
         ... on featuredWikiEntry_featuredWikiEntries_BlockType {
           featuredWikiEntry {
-            ... on wikiDestination_wikiDestination_Entry {
+            ... on wiki_wikiDestination_Entry {
               title
               slug
               region

@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { Box, Text, Flex, Button } from 'rebass';
 import Popup from 'reactjs-popup';
+import { NextSeo } from 'next-seo';
 import destinationQuery from '../../../queries/destination.graphql';
 import Loader from '../../../components/atoms/loader/loader';
 import Layout from '../../../components/templates/layout/layout';
 import WikiPage from '../../../components/templates/wikiPage/wikiPage';
 import Redactor from '../../../components/atoms/redactor/redactor';
-import { statusLabel, regionLabel, projectTypeLabel } from '../../../utility/helpers';
+import { statusLabel, regionLabel, projectTypeLabel, getFormattedDate } from '../../../utility/helpers';
 import ImageSlider from '../../../components/molecules/imageSlider/imageSlider';
 import EditWikiForm from '../../../components/forms/editWikiForm';
 import Modal from '../../../components/atoms/modal/modal';
@@ -29,6 +30,7 @@ const Destination = ({ destination }) => {
 
   return (
     <Layout>
+      <NextSeo title={`${pageData.title} | WesterosCraft Wiki`} description={pageData.synopsis || ''} />
       <WikiPage>
         <Flex flexDirection="row" justifyContent="space-between">
           <Text variant="heading2" mr={[0, 0, 0, 0, '50%']}>
@@ -125,7 +127,7 @@ const Destination = ({ destination }) => {
                 Date started
               </Text>
               <Text mt={1} fontSize={2}>
-                {pageData.dateStarted || ''}
+                {pageData.dateStarted !== null ? getFormattedDate(pageData.dateStarted) : ''}
               </Text>
             </Flex>
             <Flex flexDirection="row" py={1}>
@@ -133,7 +135,7 @@ const Destination = ({ destination }) => {
                 Date completed
               </Text>
               <Text mt={1} fontSize={2}>
-                {pageData.dateCompleted || ''}
+                {pageData.dateCompleted !== null ? getFormattedDate(pageData.dateCompleted) : ''}
               </Text>
             </Flex>
           </Flex>

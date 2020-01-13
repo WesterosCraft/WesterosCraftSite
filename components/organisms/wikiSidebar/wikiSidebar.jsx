@@ -19,7 +19,7 @@ const regions = [
   'Iron Islands',
   'Vale',
   'Riverlands',
-  'The North',
+  'North',
   'The Wall',
   'Beyond the Wall',
 ];

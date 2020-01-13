@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Flex, Box } from 'rebass';
 import { Input } from '@rebass/forms';
 import { useQuery } from '@apollo/react-hooks';
+import { NextSeo } from 'next-seo';
 import Layout from '../components/templates/layout/layout';
 import wikiHomeQuery from '../queries/wikiHome.graphql';
 import Loader from '../components/atoms/loader/loader';
@@ -24,10 +25,9 @@ const WikiPage = () => {
 
   const page = data.entries[0];
 
-  console.log(page);
-
   return (
     <Layout>
+      <NextSeo title="WesterosCraft Wiki" />
       <Flex flexDirection="column" px={[4, 5]}>
         <Flex mt={140} flexDirection="column" justifyContent="center" width={1} textAlign="center">
           <Text variant="heading2" as="h1">
@@ -45,11 +45,11 @@ const WikiPage = () => {
             <WikiCard data={card} key={card.heading} />
           ))}
         </Flex>
-        <Flex flexDirection="column" justifyContent="center" maxWidth={1280} mx="auto" width={1}>
+        <Flex flexDirection="column" justifyContent="center" maxWidth={1128} mx="auto" width={1}>
           <Text variant="heading3" textAlign="left" width={1} mx={3}>
             Featured Wiki Entries
           </Text>
-          <Flex flexDirection="row" flexWrap="wrap" justifyContent="center">
+          <Flex flexDirection="row" flexWrap="wrap" justifyContent="space-between">
             {page.featuredWikiEntry[0].featuredWikiEntry.map((entry, i) => (
               <FeaturedEntryCard data={entry} key={i} />
             ))}
