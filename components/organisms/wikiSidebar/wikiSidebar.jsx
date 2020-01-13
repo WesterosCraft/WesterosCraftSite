@@ -24,7 +24,7 @@ const regions = [
   'Beyond the Wall',
 ];
 
-const WikiSidebar = () => {
+const WikiSidebar = ({ currentPageRoute }) => {
   return (
     <Box as="aside" className="wiki-nav" width={[250, 300]} pr={5} display={['none', null, 'flex']}>
       <Box
@@ -52,8 +52,10 @@ const WikiSidebar = () => {
                     fontSize="14px"
                     lineHeight={2.5}
                     fontWeight="500"
+                    color={currentPageRoute === region.replace(/\s+/g, '-').toLowerCase() ? 'brandRed' : 'inherit'}
                     sx={{
                       cursor: 'pointer',
+                      opacity: currentPageRoute === region.replace(/\s+/g, '-').toLowerCase() ? '0.7' : 'inherit',
                       '&:hover': {
                         color: 'brandRed',
                         opacity: 0.7,

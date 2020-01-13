@@ -25,7 +25,7 @@ const Region = ({ region }) => {
     console.log(error);
   }
 
-  if (loading) return <Loader />;
+  if (loading || !region) return <Loader />;
 
   const pageData = data.entries[0].children;
 
@@ -51,7 +51,7 @@ const Region = ({ region }) => {
   return (
     <Layout>
       <NextSeo title={`${regionLabel(region)} | WesterosCraft Wiki`} />
-      <WikiPage>
+      <WikiPage currentPageRoute={region}>
         <Box width={1} flexWrap="wrap" flexDirection="column">
           <Text variant="heading2" ml={3} pb={6}>
             {regionLabel(region)}

@@ -4,12 +4,12 @@ import WikiSidebar from '../../organisms/wikiSidebar/wikiSidebar';
 import MobileWikiSidebar from '../../organisms/wikiSidebar/mobileWikiSidebar';
 import Breadcrumbs from '../../molecules/breadcrumbs/breadcrumbs';
 
-const WikiPage = ({ children }) => {
+const WikiPage = ({ children, currentPageRoute }) => {
   return (
     <Box className="wiki-container" bg="#fbfbfc" pt={[68, null, 160]}>
       <Flex className="wiki-main" flexDirection={['column', null, 'row']}>
         <MobileWikiSidebar />
-        <WikiSidebar />
+        <WikiSidebar currentPageRoute={currentPageRoute} />
         <Box
           className="wiki-content-container"
           width="100%"
