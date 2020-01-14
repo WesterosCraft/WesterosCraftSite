@@ -18,6 +18,8 @@ const theme = {
     orphaned: '#48C8F0',
     gray: '#C4C4C4',
     gray2: '#231F20',
+    gray3: '#F9F9F9',
+    gray4: '#e8e8e8',
   },
 
   shadows: {
