@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { Box, Text, Flex, Button } from 'rebass';
-import Popup from 'reactjs-popup';
 import { NextSeo } from 'next-seo';
 import destinationQuery from '../../../queries/destination.graphql';
 import Loader from '../../../components/atoms/loader/loader';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Reach = ({ props, color = '#000' }) => (
+const Reach = ({ color = '#000', ...props }) => (
   <svg fill="none" {...props} viewBox="0 0 16 16">
     <path
       fillRule="evenodd"

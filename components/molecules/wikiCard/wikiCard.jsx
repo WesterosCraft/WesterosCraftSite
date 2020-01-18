@@ -16,7 +16,7 @@ const WikiCard = ({ data }) => (
     my={7}
   >
     <Flex flexDirection="column" p={6}>
-      <Icon name={data.icon} width="36" height="36" />
+      <Icon name={data.icon} width="36px" height="36px" />
       <Text variant="heading6" as="h6" mt={3}>
         {data.heading}
       </Text>

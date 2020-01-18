@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Riverlands = ({ props, color = '#000' }) => (
+const Riverlands = ({ color = '#000', ...props }) => (
   <svg fill="none" {...props} viewBox="0 0 16 16">
     <path
       fillRule="evenodd"

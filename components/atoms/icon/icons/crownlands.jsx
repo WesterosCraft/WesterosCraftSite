@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Crownlands = ({ props, color = '#000' }) => (
+const Crownlands = ({ color = '#000', ...props }) => (
   <svg {...props} viewBox="0 0 16 16">
     <path
       fillRule="evenodd"
