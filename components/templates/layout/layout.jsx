@@ -10,7 +10,7 @@ export default ({ children, title = 'This is the default title', footerImage }) 
       <title>{title}</title>
     </Head>
     <Navbar />
-    <main>{children}</main>
+    <main style={{ position: 'relative' }}>{children}</main>
     <Footer footerImage={footerImage} />
   </Box>
 );

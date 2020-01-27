@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Flex } from 'rebass';
+import { Text, Flex, Image } from 'rebass';
 import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
@@ -24,7 +24,7 @@ const HomePage = () => {
 
   return (
     page && (
-      <Layout title="WesterosCraft" footerImage={page.footerImage[0]}>
+      <Layout title="WesterosCraft">
         <HomePageTemplate>
           <Flex flexDirection="column" width={1} mx="auto" textAlign="center" px={[5, 8]}>
             <Text fontSize={[42, 60]} maxWidth={540} mx="auto" fontWeight="bold">
@@ -37,6 +37,7 @@ const HomePage = () => {
           {/* <Weirwood /> */}
         </HomePageTemplate>
         <SliceZone slices={page.slices} />
+        <Image src={page.footerImage[0].url} sx={{ position: 'absolute', bottom: 0 }} />
       </Layout>
     )
   );
