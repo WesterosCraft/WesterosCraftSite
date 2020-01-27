@@ -11,7 +11,7 @@ import StatsBar from '../components/organisms/statsBar/statsBar';
 const ProgressPage = () => {
   const { loading, error, data } = useQuery(destinationQuery, {
     variables: {
-      section: 'wikiDestination',
+      section: 'wiki',
     },
   });
 
@@ -53,7 +53,11 @@ const ProgressPage = () => {
 
   const memoData = useMemo(() => data && data.entries, []);
 
-  if (error || errorP) return <h1> error! </h1>;
+  if (error || errorP) {
+    console.log(error);
+    console.log(errorP);
+    return <h1> error! </h1>;
+  }
   if (loading || loadingP) return <Loader />;
 
   const pageData = dataP && dataP.entries[0];
