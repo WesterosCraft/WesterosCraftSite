@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, Flex, Box } from 'rebass';
+import { Text, Flex } from 'rebass';
 import { useQuery } from '@apollo/react-hooks';
 import SliceZone from '../components/slices/sliceZone';
 import HomePageTemplate from '../components/templates/homepage/homePageTemplate';
 import Layout from '../components/templates/layout/layout';
 import Loader from '../components/atoms/loader/loader';
-import Weirwood from '../components/organisms/weirwood/weirwood';
 import homeQuery from '../queries/home.graphql';
 import { withApollo } from '../lib/apollo';
 
@@ -25,7 +24,7 @@ const HomePage = () => {
 
   return (
     page && (
-      <Layout title="WesterosCraft">
+      <Layout title="WesterosCraft" footerImage={page.footerImage[0]}>
         <HomePageTemplate>
           <Flex flexDirection="column" width={1} mx="auto" textAlign="center" px={[5, 8]}>
             <Text fontSize={[42, 60]} maxWidth={540} mx="auto" fontWeight="bold">

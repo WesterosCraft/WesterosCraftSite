@@ -5,6 +5,9 @@ query($section: [String]) {
     ... on homePage_homePage_Entry {
       heading
       subheading
+      footerImage {
+        url
+      }
       slices {
         ...video
         ...animatedImageWithText
