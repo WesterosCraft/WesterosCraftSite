@@ -1,0 +1,23 @@
+query($destination: [String]) {
+  entries(slug: $destination) {
+    ... on wiki_wikiDestination_Entry {
+      slug
+      title
+      region
+      redoAvailabe
+      serverBuild
+      locationStatus
+      locationType
+      dateStarted
+      dateCompleted
+      copy
+      synopsis
+      house
+      warp
+      projectLeads
+      images {
+        url
+      }
+    }
+  }
+}

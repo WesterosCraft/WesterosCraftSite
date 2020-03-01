@@ -1,0 +1,9 @@
+query($guide: [String]) {
+  entries(slug: $guide) {
+    ... on wiki_wikiGuide_Entry {
+      slug
+      title
+      copy
+    }
+  }
+}

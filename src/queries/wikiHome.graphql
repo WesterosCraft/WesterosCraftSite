@@ -1,0 +1,49 @@
+#import "./sliceFragments.graphql"
+
+query($section: [String]) {
+  entries(section: $section) {
+    ... on wikiPage_wikiPage_Entry {
+      heading
+      subheading
+      wikiCard {
+        ... on wikiCard_BlockType {
+          heading
+          subheading
+          icon
+          wikiCardLinks {
+            ... on wikiCardLinks_wikiCardLink_BlockType {
+              wikiCardLabel
+              wikiCardLink
+              wikiCardLinkType
+            }
+          }
+          wikiCardLinkLabel
+          wikiCardLink
+        }
+      }
+      featuredWikiEntry {
+        ... on featuredWikiEntry_featuredWikiEntries_BlockType {
+          featuredWikiEntry {
+            ... on wiki_wikiDestination_Entry {
+              title
+              slug
+              region
+              synopsis
+              copy
+              images {
+                url
+              }
+            }
+          }
+        }
+      }
+      slices {
+          ...video
+        ...animatedImageWithText
+        ...featuredBanner
+        ...textBanner
+        ...text
+      }
+    }
+  }
+}

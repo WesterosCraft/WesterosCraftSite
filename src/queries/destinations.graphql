@@ -1,0 +1,14 @@
+query($section: [String]) {
+  entries(section: $section) {
+    ... on wiki_wikiDestination_Entry {
+      title
+      region
+      redoAvailabe
+      serverBuild
+      locationStatus
+      locationType
+      house
+      warp
+    }
+  }
+}
