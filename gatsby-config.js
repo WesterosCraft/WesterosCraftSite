@@ -37,9 +37,6 @@ module.exports = {
         fieldName: `craft`,
         typeName: `Craft`,
         url: `https://westeroscraft.com/api`,
-        headers: {
-          Authorization: `bearer ${process.env.CRAFT_API_TOKEN}`,
-        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
