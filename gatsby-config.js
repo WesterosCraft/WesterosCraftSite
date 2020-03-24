@@ -4,9 +4,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Craft Barebones`,
-    description: `Kick off your next, great Gatsby & Craft CMS project with this starter.`,
-    author: `@v3frankie`,
+    title: `WesterosCraft`,
+    description: `A Minecraft server dedicated to building the world of A Game of Thrones.`,
+    author: `Jacob Granberry`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

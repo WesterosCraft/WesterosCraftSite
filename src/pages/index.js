@@ -3,13 +3,21 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
+import { Heading } from 'rebass'
 
 const IndexPage = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <h1>{data.craft.entry.title}</h1>
+      <Heading as="h1" variant="heading1">
+        {data.craft.entry.title}
+      </Heading>
+      <Heading as="h2" variant="heading2">
+        {data.craft.entry.title}
+      </Heading>
+      <Heading as="h3" variant="heading3">
+        {data.craft.entry.title}
+      </Heading>
     </Layout>
   )
 }
