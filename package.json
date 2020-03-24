@@ -22,6 +22,7 @@
     "react": "^16.13.1",
     "react-dom": "npm:@hot-loader/react-dom@^16.13.0",
     "react-helmet": "^5.2.1",
+    "reactjs-popup": "^1.5.0",
     "rebass": "^4.0.7"
   },
   "keywords": [

@@ -5,7 +5,11 @@ export const theme = {
     white: '#FFFFFF',
     green: '#365B41',
     gold: '#DAAC58',
-    red: '#9E1E22'
+    red: {
+      light: '#B32227',
+      medium: '#9E1E22',
+      dark: '#891A1D',
+    } ,
   },
   fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   fonts: {
@@ -55,8 +59,14 @@ export const theme = {
       color: 'black',
     },
     red: {
-      backgroundColor: 'red',
+      backgroundColor: 'red.medium',
       color: 'white',
+      '&:hover': {
+        backgroundColor: 'red.light'
+      },
+      '&:focus': {
+        backgroundColor: 'red.dark'
+      }
     }
   },
   forms: {
