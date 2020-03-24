@@ -3,6 +3,9 @@ export const theme = {
   space: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 88, 96],
   colors: {
     white: '#FFFFFF',
+    green: '#365B41',
+    gold: '#DAAC58',
+    red: '#9E1E22'
   },
   fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   fonts: {
@@ -26,19 +29,36 @@ export const theme = {
   shadows: {},
   text: {
     heading1: {
-      fontSize: [8],
+      fontSize: [7],
       fontWeight: 'bold',
     },
     heading2: {
-      fontSize: [7],
-      fontWeight: 'regular',
-    },
-    heading3: {
       fontSize: [6],
       fontWeight: 'regular',
     },
+    heading3: {
+      fontSize: [5],
+      fontWeight: 'regular',
+    },
+    heading4: {
+      fontSize: [4],
+      fontWeight: 'regular',
+    },
+    heading5: {
+      fontSize: [3],
+      fontWeight: 'regular',
+    },
   },
-  buttons: {},
+  buttons: {
+    white: {
+      backgroundColor: 'white',
+      color: 'black',
+    },
+    red: {
+      backgroundColor: 'red',
+      color: 'white',
+    }
+  },
   forms: {
     input: {},
     select: {},

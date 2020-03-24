@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+
 import { StaticQuery, graphql } from 'gatsby'
 import { Global } from '@emotion/core'
 import { GlobalStyle } from '../theme/global'
@@ -22,7 +24,9 @@ const Layout = ({ children }) => (
     render={(data) => (
       <ThemeProvider theme={theme}>
         <Global styles={GlobalStyle} />
-
+        <Helmet>
+          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900|Sen:400,700,800&display=swap" rel="stylesheet" />
+        </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
