@@ -10,6 +10,21 @@ import { theme } from '../theme/theme'
 
 import { Header } from './header';
 
+const linkData = [
+  {
+    name: 'About'
+  },
+  {
+    name: 'Community'
+  },
+  {
+    name: 'Wiki'
+  },
+  {
+    name: 'Map'
+  }
+]
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -27,7 +42,7 @@ const Layout = ({ children }) => (
         <Helmet>
           <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900|Sen:400,700,800&display=swap" rel="stylesheet" />
         </Helmet>
-        <Header />
+        <Header links={linkData} />
         <div
           style={{
             margin: `0 auto`,

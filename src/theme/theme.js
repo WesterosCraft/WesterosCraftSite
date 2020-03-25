@@ -9,7 +9,11 @@ export const theme = {
       light: '#B32227',
       medium: '#9E1E22',
       dark: '#891A1D',
-    } ,
+    },
+    gray: {
+      100: '#666666',
+      200: '#333333'
+    }
   },
   fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   fonts: {
