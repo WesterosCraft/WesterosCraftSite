@@ -3,32 +3,46 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
-import { Heading, Box } from 'rebass'
-import {Button } from '../components/button';
+import { Heading, Box, Flex, Image, Text } from 'rebass'
+import { Button } from '../components/button'
+import { HomeBar } from '../components/homeBar'
+import { TwoColumnLayout } from '../components/twoColumnLayout'
+import { VideoEmbed } from '../components/videoEmbed'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <Heading as="h1" variant="heading1">
-        {data.craft.entry.title}
-      </Heading>
-      <Heading as="h2" variant="heading2">
-        {data.craft.entry.title}
-      </Heading>
-      <Heading as="h3" variant="heading3">
-        {data.craft.entry.title}
-      </Heading>
-      <Heading as="h4" variant="heading4">
-        {data.craft.entry.title}
-      </Heading>
-      <Heading as="h5" variant="heading5">
-        {data.craft.entry.title}
-      </Heading>
-      <Box bg="black" p={5}>
-        <Button variant="white">White Button</Button>
-        <Button variant="red">Red Button</Button>
-      </Box>
+      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
+        <Box textAlign="center">
+          <Heading as="h1" variant="heading1">
+            Seven Kingdoms. All Blocks.
+          </Heading>
+          <Heading as="h2" variant="heading2" mt={5}>
+            A Minecraft Server
+          </Heading>
+        </Box>
+        <Box>
+          <Image src="https://westeroscraft.com/web/assets/images/baelors-1.png" alt="Baelors" />
+          <HomeBar />
+          <TwoColumnLayout py={[120, null, 160]}>
+            <TwoColumnLayout.ColumnOne>
+              <Text as="h5" variant="heading5">
+                WesterosCraft is meticialulosy recreated the world of Game of Thrones
+              </Text>
+              <Text as="h2" variant="heading2" py={6}>
+                over 1.5 billion blocks placed over 7.5 square miles
+              </Text>
+              <Text as="h5" variant="heading5">
+                as seen in
+              </Text>
+            </TwoColumnLayout.ColumnOne>
+            <TwoColumnLayout.ColumnTwo>
+              <VideoEmbed />
+            </TwoColumnLayout.ColumnTwo>
+          </TwoColumnLayout>
+        </Box>
+      </Flex>
     </Layout>
   )
 }

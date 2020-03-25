@@ -12,8 +12,8 @@ export const theme = {
     },
     gray: {
       100: '#666666',
-      200: '#333333'
-    }
+      200: '#333333',
+    },
   },
   fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   fonts: {
@@ -37,19 +37,19 @@ export const theme = {
   shadows: {},
   text: {
     heading1: {
-      fontSize: [7],
+      fontSize: [5, 6, 7],
       fontWeight: 'bold',
     },
     heading2: {
-      fontSize: [6],
-      fontWeight: 'regular',
+      fontSize: [4, 5, 6],
+      fontWeight: 'bold',
     },
     heading3: {
-      fontSize: [5],
+      fontSize: [3, 4, 5],
       fontWeight: 'regular',
     },
     heading4: {
-      fontSize: [4],
+      fontSize: [2, 3, 4],
       fontWeight: 'regular',
     },
     heading5: {
@@ -66,12 +66,12 @@ export const theme = {
       backgroundColor: 'red.medium',
       color: 'white',
       '&:hover': {
-        backgroundColor: 'red.light'
+        backgroundColor: 'red.light',
       },
       '&:focus': {
-        backgroundColor: 'red.dark'
-      }
-    }
+        backgroundColor: 'red.dark',
+      },
+    },
   },
   forms: {
     input: {},

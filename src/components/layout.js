@@ -7,22 +7,23 @@ import { Global } from '@emotion/core'
 import { GlobalStyle } from '../theme/global'
 import { ThemeProvider } from 'emotion-theming'
 import { theme } from '../theme/theme'
+import { Box } from 'rebass'
 
-import { Header } from './header';
+import { Header } from './header'
 
 const linkData = [
   {
-    name: 'About'
+    name: 'About',
   },
   {
-    name: 'Community'
+    name: 'Community',
   },
   {
-    name: 'Wiki'
+    name: 'Wiki',
   },
   {
-    name: 'Map'
-  }
+    name: 'Map',
+  },
 ]
 
 const Layout = ({ children }) => (
@@ -40,27 +41,28 @@ const Layout = ({ children }) => (
       <ThemeProvider theme={theme}>
         <Global styles={GlobalStyle} />
         <Helmet>
-          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900|Sen:400,700,800&display=swap" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900|Sen:400,700,800&display=swap"
+            rel="stylesheet"
+          />
         </Helmet>
         <Header links={linkData} />
-        <div
-          style={{
+        <Box
+          as="main"
+          className={`page-wrapper`}
+          sx={{
             margin: `0 auto`,
             maxWidth: 1256,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
+            top: '5vh',
+            position: 'relative',
           }}
         >
           {children}
           <footer>footer</footer>
-        </div>
+        </Box>
       </ThemeProvider>
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout
