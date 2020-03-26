@@ -1,6 +1,7 @@
 export const theme = {
   breakpoints: ['32rem', '48rem', '64rem', '75rem'],
   space: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 88, 96],
+  fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   colors: {
     white: '#FFFFFF',
     green: '#365B41',
@@ -15,7 +16,6 @@ export const theme = {
       200: '#333333',
     },
   },
-  fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   fonts: {
     body: `'Roboto', sans-serif`,
     heading: `'Sen', sans-serif;`,

@@ -14,10 +14,7 @@ export const HomeBar = () => (
     sx={{
       position: 'relative',
       zIndex: 5,
-      boxShadow: `0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802),
-        0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
-        0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
-        0px 100px 80px rgba(0, 0, 0, 0.07);`,
+      boxShadow: `0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);`,
     }}
   >
     <HomeBar.Card>Get The Launcher</HomeBar.Card>

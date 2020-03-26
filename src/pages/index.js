@@ -8,6 +8,7 @@ import { Button } from '../components/button'
 import { HomeBar } from '../components/homeBar'
 import { TwoColumnLayout } from '../components/twoColumnLayout'
 import { VideoEmbed } from '../components/videoEmbed'
+import { Banner } from '../components/banner'
 
 const IndexPage = ({ data }) => {
   return (
@@ -36,11 +37,44 @@ const IndexPage = ({ data }) => {
               <Text as="h5" variant="heading5">
                 as seen in
               </Text>
+              <Flex>
+                <Box width={1}>
+
+                <Box my={2} px={5} width={1/2}>
+                  <Image src="https://westeroscraft.com/web/assets/images/minecraft-logo.svg" alt="Minecraft" width={1} sx={{
+                    maxHeight: '36px',
+                    maxWidth: '190px'
+                  }} />
+                </Box>
+                <Box my={2} px={5} width={1/2}>
+                  <Image src="https://westeroscraft.com/web/assets/images/va_logo.svg" alt="VA Museum" width={1} sx={{
+                    maxHeight: '36px',
+                    maxWidth: '63px'
+                  }} />
+                </Box>
+                </Box>
+                <Box width={1}>
+
+                <Box my={2} px={5} width={1/2}>
+                  <Image src="https://westeroscraft.com/web/assets/images/wired-logo.svg" alt="Wired" sx={{
+                    maxHeight: '36px',
+                    maxWidth: '176px'
+                  }} />
+                </Box>
+                <Box my={2} px={5} width={1/2}>
+                  <Image src="https://westeroscraft.com/web/assets/images/kotaku_logo.svg" alt="Kotaku" sx={{
+                    maxHeight: '36px',
+                    maxWidth: '192px'
+                  }} />
+                </Box>
+                </Box>
+              </Flex>
             </TwoColumnLayout.ColumnOne>
             <TwoColumnLayout.ColumnTwo>
               <VideoEmbed />
             </TwoColumnLayout.ColumnTwo>
           </TwoColumnLayout>
+          <Banner />
         </Box>
       </Flex>
     </Layout>

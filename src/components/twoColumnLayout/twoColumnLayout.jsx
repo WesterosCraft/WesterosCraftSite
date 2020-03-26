@@ -24,7 +24,7 @@ TwoColumnLayout.ColumnOne = function ColumnOne({ children, ...restProps }) {
 
 TwoColumnLayout.ColumnTwo = function ColumnTwo({ children, ...restProps }) {
   return (
-    <Box width={[1, null, null, 1 / 2]} ml={[0, null, null, 8]} {...restProps}>
+    <Box width={[1, null, null, 1 / 2]} ml={[0, null, null, 8]} my="auto" {...restProps}>
       {children}
     </Box>
   )
