@@ -14,6 +14,7 @@ export const theme = {
     gray: {
       100: '#666666',
       200: '#333333',
+      300: '#231F20',
     },
   },
   fonts: {
@@ -46,7 +47,7 @@ export const theme = {
     },
     heading3: {
       fontSize: [3, 4, 5],
-      fontWeight: 'regular',
+      fontWeight: 'bold',
     },
     heading4: {
       fontSize: [2, 3, 4],

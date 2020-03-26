@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import { StaticQuery, graphql } from 'gatsby'
@@ -10,6 +9,7 @@ import { theme } from '../theme/theme'
 import { Box } from 'rebass'
 
 import { Header } from './header'
+import { Footer } from './footer'
 
 const linkData = [
   {
@@ -58,8 +58,8 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <footer>footer</footer>
         </Box>
+        <Footer />
       </ThemeProvider>
     )}
   />

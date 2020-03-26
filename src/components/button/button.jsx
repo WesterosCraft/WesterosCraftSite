@@ -6,9 +6,9 @@ import styled from '@emotion/styled'
 const StyledButton = styled(Base)`
   border-radius: 0;
   cursor: pointer;
-  width: 180px;
+  min-width: 180px;
   transition: all 150ms ease-out 0s;
-  height: 40px;
+  padding: 13px 20px;
   &:hover {
     transform: translate3d(0px, -2px, 0px);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px 0px;

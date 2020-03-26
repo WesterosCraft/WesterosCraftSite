@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import { SEO } from '../components/seo'
 import { graphql } from 'gatsby'
 import { Heading, Box, Flex, Image, Text } from 'rebass'
 import { Button } from '../components/button'
@@ -13,7 +13,7 @@ import { Banner } from '../components/banner'
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
       <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
         <Box textAlign="center">
           <Heading as="h1" variant="heading1">
@@ -39,34 +39,50 @@ const IndexPage = ({ data }) => {
               </Text>
               <Flex>
                 <Box width={1}>
-
-                <Box my={2} px={5} width={1/2}>
-                  <Image src="https://westeroscraft.com/web/assets/images/minecraft-logo.svg" alt="Minecraft" width={1} sx={{
-                    maxHeight: '36px',
-                    maxWidth: '190px'
-                  }} />
-                </Box>
-                <Box my={2} px={5} width={1/2}>
-                  <Image src="https://westeroscraft.com/web/assets/images/va_logo.svg" alt="VA Museum" width={1} sx={{
-                    maxHeight: '36px',
-                    maxWidth: '63px'
-                  }} />
-                </Box>
+                  <Box my={2} px={5} width={1 / 2}>
+                    <Image
+                      src="https://westeroscraft.com/web/assets/images/minecraft-logo.svg"
+                      alt="Minecraft"
+                      width={1}
+                      sx={{
+                        maxHeight: '36px',
+                        maxWidth: '190px',
+                      }}
+                    />
+                  </Box>
+                  <Box my={2} px={5} width={1 / 2}>
+                    <Image
+                      src="https://westeroscraft.com/web/assets/images/va_logo.svg"
+                      alt="VA Museum"
+                      width={1}
+                      sx={{
+                        maxHeight: '36px',
+                        maxWidth: '63px',
+                      }}
+                    />
+                  </Box>
                 </Box>
                 <Box width={1}>
-
-                <Box my={2} px={5} width={1/2}>
-                  <Image src="https://westeroscraft.com/web/assets/images/wired-logo.svg" alt="Wired" sx={{
-                    maxHeight: '36px',
-                    maxWidth: '176px'
-                  }} />
-                </Box>
-                <Box my={2} px={5} width={1/2}>
-                  <Image src="https://westeroscraft.com/web/assets/images/kotaku_logo.svg" alt="Kotaku" sx={{
-                    maxHeight: '36px',
-                    maxWidth: '192px'
-                  }} />
-                </Box>
+                  <Box my={2} px={5} width={1 / 2}>
+                    <Image
+                      src="https://westeroscraft.com/web/assets/images/wired-logo.svg"
+                      alt="Wired"
+                      sx={{
+                        maxHeight: '36px',
+                        maxWidth: '176px',
+                      }}
+                    />
+                  </Box>
+                  <Box my={2} px={5} width={1 / 2}>
+                    <Image
+                      src="https://westeroscraft.com/web/assets/images/kotaku_logo.svg"
+                      alt="Kotaku"
+                      sx={{
+                        maxHeight: '36px',
+                        maxWidth: '192px',
+                      }}
+                    />
+                  </Box>
                 </Box>
               </Flex>
             </TwoColumnLayout.ColumnOne>
