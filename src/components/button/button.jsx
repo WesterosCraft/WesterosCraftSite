@@ -28,7 +28,7 @@ export const Button = ({ as = 'a', children, ...props }) => (
         fontWeight: 'bold',
         fontFamily: 'heading',
         lineHeight: 1,
-        padding: '13px 20px',
+        padding: '14px 20px',
         transform: 'scale3d(1, 1, 1) translate3d(0px, 0px, 0px)',
         opacity: 1,
         transition: 'transform 700ms cubic-bezier(0.175, 0.885, 0.335, 1.05) 0s',

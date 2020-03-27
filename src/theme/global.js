@@ -2,6 +2,11 @@ import { css } from '@emotion/core'
 import { theme } from './theme'
 
 export const GlobalStyle = css`
+
+  #gatsby-focus-wrapper {
+    overflow: hidden;
+  }
+
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
