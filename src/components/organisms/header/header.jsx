@@ -1,39 +1,42 @@
 import React from 'react'
 import Popup from 'reactjs-popup'
 
+import { Link } from 'gatsby'
 import { Flex, Text, Box, Image } from 'rebass'
 import { IoIosArrowDown } from 'react-icons/io'
-import { ConditionalWrapper } from '../conditionalWrapper'
 
 export function Header({ links }) {
   console.log(links)
   return (
     <Header.NavWrapper>
       <Header.Nav>
-        {/* <Header.NavGroup>
-          <a href="/">
-            <Image
-              src="https://westeroscraft.com/web/assets/images/wc-logo.svg"
-              alt="WesterosCraft"
-              height="26px"
-            />
-          </a>
-        </Header.NavGroup> */}
+        {links.map((link) =>
+          link.navLogo.length > 0 ? (
+            <Header.NavGroup key={link.title}>
+              <Link to="/">
+                <Image src={link.navLogo[0].url} alt="WesterosCraft" height="26px" />
+              </Link>
+            </Header.NavGroup>
+          ) : null
+        )}
         <Header.NavGroup>
-          {links.map((link) => link.children.length > 0 ? (
-            <Popup
-              trigger={<Header.NavItem dropdown>{link.title}</Header.NavItem>}
-              on="hover"
-              closeOnDocumentClick
-              mouseLeaveDelay={0}
-              mouseEnterDelay={0}
-              contentStyle={{ padding: '0px', border: 'none' }}
-              arrowStyle={{ padding: '0px', border: 'none' }}
-            >
-              <Text>test</Text>
-            </Popup>
-          )
-          : <Header.NavItem>{link.title}</Header.NavItem>
+          {links.map((link) =>
+            link.children.length > 0 ? (
+              <Popup
+                key={link.title}
+                trigger={<Header.NavItem dropdown>{link.title}</Header.NavItem>}
+                on="hover"
+                closeOnDocumentClick
+                mouseLeaveDelay={0}
+                mouseEnterDelay={0}
+                contentStyle={{ padding: '0px', border: 'none' }}
+                arrowStyle={{ padding: '0px', border: 'none' }}
+              >
+                <Text>test</Text>
+              </Popup>
+            ) : (
+              !link.navLogo.length && <Header.NavItem key={link.title}>{link.title}</Header.NavItem>
+            )
           )}
         </Header.NavGroup>
       </Header.Nav>
@@ -99,17 +102,17 @@ Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) =>
         <Text as="span" fontSize={2} fontFamily="heading" fontWeight="bold">
           <>
             {children}
-            {dropdown && 
-            <IoIosArrowDown
-              style={{
-                verticalAlign: 'text-top',
-                position: 'relative',
-                bottom: '-0.125em',
-                marginLeft: '0.4em',
-                zIndex: 3,
-              }}
-            />
-            }
+            {dropdown && (
+              <IoIosArrowDown
+                style={{
+                  verticalAlign: 'text-top',
+                  position: 'relative',
+                  bottom: '-0.125em',
+                  marginLeft: '0.4em',
+                  zIndex: 3,
+                }}
+              />
+            )}
           </>
         </Text>
       </Box>

@@ -8,8 +8,8 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from '../theme/theme'
 import { Box } from 'rebass'
 
-import { Header } from './header'
-import { Footer } from './footer'
+import { Header } from './organisms/header'
+import { Footer } from './organisms/footer'
 
 const linkData = [
   {
@@ -31,22 +31,22 @@ const Layout = ({ children }) => (
     query={graphql`
       query SiteTitleQuery {
         craft {
-    navData: nodes(navHandle: "mainNav", level: 1) {
-    title
-    url
-    type
-    ...on Craft_mainNav_Node {
-      navLogo {
-        url
-      }
-    }
-	children {
-    title
-    url
-    type
-  }
-  }
-  }
+          navData: nodes(navHandle: "mainNav", level: 1) {
+            title
+            url
+            type
+            ... on Craft_mainNav_Node {
+              navLogo {
+                url
+              }
+            }
+            children {
+              title
+              url
+              type
+            }
+          }
+        }
       }
     `}
     render={(data) => (

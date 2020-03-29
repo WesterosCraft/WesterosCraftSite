@@ -2,7 +2,6 @@ import { css } from '@emotion/core'
 import { theme } from './theme'
 
 export const GlobalStyle = css`
-
   #gatsby-focus-wrapper {
     overflow: hidden;
   }
