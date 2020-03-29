@@ -3,7 +3,7 @@ import { Box, Heading, Flex } from 'rebass'
 import { Button } from '../../atoms/button'
 import { CardBar } from '../../atoms/icons/cardBar/cardBar'
 
-export const Banner = () => (
+export const Banner = ({ data }) => (
   <Box sx={{ position: 'relative' }}>
     <Flex
       className="banner-content-card"

@@ -8,8 +8,10 @@ import { TwoColumnLayout } from '../components/slices/twoColumnLayout'
 import { Banner } from '../components/slices/banner'
 import { VideoEmbed } from '../components/organisms/videoEmbed'
 import { DestinationSlide } from '../components/slices/destinationSlide'
+import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const IndexPage = ({ data }) => {
+  console.log('page data', data)
   return (
     <Layout>
       <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
@@ -88,8 +90,9 @@ const IndexPage = ({ data }) => {
               <VideoEmbed />
             </TwoColumnLayout.ColumnTwo>
           </TwoColumnLayout>
-          <Banner />
-          <DestinationSlide />
+          <SliceZone slices={data.craft.entry.pageSlices} />
+          {/* <Banner />
+          <DestinationSlide /> */}
         </Box>
       </Flex>
     </Layout>
@@ -99,8 +102,25 @@ const IndexPage = ({ data }) => {
 export const pageQuery = graphql`
   query homeQuery {
     craft {
-      entry(site: "westeroscraftNew", section: "homePage") {
-        title
+      entry(site: "westeroscraft", section: "home") {
+        ... on Craft_home_home_Entry {
+          pageSlices {
+            ... on Craft_pageSlices_banner_BlockType {
+              typeHandle
+              redactor
+              buttons {
+                ... on Craft_buttons_button_BlockType {
+                  buttonText
+                  buttonLink
+                  variant
+                }
+              }
+            }
+            ... on Craft_pageSlices_destinationSlider_BlockType {
+              typeHandle
+            }
+          }
+        }
       }
     }
   }

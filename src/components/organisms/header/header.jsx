@@ -6,7 +6,6 @@ import { Flex, Text, Box, Image } from 'rebass'
 import { IoIosArrowDown } from 'react-icons/io'
 
 export function Header({ links }) {
-  console.log(links)
   return (
     <Header.NavWrapper>
       <Header.Nav>
