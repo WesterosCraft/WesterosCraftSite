@@ -30,11 +30,23 @@ const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
+        craft {
+    navData: nodes(navHandle: "mainNav", level: 1) {
+    title
+    url
+    type
+    ...on Craft_mainNav_Node {
+      navLogo {
+        url
+      }
+    }
+	children {
+    title
+    url
+    type
+  }
+  }
+  }
       }
     `}
     render={(data) => (
@@ -46,7 +58,7 @@ const Layout = ({ children }) => (
             rel="stylesheet"
           />
         </Helmet>
-        <Header links={linkData} />
+        <Header links={data.craft.navData} />
         <Box
           as="main"
           className={`page-wrapper`}

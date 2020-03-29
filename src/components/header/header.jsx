@@ -6,10 +6,11 @@ import { IoIosArrowDown } from 'react-icons/io'
 import { ConditionalWrapper } from '../conditionalWrapper'
 
 export function Header({ links }) {
+  console.log(links)
   return (
     <Header.NavWrapper>
       <Header.Nav>
-        <Header.NavGroup>
+        {/* <Header.NavGroup>
           <a href="/">
             <Image
               src="https://westeroscraft.com/web/assets/images/wc-logo.svg"
@@ -17,11 +18,11 @@ export function Header({ links }) {
               height="26px"
             />
           </a>
-        </Header.NavGroup>
+        </Header.NavGroup> */}
         <Header.NavGroup>
-          {links.map((link) => (
+          {links.map((link) => link.children.length > 0 ? (
             <Popup
-              trigger={<Header.NavItem>{link.name}</Header.NavItem>}
+              trigger={<Header.NavItem dropdown>{link.title}</Header.NavItem>}
               on="hover"
               closeOnDocumentClick
               mouseLeaveDelay={0}
@@ -31,7 +32,9 @@ export function Header({ links }) {
             >
               <Text>test</Text>
             </Popup>
-          ))}
+          )
+          : <Header.NavItem>{link.title}</Header.NavItem>
+          )}
         </Header.NavGroup>
       </Header.Nav>
     </Header.NavWrapper>
@@ -68,7 +71,7 @@ Header.NavGroup = function NavGroup({ children, ...restProps }) {
   return <Flex {...restProps}>{children}</Flex>
 }
 
-Header.NavItem = React.forwardRef(({ children, ...restProps }, ref) => {
+Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) => {
   return (
     <Box
       ref={ref}
@@ -96,6 +99,7 @@ Header.NavItem = React.forwardRef(({ children, ...restProps }, ref) => {
         <Text as="span" fontSize={2} fontFamily="heading" fontWeight="bold">
           <>
             {children}
+            {dropdown && 
             <IoIosArrowDown
               style={{
                 verticalAlign: 'text-top',
@@ -105,6 +109,7 @@ Header.NavItem = React.forwardRef(({ children, ...restProps }, ref) => {
                 zIndex: 3,
               }}
             />
+            }
           </>
         </Text>
       </Box>
