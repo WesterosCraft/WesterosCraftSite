@@ -2,9 +2,11 @@ import React from 'react'
 import { Box, Heading, Flex } from 'rebass'
 import { Button } from '../../atoms/button'
 import { CardBar } from '../../atoms/icons/cardBar/cardBar'
+import { ButtonSelector } from '../../organisms/buttonSelector'
 
 export const Banner = ({ data }) => (
   <Box sx={{ position: 'relative' }}>
+    {console.log('banner data', data)}
     <Flex
       className="banner-content-card"
       flexDirection={['column', null, 'row']}
@@ -27,16 +29,18 @@ export const Banner = ({ data }) => (
         }}
       />
       <Box textAlign={['center', null, 'left']}>
-        <Heading as="h3" color="white" variant="heading3">
+        <div dangerouslySetInnerHTML={{ __html: data.redactor }} />
+        {/* <Heading as="h3" color="white" variant="heading3">
           Ready to explore Westeros?
         </Heading>
         <Heading color="white" variant="heading4" mt={[4, null, 5]}>
           Get our launcher or read more about us
-        </Heading>
+        </Heading> */}
       </Box>
-      <Button variant="white" mt={[5, null, 0]}>
+      <ButtonSelector data={data.buttons} />
+      {/* <Button variant="white" mt={[5, null, 0]}>
         Get Started
-      </Button>
+      </Button> */}
       <CardBar
         sx={{
           position: 'absolute',

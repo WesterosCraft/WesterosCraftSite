@@ -91,8 +91,6 @@ const IndexPage = ({ data }) => {
             </TwoColumnLayout.ColumnTwo>
           </TwoColumnLayout>
           <SliceZone slices={data.craft.entry.pageSlices} />
-          {/* <Banner />
-          <DestinationSlide /> */}
         </Box>
       </Flex>
     </Layout>
