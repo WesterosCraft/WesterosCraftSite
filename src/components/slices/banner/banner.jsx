@@ -6,7 +6,6 @@ import { ButtonSelector } from '../../organisms/buttonSelector'
 
 export const Banner = ({ data }) => (
   <Box sx={{ position: 'relative' }}>
-    {console.log('banner data', data)}
     <Flex
       className="banner-content-card"
       flexDirection={['column', null, 'row']}

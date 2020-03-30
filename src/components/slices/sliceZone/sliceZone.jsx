@@ -8,7 +8,7 @@ export const SliceZone = ({ slices }) => {
       case 'banner':
         return <Banner data={slice} key={index} />
       case 'destinationSlider':
-        return <DestinationSlide data={slice.data} key={index} />
+        return <DestinationSlide data={slice} key={index} />
       default:
         return null
     }

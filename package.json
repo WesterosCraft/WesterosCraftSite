@@ -19,6 +19,7 @@
     "gatsby-source-graphql": "^2.2.0",
     "gatsby-transformer-sharp": "^2.4.1",
     "prop-types": "^15.6.2",
+    "pure-react-carousel": "^1.26.1",
     "react": "^16.13.1",
     "react-alice-carousel": "^1.18.0",
     "react-dom": "npm:@hot-loader/react-dom@^16.13.0",

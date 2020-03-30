@@ -116,6 +116,17 @@ export const pageQuery = graphql`
             }
             ... on Craft_pageSlices_destinationSlider_BlockType {
               typeHandle
+              redactor
+              slider {
+                ... on Craft_slider_slide_BlockType {
+                  image {
+                    url
+                  }
+                  slideName
+                  slideLink
+                  caption
+                }
+              }
             }
           }
         }
