@@ -1,21 +1,14 @@
 import React from 'react'
 import { Box, Image } from 'rebass'
-import { CarouselProvider, DotGroup, Slide, Slider } from 'pure-react-carousel'
+// import { CarouselProvider, DotGroup, Slide, Slider } from 'pure-react-carousel'
+import { Carousel } from 'react-responsive-carousel'
 
-export default ({ slides }) => (
-  <CarouselProvider
-    visibleSlides={1}
-    totalSlides={slides.length}
-    naturalSlideWidth={860}
-    naturalSlideHeight={500}
-  >
-    <Slider>
-      {slides.map((slide, index) => (
-        <Slide index={index}>
-          <Image src={slide.image[0].url} />
-        </Slide>
-      ))}
-    </Slider>
-    <DotGroup dotNumbers />
-  </CarouselProvider>
+export default ({ slides, ...props }) => (
+  <Carousel {...props}>
+    {slides.map((slide, index) => (
+      <div key={index}>
+        <Image src={slide.image[0].url} />
+      </div>
+    ))}
+  </Carousel>
 )
