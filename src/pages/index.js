@@ -4,10 +4,8 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import { Heading, Box, Flex, Image, Text } from 'rebass'
 import { HomeBar } from '../components/atoms/homeBar'
-import { TwoColumnLayout } from '../components/slices/twoColumnLayout'
-import { Banner } from '../components/slices/banner'
+import { TwoColumnLayout } from '../components/organisms/twoColumnLayout'
 import { VideoEmbed } from '../components/organisms/videoEmbed'
-import { DestinationSlide } from '../components/slices/destinationSlide'
 import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const IndexPage = ({ data }) => {
@@ -125,6 +123,14 @@ export const pageQuery = graphql`
                   slideName
                   slideLink
                   caption
+                }
+              }
+            }
+            ... on Craft_pageSlices_twoColumnText_BlockType {
+              typeHandle
+              children {
+                ... on Craft_pageSlices_column_BlockType {
+                  redactor
                 }
               }
             }

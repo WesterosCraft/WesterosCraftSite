@@ -61,7 +61,7 @@ export const DestinationSlide = ({ data }) => {
           showStatus={false}
           selectedItem={currentSlide}
         />
-        <Flex flexDirection="column" as="ul" pl={[0, null, 8]}>
+        <Flex flexDirection={['row', null, 'column']} as="ul" pl={[0, null, 8]} pt={[5, null, 0]}>
           {data.slider.map((slide, index) => (
             <SlideSelection
               as="li"
@@ -74,7 +74,9 @@ export const DestinationSlide = ({ data }) => {
               active={index === currentSlide}
               width={[1 / 2, null, 1]}
             >
-              <Text fontSize={2}>{slide.slideName}</Text>
+              <Text as="span" fontSize={2}>
+                {slide.slideName}
+              </Text>
             </SlideSelection>
           ))}
         </Flex>

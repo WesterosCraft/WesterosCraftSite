@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Image } from 'rebass'
-// import { CarouselProvider, DotGroup, Slide, Slider } from 'pure-react-carousel'
+import { Image } from 'rebass'
 import { Carousel } from 'react-responsive-carousel'
 
 export default ({ slides, ...props }) => (

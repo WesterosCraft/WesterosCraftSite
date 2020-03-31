@@ -3,11 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import { Heading, Box, Flex, Image, Text } from 'rebass'
-import { Button } from '../components/atoms/button'
-import { HomeBar } from '../components/atoms/homeBar'
-import { TwoColumnLayout } from '../components/slices/twoColumnLayout'
 import { VideoEmbed } from '../components/organisms/videoEmbed'
-import { Banner } from '../components/slices/banner'
 
 const AboutPage = ({ data }) => {
   return (
