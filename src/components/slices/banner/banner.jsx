@@ -3,6 +3,7 @@ import { Box, Heading, Flex } from 'rebass'
 import { Button } from '../../atoms/button'
 import { CardBar } from '../../atoms/icons/cardBar/cardBar'
 import { ButtonSelector } from '../../organisms/buttonSelector'
+import { Redactor } from '../../atoms/redactor/redactor'
 
 export const Banner = ({ data }) => (
   <Box sx={{ position: 'relative' }}>
@@ -16,7 +17,8 @@ export const Banner = ({ data }) => (
       minHeight={[240, null, 220]}
       sx={{ borderRadius: 8, position: 'relative' }}
       mx="auto"
-      px={['80px', null, '100px']}
+      px={['46px', '80px', null, '100px']}
+      py={11}
     >
       <CardBar
         sx={{
@@ -27,19 +29,10 @@ export const Banner = ({ data }) => (
           transform: 'scaleX(-1) scaleY(-1)',
         }}
       />
-      <Box textAlign={['center', null, 'left']}>
-        <div dangerouslySetInnerHTML={{ __html: data.redactor }} />
-        {/* <Heading as="h3" color="white" variant="heading3">
-          Ready to explore Westeros?
-        </Heading>
-        <Heading color="white" variant="heading4" mt={[4, null, 5]}>
-          Get our launcher or read more about us
-        </Heading> */}
+      <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
+        <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
       </Box>
       <ButtonSelector data={data.buttons} />
-      {/* <Button variant="white" mt={[5, null, 0]}>
-        Get Started
-      </Button> */}
       <CardBar
         sx={{
           position: 'absolute',

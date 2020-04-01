@@ -49,7 +49,7 @@ export const GlobalStyle = css`
 
   b,
   strong {
-    font-weight: bolder;
+    font-weight: bold;
   }
 
   code,
