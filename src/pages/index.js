@@ -125,6 +125,12 @@ export const pageQuery = graphql`
                   caption
                 }
               }
+              linkBuilder {
+                ... on Craft_linkBuilder_additionalLinks_BlockType {
+                  additionalLink
+                  customLinkText
+                }
+              }
             }
             ... on Craft_pageSlices_twoColumnText_BlockType {
               typeHandle

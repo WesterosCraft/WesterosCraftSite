@@ -17,6 +17,10 @@ export const Redactor = styled.div`
     margin-block-end: 0;
   }
 
+  p {
+    line-height: 1.5;
+  }
+
   h1,
   h2,
   h3,
@@ -33,6 +37,10 @@ export const Redactor = styled.div`
 
   h3 + h4 {
     margin-top: 22px;
+  }
+
+  h5 + p {
+    margin-top: 28px;
   }
 
   /* MOBILE STYLES */

@@ -3,6 +3,7 @@ import { Text, Image, Box, Flex, Heading } from 'rebass'
 import { Fleur } from '../../atoms/icons/fleur/fleur'
 import Slider from '../../atoms/slider/slider'
 import styled from '@emotion/styled'
+import { Redactor } from '../../atoms/redactor/redactor'
 
 const SlideSelection = styled(Box)`
   color: ${({ active }) => (active ? 'green' : 'black')};
@@ -14,6 +15,7 @@ const SlideSelection = styled(Box)`
 
 export const DestinationSlide = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
+
   return (
     <Box className="destinationslide" my={160}>
       <Flex
@@ -28,14 +30,7 @@ export const DestinationSlide = ({ data }) => {
         width={1}
         mx="auto"
       >
-        <Heading variant="heading2">Destinations</Heading>
-        <Fleur width="36px" height="30px" />
-        <Text variant="heading5" mt={5}>
-          Synopsis text - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-          dolor in.
-        </Text>
+        <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
       </Flex>
 
       <Flex
@@ -78,6 +73,9 @@ export const DestinationSlide = ({ data }) => {
                 {slide.slideName}
               </Text>
             </SlideSelection>
+          ))}
+          {data.linkBuilder.map((link) => (
+            <a href={link.url}>{link.customLinkText}</a>
           ))}
         </Flex>
       </Flex>
