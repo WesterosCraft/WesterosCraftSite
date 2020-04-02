@@ -21,21 +21,21 @@ export const Footer = () => (
         width: '88px',
         height: '100px',
         position: 'absolute',
-        left: 0,
-        top: 0,
+        left: 16,
+        top: 16,
         transform: 'scaleX(-1)',
       }}
     />
     <FooterFrame
-      style={{ width: '88px', height: '100px', position: 'absolute', right: 0, top: 0 }}
+      style={{ width: '88px', height: '100px', position: 'absolute', right: 16, top: 16 }}
     />
     <FooterFrame
       style={{
         width: '88px',
         height: '100px',
         position: 'absolute',
-        left: 0,
-        bottom: 0,
+        left: 16,
+        bottom: 16,
         transform: 'scaleX(-1) scaleY(-1)',
       }}
     />
@@ -44,8 +44,8 @@ export const Footer = () => (
         width: '88px',
         height: '100px',
         position: 'absolute',
-        right: 0,
-        bottom: 0,
+        right: 16,
+        bottom: 16,
         transform: 'scaleY(-1)',
       }}
     />
