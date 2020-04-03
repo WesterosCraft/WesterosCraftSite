@@ -84,9 +84,7 @@ const IndexPage = ({ data }) => {
                 </Box>
               </Flex>
             </TwoColumnLayout.ColumnOne>
-            <TwoColumnLayout.ColumnTwo>
-              <VideoEmbed />
-            </TwoColumnLayout.ColumnTwo>
+            <TwoColumnLayout.ColumnTwo>{/* <VideoEmbed /> */}</TwoColumnLayout.ColumnTwo>
           </TwoColumnLayout>
           <SliceZone slices={data.craft.entry.pageSlices} />
         </Box>
@@ -102,43 +100,13 @@ export const pageQuery = graphql`
         ... on Craft_home_home_Entry {
           pageSlices {
             ... on Craft_pageSlices_banner_BlockType {
-              typeHandle
-              redactor
-              buttons {
-                ... on Craft_buttons_button_BlockType {
-                  buttonText
-                  buttonLink
-                  variant
-                }
-              }
+              ...banner
             }
             ... on Craft_pageSlices_destinationSlider_BlockType {
-              typeHandle
-              redactor
-              slider {
-                ... on Craft_slider_slide_BlockType {
-                  image {
-                    url
-                  }
-                  slideName
-                  slideLink
-                  caption
-                }
-              }
-              linkBuilder {
-                ... on Craft_linkBuilder_additionalLinks_BlockType {
-                  additionalLink
-                  customLinkText
-                }
-              }
+              ...destinationSlider
             }
             ... on Craft_pageSlices_twoColumnText_BlockType {
-              typeHandle
-              children {
-                ... on Craft_pageSlices_column_BlockType {
-                  redactor
-                }
-              }
+              ...twoColumnText
             }
           }
         }

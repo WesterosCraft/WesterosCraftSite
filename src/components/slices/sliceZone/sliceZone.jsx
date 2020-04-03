@@ -2,6 +2,8 @@ import React from 'react'
 import { Banner } from '../banner'
 import { DestinationSlide } from '../destinationSlide'
 import { TwoColumnText } from '../twoColumnText/twoColumnText'
+import { VideoEmbed } from '../../organisms/videoEmbed'
+import { Text } from '../text'
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -12,6 +14,10 @@ export const SliceZone = ({ slices }) => {
         return <DestinationSlide data={slice} key={index} />
       case 'twoColumnText':
         return <TwoColumnText data={slice} key={index} />
+      case 'video':
+        return <VideoEmbed data={slice} key={index} />
+      case 'text':
+        return <Text data={slice} key={index} />
       default:
         return null
     }
