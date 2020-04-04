@@ -68,16 +68,42 @@ export const DestinationSlide = ({ data }) => {
               px={3}
               active={index === currentSlide}
               width={[1 / 2, null, 1]}
+              sx={{
+                '&:hover': {
+                  color: '#365B41',
+                },
+              }}
             >
               <Text as="span" fontSize={2}>
                 {slide.slideName}
               </Text>
             </SlideSelection>
           ))}
+          <Box
+            sx={{
+              borderTop: '1px solid black',
+            }}
+            my={2}
+          />
           {data.linkBuilder.map((link) => (
-            <a href={link.url} key={link.customLinkText}>
-              {link.customLinkText}
-            </a>
+            <Box
+              py={2}
+              px={3}
+              as="li"
+              sx={{
+                cursor: 'pointer',
+                listStyleType: 'none',
+                '&:hover': {
+                  color: '#365B41',
+                },
+              }}
+            >
+              <a href={link.url} key={link.customLinkText}>
+                <Text as="span" fontSize={2}>
+                  {link.customLinkText}
+                </Text>
+              </a>
+            </Box>
           ))}
         </Flex>
       </Flex>
