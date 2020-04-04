@@ -43,6 +43,14 @@ export const Redactor = styled.div`
     margin-top: 28px;
   }
 
+  h6 + h2 {
+    margin-top: 12px;
+  }
+
+  h2 + h6 {
+    margin-top: 12px;
+  }
+
   /* MOBILE STYLES */
 
   h1 {

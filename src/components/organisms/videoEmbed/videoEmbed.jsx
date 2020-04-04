@@ -5,9 +5,8 @@ import ReactPlayer from 'react-player'
 export const VideoEmbed = ({ data }) => {
   const [overlay, setOverlay] = useState(true)
 
-  console.log(data)
   return (
-    <Box width={1} maxWidth={data.maxWidth || 756} mx="auto">
+    <Box width={1} maxWidth={data.maxWidth || 756} mx="auto" className="video-embed">
       <Box
         sx={{
           position: 'relative',

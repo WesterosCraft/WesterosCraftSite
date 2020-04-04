@@ -17,9 +17,9 @@ export const DestinationSlide = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
-    <Box className="destinationslide" my={160}>
+    <Box className="destination-slide" my={160}>
       <Flex
-        className="destinationslide-header"
+        className="destination-slide-header"
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
@@ -75,7 +75,9 @@ export const DestinationSlide = ({ data }) => {
             </SlideSelection>
           ))}
           {data.linkBuilder.map((link) => (
-            <a href={link.url}>{link.customLinkText}</a>
+            <a href={link.url} key={link.customLinkText}>
+              {link.customLinkText}
+            </a>
           ))}
         </Flex>
       </Flex>

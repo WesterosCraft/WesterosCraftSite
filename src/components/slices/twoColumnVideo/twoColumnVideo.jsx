@@ -1,32 +1,34 @@
 import React from 'react'
+import { Box, Flex, Image } from 'rebass'
+import { TwoColumnLayout } from '../../organisms/twoColumnLayout'
+import { VideoEmbed } from '../../organisms/videoEmbed'
+import { Text } from '../text'
 
-import Layout from '../components/layout'
-import { graphql } from 'gatsby'
-import { Heading, Box, Flex, Image, Text } from 'rebass'
-import { HomeBar } from '../components/atoms/homeBar'
-import { TwoColumnLayout } from '../components/organisms/twoColumnLayout'
-import { VideoEmbed } from '../components/organisms/videoEmbed'
-import { SliceZone } from '../components/slices/sliceZone/sliceZone'
+export const TwoColumnVideo = ({ data }) => (
+  <Box className="two-column-video">
+    {console.log(data)}
+    <TwoColumnLayout py={[120, null, 160]}>
+      <TwoColumnLayout.ColumnOne>
+        <Text data={data.children[0]} />
+        {data.images && (
+          <Flex width={1} flexWrap="wrap">
+            {data.images.map((image) => (
+              <Box width={[1, 1 / 2]} py={3} sx={{ textAlign: ['center', null, null, 'left'] }}>
+                <Image src={image.url} maxHeight={36} />
+              </Box>
+            ))}
+          </Flex>
+        )}
+      </TwoColumnLayout.ColumnOne>
+      <TwoColumnLayout.ColumnTwo>
+        <VideoEmbed data={data.children[1]} />
+      </TwoColumnLayout.ColumnTwo>
+    </TwoColumnLayout>
+  </Box>
+)
 
-const IndexPage = ({ data }) => {
-  console.log('page data', data)
-  return (
-    <Layout>
-      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
-        <Box textAlign="center">
-          <Heading as="h1" variant="heading1">
-            Seven Kingdoms. All Blocks.
-          </Heading>
-          <Heading as="h2" variant="heading2" mt={5}>
-            A Minecraft Server
-          </Heading>
-        </Box>
-        <Box>
-          <Image src="https://westeroscraft.com/web/assets/images/baelors-1.png" alt="Baelors" />
-          <HomeBar />
-          {/* <TwoColumnLayout py={[120, null, 160]}>
-            <TwoColumnLayout.ColumnOne>
-              <Text as="h5" variant="heading5">
+{
+  /* <Text as="h5" variant="heading5">
                 WesterosCraft is meticialulosy recreated the world of Game of Thrones
               </Text>
               <Text as="h2" variant="heading2" py={6}>
@@ -82,39 +84,5 @@ const IndexPage = ({ data }) => {
                     />
                   </Box>
                 </Box>
-              </Flex>
-            </TwoColumnLayout.ColumnOne>
-          </TwoColumnLayout> */}
-          <SliceZone slices={data.craft.entry.pageSlices} />
-        </Box>
-      </Flex>
-    </Layout>
-  )
+              </Flex> */
 }
-
-export const pageQuery = graphql`
-  query homeQuery {
-    craft {
-      entry(site: "westeroscraft", section: "home") {
-        ... on Craft_home_home_Entry {
-          pageSlices {
-            ... on Craft_pageSlices_banner_BlockType {
-              ...banner
-            }
-            ... on Craft_pageSlices_destinationSlider_BlockType {
-              ...destinationSlider
-            }
-            ... on Craft_pageSlices_twoColumnText_BlockType {
-              ...twoColumnText
-            }
-            ... on Craft_pageSlices_twoColumnVideo_BlockType {
-              ...twoColumnVideo
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-export default IndexPage

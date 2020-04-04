@@ -65,3 +65,32 @@ export const text = graphql`
     redactor
   }
 `
+
+export const twoColumnVideo = graphql`
+  fragment twoColumnVideo on Craft_pageSlices_twoColumnVideo_BlockType {
+    typeHandle
+    images {
+      url
+    }
+    children {
+      ... on Craft_pageSlices_column_BlockType {
+        typeHandle
+        redactor
+        buttons {
+          ... on Craft_buttons_button_BlockType {
+            buttonText
+            buttonLink
+          }
+        }
+      }
+      ... on Craft_pageSlices_video_BlockType {
+        typeHandle
+        maxWidth
+        thumbnail {
+          url
+        }
+        videoUrl
+      }
+    }
+  }
+`

@@ -4,6 +4,7 @@ import { DestinationSlide } from '../destinationSlide'
 import { TwoColumnText } from '../twoColumnText/twoColumnText'
 import { VideoEmbed } from '../../organisms/videoEmbed'
 import { Text } from '../text'
+import { TwoColumnVideo } from '../twoColumnVideo'
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -18,6 +19,8 @@ export const SliceZone = ({ slices }) => {
         return <VideoEmbed data={slice} key={index} />
       case 'text':
         return <Text data={slice} key={index} />
+      case 'twoColumnVideo':
+        return <TwoColumnVideo data={slice} key={index} />
       default:
         return null
     }
