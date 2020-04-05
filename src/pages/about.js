@@ -1,19 +1,15 @@
 import React from 'react'
 
-import Layout from '../components/layout'
 import { graphql } from 'gatsby'
-import { Heading, Box, Flex, Image, Text } from 'rebass'
-import { VideoEmbed } from '../components/organisms/videoEmbed'
+import { Flex, Text } from 'rebass'
 import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const AboutPage = ({ data }) => {
   return (
-    <Layout>
-      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
-        <Text>About Page</Text>
-        <SliceZone slices={data.craft.entry.pageSlices} />
-      </Flex>
-    </Layout>
+    <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
+      <Text>About Page</Text>
+      <SliceZone slices={data.craft.entry.pageSlices} />
+    </Flex>
   )
 }
 

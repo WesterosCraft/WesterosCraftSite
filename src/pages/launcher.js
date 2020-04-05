@@ -1,18 +1,16 @@
 import React from 'react'
 
-import Layout from '../components/layout'
-import { Heading, Box, Flex, Image, Text } from 'rebass'
+import { Heading } from 'rebass'
 import { graphql } from 'gatsby'
 import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const LauncherPage = ({ data }) => (
-  <Layout>
-    {console.log(data)}
+  <>
     <Heading variant="heading2" textAlign="center">
       {data.craft.entry.heading}
     </Heading>
     <SliceZone slices={data.craft.entry.pageSlices} />
-  </Layout>
+  </>
 )
 
 export const pageQuery = graphql`

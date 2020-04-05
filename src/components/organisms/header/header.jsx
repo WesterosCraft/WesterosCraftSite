@@ -4,6 +4,7 @@ import Popup from 'reactjs-popup'
 import { Link } from 'gatsby'
 import { Flex, Text, Box, Image } from 'rebass'
 import { IoIosArrowDown } from 'react-icons/io'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export function Header({ links }) {
   return (
@@ -12,11 +13,11 @@ export function Header({ links }) {
         {links.map((link) =>
           link.navLogo.length > 0 ? (
             <Header.NavGroup key={link.title}>
-              <Link to="/">
+              <AniLink fade to="/">
                 <Image src={link.navLogo[0].url} alt="WesterosCraft" height="26px" />
-              </Link>
+              </AniLink>
             </Header.NavGroup>
-          ) : null
+          ) : null,
         )}
         <Header.NavGroup>
           {links.map((link) =>
@@ -35,7 +36,7 @@ export function Header({ links }) {
               </Popup>
             ) : (
               !link.navLogo.length && <Header.NavItem key={link.title}>{link.title}</Header.NavItem>
-            )
+            ),
           )}
         </Header.NavGroup>
       </Header.Nav>

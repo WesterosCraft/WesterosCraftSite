@@ -52,7 +52,8 @@ export const Redactor = styled.div`
   h5,
   h6,
   p,
-  a {
+  a,
+  li {
     line-height: 1.25;
     font-weight: normal;
     margin-block-start: 0;

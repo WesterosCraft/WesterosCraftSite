@@ -8,8 +8,8 @@ import { ThemeProvider } from 'emotion-theming'
 import { theme } from '../theme/theme'
 import { Box } from 'rebass'
 
-import { Header } from './organisms/header'
-import { Footer } from './organisms/footer'
+import { Header } from '../components/organisms/header'
+import { Footer } from '../components/organisms/footer'
 
 const linkData = [
   {
