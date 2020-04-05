@@ -3,6 +3,10 @@ import styled from '@emotion/styled'
 export const Redactor = styled.div`
   /* GLOBAL STYLES */
 
+  img {
+    width: 100%;
+  }
+
   h1,
   h2,
   h3,
@@ -37,6 +41,10 @@ export const Redactor = styled.div`
 
   h3 + h4 {
     margin-top: 22px;
+  }
+
+  h3 + h6 {
+    margin-top: 16px;
   }
 
   h5 + p {

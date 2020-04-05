@@ -20,7 +20,7 @@ const StyledButton = styled(Base)`
 `
 
 export const Button = ({ as = 'a', children, ...props }) => (
-  <StyledButton as={as} {...props} mx="10px">
+  <StyledButton as={as} {...props} mx="10px" className="button">
     <Box
       as="span"
       sx={{

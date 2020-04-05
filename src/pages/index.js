@@ -110,6 +110,9 @@ export const pageQuery = graphql`
             ... on Craft_pageSlices_twoColumnVideo_BlockType {
               ...twoColumnVideo
             }
+            ... on Craft_pageSlices_text_BlockType {
+              ...text
+            }
           }
         }
       }

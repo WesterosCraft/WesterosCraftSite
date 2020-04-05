@@ -6,7 +6,6 @@ import { Text } from '../text'
 
 export const TwoColumnVideo = ({ data }) => (
   <Box className="two-column-video">
-    {console.log(data)}
     <TwoColumnLayout py={[120, null, 160]}>
       <TwoColumnLayout.ColumnOne>
         <Text data={data.children[0]} />

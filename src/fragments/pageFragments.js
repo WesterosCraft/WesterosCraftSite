@@ -40,9 +40,18 @@ export const destinationSliderFragment = graphql`
 export const twoColumnTextFragment = graphql`
   fragment twoColumnText on Craft_pageSlices_twoColumnText_BlockType {
     typeHandle
+    maxWidth
+    columnWidths
     children {
       ... on Craft_pageSlices_column_BlockType {
         redactor
+        buttons {
+          ... on Craft_buttons_button_BlockType {
+            variant
+            buttonText
+            buttonLink
+          }
+        }
       }
     }
   }
@@ -78,6 +87,7 @@ export const twoColumnVideo = graphql`
         redactor
         buttons {
           ... on Craft_buttons_button_BlockType {
+            variant
             buttonText
             buttonLink
           }
