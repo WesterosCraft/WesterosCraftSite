@@ -1,14 +1,15 @@
 import React from 'react'
-import { Box, Flex } from 'rebass'
+import { Box, Flex, Text } from 'rebass'
 import { CardBar } from '../../atoms/icons/cardBar/cardBar'
 import { ButtonSelector } from '../../organisms/buttonSelector'
 import { Redactor } from '../../atoms/redactor/redactor'
+import { configProps } from '../../../utility/helpers'
 
 export const ContentBanner = ({ data }) => (
-  <Box sx={{ position: 'relative' }} className="content-banner">
+  <Box sx={{ position: 'relative' }} className="content-banner" {...(data.spacings && configProps(data.spacings[0]))}>
     <Flex
       className="content-banner-content-card"
-      flexDirection={['column', null, 'row']}
+      flexDirection={['column']}
       justifyContent={['center', null, 'space-between']}
       alignItems="center"
       bg="green"
@@ -31,7 +32,32 @@ export const ContentBanner = ({ data }) => (
       <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
         <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
       </Box>
-      <ButtonSelector data={data.buttons} />
+      <Box mt={[10]} mb={[8]}>
+        <ButtonSelector data={data.buttons} mt="42px" />
+      </Box>
+      <Flex flexDirection="row">
+        {data.linkBuilder.map((link) => (
+          <Box
+            py={2}
+            px={3}
+            as="a"
+            color="white"
+            sx={{
+              cursor: 'pointer',
+              listStyleType: 'none',
+              '&:hover': {
+                outline: '1px solid white',
+              },
+            }}
+            href={link.url}
+            key={link.customLinkText}
+          >
+            <Text as="span" fontSize={2}>
+              {link.customLinkText}
+            </Text>
+          </Box>
+        ))}
+      </Flex>
       <CardBar
         sx={{
           position: 'absolute',

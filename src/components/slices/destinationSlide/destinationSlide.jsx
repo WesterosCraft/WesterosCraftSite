@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Text, Image, Box, Flex, Heading } from 'rebass'
-import { Fleur } from '../../atoms/icons/fleur/fleur'
+import { Text, Box, Flex } from 'rebass'
 import Slider from '../../atoms/slider/slider'
 import styled from '@emotion/styled'
 import { Redactor } from '../../atoms/redactor/redactor'
+import { configProps } from '../../../utility/helpers'
 
 const SlideSelection = styled(Box)`
   color: ${({ active }) => (active ? 'green' : 'black')};
@@ -17,7 +17,7 @@ export const DestinationSlide = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
-    <Box className="destination-slide" my={160}>
+    <Box className="destination-slide" {...(data.spacings && configProps(data.spacings[0]))}>
       <Flex
         className="destination-slide-header"
         flexDirection="column"

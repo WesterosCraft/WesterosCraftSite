@@ -37,6 +37,7 @@ export const TwoColumnText = ({ data }) => (
       px={5}
       className="column"
       width={[1, null, data.columnWidths === '3/5' ? 2 / 5 : 1 / 2]}
+      pt={[5, null, 0]}
     >
       <Redactor dangerouslySetInnerHTML={{ __html: data.children[1].redactor }} />
       {data.children[1].buttons && <ButtonSelector data={data.children[1].buttons} />}

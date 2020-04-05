@@ -1,12 +1,12 @@
 import React from 'react'
-import { Box, Heading, Flex } from 'rebass'
-import { Button } from '../../atoms/button'
+import { Box, Flex } from 'rebass'
 import { CardBar } from '../../atoms/icons/cardBar/cardBar'
 import { ButtonSelector } from '../../organisms/buttonSelector'
 import { Redactor } from '../../atoms/redactor/redactor'
+import { configProps } from '../../../utility/helpers'
 
 export const Banner = ({ data }) => (
-  <Box sx={{ position: 'relative' }} className="banner">
+  <Box sx={{ position: 'relative' }} className="banner" {...(data.spacings && configProps(data.spacings[0]))}>
     <Flex
       className="banner-content-card"
       flexDirection={['column', null, 'row']}

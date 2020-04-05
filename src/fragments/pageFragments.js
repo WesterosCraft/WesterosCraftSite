@@ -146,10 +146,15 @@ export const contentBanner = graphql`
         variant
       }
     }
-    additionalLinks {
-      ... on Craft_additionalLinks_additionalLinks_BlockType {
+    linkBuilder {
+      ... on Craft_linkBuilder_additionalLinks_BlockType {
         additionalLink
-        additionalLinkText
+        customLinkText
+      }
+    }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
       }
     }
   }
