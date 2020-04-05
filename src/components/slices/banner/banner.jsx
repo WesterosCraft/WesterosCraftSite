@@ -6,7 +6,7 @@ import { Redactor } from '../../atoms/redactor/redactor'
 import { configProps } from '../../../utility/helpers'
 
 export const Banner = ({ data }) => (
-  <Box sx={{ position: 'relative' }} className="banner" {...(data.spacings && configProps(data.spacings[0]))}>
+  <Box sx={{ position: 'relative' }} className="banner" {...(data.spacings.length && configProps(data.spacings[0]))}>
     <Flex
       className="banner-content-card"
       flexDirection={['column', null, 'row']}
