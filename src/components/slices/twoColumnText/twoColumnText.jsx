@@ -9,7 +9,7 @@ export const TwoColumnText = ({ data }) => (
     className="two-column-text"
     width={1}
     flexDirection={['column', null, 'row']}
-    maxWidth={data.maxWidth}
+    maxWidth={data.maxWidth || 1120}
     mx="auto"
     sx={{
       '.button': {
@@ -20,7 +20,6 @@ export const TwoColumnText = ({ data }) => (
     }}
     {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
   >
-    {console.log('two column data: ', data)}
     <Flex
       px={5}
       className="column"

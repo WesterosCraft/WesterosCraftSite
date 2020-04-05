@@ -64,7 +64,6 @@ const Layout = ({ children }) => (
           className={`page-wrapper`}
           sx={{
             margin: `0 auto`,
-            maxWidth: 1256,
             top: '5vh',
             position: 'relative',
           }}

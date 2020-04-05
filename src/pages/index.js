@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
           A Minecraft Server
         </Heading>
       </Box>
-      <Box>
+      <Box mx="auto">
         <Image src="https://westeroscraft.com/web/assets/images/baelors-1.png" alt="Baelors" />
         <HomeBar />
 
