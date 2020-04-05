@@ -37,6 +37,9 @@ export const pageQuery = graphql`
             ... on Craft_pageSlices_text_BlockType {
               ...text
             }
+            ... on Craft_pageSlices_contentBanner_BlockType {
+              ...contentBanner
+            }
           }
         }
       }

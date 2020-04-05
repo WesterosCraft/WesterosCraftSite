@@ -11,6 +11,11 @@ export const bannerFragment = graphql`
         variant
       }
     }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
   }
 `
 
@@ -34,6 +39,11 @@ export const destinationSliderFragment = graphql`
         customLinkText
       }
     }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
   }
 `
 
@@ -54,6 +64,11 @@ export const twoColumnTextFragment = graphql`
         }
       }
     }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
   }
 `
 
@@ -65,6 +80,11 @@ export const video = graphql`
     thumbnail {
       url
     }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
   }
 `
 
@@ -72,6 +92,11 @@ export const text = graphql`
   fragment text on Craft_pageSlices_text_BlockType {
     typeHandle
     redactor
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
   }
 `
 
@@ -100,6 +125,31 @@ export const twoColumnVideo = graphql`
           url
         }
         videoUrl
+      }
+    }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
+  }
+`
+
+export const contentBanner = graphql`
+  fragment contentBanner on Craft_pageSlices_contentBanner_BlockType {
+    typeHandle
+    redactor
+    buttons {
+      ... on Craft_buttons_button_BlockType {
+        buttonText
+        buttonLink
+        variant
+      }
+    }
+    additionalLinks {
+      ... on Craft_additionalLinks_additionalLinks_BlockType {
+        additionalLink
+        additionalLinkText
       }
     }
   }

@@ -38,11 +38,11 @@ export const theme = {
   shadows: {},
   text: {
     heading1: {
-      fontSize: [5, 6, 7],
+      fontSize: ['36px', '48px', '64px'],
       fontWeight: 'bold',
     },
     heading2: {
-      fontSize: [4, 5, 6],
+      fontSize: ['32px', '36px', '48px'],
       fontWeight: 'bold',
     },
     heading3: {
@@ -56,6 +56,11 @@ export const theme = {
     heading5: {
       fontSize: [3],
       fontWeight: 'regular',
+    },
+    heading6: {
+      fontSize: [3],
+      fontWeight: 'regular',
+      lineHeight: 1.5,
     },
   },
   buttons: {

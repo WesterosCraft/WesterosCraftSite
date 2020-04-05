@@ -11,6 +11,39 @@ export const Redactor = styled.div`
     margin: 0;
   }
 
+  ul {
+    max-width: 760px;
+    margin: 32px auto;
+  }
+
+  ul li {
+    font-size: 16px;
+  }
+
+  ul .image-list {
+    list-style-image: url('sqpurple.gif');
+  }
+
+  li + li {
+    margin-top: 16px;
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 42px;
+  }
+
+  ol li {
+    margin: 0;
+    padding: 14px 0 14px 40px;
+    list-style: none;
+    background-image: url('https://westeroscraft.com/web/assets/images/checkmark.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px;
+    font-size: 18px;
+  }
+
   h1,
   h2,
   h3,
@@ -36,6 +69,12 @@ export const Redactor = styled.div`
   h5,
   h6 {
     font-family: 'Sen', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: bold;
   }
 
   p,
@@ -90,7 +129,8 @@ export const Redactor = styled.div`
   }
 
   h6 {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 1.5;
   }
 
   p {
@@ -138,6 +178,11 @@ export const Redactor = styled.div`
 
     a {
     }
+
+    ol li {
+      background-size: 32px;
+      font-size: 20px;
+    }
   }
 
   /* LAPTOP STYLES */
@@ -173,6 +218,15 @@ export const Redactor = styled.div`
 
     a {
       font-size: 16px;
+    }
+
+    ul li {
+      font-size: 18px;
+    }
+
+    ol {
+      list-style: none;
+      padding-left: 0px;
     }
   }
 `
