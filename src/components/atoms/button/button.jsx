@@ -9,6 +9,7 @@ const StyledButton = styled(Base)`
   min-width: 180px;
   transition: all 150ms ease-out 0s;
   padding: 13px 20px;
+  width: fit-content;
   &:hover {
     transform: translate3d(0px, -2px, 0px);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px 0px;

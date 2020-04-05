@@ -7,6 +7,10 @@ export const Redactor = styled.div`
     width: 100%;
   }
 
+  figure {
+    margin: 0;
+  }
+
   h1,
   h2,
   h3,

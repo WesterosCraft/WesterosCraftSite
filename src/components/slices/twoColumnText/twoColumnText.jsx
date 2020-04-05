@@ -17,11 +17,11 @@ export const TwoColumnText = ({ data }) => (
       },
     }}
   >
-    <Box px={5} className="column" width={[1, null, data.columnWidths === '3/5' ? 3 / 5 : 1 / 2]}>
+    <Flex px={5} className="column" width={[1, null, data.columnWidths === '3/5' ? 3 / 5 : 1 / 2]} flexDirection="column" alignItems="center">
       <Redactor dangerouslySetInnerHTML={{ __html: data.children[0].redactor }} />
       {data.children[0].buttons && <ButtonSelector data={data.children[0].buttons} />}
-    </Box>
-    <Flex flexDirection="row" justifyContent="center" px={5} className="column" width={[1, null, data.columnWidths === '3/5' ? 2 / 5 : 1 / 2]}>
+    </Flex>
+    <Flex flexDirection="column" justifyContent="center" px={5} className="column" width={[1, null, data.columnWidths === '3/5' ? 2 / 5 : 1 / 2]}>
       <Redactor dangerouslySetInnerHTML={{ __html: data.children[1].redactor }} />
       {data.children[1].buttons && <ButtonSelector data={data.children[1].buttons} />}
     </Flex>
