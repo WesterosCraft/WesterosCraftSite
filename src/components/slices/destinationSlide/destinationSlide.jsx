@@ -17,7 +17,7 @@ export const DestinationSlide = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
-    <Box className="destination-slide" {...(data.spacings.length && configProps(data.spacings[0]))}>
+    <Box className="destination-slide" {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
       <Flex
         className="destination-slide-header"
         flexDirection="column"

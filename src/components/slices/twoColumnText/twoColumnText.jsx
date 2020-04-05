@@ -18,7 +18,7 @@ export const TwoColumnText = ({ data }) => (
         marginTop: 24,
       },
     }}
-    {...(data.spacings.length && configProps(data.spacings[0]))}
+    {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
   >
     {console.log('two column data: ', data)}
     <Flex
