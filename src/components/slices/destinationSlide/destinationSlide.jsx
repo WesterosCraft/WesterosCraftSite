@@ -85,7 +85,7 @@ export const DestinationSlide = ({ data }) => {
             }}
             my={2}
           />
-          {data.linkBuilder.map((link) => (
+          {data.linkBuilder.map((link, i) => (
             <Box
               py={2}
               px={3}
@@ -97,6 +97,7 @@ export const DestinationSlide = ({ data }) => {
                   color: '#365B41',
                 },
               }}
+              key={i}
             >
               <a href={link.url} key={link.customLinkText}>
                 <Text as="span" fontSize={2}>

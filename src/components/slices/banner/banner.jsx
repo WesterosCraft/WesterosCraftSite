@@ -51,7 +51,7 @@ export const Banner = ({ data }) => (
         position: 'absolute',
         top: '50%',
         bottom: 0,
-        height: 55,
+        height: 85,
         zIndex: -1,
         left: '50%',
         right: '50%',

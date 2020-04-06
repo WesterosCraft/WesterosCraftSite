@@ -1,10 +1,10 @@
 import React from 'react'
 import Popup from 'reactjs-popup'
 
-import { Link } from 'gatsby'
 import { Flex, Text, Box, Image } from 'rebass'
 import { IoIosArrowDown } from 'react-icons/io'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { DropdownLink } from '../../atoms/dropdownLink/dropdownLink'
 
 export function Header({ links }) {
   return (
@@ -14,7 +14,19 @@ export function Header({ links }) {
           link.navLogo.length > 0 ? (
             <Header.NavGroup key={link.title}>
               <AniLink fade to="/">
-                <Image src={link.navLogo[0].url} alt="WesterosCraft" height="26px" />
+                <Image
+                  src={link.navLogo[0].url}
+                  alt="WesterosCraft"
+                  height="26px"
+                  sx={{
+                    cursor: 'pointer',
+                    '&:hover': {
+                      transform: 'translateY(-1px)',
+                      transition: 'transform 150ms ease-out 0s, color 150ms ease-out 0s',
+                      textDecoration: 'none',
+                    },
+                  }}
+                />
               </AniLink>
             </Header.NavGroup>
           ) : null,
@@ -27,15 +39,23 @@ export function Header({ links }) {
                 trigger={<Header.NavItem dropdown>{link.title}</Header.NavItem>}
                 on="hover"
                 closeOnDocumentClick
-                mouseLeaveDelay={0}
+                mouseLeaveDelay={100}
                 mouseEnterDelay={0}
                 contentStyle={{ padding: '0px', border: 'none' }}
                 arrowStyle={{ padding: '0px', border: 'none' }}
               >
-                <Text>test</Text>
+                <Flex flexDirection="column">
+                  {link.children.map((child) => (
+                    <DropdownLink data={child} key={child.title} />
+                  ))}
+                </Flex>
               </Popup>
             ) : (
-              !link.navLogo.length && <Header.NavItem key={link.title}>{link.title}</Header.NavItem>
+              !link.navLogo.length && (
+                <a href={link.url} target="_blank" key={link.title} rel="noopener noreferrer">
+                  <Header.NavItem>{link.title}</Header.NavItem>
+                </a>
+              )
             ),
           )}
         </Header.NavGroup>
@@ -46,7 +66,7 @@ export function Header({ links }) {
 
 Header.NavWrapper = function ({ children, ...restProps }) {
   return (
-    <Box as="nav" pt={[3, 9]} px={[5]} mx={[null, '5%', '10%']}>
+    <Box as="nav" pt={[3, 9]} px={[5]} mx={[null, '5%', '10%']} {...restProps}>
       {children}
     </Box>
   )
@@ -64,6 +84,7 @@ Header.Nav = function ({ children, ...restProps }) {
         textAlign: 'center',
         zIndex: 3,
       }}
+      {...restProps}
     >
       {children}
     </Flex>
@@ -85,7 +106,7 @@ Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) =>
         height: '3rem',
         cursor: 'pointer',
         '&:hover': {
-          color: 'gray.200',
+          color: dropdown ? 'gray.200' : 'red.medium',
           transform: 'translateY(-1px)',
           transition: 'transform 150ms ease-out 0s, color 150ms ease-out 0s',
           textDecoration: 'none',
@@ -94,7 +115,6 @@ Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) =>
       ml={[7]}
     >
       <Box
-        as="a"
         sx={{
           cursor: 'pointer',
         }}

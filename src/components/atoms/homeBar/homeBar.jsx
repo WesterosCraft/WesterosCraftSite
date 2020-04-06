@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Image, Box } from 'rebass'
+import { Flex, Text, Box } from 'rebass'
 
 export const HomeBar = () => (
   <Flex
@@ -31,6 +31,7 @@ HomeBar.Card = function ({ children, ...restProps }) {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      {...restProps}
     >
       <Box bg="gray.100" width={60} height={60} />
       <Text mt={5}>{children}</Text>

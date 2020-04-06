@@ -39,6 +39,7 @@ export const GlobalStyle = css`
 
   a {
     background-color: transparent;
+    text-decoration: none;
   }
 
   abbr[title] {

@@ -11,21 +11,6 @@ import { Box } from 'rebass'
 import { Header } from '../components/organisms/header'
 import { Footer } from '../components/organisms/footer'
 
-const linkData = [
-  {
-    name: 'About',
-  },
-  {
-    name: 'Community',
-  },
-  {
-    name: 'Wiki',
-  },
-  {
-    name: 'Map',
-  },
-]
-
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -35,6 +20,9 @@ const Layout = ({ children }) => (
             title
             url
             type
+            element {
+              slug
+            }
             ... on Craft_mainNav_Node {
               navLogo {
                 url
@@ -44,6 +32,9 @@ const Layout = ({ children }) => (
               title
               url
               type
+              element {
+                slug
+              }
             }
           }
         }
