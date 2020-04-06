@@ -6,7 +6,7 @@ import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const LauncherPage = ({ data }) => (
   <>
-    <Heading variant="heading2" textAlign="center">
+    <Heading variant="heading2" textAlign="center" mt={[12]}>
       {data.craft.entry.heading}
     </Heading>
     <SliceZone slices={data.craft.entry.pageSlices} />

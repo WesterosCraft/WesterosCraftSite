@@ -1,15 +1,17 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import { Flex, Text } from 'rebass'
+import { Heading } from 'rebass'
 import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const AboutPage = ({ data }) => {
   return (
-    <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
-      <Text>About Page</Text>
+    <>
+      <Heading variant="heading2" textAlign="center" mt={[12]}>
+        {data.craft.entry.heading}
+      </Heading>
       <SliceZone slices={data.craft.entry.pageSlices} />
-    </Flex>
+    </>
   )
 }
 
@@ -18,6 +20,7 @@ export const pageQuery = graphql`
     craft {
       entry(site: "westeroscraft", section: "about") {
         ... on Craft_about_about_Entry {
+          heading
           pageSlices {
             ... on Craft_pageSlices_banner_BlockType {
               ...banner

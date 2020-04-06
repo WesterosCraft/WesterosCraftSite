@@ -1,11 +1,18 @@
 import React from 'react'
 import { Box, Text } from 'rebass'
 import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const DropdownLink = ({ data }) => (
   <>
     {data.element && data.element.slug ? (
-      <Link to={`/${data.element && data.element.slug && data.element.slug}`}>
+      <AniLink
+        cover
+        duration={1}
+        bg="#9E1E22"
+        direction="right"
+        to={`/${data.element && data.element.slug && data.element.slug}`}
+      >
         <Box
           py={3}
           px={3}
@@ -27,7 +34,7 @@ export const DropdownLink = ({ data }) => (
             {data.title}
           </Text>
         </Box>
-      </Link>
+      </AniLink>
     ) : (
       <Box
         href={data.url}

@@ -13,7 +13,7 @@ export function Header({ links }) {
         {links.map((link) =>
           link.navLogo.length > 0 ? (
             <Header.NavGroup key={link.title}>
-              <AniLink fade to="/">
+              <AniLink cover duration={1} bg="#9E1E22" direction="left" to="/">
                 <Image
                   src={link.navLogo[0].url}
                   alt="WesterosCraft"
@@ -41,8 +41,19 @@ export function Header({ links }) {
                 closeOnDocumentClick
                 mouseLeaveDelay={100}
                 mouseEnterDelay={0}
-                contentStyle={{ padding: '0px', border: 'none' }}
-                arrowStyle={{ padding: '0px', border: 'none' }}
+                contentStyle={{
+                  padding: '0px',
+                  border: 'none',
+                  borderRadius: '4px',
+                  boxShadow:
+                    '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
+                }}
+                arrowStyle={{
+                  padding: '0px',
+                  border: 'none',
+                  boxShadow:
+                    '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
+                }}
               >
                 <Flex flexDirection="column">
                   {link.children.map((child) => (
