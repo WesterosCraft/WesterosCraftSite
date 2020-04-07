@@ -46,7 +46,7 @@ export const theme = {
       fontWeight: 'bold',
     },
     heading3: {
-      fontSize: [3, 4, 5],
+      fontSize: ['24px', '32px', '36px'],
       fontWeight: 'bold',
     },
     heading4: {

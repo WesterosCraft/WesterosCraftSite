@@ -1,3 +1,5 @@
+import { graphql } from 'gatsby'
+
 export const spacings = graphql`
   fragment spacings on Craft_spacings_spacing_BlockType {
     marginTop {
