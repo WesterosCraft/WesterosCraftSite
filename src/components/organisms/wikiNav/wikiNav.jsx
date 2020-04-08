@@ -8,6 +8,7 @@ export const WikiNav = () => (
     width={320}
     sx={{
       borderRight: '1px solid black',
+      display: ['none', null, 'block'],
     }}
   >
     nav

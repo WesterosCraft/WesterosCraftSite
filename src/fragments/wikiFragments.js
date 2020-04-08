@@ -20,5 +20,10 @@ export const entryGrid = graphql`
         }
       }
     }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
   }
 `
