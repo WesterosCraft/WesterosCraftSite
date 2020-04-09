@@ -8,7 +8,7 @@ export const EntryGrid = ({ data }) => (
     <Heading variant="heading3">{data.heading}</Heading>
     <Flex className="entry-card-list" flexDirection={['column', null, 'row']} flexWrap="wrap" mt={5}>
       {data.entryList.map((entry) => (
-        <EntryCard data={entry} />
+        <EntryCard data={entry} key={entry.slug} />
       ))}
     </Flex>
   </Box>

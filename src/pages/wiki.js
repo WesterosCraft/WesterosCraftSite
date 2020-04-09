@@ -5,16 +5,13 @@ import { Heading } from 'rebass'
 import { WikiLayout } from '../components/templates/wikiLayout'
 import { WikiContent } from '../components/organisms/wikiContent'
 import { WikiSliceZone } from '../components/slices/wikiSliceZone'
+import { Flex } from 'rebass'
 
 const WikiPage = ({ data }) => {
+  console.log(data)
   return (
-    <WikiLayout>
-      <WikiContent>
-        <Heading variant="heading2" textAlign="left" pb={8}>
-          Wiki Home Page
-        </Heading>
-        <WikiSliceZone slices={data.craft.entry.wikiSlices} />
-      </WikiContent>
+    <WikiLayout title={data.craft.entry.title || 'WesterosCraft Wiki'}>
+      <WikiSliceZone slices={data.craft.entry.wikiSlices} />
     </WikiLayout>
   )
 }

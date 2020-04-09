@@ -1,8 +1,11 @@
 import React from 'react'
-import { Box } from 'rebass'
+import { Box, Heading } from 'rebass'
 
-export const WikiContent = ({ children }) => (
+export const WikiContent = ({ children, title }) => (
   <Box as="article" ml={[0, null, 13]} className="wiki-content">
+    <Heading variant="heading2" textAlign="left" pb={8}>
+      {title}
+    </Heading>
     {children}
   </Box>
 )
