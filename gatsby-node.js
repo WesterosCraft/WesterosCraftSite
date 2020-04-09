@@ -1,4 +1,5 @@
 const path = require('path')
+const { regionSlugFormatter } = require(`./src/utility/regionSlugFormatter.js`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -28,9 +29,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const entries = result.data.craft.entries
 
-  entries.forEach((entry, i) => {
+  entries.forEach((entry) => {
     createPage({
-      path: `/wiki/${entry.projectDetails[0].region}/${entry.slug}`,
+      path: `/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`,
       component: path.resolve('./src/pages/destination.js'),
       context: {
         test: entry,

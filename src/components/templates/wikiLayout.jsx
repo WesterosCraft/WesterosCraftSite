@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Heading } from 'rebass'
+import { Box, Flex } from 'rebass'
 import { StaticQuery, graphql } from 'gatsby'
 import { WikiNav } from '../organisms/wikiNav/wikiNav'
 import { WikiContent } from '../organisms/wikiContent'
@@ -31,7 +31,6 @@ export const WikiLayout = ({ children, title }) => (
     render={(data) => (
       <Box className="wiki-layout">
         <Box bg="green" minHeight={55} width={1} />
-
         <Flex flexDirection="row" justifyContent="center" height="100%" mt={16} px={5}>
           <WikiNav navData={data} />
           <WikiContent title={title}>{children}</WikiContent>

@@ -80,7 +80,11 @@ export const theme = {
     },
   },
   forms: {
-    input: {},
+    input: {
+      borderRadius: '4px',
+      fontFamily: 'heading',
+      padding: '14px 32px 14px 16px',
+    },
     select: {},
     textarea: {},
     label: {},

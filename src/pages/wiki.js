@@ -8,7 +8,6 @@ import { WikiSliceZone } from '../components/slices/wikiSliceZone'
 import { Flex } from 'rebass'
 
 const WikiPage = ({ data }) => {
-  console.log(data)
   return (
     <WikiLayout title={data.craft.entry.title || 'WesterosCraft Wiki'}>
       <WikiSliceZone slices={data.craft.entry.wikiSlices} />
