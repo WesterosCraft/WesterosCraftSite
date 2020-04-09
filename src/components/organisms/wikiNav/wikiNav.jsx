@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from 'rebass'
 
-export const WikiNav = () => (
+export const WikiNav = ({ navData }) => (
   <Box
     as="nav"
     className="wiki-nav"
@@ -11,6 +11,7 @@ export const WikiNav = () => (
       display: ['none', null, 'block'],
     }}
   >
+    {console.log(navData)}
     nav
   </Box>
 )

@@ -14,7 +14,7 @@ import { Footer } from '../components/organisms/footer'
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query NavQuery {
         craft {
           navData: nodes(navHandle: "mainNav", level: 1) {
             title

@@ -18,6 +18,12 @@ export const entryGrid = graphql`
         images {
           url
         }
+        projectDetails {
+          ... on Craft_projectDetails_details_BlockType {
+            region
+            house
+          }
+        }
       }
     }
     spacings {

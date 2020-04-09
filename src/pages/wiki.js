@@ -3,14 +3,12 @@ import { graphql } from 'gatsby'
 
 import { Heading } from 'rebass'
 import { WikiLayout } from '../components/templates/wikiLayout'
-import { WikiNav } from '../components/organisms/wikiNav/wikiNav'
 import { WikiContent } from '../components/organisms/wikiContent'
 import { WikiSliceZone } from '../components/slices/wikiSliceZone'
 
 const WikiPage = ({ data }) => {
   return (
     <WikiLayout>
-      <WikiNav />
       <WikiContent>
         <Heading variant="heading2" textAlign="left" pb={8}>
           Wiki Home Page
