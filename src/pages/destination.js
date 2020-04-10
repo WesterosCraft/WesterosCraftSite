@@ -3,10 +3,14 @@ import { WikiLayout } from '../components/templates/wikiLayout'
 import { Redactor } from '../components/atoms/redactor/redactor'
 
 const DestinationPage = ({ pageContext }) => {
-  console.log(pageContext)
   return (
-    <WikiLayout title={pageContext.data.title || 'WesterosCraft Wiki'} breadcrumb={pageContext.breadcrumb}>
-      <Redactor dangerouslySetInnerHTML={{ __html: pageContext.data.copy }} />
+    <WikiLayout
+      title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
+      breadcrumb={pageContext.breadcrumb}
+    >
+      {pageContext.data && pageContext.data.copy && (
+        <Redactor dangerouslySetInnerHTML={{ __html: pageContext.data.copy }} />
+      )}
     </WikiLayout>
   )
 }

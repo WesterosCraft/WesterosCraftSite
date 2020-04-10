@@ -2,7 +2,7 @@ import React, { useState, useEffect, createRef } from 'react'
 import { InstantSearch, Index, Hits, connectStateResults } from 'react-instantsearch-dom'
 import algoliasearch from 'algoliasearch/lite'
 
-import { Root, HitsWrapper, PoweredBy } from './styles'
+import { Root, HitsWrapper } from './styles'
 import Input from './Input'
 import * as hitComps from './hitComps'
 
@@ -51,7 +51,6 @@ export default function Search({ indices, collapse, hitsAsGrid }) {
             </Results>
           </Index>
         ))}
-        <PoweredBy />
       </HitsWrapper>
     </InstantSearch>
   )

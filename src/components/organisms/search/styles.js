@@ -126,10 +126,3 @@ export const HitsWrapper = styled.div`
     margin-bottom: 0.3em;
   }
 `
-
-export const PoweredBy = () => (
-  <span>
-    Powered by{` `}
-    <a href="https://algolia.com">Algolia</a>
-  </span>
-)
