@@ -68,7 +68,13 @@ export const WikiNav = ({ navData }) => {
   const searchIndices = [{ name: `Destinations`, title: `Destinations`, hitComp: `DestinationHit` }]
 
   return (
-    <Flex flexDirection="column" as="nav" className="wiki-nav" maxWidth={['100%', null, 320]}>
+    <Flex
+      flexDirection="column"
+      as="nav"
+      className="wiki-nav"
+      maxWidth={['100%', null, 320]}
+      sx={{ position: 'relative' }}
+    >
       <Search collapse indices={searchIndices} />
       {/* <Input placeholder="Search Wiki" mb="44px" /> */}
       <Box

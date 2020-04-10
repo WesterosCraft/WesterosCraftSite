@@ -6,7 +6,8 @@ import { Link } from 'gatsby'
 
 export const DestinationHit = (clickHandler) => ({ hit }) => (
   <div>
-    <Link to={hit.slug} onClick={clickHandler}>
+    {console.log(hit)}
+    <Link to={`${hit.projectDetails[0].region}/${hit.slug}`} onClick={clickHandler}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
