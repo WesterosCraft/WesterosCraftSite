@@ -51,5 +51,17 @@ module.exports = {
         url: `https://westeroscraft.com/api`,
       },
     },
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        useAutoGen: true,
+        crumbLabelUpdates: [
+          {
+            pathname: '/wiki',
+            crumbLabel: 'Wiki',
+          },
+        ],
+      },
+    },
   ],
 }

@@ -1,10 +1,12 @@
 import React from 'react'
-import { Box, Flex } from 'rebass'
-import { StaticQuery, graphql } from 'gatsby'
+import { Box, Flex, Text } from 'rebass'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import { WikiNav } from '../organisms/wikiNav/wikiNav'
 import { WikiContent } from '../organisms/wikiContent'
+import { breadcrumbFormatter } from '../../utility/helpers'
+import { IoIosArrowForward } from 'react-icons/io'
 
-export const WikiLayout = ({ children, title }) => (
+export const WikiLayout = ({ children, title, breadcrumb }) => (
   <StaticQuery
     query={graphql`
       query WikiNavQuery {
@@ -30,8 +32,39 @@ export const WikiLayout = ({ children, title }) => (
     `}
     render={(data) => (
       <Box className="wiki-layout">
-        <Box bg="green" minHeight={55} width={1} />
-        <Flex flexDirection={['column', null, 'row']} justifyContent="center" height="100%" mt={16} px={5}>
+        <Box bg="green" p={5} width={1}>
+          <Flex
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="flex-start"
+            maxWidth={1120}
+            mx="auto"
+            width={1}
+            px={5}
+          >
+            {breadcrumb &&
+              breadcrumb.crumbs.map((crumb, i) => (
+                <>
+                  <Link to={crumb.pathname}>
+                    <Text color="white" key={crumb.crumbLabel} pr={1} pl={i !== 0 && 1}>
+                      {breadcrumbFormatter(crumb.crumbLabel)}
+                    </Text>
+                  </Link>
+                  {breadcrumb.crumbs.length - 1 !== i ? <IoIosArrowForward color="white" /> : null}
+                </>
+              ))}
+          </Flex>
+        </Box>
+        <Flex
+          className="wiki-layout-container"
+          flexDirection={['column', null, 'row']}
+          justifyContent="center"
+          height="100%"
+          mt={16}
+          px={5}
+          maxWidth={1120}
+          mx="auto"
+        >
           <WikiNav navData={data} />
           <WikiContent title={title}>{children}</WikiContent>
         </Flex>

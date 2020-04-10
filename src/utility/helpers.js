@@ -1,3 +1,6 @@
+import _startCase from 'lodash/startCase'
+import _camelCase from 'lodash/camelCase'
+
 export const configProps = (data) => {
   return {
     mt: [data.marginTop[0].mobile, data.marginTop[0].tablet, data.marginTop[0].desktop, data.marginTop[0].wide],
@@ -15,4 +18,8 @@ export const configProps = (data) => {
       data.paddingBottom[0].wide,
     ],
   }
+}
+
+export const breadcrumbFormatter = (string) => {
+  return _startCase(_camelCase(string))
 }

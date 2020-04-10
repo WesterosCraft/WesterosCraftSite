@@ -4,9 +4,9 @@ import { graphql } from 'gatsby'
 import { WikiLayout } from '../components/templates/wikiLayout'
 import { WikiSliceZone } from '../components/slices/wikiSliceZone'
 
-const WikiPage = ({ data }) => {
+const WikiPage = ({ data, pageContext }) => {
   return (
-    <WikiLayout title={data.craft.entry.title || 'WesterosCraft Wiki'}>
+    <WikiLayout title={data.craft.entry.title || 'WesterosCraft Wiki'} breadcrumb={pageContext.breadcrumb}>
       <WikiSliceZone slices={data.craft.entry.wikiSlices} />
     </WikiLayout>
   )
