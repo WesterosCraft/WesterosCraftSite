@@ -31,7 +31,7 @@ export const WikiLayout = ({ children, title }) => (
     render={(data) => (
       <Box className="wiki-layout">
         <Box bg="green" minHeight={55} width={1} />
-        <Flex flexDirection="row" justifyContent="center" height="100%" mt={16} px={5}>
+        <Flex flexDirection={['column', null, 'row']} justifyContent="center" height="100%" mt={16} px={5}>
           <WikiNav navData={data} />
           <WikiContent title={title}>{children}</WikiContent>
         </Flex>

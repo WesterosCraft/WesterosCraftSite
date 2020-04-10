@@ -1,11 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { Heading } from 'rebass'
 import { WikiLayout } from '../components/templates/wikiLayout'
-import { WikiContent } from '../components/organisms/wikiContent'
 import { WikiSliceZone } from '../components/slices/wikiSliceZone'
-import { Flex } from 'rebass'
 
 const WikiPage = ({ data }) => {
   return (

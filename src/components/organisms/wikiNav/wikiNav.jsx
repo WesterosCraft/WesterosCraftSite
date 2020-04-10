@@ -32,8 +32,9 @@ const WikiNavGroup = ({ navItem }) => {
             className="group-items"
             flexDirection="column"
             as="ol"
-            pl={5}
+            pl={[0, null, null, 5]}
             pb={3}
+            pr={5}
             sx={{
               listStyleType: 'none',
             }}
@@ -64,16 +65,13 @@ const WikiNavGroup = ({ navItem }) => {
 
 export const WikiNav = ({ navData }) => {
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" as="nav" className="wiki-nav" maxWidth={['100%', null, 320]}>
       <Input placeholder="Search Wiki" mb="44px" />
-
       <Box
-        as="nav"
-        className="wiki-nav"
-        width={320}
         sx={{
           display: ['none', null, 'block'],
         }}
+        width={1}
       >
         {navData.craft.wikiNav.map((navItem, i) => (
           <WikiNavGroup navItem={navItem} key={i} />

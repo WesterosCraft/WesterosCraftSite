@@ -7,15 +7,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         craft {
-          entries(site: "westeroscraft", type: "wikiDestination") {
+          destinations: entries(site: "westeroscraft", type: "wikiDestination") {
             ... on Craft_wiki_wikiDestination_Entry {
               title
               slug
+              copy
               projectDetails {
                 ... on Craft_projectDetails_details_BlockType {
                   region
                 }
               }
+            }
+          }
+          regions: entries(site: "westeroscraft", type: "wikiRegion") {
+            ... on Craft_wiki_wikiRegion_Entry {
+              title
+              slug
             }
           }
         }
@@ -27,14 +34,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const entries = result.data.craft.entries
+  const destinations = result.data.craft.destinations
+  const regions = result.data.craft.regions
 
-  entries.forEach((entry) => {
+  destinations.forEach((entry) => {
     createPage({
       path: `/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`,
       component: path.resolve('./src/pages/destination.js'),
       context: {
-        test: entry,
+        data: entry,
+      },
+    })
+  })
+
+  regions.forEach((entry) => {
+    createPage({
+      path: `/wiki/${entry.slug}`,
+      component: path.resolve('./src/pages/region.js'),
+      context: {
+        data: entry,
       },
     })
   })

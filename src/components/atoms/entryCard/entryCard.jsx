@@ -2,12 +2,14 @@ import React from 'react'
 import { Box, Flex, Text } from 'rebass'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { RegionIcon } from '../icons/regionIcon'
+import { regionSlugFormatter } from '../../../utility/regionSlugFormatter'
 
 export const EntryCard = ({ data }) => (
-  <AniLink to={`/wiki/${data.slug}`}>
+  <AniLink to={`/wiki/${regionSlugFormatter(data.projectDetails[0].region)}/${data.slug}`}>
     <Box
       height={252}
       width={[1, null, 240]}
+      mt={[5, null, 0]}
       mr={5}
       sx={{
         cursor: 'pointer',

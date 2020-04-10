@@ -1,10 +1,14 @@
 import React from 'react'
+import { WikiLayout } from '../components/templates/wikiLayout'
+import { Redactor } from '../components/atoms/redactor/redactor'
 
-const DestinationPage = (props) => {
+const DestinationPage = ({ pageContext }) => {
+  console.log(pageContext)
   return (
-    <div>
-      <h1>test</h1>
-    </div>
+    <WikiLayout title={pageContext.data.title || 'WesterosCraft Wiki'}>
+      {/* <WikiSliceZone slices={data.craft.entry.wikiSlices} /> */}
+      <Redactor dangerouslySetInnerHTML={{ __html: pageContext.data.copy }} />
+    </WikiLayout>
   )
 }
 
