@@ -24,6 +24,7 @@ export const SliceZone = ({ slices }) => {
         return <TwoColumnVideo data={slice} key={index} />
       case 'contentBanner':
         return <ContentBanner data={slice} key={index} />
+
       default:
         return null
     }

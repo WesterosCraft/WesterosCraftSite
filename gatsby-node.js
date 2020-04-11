@@ -25,6 +25,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
           }
+          miscellaneous: entries(site: "westeroscraft", type: "wikiMiscellaneous") {
+            ... on Craft_wiki_wikiMiscellaneous_Entry {
+              title
+              slug
+            }
+          }
         }
       }
     `,
@@ -36,6 +42,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const destinations = result.data.craft.destinations
   const regions = result.data.craft.regions
+  const miscellaneous = result.data.craft.miscellaneous
 
   destinations.forEach((entry) => {
     createPage({
@@ -51,6 +58,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: `/wiki/${entry.slug}`,
       component: path.resolve('./src/pages/region.js'),
+      context: {
+        data: entry,
+        slug: entry.slug,
+      },
+    })
+  })
+
+  miscellaneous.forEach((entry) => {
+    createPage({
+      path: `/wiki/miscellaneous/${entry.slug}`,
+      component: path.resolve('./src/pages/miscellaneous.js'),
       context: {
         data: entry,
       },

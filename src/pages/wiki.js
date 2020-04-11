@@ -25,6 +25,9 @@ export const pageQuery = graphql`
             ... on Craft_wikiSlices_entryGrid_BlockType {
               ...entryGrid
             }
+            ... on Craft_wikiSlices_imageGrid_BlockType {
+              ...imageGrid
+            }
           }
         }
       }

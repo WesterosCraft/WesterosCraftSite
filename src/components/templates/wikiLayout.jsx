@@ -25,6 +25,9 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
               element {
                 slug
               }
+              parent {
+                title
+              }
             }
           }
         }

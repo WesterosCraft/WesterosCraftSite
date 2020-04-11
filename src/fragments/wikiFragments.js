@@ -33,3 +33,25 @@ export const entryGrid = graphql`
     }
   }
 `
+
+export const imageGrid = graphql`
+  fragment imageGrid on Craft_wikiSlices_imageGrid_BlockType {
+    typeHandle
+    heading
+    imageList {
+      ... on Craft_imageList_listItem_BlockType {
+        imageTitle
+        imageDescription
+        image {
+          title
+          url
+        }
+      }
+    }
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
+  }
+`

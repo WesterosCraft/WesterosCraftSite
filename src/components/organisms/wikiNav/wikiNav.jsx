@@ -41,7 +41,13 @@ const WikiNavGroup = ({ navItem }) => {
           >
             {navItem.children.map((child) => (
               <Box as="li" key={child.title}>
-                <Link to={`/wiki/${child.element.slug}`}>
+                <Link
+                  to={
+                    child.parent.title === 'Miscellaneous'
+                      ? `/wiki/miscellaneous/${child.element.slug}`
+                      : `/wiki/${child.element.slug}`
+                  }
+                >
                   <Text
                     py={1}
                     color="gray.100"
@@ -64,8 +70,6 @@ const WikiNavGroup = ({ navItem }) => {
 }
 
 export const WikiNav = ({ navData }) => {
-  const searchIndices = [{ name: `Destinations`, title: `Destinations`, hitComp: `DestinationHit` }]
-
   return (
     <Flex
       flexDirection="column"
