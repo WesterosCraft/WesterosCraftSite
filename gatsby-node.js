@@ -55,6 +55,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve('./src/pages/destination.js'),
       context: {
         data: entry,
+        slug: entry.slug,
       },
     })
   })
@@ -76,6 +77,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve('./src/pages/miscellaneous.js'),
       context: {
         data: entry,
+        slug: entry.slug,
       },
     })
   })

@@ -54,5 +54,19 @@ export const imageGrid = graphql`
         ...spacings
       }
     }
+    clickToCopyScript
+  }
+`
+
+export const accordion = graphql`
+  fragment accordion on Craft_wikiSlices_accordion_BlockType {
+    typeHandle
+    heading
+    accordionContent {
+      ... on Craft_accordionContent_accordionItem_BlockType {
+        heading
+        copy
+      }
+    }
   }
 `

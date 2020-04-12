@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Flex, Box, Text } from 'rebass'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import { configProps } from '../../../utility/helpers'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { IoIosCopy } from 'react-icons/io'
 
 export const ImageGrid = ({ data }) => {
   const [open, setOpen] = useState(true)
@@ -29,7 +31,7 @@ export const ImageGrid = ({ data }) => {
           {data.imageList.map((image, i) => (
             <Box
               className="image-grid-item"
-              height={252}
+              height={272}
               width={[1, null, 240]}
               mt={[5]}
               mr={[0, null, 5]}
@@ -80,6 +82,11 @@ export const ImageGrid = ({ data }) => {
                 <Text mt={2} variant="paragraph" color="black">
                   {image.imageDescription || ''}
                 </Text>
+                {data.CopyToClipboard !== '' && (
+                  <CopyToClipboard text="test">
+                    <IoIosCopy size="24px" style={{ position: 'absolute', bottom: 12, right: 12 }} />
+                  </CopyToClipboard>
+                )}
               </Flex>
             </Box>
           ))}
