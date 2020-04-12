@@ -31,6 +31,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
           }
+          guides: entries(site: "westeroscraft", type: "wikiGuide") {
+            title
+            slug
+          }
         }
       }
     `,
@@ -43,6 +47,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const destinations = result.data.craft.destinations
   const regions = result.data.craft.regions
   const miscellaneous = result.data.craft.miscellaneous
+  const guides = result.data.craft.guides
 
   destinations.forEach((entry) => {
     createPage({
@@ -71,6 +76,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve('./src/pages/miscellaneous.js'),
       context: {
         data: entry,
+      },
+    })
+  })
+
+  guides.forEach((entry) => {
+    createPage({
+      path: `/wiki/guide/${entry.slug}`,
+      component: path.resolve('./src/pages/guide.js'),
+      context: {
+        data: entry,
+        slug: entry.slug,
       },
     })
   })

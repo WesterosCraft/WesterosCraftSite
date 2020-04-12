@@ -26,7 +26,7 @@ export const ImageGrid = ({ data }) => {
 
       {open && (
         <Flex flexDirection="row" flexWrap="wrap">
-          {data.imageList.map((image) => (
+          {data.imageList.map((image, i) => (
             <Box
               className="image-grid-item"
               height={252}
@@ -63,6 +63,7 @@ export const ImageGrid = ({ data }) => {
               pt={140}
               px={4}
               pb={5}
+              key={i}
             >
               <Flex flexDirection="column">
                 <Text

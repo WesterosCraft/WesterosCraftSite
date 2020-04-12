@@ -8,6 +8,7 @@ export const RegionIcon = (props) => {
       return <Riverlands {...props} />
     case 'thewall':
     case 'wall':
+    case 'theWall':
       return <Wall {...props} />
     case 'north':
       return <North {...props} />

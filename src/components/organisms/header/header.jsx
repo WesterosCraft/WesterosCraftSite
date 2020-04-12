@@ -13,7 +13,7 @@ export function Header({ links }) {
         {links.map((link) =>
           link.navLogo.length > 0 ? (
             <Header.NavGroup key={link.title}>
-              <AniLink cover duration={1} bg="#9E1E22" direction="left" to="/">
+              <AniLink cover duration={0.5} bg="#9E1E22" direction="left" to="/">
                 <Image
                   src={link.navLogo[0].url}
                   alt="WesterosCraft"

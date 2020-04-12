@@ -3,6 +3,8 @@ import { WikiLayout } from '../components/templates/wikiLayout'
 import { graphql } from 'gatsby'
 import { EntryCard } from '../components/atoms/entryCard'
 import { Flex } from 'rebass'
+import { Link } from 'gatsby'
+import { regionSlugFormatter } from '../utility/regionSlugFormatter'
 
 const RegionPage = ({ pageContext, data }) => {
   const regionEntries = data.craft.entries[0].children
@@ -12,8 +14,10 @@ const RegionPage = ({ pageContext, data }) => {
       breadcrumb={pageContext.breadcrumb}
     >
       <Flex flexDirection="row" flexWrap="wrap">
-        {regionEntries.map((entry, i) => (
-          <EntryCard data={entry} key={entry.slug} />
+        {regionEntries.map((entry) => (
+          <Link to={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`} key={entry.slug}>
+            <EntryCard data={entry} key={entry.slug} />
+          </Link>
         ))}
       </Flex>
     </WikiLayout>
@@ -39,6 +43,7 @@ export const pageQuery = graphql`
                 ... on Craft_projectDetails_details_BlockType {
                   region
                   house
+                  destinationType
                 }
               }
             }

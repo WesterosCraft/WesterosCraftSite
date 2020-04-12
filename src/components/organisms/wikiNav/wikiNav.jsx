@@ -7,6 +7,17 @@ import { IoMdArrowDropdown } from 'react-icons/io'
 const WikiNavGroup = ({ navItem }) => {
   const [open, setOpen] = useState(true)
 
+  const buildLink = (child) => {
+    switch (child.parent.title) {
+      case 'Miscellaneous':
+        return `/wiki/miscellaneous/${child.element.slug}`
+      case 'Guides':
+        return `/wiki/guide/${child.element.slug}`
+      default:
+        return `/wiki/${child.element.slug}`
+    }
+  }
+
   return (
     <>
       <Box key={navItem.title} sx={{ boxShadow: 'inset -1px 0 0 rgba(48,48,49,0.2)' }}>
@@ -41,13 +52,7 @@ const WikiNavGroup = ({ navItem }) => {
           >
             {navItem.children.map((child) => (
               <Box as="li" key={child.title}>
-                <Link
-                  to={
-                    child.parent.title === 'Miscellaneous'
-                      ? `/wiki/miscellaneous/${child.element.slug}`
-                      : `/wiki/${child.element.slug}`
-                  }
-                >
+                <Link to={buildLink(child)}>
                   <Text
                     py={1}
                     color="gray.100"

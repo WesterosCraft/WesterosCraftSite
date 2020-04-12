@@ -22,6 +22,7 @@ export const entryGrid = graphql`
           ... on Craft_projectDetails_details_BlockType {
             region
             house
+            destinationType
           }
         }
       }
