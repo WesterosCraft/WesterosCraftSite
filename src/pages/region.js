@@ -5,14 +5,30 @@ import { EntryCard } from '../components/atoms/entryCard'
 import { Flex } from 'rebass'
 import { Link } from 'gatsby'
 import { regionSlugFormatter } from '../utility/regionSlugFormatter'
+import { Redactor } from '../components/atoms/redactor'
+import Select from 'react-select'
 
 const RegionPage = ({ pageContext, data }) => {
   const regionEntries = data.craft.entries[0].children
+
+  const testOptions = [
+    { value: 'castle', label: 'Castle' },
+    { value: 'keep', label: 'Keep' },
+    { value: 'village', label: 'Village' },
+    { value: 'landmark', label: 'Landmark' },
+  ]
+
+  const onChange = (option) => {
+    console.log(option)
+  }
+  console.log(regionEntries)
   return (
     <WikiLayout
       title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
       breadcrumb={pageContext.breadcrumb}
     >
+      <Redactor dangerouslySetInnerHTML={{ __html: data.craft.entries[0].copy }} />
+      <Select options={testOptions} className="custom-select" onChange={onChange} />
       <Flex flexDirection="row" flexWrap="wrap">
         {regionEntries.map((entry) => (
           <Link to={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`} key={entry.slug}>
@@ -32,6 +48,7 @@ export const pageQuery = graphql`
         ... on Craft_wiki_wikiRegion_Entry {
           title
           slug
+          copy
           children {
             title
             slug

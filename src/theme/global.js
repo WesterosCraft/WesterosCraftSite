@@ -6,6 +6,10 @@ export const GlobalStyle = css`
     overflow: hidden;
   }
 
+  .custom-select {
+    z-index: 10;
+  }
+
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
