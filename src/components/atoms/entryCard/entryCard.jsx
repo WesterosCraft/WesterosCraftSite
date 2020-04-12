@@ -3,6 +3,8 @@ import { Box, Flex, Text } from 'rebass'
 import { RegionIcon } from '../icons/regionIcon'
 import { useTheme } from 'emotion-theming'
 import { LocationTypeIcon } from '../icons/locationTypeIcon/locationTypeIcon'
+import Popup from 'reactjs-popup'
+import { breadcrumbFormatter } from '../../../utility/helpers'
 
 export const EntryCard = ({ data }) => {
   const theme = useTheme()
@@ -47,15 +49,47 @@ export const EntryCard = ({ data }) => {
     >
       <Flex flexDirection="column">
         <Flex flexDirection="row">
-          {data.projectDetails && (
-            <RegionIcon region={data.projectDetails.length && data.projectDetails[0].region} width="24px" />
+          {data.projectDetails && data.projectDetails.length && (
+            <Popup
+              on="hover"
+              position="bottom left"
+              contentStyle={{
+                width: 'auto',
+                borderRadius: '4px',
+              }}
+              trigger={
+                <span style={{ height: '24px' }}>
+                  <RegionIcon region={data.projectDetails.length && data.projectDetails[0].region} width="24px" />
+                </span>
+              }
+            >
+              <Text as="span" color="black" px={4}>
+                {breadcrumbFormatter(data.projectDetails[0].region)}
+              </Text>
+            </Popup>
           )}
           {data.projectDetails && data.projectDetails.length && (
-            <LocationTypeIcon
-              type={data.projectDetails[0].destinationType}
-              width="24px"
-              style={{ marginLeft: '8px' }}
-            />
+            <Popup
+              on="hover"
+              position="bottom left"
+              contentStyle={{
+                width: 'auto',
+                borderRadius: '4px',
+              }}
+              trigger={
+                <span style={{ height: '24px' }}>
+                  <LocationTypeIcon
+                    type={data.projectDetails[0].destinationType}
+                    width="24px"
+                    style={{ marginLeft: '8px' }}
+                  />
+                </span>
+              }
+            >
+              <Text as="span" color="black" px={4}>
+                {breadcrumbFormatter(data.projectDetails[0].destinationType)}
+              </Text>
+            </Popup>
           )}
         </Flex>
         <Text mt={2} variant="heading6" fontSize="18px" fontWeight="bold" as="h6" color="black" fontFamily="heading">

@@ -105,7 +105,7 @@ export const ImageGrid = ({ data }) => {
                           right: '12px',
                         }}
                       >
-                        <IoIosCopy size="24px" />
+                        <IoIosCopy size="20px" />
                       </SVGWrapper>
                     </CopyToClipboard>
                   )}
