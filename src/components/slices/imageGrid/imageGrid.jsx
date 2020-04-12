@@ -4,6 +4,18 @@ import { IoMdArrowDropdown } from 'react-icons/io'
 import { configProps } from '../../../utility/helpers'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { IoIosCopy } from 'react-icons/io'
+import styled from '@emotion/styled'
+import _replace from 'lodash/replace'
+
+const SVGWrapper = styled(Box)`
+  &:hover {
+    svg {
+      fill: red;
+      transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform: translate3d(0px, -2px, 0px);
+    }
+  }
+`
 
 export const ImageGrid = ({ data }) => {
   const [open, setOpen] = useState(true)
@@ -28,68 +40,79 @@ export const ImageGrid = ({ data }) => {
 
       {open && (
         <Flex flexDirection="row" flexWrap="wrap">
-          {data.imageList.map((image, i) => (
-            <Box
-              className="image-grid-item"
-              height={272}
-              width={[1, null, 240]}
-              mt={[5]}
-              mr={[0, null, 5]}
-              sx={{
-                cursor: 'pointer',
-                borderRadius: '4px',
-                position: 'relative',
-                overflow: 'hidden',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-                transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
-                '&:hover': {
-                  boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
-                },
-                '&:before': {
-                  content: "''",
-                  display: 'block',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: 0,
-                  paddingTop: '8rem',
-                  backgroundColor: 'white',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  zIndex: 1,
-                  backgroundImage: `url(${(image.image.length && image.image[0].url) || null})`,
-                  backgroundSize: 'cover',
-                },
-              }}
-              pt={140}
-              px={4}
-              pb={5}
-              key={i}
-            >
-              <Flex flexDirection="column">
-                <Text
-                  mt={2}
-                  variant="heading6"
-                  fontSize="18px"
-                  fontWeight="bold"
-                  as="h6"
-                  color="black"
-                  fontFamily="heading"
-                >
-                  {image.imageTitle || ''}
-                </Text>
-                <Text mt={2} variant="paragraph" color="black">
-                  {image.imageDescription || ''}
-                </Text>
-                {data.CopyToClipboard !== '' && (
-                  <CopyToClipboard text="test">
-                    <IoIosCopy size="24px" style={{ position: 'absolute', bottom: 12, right: 12 }} />
-                  </CopyToClipboard>
-                )}
-              </Flex>
-            </Box>
-          ))}
+          {data.imageList.map((image, i) => {
+            const script = _replace(data.clickToCopyScript, '<ID>', ` ${image.imageTitle}`)
+            return (
+              <Box
+                className="image-grid-item"
+                height={272}
+                width={[1, null, 240]}
+                mt={[5]}
+                mr={[0, null, 5]}
+                sx={{
+                  cursor: 'pointer',
+                  borderRadius: '4px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+                  transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+                  '&:hover': {
+                    boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+                  },
+                  '&:before': {
+                    content: "''",
+                    display: 'block',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: 0,
+                    paddingTop: '8rem',
+                    backgroundColor: 'white',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    zIndex: 1,
+                    backgroundImage: `url(${(image.image.length && image.image[0].url) || null})`,
+                    backgroundSize: 'cover',
+                  },
+                }}
+                pt={140}
+                px={4}
+                pb={5}
+                key={i}
+              >
+                <Flex flexDirection="column">
+                  <Text
+                    mt={2}
+                    variant="heading6"
+                    fontSize="18px"
+                    fontWeight="bold"
+                    as="h6"
+                    color="black"
+                    fontFamily="heading"
+                  >
+                    {image.imageTitle || ''}
+                  </Text>
+                  <Text mt={2} variant="paragraph" color="black">
+                    {image.imageDescription || ''}
+                  </Text>
+                  {data.clickToCopyScript !== '' && (
+                    <CopyToClipboard text={script}>
+                      <SVGWrapper
+                        sx={{
+                          position: 'absolute',
+                          bottom: '12px',
+                          right: '12px',
+                        }}
+                      >
+                        <IoIosCopy size="24px" />
+                      </SVGWrapper>
+                    </CopyToClipboard>
+                  )}
+                </Flex>
+              </Box>
+            )
+          })}
         </Flex>
       )}
     </Box>
