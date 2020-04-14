@@ -98,7 +98,11 @@ export const theme = {
     },
     select: {},
     textarea: {},
-    label: {},
+    label: {
+      fontWeight: 'bold',
+      marginBottom: 2,
+      fontSize: 1,
+    },
     radio: {},
     checkbox: {},
   },

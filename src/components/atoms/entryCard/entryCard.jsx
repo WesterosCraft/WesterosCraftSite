@@ -5,9 +5,11 @@ import { useTheme } from 'emotion-theming'
 import { LocationTypeIcon } from '../icons/locationTypeIcon/locationTypeIcon'
 import Popup from 'reactjs-popup'
 import { breadcrumbFormatter } from '../../../utility/helpers'
+import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon'
 
 export const EntryCard = ({ data }) => {
   const theme = useTheme()
+
   return (
     <Box
       height={252}
@@ -88,6 +90,29 @@ export const EntryCard = ({ data }) => {
             >
               <Text as="span" color="black" px={4}>
                 {breadcrumbFormatter(data.projectDetails[0].destinationType)}
+              </Text>
+            </Popup>
+          )}
+          {data.projectDetails && data.projectDetails.length && (
+            <Popup
+              on="hover"
+              position="bottom left"
+              contentStyle={{
+                width: 'auto',
+                borderRadius: '4px',
+              }}
+              trigger={
+                <span style={{ height: '24px' }}>
+                  <DestinationStatusIcon
+                    status={data.projectDetails.length && data.projectDetails[0].destinationStatus}
+                    width="24px"
+                    style={{ marginLeft: '8px' }}
+                  />
+                </span>
+              }
+            >
+              <Text as="span" color="black" px={4}>
+                {breadcrumbFormatter(data.projectDetails[0].destinationStatus)}
               </Text>
             </Popup>
           )}

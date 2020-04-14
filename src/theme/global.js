@@ -7,7 +7,7 @@ export const GlobalStyle = css`
   }
 
   .custom-select {
-    z-index: 10;
+    z-index: 999;
   }
 
   html {

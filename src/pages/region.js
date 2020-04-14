@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { WikiLayout } from '../components/templates/wikiLayout'
 import { graphql } from 'gatsby'
 import { EntryCard } from '../components/atoms/entryCard'
@@ -6,31 +6,41 @@ import { Flex } from 'rebass'
 import { Link } from 'gatsby'
 import { regionSlugFormatter } from '../utility/regionSlugFormatter'
 import { Redactor } from '../components/atoms/redactor'
-import Select from 'react-select'
+import { RegionFilters } from '../components/atoms/regionFilters/regionFilters'
 
 const RegionPage = ({ pageContext, data }) => {
-  const regionEntries = data.craft.entries[0].children
+  const [items, setItems] = useState(data.craft.entries[0].children)
+  const regionItems = useMemo(() => {
+    return data.craft.entries[0].children
+  }, [data.craft.entries])
 
-  const testOptions = [
-    { value: 'castle', label: 'Castle' },
-    { value: 'keep', label: 'Keep' },
-    { value: 'village', label: 'Village' },
-    { value: 'landmark', label: 'Landmark' },
-  ]
-
-  const onChange = (option) => {
-    console.log(option)
+  const onTypeChange = (option) => {
+    if (option === null) {
+      setItems(regionItems)
+      return
+    }
+    const filtered = regionItems.filter((thing) => thing.projectDetails[0].destinationType === option.value)
+    setItems(filtered)
   }
-  console.log(regionEntries)
+
+  const onStatusChange = (option) => {
+    if (option === null) {
+      setItems(regionItems)
+      return
+    }
+    const filtered = regionItems.filter((thing) => thing.projectDetails[0].destinationStatus === option.value)
+    setItems(filtered)
+  }
+
   return (
     <WikiLayout
       title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
       breadcrumb={pageContext.breadcrumb}
     >
       <Redactor dangerouslySetInnerHTML={{ __html: data.craft.entries[0].copy }} />
-      <Select options={testOptions} className="custom-select" onChange={onChange} />
+      <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
       <Flex flexDirection="row" flexWrap="wrap">
-        {regionEntries.map((entry) => (
+        {items.map((entry) => (
           <Link to={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`} key={entry.slug}>
             <EntryCard data={entry} key={entry.slug} />
           </Link>
@@ -61,6 +71,7 @@ export const pageQuery = graphql`
                   region
                   house
                   destinationType
+                  destinationStatus
                 }
               }
             }
