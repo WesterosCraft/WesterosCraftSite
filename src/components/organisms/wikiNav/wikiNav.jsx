@@ -36,7 +36,7 @@ const WikiNavGroup = ({ navItem }) => {
           <Text variant="heading6" fontSize="18px" fontWeight="bold">
             {navItem.title}
           </Text>
-          <IoMdArrowDropdown size="24px" />
+          <IoMdArrowDropdown size="24px" style={{ transform: !open ? 'scaleY(-1)' : '' }} />
         </Flex>
         {open && (
           <Flex

@@ -35,11 +35,11 @@ export const ImageGrid = ({ data }) => {
         }}
       >
         <Text variant="heading3">{data.heading || ''}</Text>
-        <IoMdArrowDropdown size="42px" />
+        <IoMdArrowDropdown size="42px" style={{ transform: !open ? 'scaleY(-1)' : '' }} />
       </Flex>
 
       {open && (
-        <Flex flexDirection="row" flexWrap="wrap">
+        <Flex flexDirection={["column", null, "row"]} flexWrap="wrap" className="image-grid-content-container">
           {data.imageList.map((image, i) => {
             const script = _replace(data.clickToCopyScript, '<ID>', ` ${image.imageTitle}`)
             return (

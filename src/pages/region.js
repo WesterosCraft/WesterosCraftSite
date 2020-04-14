@@ -39,7 +39,7 @@ const RegionPage = ({ pageContext, data }) => {
     >
       <Redactor dangerouslySetInnerHTML={{ __html: data.craft.entries[0].copy }} />
       <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
-      <Flex flexDirection="row" flexWrap="wrap">
+      <Flex flexDirection={["column", null, "row"]} flexWrap="wrap">
         {items.map((entry) => (
           <Link to={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`} key={entry.slug}>
             <EntryCard data={entry} key={entry.slug} />

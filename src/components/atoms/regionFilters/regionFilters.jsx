@@ -26,7 +26,7 @@ const destinationStatuses = [
 
 export const RegionFilters = ({ onTypeChange, onStatusChange }) => (
   <Flex flexDirection="row" className="region-filters" mt={6}>
-    <Box width={200}>
+    <Box width={[1/2, 200]}>
       <Label htmlFor="type">Type: </Label>
       <Select
         name="type"
@@ -36,7 +36,7 @@ export const RegionFilters = ({ onTypeChange, onStatusChange }) => (
         onChange={onTypeChange}
       />
     </Box>
-    <Box width={200} ml={6}>
+    <Box width={[1/2, 200]} ml={6}>
       <Label htmlFor="status">Status: </Label>
       <Select
         name="status"
