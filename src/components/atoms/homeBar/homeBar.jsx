@@ -1,7 +1,8 @@
 import React from 'react'
-import { Flex, Text, Box } from 'rebass'
+import { Flex, Text, Image } from 'rebass'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-export const HomeBar = () => (
+export const HomeBar = ({ data }) => (
   <Flex
     flexDirection={['column', null, 'row']}
     justifyContent="center"
@@ -17,24 +18,21 @@ export const HomeBar = () => (
       boxShadow: `0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);`,
     }}
   >
-    <HomeBar.Card>Get The Launcher</HomeBar.Card>
-    <HomeBar.Card>Explore The Wiki</HomeBar.Card>
-    <HomeBar.Card>See Our Progress</HomeBar.Card>
+    {data.children.map((child, i) => (
+      <AniLink cover duration={0.5} bg="#9E1E22" direction="right" to={child.singleLink} key={i}>
+        <HomeBar.Card data={child} />
+      </AniLink>
+    ))}
   </Flex>
 )
 
-HomeBar.Card = function ({ children, ...restProps }) {
+HomeBar.Card = function ({ data }) {
   return (
-    <Flex
-      height={[160]}
-      width={[250]}
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      {...restProps}
-    >
-      <Box bg="gray.100" width={60} height={60} />
-      <Text mt={5}>{children}</Text>
+    <Flex height={[160]} width={[250]} flexDirection="column" justifyContent="center" alignItems="center">
+      <Image src={data.thumbnail[0].url} width={60} height={60} />
+      <Text mt={5} variant="heading6" color="black" fontWeight={500}>
+        {data.heading}
+      </Text>
     </Flex>
   )
 }

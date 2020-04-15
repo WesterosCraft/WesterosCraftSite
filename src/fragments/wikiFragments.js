@@ -14,6 +14,9 @@ export const entryGrid = graphql`
     entryList {
       title
       slug
+      parent {
+        slug
+      }
       ... on Craft_wiki_wikiDestination_Entry {
         images {
           url

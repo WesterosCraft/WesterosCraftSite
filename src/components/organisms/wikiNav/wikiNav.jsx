@@ -12,7 +12,7 @@ const WikiNavGroup = ({ navItem }) => {
       case 'Miscellaneous':
         return `/wiki/miscellaneous/${child.element.slug}`
       case 'Guides':
-        return `/wiki/guide/${child.element.slug}`
+        return `/wiki/guides/${child.element.slug}`
       default:
         return `/wiki/${child.element.slug}`
     }

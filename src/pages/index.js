@@ -7,8 +7,8 @@ import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0]
+  const homebarData = data.craft.entry.homePageContent[1]
 
-  console.log(homepageData)
   return (
     <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
       <Box textAlign="center">
@@ -21,8 +21,7 @@ const IndexPage = ({ data }) => {
       </Box>
       <Box mx="auto">
         <Image src={homepageData.heroImage[0].url} alt="Baelors" />
-        <HomeBar />
-
+        <HomeBar data={homebarData} />
         <SliceZone slices={data.craft.entry.pageSlices} />
       </Box>
     </Flex>
@@ -43,6 +42,17 @@ export const pageQuery = graphql`
               }
               footerImage {
                 url
+              }
+            }
+            ... on Craft_homePageContent_homebar_BlockType {
+              children {
+                ... on Craft_homePageContent_homeBarItem_BlockType {
+                  heading
+                  thumbnail {
+                    url
+                  }
+                  singleLink
+                }
               }
             }
           }

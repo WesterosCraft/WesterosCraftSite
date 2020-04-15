@@ -40,9 +40,9 @@ export const EntryCard = ({ data }) => {
           backgroundPosition: 'center',
           zIndex: 1,
 
-          backgroundImage: `url(${(data.images.length && data.images[0].url) || null})`,
+          backgroundImage: `url(${(data.images && data.images.length && data.images[0].url) || null})`,
           backgroundSize: 'cover',
-          boxShadow: `inset 0 0.75rem 0 ${theme.colors[data.projectDetails[0].region]}`,
+          boxShadow: `inset 0 0.75rem 0 ${data.projectDetails ? theme.colors[data.projectDetails[0].region] : 'black'}`,
         },
       }}
       pt={140}
@@ -121,7 +121,7 @@ export const EntryCard = ({ data }) => {
           {data.title || ''}
         </Text>
         <Text mt={2} variant="paragraph" color="black">
-          {data.projectDetails.length && data.projectDetails[0].house}
+          {data.projectDetails && data.projectDetails.length && data.projectDetails[0].house}
         </Text>
       </Flex>
     </Box>

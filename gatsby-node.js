@@ -84,8 +84,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   guides.forEach((entry) => {
     createPage({
-      path: `/wiki/guide/${entry.slug}`,
-      component: path.resolve('./src/pages/guide.js'),
+      path: `/wiki/guides/${entry.slug}`,
+      component: path.resolve('./src/pages/guides.js'),
       context: {
         data: entry,
         slug: entry.slug,

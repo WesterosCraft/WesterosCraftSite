@@ -84,6 +84,10 @@ export const Redactor = styled.div`
     font-family: 'Roboto', sans-serif;
   }
 
+  p + p {
+    margin-top: 20px;
+  }
+
   p + h2 {
     margin-top: 32px;
   }
