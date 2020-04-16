@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { Box } from 'rebass'
 import ReactPlayer from 'react-player'
 import { configProps } from '../../../utility/helpers'
+import { IoMdPlay } from 'react-icons/io'
+import { VideoWrapper, VideoThumbnail, VideoOverlay, PlayButton } from './styledVideo'
 
 export const VideoEmbed = ({ data }) => {
-  const [overlay, setOverlay] = useState(true)
+  const [isPlaying, setPlaying] = useState(false)
 
   return (
     <Box
@@ -12,45 +14,38 @@ export const VideoEmbed = ({ data }) => {
       maxWidth={data.maxWidth || 756}
       mx="auto"
       className="video-embed"
+      px={5}
       {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
     >
-      <Box
-        sx={{
-          position: 'relative',
-          paddingTop: '56.25%',
-          '.react-player__shadow': {
-            zIndex: 5,
-          },
-        }}
+      <VideoWrapper
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
+        onClick={() => setPlaying(!isPlaying)}
       >
         <ReactPlayer
+          className="react-player"
           url={data.videoUrl}
-          light={data.thumbnail[0].url || ''}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-          }}
+          playing={isPlaying}
           width="100%"
           height="100%"
-          onStart={() => {
-            setOverlay(false)
-          }}
+          controls={true}
         />
-        {overlay && (
-          <Box
-            className="overlay"
-            sx={{
-              background: 'linear-gradient(270deg, rgba(155, 19, 19, 0.9) 0%, rgba(230, 105, 105, 0.6) 100%)',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-            }}
-          />
-        )}
-      </Box>
+
+        <PlayButton
+          className="play-button"
+          justifyContent="center"
+          flexDirection="column"
+          alignItems="center"
+          display={isPlaying ? 1 : 0}
+          width={['65px', '120px']}
+          height={['65px', '120px']}
+        >
+          <IoMdPlay color="#4d6371" />
+        </PlayButton>
+        <VideoOverlay display={isPlaying ? 1 : 0} />
+        <VideoThumbnail display={isPlaying ? 1 : 0} src={data.thumbnail[0].url} />
+      </VideoWrapper>
     </Box>
   )
 }

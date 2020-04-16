@@ -2,13 +2,13 @@ import React from 'react'
 import { Box, Flex, Image } from 'rebass'
 import { TwoColumnLayout } from '../../organisms/twoColumnLayout'
 import { VideoEmbed } from '../../organisms/videoEmbed'
-import { Text } from '../text'
+import { Redactor } from '../../atoms/redactor/redactor'
 
 export const TwoColumnVideo = ({ data }) => (
   <Box className="two-column-video">
     <TwoColumnLayout py={[120, null, 160]}>
       <TwoColumnLayout.ColumnOne>
-        <Text data={data.children[0]} />
+        <Redactor dangerouslySetInnerHTML={{ __html: data.children[0].redactor }} />
         {data.images && (
           <Flex width={1} flexWrap="wrap">
             {data.images.map((image) => (

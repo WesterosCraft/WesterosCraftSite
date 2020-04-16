@@ -56,7 +56,7 @@ export const DestinationSlide = ({ data }) => {
           showStatus={false}
           selectedItem={currentSlide}
         />
-        <Flex flexDirection={['row', null, 'column']} as="ul" pl={[0, null, 8]} pt={[5, null, 0]}>
+        <Flex flexDirection={['row', null, 'column']} flexWrap="wrap" as="ul" pl={[0, null, 8]} pt={[5, null, 0]}>
           {data.slider.map((slide, index) => (
             <SlideSelection
               as="li"

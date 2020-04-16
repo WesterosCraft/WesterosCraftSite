@@ -1,10 +1,12 @@
 import React from 'react'
 import Popup from 'reactjs-popup'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { Flex, Text, Box, Image } from 'rebass'
 import { IoIosArrowDown } from 'react-icons/io'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { DropdownLink } from '../../atoms/dropdownLink/dropdownLink'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { MobileHeader } from '../mobileHeader/'
 
 export function Header({ links }) {
   return (
@@ -31,7 +33,7 @@ export function Header({ links }) {
             </Header.NavGroup>
           ) : null,
         )}
-        <Header.NavGroup>
+        <Header.NavGroup display={['none', null, 'flex']}>
           {links.map((link) =>
             link.children.length > 0 ? (
               <Popup
@@ -70,6 +72,31 @@ export function Header({ links }) {
             ),
           )}
         </Header.NavGroup>
+        <Popup
+          on="click"
+          closeOnDocumentClick
+          repositionOnResize
+          arrow={false}
+          position="bottom right"
+          overlayStyle={{ background: 'transparent', zIndex: 999 }}
+          offsetY={-40}
+          offsetX={8}
+          contentStyle={{
+            boxShadow:
+              '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)',
+            borderRadius: '8px',
+            border: 'none',
+            zIndex: 1000,
+            minWidth: '300px',
+          }}
+          trigger={
+            <Box display={['block', null, 'none']}>
+              <GiHamburgerMenu size="32px" style={{ cursor: 'pointer' }} />
+            </Box>
+          }
+        >
+          {(close) => <MobileHeader close={close} links={links} />}
+        </Popup>
       </Header.Nav>
     </Header.NavWrapper>
   )
@@ -77,7 +104,7 @@ export function Header({ links }) {
 
 Header.NavWrapper = function ({ children, ...restProps }) {
   return (
-    <Box as="nav" pt={[3, 9]} px={[5]} mx={[null, '5%', '10%']} {...restProps}>
+    <Box as="nav" pt={[3, 9]} px={[5]} mx={[null, '5%', null, '10%']} {...restProps}>
       {children}
     </Box>
   )
@@ -86,6 +113,7 @@ Header.NavWrapper = function ({ children, ...restProps }) {
 Header.Nav = function ({ children, ...restProps }) {
   return (
     <Flex
+      className="nav"
       flexDirection="row"
       justifyContent="space-between"
       alignItems="center"
@@ -103,7 +131,11 @@ Header.Nav = function ({ children, ...restProps }) {
 }
 
 Header.NavGroup = function NavGroup({ children, ...restProps }) {
-  return <Flex {...restProps}>{children}</Flex>
+  return (
+    <Box className="nav-group" {...restProps}>
+      {children}
+    </Box>
+  )
 }
 
 Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) => {

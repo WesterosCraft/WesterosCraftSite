@@ -16,6 +16,7 @@ export const HomeBar = ({ data }) => (
       position: 'relative',
       zIndex: 5,
       boxShadow: `0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);`,
+      borderRadius: '8px',
     }}
   >
     {data.children.map((child, i) => (
@@ -28,7 +29,14 @@ export const HomeBar = ({ data }) => (
 
 HomeBar.Card = function ({ data }) {
   return (
-    <Flex height={[160]} width={[250]} flexDirection="column" justifyContent="center" alignItems="center">
+    <Flex
+      height={[160]}
+      width={[250]}
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ transitionDuration: '.15s', '&:hover': { transform: 'translateY(-2px)' } }}
+    >
       <Image src={data.thumbnail[0].url} width={60} height={60} />
       <Text mt={5} variant="heading6" color="black" fontWeight={500}>
         {data.heading}
