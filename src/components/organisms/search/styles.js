@@ -1,19 +1,12 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-// import { Search } from 'styled-icons/fa-solid/Search'
-// import { Algolia } from 'styled-icons/fa-brands/Algolia'
 
 export const Root = styled.div`
   position: relative;
   display: grid;
   grid-gap: 1em;
 `
-
-// export const SearchIcon = styled(Search)`
-//   width: 1em;
-//   pointer-events: none;
-// `
 
 export const SearchIcon = styled.div`
   width: 1em;
@@ -80,8 +73,7 @@ export const HitsWrapper = styled.div`
   z-index: 2;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  right: 0;
-  top: calc(100% + 0.5em);
+  top: 25px;
   width: 80vw;
   max-width: 30em;
   box-shadow: 0 0 5px 0;
