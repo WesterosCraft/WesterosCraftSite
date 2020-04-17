@@ -86,7 +86,6 @@ export const WikiNav = ({ navData }) => {
       sx={{ position: 'relative' }}
     >
       <Search collapse indices={searchIndices} />
-      {/* <Input placeholder="Search Wiki" mb="44px" /> */}
       <Box
         sx={{
           display: ['none', null, 'block'],
