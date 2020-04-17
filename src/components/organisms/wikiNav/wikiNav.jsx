@@ -3,10 +3,10 @@ import { Box, Text, Flex } from 'rebass'
 import { Input } from '@rebass/forms'
 import { Link } from 'gatsby'
 import { IoMdArrowDropdown } from 'react-icons/io'
+import Search from '../search'
 
 const WikiNavGroup = ({ navItem }) => {
   const [open, setOpen] = useState(true)
-
   const buildLink = (child) => {
     switch (child.parent.title) {
       case 'Miscellaneous':
@@ -75,6 +75,8 @@ const WikiNavGroup = ({ navItem }) => {
 }
 
 export const WikiNav = ({ navData }) => {
+  const searchIndices = [{ name: `Wiki`, title: `Destinations`, hitComp: `DestinationHit` }]
+
   return (
     <Flex
       flexDirection="column"
@@ -83,7 +85,8 @@ export const WikiNav = ({ navData }) => {
       maxWidth={['100%', null, 320]}
       sx={{ position: 'relative' }}
     >
-      <Input placeholder="Search Wiki" mb="44px" />
+      <Search collapse indices={searchIndices} />
+      {/* <Input placeholder="Search Wiki" mb="44px" /> */}
       <Box
         sx={{
           display: ['none', null, 'block'],
