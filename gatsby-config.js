@@ -1,6 +1,7 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
+
 const queries = require('./src/utility/algolia')
 
 module.exports = {
