@@ -1,7 +1,7 @@
 import React from 'react'
 import { connectSearchBox } from 'react-instantsearch-dom'
 
-import { SearchIcon, Form } from './styles'
+import { Form } from './styles'
 import { Input } from '@rebass/forms'
 
 export default connectSearchBox(({ refine, ...rest }) => (
@@ -14,6 +14,5 @@ export default connectSearchBox(({ refine, ...rest }) => (
       onChange={(e) => refine(e.target.value)}
       {...rest}
     />
-    <SearchIcon />
   </Form>
 ))
