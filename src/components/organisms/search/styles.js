@@ -80,8 +80,7 @@ export const HitsWrapper = styled.div`
   z-index: 2;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  right: 0;
-  top: calc(100% + 0.5em);
+  top: 56px;
   width: 80vw;
   max-width: 30em;
   box-shadow: 0 0 5px 0;
