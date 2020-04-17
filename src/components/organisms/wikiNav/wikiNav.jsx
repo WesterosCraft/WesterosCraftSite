@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Box, Text, Flex } from 'rebass'
-import { Input } from '@rebass/forms'
 import { Link } from 'gatsby'
 import { IoMdArrowDropdown } from 'react-icons/io'
 import Search from '../search'
