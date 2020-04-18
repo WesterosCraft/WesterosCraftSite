@@ -6,6 +6,7 @@ import { VideoEmbed } from '../../organisms/videoEmbed'
 import { Text } from '../text'
 import { TwoColumnVideo } from '../twoColumnVideo'
 import { ContentBanner } from '../contentBanner/contentBanner'
+import { Timeline } from '../timeline'
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -24,7 +25,8 @@ export const SliceZone = ({ slices }) => {
         return <TwoColumnVideo data={slice} key={index} />
       case 'contentBanner':
         return <ContentBanner data={slice} key={index} />
-
+      case 'timeline':
+        return <Timeline data={slice} key={index} />
       default:
         return null
     }

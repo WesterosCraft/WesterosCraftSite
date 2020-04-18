@@ -10,6 +10,10 @@ export const GlobalStyle = css`
     z-index: 999;
   }
 
+  .vertical-timeline-element-date {
+    color: #333;
+  }
+
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */

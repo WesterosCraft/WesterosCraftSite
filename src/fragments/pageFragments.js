@@ -159,3 +159,14 @@ export const contentBanner = graphql`
     }
   }
 `
+
+export const timeline = graphql`
+  fragment timeline on Craft_pageSlices_timeline_BlockType {
+    typeHandle
+    spacings {
+      ... on Craft_spacings_spacing_BlockType {
+        ...spacings
+      }
+    }
+  }
+`

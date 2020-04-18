@@ -15,6 +15,7 @@ export const theme = {
       100: '#666666',
       200: '#333333',
       300: '#231F20',
+      400: '#E3E3E3',
     },
     crownlands: '#FBBE3B',
     westerlands: '#F98972',

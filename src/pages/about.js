@@ -31,8 +31,17 @@ export const pageQuery = graphql`
             ... on Craft_pageSlices_twoColumnText_BlockType {
               ...twoColumnText
             }
+            ... on Craft_pageSlices_twoColumnVideo_BlockType {
+              ...twoColumnVideo
+            }
+            ... on Craft_pageSlices_text_BlockType {
+              ...text
+            }
             ... on Craft_pageSlices_video_BlockType {
               ...video
+            }
+            ... on Craft_pageSlices_timeline_BlockType {
+              ...timeline
             }
           }
         }
