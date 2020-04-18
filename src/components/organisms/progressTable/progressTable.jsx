@@ -119,27 +119,19 @@ export const ProgressTable = ({ columns, data }) => {
                       )
                     }
                     if (cell.column.Header === 'Destination') {
-                      return (
-                        <TableCell fontWeight="bold" key={cell.index}>
-                          {cell.render('Cell')}
-                        </TableCell>
-                      )
+                      return <TableCell key={cell.index}>{cell.render('Cell')}</TableCell>
                     }
                     if (cell.column.Header === 'Region') {
                       return (
                         <Box width={1} px={4} key={cell.index}>
-                          <Text variant="progress" color="textGray" {...cell.getCellProps()}>
-                            {cell.value}
-                          </Text>
+                          <Text {...cell.getCellProps()}>{cell.value}</Text>
                         </Box>
                       )
                     }
                     if (cell.column.Header === 'Type') {
                       return (
                         <Box width={1} px={4} key={cell.index}>
-                          <Text variant="progress" color="textGray" {...cell.getCellProps()}>
-                            {cell.value}
-                          </Text>
+                          <Text {...cell.getCellProps()}>{cell.value}</Text>
                         </Box>
                       )
                     }

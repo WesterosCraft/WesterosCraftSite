@@ -3,6 +3,14 @@ import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import { Heading } from 'rebass'
 import { ProgressTable } from '../components/organisms/progressTable/progressTable'
+import _merge from 'lodash/merge'
+
+const flatten = (data) =>
+  data.reduce((arr, elem) => {
+    arr.push(_merge(elem, elem.projectDetails[0]))
+    delete elem.projectDetails
+    return arr
+  }, [])
 
 const ProgressPage = ({ data }) => {
   const columns = useMemo(
@@ -17,11 +25,11 @@ const ProgressPage = ({ data }) => {
       },
       {
         Header: 'Status',
-        accessor: 'locationStatus',
+        accessor: 'status',
       },
       {
         Header: 'Type',
-        accessor: 'locationType',
+        accessor: 'destinationType',
       },
       {
         Header: 'House',
@@ -34,7 +42,8 @@ const ProgressPage = ({ data }) => {
     ],
     [],
   )
-  const memoData = useMemo(() => data && data.craft.entries, [])
+
+  const memoData = useMemo(() => data && flatten(data.craft.entries), [])
 
   return (
     <>
@@ -52,6 +61,19 @@ export const pageQuery = graphql`
       entries(site: "westeroscraft", section: "wiki", type: "wikiDestination") {
         title
         slug
+        ... on Craft_wiki_wikiDestination_Entry {
+          projectDetails {
+            ... on Craft_projectDetails_details_BlockType {
+              house
+              region
+              destinationStatus
+              destinationType
+              warp
+              redoAvailable
+              serverBuild
+            }
+          }
+        }
       }
     }
   }

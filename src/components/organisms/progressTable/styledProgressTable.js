@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styled from '@emotion/styled'
 import { Flex, Text, Box } from 'rebass'
 import { IoMdFunnel } from 'react-icons/io'
 
