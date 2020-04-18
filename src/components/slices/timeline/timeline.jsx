@@ -16,6 +16,7 @@ export const Timeline = ({ data }) => {
       <VerticalTimeline>
         {data.children.map((child, i) => (
           <VerticalTimelineElement
+            key={i}
             className="vertical-timeline-element"
             contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}

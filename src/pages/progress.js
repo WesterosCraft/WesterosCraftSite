@@ -1,16 +1,47 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import { graphql } from 'gatsby'
 import { Heading } from 'rebass'
-import { SliceZone } from '../components/slices/sliceZone/sliceZone'
+import { ProgressTable } from '../components/organisms/progressTable/progressTable'
 
 const ProgressPage = ({ data }) => {
-  console.log('progress data: ', data)
+  const columns = useMemo(
+    () => [
+      {
+        Header: 'Destination',
+        accessor: 'title',
+      },
+      {
+        Header: 'Region',
+        accessor: 'region',
+      },
+      {
+        Header: 'Status',
+        accessor: 'locationStatus',
+      },
+      {
+        Header: 'Type',
+        accessor: 'locationType',
+      },
+      {
+        Header: 'House',
+        accessor: 'house',
+      },
+      {
+        Header: 'Warp',
+        accessor: 'warp',
+      },
+    ],
+    [],
+  )
+  const memoData = useMemo(() => data && data.craft.entries, [])
+
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>
         progress page
       </Heading>
+      <ProgressTable columns={columns} data={memoData} />
     </>
   )
 }
