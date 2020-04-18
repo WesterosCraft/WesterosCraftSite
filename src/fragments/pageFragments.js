@@ -163,6 +163,11 @@ export const contentBanner = graphql`
 export const timeline = graphql`
   fragment timeline on Craft_pageSlices_timeline_BlockType {
     typeHandle
+    children {
+      ... on Craft_pageSlices_timelineElement_BlockType {
+        copy
+      }
+    }
     spacings {
       ... on Craft_spacings_spacing_BlockType {
         ...spacings
