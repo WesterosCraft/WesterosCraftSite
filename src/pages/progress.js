@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 
 import { graphql } from 'gatsby';
-import { Heading, Box } from 'rebass';
+import { Heading, Box, Flex } from 'rebass';
 import { ProgressTable } from '../components/organisms/progressTable/progressTable';
 import _merge from 'lodash/merge';
 import { PieChart } from '../components/organisms/pieChart/pieChart';
+import { BarChart } from '../components/organisms/barChart';
 
 const ProgressPage = ({ data }) => {
   const flatten = (data) =>
@@ -16,16 +17,55 @@ const ProgressPage = ({ data }) => {
       return arr;
     }, []);
 
-  const memoData = useMemo(() => data && flatten(data.craft.entries), [data]);
+  const memoData = useMemo(() => data && flatten(data.craft.entries), []);
+
+  console.log(memoData);
+
+  const totalComplete = memoData.filter((item) => item.destinationStatus === 'completed').length;
+  const totalInProgress = memoData.filter(
+    (item) => item.destinationStatus === 'inProgress' || item.destinationStatus === 'redoInProgress',
+  ).length;
+  const totalNotStarted = memoData.filter(
+    (item) => item.destinationStatus === 'abandoned' || item.destinationStatus === 'notStarted',
+  ).length;
+
+  const pieData = useMemo(
+    () => [
+      {
+        id: 'Complete',
+        label: 'Complete',
+        value: totalComplete,
+        color: 'hsl(358,68%,40%)',
+      },
+      {
+        id: 'In Progress',
+        label: 'In Progress',
+        value: totalInProgress,
+        color: 'hsl(272, 70%, 50%)',
+      },
+      {
+        id: 'Not Started',
+        label: 'Not Started',
+        value: totalNotStarted,
+        color: 'hsl(66, 70%, 50%)',
+      },
+    ],
+    [],
+  );
 
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>
         progress page
       </Heading>
-      <Box sx={{ height: 500 }}>
-        <PieChart />
-      </Box>
+      <Flex width={1} flexDirection={['column', null, 'row']}>
+        <Box width={1} sx={{ height: 400 }}>
+          <PieChart data={pieData} />
+        </Box>
+        <Box width={1} sx={{ height: 400 }}>
+          <BarChart />
+        </Box>
+      </Flex>
       <ProgressTable data={memoData} />
     </>
   );
