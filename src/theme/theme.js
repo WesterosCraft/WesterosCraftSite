@@ -81,6 +81,7 @@ export const theme = {
       color: 'black',
     },
     red: {
+      cursor: 'pointer',
       backgroundColor: 'red.medium',
       color: 'white',
       '&:hover': {

@@ -3,7 +3,7 @@ import { Box, Flex, Text } from 'rebass'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import { WikiNav } from '../organisms/wikiNav/wikiNav'
 import { WikiContent } from '../organisms/wikiContent'
-import { breadcrumbFormatter } from '../../utility/helpers'
+import { camelCaseFormatter } from '../../utility/helpers'
 import { IoIosArrowForward } from 'react-icons/io'
 
 export const WikiLayout = ({ children, title, breadcrumb }) => (
@@ -50,7 +50,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
                 <Fragment key={i}>
                   <Link to={crumb.pathname}>
                     <Text color="white" key={crumb.crumbLabel} pr={1} pl={i !== 0 && 1}>
-                      {breadcrumbFormatter(crumb.crumbLabel)}
+                      {camelCaseFormatter(crumb.crumbLabel)}
                     </Text>
                   </Link>
                   {breadcrumb.crumbs.length - 1 !== i ? <IoIosArrowForward color="white" /> : null}

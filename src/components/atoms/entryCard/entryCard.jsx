@@ -4,7 +4,7 @@ import { RegionIcon } from '../icons/regionIcon'
 import { useTheme } from 'emotion-theming'
 import { LocationTypeIcon } from '../icons/locationTypeIcon/locationTypeIcon'
 import Popup from 'reactjs-popup'
-import { breadcrumbFormatter } from '../../../utility/helpers'
+import { camelCaseFormatter } from '../../../utility/helpers'
 import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon'
 
 export const EntryCard = ({ data }) => {
@@ -66,7 +66,7 @@ export const EntryCard = ({ data }) => {
               }
             >
               <Text as="span" color="black" px={4}>
-                {breadcrumbFormatter(data.projectDetails[0].region)}
+                {camelCaseFormatter(data.projectDetails[0].region)}
               </Text>
             </Popup>
           )}
@@ -89,7 +89,7 @@ export const EntryCard = ({ data }) => {
               }
             >
               <Text as="span" color="black" px={4}>
-                {breadcrumbFormatter(data.projectDetails[0].destinationType)}
+                {camelCaseFormatter(data.projectDetails[0].destinationType)}
               </Text>
             </Popup>
           )}
@@ -112,7 +112,7 @@ export const EntryCard = ({ data }) => {
               }
             >
               <Text as="span" color="black" px={4}>
-                {breadcrumbFormatter(data.projectDetails[0].destinationStatus)}
+                {camelCaseFormatter(data.projectDetails[0].destinationStatus)}
               </Text>
             </Popup>
           )}

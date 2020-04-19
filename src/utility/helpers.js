@@ -20,6 +20,6 @@ export const configProps = (data) => {
   }
 }
 
-export const breadcrumbFormatter = (string) => {
+export const camelCaseFormatter = (string) => {
   return _startCase(_camelCase(string))
 }
