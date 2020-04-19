@@ -1,11 +1,78 @@
-import React from 'react'
-import { Flex, Box, Text, Button } from 'rebass'
-import { Select, Input } from '@rebass/forms'
-import { useTable, useSortBy, usePagination } from 'react-table'
-import { TableHeader, TableHeaderContainer, TableCell } from './styledProgressTable'
-import { camelCaseFormatter } from '../../../utility/helpers'
+import React, { useMemo } from 'react';
+import { Flex, Box, Text, Button } from 'rebass';
+import { Select, Input } from '@rebass/forms';
+import { useTable, useSortBy, usePagination } from 'react-table';
+import { TableHeader, TableHeaderContainer } from './styledProgressTable';
+import { camelCaseFormatter } from '../../../utility/helpers';
 
-export const ProgressTable = ({ columns, data }) => {
+export const ProgressTable = ({ data }) => {
+  function SelectColumnFilter({ column: { filterValue, setFilter, preFilteredRows, id } }) {
+    // Calculate the options for filtering
+    // using the preFilteredRows
+    const options = React.useMemo(() => {
+      const options = new Set();
+      preFilteredRows.forEach((row) => {
+        options.add(row.values[id]);
+      });
+      return [...options.values()];
+    }, [id, preFilteredRows]);
+
+    // Render a multi-select box
+    return (
+      <select
+        value={filterValue}
+        onBlur={(e) => {
+          setFilter(e.target.value || '');
+        }}
+      >
+        <option value="">All</option>
+        {options.map((option, i) => (
+          <option key={i} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    );
+  }
+
+  const columns = useMemo(
+    () => [
+      {
+        Header: 'Destination',
+        accessor: 'title',
+        filterable: false,
+      },
+      {
+        Header: 'Region',
+        accessor: 'region',
+        filterable: false,
+      },
+      {
+        Header: 'Status',
+        accessor: 'destinationStatus',
+        filterable: true,
+        Filter: SelectColumnFilter,
+        filter: 'includes',
+      },
+      {
+        Header: 'Type',
+        accessor: 'destinationType',
+        filterable: false,
+      },
+      {
+        Header: 'House',
+        accessor: 'house',
+        filterable: false,
+      },
+      {
+        Header: 'Warp',
+        accessor: 'warp',
+        filterable: false,
+      },
+    ],
+    [],
+  );
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -27,7 +94,8 @@ export const ProgressTable = ({ columns, data }) => {
     },
     useSortBy,
     usePagination,
-  )
+  );
+
   return (
     <Box
       className="progress-table"
@@ -60,7 +128,7 @@ export const ProgressTable = ({ columns, data }) => {
         <Select
           value={pageSize}
           onChange={(e) => {
-            setPageSize(Number(e.target.value))
+            setPageSize(Number(e.target.value));
           }}
           minWidth={120}
         >
@@ -96,7 +164,7 @@ export const ProgressTable = ({ columns, data }) => {
         ))}
         <Box className="progress-table-items" sx={{ border: 'none' }} {...getTableBodyProps()}>
           {page.map((row) => {
-            prepareRow(row)
+            prepareRow(row);
             return (
               row.original.title && (
                 <Flex
@@ -120,7 +188,7 @@ export const ProgressTable = ({ columns, data }) => {
                   ))}
                 </Flex>
               )
-            )
+            );
           })}
         </Box>
       </Box>
@@ -137,8 +205,8 @@ export const ProgressTable = ({ columns, data }) => {
             type="number"
             value={pageIndex + 1 || 1}
             onChange={(e) => {
-              const pagex = e.target.value ? Number(e.target.value) - 1 : 0
-              gotoPage(pagex)
+              const pagex = e.target.value ? Number(e.target.value) - 1 : 0;
+              gotoPage(pagex);
             }}
             p="8px"
           />
@@ -151,5 +219,5 @@ export const ProgressTable = ({ columns, data }) => {
         </Flex>
       </Box>
     </Box>
-  )
-}
+  );
+};
