@@ -10,17 +10,16 @@ export const TableHeaderContainer = ({ children, ...props }) => (
     justifyContent="space-around"
     py={3}
     width={1}
-    bg="white"
+    bg="#f7fafc"
     sx={{
-      //   borderBottom: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
-      //   borderTop: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
+      borderBottom: `1px solid #C4C4C4`,
+      borderTop: `1px solid #C4C4C4`,
       position: 'sticky',
       top: 0,
     }}
     {...props}
   >
-    {' '}
-    {children}{' '}
+    {children}
   </Flex>
 )
 export const TableHeader = ({ children, ...props }) => {
@@ -36,26 +35,24 @@ export const TableHeader = ({ children, ...props }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <Text
-        variant="progress"
         fontWeight="bold"
+        fontSize="14px"
         color={hovered ? 'brandRed' : 'textGray'}
         mr={2}
         sx={{
           textTransform: 'uppercase',
         }}
       >
-        {' '}
-        {children}{' '}
-      </Text>{' '}
+        {children}
+      </Text>
       <IoMdFunnel color={hovered ? '#9B1313' : 'inherit'} />
     </Flex>
   )
 }
 export const TableCell = ({ children, key, ...props }) => (
   <Box width={1} px={4} key={key} className="progress-table-cell">
-    <Text variant="progress" as="p" {...props}>
-      {' '}
-      {children}{' '}
-    </Text>{' '}
+    <Text fontSize="14px" as="p" {...props}>
+      {children}
+    </Text>
   </Box>
 )

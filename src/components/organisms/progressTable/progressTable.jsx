@@ -3,6 +3,7 @@ import { Flex, Box, Text, Button } from 'rebass'
 import { Select, Input } from '@rebass/forms'
 import { useTable, useSortBy, usePagination } from 'react-table'
 import { TableHeader, TableHeaderContainer, TableCell } from './styledProgressTable'
+import { camelCaseFormatter } from '../../../utility/helpers'
 
 export const ProgressTable = ({ columns, data }) => {
   const {
@@ -41,7 +42,7 @@ export const ProgressTable = ({ columns, data }) => {
         0 58.9px 53.1px rgba(0, 0, 0, 0.074),
         0 141px 127px rgba(0, 0, 0, 0.07)
       `,
-        border: '1px solid rgba(0, 0, 0, 0.07)',
+        border: '1px solid #e2e8f0',
         height: 'auto',
         borderRadius: '4px',
         overflowY: 'hidden',
@@ -93,7 +94,7 @@ export const ProgressTable = ({ columns, data }) => {
             ))}
           </TableHeaderContainer>
         ))}
-        <Box className="progress-table-items" {...getTableBodyProps()}>
+        <Box className="progress-table-items" sx={{ border: 'none' }} {...getTableBodyProps()}>
           {page.map((row) => {
             prepareRow(row)
             return (
@@ -105,38 +106,18 @@ export const ProgressTable = ({ columns, data }) => {
                   key={row.index}
                   width={1}
                   sx={{
-                    // borderBottom: `1px solid ${hexToRgba('#C4C4C4', 0.3)}`,
+                    borderBottom: '1px solid #e2e8f0',
                     height: '48px',
                   }}
                   {...row.getRowProps()}
                 >
-                  {row.cells.map((cell) => {
-                    if (cell.column.Header === 'Status') {
-                      return (
-                        <Box width={1} px={4} key={cell.index}>
-                          <div {...cell.getCellProps()}>{cell.value}</div>
-                        </Box>
-                      )
-                    }
-                    if (cell.column.Header === 'Destination') {
-                      return <TableCell key={cell.index}>{cell.render('Cell')}</TableCell>
-                    }
-                    if (cell.column.Header === 'Region') {
-                      return (
-                        <Box width={1} px={4} key={cell.index}>
-                          <Text {...cell.getCellProps()}>{cell.value}</Text>
-                        </Box>
-                      )
-                    }
-                    if (cell.column.Header === 'Type') {
-                      return (
-                        <Box width={1} px={4} key={cell.index}>
-                          <Text {...cell.getCellProps()}>{cell.value}</Text>
-                        </Box>
-                      )
-                    }
-                    return <TableCell key={cell.index}>{cell.render('Cell')}</TableCell>
-                  })}
+                  {row.cells.map((cell, i) => (
+                    <Box width={1} px={4} key={i}>
+                      <Text fontSize="14px" {...cell.getCellProps()}>
+                        {camelCaseFormatter(cell.value)}
+                      </Text>
+                    </Box>
+                  ))}
                 </Flex>
               )
             )
@@ -145,7 +126,7 @@ export const ProgressTable = ({ columns, data }) => {
       </Box>
       <Box className="progress-table-footer">
         <Flex flexDirection="row" justifyContent="center" p={4} alignItems="center">
-          <Button variant="utility" onClick={() => previousPage()} disabled={!canPreviousPage}>
+          <Button variant="red" onClick={() => previousPage()} disabled={!canPreviousPage}>
             Back
           </Button>
           <Text fontSize={[3]} px={4}>
@@ -159,11 +140,12 @@ export const ProgressTable = ({ columns, data }) => {
               const pagex = e.target.value ? Number(e.target.value) - 1 : 0
               gotoPage(pagex)
             }}
+            p="8px"
           />
           <Text fontSize={[3]} px={4}>
             of {pageOptions.length}
           </Text>
-          <Button variant="utility" onClick={() => nextPage()} disabled={!canNextPage}>
+          <Button variant="red" onClick={() => nextPage()} disabled={!canNextPage}>
             Next
           </Button>
         </Flex>
