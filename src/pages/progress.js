@@ -25,7 +25,7 @@ const ProgressPage = ({ data }) => {
       },
       {
         Header: 'Status',
-        accessor: 'status',
+        accessor: 'destinationStatus',
       },
       {
         Header: 'Type',
@@ -43,14 +43,14 @@ const ProgressPage = ({ data }) => {
     [],
   )
 
-  const memoData = useMemo(() => data && flatten(data.craft.entries), [])
+  const memoData = useMemo(() => data && data.craft.entries, [data])
 
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>
         progress page
       </Heading>
-      <ProgressTable columns={columns} data={memoData} />
+      <ProgressTable columns={columns} data={flatten(memoData)} />
     </>
   )
 }

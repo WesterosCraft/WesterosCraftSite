@@ -1,8 +1,6 @@
 import React from 'react'
 
-import { graphql } from 'gatsby'
 import { Heading } from 'rebass'
-import { SliceZone } from '../components/slices/sliceZone/sliceZone'
 
 const DownloadPage = ({ data }) => {
   return (
