@@ -32,9 +32,6 @@ const Layout = ({ children }) => (
               title
               url
               type
-              element {
-                slug
-              }
             }
           }
         }
