@@ -17,7 +17,7 @@ const ProgressPage = ({ data }) => {
       return arr;
     }, []);
 
-  const memoData = useMemo(() => data && flatten(data.craft.entries), []);
+  const memoData = useMemo(() => data && flatten(data.craft.entries), [data]);
 
   console.log(memoData);
 
@@ -50,7 +50,7 @@ const ProgressPage = ({ data }) => {
         color: 'hsl(66, 70%, 50%)',
       },
     ],
-    [],
+    [totalComplete, totalInProgress, totalNotStarted],
   );
 
   return (
@@ -58,11 +58,11 @@ const ProgressPage = ({ data }) => {
       <Heading variant="heading2" textAlign="center" mt={[12]}>
         progress page
       </Heading>
-      <Flex width={1} flexDirection={['column', null, 'row']}>
-        <Box width={1} sx={{ height: 400 }}>
+      <Flex width={1} maxWidth={1256} flexDirection={['column', null, 'row']} mx="auto">
+        <Box width="40%" sx={{ height: 400 }}>
           <PieChart data={pieData} />
         </Box>
-        <Box width={1} sx={{ height: 400 }}>
+        <Box width="60%" sx={{ height: 400 }}>
           <BarChart />
         </Box>
       </Flex>

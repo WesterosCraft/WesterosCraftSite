@@ -9,8 +9,8 @@ import { ResponsiveBar } from '@nivo/bar';
 export const BarChart = ({
   data = [
     {
-      country: 'AD',
-      'hot dog': 152,
+      region: 'Beyond the Wall',
+      'beyond the wall': 152,
       'hot dogColor': 'hsl(280, 70%, 50%)',
       burger: 106,
       burgerColor: 'hsl(89, 70%, 50%)',
@@ -24,8 +24,8 @@ export const BarChart = ({
       donutColor: 'hsl(51, 70%, 50%)',
     },
     {
-      country: 'AE',
-      'hot dog': 103,
+      region: 'Crownlands',
+      crownlands: 103,
       'hot dogColor': 'hsl(168, 70%, 50%)',
       burger: 52,
       burgerColor: 'hsl(339, 70%, 50%)',
@@ -39,8 +39,8 @@ export const BarChart = ({
       donutColor: 'hsl(263, 70%, 50%)',
     },
     {
-      country: 'AF',
-      'hot dog': 146,
+      region: 'Dorne',
+      dorne: 146,
       'hot dogColor': 'hsl(174, 70%, 50%)',
       burger: 50,
       burgerColor: 'hsl(227, 70%, 50%)',
@@ -54,8 +54,23 @@ export const BarChart = ({
       donutColor: 'hsl(242, 70%, 50%)',
     },
     {
-      country: 'AG',
-      'hot dog': 138,
+      region: 'Iron Islands',
+      'iron islands': 69,
+      'hot dogColor': 'hsl(286, 70%, 50%)',
+      burger: 114,
+      burgerColor: 'hsl(208, 70%, 50%)',
+      sandwich: 91,
+      sandwichColor: 'hsl(183, 70%, 50%)',
+      kebab: 168,
+      kebabColor: 'hsl(150, 70%, 50%)',
+      fries: 75,
+      friesColor: 'hsl(164, 70%, 50%)',
+      donut: 17,
+      donutColor: 'hsl(243, 70%, 50%)',
+    },
+    {
+      region: 'Reach',
+      reach: 138,
       'hot dogColor': 'hsl(91, 70%, 50%)',
       burger: 147,
       burgerColor: 'hsl(348, 70%, 50%)',
@@ -69,8 +84,8 @@ export const BarChart = ({
       donutColor: 'hsl(88, 70%, 50%)',
     },
     {
-      country: 'AI',
-      'hot dog': 37,
+      region: 'Riverlands',
+      riverlands: 37,
       'hot dogColor': 'hsl(42, 70%, 50%)',
       burger: 21,
       burgerColor: 'hsl(275, 70%, 50%)',
@@ -78,14 +93,10 @@ export const BarChart = ({
       sandwichColor: 'hsl(155, 70%, 50%)',
       kebab: 0,
       kebabColor: 'hsl(74, 70%, 50%)',
-      fries: 46,
-      friesColor: 'hsl(245, 70%, 50%)',
-      donut: 156,
-      donutColor: 'hsl(184, 70%, 50%)',
     },
     {
-      country: 'AL',
-      'hot dog': 180,
+      region: 'Stormlands',
+      stormlands: 180,
       'hot dogColor': 'hsl(293, 70%, 50%)',
       burger: 33,
       burgerColor: 'hsl(307, 70%, 50%)',
@@ -99,8 +110,38 @@ export const BarChart = ({
       donutColor: 'hsl(348, 70%, 50%)',
     },
     {
-      country: 'AM',
-      'hot dog': 69,
+      region: 'The Wall',
+      'the wall': 69,
+      'hot dogColor': 'hsl(286, 70%, 50%)',
+      burger: 114,
+      burgerColor: 'hsl(208, 70%, 50%)',
+      sandwich: 91,
+      sandwichColor: 'hsl(183, 70%, 50%)',
+      kebab: 168,
+      kebabColor: 'hsl(150, 70%, 50%)',
+      fries: 75,
+      friesColor: 'hsl(164, 70%, 50%)',
+      donut: 17,
+      donutColor: 'hsl(243, 70%, 50%)',
+    },
+    {
+      region: 'Vale',
+      vale: 69,
+      'hot dogColor': 'hsl(286, 70%, 50%)',
+      burger: 114,
+      burgerColor: 'hsl(208, 70%, 50%)',
+      sandwich: 91,
+      sandwichColor: 'hsl(183, 70%, 50%)',
+      kebab: 168,
+      kebabColor: 'hsl(150, 70%, 50%)',
+      fries: 75,
+      friesColor: 'hsl(164, 70%, 50%)',
+      donut: 17,
+      donutColor: 'hsl(243, 70%, 50%)',
+    },
+    {
+      region: 'Westerlands',
+      westerlands: 69,
       'hot dogColor': 'hsl(286, 70%, 50%)',
       burger: 114,
       burgerColor: 'hsl(208, 70%, 50%)',
@@ -117,9 +158,20 @@ export const BarChart = ({
 }) => (
   <ResponsiveBar
     data={data}
-    keys={['hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut']}
-    indexBy="country"
-    margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+    keys={[
+      'beyond the wall',
+      'crownlands',
+      'dorne',
+      'iron islands',
+      'reach',
+      'riverlands',
+      'stormlands',
+      'the wall',
+      'vale',
+      'westerlands',
+    ]}
+    indexBy="region"
+    margin={{ top: 50, right: 130, bottom: 50, left: 90 }}
     padding={0.3}
     layout="horizontal"
     colors={{ scheme: 'nivo' }}
@@ -143,20 +195,6 @@ export const BarChart = ({
         spacing: 10,
       },
     ]}
-    fill={[
-      {
-        match: {
-          id: 'fries',
-        },
-        id: 'dots',
-      },
-      {
-        match: {
-          id: 'sandwich',
-        },
-        id: 'lines',
-      },
-    ]}
     borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
     axisTop={null}
     axisRight={null}
@@ -164,17 +202,9 @@ export const BarChart = ({
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: 'country',
+      legend: 'region',
       legendPosition: 'middle',
       legendOffset: 32,
-    }}
-    axisLeft={{
-      tickSize: 5,
-      tickPadding: 5,
-      tickRotation: 0,
-      legend: 'food',
-      legendPosition: 'middle',
-      legendOffset: -40,
     }}
     labelSkipWidth={12}
     labelSkipHeight={12}
