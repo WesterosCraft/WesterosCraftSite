@@ -1,42 +1,18 @@
 import React, { useMemo } from 'react';
 import { Flex, Box, Text, Button } from 'rebass';
 import { Select, Input } from '@rebass/forms';
-import { useTable, useSortBy, usePagination } from 'react-table';
+import { useTable, useSortBy, usePagination, useResizeColumns, useFlexLayout, useRowSelect } from 'react-table';
 import { TableHeader, TableHeaderContainer } from './styledProgressTable';
 import { camelCaseFormatter } from '../../../utility/helpers';
 
 export const ProgressTable = ({ data }) => {
-  function SelectColumnFilter({ column: { filterValue, setFilter, preFilteredRows, id } }) {
-    // Calculate the options for filtering
-    // using the preFilteredRows
-    const options = React.useMemo(() => {
-      const options = new Set();
-      preFilteredRows.forEach((row) => {
-        options.add(row.values[id]);
-      });
-      return [...options.values()];
-    }, [id, preFilteredRows]);
-
-    // Render a multi-select box
-    return (
-      <select
-        value={filterValue}
-        onBlur={(e) => {
-          setFilter(e.target.value || '');
-        }}
-      >
-        <option value="">All</option>
-        {options.map((option, i) => (
-          <option key={i} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    );
-  }
-
   const columns = useMemo(
     () => [
+      {
+        Header: 'Level',
+        accessor: 'level',
+        filterable: false,
+      },
       {
         Header: 'Destination',
         accessor: 'title',
@@ -51,8 +27,6 @@ export const ProgressTable = ({ data }) => {
         Header: 'Status',
         accessor: 'destinationStatus',
         filterable: true,
-        Filter: SelectColumnFilter,
-        filter: 'includes',
       },
       {
         Header: 'Type',
@@ -73,6 +47,21 @@ export const ProgressTable = ({ data }) => {
     [],
   );
 
+  const headerProps = (props, { column }) => getStyles(props, column.align);
+
+  const cellProps = (props, { cell }) => getStyles(props, cell.column.align);
+
+  const getStyles = (props, align = 'left') => [
+    props,
+    {
+      style: {
+        justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
+        alignItems: 'flex-start',
+        display: 'flex',
+      },
+    },
+  ];
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -91,14 +80,28 @@ export const ProgressTable = ({ data }) => {
     {
       columns,
       data,
+      defaultColumn,
     },
     useSortBy,
     usePagination,
+    useResizeColumns,
+    useFlexLayout,
+    useRowSelect,
+  );
+
+  const defaultColumn = React.useMemo(
+    () => ({
+      // When using the useFlexLayout:
+      minWidth: 30, // minWidth is only used as a limit for resizing
+      width: 150, // width is used for both the flex-basis and flex-grow
+      maxWidth: 200, // maxWidth is only used as a limit for resizing
+    }),
+    [],
   );
 
   return (
     <Box
-      className="progress-table"
+      className="progress-table table"
       maxWidth={1264}
       mx="auto"
       mb={140}
@@ -106,9 +109,7 @@ export const ProgressTable = ({ data }) => {
         boxShadow: `0 3.9px 3.5px rgba(0, 0, 0, 0.046),
         0 9.4px 8.4px rgba(0, 0, 0, 0.065),
         0 17.7px 15.9px rgba(0, 0, 0, 0.073),
-        0 31.5px 28.4px rgba(0, 0, 0, 0.076),
-        0 58.9px 53.1px rgba(0, 0, 0, 0.074),
-        0 141px 127px rgba(0, 0, 0, 0.07)
+        0 31.5px 28.4px rgba(0, 0, 0, 0.076)
       `,
         border: '1px solid #e2e8f0',
         height: 'auto',
@@ -154,20 +155,21 @@ export const ProgressTable = ({ data }) => {
         }}
       >
         {headerGroups.map((headerGroup) => (
-          <TableHeaderContainer key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
+          <TableHeaderContainer className="tr" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <TableHeader key={column.index} {...column.getHeaderProps(column.getSortByToggleProps())}>
+              <TableHeader key={column.index} {...column.getHeaderProps(headerProps)} className="th">
                 {column.render('Header')}
               </TableHeader>
             ))}
           </TableHeaderContainer>
         ))}
-        <Box className="progress-table-items" sx={{ border: 'none' }} {...getTableBodyProps()}>
+        <Box className="progress-table-items tbody" sx={{ border: 'none' }} {...getTableBodyProps()}>
           {page.map((row) => {
             prepareRow(row);
             return (
               row.original.title && (
                 <Flex
+                  className="tr"
                   flexDirection="row"
                   alignItems="center"
                   justifyContent="space-around"
@@ -180,10 +182,8 @@ export const ProgressTable = ({ data }) => {
                   {...row.getRowProps()}
                 >
                   {row.cells.map((cell, i) => (
-                    <Box width={1} px={4} key={i}>
-                      <Text fontSize="14px" {...cell.getCellProps()}>
-                        {camelCaseFormatter(cell.value)}
-                      </Text>
+                    <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
+                      <Text fontSize="14px">{camelCaseFormatter(cell.value)}</Text>
                     </Box>
                   ))}
                 </Flex>

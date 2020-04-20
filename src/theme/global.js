@@ -1,5 +1,5 @@
-import { css } from '@emotion/core'
-import { theme } from './theme'
+import { css } from '@emotion/core';
+import { theme } from './theme';
 
 export const GlobalStyle = css`
   #gatsby-focus-wrapper {
@@ -197,4 +197,4 @@ export const GlobalStyle = css`
   [hidden] {
     display: none;
   }
-`
+`;
