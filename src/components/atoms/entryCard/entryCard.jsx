@@ -49,29 +49,46 @@ export const EntryCard = ({ data }) => {
       px={4}
       pb={5}
     >
-      {console.log(data)}
       <Flex flexDirection="column">
         <Flex flexDirection="row">
-          {data.typeHandle === 'wikiGuide' ||
-            (data.typeHandle === 'wikiMiscellaneous' && (
-              <Popup
-                on="hover"
-                position="bottom left"
-                contentStyle={{
-                  width: 'auto',
-                  borderRadius: '4px',
-                }}
-                trigger={
-                  <span style={{ height: '24px' }}>
-                    <RegionIcon region="guide" width="24px" />
-                  </span>
-                }
-              >
-                <Text as="span" color="black" px={4}>
-                  Guide
-                </Text>
-              </Popup>
-            ))}
+          {data.typeHandle === 'wikiGuide' && (
+            <Popup
+              on="hover"
+              position="bottom left"
+              contentStyle={{
+                width: 'auto',
+                borderRadius: '4px',
+              }}
+              trigger={
+                <span style={{ height: '24px' }}>
+                  <RegionIcon region="guide" width="24px" />
+                </span>
+              }
+            >
+              <Text as="span" color="black" px={4}>
+                Guide
+              </Text>
+            </Popup>
+          )}
+          {data.typeHandle === 'wikiMiscellaneous' && (
+            <Popup
+              on="hover"
+              position="bottom left"
+              contentStyle={{
+                width: 'auto',
+                borderRadius: '4px',
+              }}
+              trigger={
+                <span style={{ height: '24px' }}>
+                  <RegionIcon region="guide" width="24px" />
+                </span>
+              }
+            >
+              <Text as="span" color="black" px={4}>
+                Guide
+              </Text>
+            </Popup>
+          )}
           {data.projectDetails && data.projectDetails.length && (
             <Popup
               on="hover"
