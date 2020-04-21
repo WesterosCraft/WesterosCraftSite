@@ -58,6 +58,7 @@ const Layout = ({ children }) => (
             top: '5vh',
             position: 'relative',
           }}
+          mb={120}
         >
           {children}
         </Box>

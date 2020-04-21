@@ -1,36 +1,36 @@
-import React, { useState, useMemo } from 'react'
-import { WikiLayout } from '../components/templates/wikiLayout'
-import { graphql } from 'gatsby'
-import { EntryCard } from '../components/atoms/entryCard'
-import { Flex } from 'rebass'
-import { Link } from 'gatsby'
-import { regionSlugFormatter } from '../utility/regionSlugFormatter'
-import { Redactor } from '../components/atoms/redactor'
-import { RegionFilters } from '../components/atoms/regionFilters/regionFilters'
+import React, { useState, useMemo } from 'react';
+import { WikiLayout } from '../components/templates/wikiLayout';
+import { graphql } from 'gatsby';
+import { EntryCard } from '../components/atoms/entryCard';
+import { Flex } from 'rebass';
+import { Link } from 'gatsby';
+import { regionSlugFormatter } from '../utility/regionSlugFormatter';
+import { Redactor } from '../components/atoms/redactor';
+import { RegionFilters } from '../components/atoms/regionFilters/regionFilters';
 
 const RegionPage = ({ pageContext, data }) => {
-  const [items, setItems] = useState(data.craft.entries[0].children)
+  const [items, setItems] = useState(data.craft.entries[0].children);
   const regionItems = useMemo(() => {
-    return data.craft.entries[0].children
-  }, [data.craft.entries])
+    return data.craft.entries[0].children;
+  }, [data.craft.entries]);
 
   const onTypeChange = (option) => {
     if (option === null) {
-      setItems(regionItems)
-      return
+      setItems(regionItems);
+      return;
     }
-    const filtered = regionItems.filter((thing) => thing.projectDetails[0].destinationType === option.value)
-    setItems(filtered)
-  }
+    const filtered = regionItems.filter((thing) => thing.projectDetails[0].destinationType === option.value);
+    setItems(filtered);
+  };
 
   const onStatusChange = (option) => {
     if (option === null) {
-      setItems(regionItems)
-      return
+      setItems(regionItems);
+      return;
     }
-    const filtered = regionItems.filter((thing) => thing.projectDetails[0].destinationStatus === option.value)
-    setItems(filtered)
-  }
+    const filtered = regionItems.filter((thing) => thing.projectDetails[0].destinationStatus === option.value);
+    setItems(filtered);
+  };
 
   return (
     <WikiLayout
@@ -39,7 +39,7 @@ const RegionPage = ({ pageContext, data }) => {
     >
       <Redactor dangerouslySetInnerHTML={{ __html: data.craft.entries[0].copy }} />
       <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
-      <Flex flexDirection={["column", null, "row"]} flexWrap="wrap">
+      <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
         {items.map((entry) => (
           <Link to={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`} key={entry.slug}>
             <EntryCard data={entry} key={entry.slug} />
@@ -47,8 +47,8 @@ const RegionPage = ({ pageContext, data }) => {
         ))}
       </Flex>
     </WikiLayout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query RegionQuery($slug: [String]) {
@@ -80,5 +80,5 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-export default RegionPage
+`;
+export default RegionPage;

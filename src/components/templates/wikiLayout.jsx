@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
-import { Box, Flex, Text } from 'rebass'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import { WikiNav } from '../organisms/wikiNav/wikiNav'
-import { WikiContent } from '../organisms/wikiContent'
-import { camelCaseFormatter } from '../../utility/helpers'
-import { IoIosArrowForward } from 'react-icons/io'
+import React, { Fragment } from 'react';
+import { Box, Flex, Text } from 'rebass';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import { WikiNav } from '../organisms/wikiNav/wikiNav';
+import { WikiContent } from '../organisms/wikiContent';
+import { camelCaseFormatter } from '../../utility/helpers';
+import { IoIosArrowForward } from 'react-icons/io';
 
 export const WikiLayout = ({ children, title, breadcrumb }) => (
   <StaticQuery
@@ -34,7 +34,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
       }
     `}
     render={(data) => (
-      <Box className="wiki-layout">
+      <Box className="wiki-layout" pb={9}>
         <Box bg="green" p={5} width={1}>
           <Flex
             flexDirection="row"
@@ -74,4 +74,4 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
       </Box>
     )}
   />
-)
+);

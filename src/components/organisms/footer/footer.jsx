@@ -1,10 +1,10 @@
-import React from 'react'
-import { Box, Flex } from 'rebass'
-import { FooterFrame } from '../../atoms/icons/footerFrame/footerFrame'
-import { ShieldLogo } from '../../atoms/icons/shieldLogo/shieldLogo'
+import React from 'react';
+import { Box, Flex } from 'rebass';
+import { FooterFrame } from '../../atoms/icons/footerFrame/footerFrame';
+import { ShieldLogo } from '../../atoms/icons/shieldLogo/shieldLogo';
 
 export const Footer = () => (
-  <Box bg="gray.300" height={376} mt="200px" sx={{ position: 'relative', zIndex: 500 }} as="footer">
+  <Box bg="gray.300" height={376} sx={{ position: 'relative', zIndex: 500 }} as="footer">
     <Flex
       justifyContent="center"
       alignItems="center"
@@ -48,4 +48,4 @@ export const Footer = () => (
       }}
     />
   </Box>
-)
+);

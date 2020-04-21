@@ -1,14 +1,14 @@
-import React from 'react'
-import { Box, Flex, Text } from 'rebass'
-import { RegionIcon } from '../icons/regionIcon'
-import { useTheme } from 'emotion-theming'
-import { LocationTypeIcon } from '../icons/locationTypeIcon/locationTypeIcon'
-import Popup from 'reactjs-popup'
-import { camelCaseFormatter } from '../../../utility/helpers'
-import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon'
+import React from 'react';
+import { Box, Flex, Text } from 'rebass';
+import { RegionIcon } from '../icons/regionIcon';
+import { useTheme } from 'emotion-theming';
+import { LocationTypeIcon } from '../icons/locationTypeIcon/locationTypeIcon';
+import Popup from 'reactjs-popup';
+import { camelCaseFormatter } from '../../../utility/helpers';
+import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon';
 
 export const EntryCard = ({ data }) => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Box
@@ -49,8 +49,29 @@ export const EntryCard = ({ data }) => {
       px={4}
       pb={5}
     >
+      {console.log(data)}
       <Flex flexDirection="column">
         <Flex flexDirection="row">
+          {data.typeHandle === 'wikiGuide' ||
+            (data.typeHandle === 'wikiMiscellaneous' && (
+              <Popup
+                on="hover"
+                position="bottom left"
+                contentStyle={{
+                  width: 'auto',
+                  borderRadius: '4px',
+                }}
+                trigger={
+                  <span style={{ height: '24px' }}>
+                    <RegionIcon region="guide" width="24px" />
+                  </span>
+                }
+              >
+                <Text as="span" color="black" px={4}>
+                  Guide
+                </Text>
+              </Popup>
+            ))}
           {data.projectDetails && data.projectDetails.length && (
             <Popup
               on="hover"
@@ -125,5 +146,5 @@ export const EntryCard = ({ data }) => {
         </Text>
       </Flex>
     </Box>
-  )
-}
+  );
+};
