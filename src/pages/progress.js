@@ -10,23 +10,16 @@ import styled from '@emotion/styled';
 
 const Styles = styled.div`
   padding: 1rem;
-  ${'' /* These styles are suggested for the table fill all available space in its containing element */}
   display: block;
-  ${'' /* These styles are required for a horizontaly scrollable table overflow */}
   overflow: auto;
   .table {
     border-spacing: 0;
     border: 1px solid black;
     .thead {
-      ${'' /* These styles are required for a scrollable body to align with the header properly */}
       overflow-y: auto;
       overflow-x: hidden;
     }
     .tbody {
-      ${'' /* These styles are required for a scrollable table body */}
-      overflow-y: scroll;
-      overflow-x: hidden;
-      height: 250px;
     }
     .tr {
       :last-child {
@@ -34,15 +27,14 @@ const Styles = styled.div`
           border-bottom: 0;
         }
       }
-      border-bottom: 1px solid black;
+      :nth-child(even) {
+        background-color: #fafafc;
+      }
     }
     .th,
     .td {
       margin: 0;
       padding: 0.5rem;
-      border-right: 1px solid black;
-      ${'' /* In this example we use an absolutely position resizer,
-       so this is required. */}
       position: relative;
       :last-child {
         border-right: 0;
@@ -55,8 +47,7 @@ const Styles = styled.div`
         position: absolute;
         top: 0;
         z-index: 1;
-        ${'' /* prevents from scrolling while dragging on touch devices */}
-        touch-action :none;
+        touch-action: none;
         &.isResizing {
           background: red;
         }
@@ -76,8 +67,6 @@ const ProgressPage = ({ data }) => {
     }, []);
 
   const memoData = useMemo(() => data && flatten(data.craft.entries), [data]);
-
-  console.log(memoData);
 
   const totalComplete = memoData.filter((item) => item.destinationStatus === 'completed').length;
   const totalInProgress = memoData.filter(

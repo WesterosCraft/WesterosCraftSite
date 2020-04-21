@@ -1,15 +1,15 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
-import { StaticQuery, graphql } from 'gatsby'
-import { Global } from '@emotion/core'
-import { GlobalStyle } from '../theme/global'
-import { ThemeProvider } from 'emotion-theming'
-import { theme } from '../theme/theme'
-import { Box } from 'rebass'
+import { StaticQuery, graphql } from 'gatsby';
+import { Global } from '@emotion/core';
+import { GlobalStyle } from '../theme/global';
+import { ThemeProvider } from 'emotion-theming';
+import { theme } from '../theme/theme';
+import { Box } from 'rebass';
 
-import { Header } from '../components/organisms/header'
-import { Footer } from '../components/organisms/footer'
+import { Header } from '../components/organisms/header';
+import { Footer } from '../components/organisms/footer';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -32,6 +32,9 @@ const Layout = ({ children }) => (
               title
               url
               type
+              element {
+                slug
+              }
             }
           }
         }
@@ -62,6 +65,6 @@ const Layout = ({ children }) => (
       </ThemeProvider>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;

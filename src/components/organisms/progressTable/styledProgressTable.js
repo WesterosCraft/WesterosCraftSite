@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { Flex, Text, Box } from 'rebass'
-import { IoMdFunnel } from 'react-icons/io'
+import React, { useState } from 'react';
+import { Flex, Text, Box } from 'rebass';
 
 export const TableHeaderContainer = ({ children, ...props }) => (
   <Flex
@@ -21,9 +20,9 @@ export const TableHeaderContainer = ({ children, ...props }) => (
   >
     {children}
   </Flex>
-)
+);
 export const TableHeader = ({ children, ...props }) => {
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false);
   return (
     <Flex
       flexDirection="row"
@@ -45,14 +44,13 @@ export const TableHeader = ({ children, ...props }) => {
       >
         {children}
       </Text>
-      <IoMdFunnel color={hovered ? '#9B1313' : 'inherit'} />
     </Flex>
-  )
-}
+  );
+};
 export const TableCell = ({ children, key, ...props }) => (
   <Box width={1} px={4} key={key} className="progress-table-cell">
     <Text fontSize="14px" as="p" {...props}>
       {children}
     </Text>
   </Box>
-)
+);
