@@ -1,11 +1,11 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const wikiText = graphql`
   fragment wikiText on Craft_wikiSlices_text_BlockType {
     typeHandle
     redactor
   }
-`
+`;
 
 export const entryGrid = graphql`
   fragment entryGrid on Craft_wikiSlices_entryGrid_BlockType {
@@ -36,7 +36,7 @@ export const entryGrid = graphql`
       }
     }
   }
-`
+`;
 
 export const imageGrid = graphql`
   fragment imageGrid on Craft_wikiSlices_imageGrid_BlockType {
@@ -48,7 +48,7 @@ export const imageGrid = graphql`
         imageDescription
         image {
           title
-          url
+          url(transform: "wikiCard")
         }
       }
     }
@@ -59,7 +59,7 @@ export const imageGrid = graphql`
     }
     clickToCopyScript
   }
-`
+`;
 
 export const accordion = graphql`
   fragment accordion on Craft_wikiSlices_accordion_BlockType {
@@ -77,4 +77,4 @@ export const accordion = graphql`
       }
     }
   }
-`
+`;
