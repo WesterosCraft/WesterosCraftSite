@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
-import { Text, Box, Flex } from 'rebass'
-import Slider from '../../atoms/slider/slider'
-import styled from '@emotion/styled'
-import { Redactor } from '../../atoms/redactor/redactor'
-import { configProps } from '../../../utility/helpers'
+import React, { useState } from 'react';
+import { Text, Box, Flex } from 'rebass';
+import Slider from '../../atoms/slider/slider';
+import styled from '@emotion/styled';
+import { Redactor } from '../../atoms/redactor/redactor';
+import { configProps } from '../../../utility/helpers';
+import { Link } from 'gatsby';
 
 const SlideSelection = styled(Box)`
-  color: ${({ active }) => (active ? 'green' : 'black')};
+  color: ${({ active }) => (active ? '#9E1E22' : 'black')};
   cursor: pointer;
   list-style-type: none;
   border-radius: 8px;
   box-shadow: ${({ active }) => (active ? 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px' : 'none')};
-`
+`;
 
 export const DestinationSlide = ({ data }) => {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
     <Box className="destination-slide" {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
@@ -62,7 +63,7 @@ export const DestinationSlide = ({ data }) => {
               as="li"
               key={slide.slideName}
               onClick={() => {
-                setCurrentSlide(index)
+                setCurrentSlide(index);
               }}
               py={2}
               px={3}
@@ -70,7 +71,7 @@ export const DestinationSlide = ({ data }) => {
               width={[1 / 2, null, 1]}
               sx={{
                 '&:hover': {
-                  color: '#365B41',
+                  color: '#9E1E22',
                 },
               }}
             >
@@ -94,20 +95,29 @@ export const DestinationSlide = ({ data }) => {
                 cursor: 'pointer',
                 listStyleType: 'none',
                 '&:hover': {
-                  color: '#365B41',
+                  color: '#9E1E22',
                 },
               }}
               key={i}
             >
-              <a href={link.url} key={link.customLinkText}>
-                <Text as="span" fontSize={2}>
+              <Link to={link.additionalLink} key={link.customLinkText}>
+                <Text
+                  as="span"
+                  color="black"
+                  sx={{
+                    '&:hover': {
+                      color: '#9E1E22',
+                    },
+                  }}
+                  fontSize={2}
+                >
                   {link.customLinkText}
                 </Text>
-              </a>
+              </Link>
             </Box>
           ))}
         </Flex>
       </Flex>
     </Box>
-  )
-}
+  );
+};
