@@ -10,7 +10,7 @@ export const ProgressTable = ({ data }) => {
     () => [
       {
         Header: 'Level',
-        accessor: 'level',
+        accessor: 'destinationLevel',
         filterable: false,
       },
       {

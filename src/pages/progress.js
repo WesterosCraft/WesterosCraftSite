@@ -27,7 +27,7 @@ const Styles = styled.div`
           border-bottom: 0;
         }
       }
-      :nth-child(even) {
+      :nth-of-type(even) {
         background-color: #fafafc;
       }
     }
@@ -136,6 +136,7 @@ export const pageQuery = graphql`
               warp
               redoAvailable
               serverBuild
+              destinationLevel
             }
           }
         }

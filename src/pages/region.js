@@ -64,7 +64,7 @@ export const pageQuery = graphql`
             slug
             ... on Craft_wiki_wikiDestination_Entry {
               images {
-                url
+                url(transform: "wikiCard")
               }
               projectDetails {
                 ... on Craft_projectDetails_details_BlockType {
