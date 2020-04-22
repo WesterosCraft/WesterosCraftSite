@@ -2,16 +2,19 @@ import React, { useMemo } from 'react';
 import { Flex, Box, Text, Button } from 'rebass';
 import { Select, Input } from '@rebass/forms';
 import { useTable, useSortBy, usePagination, useResizeColumns, useFlexLayout, useRowSelect } from 'react-table';
-import { TableHeader, TableHeaderContainer } from './styledProgressTable';
 import { camelCaseFormatter } from '../../../utility/helpers';
+import { levelFormatter } from './tableHelpers';
+import _lowerCase from 'lodash/lowerCase';
 
 export const ProgressTable = ({ data }) => {
   const columns = useMemo(
     () => [
       {
-        Header: 'Level',
+        Header: () => <div style={{ margin: '0 auto' }}>Level</div>,
+
         accessor: 'destinationLevel',
         filterable: false,
+        width: 64,
       },
       {
         Header: 'Destination',
@@ -155,13 +158,24 @@ export const ProgressTable = ({ data }) => {
         }}
       >
         {headerGroups.map((headerGroup) => (
-          <TableHeaderContainer className="tr" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
+          <div className="tr" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <TableHeader key={column.index} {...column.getHeaderProps(headerProps)} className="th">
+              <Text
+                as="p"
+                fontWeight="bold"
+                fontSize="14px"
+                mr={2}
+                sx={{
+                  textTransform: 'uppercase',
+                }}
+                key={column.index}
+                {...column.getHeaderProps(headerProps)}
+                className="th"
+              >
                 {column.render('Header')}
-              </TableHeader>
+              </Text>
             ))}
-          </TableHeaderContainer>
+          </div>
         ))}
         <Box className="progress-table-items tbody" sx={{ border: 'none' }} {...getTableBodyProps()}>
           {page.map((row) => {
@@ -181,11 +195,33 @@ export const ProgressTable = ({ data }) => {
                   }}
                   {...row.getRowProps()}
                 >
-                  {row.cells.map((cell, i) => (
-                    <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
-                      <Text fontSize="14px">{camelCaseFormatter(cell.value)}</Text>
-                    </Box>
-                  ))}
+                  {row.cells.map((cell, i) => {
+                    if (cell.column.id === 'destinationLevel') {
+                      return (
+                        <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
+                          <Text as="span" fontSize="14px" textAlign="center" width={1}>
+                            {levelFormatter(cell.value)}
+                          </Text>
+                        </Box>
+                      );
+                    }
+                    if (cell.column.id === 'warp') {
+                      return (
+                        <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
+                          <Text as="span" fontSize="14px">
+                            {cell.value ? `/${_lowerCase(cell.value)}` : null}
+                          </Text>
+                        </Box>
+                      );
+                    }
+                    return (
+                      <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
+                        <Text as="span" fontSize="14px">
+                          {camelCaseFormatter(cell.value)}
+                        </Text>
+                      </Box>
+                    );
+                  })}
                 </Flex>
               )
             );
