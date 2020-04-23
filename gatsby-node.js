@@ -1,8 +1,8 @@
-const path = require('path')
-const { regionSlugFormatter } = require(`./src/utility/regionSlugFormatter.js`)
+const path = require('path');
+const { regionSlugFormatter } = require(`./src/utility/regionSlugFormatter.js`);
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   const result = await graphql(
     `
       {
@@ -12,6 +12,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               title
               slug
               copy
+              images {
+                url
+                title
+              }
               projectDetails {
                 ... on Craft_projectDetails_details_BlockType {
                   region
@@ -38,16 +42,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
     `,
-  )
+  );
   if (result.errors) {
-    reporter.panicOnBuild('Error while running GraphQL query.')
-    return
+    reporter.panicOnBuild('Error while running GraphQL query.');
+    return;
   }
 
-  const destinations = result.data.craft.destinations
-  const regions = result.data.craft.regions
-  const miscellaneous = result.data.craft.miscellaneous
-  const guides = result.data.craft.guides
+  const destinations = result.data.craft.destinations;
+  const regions = result.data.craft.regions;
+  const miscellaneous = result.data.craft.miscellaneous;
+  const guides = result.data.craft.guides;
 
   destinations.forEach((entry) => {
     createPage({
@@ -57,8 +61,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         data: entry,
         slug: entry.slug,
       },
-    })
-  })
+    });
+  });
 
   regions.forEach((entry) => {
     createPage({
@@ -68,8 +72,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         data: entry,
         slug: entry.slug,
       },
-    })
-  })
+    });
+  });
 
   miscellaneous.forEach((entry) => {
     createPage({
@@ -79,8 +83,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         data: entry,
         slug: entry.slug,
       },
-    })
-  })
+    });
+  });
 
   guides.forEach((entry) => {
     createPage({
@@ -90,6 +94,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         data: entry,
         slug: entry.slug,
       },
-    })
-  })
-}
+    });
+  });
+};

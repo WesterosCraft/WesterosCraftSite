@@ -1,6 +1,6 @@
-import React from 'react'
-import { Image } from 'rebass'
-import { Carousel } from 'react-responsive-carousel'
+import React from 'react';
+import { Image } from 'rebass';
+import { Carousel } from 'react-responsive-carousel';
 
 export default ({ slides, ...props }) => (
   <Carousel {...props}>
@@ -10,4 +10,4 @@ export default ({ slides, ...props }) => (
       </div>
     ))}
   </Carousel>
-)
+);
