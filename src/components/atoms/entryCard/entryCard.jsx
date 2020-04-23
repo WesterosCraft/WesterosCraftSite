@@ -35,7 +35,7 @@ export const EntryCard = ({ data }) => {
           width: '100%',
           height: 0,
           paddingTop: '8rem',
-          backgroundColor: 'white',
+          backgroundColor: '#F6F9FC',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           zIndex: 1,
