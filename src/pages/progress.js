@@ -123,7 +123,7 @@ const ProgressPage = ({ data }) => {
 export const pageQuery = graphql`
   query progressQuery {
     craft {
-      entries(site: "westeroscraft", section: "wiki", type: "wikiDestination") {
+      entries(site: "westeroscraft", section: "wiki", type: "wikiDestination", orderBy: "title") {
         title
         slug
         ... on Craft_wiki_wikiDestination_Entry {

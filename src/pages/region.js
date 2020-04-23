@@ -59,7 +59,7 @@ export const pageQuery = graphql`
           title
           slug
           copy
-          children {
+          children(orderBy: "title") {
             title
             slug
             ... on Craft_wiki_wikiDestination_Entry {
