@@ -12,18 +12,7 @@ const DestinationPage = ({ pageContext }) => {
       breadcrumb={pageContext.breadcrumb}
     >
       {pageContext.data.images && pageContext.data.images.length > 0 && (
-        <Flex
-          flexDirection={['column', null, 'row']}
-          justifyContent="center"
-          mx="auto"
-          sx={{
-            '.carousel': {
-              maxWidth: '632px',
-              maxHeight: '360px',
-              margin: '0 auto',
-            },
-          }}
-        >
+        <Flex flexDirection={['column', null, 'row']} justifyContent="center" mx="auto">
           <Carousel>
             {pageContext.data.images.map((slide, index) => (
               <Image key={index} src={slide.url} alt={slide.title || ''} />
