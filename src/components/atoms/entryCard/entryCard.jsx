@@ -43,7 +43,7 @@ export const EntryCard = ({ data }) => {
             (data.images && data.images.length && data.images[0].url) ||
             'https://westeroscraft.com/web/assets/images/fleur-1.svg'
           })`,
-          backgroundSize: 'auto',
+          backgroundSize: data.images && data.images.length && data.images[0].url ? 'cover' : 'auto',
           boxShadow: `inset 0 0.75rem 0 ${data.projectDetails ? theme.colors[data.projectDetails[0].region] : 'black'}`,
         },
       }}
