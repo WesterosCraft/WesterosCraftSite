@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { Heading, Box, Flex, Image } from 'rebass';
 import { HomeBar } from '../components/atoms/homeBar';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
@@ -13,12 +14,16 @@ const IndexPage = ({ data }) => {
     <>
       <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
         <Box textAlign="center">
-          <Heading as="h1" variant="heading1">
-            {homepageData.heading || ''}
-          </Heading>
-          <Heading as="h2" variant="heading2" mt={5}>
-            {homepageData.subheading || ''}
-          </Heading>
+          <ScrollAnimation animateIn="fadeIn" delay={450} animateOnce>
+            <Heading as="h1" variant="heading1">
+              {homepageData.heading || ''}
+            </Heading>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="fadeIn" delay={1100} animateOnce>
+            <Heading as="h2" variant="heading2" mt={5}>
+              {homepageData.subheading || ''}
+            </Heading>
+          </ScrollAnimation>
         </Box>
       </Flex>
       <Image

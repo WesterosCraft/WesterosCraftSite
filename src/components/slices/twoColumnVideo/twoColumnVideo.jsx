@@ -1,8 +1,9 @@
-import React from 'react'
-import { Box, Flex, Image } from 'rebass'
-import { TwoColumnLayout } from '../../organisms/twoColumnLayout'
-import { VideoEmbed } from '../../organisms/videoEmbed'
-import { Redactor } from '../../atoms/redactor/redactor'
+import React from 'react';
+import { Box, Flex, Image } from 'rebass';
+import { TwoColumnLayout } from '../../organisms/twoColumnLayout';
+import { VideoEmbed } from '../../organisms/videoEmbed';
+import { Redactor } from '../../atoms/redactor/redactor';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export const TwoColumnVideo = ({ data }) => (
   <Box className="two-column-video">
@@ -20,8 +21,10 @@ export const TwoColumnVideo = ({ data }) => (
         )}
       </TwoColumnLayout.ColumnOne>
       <TwoColumnLayout.ColumnTwo>
-        <VideoEmbed data={data.children[1]} />
+        <ScrollAnimation animateIn="fadeInRight" animateOnce>
+          <VideoEmbed data={data.children[1]} />
+        </ScrollAnimation>
       </TwoColumnLayout.ColumnTwo>
     </TwoColumnLayout>
   </Box>
-)
+);
