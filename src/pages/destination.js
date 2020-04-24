@@ -24,7 +24,7 @@ const DestinationPage = ({ pageContext }) => {
       <Text variant="heading3" as="h3" mb={5}>
         Project details
       </Text>
-      {pageContext.data.projectDetails && pageContext.data.projectDetails.length && (
+      {pageContext && pageContext.data && pageContext.data.projectDetails && pageContext.data.projectDetails.length && (
         <Flex
           flexDirection="row"
           flexWrap="wrap"
