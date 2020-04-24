@@ -13,7 +13,7 @@ export const TwoColumnLayout = ({ children, ...restProps }) => (
 TwoColumnLayout.ColumnOne = function ColumnOne({ children, ...restProps }) {
   return (
     <Box width={[1, null, null, 1 / 2]} mr={[0, null, null, 8]} pb={[8, null, null, 0]} {...restProps}>
-      <ScrollAnimation animateIn="fadeInLeft" delay={450} animateOnce>
+      <ScrollAnimation animateIn="fadeInLeft" offset={200} animateOnce>
         {children}
       </ScrollAnimation>
     </Box>
@@ -23,7 +23,7 @@ TwoColumnLayout.ColumnOne = function ColumnOne({ children, ...restProps }) {
 TwoColumnLayout.ColumnTwo = function ColumnTwo({ children, ...restProps }) {
   return (
     <Box width={[1, null, null, 1 / 2]} ml={[0, null, null, 8]} my="auto" {...restProps}>
-      <ScrollAnimation animateIn="fadeInRight" delay={450} animateOnce>
+      <ScrollAnimation animateIn="fadeInRight" offset={200} animateOnce>
         {children}
       </ScrollAnimation>
     </Box>

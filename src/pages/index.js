@@ -14,12 +14,12 @@ const IndexPage = ({ data }) => {
     <>
       <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
         <Box textAlign="center">
-          <ScrollAnimation animateIn="fadeIn" delay={450} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={350} animateOnce>
             <Heading as="h1" variant="heading1">
               {homepageData.heading || ''}
             </Heading>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay={1100} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={950} animateOnce>
             <Heading as="h2" variant="heading2" mt={5}>
               {homepageData.subheading || ''}
             </Heading>
