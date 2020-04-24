@@ -55,10 +55,10 @@ const Layout = ({ children }) => (
           className={`page-wrapper`}
           sx={{
             margin: `0 auto`,
-            top: '5vh',
             position: 'relative',
           }}
-          mb={120}
+          pt={[10]}
+          bg="#FFFFFF"
         >
           {children}
         </Box>

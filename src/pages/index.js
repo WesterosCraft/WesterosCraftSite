@@ -1,32 +1,51 @@
-import React from 'react'
+import React from 'react';
 
-import { graphql } from 'gatsby'
-import { Heading, Box, Flex, Image } from 'rebass'
-import { HomeBar } from '../components/atoms/homeBar'
-import { SliceZone } from '../components/slices/sliceZone/sliceZone'
+import { graphql } from 'gatsby';
+import { Heading, Box, Flex, Image } from 'rebass';
+import { HomeBar } from '../components/atoms/homeBar';
+import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 
 const IndexPage = ({ data }) => {
-  const homepageData = data.craft.entry.homePageContent[0]
-  const homebarData = data.craft.entry.homePageContent[1]
+  const homepageData = data.craft.entry.homePageContent[0];
+  const homebarData = data.craft.entry.homePageContent[1];
 
   return (
-    <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={12} px={5}>
-      <Box textAlign="center">
-        <Heading as="h1" variant="heading1">
-          {homepageData.heading || ''}
-        </Heading>
-        <Heading as="h2" variant="heading2" mt={5}>
-          {homepageData.subheading || ''}
-        </Heading>
-      </Box>
-      <Box mx="auto">
-        <Image src={homepageData.heroImage[0].url} alt="Baelors" />
+    <>
+      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
+        <Box textAlign="center">
+          <Heading as="h1" variant="heading1">
+            {homepageData.heading || ''}
+          </Heading>
+          <Heading as="h2" variant="heading2" mt={5}>
+            {homepageData.subheading || ''}
+          </Heading>
+        </Box>
+      </Flex>
+      <Image
+        src={homepageData.heroImage[0].url}
+        alt="Baelors"
+        sx={{ textAlign: 'center' }}
+        width={1}
+        maxWidth={1536}
+        display="block"
+        mx="auto"
+      />
+      <Flex alignItems="center" flexDirection="column" mx="auto" className="homepage-content" px={5}>
         <HomeBar data={homebarData} />
         <SliceZone slices={data.craft.entry.pageSlices} />
-      </Box>
-    </Flex>
-  )
-}
+      </Flex>
+      <Image
+        src={homepageData.footerImage[0].url}
+        alt="Kings Landing"
+        sx={{ textAlign: 'center' }}
+        width={1}
+        maxWidth={1536}
+        display="block"
+        mx="auto"
+      />
+    </>
+  );
+};
 
 export const pageQuery = graphql`
   query homeQuery {
@@ -83,6 +102,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;

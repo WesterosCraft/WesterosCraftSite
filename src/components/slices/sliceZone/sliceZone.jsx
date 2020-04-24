@@ -1,36 +1,36 @@
-import React from 'react'
-import { Banner } from '../banner'
-import { DestinationSlide } from '../destinationSlide'
-import { TwoColumnText } from '../twoColumnText/twoColumnText'
-import { VideoEmbed } from '../../organisms/videoEmbed'
-import { Text } from '../text'
-import { TwoColumnVideo } from '../twoColumnVideo'
-import { ContentBanner } from '../contentBanner/contentBanner'
-import { Timeline } from '../timeline'
+import React from 'react';
+import { Banner } from '../banner';
+import { DestinationSlide } from '../destinationSlide';
+import { TwoColumnText } from '../twoColumnText/twoColumnText';
+import { VideoEmbed } from '../../organisms/videoEmbed';
+import { Text } from '../text';
+import { TwoColumnVideo } from '../twoColumnVideo';
+import { ContentBanner } from '../contentBanner/contentBanner';
+import { Timeline } from '../timeline';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
     switch (slice.typeHandle) {
       case 'banner':
-        return <Banner data={slice} key={index} />
+        return <Banner data={slice} key={index} />;
       case 'destinationSlider':
-        return <DestinationSlide data={slice} key={index} />
+        return <DestinationSlide data={slice} key={index} />;
       case 'twoColumnText':
-        return <TwoColumnText data={slice} key={index} />
+        return <TwoColumnText data={slice} key={index} />;
       case 'video':
-        return <VideoEmbed data={slice} key={index} />
+        return <VideoEmbed data={slice} key={index} />;
       case 'text':
-        return <Text data={slice} key={index} />
+        return <Text data={slice} key={index} />;
       case 'twoColumnVideo':
-        return <TwoColumnVideo data={slice} key={index} />
+        return <TwoColumnVideo data={slice} key={index} />;
       case 'contentBanner':
-        return <ContentBanner data={slice} key={index} />
+        return <ContentBanner data={slice} key={index} />;
       case 'timeline':
-        return <Timeline data={slice} key={index} />
+        return <Timeline data={slice} key={index} />;
       default:
-        return null
+        return null;
     }
-  })
+  });
 
-  return <>{module}</>
-}
+  return <>{module}</>;
+};

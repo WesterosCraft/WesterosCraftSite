@@ -35,7 +35,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
     `}
     render={(data) => (
       <Box className="wiki-layout" pb={9}>
-        <Box bg="green" p={5} width={1}>
+        <Box className="breadcrumb-wrapper" bg="green" py={5} px={[3, null, 5]} width={1}>
           <Flex
             flexDirection="row"
             alignItems="center"
@@ -43,13 +43,19 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
             maxWidth={1120}
             mx="auto"
             width={1}
-            px={5}
+            px={[0, null, 5]}
           >
             {breadcrumb &&
               breadcrumb.crumbs.map((crumb, i) => (
                 <Fragment key={i}>
                   <Link to={crumb.pathname}>
-                    <Text color="white" key={crumb.crumbLabel} pr={1} pl={i !== 0 && 1}>
+                    <Text
+                      fontSize={['14px', null, '16px']}
+                      color="white"
+                      key={crumb.crumbLabel}
+                      pr={1}
+                      pl={i !== 0 && 1}
+                    >
                       {camelCaseFormatter(crumb.crumbLabel)}
                     </Text>
                   </Link>

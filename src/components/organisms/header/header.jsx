@@ -1,12 +1,12 @@
-import React from 'react'
-import Popup from 'reactjs-popup'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import React from 'react';
+import Popup from 'reactjs-popup';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
-import { Flex, Text, Box, Image } from 'rebass'
-import { IoIosArrowDown } from 'react-icons/io'
-import { DropdownLink } from '../../atoms/dropdownLink/dropdownLink'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { MobileHeader } from '../mobileHeader/'
+import { Flex, Text, Box, Image } from 'rebass';
+import { IoIosArrowDown } from 'react-icons/io';
+import { DropdownLink } from '../../atoms/dropdownLink/dropdownLink';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { MobileHeader } from '../mobileHeader/';
 
 export function Header({ links }) {
   return (
@@ -99,7 +99,7 @@ export function Header({ links }) {
         </Popup>
       </Header.Nav>
     </Header.NavWrapper>
-  )
+  );
 }
 
 Header.NavWrapper = function ({ children, ...restProps }) {
@@ -107,8 +107,8 @@ Header.NavWrapper = function ({ children, ...restProps }) {
     <Box as="nav" pt={[3, 9]} px={[5]} mx={[null, '5%', null, '10%']} {...restProps}>
       {children}
     </Box>
-  )
-}
+  );
+};
 
 Header.Nav = function ({ children, ...restProps }) {
   return (
@@ -127,16 +127,16 @@ Header.Nav = function ({ children, ...restProps }) {
     >
       {children}
     </Flex>
-  )
-}
+  );
+};
 
 Header.NavGroup = function NavGroup({ children, ...restProps }) {
   return (
     <Box className="nav-group" {...restProps}>
       {children}
     </Box>
-  )
-}
+  );
+};
 
 Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) => {
   return (
@@ -180,5 +180,5 @@ Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) =>
         </Text>
       </Box>
     </Box>
-  )
-})
+  );
+});

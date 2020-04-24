@@ -1,5 +1,6 @@
-import _startCase from 'lodash/startCase'
-import _camelCase from 'lodash/camelCase'
+import _startCase from 'lodash/startCase';
+import _camelCase from 'lodash/camelCase';
+import * as dayjs from 'dayjs';
 
 export const configProps = (data) => {
   return {
@@ -17,9 +18,17 @@ export const configProps = (data) => {
       data.paddingBottom[0].desktop,
       data.paddingBottom[0].wide,
     ],
-  }
-}
+  };
+};
 
 export const camelCaseFormatter = (string) => {
-  return _startCase(_camelCase(string))
-}
+  return _startCase(_camelCase(string));
+};
+
+export const formatDate = (date) => {
+  if (!date) {
+    return;
+  }
+  const d = dayjs(date).format('MMMM D, YYYY');
+  return d;
+};

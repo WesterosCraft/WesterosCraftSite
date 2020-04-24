@@ -1,11 +1,21 @@
-import React from 'react'
-import { Box, Text } from 'rebass'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import React from 'react';
+import { Box, Text } from 'rebass';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 export const DropdownLink = ({ data }) => (
   <>
     {data.element && data.element.slug ? (
-      <AniLink cover duration={0.5} bg="#9E1E22" direction="right" to={`/${data.element && data.element.slug}`}>
+      <AniLink
+        cover
+        duration={0.5}
+        bg="#9E1E22"
+        direction="right"
+        to={`/${
+          data.element && data.element.slug === 'frequently-asked-questions'
+            ? `wiki/miscellaneous/${data.element.slug}`
+            : data.element.slug
+        }`}
+      >
         <Box
           py={3}
           px={3}
@@ -49,4 +59,4 @@ export const DropdownLink = ({ data }) => (
       </Box>
     )}
   </>
-)
+);

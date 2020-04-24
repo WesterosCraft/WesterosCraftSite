@@ -19,6 +19,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               projectDetails {
                 ... on Craft_projectDetails_details_BlockType {
                   region
+                  destinationType
+                  destinationStatus
+                  house
+                  warp
+                  projectLead
+                  dateStarted
+                  dateCompleted
                 }
               }
             }
