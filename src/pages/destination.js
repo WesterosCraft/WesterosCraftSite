@@ -12,9 +12,9 @@ const DestinationPage = ({ pageContext }) => {
       title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
       breadcrumb={pageContext.breadcrumb}
     >
-      {pageContext.data.images && pageContext.data.images.length > 0 && (
+      {pageContext.data && pageContext.data.images && pageContext.data.images.length > 0 && (
         <Flex flexDirection={['column', null, 'row']} justifyContent="center" mx="auto">
-          <Carousel>
+          <Carousel showThumbs={false}>
             {pageContext.data.images.map((slide, index) => (
               <Image key={index} src={slide.url} alt={slide.title || ''} />
             ))}
