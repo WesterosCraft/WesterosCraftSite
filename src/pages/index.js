@@ -13,25 +13,11 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <Flex
-        as="section"
-        className="homepage-hero"
-        flexDirection="column"
-        width={1}
-        pt={6}
-        px={5}
-        sx={{ position: 'relative' }}
-        height={650}
-      >
-        <Box textAlign="left">
+      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
+        <Box textAlign="center">
           <ScrollAnimation animateIn="fadeIn" delay={250} animateOnce>
             <Heading as="h1" variant="heading1">
-              {/* {homepageData.heading || ''} */}
-              Seven Kingdoms.
-            </Heading>
-            <Heading as="h1" variant="heading1">
-              {/* {homepageData.heading || ''} */}
-              All Blocks.
+              {homepageData.heading || ''}
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={750} animateOnce>
@@ -41,7 +27,7 @@ const IndexPage = ({ data }) => {
           </ScrollAnimation>
           <Button variant="red">Get the Launcher</Button>
         </Box>
-        <Box bg="white" ml={500} sx={{ position: 'absolute', bottom: -120, right: -200, border: '1px solid black' }}>
+        <Box>
           <Image
             src={homepageData.heroImage[0].url}
             alt="Baelors"
