@@ -5,6 +5,7 @@ import { Heading, Box, Flex, Image } from 'rebass';
 import { HomeBar } from '../components/atoms/homeBar';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { Button } from '../components/atoms/button';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
@@ -12,11 +13,25 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
-        <Box textAlign="center">
+      <Flex
+        as="section"
+        className="homepage-hero"
+        flexDirection="column"
+        width={1}
+        pt={6}
+        px={5}
+        sx={{ position: 'relative' }}
+        height={650}
+      >
+        <Box textAlign="left">
           <ScrollAnimation animateIn="fadeIn" delay={250} animateOnce>
             <Heading as="h1" variant="heading1">
-              {homepageData.heading || ''}
+              {/* {homepageData.heading || ''} */}
+              Seven Kingdoms.
+            </Heading>
+            <Heading as="h1" variant="heading1">
+              {/* {homepageData.heading || ''} */}
+              All Blocks.
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={750} animateOnce>
@@ -24,19 +39,22 @@ const IndexPage = ({ data }) => {
               {homepageData.subheading || ''}
             </Heading>
           </ScrollAnimation>
+          <Button variant="red">Get the Launcher</Button>
+        </Box>
+        <Box bg="white" ml={500} sx={{ position: 'absolute', bottom: -120, right: -200, border: '1px solid black' }}>
+          <Image
+            src={homepageData.heroImage[0].url}
+            alt="Baelors"
+            sx={{ textAlign: 'center' }}
+            width={1}
+            maxWidth={1536}
+            display="block"
+            mx="auto"
+          />
         </Box>
       </Flex>
-      <Image
-        src={homepageData.heroImage[0].url}
-        alt="Baelors"
-        sx={{ textAlign: 'center' }}
-        width={1}
-        maxWidth={1536}
-        display="block"
-        mx="auto"
-      />
       <Flex alignItems="center" flexDirection="column" mx="auto" className="homepage-content" px={5}>
-        <HomeBar data={homebarData} />
+        {/* <HomeBar data={homebarData} /> */}
         <SliceZone slices={data.craft.entry.pageSlices} />
       </Flex>
       <Image
