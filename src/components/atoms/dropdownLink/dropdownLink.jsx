@@ -21,6 +21,7 @@ export const DropdownLink = ({ data }) => (
           px={3}
           as="li"
           sx={{
+            zIndex: 5,
             cursor: 'pointer',
             listStyleType: 'none',
             color: 'gray.100',

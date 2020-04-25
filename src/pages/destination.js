@@ -21,7 +21,12 @@ const DestinationPage = ({ pageContext }) => {
           </Carousel>
         </Flex>
       )}
-      <Text variant="heading3" as="h3" mb={5}>
+      <Text
+        variant="heading3"
+        as="h3"
+        mb={5}
+        mt={pageContext.data && pageContext.data.images && pageContext.data.images.length > 0 ? 5 : 0}
+      >
         Project details
       </Text>
       {pageContext && pageContext.data && pageContext.data.projectDetails && pageContext.data.projectDetails.length && (
