@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { Box } from 'rebass'
-import ReactPlayer from 'react-player'
-import { configProps } from '../../../utility/helpers'
-import { IoMdPlay } from 'react-icons/io'
-import { VideoWrapper, VideoThumbnail, VideoOverlay, PlayButton } from './styledVideo'
+import React, { useState } from 'react';
+import { Box } from 'rebass';
+import ReactPlayer from 'react-player';
+import { configProps } from '../../../utility/helpers';
+import { IoMdPlay } from 'react-icons/io';
+import { VideoWrapper, VideoThumbnail, VideoOverlay, PlayButton } from './styledVideo';
 
-export const VideoEmbed = ({ data }) => {
-  const [isPlaying, setPlaying] = useState(false)
+export const VideoEmbed = ({ data, ...props }) => {
+  const [isPlaying, setPlaying] = useState(false);
 
   return (
     <Box
@@ -15,6 +15,7 @@ export const VideoEmbed = ({ data }) => {
       mx="auto"
       className="video-embed"
       px={5}
+      {...props}
       {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
     >
       <VideoWrapper
@@ -47,5 +48,5 @@ export const VideoEmbed = ({ data }) => {
         <VideoThumbnail display={isPlaying ? 1 : 0} src={data.thumbnail[0].url} />
       </VideoWrapper>
     </Box>
-  )
-}
+  );
+};

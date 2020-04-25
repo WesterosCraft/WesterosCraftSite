@@ -79,6 +79,13 @@ export const theme = {
     white: {
       backgroundColor: 'white',
       color: 'black',
+      boxShadow: 'rgb(0, 0, 0) 0px 0px 0px 1px inset',
+      '&:focus': {
+        boxShadow: 'rgb(0, 0, 0) 0px 0px 0px 1px inset',
+      },
+      '&:active': {
+        boxShadow: 'rgb(0, 0, 0) 0px 0px 0px 1px inset',
+      },
     },
     red: {
       cursor: 'pointer',
@@ -86,9 +93,14 @@ export const theme = {
       color: 'white',
       '&:hover': {
         backgroundColor: 'red.light',
+        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px',
       },
       '&:focus': {
         backgroundColor: 'red.dark',
+        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 3em inset',
+      },
+      '&:active': {
+        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 0px 3em inset',
       },
     },
   },
@@ -109,4 +121,4 @@ export const theme = {
     checkbox: {},
   },
   variants: {},
-}
+};

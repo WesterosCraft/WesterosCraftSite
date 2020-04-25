@@ -20,9 +20,9 @@ export const TwoColumnVideo = ({ data }) => (
           </Flex>
         )}
       </TwoColumnLayout.ColumnOne>
-      <TwoColumnLayout.ColumnTwo>
+      <TwoColumnLayout.ColumnTwo ml={0}>
         <ScrollAnimation animateIn="fadeInRight" animateOnce>
-          <VideoEmbed data={data.children[1]} />
+          <VideoEmbed data={data.children[1]} px={0} />
         </ScrollAnimation>
       </TwoColumnLayout.ColumnTwo>
     </TwoColumnLayout>

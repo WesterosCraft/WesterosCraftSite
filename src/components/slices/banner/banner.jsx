@@ -1,9 +1,9 @@
-import React from 'react'
-import { Box, Flex } from 'rebass'
-import { CardBar } from '../../atoms/icons/cardBar/cardBar'
-import { ButtonSelector } from '../../organisms/buttonSelector'
-import { Redactor } from '../../atoms/redactor/redactor'
-import { configProps } from '../../../utility/helpers'
+import React from 'react';
+import { Box, Flex } from 'rebass';
+import { CardBar } from '../../atoms/icons/cardBar/cardBar';
+import { ButtonSelector } from '../../organisms/buttonSelector';
+import { Redactor } from '../../atoms/redactor/redactor';
+import { configProps } from '../../../utility/helpers';
 
 export const Banner = ({ data }) => (
   <Box
@@ -16,10 +16,10 @@ export const Banner = ({ data }) => (
       flexDirection={['column', null, 'row']}
       justifyContent={['center', null, 'space-between']}
       alignItems="center"
-      bg="green"
+      bg="white"
       maxWidth={1120}
       minHeight={[240, null, 220]}
-      sx={{ borderRadius: 8, position: 'relative' }}
+      sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC' }}
       mx="auto"
       px={['46px', '80px', null, '100px']}
       py={11}
@@ -63,4 +63,4 @@ export const Banner = ({ data }) => (
       width="100vw"
     />
   </Box>
-)
+);

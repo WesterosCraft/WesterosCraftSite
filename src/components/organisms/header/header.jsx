@@ -45,14 +45,14 @@ export function Header({ links }) {
                 mouseEnterDelay={0}
                 contentStyle={{
                   padding: '0px',
-                  border: 'none',
-                  borderRadius: '4px',
+                  border: '2px solid black',
+
                   boxShadow:
                     '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
                 }}
                 arrowStyle={{
                   padding: '0px',
-                  border: 'none',
+                  border: '2px solid black',
                   boxShadow:
                     '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
                 }}
