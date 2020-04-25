@@ -11,6 +11,7 @@ export const Button = ({ as = 'a', children, ...props }) => (
     py={[3]}
     px={[4]}
     minWidth={220}
+    maxWidth="max-content"
     sx={{ position: 'relative', cursor: 'pointer', minWidth: 'max-content', letterSpacing: '.5', borderRadius: 0 }}
   >
     <Box

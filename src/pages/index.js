@@ -28,21 +28,21 @@ const IndexPage = ({ data }) => {
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={1150} animateOnce>
-            {/* <AniLink to="/launcher" cover duration={0.5} bg="#9E1E22" direction="right"> */}
-            <Button variant="red" mt={9} as="div">
-              Get the Launcher
-            </Button>
-            {/* </AniLink> */}
-            {/* <AniLink to="/wiki" cover duration={0.5} bg="#9E1E22" direction="right"> */}
-            <Button variant="white" mt={9} as="div">
-              <BsTriangleFill
-                size="16px"
-                style={{ transform: 'rotate(90deg)', marginRight: '6px', marginTop: '-1px', marginBottom: '-2px' }}
-                color="black"
-              />
-              Explore the Wiki
-            </Button>
-            {/* </AniLink> */}
+            <AniLink to="/launcher" cover duration={0.5} bg="#9E1E22" direction="right">
+              <Button variant="red" mt={9} as="div">
+                Get the Launcher
+              </Button>
+            </AniLink>
+            <AniLink to="/wiki" cover duration={0.5} bg="#9E1E22" direction="right">
+              <Button variant="white" mt={9} as="div">
+                <BsTriangleFill
+                  size="16px"
+                  style={{ transform: 'rotate(90deg)', marginRight: '6px', marginTop: '-1px', marginBottom: '-2px' }}
+                  color="black"
+                />
+                Explore the Wiki
+              </Button>
+            </AniLink>
           </ScrollAnimation>
         </Box>
         <Box>
