@@ -4,7 +4,12 @@ import { FooterFrame } from '../../atoms/icons/footerFrame/footerFrame';
 import { ShieldLogo } from '../../atoms/icons/shieldLogo/shieldLogo';
 
 export const Footer = () => (
-  <Box bg="gray.300" height={376} sx={{ position: 'relative', zIndex: 500, outline: '2px solid #231F20' }} as="footer">
+  <Box
+    bg="gray.300"
+    height={376}
+    sx={{ position: 'relative', zIndex: 500, outline: '8px outset #505652', outlineOffset: '-8px' }}
+    as="footer"
+  >
     <Flex
       justifyContent="center"
       alignItems="center"
