@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Flex, Box, Text } from 'rebass'
-import { IoMdArrowDropdown } from 'react-icons/io'
-import { configProps } from '../../../utility/helpers'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-import { IoIosCopy } from 'react-icons/io'
-import styled from '@emotion/styled'
-import _replace from 'lodash/replace'
+import React, { useState } from 'react';
+import { Flex, Box, Text } from 'rebass';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { configProps } from '../../../utility/helpers';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { IoIosCopy } from 'react-icons/io';
+import styled from '@emotion/styled';
+import _replace from 'lodash/replace';
 
 const SVGWrapper = styled(Box)`
   &:hover {
@@ -15,10 +15,10 @@ const SVGWrapper = styled(Box)`
       transform: translate3d(0px, -2px, 0px);
     }
   }
-`
+`;
 
 export const ImageGrid = ({ data }) => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
 
   return (
     <Box className="image-grid" {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
@@ -28,7 +28,7 @@ export const ImageGrid = ({ data }) => {
         mb={2}
         className="group-title"
         onClick={() => {
-          setOpen(!open)
+          setOpen(!open);
         }}
         sx={{
           cursor: 'pointer',
@@ -43,7 +43,7 @@ export const ImageGrid = ({ data }) => {
       {open && (
         <Flex flexDirection={['column', null, 'row']} flexWrap="wrap" className="image-grid-content-container">
           {data.imageList.map((image, i) => {
-            const script = _replace(data.clickToCopyScript, '<ID>', ` ${image.imageTitle}`)
+            const script = _replace(data.clickToCopyScript, '<ID>', ` ${image.imageTitle}`);
             return (
               <Box
                 className="image-grid-item"
@@ -53,10 +53,9 @@ export const ImageGrid = ({ data }) => {
                 mr={[0, null, 5]}
                 sx={{
                   cursor: 'pointer',
-                  borderRadius: '4px',
                   position: 'relative',
+                  boxShadow: ' 0 0 0 2px black',
                   overflow: 'hidden',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
                   transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
                   '&:hover': {
                     boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
@@ -70,6 +69,7 @@ export const ImageGrid = ({ data }) => {
                     width: '100%',
                     height: 0,
                     paddingTop: '8rem',
+                    borderBottom: '2px solid black',
                     backgroundColor: 'white',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
@@ -113,10 +113,10 @@ export const ImageGrid = ({ data }) => {
                   )}
                 </Flex>
               </Box>
-            )
+            );
           })}
         </Flex>
       )}
     </Box>
-  )
-}
+  );
+};

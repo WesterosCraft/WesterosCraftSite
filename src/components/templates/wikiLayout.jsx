@@ -35,7 +35,17 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
     `}
     render={(data) => (
       <Box className="wiki-layout" pb={9}>
-        <Box className="breadcrumb-wrapper" bg="green" py={5} px={[3, null, 5]} width={1}>
+        <Box
+          className="breadcrumb-wrapper"
+          bg="green"
+          py={6}
+          px={[3, null, 5]}
+          width={1}
+          sx={{
+            outline: '8px outset #50815e',
+            outlineOffset: '-8px',
+          }}
+        >
           <Flex
             flexDirection="row"
             alignItems="center"

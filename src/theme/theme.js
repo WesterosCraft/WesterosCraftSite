@@ -106,9 +106,14 @@ export const theme = {
   },
   forms: {
     input: {
-      borderRadius: '4px',
       fontFamily: 'heading',
       padding: '14px 32px 14px 16px',
+      boxShadow: 'inset 4px 4px 0 #DDD',
+      border: '2px solid #000',
+      '&:focus': {
+        outline: '3px solid #AAA',
+        outlineOffset: 0,
+      },
     },
     select: {},
     textarea: {},

@@ -6,9 +6,6 @@ import { Box, Text, Flex } from 'rebass';
 
 // https://codepen.io/havardob/pen/gOamzGq
 
-//inputs
-// https://codepen.io/havardob/pen/GbrQob
-
 //buttons
 // https://codepen.io/kathykato/pen/gOOjgmP
 // https://codepen.io/b1tn3r/pen/YjOzRv
