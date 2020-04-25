@@ -24,27 +24,10 @@ export const Banner = ({ data }) => (
       px={['46px', '80px', null, '100px']}
       py={11}
     >
-      <CardBar
-        sx={{
-          position: 'absolute',
-          width: '91px',
-          left: ['8px', null, '16px'],
-          bottom: ['8px', null, '16px'],
-          transform: 'scaleX(-1) scaleY(-1)',
-        }}
-      />
-      <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
+      <Box textAlign={['center', null, 'left']} mb={[9, null, 0]} mr={[0, null, 7]}>
         <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
       </Box>
       <ButtonSelector data={data.buttons} />
-      <CardBar
-        sx={{
-          position: 'absolute',
-          width: '91px',
-          right: ['8px', null, '16px'],
-          top: ['8px', null, '16px'],
-        }}
-      />
     </Flex>
     <Box
       sx={{

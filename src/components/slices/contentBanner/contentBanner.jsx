@@ -1,9 +1,9 @@
-import React from 'react'
-import { Box, Flex, Text } from 'rebass'
-import { CardBar } from '../../atoms/icons/cardBar/cardBar'
-import { ButtonSelector } from '../../organisms/buttonSelector'
-import { Redactor } from '../../atoms/redactor/redactor'
-import { configProps } from '../../../utility/helpers'
+import React from 'react';
+import { Box, Flex, Text } from 'rebass';
+import { CardBar } from '../../atoms/icons/cardBar/cardBar';
+import { ButtonSelector } from '../../organisms/buttonSelector';
+import { Redactor } from '../../atoms/redactor/redactor';
+import { configProps } from '../../../utility/helpers';
 
 export const ContentBanner = ({ data }) => (
   <Box
@@ -16,23 +16,14 @@ export const ContentBanner = ({ data }) => (
       flexDirection={['column']}
       justifyContent={['center', null, 'space-between']}
       alignItems="center"
-      bg="green"
+      bg="white"
       maxWidth={1120}
       minHeight={[240, null, 220]}
-      sx={{ borderRadius: 8, position: 'relative' }}
+      sx={{ borderRadius: 8, position: 'relative', boxShadow: 'inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC' }}
       mx="auto"
       px={['46px', '80px', null, '100px']}
       py={11}
     >
-      <CardBar
-        sx={{
-          position: 'absolute',
-          width: '91px',
-          left: ['8px', null, '16px'],
-          bottom: ['8px', null, '16px'],
-          transform: 'scaleX(-1) scaleY(-1)',
-        }}
-      />
       <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
         <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
       </Box>
@@ -45,7 +36,7 @@ export const ContentBanner = ({ data }) => (
             py={2}
             px={3}
             as="a"
-            color="white"
+            color="black"
             sx={{
               cursor: 'pointer',
               listStyleType: 'none',
@@ -62,14 +53,6 @@ export const ContentBanner = ({ data }) => (
           </Box>
         ))}
       </Flex>
-      <CardBar
-        sx={{
-          position: 'absolute',
-          width: '91px',
-          right: ['8px', null, '16px'],
-          top: ['8px', null, '16px'],
-        }}
-      />
     </Flex>
     <Box
       sx={{
@@ -88,4 +71,4 @@ export const ContentBanner = ({ data }) => (
       width="100vw"
     />
   </Box>
-)
+);
