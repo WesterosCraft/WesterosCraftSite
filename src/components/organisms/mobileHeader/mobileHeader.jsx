@@ -18,7 +18,7 @@ export const MobileHeader = ({ close, links }) => {
 
                 <Flex width={1} flexDirection="column">
                   {link.children.map((child) => (
-                    <DropdownLink data={child} key={child.title} />
+                    <DropdownLink data={child} key={child.title} onClick={close} />
                   ))}
                 </Flex>
               </>

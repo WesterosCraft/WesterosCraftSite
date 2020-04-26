@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Text } from 'rebass';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
-export const DropdownLink = ({ data }) => (
+export const DropdownLink = ({ data, onClick }) => (
   <>
     {data.element && data.element.slug ? (
       <AniLink
@@ -20,6 +20,7 @@ export const DropdownLink = ({ data }) => (
           py={3}
           px={3}
           as="li"
+          onClick={onClick}
           sx={{
             zIndex: 5,
             cursor: 'pointer',

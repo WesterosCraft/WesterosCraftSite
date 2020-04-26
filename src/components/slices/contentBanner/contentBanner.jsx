@@ -9,6 +9,7 @@ export const ContentBanner = ({ data }) => (
   <Box
     sx={{ position: 'relative' }}
     className="content-banner"
+    px={5}
     {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
   >
     <Flex
