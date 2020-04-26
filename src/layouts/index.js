@@ -57,7 +57,7 @@ const Layout = ({ children }) => (
             margin: `0 auto`,
             position: 'relative',
           }}
-          pt={[10]}
+          pt={[3, null, 10]}
           bg="#FFFFFF"
         >
           {children}

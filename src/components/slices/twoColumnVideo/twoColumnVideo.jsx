@@ -28,7 +28,7 @@ export const TwoColumnVideo = ({ data }) => (
           height="100%"
           sx={{ position: 'absolute', bottom: [-10, null, 0], right: 0 }}
         >
-          <Doodle
+          {/* <Doodle
             rule={`
             :doodle {
               @grid: 18 / 100%;
@@ -40,14 +40,10 @@ export const TwoColumnVideo = ({ data }) => (
             );
             transform: scale(@rand(.2, .5));
         `}
-          />
+          /> */}
         </Box>
         <ScrollAnimation animateIn="fadeInRight" animateOnce>
-          <VideoEmbed
-            data={data.children[1]}
-            px={0}
-            sx={{ transform: ['translate(0px, 0px)', null, 'translate(-25px, -25px)'] }}
-          />
+          <VideoEmbed data={data.children[1]} p={0} />
         </ScrollAnimation>
       </TwoColumnLayout.ColumnTwo>
     </TwoColumnLayout>

@@ -39,7 +39,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
           className="breadcrumb-wrapper"
           bg="green"
           py={6}
-          px={[3, null, 5]}
+          px={[4, null, 5]}
           width={1}
           sx={{
             outline: '8px outset #50815e',
@@ -79,7 +79,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
           flexDirection={['column', null, 'row']}
           justifyContent="center"
           height="100%"
-          mt={16}
+          mt={[10, null, 16]}
           px={5}
           maxWidth={1120}
           mx="auto"

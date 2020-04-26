@@ -1,16 +1,16 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const Root = styled.div`
   position: relative;
   display: grid;
   grid-gap: 1em;
-`
+`;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-`
+`;
 
 export const HitsWrapper = styled.div`
   display: ${(props) => (props.show ? `grid` : `none`)};
@@ -20,7 +20,7 @@ export const HitsWrapper = styled.div`
   -webkit-overflow-scrolling: touch;
   position: absolute;
   top: 56px;
-  width: 80vw;
+  width: 82vw;
   max-width: 30em;
   box-shadow: 0 0 5px 0;
   padding: 0.7em 1em 0.4em;
@@ -63,4 +63,4 @@ export const HitsWrapper = styled.div`
   h4 {
     margin-bottom: 0.3em;
   }
-`
+`;
