@@ -19,7 +19,6 @@
     "@rebass/forms": "^4.0.6",
     "algoliasearch": "^4.1.0",
     "animate.css": "^3.7.2",
-    "css-doodle": "^0.8.5",
     "dayjs": "^1.8.25",
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
