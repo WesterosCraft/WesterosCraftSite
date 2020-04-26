@@ -1,32 +1,36 @@
-import React, { useState } from 'react'
-import { Box, Text, Flex } from 'rebass'
-import { Link } from 'gatsby'
-import { IoMdArrowDropdown } from 'react-icons/io'
-import Search from '../search'
+import React, { useState } from 'react';
+import { Box, Text, Flex } from 'rebass';
+import { Link } from 'gatsby';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import Search from '../search';
 
 const WikiNavGroup = ({ navItem }) => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
   const buildLink = (child) => {
     switch (child.parent.title) {
       case 'Miscellaneous':
-        return `/wiki/miscellaneous/${child.element.slug}`
+        return `/wiki/miscellaneous/${child.element.slug}`;
       case 'Guides':
-        return `/wiki/guides/${child.element.slug}`
+        return `/wiki/guides/${child.element.slug}`;
       default:
-        return `/wiki/${child.element.slug}`
+        return `/wiki/${child.element.slug}`;
     }
-  }
+  };
 
   return (
     <>
-      <Box key={navItem.title} sx={{ boxShadow: 'inset -1px 0 0 rgba(48,48,49,0.2)' }}>
+      <Box
+        className="wiki-nav-group"
+        key={navItem.title}
+        sx={{ boxShadow: ['none', null, 'inset -1px 0 0 rgba(48,48,49,0.2)'] }}
+      >
         <Flex
           flexDirection="row"
           alignItems="center"
           mb={2}
           className="group-title"
           onClick={() => {
-            setOpen(!open)
+            setOpen(!open);
           }}
           sx={{
             cursor: 'pointer',
@@ -70,11 +74,11 @@ const WikiNavGroup = ({ navItem }) => {
         )}
       </Box>
     </>
-  )
-}
+  );
+};
 
 export const WikiNav = ({ navData }) => {
-  const searchIndices = [{ name: `Wiki`, title: `Destinations`, hitComp: `DestinationHit` }]
+  const searchIndices = [{ name: `Wiki`, title: `Destinations`, hitComp: `DestinationHit` }];
 
   return (
     <Flex
@@ -82,19 +86,14 @@ export const WikiNav = ({ navData }) => {
       as="nav"
       className="wiki-nav"
       maxWidth={['100%', null, 320]}
-      sx={{ position: 'relative' }}
+      sx={{ position: 'relative', flexShrink: 0, flexGrow: 1 }}
     >
       <Search collapse indices={searchIndices} />
-      <Box
-        sx={{
-          display: ['none', null, 'block'],
-        }}
-        width={1}
-      >
+      <Box className="wiki-nav-container" width={1} display={['none', null, 'block']}>
         {navData.craft.wikiNav.map((navItem, i) => (
           <WikiNavGroup navItem={navItem} key={i} />
         ))}
       </Box>
     </Flex>
-  )
-}
+  );
+};

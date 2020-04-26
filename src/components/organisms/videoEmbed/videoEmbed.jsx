@@ -39,8 +39,8 @@ export const VideoEmbed = ({ data, ...props }) => {
           flexDirection="column"
           alignItems="center"
           display={isPlaying ? 1 : 0}
-          width={['65px', '120px']}
-          height={['65px', '120px']}
+          width={['65px', '100px']}
+          height={['65px', '100px']}
         >
           <IoMdPlay color="#4d6371" />
         </PlayButton>

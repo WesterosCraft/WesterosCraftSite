@@ -37,6 +37,22 @@ const Layout = ({ children }) => (
               }
             }
           }
+          footerData: nodes(navHandle: "mainFooter") {
+            title
+            url
+            type
+            element {
+              slug
+            }
+            children {
+              title
+              url
+              type
+              element {
+                slug
+              }
+            }
+          }
         }
       }
     `}
@@ -57,12 +73,12 @@ const Layout = ({ children }) => (
             margin: `0 auto`,
             position: 'relative',
           }}
-          pt={[10]}
+          pt={[3, null, 10]}
           bg="#FFFFFF"
         >
           {children}
         </Box>
-        <Footer />
+        <Footer links={data.craft.navData} />
       </ThemeProvider>
     )}
   />
