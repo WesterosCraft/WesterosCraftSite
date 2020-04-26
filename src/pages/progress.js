@@ -14,7 +14,7 @@ const Styles = styled.div`
   overflow: auto;
   .table {
     border-spacing: 0;
-    border: 1px solid black;
+    border: 2px solid black;
     .thead {
       overflow-y: auto;
       overflow-x: hidden;

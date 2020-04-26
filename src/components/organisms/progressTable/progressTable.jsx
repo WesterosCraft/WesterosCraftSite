@@ -114,7 +114,6 @@ export const ProgressTable = ({ data }) => {
         0 17.7px 15.9px rgba(0, 0, 0, 0.073),
         0 31.5px 28.4px rgba(0, 0, 0, 0.076)
       `,
-        border: '1px solid #e2e8f0',
         height: 'auto',
         borderRadius: '4px',
         overflowY: 'hidden',
@@ -230,7 +229,7 @@ export const ProgressTable = ({ data }) => {
       </Box>
       <Box className="progress-table-footer">
         <Flex flexDirection="row" justifyContent="center" p={4} alignItems="center">
-          <Button variant="red" onClick={() => previousPage()} disabled={!canPreviousPage}>
+          <Button onClick={() => previousPage()} disabled={!canPreviousPage} sx={{ cursor: 'pointer' }} bg="red.medium">
             Back
           </Button>
           <Text fontSize={[3]} px={4}>
@@ -249,7 +248,7 @@ export const ProgressTable = ({ data }) => {
           <Text fontSize={[3]} px={4}>
             of {pageOptions.length}
           </Text>
-          <Button variant="red" onClick={() => nextPage()} disabled={!canNextPage}>
+          <Button onClick={() => nextPage()} disabled={!canNextPage} sx={{ cursor: 'pointer' }} bg="red.medium">
             Next
           </Button>
         </Flex>

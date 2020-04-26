@@ -10,8 +10,9 @@ const SlideSelection = styled(Box)`
   color: ${({ active }) => (active ? '#9E1E22' : 'black')};
   cursor: pointer;
   list-style-type: none;
-  border-radius: 8px;
-  box-shadow: ${({ active }) => (active ? 'rgba(0, 0, 0, 0.2) 0px 2px 6px 0px' : 'none')};
+  /* border: ${({ active }) => (active ? '2px solid black' : 'none')}; */
+  box-shadow: ${({ active }) => (active ? ' 0 0 0 2px black;' : 'none')};
+  font-weight: 500;
 `;
 
 export const DestinationSlide = ({ data }) => {
@@ -91,6 +92,7 @@ export const DestinationSlide = ({ data }) => {
               py={2}
               px={3}
               as="li"
+              width={[1 / 2, null, 1]}
               sx={{
                 cursor: 'pointer',
                 listStyleType: 'none',
@@ -104,6 +106,7 @@ export const DestinationSlide = ({ data }) => {
                 <Text
                   as="span"
                   color="black"
+                  fontWeight={500}
                   sx={{
                     '&:hover': {
                       color: '#9E1E22',
