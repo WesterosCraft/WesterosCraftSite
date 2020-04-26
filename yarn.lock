@@ -9794,6 +9794,11 @@ match-sorter@^4.1.0:
     "@babel/runtime" "^7.9.2"
     remove-accents "0.4.2"
 
+mcstatus@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mcstatus/-/mcstatus-1.0.1.tgz#31773d0f9eb1eeff5cbe18b598b0a8d910244c5d"
+  integrity sha512-wbCQUfu4DyS/lu4eiWTJS71/h5ZyZrCXATLusscrKuOpQOHqKydD+d4oy7hYejng/hVtjRhTwVzfJlHEu9tCLw==
+
 md5-file@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/md5-file/-/md5-file-3.2.3.tgz#f9bceb941eca2214a4c0727f5e700314e770f06f"
