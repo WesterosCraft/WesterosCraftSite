@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
               {homepageData.heading || ''}
             </Heading>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay={750} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={650} animateOnce>
             <Heading as="h2" variant="heading2" mt={5}>
               {homepageData.subheading || ''}
             </Heading>

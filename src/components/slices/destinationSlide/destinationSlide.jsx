@@ -57,6 +57,7 @@ export const DestinationSlide = ({ data }) => {
           showArrows={false}
           showStatus={false}
           selectedItem={currentSlide}
+          dynamicHeight={true}
         />
         <Flex flexDirection={['row', null, 'column']} flexWrap="wrap" as="ul" pl={[0, null, 8]} pt={[5, null, 0]}>
           {data.slider.map((slide, index) => (

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 export const Redactor = styled.div`
   /* GLOBAL STYLES */
@@ -107,6 +107,10 @@ export const Redactor = styled.div`
 
   h5 + p {
     margin-top: 28px;
+  }
+
+  h5 + h6 {
+    margin-top: 16px;
   }
 
   h6 + h2 {
@@ -244,4 +248,4 @@ export const Redactor = styled.div`
       padding-left: 0px;
     }
   }
-`
+`;
