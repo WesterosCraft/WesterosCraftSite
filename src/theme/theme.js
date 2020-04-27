@@ -4,6 +4,7 @@ export const theme = {
   fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   colors: {
     white: '#FFFFFF',
+    offWhite: '#f3f4f4',
     green: '#365B41',
     gold: '#DAAC58',
     text: ' #333333',
