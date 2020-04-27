@@ -1,14 +1,14 @@
 const regionSlugFormatter = (slug) => {
   switch (slug) {
     case 'beyondTheWall':
-      return 'beyond-the-wall'
+      return 'beyond-the-wall';
     case 'theWall':
-      return 'the-wall'
+      return 'the-wall';
     case 'ironIslands':
-      return 'iron-islands'
+      return 'iron-islands';
     default:
-      return slug
+      return slug;
   }
-}
+};
 
-module.exports.regionSlugFormatter = regionSlugFormatter
+module.exports.regionSlugFormatter = regionSlugFormatter;

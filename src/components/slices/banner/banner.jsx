@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Flex } from 'rebass';
-import { CardBar } from '../../atoms/icons/cardBar/cardBar';
 import { ButtonSelector } from '../../organisms/buttonSelector';
 import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utility/helpers';

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { graphql } from 'gatsby';
 import { Heading, Box, Flex, Image } from 'rebass';
-import { HomeBar } from '../components/atoms/homeBar';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Button } from '../components/atoms/button';
@@ -11,7 +10,6 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
-  const homebarData = data.craft.entry.homePageContent[1];
 
   return (
     <>
@@ -58,7 +56,6 @@ const IndexPage = ({ data }) => {
         </Box>
       </Flex>
       <Flex alignItems="center" flexDirection="column" mx="auto" className="homepage-content" px={5}>
-        {/* <HomeBar data={homebarData} /> */}
         <SliceZone slices={data.craft.entry.pageSlices} />
       </Flex>
       <Image

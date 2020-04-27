@@ -38,7 +38,6 @@
     "gatsby-transformer-sharp": "^2.4.1",
     "gsap": "^3.2.6",
     "match-sorter": "^4.1.0",
-    "mcstatus": "^1.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.13.1",
     "react-animate-on-scroll": "^2.1.5",

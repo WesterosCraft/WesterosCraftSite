@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Text, Flex } from 'rebass';
 import { Button } from '../components/atoms/button';
 import { BsTriangleFill } from 'react-icons/bs';
+import { ServerStatus } from '../components/atoms/serverStatus/serverStatus';
 
 // design ideas
 
@@ -40,6 +41,9 @@ const PlaygroundPage = () => (
         />
         Explore the Wiki
       </Button>
+    </Box>
+    <Box my={200}>
+      <ServerStatus />
     </Box>
   </Flex>
 );
