@@ -43,7 +43,7 @@ export const HitsWrapper = styled.div`
     list-style: none;
   }
   mark {
-    color: black;
+    color: #333333;
     background: yellow;
   }
   header {

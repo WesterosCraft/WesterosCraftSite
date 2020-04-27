@@ -45,14 +45,14 @@ export function Header({ links }) {
                 mouseEnterDelay={0}
                 contentStyle={{
                   padding: '0px',
-                  border: '1px solid black',
+                  border: '1px solid #333333',
 
                   boxShadow:
                     '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
                 }}
                 arrowStyle={{
                   padding: '0px',
-                  border: '1px solid black',
+                  border: '1px solid #333333',
                   boxShadow:
                     '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
                 }}
@@ -85,13 +85,13 @@ export function Header({ links }) {
             boxShadow:
               '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)',
             borderRadius: '8px',
-            border: '1px solid black',
+            border: '1px solid #333333',
             zIndex: 1000,
             minWidth: '300px',
           }}
           arrowStyle={{
             padding: '0px',
-            border: '1px solid black',
+            border: '1px solid #333333',
             boxShadow:
               '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
           }}

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Flex, Text, Image } from 'rebass'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import React from 'react';
+import { Flex, Text, Image } from 'rebass';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 export const HomeBar = ({ data }) => (
   <Flex
@@ -25,7 +25,7 @@ export const HomeBar = ({ data }) => (
       </AniLink>
     ))}
   </Flex>
-)
+);
 
 HomeBar.Card = function ({ data }) {
   return (
@@ -38,9 +38,9 @@ HomeBar.Card = function ({ data }) {
       sx={{ transitionDuration: '.15s', '&:hover': { transform: 'translateY(-2px)' } }}
     >
       <Image src={data.thumbnail[0].url} width={60} height={60} />
-      <Text mt={5} variant="heading6" color="black" fontWeight={500}>
+      <Text mt={5} variant="heading6" color="text" fontWeight={500}>
         {data.heading}
       </Text>
     </Flex>
-  )
-}
+  );
+};

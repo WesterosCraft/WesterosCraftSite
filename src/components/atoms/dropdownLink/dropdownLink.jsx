@@ -31,7 +31,7 @@ export const DropdownLink = ({ data, onClick }) => (
               backgroundColor: 'rgba(120, 120, 120, 0.1)',
             },
             '&:active, &:visited': {
-              color: 'black',
+              color: '#333333',
             },
           }}
         >

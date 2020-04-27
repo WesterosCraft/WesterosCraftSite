@@ -6,6 +6,7 @@ export const theme = {
     white: '#FFFFFF',
     green: '#365B41',
     gold: '#DAAC58',
+    text: ' #333333',
     red: {
       light: '#B32227',
       medium: '#9E1E22',
@@ -50,26 +51,32 @@ export const theme = {
   shadows: {},
   text: {
     heading1: {
+      color: 'text',
       fontSize: ['36px', '48px', '64px'],
       fontWeight: 'bold',
     },
     heading2: {
+      color: 'text',
       fontSize: ['32px', '36px', '48px'],
       fontWeight: 'bold',
     },
     heading3: {
+      color: 'text',
       fontSize: ['24px', '32px', '36px'],
       fontWeight: 'bold',
     },
     heading4: {
+      color: 'text',
       fontSize: [2, 3, 4],
       fontWeight: 'regular',
     },
     heading5: {
+      color: 'text',
       fontSize: [3],
       fontWeight: 'regular',
     },
     heading6: {
+      color: 'text',
       fontSize: [3],
       fontWeight: 'regular',
       lineHeight: 1.5,
@@ -77,7 +84,7 @@ export const theme = {
   },
   buttons: {
     white: {
-      color: 'black',
+      color: 'text',
       '&:before': {
         content: "''",
         width: '100%',
@@ -88,7 +95,7 @@ export const theme = {
         right: 0,
         bottom: 0,
         background: '#fff',
-        boxShadow: '0 0 0 2px #000',
+        boxShadow: '0 0 0 2px #333',
       },
       '&:after': {
         content: "''",
@@ -100,7 +107,7 @@ export const theme = {
         right: 0,
         bottom: 0,
         backgroundColor: '#fff',
-        boxShadow: '0 0 0 2px #000',
+        boxShadow: '0 0 0 2px #333',
         zIndex: 1,
         transform: 'translate(-0.5em, -0.5em)',
         transition: 'transform 100ms ease-out',
@@ -116,6 +123,7 @@ export const theme = {
     },
 
     red: {
+      textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
       '&:before': {
         content: "''",
         width: '100%',
@@ -126,7 +134,7 @@ export const theme = {
         right: 0,
         bottom: 0,
         background: '#fff',
-        boxShadow: '0 0 0 2px #000',
+        boxShadow: '0 0 0 2px #333',
       },
       '&:after': {
         content: "''",
@@ -158,7 +166,7 @@ export const theme = {
       fontFamily: 'heading',
       padding: '14px 32px 14px 16px',
       boxShadow: 'inset 4px 4px 0 #DDD',
-      border: '2px solid #000',
+      border: '2px solid #333',
       '&:focus': {
         outline: '3px solid #AAA',
         outlineOffset: 0,

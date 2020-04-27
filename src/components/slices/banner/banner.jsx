@@ -18,7 +18,7 @@ export const Banner = ({ data }) => (
       bg="white"
       maxWidth={1120}
       minHeight={[240, null, 220]}
-      sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC' }}
+      sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC' }}
       mx="auto"
       px={['46px', '80px', null, '100px']}
       py={11}

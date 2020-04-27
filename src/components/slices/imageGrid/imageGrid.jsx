@@ -54,7 +54,7 @@ export const ImageGrid = ({ data }) => {
                 sx={{
                   cursor: 'pointer',
                   position: 'relative',
-                  boxShadow: ' 0 0 0 2px black',
+                  boxShadow: ' 0 0 0 2px #333333',
                   overflow: 'hidden',
                   transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
                   '&:hover': {
@@ -69,7 +69,7 @@ export const ImageGrid = ({ data }) => {
                     width: '100%',
                     height: 0,
                     paddingTop: '8rem',
-                    borderBottom: '2px solid black',
+                    borderBottom: '2px solid #333333',
                     backgroundColor: 'white',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
@@ -90,12 +90,12 @@ export const ImageGrid = ({ data }) => {
                     fontSize="18px"
                     fontWeight="bold"
                     as="h6"
-                    color="black"
+                    color="text"
                     fontFamily="heading"
                   >
                     {image.imageTitle || ''}
                   </Text>
-                  <Text mt={2} variant="paragraph" color="black">
+                  <Text mt={2} variant="paragraph" color="text">
                     {image.imageDescription || ''}
                   </Text>
                   {data.clickToCopyScript !== '' && (

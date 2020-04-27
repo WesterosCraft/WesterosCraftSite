@@ -7,7 +7,7 @@ import { configProps } from '../../../utility/helpers';
 import { Link } from 'gatsby';
 
 const SlideSelection = styled(Box)`
-  color: ${({ active }) => (active ? '#9E1E22' : 'black')};
+  color: ${({ active }) => (active ? '#9E1E22' : '#333333')};
   cursor: pointer;
   list-style-type: none;
   font-weight: ${({ active }) => (active ? '500' : 'normal')};
@@ -45,7 +45,7 @@ export const DestinationSlide = ({ data }) => {
             maxWidth: '632px',
             maxHeight: '360px',
             margin: '0 auto',
-            border: '2px solid black',
+            border: '2px solid #333333',
           },
         }}
       >
@@ -83,7 +83,7 @@ export const DestinationSlide = ({ data }) => {
           ))}
           <Box
             sx={{
-              borderTop: '1px solid black',
+              borderTop: '1px solid #333333',
             }}
             my={2}
           />
@@ -105,7 +105,7 @@ export const DestinationSlide = ({ data }) => {
               <Link to={link.additionalLink} key={link.customLinkText}>
                 <Text
                   as="span"
-                  color="black"
+                  color="text"
                   sx={{
                     '&:hover': {
                       color: '#9E1E22',

@@ -37,7 +37,7 @@ const PlaygroundPage = () => (
         <BsTriangleFill
           size="16px"
           style={{ transform: 'rotate(90deg)', marginRight: '6px', marginTop: '-1px', marginBottom: '-2px' }}
-          color="black"
+          color="#333333"
         />
         Explore the Wiki
       </Button>
