@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { graphql } from 'gatsby';
 import { Heading, Box, Flex, Text, Button } from 'rebass';
-import { Select, Input } from '@rebass/forms';
+import { Input } from '@rebass/forms';
 
 import { Document, Page } from 'react-pdf';
 
@@ -16,13 +16,13 @@ const RookeryPage = ({ data }) => {
 
   return (
     <>
-      <Heading variant="heading2" textAlign="center" mt={[12]}>
+      <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
         {data.craft.entry.heading}
       </Heading>
-      <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto">
+      <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5}>
         {data.craft.entry.subheading}
       </Heading>
-      <Flex flexDirection="column" width={1} justifyContent="center" alignItems="center" mt={[10]}>
+      <Flex flexDirection="column" width={1} justifyContent="center" alignItems="center" mt={[10]} px={5}>
         <Box className="pdf-container">
           <Document
             file={`https://cors-anywhere.herokuapp.com/${data.craft.entry.rookeryList[0].rookeryFile[0].url}`}
@@ -30,9 +30,6 @@ const RookeryPage = ({ data }) => {
           >
             <Page pageNumber={pageNumber} />
           </Document>
-          {/* <p>
-            Page {pageNumber} of {numPages}
-          </p> */}
           <Flex flexDirection="row" justifyContent="center" p={4} alignItems="center">
             <Button
               onClick={() => {
