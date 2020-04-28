@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 
 import { graphql } from 'gatsby';
-import { Heading, Box, Flex, Text, Button } from 'rebass';
-import { Input } from '@rebass/forms';
+import { Heading, Box, Flex, Text } from 'rebass';
+import Iframe from 'react-iframe';
 
-import { Document, Page } from 'react-pdf';
+import { Spinner } from '../components/atoms/spinner';
 
 const RookeryPage = ({ data }) => {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSuccess(document) {
-    setNumPages(document.numPages);
-  }
+  console.log(data);
 
   return (
     <>
@@ -22,55 +17,18 @@ const RookeryPage = ({ data }) => {
       <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5}>
         {data.craft.entry.subheading}
       </Heading>
-      <Flex flexDirection="column" width={1} justifyContent="center" alignItems="center" mt={[10]} px={5}>
-        <Box className="pdf-container">
-          <Document
-            file={`https://cors-anywhere.herokuapp.com/${data.craft.entry.rookeryList[0].rookeryFile[0].url}`}
-            onLoadSuccess={onDocumentLoadSuccess}
-          >
-            <Page pageNumber={pageNumber} />
-          </Document>
-          <Flex flexDirection="row" justifyContent="center" p={4} alignItems="center">
-            <Button
-              onClick={() => {
-                if (pageNumber <= 1) {
-                  return;
-                }
-                setPageNumber(pageNumber - 1);
-              }}
-              disabled={pageNumber <= 1}
-              sx={{ cursor: 'pointer' }}
-              bg="red.medium"
-            >
-              Back
-            </Button>
-            <Text fontSize={[3]} px={4}>
-              Page
-            </Text>
-            <Input readonly maxWidth={55} type="number" value={pageNumber || 1} p="8px" />
-            <Text fontSize={[3]} px={4}>
-              of {numPages}
-            </Text>
-            <Button
-              onClick={() => {
-                setPageNumber(pageNumber + 1);
-              }}
-              disabled={pageNumber === numPages}
-              sx={{ cursor: 'pointer' }}
-              bg="red.medium"
-            >
-              Next
-            </Button>
-          </Flex>
+      <Flex>
+        <Box width={1} maxWidth={1120} height={792} my={10} mx="auto">
+          <Iframe
+            url={data.craft.entry.rookeryList[0].rookeryUrl}
+            width="100%"
+            maxWidth="100%"
+            height="100%"
+            display="initial"
+            position="relative"
+            allowFullScreen
+          />
         </Box>
-        <Flex mt={14}>
-          {data.craft.entry.rookeryList.map((item) => (
-            <Box>
-              <Text>{item.rookeryTitle}</Text>
-              <Text>{item.rookeryFile[0].url}</Text>
-            </Box>
-          ))}
-        </Flex>
       </Flex>
     </>
   );
@@ -84,9 +42,7 @@ export const pageQuery = graphql`
           subheading
           rookeryList {
             ... on Craft_rookeryList_rookery_BlockType {
-              rookeryFile {
-                url
-              }
+              rookeryUrl
               rookeryTitle
             }
           }

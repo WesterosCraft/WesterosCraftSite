@@ -4,6 +4,7 @@ import { Box, Text, Flex } from 'rebass';
 import { Button } from '../components/atoms/button';
 import { BsTriangleFill } from 'react-icons/bs';
 import { ServerStatus } from '../components/atoms/serverStatus/serverStatus';
+import { Spinner } from '../components/atoms/spinner';
 
 // design ideas
 
@@ -44,6 +45,9 @@ const PlaygroundPage = () => (
     </Box>
     <Box my={200}>
       <ServerStatus />
+    </Box>
+    <Box>
+      <Spinner />
     </Box>
   </Flex>
 );
