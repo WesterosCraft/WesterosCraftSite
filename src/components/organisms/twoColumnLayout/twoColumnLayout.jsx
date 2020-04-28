@@ -1,6 +1,5 @@
 import React from 'react';
 import { Flex, Box } from 'rebass';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 export const TwoColumnLayout = ({ children, ...restProps }) => (
   <Box {...restProps} className="two-column-layout">
@@ -19,9 +18,7 @@ TwoColumnLayout.ColumnOne = function ColumnOne({ children, ...restProps }) {
       pb={[8, null, null, 0]}
       {...restProps}
     >
-      <ScrollAnimation animateIn="fadeInLeft" offset={200} animateOnce>
-        {children}
-      </ScrollAnimation>
+      {children}
     </Box>
   );
 };
@@ -35,9 +32,7 @@ TwoColumnLayout.ColumnTwo = function ColumnTwo({ children, ...restProps }) {
       my="auto"
       {...restProps}
     >
-      <ScrollAnimation animateIn="fadeInRight" offset={200} animateOnce>
-        {children}
-      </ScrollAnimation>
+      {children}
     </Box>
   );
 };

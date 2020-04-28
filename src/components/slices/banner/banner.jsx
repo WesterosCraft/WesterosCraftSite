@@ -3,6 +3,7 @@ import { Box, Flex } from 'rebass';
 import { ButtonSelector } from '../../organisms/buttonSelector';
 import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utility/helpers';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export const Banner = ({ data }) => (
   <Box
@@ -10,24 +11,26 @@ export const Banner = ({ data }) => (
     className="banner"
     {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
   >
-    <Flex
-      className="banner-content-card"
-      flexDirection={['column', null, 'row']}
-      justifyContent={['center', null, 'space-between']}
-      alignItems="center"
-      bg="white"
-      maxWidth={1120}
-      minHeight={[240, null, 220]}
-      sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC' }}
-      mx="auto"
-      px={['46px', '80px', null, '100px']}
-      py={11}
-    >
-      <Box textAlign={['center', null, 'left']} mb={[9, null, 0]} mr={[0, null, 7]}>
-        <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
-      </Box>
-      <ButtonSelector data={data.buttons} />
-    </Flex>
+    <ScrollAnimation animateIn="fadeInUp" animateOnce>
+      <Flex
+        className="banner-content-card"
+        flexDirection={['column', null, 'row']}
+        justifyContent={['center', null, 'space-between']}
+        alignItems="center"
+        bg="white"
+        maxWidth={1120}
+        minHeight={[240, null, 220]}
+        sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC' }}
+        mx="auto"
+        px={['46px', '80px', null, '100px']}
+        py={11}
+      >
+        <Box textAlign={['center', null, 'left']} mb={[9, null, 0]} mr={[0, null, 7]}>
+          <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
+        </Box>
+        <ButtonSelector data={data.buttons} />
+      </Flex>
+    </ScrollAnimation>
     <Box
       sx={{
         position: 'absolute',

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { Box, Text, Flex } from 'rebass';
-import { FooterFrame } from '../../atoms/icons/footerFrame/footerFrame';
 import { AiFillFacebook, AiFillTwitterSquare, AiFillRedditSquare, AiFillInstagram } from 'react-icons/ai';
 import { Link } from 'gatsby';
 
@@ -207,36 +206,5 @@ export const Footer = ({ links }) => (
         </Flex>
       </Box>
     </Flex>
-    {/* <FooterFrame
-      style={{
-        width: '88px',
-        height: '100px',
-        position: 'absolute',
-        left: 16,
-        top: 16,
-        transform: 'scaleX(-1)',
-      }}
-    />
-    <FooterFrame style={{ width: '88px', height: '100px', position: 'absolute', right: 16, top: 16 }} />
-    <FooterFrame
-      style={{
-        width: '88px',
-        height: '100px',
-        position: 'absolute',
-        left: 16,
-        bottom: 16,
-        transform: 'scaleX(-1) scaleY(-1)',
-      }}
-    />
-    <FooterFrame
-      style={{
-        width: '88px',
-        height: '100px',
-        position: 'absolute',
-        right: 16,
-        bottom: 16,
-        transform: 'scaleY(-1)',
-      }}
-    /> */}
   </Flex>
 );

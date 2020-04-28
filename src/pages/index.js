@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { graphql } from 'gatsby';
-import { Heading, Box, Flex, Image } from 'rebass';
+import { Heading, Box, Flex, Image, Text } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Button } from '../components/atoms/button';
@@ -58,15 +58,48 @@ const IndexPage = ({ data }) => {
       <Flex alignItems="center" flexDirection="column" mx="auto" className="homepage-content" px={5}>
         <SliceZone slices={data.craft.entry.pageSlices} />
       </Flex>
-      <Image
-        src={homepageData.footerImage[0].url}
-        alt="Kings Landing"
-        sx={{ textAlign: 'center' }}
-        width={1}
-        maxWidth={1536}
-        display="block"
-        mx="auto"
-      />
+      <Box>
+        <Box sx={{ position: 'relative' }} maxWidth={1120} px={5} mx="auto" width={1}>
+          <Box
+            width={1 / 2}
+            sx={{ position: 'absolute', top: 65, right: 0, zIndex: 50 }}
+            maxWidth={1120}
+            pr={5}
+            display={['none', null, null, 'block']}
+            textAlign="right"
+          >
+            <Text variant="heading4" fontWeight="bold" as="h4">
+              Get started with WesterosCraft
+            </Text>
+            <Text variant="heading5" mt={4} as="h5" pl={5} lineHeight="1.5">
+              Ready to start exploring? All you need is a copy of{' '}
+              <Box
+                as="a"
+                color="green"
+                fontWeight="500"
+                sx={{ cursor: 'pointer', zIndex: 50 }}
+                href="https://www.minecraft.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Minecraft Java Edition
+              </Box>
+            </Text>
+            <Button variant="red" mt={7} href="/launcher">
+              Get the Launcher
+            </Button>
+          </Box>
+        </Box>
+        <Image
+          src={homepageData.footerImage[0].url}
+          alt="Kings Landing"
+          sx={{ textAlign: 'center', transform: 'scaleX(-1)' }}
+          width={1}
+          maxWidth={1536}
+          display="block"
+          mx="auto"
+        />
+      </Box>
     </>
   );
 };
