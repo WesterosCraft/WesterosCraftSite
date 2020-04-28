@@ -1,18 +1,25 @@
-import React, { useState } from 'react'
-import { Box, Flex, Text } from 'rebass'
-import { Redactor } from '../../atoms/redactor'
-import { IoMdArrowDropdown } from 'react-icons/io'
-import { configProps } from '../../../utility/helpers'
-
+import React, { useState } from 'react';
+import { Box, Flex, Text } from 'rebass';
+import { Redactor } from '../../atoms/redactor';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { configProps } from '../../../utility/helpers';
 
 const AccordionItem = ({ data, dataLength, index }) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
-    <Box className="accordion-item" sx={{ borderTop: '1px solid', borderColor: 'gold', borderBottom: dataLength - 1 === index ? '1px solid' : null, borderBottomColor: 'gold', }}>
+    <Box
+      className="accordion-item"
+      sx={{
+        borderTop: '2px solid',
+        borderColor: 'black',
+        borderBottom: dataLength - 1 === index ? '2px solid' : null,
+        borderBottomColor: 'black',
+      }}
+    >
       <Flex
         onClick={() => {
-          setOpen(!open)
+          setOpen(!open);
         }}
         py={7}
         sx={{ cursor: 'pointer' }}
@@ -31,8 +38,8 @@ const AccordionItem = ({ data, dataLength, index }) => {
         </Box>
       )}
     </Box>
-  )
-}
+  );
+};
 
 export const Accordion = ({ data }) => {
   return (
@@ -49,5 +56,5 @@ export const Accordion = ({ data }) => {
         ))}
       </Flex>
     </Box>
-  )
-}
+  );
+};
