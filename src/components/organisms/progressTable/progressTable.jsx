@@ -236,7 +236,7 @@ export const ProgressTable = ({ data }) => {
             Page
           </Text>
           <Input
-            maxWidth={50}
+            maxWidth={55}
             type="number"
             value={pageIndex + 1 || 1}
             onChange={(e) => {
