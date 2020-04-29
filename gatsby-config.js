@@ -1,15 +1,31 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
+
+const queries = require('./src/utility/algolia')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Craft Barebones`,
-    description: `Kick off your next, great Gatsby & Craft CMS project with this starter.`,
-    author: `@v3frankie`,
+    title: `WesterosCraft`,
+    description: `A Minecraft server dedicated to building the world of A Game of Thrones.`,
+    author: `Jacob Granberry`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-transition-link`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-layout`,
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,8 +33,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -39,8 +53,17 @@ module.exports = {
         url: `https://westeroscraft.com/api`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        useAutoGen: true,
+        crumbLabelUpdates: [
+          {
+            pathname: '/wiki',
+            crumbLabel: 'Wiki',
+          },
+        ],
+      },
+    },
   ],
 }
