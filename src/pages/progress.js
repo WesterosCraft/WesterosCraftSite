@@ -100,6 +100,49 @@ const ProgressPage = ({ data }) => {
     [totalComplete, totalInProgress, totalNotStarted],
   );
 
+  const columns = useMemo(
+    () => [
+      {
+        Header: () => <div style={{ margin: '0 auto' }}>Level</div>,
+
+        accessor: 'destinationLevel',
+        filterable: false,
+        width: 64,
+      },
+      {
+        Header: 'Destination',
+        accessor: 'title',
+        filterable: false,
+      },
+      {
+        Header: 'Region',
+        accessor: 'region',
+        filterable: false,
+      },
+      {
+        Header: 'Status',
+        accessor: 'destinationStatus',
+        filterable: true,
+      },
+      {
+        Header: 'Type',
+        accessor: 'destinationType',
+        filterable: false,
+      },
+      {
+        Header: 'House',
+        accessor: 'house',
+        filterable: false,
+      },
+      {
+        Header: 'Warp',
+        accessor: 'warp',
+        filterable: false,
+      },
+    ],
+    [],
+  );
+
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>
@@ -114,7 +157,7 @@ const ProgressPage = ({ data }) => {
         </Box>
       </Flex>
       <Styles>
-        <ProgressTable data={memoData} />
+        <ProgressTable columns={columns} data={memoData} />
       </Styles>
     </>
   );

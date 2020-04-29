@@ -6,50 +6,7 @@ import { camelCaseFormatter } from '../../../utility/helpers';
 import { levelFormatter } from './tableHelpers';
 import _lowerCase from 'lodash/lowerCase';
 
-export const ProgressTable = ({ data }) => {
-  const columns = useMemo(
-    () => [
-      {
-        Header: () => <div style={{ margin: '0 auto' }}>Level</div>,
-
-        accessor: 'destinationLevel',
-        filterable: false,
-        width: 64,
-      },
-      {
-        Header: 'Destination',
-        accessor: 'title',
-        filterable: false,
-      },
-      {
-        Header: 'Region',
-        accessor: 'region',
-        filterable: false,
-      },
-      {
-        Header: 'Status',
-        accessor: 'destinationStatus',
-        filterable: true,
-      },
-      {
-        Header: 'Type',
-        accessor: 'destinationType',
-        filterable: false,
-      },
-      {
-        Header: 'House',
-        accessor: 'house',
-        filterable: false,
-      },
-      {
-        Header: 'Warp',
-        accessor: 'warp',
-        filterable: false,
-      },
-    ],
-    [],
-  );
-
+export const ProgressTable = ({ data, columns }) => {
   const headerProps = (props, { column }) => getStyles(props, column.align);
 
   const cellProps = (props, { cell }) => getStyles(props, cell.column.align);
