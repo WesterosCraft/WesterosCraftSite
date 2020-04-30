@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import { graphql } from 'gatsby'
-import { Heading } from 'rebass'
-import { SliceZone } from '../components/slices/sliceZone/sliceZone'
+import { graphql } from 'gatsby';
+import { Heading } from 'rebass';
+import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 
 const AboutPage = ({ data }) => {
   return (
@@ -12,15 +12,21 @@ const AboutPage = ({ data }) => {
       </Heading>
       <SliceZone slices={data.craft.entry.pageSlices} />
     </>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query aboutQuery {
     craft {
       entry(site: "westeroscraft", section: "about") {
+        title
         ... on Craft_about_about_Entry {
           heading
+          pageTitle
+          pageDescription
+          pageImage {
+            url
+          }
           pageSlices {
             ... on Craft_pageSlices_banner_BlockType {
               ...banner
@@ -48,6 +54,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default AboutPage
+export default AboutPage;

@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react';
 
 import { graphql } from 'gatsby';
-import { Heading, Box, Flex } from 'rebass';
+import { Heading, Box, Flex, Text } from 'rebass';
 import { ProgressTable } from '../components/organisms/progressTable/progressTable';
 import _merge from 'lodash/merge';
-import { PieChart } from '../components/organisms/pieChart/pieChart';
-import { BarChart } from '../components/organisms/barChart';
+// import { PieChart } from '../components/organisms/pieChart/pieChart';
+// import { BarChart } from '../components/organisms/barChart';
 import styled from '@emotion/styled';
+import SEO from '../components/organisms/seo/seo';
 
 const Styles = styled.div`
   padding: 1rem;
@@ -57,6 +58,7 @@ const Styles = styled.div`
 `;
 
 const ProgressPage = ({ data }) => {
+  console.log(data);
   const flatten = (data) =>
     data.reduce((arr, elem) => {
       if (elem.projectDetails && elem.projectDetails.length) {
@@ -103,7 +105,7 @@ const ProgressPage = ({ data }) => {
   const columns = useMemo(
     () => [
       {
-        Header: () => <div style={{ margin: '0 auto' }}>Level</div>,
+        Header: () => <span style={{ margin: '0 auto' }}>Level</span>,
 
         accessor: 'destinationLevel',
         filterable: false,
@@ -145,15 +147,38 @@ const ProgressPage = ({ data }) => {
 
   return (
     <>
+      <SEO
+        title={data.craft.entry.pageTitle || data.craft.entry.title}
+        description={data.craft.entry.pageDescription}
+        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+      />
       <Heading variant="heading2" textAlign="center" mt={[12]}>
         progress page
       </Heading>
-      <Flex width={1} maxWidth={1256} flexDirection={['column', null, 'row']} mx="auto">
+      {/* <Flex width={1} maxWidth={1256} flexDirection={['column', null, 'row']} mx="auto">
         <Box width={['100%', null, '40%']} sx={{ height: 400 }}>
           <PieChart data={pieData} />
         </Box>
         <Box width={['100%', null, '60%']} sx={{ height: 400 }}>
           <BarChart />
+        </Box>
+      </Flex> */}
+      <Flex>
+        <Box bg="white" sx={{ border: '1px solid black' }}>
+          <Text>{data.craft.entries.length}</Text>
+          <Text>total projects</Text>
+        </Box>
+        <Box bg="white" sx={{ border: '1px solid black' }}>
+          <Text>{totalComplete}</Text>
+          <Text>completed</Text>
+        </Box>
+        <Box bg="white" sx={{ border: '1px solid black' }}>
+          <Text>{totalInProgress}</Text>
+          <Text>in progress</Text>
+        </Box>
+        <Box bg="white" sx={{ border: '1px solid black' }}>
+          <Text>{totalNotStarted}</Text>
+          <Text>not started</Text>
         </Box>
       </Flex>
       <Styles>
@@ -166,6 +191,16 @@ const ProgressPage = ({ data }) => {
 export const pageQuery = graphql`
   query progressQuery {
     craft {
+      entry(section: "progress") {
+        title
+        ... on Craft_progress_progressPage_Entry {
+          pageTitle
+          pageDescription
+          pageImage {
+            url
+          }
+        }
+      }
       entries(site: "westeroscraft", section: "wiki", type: "wikiDestination", orderBy: "title") {
         title
         slug

@@ -1,14 +1,17 @@
 require('dotenv').config({
   path: `.env`,
-})
+});
 
-const queries = require('./src/utility/algolia')
+const queries = require('./src/utility/algolia');
 
 module.exports = {
   siteMetadata: {
     title: `WesterosCraft`,
     description: `A Minecraft server dedicated to building the world of A Game of Thrones.`,
     author: `Jacob Granberry`,
+    url: 'https://www.westeroscraft.com',
+    image: '/images/wc-round-red-logo.png',
+    twitterUsername: '@westeroscraft',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -66,4 +69,4 @@ module.exports = {
       },
     },
   ],
-}
+};
