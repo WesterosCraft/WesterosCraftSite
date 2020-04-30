@@ -1,16 +1,24 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import { WikiLayout } from '../components/templates/wikiLayout'
-import { WikiSliceZone } from '../components/slices/wikiSliceZone'
+import { WikiLayout } from '../components/templates/wikiLayout';
+import { WikiSliceZone } from '../components/slices/wikiSliceZone';
+import SEO from '../components/organisms/seo/seo';
 
 const WikiPage = ({ data, pageContext }) => {
   return (
-    <WikiLayout title={data.craft.entry.title || 'WesterosCraft Wiki'} breadcrumb={pageContext.breadcrumb}>
-      <WikiSliceZone slices={data.craft.entry.wikiSlices} />
-    </WikiLayout>
-  )
-}
+    <>
+      <SEO
+        title="Wiki"
+        description={data.craft.entry.pageDescription}
+        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+      />
+      <WikiLayout title={data.craft.entry.title || 'WesterosCraft Wiki'} breadcrumb={pageContext.breadcrumb}>
+        <WikiSliceZone slices={data.craft.entry.wikiSlices} />
+      </WikiLayout>
+    </>
+  );
+};
 
 export const pageQuery = graphql`
   query wikiQuery {
@@ -18,6 +26,10 @@ export const pageQuery = graphql`
       entry(site: "westeroscraft", slug: "wiki") {
         ... on Craft_wiki_wikiStatic_Entry {
           title
+          pageDescription
+          pageImage {
+            url
+          }
           wikiSlices {
             ... on Craft_wikiSlices_text_BlockType {
               ...wikiText
@@ -33,6 +45,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default WikiPage
+export default WikiPage;

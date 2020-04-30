@@ -58,7 +58,6 @@ const Styles = styled.div`
 `;
 
 const ProgressPage = ({ data }) => {
-  console.log(data);
   const flatten = (data) =>
     data.reduce((arr, elem) => {
       if (elem.projectDetails && elem.projectDetails.length) {

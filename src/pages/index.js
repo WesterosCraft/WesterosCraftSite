@@ -7,12 +7,18 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { Button } from '../components/atoms/button';
 import { BsTriangleFill } from 'react-icons/bs';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import SEO from '../components/organisms/seo/seo';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
 
   return (
     <>
+      <SEO
+        title={data.craft.entry.pageTitle || data.craft.entry.title}
+        description={data.craft.entry.pageDescription}
+        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+      />
       <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
         <Box textAlign="center">
           <ScrollAnimation animateIn="fadeIn" delay={250} animateOnce>
@@ -109,6 +115,11 @@ export const pageQuery = graphql`
     craft {
       entry(site: "westeroscraft", section: "home") {
         ... on Craft_home_home_Entry {
+          pageTitle
+          pageDescription
+          pageImage {
+            url
+          }
           homePageContent {
             ... on Craft_homePageContent_hero_BlockType {
               heading

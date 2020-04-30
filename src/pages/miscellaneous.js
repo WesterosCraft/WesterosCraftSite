@@ -1,19 +1,27 @@
-import React from 'react'
-import { WikiLayout } from '../components/templates/wikiLayout'
+import React from 'react';
+import { WikiLayout } from '../components/templates/wikiLayout';
 
-import { graphql } from 'gatsby'
-import { WikiSliceZone } from '../components/slices/wikiSliceZone'
+import { graphql } from 'gatsby';
+import { WikiSliceZone } from '../components/slices/wikiSliceZone';
+import SEO from '../components/organisms/seo/seo';
 
 const MiscellaneousPage = ({ pageContext, data }) => {
   return (
-    <WikiLayout
-      title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
-      breadcrumb={pageContext.breadcrumb}
-    >
-      <WikiSliceZone slices={data.craft.entry.wikiSlices} />
-    </WikiLayout>
-  )
-}
+    <>
+      <SEO
+        title={pageContext.data.pageTitle || pageContext.data.title}
+        description={pageContext.data.pageDescription}
+        image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
+      />
+      <WikiLayout
+        title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
+        breadcrumb={pageContext.breadcrumb}
+      >
+        <WikiSliceZone slices={data.craft.entry.wikiSlices} />
+      </WikiLayout>
+    </>
+  );
+};
 
 export const pageQuery = graphql`
   query MiscQuery($slug: [String]) {
@@ -40,6 +48,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default MiscellaneousPage
+export default MiscellaneousPage;
