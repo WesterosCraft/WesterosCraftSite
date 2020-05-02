@@ -11,7 +11,7 @@ const DestinationPage = ({ pageContext }) => {
   return (
     <>
       <SEO
-        title={pageContext.data.pageTitle || pageContext.data.title}
+        title={pageContext.data.title}
         description={pageContext.data.pageDescription}
         image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
       />
