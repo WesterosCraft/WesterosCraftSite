@@ -35,11 +35,13 @@ const RegionPage = ({ pageContext, data }) => {
 
   return (
     <>
-      <SEO
-        title={pageContext.data.pageTitle || pageContext.data.title}
-        description={pageContext.data.pageDescription}
-        image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
-      />
+      {pageContext && pageContext.data && (
+        <SEO
+          title={pageContext.data.pageTitle || pageContext.data.title}
+          description={pageContext.data.pageDescription}
+          image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
+        />
+      )}
       <WikiLayout
         title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
         breadcrumb={pageContext.breadcrumb}
