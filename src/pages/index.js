@@ -53,11 +53,21 @@ const IndexPage = ({ data }) => {
           <Image
             src={homepageData.heroImage[0].url}
             alt="Baelors"
-            sx={{ textAlign: 'center' }}
-            width={1}
-            maxWidth={1536}
-            display="block"
-            mx="auto"
+            // sx={{ textAlign: 'center' }}
+            // width={1}
+            // maxWidth={1536}
+            // display="block"
+            // mx="auto"
+            sx={{
+              left: '50%',
+              marginLeft: '-50vw',
+              marginRight: '-50vw',
+              maxWidth: '100vw',
+              position: 'relative',
+              right: '50%',
+              width: '100vw',
+              imageRendering: 'pixelated',
+            }}
           />
         </Box>
       </Flex>
