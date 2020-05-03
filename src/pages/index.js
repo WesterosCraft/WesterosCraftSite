@@ -9,6 +9,7 @@ import { BsTriangleFill } from 'react-icons/bs';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import SEO from '../components/organisms/seo/seo';
 import Pixel from '../images/bright-squares.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
@@ -63,6 +64,7 @@ const IndexPage = ({ data }) => {
           </ScrollAnimation>
         </Box>
         <Box
+          className="hero-image-gradient"
           width="100%"
           height="100%"
           sx={{
@@ -75,6 +77,7 @@ const IndexPage = ({ data }) => {
           }}
         />
         <Box
+          className="hero-image-container"
           sx={{
             left: '50%',
             marginLeft: '-50vw',
@@ -86,12 +89,15 @@ const IndexPage = ({ data }) => {
             imageRendering: 'pixelated',
           }}
         >
-          <img
+          <LazyLoadImage
+            className="hero-image"
             loading="eager"
             srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 520w, https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
-            alt="Baelors"
-            placeholder="https://westeroscraft.com/web/assets/images/wall-light-loading-1920.png"
+            alt="The Wall"
+            placeholderSrc="https://westeroscraft.com/web/assets/images/wall-light-loading-1920.png"
             src="https://westeroscraft.com/web/assets/images/wall-light-1920.png"
+            width="100%"
+            height="100%"
           />
         </Box>
       </Flex>
