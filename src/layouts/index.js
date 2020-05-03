@@ -64,6 +64,7 @@ const Layout = ({ children }) => (
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900|Sen:400,700,800&display=swap"
             rel="stylesheet"
           />
+          <html lang="en" />
         </Helmet>
         <Header links={data.craft.navData} />
         <Box
