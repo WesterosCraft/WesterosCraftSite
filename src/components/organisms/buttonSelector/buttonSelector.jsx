@@ -5,8 +5,8 @@ import { Link } from 'gatsby';
 export const ButtonSelector = ({ data }) =>
   data.map((button, index) =>
     button.buttonLink ? (
-      <Link to={button.buttonLink}>
-        <Button variant={button.variant} key={index}>
+      <Link to={button.buttonLink} key={index}>
+        <Button as="button" variant={button.variant}>
           {button.buttonText}
         </Button>
       </Link>

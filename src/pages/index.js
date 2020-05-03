@@ -109,11 +109,12 @@ const IndexPage = ({ data }) => {
         <Image
           src={homepageData.footerImage[0].url}
           alt="Kings Landing"
-          sx={{ textAlign: 'center', transform: 'scaleX(-1)', loading: 'lazy' }}
-          width={1}
-          maxWidth={1536}
+          sx={{ textAlign: 'center', transform: 'scaleX(-1)' }}
+          width={1920}
+          height="auto"
           display="block"
           mx="auto"
+          loading="lazy"
         />
       </Box>
     </>
