@@ -12340,6 +12340,13 @@ react-responsive-carousel@^3.2.4:
     prop-types "^15.5.8"
     react-easy-swipe "^0.0.18"
 
+react-scroll-parallax@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/react-scroll-parallax/-/react-scroll-parallax-2.3.2.tgz#7307a8985a6b11514bd5c7ab46302eb436d1ddda"
+  integrity sha512-Ol9l1vboFAtQf9dyUiSefSipqbNRuFCkS0pSo74LkEKY1QId6nlPPc4PuhbHrvejcdUqn3E6eY+06LYsKUwFgQ==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-select@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/react-select/-/react-select-3.1.0.tgz#ab098720b2e9fe275047c993f0d0caf5ded17c27"

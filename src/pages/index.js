@@ -72,7 +72,7 @@ const IndexPage = ({ data }) => {
             bottom: 0,
             left: 0,
             zIndex: -1,
-            backgroundColor: '#dfdb9059',
+            backgroundColor: 'rgba(81, 179, 255, 0.14)',
             backgroundImage: `linear-gradient(to top, transparent 40%, white 60%), url(${Pixel})`,
           }}
         />
@@ -92,7 +92,7 @@ const IndexPage = ({ data }) => {
           <LazyLoadImage
             className="hero-image"
             loading="eager"
-            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 520w, https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
+            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 520w, https://westeroscraft.com/web/assets/images/wall-light-1200.png 1200w, https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
             alt="The Wall"
             placeholderSrc="https://westeroscraft.com/web/assets/images/wall-light-loading-1920.png"
             src="https://westeroscraft.com/web/assets/images/wall-light-1920.png"
