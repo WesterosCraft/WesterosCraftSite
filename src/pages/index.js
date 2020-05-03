@@ -92,10 +92,10 @@ const IndexPage = ({ data }) => {
           <LazyLoadImage
             className="hero-image"
             loading="eager"
-            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 520w, https://westeroscraft.com/web/assets/images/wall-light-1200.png 1200w, https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
+            srcSet="https://westeroscraft.com/web/assets/website/wall-light-520.png 520w, https://westeroscraft.com/web/assets/website/wall-light-1200.png 1200w, https://westeroscraft.com/web/assets/website/wall-light-1920.png 1920w"
             alt="The Wall"
-            placeholderSrc="https://westeroscraft.com/web/assets/images/wall-light-loading-1920.png"
-            src="https://westeroscraft.com/web/assets/images/wall-light-1920.png"
+            placeholderSrc="https://westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
+            src="https://westeroscraft.com/web/assets/website/wall-light-1920.png"
             width="100%"
             height="100%"
           />
@@ -108,11 +108,12 @@ const IndexPage = ({ data }) => {
         <Box sx={{ position: 'relative' }} maxWidth={1120} px={5} mx="auto" width={1}>
           <Box
             width={1 / 2}
-            sx={{ position: 'absolute', top: 65, right: 0, zIndex: 50 }}
+            sx={{ position: 'absolute', top: [0, null, null, null, 65], right: 0, zIndex: 50 }}
             maxWidth={1120}
             pr={5}
             display={['none', null, null, 'block']}
             textAlign="right"
+            className="footer-cta"
           >
             <Text variant="heading4" fontWeight="bold" as="h4">
               Get started with WesterosCraft
@@ -136,16 +137,19 @@ const IndexPage = ({ data }) => {
             </Button>
           </Box>
         </Box>
-        <Image
-          src={homepageData.footerImage[0].url}
-          alt="Kings Landing"
-          sx={{ textAlign: 'center', transform: 'scaleX(-1)' }}
-          width={1920}
-          height="auto"
-          display="block"
-          mx="auto"
-          loading="lazy"
-        />
+        <Box className="footer-image" sx={{ transform: 'scaleX(-1)' }}>
+          <LazyLoadImage
+            srcSet="https://westeroscraft.com/web/assets/website/redkeep-520.png 520w, https://westeroscraft.com/web/assets/website/redkeep-1640.png 1640w"
+            alt="Red Keep"
+            placeholderSrc="https://westeroscraft.com/web/assets/website/redkeep-loading-1640.png"
+            src="https://westeroscraft.com/web/assets/website/redkeep-1640.png"
+            width="100%"
+            height="100%"
+            wrapperClassName="lazy-loaded-image-span"
+            threshold={300}
+            style={{ display: 'block' }}
+          />
+        </Box>
       </Box>
     </>
   );

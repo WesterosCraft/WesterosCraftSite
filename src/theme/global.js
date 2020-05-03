@@ -14,6 +14,14 @@ export const GlobalStyle = css`
     color: #333;
   }
 
+  .tl-edges {
+    overflow: hidden;
+  }
+
+  .lazy-loaded-image-span {
+    display: block !important;
+  }
+
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
