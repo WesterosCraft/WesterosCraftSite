@@ -8,7 +8,7 @@ import { Button } from '../components/atoms/button';
 import { BsTriangleFill } from 'react-icons/bs';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import SEO from '../components/organisms/seo/seo';
-import Img from 'react-cool-img';
+import Pixel from '../images/bright-squares.png';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
@@ -29,6 +29,9 @@ const IndexPage = ({ data }) => {
         px={5}
         height={['calc(100vh - 72px)', 'calc(100vh - 124px)']}
         justifyContent="space-between"
+        sx={{
+          position: 'relative',
+        }}
       >
         <Box textAlign="center">
           <ScrollAnimation animateIn="fadeIn" delay={250} animateOnce>
@@ -60,6 +63,18 @@ const IndexPage = ({ data }) => {
           </ScrollAnimation>
         </Box>
         <Box
+          width="100%"
+          height="100%"
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            zIndex: -1,
+            backgroundColor: '#dfdb9059',
+            backgroundImage: `linear-gradient(to top, transparent 40%, white 60%), url(${Pixel})`,
+          }}
+        />
+        <Box
           sx={{
             left: '50%',
             marginLeft: '-50vw',
@@ -71,13 +86,12 @@ const IndexPage = ({ data }) => {
             imageRendering: 'pixelated',
           }}
         >
-          <Img
-            src="https://westeroscraft.com/web/assets/images/wall-light-520.png"
-            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 512w,
-                    https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
-            sizes="(max-width: 520px) 512px"
+          <img
+            loading="eager"
+            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 520w, https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
             alt="Baelors"
             placeholder="https://westeroscraft.com/web/assets/images/wall-light-loading-1920.png"
+            src="https://westeroscraft.com/web/assets/images/wall-light-1920.png"
           />
         </Box>
       </Flex>

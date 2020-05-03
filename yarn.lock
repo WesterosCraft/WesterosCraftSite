@@ -12104,11 +12104,6 @@ react-animate-on-scroll@^2.1.5:
     lodash.throttle "^4.1.1"
     prop-types "^15.5.9"
 
-react-cool-img@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/react-cool-img/-/react-cool-img-1.1.3.tgz#3b0bef9f912c067fbd60308733c212620423b4b2"
-  integrity sha512-Xrtvq1otyiQYCopsjm5TFbyx7ErCYz4ej/QyRUS1OOLJCUrNnnEKE/E2UAI/IrlNYPC+5QHeFzZtBolTnYYdZg==
-
 react-copy-to-clipboard@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.2.tgz#d82a437e081e68dfca3761fbd57dbf2abdda1316"
