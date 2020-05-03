@@ -17,7 +17,7 @@ export const Footer = ({ links }) => (
     as="footer"
     flexDirection="column"
     justifyContent="center"
-    px={7}
+    px={[3, 7]}
     py={9}
   >
     <Flex
@@ -31,7 +31,7 @@ export const Footer = ({ links }) => (
     >
       {links.map((link) =>
         link.children.length > 0 && !link.navLogo.length > 0 ? (
-          <Box p={1} width={200} py={[4, null, 0]} key={link.title}>
+          <Box p={[0, 1]} width={[182, 200]} py={[4, null, 0]} key={link.title}>
             <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
               {link.title}
             </Text>
@@ -108,12 +108,12 @@ export const Footer = ({ links }) => (
           </Box>
         ) : null,
       )}
-      <Box p={1} py={[4, null, 0]} width={200}>
+      <Box p={[0, 1]} py={[4, null, 0]} width={[182, 200]}>
         <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
           Donate
         </Text>
 
-        <Flex width={1} flexDirection="column" maxWidth={200}>
+        <Flex width={1} flexDirection="column" maxWidth={[200]}>
           <Text fontSize={1} py={1} color="offWhite" lineHeight="1.5">
             We depend on user contributions to keep the community running. Please consider donating if you have enjoyed
             the project.
