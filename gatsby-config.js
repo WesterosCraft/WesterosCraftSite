@@ -45,6 +45,7 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#9E1E22`,
         display: `minimal-ui`,
+        lang: `en`,
         icon: `src/images/shield-logo.svg`, // This path is relative to the root of the site.
       },
     },

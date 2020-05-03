@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
 export const bannerFragment = graphql`
   fragment banner on Craft_pageSlices_banner_BlockType {
@@ -17,7 +17,7 @@ export const bannerFragment = graphql`
       }
     }
   }
-`
+`;
 
 export const destinationSliderFragment = graphql`
   fragment destinationSlider on Craft_pageSlices_destinationSlider_BlockType {
@@ -45,7 +45,7 @@ export const destinationSliderFragment = graphql`
       }
     }
   }
-`
+`;
 
 export const twoColumnTextFragment = graphql`
   fragment twoColumnText on Craft_pageSlices_twoColumnText_BlockType {
@@ -70,7 +70,7 @@ export const twoColumnTextFragment = graphql`
       }
     }
   }
-`
+`;
 
 export const video = graphql`
   fragment video on Craft_pageSlices_video_BlockType {
@@ -86,7 +86,7 @@ export const video = graphql`
       }
     }
   }
-`
+`;
 
 export const text = graphql`
   fragment text on Craft_pageSlices_text_BlockType {
@@ -98,13 +98,14 @@ export const text = graphql`
       }
     }
   }
-`
+`;
 
 export const twoColumnVideo = graphql`
   fragment twoColumnVideo on Craft_pageSlices_twoColumnVideo_BlockType {
     typeHandle
     images {
       url
+      title
     }
     children {
       ... on Craft_pageSlices_column_BlockType {
@@ -123,6 +124,7 @@ export const twoColumnVideo = graphql`
         maxWidth
         thumbnail {
           url
+          title
         }
         videoUrl
       }
@@ -133,7 +135,7 @@ export const twoColumnVideo = graphql`
       }
     }
   }
-`
+`;
 
 export const contentBanner = graphql`
   fragment contentBanner on Craft_pageSlices_contentBanner_BlockType {
@@ -158,7 +160,7 @@ export const contentBanner = graphql`
       }
     }
   }
-`
+`;
 
 export const timeline = graphql`
   fragment timeline on Craft_pageSlices_timeline_BlockType {
@@ -174,4 +176,4 @@ export const timeline = graphql`
       }
     }
   }
-`
+`;
