@@ -72,6 +72,7 @@ const Layout = ({ children }) => (
           sx={{
             margin: `0 auto`,
             position: 'relative',
+            overflow: 'hidden',
           }}
           pt={[3, null, 10]}
           bg="#FFFFFF"

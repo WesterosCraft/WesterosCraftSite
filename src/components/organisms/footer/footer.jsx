@@ -199,18 +199,23 @@ export const Footer = ({ links }) => (
         <Flex flexDirection="row">
           <a href="https://www.facebook.com/WesterosCraft" target="_blank" rel="noopener noreferrer">
             <AiFillFacebook size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Facebook</span>
           </a>
           <a href="https://twitter.com/westeroscraft" target="_blank" rel="noopener noreferrer">
             <AiFillTwitterSquare size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Twitter</span>
           </a>
           <a href="https://www.youtube.com/user/WesterosCraft" target="_blank" rel="noopener noreferrer">
             <AiFillYoutube size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Youtube</span>
           </a>
           <a href="https://www.reddit.com/r/WesterosCraft/" target="_blank" rel="noopener noreferrer">
             <AiFillRedditSquare size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Reddit</span>
           </a>
           <a href="https://www.instagram.com/westeroscraft" target="_blank" rel="noopener noreferrer">
             <AiFillInstagram size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Instagram</span>
           </a>
         </Flex>
       </Box>
