@@ -73,8 +73,9 @@ const IndexPage = ({ data }) => {
         >
           <Img
             src="https://westeroscraft.com/web/assets/images/wall-light-520.png"
-            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 520w,
+            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 512w,
                     https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
+            sizes="(max-width: 520px) 512px"
             alt="Baelors"
             placeholder="https://westeroscraft.com/web/assets/images/wall-light-loading-1920.png"
           />
