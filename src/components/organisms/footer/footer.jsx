@@ -1,6 +1,12 @@
 import React, { Fragment } from 'react';
 import { Box, Text, Flex } from 'rebass';
-import { AiFillFacebook, AiFillTwitterSquare, AiFillRedditSquare, AiFillInstagram } from 'react-icons/ai';
+import {
+  AiFillFacebook,
+  AiFillTwitterSquare,
+  AiFillRedditSquare,
+  AiFillInstagram,
+  AiFillYoutube,
+} from 'react-icons/ai';
 import { Link } from 'gatsby';
 
 export const Footer = ({ links }) => (
@@ -196,6 +202,9 @@ export const Footer = ({ links }) => (
           </a>
           <a href="https://twitter.com/westeroscraft" target="_blank" rel="noopener noreferrer">
             <AiFillTwitterSquare size="28px" color="#f3f4f4" />
+          </a>
+          <a href="https://www.youtube.com/user/WesterosCraft" target="_blank" rel="noopener noreferrer">
+            <AiFillYoutube size="28px" color="#f3f4f4" />
           </a>
           <a href="https://www.reddit.com/r/WesterosCraft/" target="_blank" rel="noopener noreferrer">
             <AiFillRedditSquare size="28px" color="#f3f4f4" />
