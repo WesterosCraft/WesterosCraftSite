@@ -8,6 +8,7 @@ import { Button } from '../components/atoms/button';
 import { BsTriangleFill } from 'react-icons/bs';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import SEO from '../components/organisms/seo/seo';
+import Img from 'react-cool-img';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
@@ -19,7 +20,16 @@ const IndexPage = ({ data }) => {
         description={data.craft.entry.pageDescription}
         image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
       />
-      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
+      <Flex
+        as="section"
+        className="homepage-hero"
+        flexDirection="column"
+        width={1}
+        pt={6}
+        px={5}
+        height={['calc(100vh - 72px)', 'calc(100vh - 124px)']}
+        justifyContent="space-between"
+      >
         <Box textAlign="center">
           <ScrollAnimation animateIn="fadeIn" delay={250} animateOnce>
             <Heading as="h1" variant="heading1">
@@ -49,25 +59,24 @@ const IndexPage = ({ data }) => {
             </AniLink>
           </ScrollAnimation>
         </Box>
-        <Box>
-          <Image
-            src={homepageData.heroImage[0].url}
+        <Box
+          sx={{
+            left: '50%',
+            marginLeft: '-50vw',
+            marginRight: '-50vw',
+            maxWidth: '100vw',
+            position: 'relative',
+            right: '50%',
+            width: '100vw',
+            imageRendering: 'pixelated',
+          }}
+        >
+          <Img
+            src="https://westeroscraft.com/web/assets/images/wall-light-520.png"
+            srcSet="https://westeroscraft.com/web/assets/images/wall-light-520.png 520w,
+                    https://westeroscraft.com/web/assets/images/wall-light-1920.png 1920w"
             alt="Baelors"
-            // sx={{ textAlign: 'center' }}
-            // width={1}
-            // maxWidth={1536}
-            // display="block"
-            // mx="auto"
-            sx={{
-              left: '50%',
-              marginLeft: '-50vw',
-              marginRight: '-50vw',
-              maxWidth: '100vw',
-              position: 'relative',
-              right: '50%',
-              width: '100vw',
-              imageRendering: 'pixelated',
-            }}
+            placeholder="https://westeroscraft.com/web/assets/images/wall-light-loading-1920.png"
           />
         </Box>
       </Flex>

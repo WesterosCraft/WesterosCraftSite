@@ -63,6 +63,7 @@ const RookeryPage = ({ data }) => {
             display="initial"
             position="relative"
             allowFullScreen
+            title="The Rookery"
           />
         </Box>
       </Flex>
