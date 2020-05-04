@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { WikiLayout } from '../components/templates/wikiLayout';
 import { Redactor } from '../components/atoms/redactor/redactor';
 import { Flex, Image, Text } from 'rebass';
-import { Carousel } from 'react-responsive-carousel';
 import _lowerCase from 'lodash/lowerCase';
 import { camelCaseFormatter, formatDate } from '../utility/helpers';
 import SEO from '../components/organisms/seo/seo';
+import Carousel, { Modal, ModalGateway } from 'react-images';
+
+const View = ({ data, ...props }) => (
+  <>
+    <Image src={data.url} alt={data.tite} onClick={props.carouselProps.onClick} {...props} />
+  </>
+);
 
 const DestinationPage = ({ pageContext }) => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
       {pageContext && pageContext.data && (
@@ -23,15 +30,20 @@ const DestinationPage = ({ pageContext }) => {
       >
         {pageContext.data && pageContext.data.images && pageContext.data.images.length > 0 && (
           <Flex flexDirection={['column', null, 'row']} justifyContent="center" mx="auto">
-            <Carousel showThumbs={false}>
-              {pageContext.data.images.map((slide, index) => (
-                <a href={slide.url} data-attribute="SRL">
-                  <Image key={index} src={slide.url} alt={slide.title || ''} />
-                </a>
-              ))}
-            </Carousel>
+            <Carousel onClick={() => setModalOpen(!modalOpen)} views={pageContext.data.images} components={{ View }} />
           </Flex>
         )}
+        <ModalGateway>
+          {modalOpen ? (
+            <Modal
+              onClose={() => {
+                setModalOpen(!modalOpen);
+              }}
+            >
+              <Carousel views={pageContext.data.images} components={{ View }} />
+            </Modal>
+          ) : null}
+        </ModalGateway>
         <Text
           variant="heading3"
           as="h3"
