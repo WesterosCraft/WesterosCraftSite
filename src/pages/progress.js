@@ -4,8 +4,6 @@ import { graphql } from 'gatsby';
 import { Heading, Box, Flex, Text } from 'rebass';
 import { ProgressTable } from '../components/organisms/progressTable/progressTable';
 import _merge from 'lodash/merge';
-// import { PieChart } from '../components/organisms/pieChart/pieChart';
-// import { BarChart } from '../components/organisms/barChart';
 import styled from '@emotion/styled';
 import SEO from '../components/organisms/seo/seo';
 
@@ -76,30 +74,6 @@ const ProgressPage = ({ data }) => {
   const totalNotStarted = memoData.filter(
     (item) => item.destinationStatus === 'abandoned' || item.destinationStatus === 'notStarted',
   ).length;
-
-  const pieData = useMemo(
-    () => [
-      {
-        id: 'Complete',
-        label: 'Complete',
-        value: totalComplete,
-        color: 'hsl(358,68%,40%)',
-      },
-      {
-        id: 'In Progress',
-        label: 'In Progress',
-        value: totalInProgress,
-        color: 'hsl(272, 70%, 50%)',
-      },
-      {
-        id: 'Not Started',
-        label: 'Not Started',
-        value: totalNotStarted,
-        color: 'hsl(66, 70%, 50%)',
-      },
-    ],
-    [totalComplete, totalInProgress, totalNotStarted],
-  );
 
   const columns = useMemo(
     () => [

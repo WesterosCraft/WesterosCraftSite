@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { graphql } from 'gatsby';
-import { Heading, Box, Flex, Image, Text } from 'rebass';
+import { Heading, Box, Flex, Text } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Button } from '../components/atoms/button';

@@ -14,8 +14,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@nivo/bar": "^0.61.1",
-    "@nivo/pie": "^0.61.1",
     "@rebass/forms": "^4.0.6",
     "algoliasearch": "^4.1.0",
     "animate.css": "^3.7.2",

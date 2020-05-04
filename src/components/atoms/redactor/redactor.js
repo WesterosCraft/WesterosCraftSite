@@ -31,7 +31,7 @@ export const Redactor = styled.div`
 
   ol {
     list-style: none;
-    padding-left: 32px;
+    padding-left: 26px;
   }
 
   ol li {

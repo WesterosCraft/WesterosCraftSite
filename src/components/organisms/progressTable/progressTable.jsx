@@ -22,7 +22,7 @@ export const ProgressTable = ({ data, columns }) => {
     },
   ];
 
-  const defaultColumn = React.useMemo(
+  const defaultColumn = useMemo(
     () => ({
       // When using the useFlexLayout:
       minWidth: 30, // minWidth is only used as a limit for resizing

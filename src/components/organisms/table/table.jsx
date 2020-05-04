@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTable, useSortBy, usePagination, useResizeColumns, useFlexLayout, useRowSelect } from 'react-table';
-import { Flex, Box, Text, Button } from 'rebass';
+import { Flex, Box, Text } from 'rebass';
 
 export const Table = ({ columns, data, maxWidth = '100%' }) => {
   const headerProps = (props, { column }) => getStyles(props, column.align);
