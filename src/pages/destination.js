@@ -25,7 +25,9 @@ const DestinationPage = ({ pageContext }) => {
           <Flex flexDirection={['column', null, 'row']} justifyContent="center" mx="auto">
             <Carousel showThumbs={false}>
               {pageContext.data.images.map((slide, index) => (
-                <Image key={index} src={slide.url} alt={slide.title || ''} />
+                <a href={slide.url} data-attribute="SRL">
+                  <Image key={index} src={slide.url} alt={slide.title || ''} />
+                </a>
               ))}
             </Carousel>
           </Flex>
