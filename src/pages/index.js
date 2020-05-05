@@ -10,6 +10,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import SEO from '../components/organisms/seo/seo';
 import Pixel from '../images/bright-squares.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
@@ -47,12 +48,34 @@ const IndexPage = ({ data }) => {
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce>
             <AniLink to="/launcher" cover duration={0.5} bg="#9E1E22" direction="right">
-              <Button variant="red" mt={9} as="div">
+              <Button
+                variant="red"
+                mt={9}
+                as="div"
+                onClick={() => {
+                  trackCustomEvent({
+                    category: 'Button',
+                    action: 'Click',
+                    label: `homepage-top-cta-launcher-button`,
+                  });
+                }}
+              >
                 Start Exploring
               </Button>
             </AniLink>
             <AniLink to="/wiki" cover duration={0.5} bg="#9E1E22" direction="right">
-              <Button variant="white" mt={9} as="div">
+              <Button
+                variant="white"
+                mt={9}
+                as="div"
+                onClick={() => {
+                  trackCustomEvent({
+                    category: 'Button',
+                    action: 'Click',
+                    label: `homepage-cta-wiki-button`,
+                  });
+                }}
+              >
                 <BsTriangleFill
                   size="16px"
                   style={{ transform: 'rotate(90deg)', marginRight: '6px', marginTop: '-1px', marginBottom: '-2px' }}
@@ -132,7 +155,18 @@ const IndexPage = ({ data }) => {
                 Minecraft Java Edition
               </Box>
             </Text>
-            <Button variant="red" mt={7} href="/launcher">
+            <Button
+              variant="red"
+              mt={7}
+              href="/launcher"
+              onClick={() => {
+                trackCustomEvent({
+                  category: 'Button',
+                  action: 'Click',
+                  label: `homepage-bottom-cta-launcher-button`,
+                });
+              }}
+            >
               Get the Launcher
             </Button>
           </Box>
