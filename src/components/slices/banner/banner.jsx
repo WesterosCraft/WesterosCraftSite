@@ -11,6 +11,7 @@ export const Banner = ({ data }) => (
     className="banner"
     {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
   >
+    {console.log(data)}
     <ScrollAnimation animateIn="fadeInUp" animateOnce>
       <Flex
         className="banner-content-card"

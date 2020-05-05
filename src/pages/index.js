@@ -35,20 +35,20 @@ const IndexPage = ({ data }) => {
         }}
       >
         <Box textAlign="center">
-          <ScrollAnimation animateIn="fadeIn" delay={250} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={200} animateOnce>
             <Heading as="h1" variant="heading1">
               {homepageData.heading || ''}
             </Heading>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay={650} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
             <Heading as="h2" variant="heading2" mt={5}>
               {homepageData.subheading || ''}
             </Heading>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay={1150} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce>
             <AniLink to="/launcher" cover duration={0.5} bg="#9E1E22" direction="right">
               <Button variant="red" mt={9} as="div">
-                Get the Launcher
+                Start Exploring
               </Button>
             </AniLink>
             <AniLink to="/wiki" cover duration={0.5} bg="#9E1E22" direction="right">

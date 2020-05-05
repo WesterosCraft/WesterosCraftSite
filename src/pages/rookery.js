@@ -67,7 +67,7 @@ const RookeryPage = ({ data }) => {
           />
         </Box>
       </Flex>
-      <Flex width={1} px={5} flexDirection="column" maxWidth={1120} justifyContent="center" mx="auto">
+      <Flex width={1} px={5} flexDirection="column" maxWidth={1536} justifyContent="center" mx="auto">
         <Text variant="heading4" as="h4" mb={5}>
           Previous Rookery Editions
         </Text>

@@ -9,6 +9,8 @@ export const bannerFragment = graphql`
         buttonText
         buttonLink
         variant
+        buttonType
+        download
       }
     }
     spacings {
@@ -37,6 +39,8 @@ export const destinationSliderFragment = graphql`
       ... on Craft_linkBuilder_additionalLinks_BlockType {
         additionalLink
         customLinkText
+        linkType
+        download
       }
     }
     spacings {
@@ -60,6 +64,8 @@ export const twoColumnTextFragment = graphql`
             variant
             buttonText
             buttonLink
+            buttonType
+            download
           }
         }
       }
@@ -116,6 +122,8 @@ export const twoColumnVideo = graphql`
             variant
             buttonText
             buttonLink
+            buttonType
+            download
           }
         }
       }
@@ -143,15 +151,19 @@ export const contentBanner = graphql`
     redactor
     buttons {
       ... on Craft_buttons_button_BlockType {
+        buttonType
         buttonText
         buttonLink
         variant
+        download
       }
     }
     linkBuilder {
       ... on Craft_linkBuilder_additionalLinks_BlockType {
         additionalLink
         customLinkText
+        linkType
+        download
       }
     }
     spacings {
