@@ -36,6 +36,7 @@ export const GlobalStyle = css`
     border: 0;
     font-family: ${theme.fonts.body};
     font-size: 16px;
+    color: #333333;
   }
 
   main {
