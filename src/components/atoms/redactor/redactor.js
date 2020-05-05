@@ -31,18 +31,17 @@ export const Redactor = styled.div`
 
   ol {
     list-style: none;
-    padding-left: 32px;
+    padding-left: 26px;
   }
 
   ol li {
     margin: 0;
-    padding: 14px 0 14px 40px;
+    padding: 14px 0 14px 36px;
     list-style: none;
     background-image: url('https://westeroscraft.com/web/assets/images/checkmark.svg');
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: 24px;
-    font-size: 18px;
+    background-size: 20px;
   }
 
   h1,
@@ -84,41 +83,8 @@ export const Redactor = styled.div`
     font-family: 'Roboto', sans-serif;
   }
 
-  p + p {
-    margin-top: 20px;
-  }
-
-  p + h2 {
-    margin-top: 32px;
-  }
-
-  h3 + h4 {
-    margin-top: 22px;
-  }
-
-  figure {
-    margin-top: 16px !important;
-    margin-bottom: 16px !important;
-  }
-
-  h3 + h6 {
-    margin-top: 16px;
-  }
-
-  h5 + p {
-    margin-top: 28px;
-  }
-
-  h5 + h6 {
-    margin-top: 16px;
-  }
-
-  h6 + h2 {
-    margin-top: 12px;
-  }
-
-  h2 + h6 {
-    margin-top: 12px;
+  .caption {
+    background-color: white;
   }
 
   /* MOBILE STYLES */
@@ -197,11 +163,6 @@ export const Redactor = styled.div`
 
     a {
     }
-
-    ol li {
-      background-size: 32px;
-      font-size: 20px;
-    }
   }
 
   /* LAPTOP STYLES */
@@ -239,13 +200,140 @@ export const Redactor = styled.div`
       font-size: 16px;
     }
 
-    ul li {
-      font-size: 18px;
-    }
-
     ol {
       list-style: none;
       padding-left: 0px;
     }
+  }
+
+  /*================= SPACING ===================== */
+
+  /*eslint-disable */
+
+  h1 + h1 {
+  }
+  h1 + h2 {
+  }
+  h1 + h3 {
+  }
+  h1 + h4 {
+  }
+  h1 + h5 {
+  }
+  h1 + h6 {
+  }
+  h1 + p {
+  }
+
+  h2 + h1 {
+  }
+  h2 + h2 {
+  }
+  h2 + h3 {
+  }
+  h2 + h4 {
+  }
+  h2 + h5 {
+  }
+  h2 + h6 {
+    margin-top: 12px;
+  }
+  h2 + p {
+    margin-top: 16px;
+  }
+
+  h3 + h1 {
+  }
+  h3 + h2 {
+  }
+  h3 + h3 {
+  }
+  h3 + h4 {
+    margin-top: 24px;
+  }
+  h3 + h5 {
+  }
+  h3 + h6 {
+    margin-top: 16px;
+  }
+  h3 + p {
+  }
+
+  h4 + h1 {
+  }
+  h4 + h2 {
+  }
+  h4 + h3 {
+  }
+  h4 + h4 {
+  }
+  h4 + h5 {
+    margin-top: 16px;
+  }
+  h4 + h6 {
+  }
+  h4 + p {
+    margin-top: 20px;
+  }
+
+  h5 + h1 {
+  }
+  h5 + h2 {
+  }
+  h5 + h3 {
+  }
+  h5 + h4 {
+  }
+  h5 + h5 {
+  }
+  h5 + h6 {
+    margin-top: 16px;
+  }
+  h5 + p {
+    margin-top: 28px;
+  }
+
+  h6 + h1 {
+  }
+  h6 + h2 {
+    margin-top: 12px;
+  }
+  h6 + h3 {
+  }
+  h6 + h4 {
+  }
+  h6 + h5 {
+  }
+  h6 + h6 {
+  }
+  h6 + p {
+  }
+
+  p + h1 {
+    margin-top: 32px;
+  }
+  p + h2 {
+    margin-top: 32px;
+  }
+  p + h3 {
+    margin-top: 32px;
+  }
+  p + h4 {
+    margin-top: 32px;
+  }
+  p + h5 {
+    margin-top: 24px;
+  }
+  p + h6 {
+    margin-top: 24px;
+  }
+  p + p {
+    margin-top: 20px;
+  }
+  /*eslint-enable */
+
+  figure {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
   }
 `;

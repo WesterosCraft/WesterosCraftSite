@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTable, useSortBy, usePagination, useResizeColumns, useFlexLayout, useRowSelect } from 'react-table';
-import { Flex, Box, Text, Button } from 'rebass';
+import { Flex, Box, Text } from 'rebass';
 
 export const Table = ({ columns, data, maxWidth = '100%' }) => {
   const headerProps = (props, { column }) => getStyles(props, column.align);
@@ -17,21 +17,11 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
       },
     },
   ];
-  const defaultColumn = React.useMemo(
-    () => ({
-      // When using the useFlexLayout:
-      minWidth: 30, // minWidth is only used as a limit for resizing
-      width: 150, // width is used for both the flex-basis and flex-grow
-      maxWidth: 200, // maxWidth is only used as a limit for resizing
-    }),
-    [],
-  );
 
   const { getTableProps, getTableBodyProps, headerGroups, prepareRow, page } = useTable(
     {
       columns,
       data,
-      defaultColumn,
     },
     useSortBy,
     usePagination,

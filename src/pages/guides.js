@@ -1,19 +1,29 @@
-import React from 'react'
-import { WikiLayout } from '../components/templates/wikiLayout'
+import React from 'react';
+import { WikiLayout } from '../components/templates/wikiLayout';
 
-import { graphql } from 'gatsby'
-import { WikiSliceZone } from '../components/slices/wikiSliceZone'
+import { graphql } from 'gatsby';
+import { WikiSliceZone } from '../components/slices/wikiSliceZone';
+import SEO from '../components/organisms/seo/seo';
 
 const GuidePage = ({ pageContext, data }) => {
   return (
-    <WikiLayout
-      title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
-      breadcrumb={pageContext.breadcrumb}
-    >
-      <WikiSliceZone slices={data.craft.entries[0].wikiSlices} />
-    </WikiLayout>
-  )
-}
+    <>
+      {pageContext && pageContext.data && (
+        <SEO
+          title={pageContext.data.pageTitle || pageContext.data.title}
+          description={pageContext.data.pageDescription}
+          image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
+        />
+      )}
+      <WikiLayout
+        title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
+        breadcrumb={pageContext.breadcrumb}
+      >
+        <WikiSliceZone slices={data.craft.entries[0].wikiSlices} />
+      </WikiLayout>
+    </>
+  );
+};
 
 export const pageQuery = graphql`
   query GuideQuery($slug: [String]) {
@@ -37,6 +47,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default GuidePage
+export default GuidePage;

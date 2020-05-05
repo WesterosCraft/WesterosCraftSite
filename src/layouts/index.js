@@ -64,6 +64,7 @@ const Layout = ({ children }) => (
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900|Sen:400,700,800&display=swap"
             rel="stylesheet"
           />
+          <html lang="en" />
         </Helmet>
         <Header links={data.craft.navData} />
         <Box
@@ -72,6 +73,7 @@ const Layout = ({ children }) => (
           sx={{
             margin: `0 auto`,
             position: 'relative',
+            overflow: 'hidden',
           }}
           pt={[3, null, 10]}
           bg="#FFFFFF"

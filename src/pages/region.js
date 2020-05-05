@@ -7,6 +7,7 @@ import { Link } from 'gatsby';
 import { regionSlugFormatter } from '../utility/regionSlugFormatter';
 import { Redactor } from '../components/atoms/redactor';
 import { RegionFilters } from '../components/atoms/regionFilters/regionFilters';
+import SEO from '../components/organisms/seo/seo';
 
 const RegionPage = ({ pageContext, data }) => {
   const [items, setItems] = useState(data.craft.entries[0].children);
@@ -33,20 +34,29 @@ const RegionPage = ({ pageContext, data }) => {
   };
 
   return (
-    <WikiLayout
-      title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
-      breadcrumb={pageContext.breadcrumb}
-    >
-      <Redactor dangerouslySetInnerHTML={{ __html: data.craft.entries[0].copy }} />
-      <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
-      <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
-        {items.map((entry) => (
-          <Link to={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`} key={entry.slug}>
-            <EntryCard data={entry} key={entry.slug} />
-          </Link>
-        ))}
-      </Flex>
-    </WikiLayout>
+    <>
+      {pageContext && pageContext.data && (
+        <SEO
+          title={pageContext.data.pageTitle || pageContext.data.title}
+          description={pageContext.data.pageDescription}
+          image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
+        />
+      )}
+      <WikiLayout
+        title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
+        breadcrumb={pageContext.breadcrumb}
+      >
+        <Redactor dangerouslySetInnerHTML={{ __html: data.craft.entries[0].copy }} />
+        <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
+        <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
+          {items.map((entry) => (
+            <Link to={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`} key={entry.slug}>
+              <EntryCard data={entry} key={entry.slug} />
+            </Link>
+          ))}
+        </Flex>
+      </WikiLayout>
+    </>
   );
 };
 

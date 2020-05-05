@@ -82,8 +82,10 @@ export const DestinationSlide = ({ data }) => {
             </SlideSelection>
           ))}
           <Box
+            as="li"
             sx={{
               borderTop: '1px solid #333333',
+              listStyle: 'none',
             }}
             my={2}
           />

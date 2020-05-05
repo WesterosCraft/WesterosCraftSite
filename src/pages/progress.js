@@ -1,72 +1,22 @@
 import React, { useMemo } from 'react';
 
 import { graphql } from 'gatsby';
-import { Heading, Box, Flex } from 'rebass';
+import { Heading, Flex, Text, Box } from 'rebass';
 import { ProgressTable } from '../components/organisms/progressTable/progressTable';
 import _merge from 'lodash/merge';
-import { PieChart } from '../components/organisms/pieChart/pieChart';
-import { BarChart } from '../components/organisms/barChart';
-import styled from '@emotion/styled';
-
-const Styles = styled.div`
-  padding: 1rem;
-  display: block;
-  overflow: auto;
-  .table {
-    border-spacing: 0;
-    border: 2px solid #333333;
-    .thead {
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-    .tbody {
-    }
-    .tr {
-      :last-child {
-        .td {
-          border-bottom: 0;
-        }
-      }
-      :nth-of-type(even) {
-        background-color: #fafafc;
-      }
-    }
-    .th,
-    .td {
-      margin: 0;
-      padding: 0.5rem;
-      position: relative;
-      :last-child {
-        border-right: 0;
-      }
-      .resizer {
-        right: 0;
-        background: blue;
-        width: 10px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        z-index: 1;
-        touch-action: none;
-        &.isResizing {
-          background: red;
-        }
-      }
-    }
-  }
-`;
+import SEO from '../components/organisms/seo/seo';
+import { Card } from '../components/atoms/card/card';
 
 const ProgressPage = ({ data }) => {
   const flatten = (data) =>
     data.reduce((arr, elem) => {
       if (elem.projectDetails && elem.projectDetails.length) {
         arr.push(_merge(elem, elem.projectDetails[0]));
-        delete elem.projectDetails;
       }
       return arr;
     }, []);
 
-  const memoData = useMemo(() => data && flatten(data.craft.entries), [data]);
+  const memoData = useMemo(() => flatten(data.craft.entries), [data.craft.entries]);
 
   const totalComplete = memoData.filter((item) => item.destinationStatus === 'completed').length;
   const totalInProgress = memoData.filter(
@@ -76,34 +26,10 @@ const ProgressPage = ({ data }) => {
     (item) => item.destinationStatus === 'abandoned' || item.destinationStatus === 'notStarted',
   ).length;
 
-  const pieData = useMemo(
-    () => [
-      {
-        id: 'Complete',
-        label: 'Complete',
-        value: totalComplete,
-        color: 'hsl(358,68%,40%)',
-      },
-      {
-        id: 'In Progress',
-        label: 'In Progress',
-        value: totalInProgress,
-        color: 'hsl(272, 70%, 50%)',
-      },
-      {
-        id: 'Not Started',
-        label: 'Not Started',
-        value: totalNotStarted,
-        color: 'hsl(66, 70%, 50%)',
-      },
-    ],
-    [totalComplete, totalInProgress, totalNotStarted],
-  );
-
   const columns = useMemo(
     () => [
       {
-        Header: () => <div style={{ margin: '0 auto' }}>Level</div>,
+        Header: () => <span style={{ margin: '0 auto' }}>Level</span>,
 
         accessor: 'destinationLevel',
         filterable: false,
@@ -145,20 +71,39 @@ const ProgressPage = ({ data }) => {
 
   return (
     <>
-      <Heading variant="heading2" textAlign="center" mt={[12]}>
-        progress page
-      </Heading>
-      <Flex width={1} maxWidth={1256} flexDirection={['column', null, 'row']} mx="auto">
-        <Box width={['100%', null, '40%']} sx={{ height: 400 }}>
-          <PieChart data={pieData} />
-        </Box>
-        <Box width={['100%', null, '60%']} sx={{ height: 400 }}>
-          <BarChart />
-        </Box>
-      </Flex>
-      <Styles>
+      <SEO
+        title={data.craft.entry.pageTitle || data.craft.entry.title}
+        description={data.craft.entry.pageDescription}
+        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+      />
+      <Flex px={5} flexDirection="column">
+        <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
+          {data.craft.entry.heading}
+        </Heading>
+        <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
+          {data.craft.entry.subheading}
+        </Heading>
+        <Flex flexDirection="row" flexWrap="wrap" mx="auto" width={1} justifyContent="center" my={7}>
+          <Card color="#365B41">
+            <Text variant="heading3">{data.craft.entries.length}</Text>
+            <Text>total projects</Text>
+          </Card>
+          <Card color="#4B9190">
+            <Text variant="heading3">{totalComplete}</Text>
+            <Text>completed</Text>
+          </Card>
+          <Card color="#DAAC58">
+            <Text variant="heading3">{totalInProgress}</Text>
+            <Text>in progress</Text>
+          </Card>
+          <Card color="#B32227">
+            <Text variant="heading3">{totalNotStarted}</Text>
+            <Text>not started</Text>
+          </Card>
+        </Flex>
         <ProgressTable columns={columns} data={memoData} />
-      </Styles>
+      </Flex>
+      <Box mb={[72, 140]} />
     </>
   );
 };
@@ -166,6 +111,18 @@ const ProgressPage = ({ data }) => {
 export const pageQuery = graphql`
   query progressQuery {
     craft {
+      entry(section: "progress") {
+        title
+        ... on Craft_progress_progressPage_Entry {
+          heading
+          subheading
+          pageTitle
+          pageDescription
+          pageImage {
+            url
+          }
+        }
+      }
       entries(site: "westeroscraft", section: "wiki", type: "wikiDestination", orderBy: "title") {
         title
         slug
