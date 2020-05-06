@@ -115,10 +115,10 @@ const IndexPage = ({ data }) => {
           <LazyLoadImage
             className="hero-image"
             loading="eager"
-            srcSet="https://westeroscraft.com/web/assets/website/wall-light-520.png 520w, https://westeroscraft.com/web/assets/website/wall-light-1200.png 1200w, https://westeroscraft.com/web/assets/website/wall-light-1920.png 1920w"
+            srcSet="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1200.png 1200w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png 1920w"
             alt="The Wall"
-            placeholderSrc="https://westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
-            src="https://westeroscraft.com/web/assets/website/wall-light-1920.png"
+            placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
+            src="https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png"
             width="100%"
             height="100%"
           />
@@ -173,10 +173,10 @@ const IndexPage = ({ data }) => {
         </Box>
         <Box className="footer-image" sx={{ transform: 'scaleX(-1)' }}>
           <LazyLoadImage
-            srcSet="https://westeroscraft.com/web/assets/website/redkeep-520.png 520w, https://westeroscraft.com/web/assets/website/redkeep-1640.png 1640w"
+            srcSet="https://cdn.westeroscraft.com/web/assets/website/redkeep-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/redkeep-1640.png 1640w"
             alt="Red Keep"
-            placeholderSrc="https://westeroscraft.com/web/assets/website/redkeep-loading-1640.png"
-            src="https://westeroscraft.com/web/assets/website/redkeep-1640.png"
+            placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/redkeep-loading-1640.png"
+            src="https://cdn.westeroscraft.com/web/assets/website/redkeep-1640.png"
             width="100%"
             height="100%"
             wrapperClassName="lazy-loaded-image-span"

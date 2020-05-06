@@ -56,7 +56,7 @@ module.exports = {
       options: {
         fieldName: `craft`,
         typeName: `Craft`,
-        url: `https://westeroscraft.com/api`,
+        url: `https://cdn.westeroscraft.com/api`,
       },
     },
     {
