@@ -182,6 +182,7 @@ const IndexPage = ({ data }) => {
             wrapperClassName="lazy-loaded-image-span"
             threshold={300}
             style={{ display: 'block' }}
+            loading="lazy"
           />
         </Box>
       </Box>
