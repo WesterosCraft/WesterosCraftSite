@@ -46,7 +46,7 @@ const RookeryPage = ({ data }) => {
         </Heading>
         <Image
           mt={4}
-          src="https://westeroscraft.com/web/assets/images/crow-icon.png"
+          src="https://cdn.westeroscraft.com/web/assets/images/crow-icon.png"
           width="40px"
           alt="crow"
           mx="auto"

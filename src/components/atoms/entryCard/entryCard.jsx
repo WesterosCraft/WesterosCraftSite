@@ -52,7 +52,7 @@ export const EntryCard = ({ data }) => {
             borderBottom: '2px solid #333333',
             backgroundImage: `url(${
               (data.images && data.images.length && data.images[0].url) ||
-              'https://westeroscraft.com/web/assets/images/crafting-table.svg'
+              'https://cdn.westeroscraft.com/web/assets/images/crafting-table.svg'
             })`,
             backgroundSize: data.images && data.images.length && data.images[0].url ? 'cover' : ['auto', null, '30%'],
             boxShadow: `inset 0 0.75rem 0 ${
