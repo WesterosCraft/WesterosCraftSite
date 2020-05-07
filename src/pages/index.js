@@ -96,7 +96,7 @@ const IndexPage = ({ data }) => {
             left: 0,
             zIndex: -1,
             backgroundColor: 'rgba(81, 179, 255, 0.14)',
-            backgroundImage: `linear-gradient(to top, transparent 40%, white 60%), url(${Pixel})`,
+            backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%), url(${Pixel})`,
           }}
         />
         <Box
