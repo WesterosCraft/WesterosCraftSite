@@ -20,7 +20,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
-    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
