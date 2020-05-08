@@ -11,10 +11,11 @@ import SEO from '../components/organisms/seo/seo';
 import Pixel from '../images/bright-squares.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { useMediaQuery } from 'react-responsive';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
-
+  const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
   return (
     <>
       <SEO
@@ -112,16 +113,28 @@ const IndexPage = ({ data }) => {
             imageRendering: 'pixelated',
           }}
         >
-          <LazyLoadImage
-            className="hero-image"
-            loading="eager"
-            srcSet="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1200.png 1200w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png 1920w"
-            alt="The Wall"
-            placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
-            src="https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png"
-            width="100%"
-            height="100%"
-          />
+          {isMobile ? (
+            <LazyLoadImage
+              className="hero-image"
+              loading="eager"
+              alt="The Wall"
+              placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
+              src="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png"
+              width="512px"
+              height="100%"
+            />
+          ) : (
+            <LazyLoadImage
+              className="hero-image"
+              loading="eager"
+              srcSet="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1200.png 1200w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png 1920w"
+              alt="The Wall"
+              placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
+              src="https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png"
+              width="100%"
+              height="100%"
+            />
+          )}
         </Box>
       </Flex>
       <Flex alignItems="center" flexDirection="column" mx="auto" className="homepage-content" px={5}>
