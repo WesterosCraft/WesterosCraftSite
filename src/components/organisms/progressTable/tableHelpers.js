@@ -1,3 +1,5 @@
+import styled from '@emotion/styled';
+
 export const levelFormatter = (level) => {
   switch (level) {
     case 'one':
@@ -16,3 +18,50 @@ export const levelFormatter = (level) => {
       return null;
   }
 };
+
+export const Styles = styled.div`
+  .table {
+    border-spacing: 0;
+    border: 2px solid #333333;
+    min-width: 300px !important;
+
+    .thead {
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+    .tbody {
+    }
+    .tr {
+      :last-child {
+        .td {
+          border-bottom: 0;
+        }
+      }
+      :nth-of-type(even) {
+        background-color: #fafafc;
+      }
+    }
+    .th,
+    .td {
+      margin: 0;
+      padding: 0.5rem;
+      position: relative;
+      :last-child {
+        border-right: 0;
+      }
+      .resizer {
+        right: 0;
+        background: blue;
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        touch-action: none;
+        &.isResizing {
+          background: red;
+        }
+      }
+    }
+  }
+`;

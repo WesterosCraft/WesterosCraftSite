@@ -1,38 +1,82 @@
 import React from 'react';
 
 import { graphql } from 'gatsby';
-import { Heading, Box, Flex, Image, Text } from 'rebass';
+import { Heading, Box, Flex, Text } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Button } from '../components/atoms/button';
 import { BsTriangleFill } from 'react-icons/bs';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import SEO from '../components/organisms/seo/seo';
+import Pixel from '../images/bright-squares.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { useMediaQuery } from 'react-responsive';
 
 const IndexPage = ({ data }) => {
   const homepageData = data.craft.entry.homePageContent[0];
-
+  const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
   return (
     <>
-      <Flex as="section" className="homepage-hero" flexDirection="column" width={1} pt={6} px={5}>
+      <SEO
+        title={data.craft.entry.pageTitle || data.craft.entry.title}
+        description={data.craft.entry.pageDescription}
+        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+      />
+      <Flex
+        as="section"
+        className="homepage-hero"
+        flexDirection="column"
+        width={1}
+        pt={6}
+        px={5}
+        height={['calc(100vh - 72px)', 'calc(100vh - 124px)']}
+        justifyContent="space-between"
+        sx={{
+          position: 'relative',
+        }}
+      >
         <Box textAlign="center">
-          <ScrollAnimation animateIn="fadeIn" delay={250} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={200} animateOnce>
             <Heading as="h1" variant="heading1">
               {homepageData.heading || ''}
             </Heading>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay={650} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
             <Heading as="h2" variant="heading2" mt={5}>
               {homepageData.subheading || ''}
             </Heading>
           </ScrollAnimation>
-          <ScrollAnimation animateIn="fadeIn" delay={1150} animateOnce>
+          <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce>
             <AniLink to="/launcher" cover duration={0.5} bg="#9E1E22" direction="right">
-              <Button variant="red" mt={9} as="div">
-                Get the Launcher
+              <Button
+                variant="red"
+                mt={9}
+                as="div"
+                onClick={() => {
+                  trackCustomEvent({
+                    category: 'Button',
+                    action: 'Click',
+                    label: `homepage-top-cta-launcher-button`,
+                  });
+                }}
+              >
+                Start Exploring
               </Button>
             </AniLink>
             <AniLink to="/wiki" cover duration={0.5} bg="#9E1E22" direction="right">
-              <Button variant="white" mt={9} as="div">
+              <Button
+                variant="white"
+                mt={9}
+                as="div"
+                onClick={() => {
+                  trackCustomEvent({
+                    category: 'Button',
+                    action: 'Click',
+                    label: `homepage-cta-wiki-button`,
+                  });
+                }}
+              >
                 <BsTriangleFill
                   size="16px"
                   style={{ transform: 'rotate(90deg)', marginRight: '6px', marginTop: '-1px', marginBottom: '-2px' }}
@@ -43,16 +87,54 @@ const IndexPage = ({ data }) => {
             </AniLink>
           </ScrollAnimation>
         </Box>
-        <Box>
-          <Image
-            src={homepageData.heroImage[0].url}
-            alt="Baelors"
-            sx={{ textAlign: 'center' }}
-            width={1}
-            maxWidth={1536}
-            display="block"
-            mx="auto"
-          />
+        <Box
+          className="hero-image-gradient"
+          width="100%"
+          height="100%"
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            zIndex: -1,
+            backgroundColor: 'rgba(81, 179, 255, 0.14)',
+            backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%), url(${Pixel})`,
+          }}
+        />
+        <Box
+          className="hero-image-container"
+          sx={{
+            left: '50%',
+            marginLeft: '-50vw',
+            marginRight: '-50vw',
+            maxWidth: '100vw',
+            position: 'relative',
+            right: '50%',
+            width: '100vw',
+            imageRendering: 'pixelated',
+          }}
+        >
+          {isMobile ? (
+            <LazyLoadImage
+              className="hero-image"
+              loading="eager"
+              alt="The Wall"
+              placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
+              src="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png"
+              width="512px"
+              height="100%"
+            />
+          ) : (
+            <LazyLoadImage
+              className="hero-image"
+              loading="eager"
+              srcSet="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1200.png 1200w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png 1920w"
+              alt="The Wall"
+              placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
+              src="https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png"
+              width="100%"
+              height="100%"
+            />
+          )}
         </Box>
       </Flex>
       <Flex alignItems="center" flexDirection="column" mx="auto" className="homepage-content" px={5}>
@@ -62,11 +144,12 @@ const IndexPage = ({ data }) => {
         <Box sx={{ position: 'relative' }} maxWidth={1120} px={5} mx="auto" width={1}>
           <Box
             width={1 / 2}
-            sx={{ position: 'absolute', top: 65, right: 0, zIndex: 50 }}
+            sx={{ position: 'absolute', top: [0, null, null, null, 65], right: 0, zIndex: 50 }}
             maxWidth={1120}
             pr={5}
             display={['none', null, null, 'block']}
             textAlign="right"
+            className="footer-cta"
           >
             <Text variant="heading4" fontWeight="bold" as="h4">
               Get started with WesterosCraft
@@ -85,20 +168,36 @@ const IndexPage = ({ data }) => {
                 Minecraft Java Edition
               </Box>
             </Text>
-            <Button variant="red" mt={7} href="/launcher">
+            <Button
+              variant="red"
+              mt={7}
+              href="/launcher"
+              onClick={() => {
+                trackCustomEvent({
+                  category: 'Button',
+                  action: 'Click',
+                  label: `homepage-bottom-cta-launcher-button`,
+                });
+              }}
+            >
               Get the Launcher
             </Button>
           </Box>
         </Box>
-        <Image
-          src={homepageData.footerImage[0].url}
-          alt="Kings Landing"
-          sx={{ textAlign: 'center', transform: 'scaleX(-1)' }}
-          width={1}
-          maxWidth={1536}
-          display="block"
-          mx="auto"
-        />
+        <Box className="footer-image" sx={{ transform: 'scaleX(-1)' }}>
+          <LazyLoadImage
+            srcSet="https://cdn.westeroscraft.com/web/assets/website/redkeep-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/redkeep-1640.png 1640w"
+            alt="Red Keep"
+            placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/redkeep-loading-1640.png"
+            src="https://cdn.westeroscraft.com/web/assets/website/redkeep-1640.png"
+            width="100%"
+            height="100%"
+            wrapperClassName="lazy-loaded-image-span"
+            threshold={300}
+            style={{ display: 'block' }}
+            loading="lazy"
+          />
+        </Box>
       </Box>
     </>
   );
@@ -109,6 +208,11 @@ export const pageQuery = graphql`
     craft {
       entry(site: "westeroscraft", section: "home") {
         ... on Craft_home_home_Entry {
+          pageTitle
+          pageDescription
+          pageImage {
+            url
+          }
           homePageContent {
             ... on Craft_homePageContent_hero_BlockType {
               heading

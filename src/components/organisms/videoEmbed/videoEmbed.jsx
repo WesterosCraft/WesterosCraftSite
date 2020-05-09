@@ -45,7 +45,7 @@ export const VideoEmbed = ({ data, ...props }) => {
           <IoMdPlay color="#4d6371" />
         </PlayButton>
         <VideoOverlay display={isPlaying ? 1 : 0} />
-        <VideoThumbnail display={isPlaying ? 1 : 0} src={data.thumbnail[0].url} />
+        <VideoThumbnail display={isPlaying ? 1 : 0} src={data.thumbnail[0].url} alt="Video thumbnail" loading="lazy" />
       </VideoWrapper>
     </Box>
   );

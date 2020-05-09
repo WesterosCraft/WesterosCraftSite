@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import useSWR from 'swr';
 
 export const ServerStatus = () => {
@@ -10,6 +10,10 @@ export const ServerStatus = () => {
   });
   console.log('validating', isValidating);
   console.log('data', data);
+
+  if (error) {
+    return <h1> error</h1>;
+  }
 
   if (isValidating) {
     return <h1>validating</h1>;

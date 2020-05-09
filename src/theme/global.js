@@ -14,6 +14,14 @@ export const GlobalStyle = css`
     color: #333;
   }
 
+  .tl-edges {
+    overflow: hidden;
+  }
+
+  .lazy-loaded-image-span {
+    display: block !important;
+  }
+
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -28,6 +36,7 @@ export const GlobalStyle = css`
     border: 0;
     font-family: ${theme.fonts.body};
     font-size: 16px;
+    color: #333333;
   }
 
   main {
@@ -56,16 +65,16 @@ export const GlobalStyle = css`
     text-decoration: underline dotted; /* 2 */
   }
 
-  b,
-  strong {
-    font-weight: bold;
-  }
-
   code,
   kbd,
   samp {
     font-family: monospace, monospace; /* 1 */
     font-size: 1em; /* 2 */
+  }
+
+  b,
+  strong {
+    font-weight: bold;
   }
 
   small {

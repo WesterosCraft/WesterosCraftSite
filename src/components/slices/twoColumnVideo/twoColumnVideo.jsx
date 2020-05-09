@@ -15,7 +15,7 @@ export const TwoColumnVideo = ({ data }) => (
             <Flex width={1} flexWrap="wrap">
               {data.images.map((image) => (
                 <Box width={[1, 1 / 2]} py={3} sx={{ textAlign: ['center', null, null, 'left'] }} key={image.url}>
-                  <Image src={image.url} maxHeight={36} />
+                  <Image src={image.url} maxHeight={36} alt={image.title || ''} />
                 </Box>
               ))}
             </Flex>

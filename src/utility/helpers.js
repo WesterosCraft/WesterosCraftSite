@@ -32,3 +32,24 @@ export const formatDate = (date) => {
   const d = dayjs(date).format('MMMM D, YYYY');
   return d;
 };
+
+export const getOS = () => {
+  const platform = window.navigator.platform;
+  const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+  const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
+  // const userAgent = window.navigator.userAgent;
+  // const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+  let os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    os = 'Mac';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    os = 'Windows';
+  } else if (!os && /Linux/.test(platform)) {
+    os = 'Linux';
+  } else {
+    os = null;
+  }
+
+  return os;
+};

@@ -1,14 +1,17 @@
 require('dotenv').config({
   path: `.env`,
-})
+});
 
-const queries = require('./src/utility/algolia')
+const queries = require('./src/utility/algolia');
 
 module.exports = {
   siteMetadata: {
     title: `WesterosCraft`,
     description: `A Minecraft server dedicated to building the world of A Game of Thrones.`,
     author: `Jacob Granberry`,
+    url: 'https://www.westeroscraft.com',
+    image: '/images/wc-round-red-logo.png',
+    twitterUsername: '@westeroscraft',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,7 +26,9 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries,
-        chunkSize: 10000, // default: 1000
+        chunkSize: 10000,
+        enablePartialUpdates: true,
+        matchFields: ['slug', 'modified'],
       },
     },
     {
@@ -36,13 +41,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `westeroscraft-site`,
+        short_name: `westeroscraft`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FFFFFF`,
+        theme_color: `#9E1E22`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        lang: `en`,
+        icon: `src/images/shield-logo.svg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -50,7 +56,7 @@ module.exports = {
       options: {
         fieldName: `craft`,
         typeName: `Craft`,
-        url: `https://westeroscraft.com/api`,
+        url: `https://cdn.westeroscraft.com/api`,
       },
     },
     {
@@ -65,5 +71,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-33220222-1',
+        head: true,
+        respectDNT: true,
+        pageTransitionDelay: 100,
+        defer: false,
+      },
+    },
   ],
-}
+};

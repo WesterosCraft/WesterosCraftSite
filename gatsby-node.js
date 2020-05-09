@@ -10,6 +10,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           destinations: entries(site: "westeroscraft", type: "wikiDestination") {
             ... on Craft_wiki_wikiDestination_Entry {
               title
+              pageDescription
+              pageImage {
+                url
+              }
               slug
               copy
               images {
@@ -33,17 +37,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           regions: entries(site: "westeroscraft", type: "wikiRegion") {
             ... on Craft_wiki_wikiRegion_Entry {
               title
+              pageDescription
+              pageImage {
+                url
+              }
               slug
             }
           }
           miscellaneous: entries(site: "westeroscraft", type: "wikiMiscellaneous") {
             ... on Craft_wiki_wikiMiscellaneous_Entry {
               title
+              pageDescription
+              pageImage {
+                url
+              }
               slug
             }
           }
           guides: entries(site: "westeroscraft", type: "wikiGuide") {
             title
+            ... on Craft_wiki_wikiGuide_Entry {
+              pageDescription
+              pageImage {
+                url
+              }
+            }
             slug
           }
         }

@@ -1,6 +1,12 @@
 import React, { Fragment } from 'react';
 import { Box, Text, Flex } from 'rebass';
-import { AiFillFacebook, AiFillTwitterSquare, AiFillRedditSquare, AiFillInstagram } from 'react-icons/ai';
+import {
+  AiFillFacebook,
+  AiFillTwitterSquare,
+  AiFillRedditSquare,
+  AiFillInstagram,
+  AiFillYoutube,
+} from 'react-icons/ai';
 import { Link } from 'gatsby';
 
 export const Footer = ({ links }) => (
@@ -11,7 +17,7 @@ export const Footer = ({ links }) => (
     as="footer"
     flexDirection="column"
     justifyContent="center"
-    px={7}
+    px={[3, 7]}
     py={9}
   >
     <Flex
@@ -25,7 +31,7 @@ export const Footer = ({ links }) => (
     >
       {links.map((link) =>
         link.children.length > 0 && !link.navLogo.length > 0 ? (
-          <Box p={1} width={200} py={[4, null, 0]} key={link.title}>
+          <Box p={[0, 1]} width={[182, 200]} py={[4, null, 0]} key={link.title}>
             <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
               {link.title}
             </Text>
@@ -102,12 +108,12 @@ export const Footer = ({ links }) => (
           </Box>
         ) : null,
       )}
-      <Box p={1} py={[4, null, 0]} width={200}>
+      <Box p={[0, 1]} py={[4, null, 0]} width={[182, 200]}>
         <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
           Donate
         </Text>
 
-        <Flex width={1} flexDirection="column" maxWidth={200}>
+        <Flex width={1} flexDirection="column" maxWidth={[200]}>
           <Text fontSize={1} py={1} color="offWhite" lineHeight="1.5">
             We depend on user contributions to keep the community running. Please consider donating if you have enjoyed
             the project.
@@ -193,15 +199,23 @@ export const Footer = ({ links }) => (
         <Flex flexDirection="row">
           <a href="https://www.facebook.com/WesterosCraft" target="_blank" rel="noopener noreferrer">
             <AiFillFacebook size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Facebook</span>
           </a>
           <a href="https://twitter.com/westeroscraft" target="_blank" rel="noopener noreferrer">
             <AiFillTwitterSquare size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Twitter</span>
+          </a>
+          <a href="https://www.youtube.com/user/WesterosCraft" target="_blank" rel="noopener noreferrer">
+            <AiFillYoutube size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Youtube</span>
           </a>
           <a href="https://www.reddit.com/r/WesterosCraft/" target="_blank" rel="noopener noreferrer">
             <AiFillRedditSquare size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Reddit</span>
           </a>
           <a href="https://www.instagram.com/westeroscraft" target="_blank" rel="noopener noreferrer">
             <AiFillInstagram size="28px" color="#f3f4f4" />
+            <span style={{ fontSize: 0, color: 'transparent' }}>Instagram</span>
           </a>
         </Flex>
       </Box>
