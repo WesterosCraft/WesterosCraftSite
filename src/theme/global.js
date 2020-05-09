@@ -65,16 +65,16 @@ export const GlobalStyle = css`
     text-decoration: underline dotted; /* 2 */
   }
 
-  b,
-  strong {
-    font-weight: bold;
-  }
-
   code,
   kbd,
   samp {
     font-family: monospace, monospace; /* 1 */
     font-size: 1em; /* 2 */
+  }
+
+  b,
+  strong {
+    font-weight: bold;
   }
 
   small {
