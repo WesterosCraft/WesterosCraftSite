@@ -3,7 +3,7 @@ import { Box } from 'rebass';
 import ReactPlayer from 'react-player';
 import { configProps } from '../../../utility/helpers';
 import { IoMdPlay } from 'react-icons/io';
-import { VideoWrapper, VideoThumbnail, VideoOverlay, PlayButton } from './styledVideo';
+import { VideoWrapper, VideoThumbnail, PlayButton } from './styledVideo';
 
 export const VideoEmbed = ({ data, ...props }) => {
   const [isPlaying, setPlaying] = useState(false);
@@ -44,7 +44,6 @@ export const VideoEmbed = ({ data, ...props }) => {
         >
           <IoMdPlay color="#4d6371" />
         </PlayButton>
-        <VideoOverlay display={isPlaying ? 1 : 0} />
         <VideoThumbnail display={isPlaying ? 1 : 0} src={data.thumbnail[0].url} alt="Video thumbnail" loading="lazy" />
       </VideoWrapper>
     </Box>
