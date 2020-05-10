@@ -41,6 +41,11 @@ export const Styles = styled.div`
         background-color: #fafafc;
       }
     }
+
+    .header-row {
+      padding: 8px 0;
+      border-bottom: 1px solid black;
+    }
     .th,
     .td {
       margin: 0;
