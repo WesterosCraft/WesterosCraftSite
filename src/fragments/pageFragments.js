@@ -112,6 +112,9 @@ export const twoColumnVideo = graphql`
     images {
       url
       title
+      ... on Craft_images_Asset {
+        singleLink
+      }
     }
     children {
       ... on Craft_pageSlices_column_BlockType {
