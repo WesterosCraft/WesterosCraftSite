@@ -1,10 +1,42 @@
 import React, { useMemo } from 'react';
 import { Flex, Box, Text, Button } from 'rebass';
 import { Select, Input } from '@rebass/forms';
-import { useTable, useSortBy, usePagination, useResizeColumns, useFlexLayout, useRowSelect } from 'react-table';
+import {
+  useTable,
+  useSortBy,
+  usePagination,
+  useResizeColumns,
+  useFlexLayout,
+  useRowSelect,
+  useGlobalFilter,
+  useAsyncDebounce,
+} from 'react-table';
 import { camelCaseFormatter } from '../../../utility/helpers';
 import { levelFormatter, Styles } from './tableHelpers';
 import _lowerCase from 'lodash/lowerCase';
+
+function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
+  const count = preGlobalFilteredRows.length;
+  const [value, setValue] = React.useState(globalFilter);
+  const onChange = useAsyncDebounce((value) => {
+    setGlobalFilter(value || undefined);
+  }, 200);
+
+  return (
+    <span>
+      <Input
+        minWidth={240}
+        fontSize="14px"
+        value={value || ''}
+        onChange={(e) => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }}
+        placeholder={`Search ${count} destinations...`}
+      />
+    </span>
+  );
+}
 
 export const ProgressTable = ({ data, columns }) => {
   const headerProps = (props, { column }) => getStyles(props, column.align);
@@ -39,19 +71,22 @@ export const ProgressTable = ({ data, columns }) => {
     prepareRow,
     pageOptions,
     page,
-    state: { pageIndex, pageSize },
+    state: { pageIndex, pageSize, globalFilter },
     gotoPage,
     previousPage,
     nextPage,
     setPageSize,
     canPreviousPage,
     canNextPage,
+    preGlobalFilteredRows,
+    setGlobalFilter,
   } = useTable(
     {
       columns,
       data,
       defaultColumn,
     },
+    useGlobalFilter,
     useSortBy,
     usePagination,
     useResizeColumns,
@@ -83,28 +118,40 @@ export const ProgressTable = ({ data, columns }) => {
           alignItems="center"
           justifyContent="space-between"
           p={4}
+          sx={{ borderBottom: '1px solid black' }}
         >
-          <Text variant="heading4">Project List</Text>
-          <Select
-            value={pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-            }}
-            minWidth={120}
-          >
-            {[
-              { size: 10, label: 10 },
-              { size: 20, label: 20 },
-              { size: 30, label: 30 },
-              { size: 40, label: 40 },
-              { size: 50, label: 50 },
-              { size: data.length, label: 'All' },
-            ].map((pageSize) => (
-              <option key={pageSize.size} value={pageSize.size}>
-                Show {pageSize.label}
-              </option>
-            ))}
-          </Select>
+          <Text variant="heading4" fontFamily="heading">
+            Project List
+          </Text>
+          <Flex flexDirection="row">
+            <GlobalFilter
+              preGlobalFilteredRows={preGlobalFilteredRows}
+              globalFilter={globalFilter}
+              setGlobalFilter={setGlobalFilter}
+            />
+            <Select
+              fontSize="14px"
+              value={pageSize}
+              onChange={(e) => {
+                setPageSize(Number(e.target.value));
+              }}
+              minWidth={120}
+              ml={4}
+            >
+              {[
+                { size: 10, label: 10 },
+                { size: 20, label: 20 },
+                { size: 30, label: 30 },
+                { size: 40, label: 40 },
+                { size: 50, label: 50 },
+                { size: data.length, label: 'All' },
+              ].map((pageSize) => (
+                <option key={pageSize.size} value={pageSize.size}>
+                  Show {pageSize.label}
+                </option>
+              ))}
+            </Select>
+          </Flex>
         </Flex>
         <Box
           className="progress-table-content"
@@ -115,7 +162,7 @@ export const ProgressTable = ({ data, columns }) => {
           }}
         >
           {headerGroups.map((headerGroup) => (
-            <div className="tr" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
+            <div className="tr header-row" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <Text
                   as="p"
