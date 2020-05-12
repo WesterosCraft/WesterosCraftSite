@@ -15,6 +15,7 @@ const View = ({ data, ...props }) => (
 
 const DestinationPage = ({ pageContext }) => {
   const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       {pageContext && pageContext.data && (
@@ -62,56 +63,77 @@ const DestinationPage = ({ pageContext }) => {
             mb={10}
             mx="auto"
           >
-            <Flex flexDirection="column" width={[1, null, '45%']}>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+            {pageContext &&
+              pageContext.data &&
+              pageContext.data.projectDetails &&
+              pageContext.data.projectDetails.length &&
+              pageContext.data.projectDetails[0].banner.length > 0 && (
+                <Image src={pageContext.data.projectDetails[0].banner[0].url} maxHeight={150} />
+              )}
+            <Flex as="ol" flexDirection="column" width={[1, null, null, '42%']} sx={{ paddingInlineStart: 0 }}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   Region
                 </Text>
-                <Text>{camelCaseFormatter(pageContext.data.projectDetails[0].region)}</Text>
+                <Text as="p" width={1 / 2}>
+                  {camelCaseFormatter(pageContext.data.projectDetails[0].region)}
+                </Text>
               </Flex>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   House
                 </Text>
-                <Text>{pageContext.data.projectDetails[0].house}</Text>
+                <Text as="p" width={1 / 2}>
+                  {pageContext.data.projectDetails[0].house}
+                </Text>
               </Flex>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   Status
                 </Text>
-                <Text>{camelCaseFormatter(pageContext.data.projectDetails[0].destinationStatus)}</Text>
+                <Text as="p" width={1 / 2}>
+                  {camelCaseFormatter(pageContext.data.projectDetails[0].destinationStatus)}
+                </Text>
               </Flex>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   Date started
                 </Text>
-                <Text>{formatDate(pageContext.data.projectDetails[0].dateStarted)}</Text>
+                <Text as="p" width={1 / 2}>
+                  {formatDate(pageContext.data.projectDetails[0].dateStarted)}
+                </Text>
               </Flex>
             </Flex>
-            <Flex flexDirection="column" width={[1, null, '45%']}>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+            <Flex as="ol" flexDirection="column" width={[1, null, null, '42%']} sx={{ paddingInlineStart: 0 }}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   Type
                 </Text>
-                <Text>{camelCaseFormatter(pageContext.data.projectDetails[0].destinationType)}</Text>
+                <Text as="p" width={1 / 2}>
+                  {camelCaseFormatter(pageContext.data.projectDetails[0].destinationType)}
+                </Text>
               </Flex>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   Warp
                 </Text>
-                <Text>{`/${_lowerCase(pageContext.data.projectDetails[0].warp)}`}</Text>
+                <Text as="p" width={1 / 2}>{`/${_lowerCase(pageContext.data.projectDetails[0].warp)}`}</Text>
               </Flex>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   Project lead(s)
                 </Text>
-                <Text>{pageContext.data.projectDetails[0].projectLead}</Text>
+                <Text as="p" width={1 / 2}>
+                  {pageContext.data.projectDetails[0].projectLead}
+                </Text>
               </Flex>
-              <Flex justifyContent={['space-between', null, 'flex-start']} py={2} width={1}>
-                <Text fontWeight={600} width={120}>
+              <Flex as="li" justifyContent={['space-between', null, null, 'flex-start']} py={2} width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
                   Date completed
                 </Text>
-                <Text>{formatDate(pageContext.data.projectDetails[0].dateCompleted)}</Text>
+                <Text as="p" width={1 / 2}>
+                  {formatDate(pageContext.data.projectDetails[0].dateCompleted)}
+                </Text>
               </Flex>
             </Flex>
           </Flex>
