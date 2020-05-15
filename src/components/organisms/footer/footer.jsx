@@ -118,11 +118,7 @@ export const Footer = ({ links }) => (
             We depend on user contributions to keep the community running. Please consider donating if you have enjoyed
             the project.
           </Text>
-          <a
-            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=westeroscraft%40gmail%2ecom&lc=US&item_name=WesterosCraft&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://forum.westeroscraft.com/donate/" target="_blank" rel="noopener noreferrer">
             <Text
               fontSize={1}
               py={1}

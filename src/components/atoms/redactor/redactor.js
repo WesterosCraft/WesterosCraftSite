@@ -8,6 +8,10 @@ export const Redactor = styled.div`
     height: auto;
   }
 
+  figcaption {
+    font-size: 14px;
+  }
+
   figure {
     margin: 0;
   }
@@ -257,6 +261,7 @@ export const Redactor = styled.div`
     margin-top: 16px;
   }
   h3 + p {
+    margin-top: 16px;
   }
 
   h4 + h1 {

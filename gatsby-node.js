@@ -30,6 +30,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   projectLead
                   dateStarted
                   dateCompleted
+                  banner {
+                    url
+                  }
                 }
               }
             }
