@@ -1,3 +1,6 @@
+const fetch = require('node-fetch');
+const store = require('store');
+const sourceNodes = require('gatsby/dist/utils/source-nodes');
 require('dotenv').config({
   path: `.env`,
 });
@@ -57,6 +60,13 @@ module.exports = {
         fieldName: `craft`,
         typeName: `Craft`,
         url: `https://cdn.westeroscraft.com/api`,
+        headers: {
+          Authorization: `Bearer ${process.env.GRAPHQL_TOKEN}`,
+        },
+        fetch: (uri, options) => {
+          const token = store.get('X-Craft-Token');
+          return fetch(`${uri}${token !== undefined ? `?token=${token}` : ''}`, options);
+        },
       },
     },
     {
@@ -82,4 +92,15 @@ module.exports = {
       },
     },
   ],
+  developMiddleware: (app) => {
+    app.use('*', (req, res, next) => {
+      if (req.query.token) {
+        store.set('X-Craft-Token', req.query.token);
+        createSchemaCustomization({ refresh: true }).then(() => {
+          sourceNodes({ webhookBody });
+        });
+      }
+      next();
+    });
+  },
 };

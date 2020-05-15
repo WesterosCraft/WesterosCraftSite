@@ -37,6 +37,7 @@
     "graphql-request": "^1.8.2",
     "gsap": "^3.2.6",
     "match-sorter": "^4.1.0",
+    "node-fetch": "^2.6.0",
     "prop-types": "^15.6.2",
     "react": "^16.13.1",
     "react-animate-on-scroll": "^2.1.5",
@@ -57,6 +58,7 @@
     "react-vertical-timeline-component": "^2.6.0",
     "reactjs-popup": "^1.5.0",
     "rebass": "^4.0.7",
+    "store": "^2.0.12",
     "swr": "^0.2.0"
   },
   "keywords": [
