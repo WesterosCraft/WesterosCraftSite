@@ -89,7 +89,7 @@ export const WikiNav = ({ navData }) => {
       sx={{ position: 'relative', flexShrink: 0, flexGrow: 1 }}
     >
       <Search collapse indices={searchIndices} />
-      <Box className="wiki-nav-container" width={1} display={['none', null, 'block']}>
+      <Box className="wiki-nav-container" width={1} display={['none', null, 'block']} maxWidth={246}>
         {navData.craft.wikiNav.map((navItem, i) => (
           <WikiNavGroup navItem={navItem} key={i} />
         ))}
