@@ -1,9 +1,9 @@
-import React from 'react'
-import { Box, Flex, Heading } from 'rebass'
-import { configProps } from '../../../utility/helpers'
-import { EntryCard } from '../../atoms/entryCard'
+import React from 'react';
+import { Box, Flex, Heading } from 'rebass';
+import { configProps } from '../../../utility/helpers';
+import { EntryCard } from '../../atoms/entryCard';
 
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 export const EntryGrid = ({ data }) => (
   <Box className="entry-grid" {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
@@ -16,4 +16,4 @@ export const EntryGrid = ({ data }) => (
       ))}
     </Flex>
   </Box>
-)
+);
