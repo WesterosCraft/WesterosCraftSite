@@ -84,7 +84,7 @@ const ProgressPage = ({ data }) => {
         <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
           {data.craft.entry.subheading}
         </Heading>
-        <Gauge />
+        {/* <Gauge /> */}
         <Flex flexDirection="row" flexWrap="wrap" mx="auto" width={1} justifyContent="center" my={7}>
           <Card color="#365B41">
             <Text variant="heading3">{data.craft.entries.length}</Text>
