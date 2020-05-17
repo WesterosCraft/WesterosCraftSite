@@ -6,6 +6,11 @@ export const GlobalStyle = css`
     overflow: hidden;
   }
 
+  .circle-progress-symbol {
+    font-weight: bold;
+    color: #333333;
+  }
+
   .custom-select {
     z-index: 999;
   }

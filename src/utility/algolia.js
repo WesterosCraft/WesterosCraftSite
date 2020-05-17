@@ -4,6 +4,7 @@
 const wikiQuery = `{
     craft {
       entries(site: "westeroscraft",  section:"wiki") {
+        objectID: id
         title
         slug
         parent {
@@ -11,7 +12,7 @@ const wikiQuery = `{
         }
       }
     }
-  }`
+  }`;
 
 const queries = [
   {
@@ -19,6 +20,6 @@ const queries = [
     transformer: ({ data }) => data.craft.entries.map((node) => node),
     indexName: `Wiki`,
   },
-]
+];
 
-module.exports = queries
+module.exports = queries;

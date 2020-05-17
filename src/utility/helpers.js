@@ -1,6 +1,7 @@
 import _startCase from 'lodash/startCase';
 import _camelCase from 'lodash/camelCase';
 import * as dayjs from 'dayjs';
+import _merge from 'lodash/merge';
 
 export const configProps = (data) => {
   return {
@@ -52,4 +53,37 @@ export const getOS = () => {
   }
 
   return os;
+};
+
+export const completionPercentage = (completedLevel, inProgressLevel, notStartedLevel) => {
+  return Math.ceil(
+    ((completedLevel + inProgressLevel / 2) / (completedLevel + inProgressLevel + notStartedLevel)) * 100,
+  );
+};
+
+export const flatten = (data) =>
+  data.reduce((arr, elem) => {
+    if (elem.projectDetails && elem.projectDetails.length) {
+      arr.push(_merge(elem, elem.projectDetails[0]));
+    }
+    return arr;
+  }, []);
+
+export const getDestinationLevel = (num) => {
+  switch (num) {
+    case 'one':
+      return 1;
+    case 'two':
+      return 2;
+    case 'three':
+      return 3;
+    case 'four':
+      return 4;
+    case 'five':
+      return 5;
+    case 'six':
+      return 6;
+    default:
+      return 0;
+  }
 };
