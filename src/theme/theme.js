@@ -30,6 +30,9 @@ export const theme = {
     riverlands: '#9DE3DE',
     ironIslands: '#4B9190',
     beyondTheWall: '#313C46',
+    success: '#365B41',
+    error: '#B32227',
+    pending: '#DAAC58',
   },
   fonts: {
     body: `'Roboto', sans-serif`,
