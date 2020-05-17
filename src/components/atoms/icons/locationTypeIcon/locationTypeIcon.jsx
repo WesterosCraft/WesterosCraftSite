@@ -1,37 +1,41 @@
-import React from 'react'
+import React from 'react';
 
 export const LocationTypeIcon = (props) => {
   switch (props.type) {
     case 'castle':
-      return <Castle {...props} />
+      return <Castle {...props} />;
     case 'town':
-      return <Town {...props} />
+      return <Town {...props} />;
     case 'village':
-      return <Village {...props} />
+      return <Village {...props} />;
     case 'city':
-      return <City {...props} />
+      return <City {...props} />;
     case 'holdfast':
-      return <Holdfast {...props} />
+      return <Holdfast {...props} />;
     case 'keep':
-      return <Keep {...props} />
+      return <Keep {...props} />;
     case 'landmark':
-      return <Landmark {...props} />
+      return <Landmark {...props} />;
     case 'ruin':
-      return <Ruin {...props} />
+      return <Ruin {...props} />;
     case 'tower':
-      return <Tower {...props} />
+      return <Tower {...props} />;
+    case 'clan':
+      return <Clan {...props} />;
+    case 'crannog':
+      return <Crannog {...props} />;
     case 'miscellaneous':
-      return <Miscellaneous {...props} />
+      return <Miscellaneous {...props} />;
     default:
-      return null
+      return null;
   }
-}
+};
 
 const Castle = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" {...props} fill="#000000" viewBox="0 0 30 30">
     <path d="M 15 2 L 11 6 L 19 6 L 15 2 z M 11 8 L 11 13 L 8 13 L 8 11 L 6 11 L 6 12 L 4 12 L 4 11 L 2 11 L 2 17 L 4 18 L 4 26 L 12 26 L 12 23 C 12 21.343 13.343 20 15 20 C 16.657 20 18 21.343 18 23 L 18 26 L 26 26 L 26 18 L 28 17 L 28 11 L 26 11 L 26 12 L 24 12 L 24 11 L 22 11 L 22 13 L 19 13 L 19 8 L 11 8 z M 8 20 C 8.552 20 9 20.448 9 21 L 9 23 L 7 23 L 7 21 C 7 20.448 7.448 20 8 20 z M 22 20 C 22.552 20 23 20.448 23 21 L 23 23 L 21 23 L 21 21 C 21 20.448 21.448 20 22 20 z" />
   </svg>
-)
+);
 
 const Town = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" {...props} viewBox="0 0 512 512">
@@ -44,7 +48,7 @@ const Town = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const Village = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" {...props} viewBox="0 0 512 512">
@@ -57,7 +61,7 @@ const Village = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const City = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
@@ -70,7 +74,7 @@ const City = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const Keep = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
@@ -83,7 +87,7 @@ const Keep = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const Holdfast = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
@@ -96,7 +100,7 @@ const Holdfast = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const Ruin = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
@@ -109,7 +113,7 @@ const Ruin = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const Tower = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
@@ -122,7 +126,7 @@ const Tower = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const Miscellaneous = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
@@ -135,7 +139,7 @@ const Miscellaneous = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
 
 const Landmark = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
@@ -148,4 +152,23 @@ const Landmark = (props) => (
       ></path>
     </g>
   </svg>
-)
+);
+
+const Crannog = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" {...props}>
+    <path d="M0 0h512v512H0z" fill="#ffffff" fill-opacity="0"></path>
+    <g class="" transform="translate(0,0)" style="touch-action: none;">
+      <path
+        d="M219.7 24.43l-17.8 2.06 6.8 59.37-36.1-50.35-14.6 10.5 31.9 44.45h37.4zm34.9.18l-6.3 65.85h18.2l6.1-64.15zm83.6 1.58l-37 64.27h20.7l31.9-55.29zm-50.9 6.33l-10.1 57.94h18.4l9.5-54.86zM195 108.5c-5.6 4-12.5 10.3-20.1 18h162.2c-7.6-7.7-14.5-14-20.1-18zm-36.9 36c-18.1 20.5-38.5 46.4-56.8 72.2-16.85 23.8-32.22 47.6-43.25 67.2-5.51 9.8-9.94 18.6-12.89 25.6-2.83 6.7-4.02 12-4.12 13.6.14 0 .58 1.6 2.29 3.3 2.32 2.4 6.32 5.2 11.79 7.4 10.93 4.4 27.71 6.6 50.08-.4 12.8-4 24.6 1.4 36.3 6.3 11.8 5 24.2 10.4 37.5 11.7 15.7 1.7 37.3-6.3 58.3-13.8 10.5-3.8 20.9-7.3 31-8.9 10.2-1.7 20.6-1.4 29.6 4.1 10.5 6.4 22.4 12.8 33.3 15.8 11 3.1 20.2 2.9 28.2-2.5 26.7-17.8 51.3-16.8 69.6-7.3 19.8 10.3 28.4 7.2 34 2.4 5.7-4.8 8.1-15 8-17.3v-.4c0-1.4-1.2-7-4.2-14s-7.4-15.8-12.9-25.6c-11-19.6-26.4-43.4-43.2-67.2-18.3-25.8-38.7-51.7-56.8-72.2zm121 201.3c-2.3 0-4.9.2-7.9.6-7.9 1.3-17.5 4.5-27.8 8.1-20.6 7.4-43.7 17.2-66.2 14.9-17-1.8-31.2-8.3-42.6-13.1-11.5-4.8-19.7-7.1-24-5.7-1.9.6-3.8 1.1-5.6 1.6v99.3c0 4.2 2.5 8.5 9.8 13.6 7.4 5 19.1 9.9 33.5 13.7 14.7 3.9 32.2 6.9 51 8.8 1.1-21.9 5-45.4 12.2-65.2 4.3-11.7 9.6-22.1 16.8-30.1 7.1-8.1 16.7-13.8 27.7-13.8s20.6 5.7 27.7 13.8c7.2 8 12.5 18.4 16.8 30.1 7.2 19.8 11.1 43.3 12.2 65.2 18.8-1.9 36.3-4.9 51-8.8 14.4-3.8 26.1-8.7 33.5-13.7 7.3-5.1 9.8-9.4 9.8-13.6V350c-10.3-1.6-22.3.9-37.6 11.1-13.4 8.9-29 8.7-43 4.9-13.9-3.8-26.9-11.1-37.9-17.8-2.4-1.5-5.5-2.3-9.4-2.4z"
+        fill="#000000"
+        fill-opacity="1"
+      ></path>
+    </g>
+  </svg>
+);
+
+const Clan = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" {...props}>
+    <path d="M98.7,89.1L58.8,9.4c-0.4-0.8-1.1-1.3-2-1.3c-0.9,0-1.7,0.5-2.1,1.2L40,37.8L36.1,31c-0.4-0.7-1.2-1.2-2.1-1.1  c-0.9,0-1.6,0.6-2,1.3L1.5,89c-0.3,0.7-0.3,1.5,0.2,2.2c0.4,0.7,1.1,1,1.9,1h93c0.8,0,1.5-0.4,1.9-1C98.9,90.6,99,89.8,98.7,89.1z   M28.9,87.7c0-6.8,3.3-12.8,8.5-16.6l1-0.7l1.7,6.3c0.4,0.9,1.7,0.7,1.8-0.2l2.6-13.3c0.2-1,1.5-1.1,1.9-0.2l2,5.5  c0.3,0.9,1.5,0.8,1.8,0l1.4-4.1c0.3-1,1.8-0.8,1.9,0.3l0.7,13.2c0.1,1.2,1.8,1.2,1.9,0.1l1.4-10.4c0.1-1.1,1.7-1.1,1.9-0.1L63,81.6  c0.2,1,1.7,1,1.9,0l1.2-5.6c2.3,3.3,3.7,7.3,3.7,11.7H28.9z M60.7,37.1C60.1,36.5,59,37,59,37.8l-0.5,12c0,0.9-1.1,1.3-1.7,0.6  l-7.6-5c-0.4-0.5-1.2-0.4-1.5,0.1l-6.4,10.4c-0.4,0.5-1.2,0.5-1.6,0l-4.3-5.8c-0.3-0.5-1.1-0.5-1.5-0.1l-11.1,9.4l11.5-22.3l3.8,6.7  c0.4,0.7,1.2,1.2,2,1.1c0.8,0,1.6-0.5,2-1.2l14.5-28.1l14.2,30L60.7,37.1z" />
+  </svg>
+);

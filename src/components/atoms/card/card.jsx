@@ -23,10 +23,6 @@ export const Card = ({ children, color = '#333333' }) => (
         position: 'relative',
         overflow: 'hidden',
         transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
-        '&:hover': {
-          boxShadow: `0 0 0 2px #333333`,
-          transform: 'translate(-0.35em, -0.35em)',
-        },
         '&:before': {
           content: "''",
           display: 'block',

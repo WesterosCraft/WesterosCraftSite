@@ -6,6 +6,7 @@ import { ProgressTable } from '../components/organisms/progressTable/progressTab
 import _merge from 'lodash/merge';
 import SEO from '../components/organisms/seo/seo';
 import { Card } from '../components/atoms/card/card';
+import { Gauge } from '../components/atoms/gauge';
 
 const ProgressPage = ({ data }) => {
   const flatten = (data) =>
@@ -83,6 +84,7 @@ const ProgressPage = ({ data }) => {
         <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
           {data.craft.entry.subheading}
         </Heading>
+        {/* <Gauge /> */}
         <Flex flexDirection="row" flexWrap="wrap" mx="auto" width={1} justifyContent="center" my={7}>
           <Card color="#365B41">
             <Text variant="heading3">{data.craft.entries.length}</Text>
