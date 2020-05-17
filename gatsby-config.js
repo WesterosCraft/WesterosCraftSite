@@ -31,7 +31,7 @@ module.exports = {
         queries,
         chunkSize: 10000,
         enablePartialUpdates: true,
-        matchFields: ['slug', 'modified'],
+        matchFields: ['slug', 'title'],
       },
     },
     {
