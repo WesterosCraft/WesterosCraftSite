@@ -182,7 +182,7 @@ const ProgressPage = ({ data }) => {
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
           {data.craft.entry.heading}
         </Heading>
-        <Heading variant="heading4" textAlign="center" maxWidth={1156} mx="auto" px={5} mt={4}>
+        <Heading variant="heading4" textAlign="center" maxWidth={756} mx="auto" px={5} mt={4}>
           {data.craft.entry.subheading}
         </Heading>
         <Flex width={1} flexDirection={['column', null, 'row']} justifyContent="center" alignItems="center" mt={14}>
@@ -235,7 +235,7 @@ const ProgressPage = ({ data }) => {
           alignItems="center"
           width={1}
           my={10}
-          maxWidth={786}
+          maxWidth={1156}
           mx="auto"
         >
           <Box mt={6} width={1}>

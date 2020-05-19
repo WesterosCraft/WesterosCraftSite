@@ -88,6 +88,7 @@ export const Redactor = styled.div`
   }
 
   .caption {
+    font-size: 13px;
     background-color: white;
   }
 

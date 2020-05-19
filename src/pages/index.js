@@ -64,7 +64,7 @@ const IndexPage = ({ data }) => {
                 Start Exploring
               </Button>
             </AniLink>
-            <AniLink to="/wiki" cover duration={0.5} bg="#9E1E22" direction="right">
+            <a href="https://forum.westeroscraft.com/forum/">
               <Button
                 variant="white"
                 mt={9}
@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
                   trackCustomEvent({
                     category: 'Button',
                     action: 'Click',
-                    label: `homepage-cta-wiki-button`,
+                    label: `homepage-cta-forums-button`,
                   });
                 }}
               >
@@ -82,9 +82,9 @@ const IndexPage = ({ data }) => {
                   style={{ transform: 'rotate(90deg)', marginRight: '6px', marginTop: '-1px', marginBottom: '-2px' }}
                   color="#333333"
                 />
-                Explore the Wiki
+                Join the Forums
               </Button>
-            </AniLink>
+            </a>
           </ScrollAnimation>
         </Box>
         <Box
