@@ -46,6 +46,7 @@ const DestinationPage = ({ pageContext }) => {
           ) : null}
         </ModalGateway>
         <Text
+          fontFamily="heading"
           variant="heading3"
           as="h3"
           mb={5}
