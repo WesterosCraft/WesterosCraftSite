@@ -187,6 +187,9 @@ export const ProgressTable = ({ data, columns }) => {
               return (
                 row.original.title && (
                   <Flex
+                    as="a"
+                    target="_blank"
+                    href={`/wiki/${row.original.region}/${row.original.slug}`}
                     className="tr"
                     flexDirection="row"
                     alignItems="center"
@@ -194,8 +197,15 @@ export const ProgressTable = ({ data, columns }) => {
                     key={row.index}
                     width={1}
                     sx={{
+                      color: 'inherit',
+                      textDecoration: 'none',
                       borderBottom: '1px solid #e2e8f0',
                       height: '48px',
+                      cursor: 'pointer',
+                      '&:hover': {
+                        borderTop: '1px solid black',
+                        borderBottom: '1px solid black',
+                      },
                     }}
                     {...row.getRowProps()}
                   >
