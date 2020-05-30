@@ -9,7 +9,6 @@ import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinatio
 
 export const EntryCard = ({ data }) => {
   const theme = useTheme();
-
   return (
     <Box
       sx={{
@@ -52,6 +51,7 @@ export const EntryCard = ({ data }) => {
             borderBottom: '2px solid #333333',
             backgroundImage: `url(${
               (data.images && data.images.length && data.images[0].url) ||
+              (data.heroImage && data.heroImage.length && data.heroImage[0].url) ||
               'https://cdn.westeroscraft.com/web/assets/images/crafting-table.svg'
             })`,
             backgroundSize: data.images && data.images.length && data.images[0].url ? 'cover' : ['auto', null, '30%'],
