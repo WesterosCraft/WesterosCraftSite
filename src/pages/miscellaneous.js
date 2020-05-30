@@ -32,6 +32,9 @@ export const pageQuery = graphql`
         title
         ... on Craft_wiki_wikiMiscellaneous_Entry {
           title
+          heroImage {
+            url
+          }
           wikiSlices {
             ... on Craft_wikiSlices_text_BlockType {
               ...wikiText

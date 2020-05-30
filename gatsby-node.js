@@ -52,6 +52,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             ... on Craft_wiki_wikiMiscellaneous_Entry {
               title
               pageDescription
+              heroImage {
+                url
+              }
               pageImage {
                 url
               }
@@ -62,6 +65,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             title
             ... on Craft_wiki_wikiGuide_Entry {
               pageDescription
+              heroImage {
+                url
+              }
               pageImage {
                 url
               }

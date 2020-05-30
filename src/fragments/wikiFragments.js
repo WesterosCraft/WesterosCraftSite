@@ -30,6 +30,16 @@ export const entryGrid = graphql`
           }
         }
       }
+      ... on Craft_wiki_wikiGuide_Entry {
+        heroImage {
+          url
+        }
+      }
+      ... on Craft_wiki_wikiMiscellaneous_Entry {
+        heroImage {
+          url
+        }
+      }
     }
     spacings {
       ... on Craft_spacings_spacing_BlockType {

@@ -211,4 +211,8 @@ export const GlobalStyle = css`
   [hidden] {
     display: none;
   }
+
+  .react-images__view-wrapper {
+    text-align: center;
+  }
 `;

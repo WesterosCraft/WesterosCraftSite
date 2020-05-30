@@ -34,7 +34,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => (
       }
     `}
     render={(data) => (
-      <Box className="wiki-layout" pb={9}>
+      <Box className="wiki-layout" pb={[15, 20]}>
         <Box
           className="breadcrumb-wrapper"
           bg="green"

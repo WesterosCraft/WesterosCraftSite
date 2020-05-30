@@ -6,6 +6,7 @@ import _lowerCase from 'lodash/lowerCase';
 import { camelCaseFormatter, formatDate } from '../utility/helpers';
 import SEO from '../components/organisms/seo/seo';
 import Carousel, { Modal, ModalGateway } from 'react-images';
+import { FiExternalLink } from 'react-icons/fi';
 
 const View = ({ data, ...props }) => (
   <>
@@ -53,6 +54,20 @@ const DestinationPage = ({ pageContext }) => {
           mt={pageContext.data && pageContext.data.images && pageContext.data.images.length > 0 ? 5 : 0}
         >
           Project details
+          {pageContext &&
+            pageContext.data &&
+            pageContext.data.projectDetails &&
+            pageContext.data.projectDetails.length &&
+            pageContext.data.projectDetails[0].application && (
+              <a
+                href={pageContext.data.projectDetails[0].application}
+                target="_blank"
+                rel="noreferrer noopener"
+                style={{ textDecoration: 'none', marginLeft: '8px' }}
+              >
+                <FiExternalLink size="18px" color="black" />
+              </a>
+            )}
         </Text>
         {pageContext && pageContext.data && pageContext.data.projectDetails && pageContext.data.projectDetails.length && (
           <Flex
