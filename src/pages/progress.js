@@ -463,7 +463,7 @@ export const pageQuery = graphql`
     craft {
       entry(section: "progress") {
         title
-        ... on Craft_progress_progressPage_Entry {
+        ... on Craft_progress_progress_Entry {
           heading
           subheading
           pageTitle

@@ -19,9 +19,11 @@ const Layout = ({ children }) => (
           navData: nodes(navHandle: "mainNav", level: 1) {
             title
             url
+            uri
             type
             element {
               slug
+              uri
             }
             ... on Craft_mainNav_Node {
               navLogo {
@@ -32,8 +34,10 @@ const Layout = ({ children }) => (
               title
               url
               type
+              uri
               element {
                 slug
+                uri
               }
             }
           }
@@ -43,6 +47,7 @@ const Layout = ({ children }) => (
             type
             element {
               slug
+              uri
             }
             children {
               title
@@ -50,6 +55,7 @@ const Layout = ({ children }) => (
               type
               element {
                 slug
+                uri
               }
             }
           }
