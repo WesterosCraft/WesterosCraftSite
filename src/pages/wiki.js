@@ -24,7 +24,7 @@ export const pageQuery = graphql`
   query wikiQuery {
     craft {
       entry(site: "westeroscraft", slug: "wiki") {
-        ... on Craft_wiki_wikiStatic_Entry {
+        ... on Craft_wikiHome_wikiHome_Entry {
           title
           pageDescription
           pageImage {

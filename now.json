@@ -5,6 +5,10 @@
     {
       "source": "/guides",
       "destination": "/wiki/guides/rules-and-guides"
+    },
+    {
+      "source": "/wiki/westeroscraft-wiki",
+      "destination": "/wiki"
     }
   ]
 }
