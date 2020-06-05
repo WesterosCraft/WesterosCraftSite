@@ -10,9 +10,11 @@ import {
   useRowSelect,
   useGlobalFilter,
   useAsyncDebounce,
+  useFilters,
 } from 'react-table';
 import { camelCaseFormatter } from '../../../utility/helpers';
 import { levelFormatter, Styles } from './tableHelpers';
+import { regionSlugFormatter } from '../../../utility/regionSlugFormatter';
 import _lowerCase from 'lodash/lowerCase';
 
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
@@ -59,7 +61,7 @@ export const ProgressTable = ({ data, columns }) => {
       // When using the useFlexLayout:
       minWidth: 30, // minWidth is only used as a limit for resizing
       width: 150, // width is used for both the flex-basis and flex-grow
-      maxWidth: 200, // maxWidth is only used as a limit for resizing
+      maxWidth: 300, // maxWidth is only used as a limit for resizing
     }),
     [],
   );
@@ -86,6 +88,7 @@ export const ProgressTable = ({ data, columns }) => {
       data,
       defaultColumn,
     },
+    useFilters,
     useGlobalFilter,
     useSortBy,
     usePagination,
@@ -164,20 +167,27 @@ export const ProgressTable = ({ data, columns }) => {
           {headerGroups.map((headerGroup) => (
             <div className="tr header-row" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <Text
-                  as="p"
-                  fontWeight="bold"
-                  fontSize="14px"
-                  mr={2}
-                  sx={{
-                    textTransform: 'uppercase',
-                  }}
-                  key={column.index}
+                <Flex
+                  flexDirection="row"
+                  sx={{ position: 'relative' }}
+                  width={1}
                   {...column.getHeaderProps(headerProps)}
-                  className="th"
                 >
-                  {column.render('Header')}
-                </Text>
+                  <Text
+                    fontWeight="bold"
+                    fontSize="14px"
+                    sx={{
+                      textTransform: 'uppercase',
+                      display: 'flex',
+                      flexDirection: 'row',
+                    }}
+                    key={column.index}
+                    className="th"
+                  >
+                    {column.render('Header')}
+                    <>{column.defaultCanFilter ? column.render('Filter') : null}</>
+                  </Text>
+                </Flex>
               ))}
             </div>
           ))}
@@ -189,7 +199,7 @@ export const ProgressTable = ({ data, columns }) => {
                   <Flex
                     as="a"
                     target="_blank"
-                    href={`/wiki/${row.original.region}/${row.original.slug}`}
+                    href={`/wiki/${regionSlugFormatter(row.original.region)}/${row.original.slug}`}
                     className="tr"
                     flexDirection="row"
                     alignItems="center"

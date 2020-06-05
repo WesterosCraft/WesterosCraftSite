@@ -178,7 +178,6 @@ export const theme = {
     },
     select: {
       fontFamily: 'heading',
-      padding: '14px 32px 14px 16px',
       boxShadow: 'inset 4px 4px 0 #DDD',
       border: '2px solid #333',
       '&:focus': {

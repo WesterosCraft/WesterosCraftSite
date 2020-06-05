@@ -7,8 +7,10 @@ import SEO from '../components/organisms/seo/seo';
 import { Card } from '../components/atoms/card/card';
 import { Progress } from 'react-sweet-progress';
 import { useCountUp } from 'react-countup';
-import { completionPercentage, getDestinationLevel, flatten } from '../utility/helpers';
+import { completionPercentage, getDestinationLevel, flatten, camelCaseFormatter } from '../utility/helpers';
 import { useTheme } from 'emotion-theming';
+import { Select } from '@rebass/forms';
+import { IoIosArrowDropdown } from 'react-icons/io';
 
 import 'react-sweet-progress/lib/style.css';
 
@@ -128,44 +130,98 @@ const ProgressPage = ({ data }) => {
 
   const { countUp } = useCountUp({ start: 0, end: TOTAL_PERCENTAGE, duration: 2.5 });
 
+  function SelectColumnFilter({ column: { filterValue, setFilter, preFilteredRows, id } }) {
+    // Calculate the options for filtering
+    // using the preFilteredRows
+    const options = React.useMemo(() => {
+      const options = new Set();
+      preFilteredRows.forEach((row) => {
+        options.add(row.values[id]);
+      });
+      return [...options.values()];
+    }, [id, preFilteredRows]);
+
+    // Render a multi-select box
+    return (
+      <Box
+        sx={{
+          position: 'relative',
+          width: '24px',
+          height: '24px',
+          select: {
+            '&::placeholder': {
+              color: 'transparent',
+            },
+          },
+        }}
+      >
+        <IoIosArrowDropdown size="24px" style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }} />
+        <select
+          style={{
+            zIndex: 3,
+            background: 'transparent',
+            cursor: 'pointer',
+            WebkitAppearance: 'none',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: 24,
+            height: 24,
+            boxShadow: 'none',
+            border: '0',
+            '&:focus': {
+              outline: 'none',
+            },
+          }}
+          value={filterValue}
+          onChange={(e) => {
+            setFilter(e.target.value || undefined);
+          }}
+        >
+          <option value="">All</option>
+          {options.map((option, i) => (
+            <option key={i} value={option}>
+              {camelCaseFormatter(option)}
+            </option>
+          ))}
+        </select>
+      </Box>
+    );
+  }
+
   const columns = useMemo(
     () => [
       {
-        Header: () => <span style={{ margin: '0 auto' }}>Level</span>,
-
+        Header: 'Level',
         accessor: 'destinationLevel',
-        filterable: false,
         width: 64,
       },
       {
         Header: 'Destination',
         accessor: 'title',
-        filterable: false,
       },
       {
         Header: 'Region',
         accessor: 'region',
-        filterable: false,
+        Filter: SelectColumnFilter,
+        filter: 'includes',
+        defaultCanFilter: true,
       },
       {
         Header: 'Status',
         accessor: 'destinationStatus',
-        filterable: true,
       },
       {
         Header: 'Type',
         accessor: 'destinationType',
-        filterable: false,
       },
       {
         Header: 'House',
         accessor: 'house',
-        filterable: false,
       },
       {
         Header: 'Warp',
         accessor: 'warp',
-        filterable: false,
       },
     ],
     [],
