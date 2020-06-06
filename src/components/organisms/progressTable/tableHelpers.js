@@ -46,7 +46,10 @@ export const Styles = styled.div`
       padding: 8px 0;
       border-bottom: 1px solid black;
     }
-    .th,
+    .th {
+      padding-left: 16px;
+    }
+    /* .th,
     .td {
       margin: 0;
       padding: 0.5rem;
@@ -54,19 +57,6 @@ export const Styles = styled.div`
       :last-child {
         border-right: 0;
       }
-      .resizer {
-        right: 0;
-        background: blue;
-        width: 10px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        z-index: 1;
-        touch-action: none;
-        &.isResizing {
-          background: red;
-        }
-      }
-    }
+    } */
   }
 `;
