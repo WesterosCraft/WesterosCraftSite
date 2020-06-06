@@ -143,11 +143,13 @@ const ProgressPage = ({ data }) => {
 
     // Render a multi-select box
     return (
-      <Box
+      <Flex
+        flexDirection="row"
+        alignItems="center"
         sx={{
           position: 'relative',
-          width: '24px',
-          height: '24px',
+          width: '20px',
+          height: '20px',
           select: {
             '&::placeholder': {
               color: 'transparent',
@@ -155,37 +157,43 @@ const ProgressPage = ({ data }) => {
           },
         }}
       >
-        <IoIosArrowDropdown size="24px" style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }} />
-        <select
-          style={{
-            zIndex: 3,
-            background: 'transparent',
-            cursor: 'pointer',
-            WebkitAppearance: 'none',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: 24,
-            height: 24,
-            boxShadow: 'none',
-            border: '0',
-            '&:focus': {
-              outline: 'none',
-            },
-          }}
-          value={filterValue}
-          onChange={(e) => {
-            setFilter(e.target.value || undefined);
-          }}
-        >
-          <option value="">All</option>
-          {options.map((option, i) => (
-            <option key={i} value={option}>
-              {camelCaseFormatter(option)}
-            </option>
-          ))}
-        </select>
-      </Box>
+        <IoIosArrowDropdown
+          className="progress-icon"
+          size="20px"
+          style={{ position: 'absolute', top: 0, left: 0, zIndex: 2, marginLeft: '4px' }}
+        />
+        <Box className="select-wrapper" sx={{ svg: { display: 'none' } }}>
+          <Select
+            sx={{
+              zIndex: 3,
+              background: 'transparent',
+              cursor: 'pointer',
+              WebkitAppearance: 'none',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: 20,
+              height: 20,
+              boxShadow: 'none',
+              border: '0',
+              '&:focus': {
+                outline: 'none',
+              },
+            }}
+            value={filterValue}
+            onChange={(e) => {
+              setFilter(e.target.value || undefined);
+            }}
+          >
+            <option value="">All</option>
+            {options.map((option, i) => (
+              <option key={i} value={option}>
+                {camelCaseFormatter(option)}
+              </option>
+            ))}
+          </Select>
+        </Box>
+      </Flex>
     );
   }
 
@@ -210,10 +218,16 @@ const ProgressPage = ({ data }) => {
       {
         Header: 'Status',
         accessor: 'destinationStatus',
+        Filter: SelectColumnFilter,
+        filter: 'includes',
+        defaultCanFilter: true,
       },
       {
         Header: 'Type',
         accessor: 'destinationType',
+        Filter: SelectColumnFilter,
+        filter: 'includes',
+        defaultCanFilter: true,
       },
       {
         Header: 'House',

@@ -179,6 +179,7 @@ export const ProgressTable = ({ data, columns }) => {
                     sx={{
                       textTransform: 'uppercase',
                       display: 'flex',
+                      alignItems: 'center',
                       flexDirection: 'row',
                     }}
                     key={column.index}
