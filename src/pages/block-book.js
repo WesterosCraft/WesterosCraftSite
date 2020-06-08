@@ -19,31 +19,14 @@ const BlockBookPage = ({ data, pageContext }) => {
   );
 };
 
-// export const pageQuery = graphql`
-//   query wikiQuery {
-//     craft {
-//       entry(site: "westeroscraft", slug: "wiki") {
-//         ... on Craft_wikiHome_wikiHome_Entry {
-//           title
-//           pageDescription
-//           pageImage {
-//             url
-//           }
-//           wikiSlices {
-//             ... on Craft_wikiSlices_text_BlockType {
-//               ...wikiText
-//             }
-//             ... on Craft_wikiSlices_entryGrid_BlockType {
-//               ...entryGrid
-//             }
-//             ... on Craft_wikiSlices_imageGrid_BlockType {
-//               ...imageGrid
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+  query blockBookQuery {
+    craft {
+      entries(type: "block") {
+        title
+      }
+    }
+  }
+`;
 
 export default BlockBookPage;

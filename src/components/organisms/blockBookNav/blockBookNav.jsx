@@ -78,20 +78,21 @@ const BlockBookNavGroup = ({ navItem }) => {
 };
 
 export const BlockBookNav = ({ navData }) => {
-  const searchIndices = [{ name: `Wiki`, title: `Destinations`, hitComp: `DestinationHit` }];
+  // const searchIndices = [{ name: `Wiki`, title: `Destinations`, hitComp: `DestinationHit` }];
 
   return (
     <Flex
       flexDirection="column"
       as="nav"
-      className="wiki-nav"
+      className="block-book-nav"
       maxWidth={['100%', null, 320]}
       sx={{ position: 'relative', flexShrink: 0, flexGrow: 1 }}
     >
       {/* <Search collapse indices={searchIndices} /> */}
-      <Box className="wiki-nav-container" width={1} display={['none', null, 'block']} maxWidth={246}>
-        {navData.craft.wikiNav.map((navItem, i) => (
-          <BlockBookNavGroup navItem={navItem} key={i} />
+      <Box className="block-book-nav-container" width={1} display={['none', null, 'block']} maxWidth={246}>
+        {navData.craft.blockBookNav.map((navItem, i) => (
+          <p>futre nav content</p>
+          // <BlockBookNavGroup navItem={navItem} key={i} />
         ))}
       </Box>
     </Flex>

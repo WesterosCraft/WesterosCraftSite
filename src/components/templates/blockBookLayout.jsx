@@ -9,9 +9,9 @@ import { IoIosArrowForward } from 'react-icons/io';
 export const BlockBookLayout = ({ children, title, breadcrumb }) => (
   <StaticQuery
     query={graphql`
-      query WikiNavQuery {
+      query blockBookNavQuery {
         craft {
-          wikiNav: nodes(navHandle: "wikiNav", level: 1) {
+          blockBookNav: nodes(navHandle: "wikiNav", level: 1) {
             title
             url
             type
@@ -37,12 +37,12 @@ export const BlockBookLayout = ({ children, title, breadcrumb }) => (
       <Box className="block-book-layout" pb={[15, 20]}>
         <Box
           className="breadcrumb-wrapper"
-          bg="green"
+          bg="#d1972e"
           py={6}
           px={[4, null, 5]}
           width={1}
           sx={{
-            outline: '8px outset #50815e',
+            outline: '8px outset #bc882a',
             outlineOffset: '-8px',
           }}
         >
@@ -60,11 +60,15 @@ export const BlockBookLayout = ({ children, title, breadcrumb }) => (
                 <Fragment key={i}>
                   <Link to={crumb.pathname}>
                     <Text
+                      as="p"
                       fontSize={['14px', null, '16px']}
                       color="white"
                       key={crumb.crumbLabel}
                       pr={1}
                       pl={i !== 0 && 1}
+                      sx={{
+                        textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)',
+                      }}
                     >
                       {camelCaseFormatter(crumb.crumbLabel)}
                     </Text>
