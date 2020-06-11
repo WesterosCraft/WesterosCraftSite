@@ -1,27 +1,34 @@
 import React from 'react';
 
-import { Heading } from 'rebass';
+import { graphql } from 'gatsby';
+import { Heading, Box, Text } from 'rebass';
 
-const CategoryPage = ({ data }) => {
+const CategoryPage = ({ data, pageContext }) => {
   console.log('cat page', data);
+  console.log('pagecontext', pageContext);
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>
-        cat Page{' '}
+        {pageContext.data.title || ''}
       </Heading>
+      <Box>
+        {data.craft.entries.map((entry) => (
+          <Text>{entry.title}</Text>
+        ))}
+      </Box>
     </>
   );
 };
 
-// export const pageQuery = graphql`
-//   query progressQuery {
-//     craft {
-//       entries(site: "westeroscraft", section: "wiki", type: "wikiDestination") {
-//         title
-//         slug
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query categoryQuery($id: [Int]) {
+    craft {
+      entries(section: "block", type: "block", relatedTo: $id) {
+        title
+        slug
+      }
+    }
+  }
+`;
 
 export default CategoryPage;

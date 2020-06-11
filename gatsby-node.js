@@ -64,6 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           categories: categories(group: "blocks") {
             title
             slug
+            id
           }
           guides: entries(site: "westeroscraft", type: "wikiGuide") {
             title
@@ -100,6 +101,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         data: entry,
         slug: entry.slug,
+        id: Number(entry.id),
       },
     });
   });
