@@ -8,7 +8,7 @@ const CategoryPage = ({ data, pageContext }) => {
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>
-        {pageContext.data.title || ''}
+        Category
       </Heading>
       <Box>
         {data.craft.entries.map((entry) => (
