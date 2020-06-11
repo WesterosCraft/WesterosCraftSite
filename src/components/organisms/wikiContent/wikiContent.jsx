@@ -1,5 +1,5 @@
-import React from 'react'
-import { Box, Heading } from 'rebass'
+import React from 'react';
+import { Box, Heading } from 'rebass';
 
 export const WikiContent = ({ children, title }) => (
   <Box as="article" ml={[0, null, 13]} className="wiki-content" maxWidth={786} width={1}>
@@ -8,4 +8,4 @@ export const WikiContent = ({ children, title }) => (
     </Heading>
     {children}
   </Box>
-)
+);

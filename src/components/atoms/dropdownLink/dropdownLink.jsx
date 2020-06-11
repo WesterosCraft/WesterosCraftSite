@@ -6,7 +6,6 @@ export const DropdownLink = ({ data, onClick }) => (
   <>
     {data.element && data.element.slug ? (
       <AniLink cover duration={0.5} bg="#9E1E22" direction="right" to={`/${data.element && data.element.uri}`}>
-        {console.log(data)}
         <Box
           py={3}
           px={3}
