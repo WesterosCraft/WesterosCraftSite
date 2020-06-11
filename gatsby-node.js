@@ -61,6 +61,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
           }
+          categories: categories(group: "blocks") {
+            title
+            slug
+          }
           guides: entries(site: "westeroscraft", type: "wikiGuide") {
             title
             ... on Craft_wiki_wikiGuide_Entry {
@@ -87,11 +91,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const regions = result.data.craft.regions;
   const miscellaneous = result.data.craft.miscellaneous;
   const guides = result.data.craft.guides;
+  const categories = result.data.craft.categories;
 
-  blocks.forEach((entry) => {
+  categories.forEach((entry) => {
     createPage({
-      path: `/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`,
-      component: path.resolve('./src/pages/miscellaneous.js'),
+      path: `/block-book/${entry.slug}`,
+      component: path.resolve('./src/pages/category.js'),
       context: {
         data: entry,
         slug: entry.slug,
