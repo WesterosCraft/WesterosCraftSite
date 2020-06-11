@@ -88,6 +88,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const miscellaneous = result.data.craft.miscellaneous;
   const guides = result.data.craft.guides;
 
+  blocks.forEach((entry) => {
+    createPage({
+      path: `/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`,
+      component: path.resolve('./src/pages/miscellaneous.js'),
+      context: {
+        data: entry,
+        slug: entry.slug,
+      },
+    });
+  });
+
   destinations.forEach((entry) => {
     createPage({
       path: `/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${entry.slug}`,
