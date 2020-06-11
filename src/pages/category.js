@@ -4,8 +4,6 @@ import { graphql } from 'gatsby';
 import { Heading, Box, Text } from 'rebass';
 
 const CategoryPage = ({ data, pageContext }) => {
-  console.log('cat page', data);
-  console.log('pagecontext', pageContext);
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>

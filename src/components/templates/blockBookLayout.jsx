@@ -55,7 +55,8 @@ export const BlockBookLayout = ({ children, title, breadcrumb }) => (
             width={1}
             px={[0, null, 5]}
           >
-            {breadcrumb &&
+            breadcrumb
+            {/* {breadcrumb &&
               breadcrumb.crumbs.map((crumb, i) => (
                 <Fragment key={i}>
                   <Link to={crumb.pathname}>
@@ -75,7 +76,7 @@ export const BlockBookLayout = ({ children, title, breadcrumb }) => (
                   </Link>
                   {breadcrumb.crumbs.length - 1 !== i ? <IoIosArrowForward color="white" /> : null}
                 </Fragment>
-              ))}
+              ))} */}
           </Flex>
         </Box>
         <Flex
