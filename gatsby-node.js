@@ -62,7 +62,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
           categories: categories(group: "blocks") {
-            title
             slug
             id
           }
@@ -113,6 +112,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         data: entry,
         slug: entry.slug,
+        title: entry.title,
       },
     });
   });

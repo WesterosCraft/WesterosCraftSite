@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { Heading, Box, Text } from 'rebass';
 
 const CategoryPage = ({ data, pageContext }) => {
+  console.log('p', pageContext);
   return (
     <>
       <Heading variant="heading2" textAlign="center" mt={[12]}>
@@ -11,7 +12,7 @@ const CategoryPage = ({ data, pageContext }) => {
       </Heading>
       <Box>
         {data.craft.entries.map((entry) => (
-          <Text>{entry.title}</Text>
+          <Text>{entry.title || ''}</Text>
         ))}
       </Box>
     </>
