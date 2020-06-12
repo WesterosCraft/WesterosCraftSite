@@ -5,6 +5,19 @@ import Popup from 'reactjs-popup';
 import { graphql } from 'gatsby';
 import { Heading, Box, Flex, Image } from 'rebass';
 import { BlockBookLayout } from '../components/templates/blockBookLayout';
+import { Engine, Scene } from 'react-babylonjs';
+import { Vector3 } from '@babylonjs/core/Maths/math';
+
+const DefaultPlayground = () => (
+  <Engine canvasId="sample-canvas">
+    <Scene>
+      <freeCamera name="camera1" position={new Vector3(0, 5, -10)} target={Vector3.Zero()} />
+      <hemisphericLight name="light1" intensity={0.7} direction={Vector3.Up()} />
+      <sphere name="sphere1" diameter={2} segments={16} position={new Vector3(0, 1, 0)} />
+      <ground name="ground1" width={6} height={6} subdivisions={2} />
+    </Scene>
+  </Engine>
+);
 
 const CategoryPage = ({ data, pageContext }) => {
   console.log('data', data);
@@ -17,6 +30,7 @@ const CategoryPage = ({ data, pageContext }) => {
           image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
         />
       )}
+      x
       <BlockBookLayout
         title={(pageContext && pageContext.data && pageContext.data.title) || 'Category'}
         breadcrumb={pageContext.breadcrumb}
@@ -86,7 +100,8 @@ const CategoryPage = ({ data, pageContext }) => {
               modal
               closeOnDocumentClick
             >
-              <Heading>{entry.title}</Heading>
+              <DefaultPlayground />
+              {/* <Heading>{entry.title}</Heading> */}
             </Popup>
           ))}
         </Box>
