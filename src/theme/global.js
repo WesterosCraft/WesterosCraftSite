@@ -215,4 +215,14 @@ export const GlobalStyle = css`
   .react-images__view-wrapper {
     text-align: center;
   }
+
+  .block-modal-content.popup-content {
+    width: 90% !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    .block-modal-content.popup-content {
+      width: 55% !important;
+    }
+  }
 `;
