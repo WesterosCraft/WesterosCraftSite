@@ -28,7 +28,7 @@ const BlockBookPage = ({ data, pageContext }) => {
           }}
         >
           {data.craft.categories.map((category) => (
-            <Link to={`/block-book/${category.slug}`}>
+            <Link to={`/block-book/${category.slug}`} key={category.slug}>
               <Box
                 key={category.title}
                 sx={{
