@@ -30,8 +30,9 @@ const CategoryPage = ({ data, pageContext }) => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(148px, 1fr))',
           }}
         >
-          {data.craft.entries.map((entry) => (
+          {data.craft.entries.map((entry, i) => (
             <Popup
+              key={i}
               className="block-modal"
               trigger={
                 <Box

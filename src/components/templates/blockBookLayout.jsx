@@ -11,23 +11,14 @@ export const BlockBookLayout = ({ children, title, breadcrumb }) => (
     query={graphql`
       query blockBookNavQuery {
         craft {
-          blockBookNav: nodes(navHandle: "wikiNav", level: 1) {
+          categories: categories(group: "blocks") {
             title
-            url
-            type
-            element {
-              slug
-            }
-            children {
-              title
-              url
-              type
-              element {
-                slug
+            slug
+            ... on Craft_blocks_Category {
+              pageImage {
+                url
               }
-              parent {
-                title
-              }
+              pageDescription
             }
           }
         }
