@@ -1115,6 +1115,68 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@babylonjs/core@4.1.0", "@babylonjs/core@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/core/-/core-4.1.0.tgz#63e390862debf81f8cf248496187029c42ea5eda"
+  integrity sha512-4pEKPEu14qRdqH5qatfmns/iHFHmujDI22SXkHIlJhTT0WgJH4I8IN1fPw9sU6jSCH2ul76Lpbi2zREvfrEDQA==
+  dependencies:
+    tslib "^1.10.0"
+
+"@babylonjs/gui@4.1.0", "@babylonjs/gui@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/gui/-/gui-4.1.0.tgz#b889251a6279fa3c05e97d3b225b7d4f2de180c5"
+  integrity sha512-H4+zkIMGQlqJ8r3KNlI1fY31v3AssauY7/IMXzl4GloXqmELE+A46h85q/fzY+0SPzXlD4lE0i3BqXkTIUKw+g==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    tslib "^1.10.0"
+
+"@babylonjs/inspector@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/inspector/-/inspector-4.1.0.tgz#05130ca1c4791baeaad1cc0e7c7676b8b07b04e2"
+  integrity sha512-LcNqPzRV0t7x/ubsgFzP0ByIbEcY1tmp+fEpgmuMtiD2hViU2/PQFwlTMwDVCjEN3HHa4Je72j95ItqS4cefpg==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    "@babylonjs/gui" "4.1.0"
+    "@babylonjs/loaders" "4.1.0"
+    "@babylonjs/materials" "4.1.0"
+    "@babylonjs/serializers" "4.1.0"
+    babylonjs-gltf2interface "4.1.0"
+    tslib "^1.10.0"
+
+"@babylonjs/loaders@4.1.0", "@babylonjs/loaders@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/loaders/-/loaders-4.1.0.tgz#1b40f8c07b46228ae4cf6dbda2d0856293f4db80"
+  integrity sha512-stK/QygoNhdrJ9q8yNyZ7iE8Eu+dpwBviSoEigLX5IwHFJUmyxeI0LIZpjRAP2GRB96kqLrBsIBdWEwk076w/g==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    babylonjs-gltf2interface "4.1.0"
+    tslib "^1.10.0"
+
+"@babylonjs/materials@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/materials/-/materials-4.1.0.tgz#238cc04fd1d70ad703e5e12a06db6df83d70a0ed"
+  integrity sha512-KIu3a3h9GfXIbYLhqTlB1vBMI4Wv17+FuGYZ7hxaW7QExQBYog4GaZF9I/TJEwyhXHhtV6L57LNTxh37YU3ciw==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    tslib "^1.10.0"
+
+"@babylonjs/procedural-textures@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/procedural-textures/-/procedural-textures-4.1.0.tgz#52c9f640fbaf54c3e919aac37d072f8fef6c9f6f"
+  integrity sha512-RvtOZomSQ7ym+x9WMhr1hUKSR5MFdNMeqV6QDctaHrY7vIKsXbAjoC+NKUHobxpfnHQZaLZepqEkB5gTTgEwTw==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    tslib "^1.10.0"
+
+"@babylonjs/serializers@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/serializers/-/serializers-4.1.0.tgz#296c5faa7ea952b17c6a09beef62ccb23ac79432"
+  integrity sha512-v+8IDxP5jJjMjwh/UHywMHnXzSxZ0UDhQ1TRDn3AFwqg/QLSOAEj7nl+TJwvobjllOooRclq6duKRUSIVmlgLg==
+  dependencies:
+    "@babylonjs/core" "4.1.0"
+    babylonjs-gltf2interface "4.1.0"
+    tslib "^1.10.0"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -3659,6 +3721,11 @@ babylon@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==
+
+babylonjs-gltf2interface@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/babylonjs-gltf2interface/-/babylonjs-gltf2interface-4.1.0.tgz#95ec994e352ac5cb74869e238218a1b4df18e2f4"
+  integrity sha512-H2obg+4t8bcmLyzGiOQqmUaTQqTu+6mJUlsMWZvmRBf0k2fQVeTdAkH7aDy6HVIz/THvpIx4ntG1Lsyquvmc5Q==
 
 backo2@1.0.2, backo2@^1.0.2:
   version "1.0.2"
@@ -12803,6 +12870,11 @@ react-animate-on-scroll@^2.1.5:
   dependencies:
     lodash.throttle "^4.1.1"
     prop-types "^15.5.9"
+
+react-babylonjs@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-babylonjs/-/react-babylonjs-2.1.0.tgz#7bcd0ddb192f323ed8b08f2d3e66d8793e7fe3cc"
+  integrity sha512-+K3GjHnJ39TDtZk790b5dk5Fs9YSObFp+sxJ0LAbCE8YYx4c/fZyxS5teGuINn2KtpO/ZqACDBTXyRCrS2cL8Q==
 
 react-clientside-effect@^1.2.2:
   version "1.2.2"

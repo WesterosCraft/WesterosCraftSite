@@ -8,7 +8,6 @@ import { WikiSliceZone } from '../components/slices/wikiSliceZone';
 import { Link } from 'gatsby';
 
 const BlockBookPage = ({ data, pageContext }) => {
-  console.log(pageContext);
   return (
     <>
       <SEO
@@ -16,7 +15,7 @@ const BlockBookPage = ({ data, pageContext }) => {
         description={data.craft.entry.pageDescription || ''}
         image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
       />
-      <BlockBookLayout title={'The Block Book'} breadcrumb={pageContext.breadcrumb}>
+      <BlockBookLayout navData={data.craft.categories} title={'The Block Book'} breadcrumb={pageContext.breadcrumb}>
         <WikiSliceZone slices={data.craft.entry.wikiSlices} />
         <Heading variant="heading3" my={[10]}>
           Categories
@@ -29,7 +28,7 @@ const BlockBookPage = ({ data, pageContext }) => {
           }}
         >
           {data.craft.categories.map((category) => (
-            <Link to={`/block-book/${category.slug}`}>
+            <Link to={`/block-book/${category.slug}`} key={category.slug}>
               <Box
                 key={category.title}
                 sx={{

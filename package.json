@@ -12,6 +12,11 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
+    "@babylonjs/core": "^4.1.0",
+    "@babylonjs/gui": "^4.1.0",
+    "@babylonjs/inspector": "^4.1.0",
+    "@babylonjs/loaders": "^4.1.0",
+    "@babylonjs/procedural-textures": "^4.1.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@rebass/forms": "^4.0.6",
@@ -42,6 +47,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.13.1",
     "react-animate-on-scroll": "^2.1.5",
+    "react-babylonjs": "2.1.0",
     "react-copy-to-clipboard": "^5.0.2",
     "react-countup": "^4.3.3",
     "react-dom": "npm:@hot-loader/react-dom@^16.13.0",
