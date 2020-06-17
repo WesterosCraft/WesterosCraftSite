@@ -64,7 +64,7 @@ const IndexPage = ({ data }) => {
                 Start Exploring
               </Button>
             </AniLink>
-            <a href="https://forum.westeroscraft.com/forum/">
+            <a href="https://forum.westeroscraft.com">
               <Button
                 variant="white"
                 mt={9}
