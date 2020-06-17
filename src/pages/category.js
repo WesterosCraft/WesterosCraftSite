@@ -237,6 +237,7 @@ export const pageQuery = graphql`
           namespacedId
           blockType
           material
+          classification
           sound
           blockCategory {
             title
