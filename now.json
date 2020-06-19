@@ -9,6 +9,10 @@
     {
       "source": "/wiki/westeroscraft-wiki",
       "destination": "/wiki"
+    },
+    {
+      "source": "/wiki/miscellaneous",
+      "destination": "/wiki"
     }
   ]
 }
