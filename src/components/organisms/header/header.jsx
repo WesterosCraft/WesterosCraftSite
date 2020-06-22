@@ -83,7 +83,7 @@ export function Header({ links }) {
           offsetX={0}
           className="mobile-popup"
           contentStyle={{
-            position: 'fixed',
+            position: 'absolute',
             left: 0,
             top: 0,
             right: 0,
