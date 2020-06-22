@@ -89,7 +89,7 @@ export function Header({ links }) {
             right: 0,
             bottom: 0,
             width: '100vw',
-            height: '100vh',
+            height: '100%',
             boxShadow:
               '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)',
             border: '1px solid #333333',
