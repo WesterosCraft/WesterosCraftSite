@@ -1,5 +1,6 @@
 // Tutorial
 // https://www.gatsbyjs.org/docs/adding-search-with-algolia/
+import _merge from 'lodash/merge';
 
 const wikiQuery = `{
     craft {
