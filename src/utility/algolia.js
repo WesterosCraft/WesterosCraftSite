@@ -1,7 +1,6 @@
 // Tutorial
 // https://www.gatsbyjs.org/docs/adding-search-with-algolia/
-import _merge from 'lodash/merge';
-
+var _ = require('lodash');
 const wikiQuery = `{
     craft {
       entries(site: "westeroscraft",  section:"wiki") {
@@ -25,7 +24,7 @@ const queries = [
     transformer: ({ data }) =>
       data.craft.entries.reduce((arr, elem) => {
         if (elem.projectDetails && elem.projectDetails.length) {
-          arr.push(_merge(elem, elem.projectDetails[0]));
+          arr.push(_.merge(elem, elem.projectDetails[0]));
           delete elem.projectDetails;
         }
         return arr;
