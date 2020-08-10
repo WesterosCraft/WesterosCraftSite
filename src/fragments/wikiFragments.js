@@ -20,7 +20,7 @@ export const entryGrid = graphql`
       }
       ... on Craft_wiki_wikiDestination_Entry {
         images {
-          url(transform: "wikiCard")
+          url
         }
         projectDetails {
           ... on Craft_projectDetails_details_BlockType {
