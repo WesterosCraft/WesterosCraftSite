@@ -79,15 +79,23 @@ export function Header({ links }) {
           arrow={false}
           position="bottom right"
           overlayStyle={{ background: 'transparent', zIndex: 999 }}
-          offsetY={-40}
-          offsetX={8}
+          offsetY={0}
+          offsetX={0}
+          className="mobile-popup"
           contentStyle={{
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: '100vw',
+            height: '100%',
             boxShadow:
               '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)',
-            borderRadius: '8px',
             border: '1px solid #333333',
             zIndex: 1000,
             minWidth: '300px',
+            overflowY: 'scroll',
           }}
           arrowStyle={{
             padding: '0px',
