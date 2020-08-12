@@ -6,6 +6,11 @@ export const GlobalStyle = css`
     overflow: hidden;
   }
 
+  .mobile-popup-content {
+    left: 0 !important;
+    top: 0 !important;
+  }
+
   .circle-progress-symbol {
     font-weight: bold;
     color: #333333;
