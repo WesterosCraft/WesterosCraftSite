@@ -59,7 +59,7 @@ export const imageGrid = graphql`
         imageDescription
         image {
           title
-          url(transform: "wikiCard")
+          url
         }
       }
     }
