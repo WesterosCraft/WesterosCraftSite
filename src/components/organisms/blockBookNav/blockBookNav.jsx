@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Text, Flex } from 'rebass';
 import { Link } from 'gatsby';
-import { IoMdArrowDropdown } from 'react-icons/io';
+// import { IoMdArrowDropdown } from 'react-icons/io';
 // import Search from '../search';
 
 // const BlockBookNavGroup = ({ navItem }) => {

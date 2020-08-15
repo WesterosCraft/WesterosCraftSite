@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Heading } from 'rebass';
-import useSWR from 'swr';
-import { request } from 'graphql-request';
+// import useSWR from 'swr';
+// import { request } from 'graphql-request';
 
 export const BlockBookContent = ({ children, title }) => {
   // const { data, error, loading } = useSWR(
