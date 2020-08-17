@@ -8,6 +8,7 @@ export const BlockBookContent = ({ children, title }) => {
   //   `{
   //     categories(group: "blocks") {
   //       title
+  // what is happening
   //     }
   //   }
   //   `,
