@@ -5,7 +5,7 @@ import { Box, Heading } from 'rebass';
 
 export const BlockBookContent = ({ children, title }) => {
   // const { data, error, loading } = useSWR(
-  //   `{
+  //   `{idk
   //     categories(group: "blocks") {
   //       title
   // what is happening
