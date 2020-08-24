@@ -10,7 +10,7 @@ export const BlockBookContent = ({ children, title }) => {
   //       title
   // what is happening
   //     }
-  //   }
+  //   }force a redploy
   //   `,
   //   (query) => request('https://cdn.westeroscraft.com/api', query),
   // );
