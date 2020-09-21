@@ -3,8 +3,8 @@ import { Heading, Box, Flex, Text } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Button } from '../components/atoms/button';
+import Link from 'next/link';
 import { BsTriangleFill } from 'react-icons/bs';
-// import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import SEO from '../components/organisms/seo/seo';
 // import Pixel from '../../public/images/bright-squares.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -13,6 +13,7 @@ import { useMediaQuery } from 'react-responsive';
 import { HOME_QUERY } from '../queries/homeQuery.gql';
 import { initializeApollo } from '../../lib/apolloClient';
 import { gql, useQuery } from '@apollo/client';
+import { event } from 'react-ga';
 
 const IndexPage = () => {
   const { data, loading } = useQuery(HOME_QUERY);
@@ -52,28 +53,28 @@ const IndexPage = () => {
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce>
-            {/* <AniLink to="/launcher" cover duration={0.5} bg="#9E1E22" direction="right"> */}
-            <Button
-              variant="red"
-              mt={9}
-              as="div"
-              onClick={() => {
-                trackCustomEvent({
-                  category: 'Button',
-                  action: 'Click',
-                  label: `homepage-top-cta-launcher-button`
-                });
-              }}>
-              Start Exploring
-            </Button>
-            {/* </AniLink> */}
+            <Link href="/launcher" cover duration={0.5} bg="#9E1E22" direction="right">
+              <Button
+                variant="red"
+                mt={9}
+                as="div"
+                onClick={() => {
+                  event({
+                    category: 'Button',
+                    action: 'Click',
+                    label: `homepage-top-cta-launcher-button`
+                  });
+                }}>
+                Start Exploring
+              </Button>
+            </Link>
             <a href="https://forum.westeroscraft.com">
               <Button
                 variant="white"
                 mt={9}
                 as="div"
                 onClick={() => {
-                  trackCustomEvent({
+                  event({
                     category: 'Button',
                     action: 'Click',
                     label: `homepage-cta-forums-button`
@@ -187,7 +188,7 @@ const IndexPage = () => {
               mt={7}
               href="/launcher"
               onClick={() => {
-                trackCustomEvent({
+                event({
                   category: 'Button',
                   action: 'Click',
                   label: `homepage-bottom-cta-launcher-button`

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '../../atoms/button';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
-// import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { event } from 'react-ga';
 
 export const ButtonSelector = ({ data }) =>
   data.map((button, index) => {
@@ -23,7 +23,7 @@ export const ButtonSelector = ({ data }) =>
           href={button.buttonLink}
           download={button.download === 'true'}
           onClick={() => {
-            trackCustomEvent({
+            event({
               category: 'Button',
               action: 'Click',
               label: `${button.buttonType}_${button.buttonText}`

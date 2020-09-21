@@ -1,11 +1,12 @@
 import { CacheProvider } from '@emotion/core';
-import 'react-vertical-timeline-component/style.min.css';
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from '../theme/theme';
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from '../../lib/apolloClient';
 
-// Use only { cache } from 'emotion'. Don't use { css }.
+import 'react-vertical-timeline-component/style.min.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import { cache } from 'emotion';
 import { globalStyles } from '../theme/global';
 

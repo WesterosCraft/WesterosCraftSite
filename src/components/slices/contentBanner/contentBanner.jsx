@@ -5,7 +5,7 @@ import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utility/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Element } from 'react-scroll';
-// import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'react-ga';
 
 export const ContentBanner = ({ data }) => (
   <Element name="launcher-download" className="element">
@@ -38,39 +38,38 @@ export const ContentBanner = ({ data }) => (
           </Box>
           <Flex flexDirection="row">
             {data.linkBuilder.map((link) => (
-              <div>djk</div>
-              // <OutboundLink href={link.additionalLink} download key={link.customLinkText}>
-              //   <Box
-              //     py={2}
-              //     px={3}
-              //     color="text"
-              //     sx={{
-              //       cursor: 'pointer',
-              //       listStyleType: 'none'
-              //     }}>
-              //     <Text
-              //       as="span"
-              //       fontSize={2}
-              //       sx={{
-              //         position: 'relative',
-              //         '&:after': {
-              //           display: 'none',
-              //           content: "''",
-              //           width: '100%',
-              //           height: '1.5px',
-              //           background: '#333333',
-              //           position: 'absolute',
-              //           bottom: 0,
-              //           left: 0
-              //         },
-              //         '&:hover:after': {
-              //           display: 'block'
-              //         }
-              //       }}>
-              //       {link.customLinkText}
-              //     </Text>
-              //   </Box>
-              // </OutboundLink>
+              <OutboundLink href={link.additionalLink} download key={link.customLinkText}>
+                <Box
+                  py={2}
+                  px={3}
+                  color="text"
+                  sx={{
+                    cursor: 'pointer',
+                    listStyleType: 'none'
+                  }}>
+                  <Text
+                    as="span"
+                    fontSize={2}
+                    sx={{
+                      position: 'relative',
+                      '&:after': {
+                        display: 'none',
+                        content: "''",
+                        width: '100%',
+                        height: '1.5px',
+                        background: '#333333',
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0
+                      },
+                      '&:hover:after': {
+                        display: 'block'
+                      }
+                    }}>
+                    {link.customLinkText}
+                  </Text>
+                </Box>
+              </OutboundLink>
             ))}
           </Flex>
         </Flex>
