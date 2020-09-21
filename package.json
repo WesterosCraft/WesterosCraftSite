@@ -30,12 +30,14 @@
     "react-player": "^2.6.2",
     "react-responsive": "^8.1.0",
     "react-responsive-carousel": "^3.2.9",
+    "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.1",
     "react-vertical-timeline-component": "^3.0.2",
     "rebass": "^4.0.7",
     "swr": "^0.3.2"
   },
   "devDependencies": {
+    "animate.css": "^3.7.2",
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
@@ -44,8 +46,7 @@
     "eslint-plugin-react-hooks": "^4.1.2",
     "prettier": "2.1.2",
     "prop-types": "^15.7.2",
-    "react-ga": "^3.1.2",
-    "animate.css": "^3.7.2"
+    "react-ga": "^3.1.2"
   },
   "license": "MIT"
 }

@@ -6,7 +6,6 @@ import { Button } from '../components/atoms/button';
 import Link from 'next/link';
 import { BsTriangleFill } from 'react-icons/bs';
 import SEO from '../components/organisms/seo/seo';
-// import Pixel from '../../public/images/bright-squares.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useMediaQuery } from 'react-responsive';
 import { HOME_QUERY } from '../queries/homeQuery.gql';
@@ -18,8 +17,6 @@ const IndexPage = () => {
   const { data, loading } = useQuery(HOME_QUERY);
   const homepageData = data.entry.homePageContent[0];
   const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
-
-  console.log(data);
 
   return (
     <>
@@ -103,8 +100,8 @@ const IndexPage = () => {
             bottom: 0,
             left: 0,
             zIndex: -1,
-            backgroundColor: 'rgba(81, 179, 255, 0.14)'
-            // backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%), url(${Pixel})`,
+            backgroundColor: 'rgba(81, 179, 255, 0.14)',
+            backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%), url('/bright-squares.png')`
           }}
         />
         <Box
