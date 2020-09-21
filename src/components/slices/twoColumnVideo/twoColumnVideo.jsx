@@ -21,15 +21,18 @@ export const TwoColumnVideo = ({ data }) => (
                     width={[1, 1 / 2]}
                     py={3}
                     sx={{ textAlign: ['center', null, null, 'left'] }}
-                    key={image.url}
-                  >
+                    key={image.url}>
                     <Image src={image.url} maxHeight={36} alt={image.title || ''} />
                   </Box>
                 ) : (
-                  <Box width={[1, 1 / 2]} py={3} sx={{ textAlign: ['center', null, null, 'left'] }} key={image.url}>
+                  <Box
+                    width={[1, 1 / 2]}
+                    py={3}
+                    sx={{ textAlign: ['center', null, null, 'left'] }}
+                    key={image.url}>
                     <Image src={image.url} maxHeight={36} alt={image.title || ''} />
                   </Box>
-                ),
+                )
               )}
             </Flex>
           )}

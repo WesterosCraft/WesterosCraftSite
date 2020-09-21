@@ -79,11 +79,10 @@ const Layout = ({ children }) => (
           sx={{
             margin: `0 auto`,
             position: 'relative',
-            overflow: 'hidden',
+            overflow: 'hidden'
           }}
           pt={[3, null, 10]}
-          bg="#FFFFFF"
-        >
+          bg="#FFFFFF">
           {children}
         </Box>
         <Footer links={data.craft.navData} />

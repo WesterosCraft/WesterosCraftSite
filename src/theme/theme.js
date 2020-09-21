@@ -11,13 +11,13 @@ export const theme = {
     red: {
       light: '#B32227',
       medium: '#9E1E22',
-      dark: '#891A1D',
+      dark: '#891A1D'
     },
     gray: {
       100: '#666666',
       200: '#333333',
       300: '#231F20',
-      400: '#E3E3E3',
+      400: '#E3E3E3'
     },
     crownlands: '#FBBE3B',
     westerlands: '#F98972',
@@ -32,12 +32,12 @@ export const theme = {
     beyondTheWall: '#313C46',
     success: '#365B41',
     error: '#B32227',
-    pending: '#DAAC58',
+    pending: '#DAAC58'
   },
   fonts: {
     body: `'Roboto', sans-serif`,
     heading: `'Sen', sans-serif;`,
-    monospace: 'Menlo, monospace',
+    monospace: 'Menlo, monospace'
   },
   fontWeights: {
     light: 300,
@@ -45,11 +45,11 @@ export const theme = {
     medium: 500,
     bold: 700,
     extraBold: 800,
-    black: 900,
+    black: 900
   },
   lineHeights: {
     body: 1.5,
-    heading: 1.25,
+    heading: 1.25
   },
 
   shadows: {},
@@ -57,34 +57,34 @@ export const theme = {
     heading1: {
       color: 'text',
       fontSize: ['36px', '48px', '64px'],
-      fontWeight: 'bold',
+      fontWeight: 'bold'
     },
     heading2: {
       color: 'text',
       fontSize: ['32px', '36px', '48px'],
-      fontWeight: 'bold',
+      fontWeight: 'bold'
     },
     heading3: {
       color: 'text',
       fontSize: ['24px', '32px', '36px'],
-      fontWeight: 'bold',
+      fontWeight: 'bold'
     },
     heading4: {
       color: 'text',
       fontSize: [2, 3, 4],
-      fontWeight: 'regular',
+      fontWeight: 'regular'
     },
     heading5: {
       color: 'text',
       fontSize: [3],
-      fontWeight: 'regular',
+      fontWeight: 'regular'
     },
     heading6: {
       color: 'text',
       fontSize: [3],
       fontWeight: 'regular',
-      lineHeight: 1.5,
-    },
+      lineHeight: 1.5
+    }
   },
   buttons: {
     white: {
@@ -99,7 +99,7 @@ export const theme = {
         right: 0,
         bottom: 0,
         background: '#fff',
-        boxShadow: '0 0 0 2px #333',
+        boxShadow: '0 0 0 2px #333'
       },
       '&:after': {
         content: "''",
@@ -114,16 +114,16 @@ export const theme = {
         boxShadow: '0 0 0 2px #333',
         zIndex: 1,
         transform: 'translate(-0.5em, -0.5em)',
-        transition: 'transform 100ms ease-out',
+        transition: 'transform 100ms ease-out'
       },
       '&:hover:after, &:hover span': {
         transform: 'translate(-0.25em, -0.25em)',
-        transition: 'transform 100ms ease-out',
+        transition: 'transform 100ms ease-out'
       },
       '&:active:after, &:active span': {
         transform: 'translate(0em, 0em)',
-        transition: 'transform 50ms ease-in-out',
-      },
+        transition: 'transform 50ms ease-in-out'
+      }
     },
 
     red: {
@@ -138,7 +138,7 @@ export const theme = {
         right: 0,
         bottom: 0,
         background: '#fff',
-        boxShadow: '0 0 0 2px #333',
+        boxShadow: '0 0 0 2px #333'
       },
       '&:after': {
         content: "''",
@@ -153,17 +153,17 @@ export const theme = {
         boxShadow: '0 0 0 2px #9E1E22',
         zIndex: 1,
         transform: 'translate(-0.5em, -0.5em)',
-        transition: 'transform 100ms ease-out',
+        transition: 'transform 100ms ease-out'
       },
       '&:hover:after, &:hover span': {
         transform: 'translate(-0.25em, -0.25em)',
-        transition: 'transform 100ms ease-out',
+        transition: 'transform 100ms ease-out'
       },
       '&:active:after, &:active span': {
         transform: 'translate(0em, 0em)',
-        transition: 'transform 50ms ease-in-out',
-      },
-    },
+        transition: 'transform 50ms ease-in-out'
+      }
+    }
   },
   forms: {
     input: {
@@ -173,8 +173,8 @@ export const theme = {
       border: '2px solid #333',
       '&:focus': {
         outline: '3px solid #AAA',
-        outlineOffset: 0,
-      },
+        outlineOffset: 0
+      }
     },
     select: {
       fontFamily: 'heading',
@@ -182,17 +182,17 @@ export const theme = {
       border: '2px solid #333',
       '&:focus': {
         outline: '3px solid #AAA',
-        outlineOffset: 0,
-      },
+        outlineOffset: 0
+      }
     },
     textarea: {},
     label: {
       fontWeight: 'bold',
       marginBottom: 2,
-      fontSize: 1,
+      fontSize: 1
     },
     radio: {},
-    checkbox: {},
+    checkbox: {}
   },
-  variants: {},
+  variants: {}
 };
