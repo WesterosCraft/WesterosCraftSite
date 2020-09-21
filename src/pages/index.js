@@ -20,11 +20,11 @@ const IndexPage = () => {
 
   return (
     <>
-      {/* <SEO
+      <SEO
         title={data.entry.pageTitle || data.entry.title}
         description={data.entry.pageDescription}
         image={data.entry.pageEntry && data.entry.pageImage[0].url}
-      /> */}
+      />
       <Flex
         as="section"
         className="homepage-hero"
