@@ -8,11 +8,10 @@ import { BsTriangleFill } from 'react-icons/bs';
 import SEO from '../components/organisms/seo/seo';
 // import Pixel from '../../public/images/bright-squares.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-// import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { useMediaQuery } from 'react-responsive';
 import { HOME_QUERY } from '../queries/homeQuery.gql';
 import { initializeApollo } from '../../lib/apolloClient';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { event } from 'react-ga';
 
 const IndexPage = () => {

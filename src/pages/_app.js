@@ -6,7 +6,9 @@ import { useApollo } from '../../lib/apolloClient';
 
 import 'react-vertical-timeline-component/style.min.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import 'animate.css/animate.min.css';
 
+// Use only { cache } from 'emotion'. Don't use { css }.
 import { cache } from 'emotion';
 import { globalStyles } from '../theme/global';
 
