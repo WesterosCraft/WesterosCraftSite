@@ -24,6 +24,7 @@ module.exports = {
     'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
   ],
   rules: {
+    'react/display-name': 0,
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 0,
     'jsx-a11y/anchor-is-valid': [

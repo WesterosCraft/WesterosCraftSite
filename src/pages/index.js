@@ -14,7 +14,7 @@ import { useQuery } from '@apollo/client';
 import { event } from 'react-ga';
 
 const IndexPage = () => {
-  const { data, loading } = useQuery(HOME_QUERY);
+  const { data } = useQuery(HOME_QUERY);
   const homepageData = data.entry.homePageContent[0];
   const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
 

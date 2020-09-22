@@ -44,7 +44,7 @@ export const Footer = ({ links }) => (
                 <Fragment key={i}>
                   {child.element && child.element.slug ? (
                     <Link
-                      to={`/${
+                      href={`/${
                         child.element && child.element.slug === 'frequently-asked-questions'
                           ? `wiki/miscellaneous/${child.element.slug}`
                           : child.element.slug

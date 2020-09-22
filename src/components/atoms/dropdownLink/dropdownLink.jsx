@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, Text } from 'rebass';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import Link from 'next/link';
 
 export const DropdownLink = ({ data, onClick }) => (
   <>
     {data.element && data.element.slug ? (
-      <AniLink cover duration={0.5} bg="#9E1E22" direction="right" to={`/${data.element && data.element.uri}`}>
+      <Link href={`/${data.element && data.element.uri}`}>
         <Box
           py={3}
           px={3}
@@ -18,18 +18,17 @@ export const DropdownLink = ({ data, onClick }) => (
             color: 'gray.100',
             '&:hover': {
               color: 'red.medium',
-              backgroundColor: 'rgba(120, 120, 120, 0.1)',
+              backgroundColor: 'rgba(120, 120, 120, 0.1)'
             },
             '&:active, &:visited': {
-              color: '#333333',
-            },
-          }}
-        >
+              color: '#333333'
+            }
+          }}>
           <Text as="span" fontSize={1} width={1} fontWeight="bold">
             {data.title}
           </Text>
         </Box>
-      </AniLink>
+      </Link>
     ) : (
       <Box
         href={data.url}
@@ -41,10 +40,9 @@ export const DropdownLink = ({ data, onClick }) => (
           cursor: 'pointer',
           '&:hover': {
             color: 'red.medium',
-            backgroundColor: 'rgba(120, 120, 120, 0.1)',
-          },
-        }}
-      >
+            backgroundColor: 'rgba(120, 120, 120, 0.1)'
+          }
+        }}>
         <Text as="span" fontSize={1} width={1} fontWeight="bold">
           {data.title}
         </Text>
