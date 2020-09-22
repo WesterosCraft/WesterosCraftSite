@@ -1,0 +1,32 @@
+query PROGRESS_QUERY {
+  entry(section: "progress") {
+    title
+    ... on progress_progress_Entry {
+      heading
+      subheading
+      pageTitle
+      pageDescription
+      pageImage {
+        url
+      }
+    }
+  }
+  entries(site: "westeroscraft", section: "wiki", type: "wikiDestination", orderBy: "title") {
+    title
+    slug
+    ... on wiki_wikiDestination_Entry {
+      projectDetails {
+        ... on projectDetails_details_BlockType {
+          house
+          region
+          destinationStatus
+          destinationType
+          warp
+          redoAvailable
+          serverBuild
+          destinationLevel
+        }
+      }
+    }
+  }
+}

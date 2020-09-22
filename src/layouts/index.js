@@ -10,8 +10,6 @@ import { useQuery } from '@apollo/client';
 const Layout = ({ children }) => {
   const { data, loading } = useQuery(NAV_QUERY);
 
-  console.log(data);
-
   if (loading) {
     return null;
   }

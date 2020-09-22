@@ -15,6 +15,9 @@ import {
 import { useTheme } from 'emotion-theming';
 import { Select } from '@rebass/forms';
 import { IoIosArrowDropdown } from 'react-icons/io';
+import { initializeApollo } from '../../lib/apolloClient';
+import { useQuery } from '@apollo/client';
+import { PROGRESS_QUERY } from '../queries/progressQuery.gql';
 
 const RegionProgress = ({ children, percent = 40, theme }) => (
   <Flex flexDirection={['column', 'row']} width={1} my={1}>
@@ -25,10 +28,15 @@ const RegionProgress = ({ children, percent = 40, theme }) => (
   </Flex>
 );
 
-const ProgressPage = ({ data }) => {
+const ProgressPage = () => {
   const theme = useTheme();
+  const { data, loading } = useQuery(PROGRESS_QUERY);
 
-  const memoData = useMemo(() => flatten(data.craft.entries), [data.craft.entries]);
+  if (loading) {
+    return null;
+  }
+
+  const memoData = useMemo(() => flatten(data.entries), [data.entries]);
   const totalComplete = memoData.filter((item) => item.destinationStatus === 'completed');
   const totalInProgress = memoData.filter(
     (item) => item.destinationStatus === 'inProgress' || item.destinationStatus === 'redoInProgress'
@@ -244,16 +252,16 @@ const ProgressPage = ({ data }) => {
   return (
     <>
       <SEO
-        title={data.craft.entry.pageTitle || data.craft.entry.title}
-        description={data.craft.entry.pageDescription}
-        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+        title={data.entry.pageTitle || data.entry.title}
+        description={data.entry.pageDescription}
+        image={data.entry.pageEntry && data.entry.pageImage[0].url}
       />
       <Flex px={5} flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {data.craft.entry.heading}
+          {data.entry.heading}
         </Heading>
         <Heading variant="heading4" textAlign="center" maxWidth={756} mx="auto" px={5} mt={4}>
-          {data.craft.entry.subheading}
+          {data.entry.subheading}
         </Heading>
         <Flex
           width={1}
@@ -300,7 +308,7 @@ const ProgressPage = ({ data }) => {
           justifyContent="center"
           mt={7}>
           <Card color={theme.colors.ironIslands}>
-            <Text variant="heading3">{data.craft.entries.length}</Text>
+            <Text variant="heading3">{data.entries.length}</Text>
             <Text>total projects</Text>
           </Card>
           <Card color={theme.colors.success}>
@@ -533,41 +541,19 @@ const ProgressPage = ({ data }) => {
   );
 };
 
-export const pageQuery = graphql`
-  query progressQuery {
-    craft {
-      entry(section: "progress") {
-        title
-        ... on Craft_progress_progress_Entry {
-          heading
-          subheading
-          pageTitle
-          pageDescription
-          pageImage {
-            url
-          }
-        }
-      }
-      entries(site: "westeroscraft", section: "wiki", type: "wikiDestination", orderBy: "title") {
-        title
-        slug
-        ... on Craft_wiki_wikiDestination_Entry {
-          projectDetails {
-            ... on Craft_projectDetails_details_BlockType {
-              house
-              region
-              destinationStatus
-              destinationType
-              warp
-              redoAvailable
-              serverBuild
-              destinationLevel
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: PROGRESS_QUERY
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  };
+}
 
 export default ProgressPage;
