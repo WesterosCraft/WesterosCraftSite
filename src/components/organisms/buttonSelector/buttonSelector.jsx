@@ -8,7 +8,7 @@ export const ButtonSelector = ({ data }) =>
   data.map((button, index) => {
     if (button.buttonType === 'internal') {
       return (
-        <Link href={button.buttonLink} key={index}>
+        <Link href={button.buttonLink} key={index} passHref>
           <Button as="button" variant={button.variant} download={button.download === 'true'}>
             {button.buttonText}
           </Button>

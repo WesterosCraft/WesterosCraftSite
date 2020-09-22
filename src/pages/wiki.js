@@ -1,52 +1,46 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 
 import { WikiLayout } from '../components/templates/wikiLayout';
 import { WikiSliceZone } from '../components/slices/wikiSliceZone';
 import SEO from '../components/organisms/seo/seo';
 
-const WikiPage = ({ data, pageContext }) => {
+import { WIKI_QUERY } from '../queries/wikiQuery.gql';
+import { initializeApollo } from '../../lib/apolloClient';
+import { useQuery } from '@apollo/client';
+
+const WikiPage = ({ pageContext }) => {
+  const { data } = useQuery(WIKI_QUERY);
+
   return (
     <>
       <SEO
         title="Wiki"
-        description={data.craft.entry.pageDescription}
-        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+        description={data.entry.pageDescription}
+        image={data.entry.pageEntry && data.entry.pageImage[0].url}
       />
       <WikiLayout
-        title={data.craft.entry.title || 'WesterosCraft Wiki'}
-        breadcrumb={pageContext.breadcrumb}>
-        <WikiSliceZone slices={data.craft.entry.wikiSlices} />
+        title={data.entry.title || 'WesterosCraft Wiki'}
+        // breadcrumb={pageContext.breadcrumb}
+      >
+        <WikiSliceZone slices={data.entry.wikiSlices} />
       </WikiLayout>
     </>
   );
 };
 
-export const pageQuery = graphql`
-  query wikiQuery {
-    craft {
-      entry(site: "westeroscraft", slug: "wiki") {
-        ... on Craft_wikiHome_wikiHome_Entry {
-          title
-          pageDescription
-          pageImage {
-            url
-          }
-          wikiSlices {
-            ... on Craft_wikiSlices_text_BlockType {
-              ...wikiText
-            }
-            ... on Craft_wikiSlices_entryGrid_BlockType {
-              ...entryGrid
-            }
-            ... on Craft_wikiSlices_imageGrid_BlockType {
-              ...imageGrid
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: WIKI_QUERY
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  };
+}
 
 export default WikiPage;

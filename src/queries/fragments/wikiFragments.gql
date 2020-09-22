@@ -1,0 +1,108 @@
+fragment spacings on spacings_spacing_BlockType {
+  marginTop {
+    mobile
+    tablet
+    desktop
+    wide
+  }
+  marginBottom {
+    mobile
+    tablet
+    desktop
+    wide
+  }
+  paddingTop {
+    mobile
+    tablet
+    desktop
+    wide
+  }
+  paddingBottom {
+    mobile
+    tablet
+    desktop
+    wide
+  }
+}
+
+fragment WIKI_TEXT_FRAGMENT on wikiSlices_text_BlockType {
+  typeHandle
+  redactor
+}
+
+fragment ENTRY_GRID_FRAGMENT on wikiSlices_entryGrid_BlockType {
+  typeHandle
+  heading
+  entryList {
+    title
+    slug
+    typeHandle
+    parent {
+      slug
+    }
+    ... on wiki_wikiDestination_Entry {
+      images {
+        url
+      }
+      projectDetails {
+        ... on projectDetails_details_BlockType {
+          region
+          house
+          destinationType
+        }
+      }
+    }
+    ... on wiki_wikiGuide_Entry {
+      heroImage {
+        url
+      }
+    }
+    ... on wiki_wikiMiscellaneous_Entry {
+      heroImage {
+        url
+      }
+    }
+  }
+  spacings {
+    ... on spacings_spacing_BlockType {
+      ...spacings
+    }
+  }
+}
+
+fragment IMAGE_GRID_FRAGMENT on wikiSlices_imageGrid_BlockType {
+  typeHandle
+  heading
+  imageList {
+    ... on imageList_listItem_BlockType {
+      imageTitle
+      imageDescription
+      image {
+        title
+        url
+      }
+    }
+  }
+  spacings {
+    ... on spacings_spacing_BlockType {
+      ...spacings
+    }
+  }
+  clickToCopyScript
+}
+
+fragment ACCORDION_FRAGMENT on wikiSlices_accordion_BlockType {
+  typeHandle
+  heading
+  accordionContent {
+    ... on accordionContent_accordionItem_BlockType {
+      heading
+      copy
+    }
+  }
+  spacings {
+    ... on spacings_spacing_BlockType {
+      ...spacings
+    }
+  }
+}
