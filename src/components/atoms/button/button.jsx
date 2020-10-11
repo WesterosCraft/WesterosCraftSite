@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Button as Base, Box } from 'rebass';
 
-export const Button = ({ as = 'a', children, ...props }) => (
+export const Button = React.forwardRef(({ as = 'a', children, ...props }, ref) => (
   <Base
+    ref={ref}
     as={as}
     {...props}
     mx="12px"
@@ -35,4 +36,4 @@ export const Button = ({ as = 'a', children, ...props }) => (
       {children}
     </Box>
   </Base>
-);
+));

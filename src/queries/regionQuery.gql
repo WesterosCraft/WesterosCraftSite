@@ -1,0 +1,35 @@
+query REGION_QUERY($slug: [String]) {
+  entry(site: "westeroscraft", type: "wikiRegion", slug: $slug) {
+    title
+    ... on wiki_wikiRegion_Entry {
+      title
+      slug
+      copy
+      children(orderBy: "title") {
+        title
+        slug
+        ... on wiki_wikiDestination_Entry {
+          images {
+            url
+          }
+          projectDetails {
+            ... on projectDetails_details_BlockType {
+              region
+              house
+              destinationType
+              destinationStatus
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query ALL_REGIONS_QUERY {
+  entries(site: "westeroscraft", type: "wikiRegion") {
+    ... on wiki_wikiRegion_Entry {
+      slug
+    }
+  }
+}

@@ -1,0 +1,18 @@
+#import './fragments/wikiFragments.gql'
+
+query WIKI_QUERY {
+  entry(site: "westeroscraft", slug: "wiki") {
+    ... on wikiHome_wikiHome_Entry {
+      title
+      pageDescription
+      pageImage {
+        url
+      }
+      wikiSlices {
+        ...WIKI_TEXT_FRAGMENT
+        ...ENTRY_GRID_FRAGMENT
+        ...IMAGE_GRID_FRAGMENT
+      }
+    }
+  }
+}

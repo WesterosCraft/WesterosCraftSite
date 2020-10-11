@@ -7,6 +7,7 @@ import { camelCaseFormatter, formatDate } from '../utility/helpers';
 import SEO from '../components/organisms/seo/seo';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { FiExternalLink } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 
 const View = ({ data, ...props }) => (
   <>
@@ -15,6 +16,11 @@ const View = ({ data, ...props }) => (
 );
 
 const DestinationPage = ({ pageContext }) => {
+  const router = useRouter();
+  const test = router.query;
+
+  console.log(test);
+
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -209,5 +215,14 @@ const DestinationPage = ({ pageContext }) => {
     </>
   );
 };
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { region: 'test', destination: 'dest' } } // See the "paths" section below
+    ],
+    fallback: true // See the "fallback" section below
+  };
+}
 
 export default DestinationPage;

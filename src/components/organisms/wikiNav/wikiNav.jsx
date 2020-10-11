@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Text, Flex } from 'rebass';
 import Link from 'next/link';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import Search from '../search';
+// import Search from '../search';
 
 const WikiNavGroup = ({ navItem }) => {
   const [open, setOpen] = useState(true);
@@ -51,8 +51,8 @@ const WikiNavGroup = ({ navItem }) => {
               listStyleType: 'none'
             }}>
             {navItem.children.map((child) => (
-              <Box as="li" key={child.title}>
-                <Link to={buildLink(child)}>
+              <Link key={child.title} href={buildLink(child)} passHref>
+                <Box as="li">
                   <Text
                     py={1}
                     color="gray.100"
@@ -63,8 +63,8 @@ const WikiNavGroup = ({ navItem }) => {
                     }}>
                     {child.title}
                   </Text>
-                </Link>
-              </Box>
+                </Box>
+              </Link>
             ))}
           </Flex>
         )}
@@ -83,13 +83,13 @@ export const WikiNav = ({ navData }) => {
       className="wiki-nav"
       maxWidth={['100%', null, 320]}
       sx={{ position: 'relative', flexShrink: 0, flexGrow: 1 }}>
-      <Search collapse indices={searchIndices} />
+      {/* <Search collapse indices={searchIndices} /> */}
       <Box
         className="wiki-nav-container"
         width={1}
         display={['none', null, 'block']}
         maxWidth={246}>
-        {navData.craft.wikiNav.map((navItem, i) => (
+        {navData.wikiNav.map((navItem, i) => (
           <WikiNavGroup navItem={navItem} key={i} />
         ))}
       </Box>
