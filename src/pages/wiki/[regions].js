@@ -90,7 +90,10 @@ export async function getStaticPaths() {
   });
 
   const paths = regions.data.entries.map((region) => ({
-    params: { regions: region.slug }
+    params: {
+      regions: region.slug,
+      destination: region.children.map((destination) => `${region.slug}/${destination.slug}`)
+    }
   }));
 
   return { paths, fallback: false };
@@ -98,8 +101,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const apolloClient = initializeApollo();
-
-  console.log('PARAMS', params);
 
   await apolloClient.query({
     query: REGION_QUERY

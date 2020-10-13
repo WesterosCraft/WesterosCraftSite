@@ -8,6 +8,9 @@ import SEO from '../components/organisms/seo/seo';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { FiExternalLink } from 'react-icons/fi';
 import { useRouter } from 'next/router';
+import { initializeApollo } from '../../../lib/apolloClient';
+import { useQuery } from '@apollo/client';
+import { DESTINATION_QUERY } from '../../../../queries/destinationQuery.gql';
 
 const View = ({ data, ...props }) => (
   <>
@@ -15,31 +18,30 @@ const View = ({ data, ...props }) => (
   </>
 );
 
-const DestinationPage = ({ pageContext }) => {
+const DestinationPage = (slug) => {
   const router = useRouter();
-  const test = router.query;
-
-  console.log(test);
+  const { data, loading } = useQuery(DESTINATION_QUERY, { variables: { slug: slug } });
 
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
-      {pageContext && pageContext.data && (
+      {data && (
         <SEO
-          title={pageContext.data.title}
-          description={pageContext.data.pageDescription}
-          image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
+          title={data.title}
+          description={data.pageDescription}
+          image={data.pageEntry && data.pageImage[0].url}
         />
       )}
       <WikiLayout
-        title={(pageContext && pageContext.data && pageContext.data.title) || 'WesterosCraft Wiki'}
-        breadcrumb={pageContext.breadcrumb}>
-        {pageContext.data && pageContext.data.images && pageContext.data.images.length > 0 && (
+        title={(data && data.title) || 'WesterosCraft Wiki'}
+        // breadcrumb={breadcrumb}
+      >
+        {data && data.images && data.images.length > 0 && (
           <Flex flexDirection={['column', null, 'row']} justifyContent="center" mx="auto">
             <Carousel
               onClick={() => setModalOpen(!modalOpen)}
-              views={pageContext.data.images}
+              views={data.images}
               components={{ View }}
             />
           </Flex>
@@ -50,7 +52,7 @@ const DestinationPage = ({ pageContext }) => {
               onClose={() => {
                 setModalOpen(!modalOpen);
               }}>
-              <Carousel views={pageContext.data.images} components={{ View }} />
+              <Carousel views={data.images} components={{ View }} />
             </Modal>
           ) : null}
         </ModalGateway>
@@ -59,19 +61,14 @@ const DestinationPage = ({ pageContext }) => {
           variant="heading3"
           as="h3"
           mb={5}
-          mt={
-            pageContext.data && pageContext.data.images && pageContext.data.images.length > 0
-              ? 5
-              : 0
-          }>
+          mt={data && data.images && data.images.length > 0 ? 5 : 0}>
           Project details
-          {pageContext &&
-            pageContext.data &&
-            pageContext.data.projectDetails &&
-            pageContext.data.projectDetails.length &&
-            pageContext.data.projectDetails[0].application && (
+          {data &&
+            data.projectDetails &&
+            data.projectDetails.length &&
+            data.projectDetails[0].application && (
               <a
-                href={pageContext.data.projectDetails[0].application}
+                href={data.projectDetails[0].application}
                 target="_blank"
                 rel="noreferrer noopener"
                 style={{ textDecoration: 'none', marginLeft: '8px' }}>
@@ -79,149 +76,148 @@ const DestinationPage = ({ pageContext }) => {
               </a>
             )}
         </Text>
-        {pageContext &&
-          pageContext.data &&
-          pageContext.data.projectDetails &&
-          pageContext.data.projectDetails.length && (
+        {data && data.projectDetails && data.projectDetails.length && (
+          <Flex
+            flexDirection="row"
+            flexWrap="wrap"
+            alignItems="center"
+            justifyContent="space-between"
+            width={[1, 2 / 3, 1]}
+            mb={10}
+            mx="auto">
+            {data &&
+              data.projectDetails &&
+              data.projectDetails.length &&
+              data.projectDetails[0].banner.length > 0 && (
+                <Image src={data.projectDetails[0].banner[0].url} maxHeight={150} />
+              )}
             <Flex
-              flexDirection="row"
-              flexWrap="wrap"
-              alignItems="center"
-              justifyContent="space-between"
-              width={[1, 2 / 3, 1]}
-              mb={10}
-              mx="auto">
-              {pageContext &&
-                pageContext.data &&
-                pageContext.data.projectDetails &&
-                pageContext.data.projectDetails.length &&
-                pageContext.data.projectDetails[0].banner.length > 0 && (
-                  <Image src={pageContext.data.projectDetails[0].banner[0].url} maxHeight={150} />
-                )}
+              as="ol"
+              flexDirection="column"
+              width={[1, null, null, '42%']}
+              sx={{ paddingInlineStart: 0 }}>
               <Flex
-                as="ol"
-                flexDirection="column"
-                width={[1, null, null, '42%']}
-                sx={{ paddingInlineStart: 0 }}>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    Region
-                  </Text>
-                  <Text as="p" width={1 / 2}>
-                    {camelCaseFormatter(pageContext.data.projectDetails[0].region)}
-                  </Text>
-                </Flex>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    House
-                  </Text>
-                  <Text as="p" width={1 / 2}>
-                    {pageContext.data.projectDetails[0].house}
-                  </Text>
-                </Flex>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    Status
-                  </Text>
-                  <Text as="p" width={1 / 2}>
-                    {camelCaseFormatter(pageContext.data.projectDetails[0].destinationStatus)}
-                  </Text>
-                </Flex>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    Date started
-                  </Text>
-                  <Text as="p" width={1 / 2}>
-                    {formatDate(pageContext.data.projectDetails[0].dateStarted)}
-                  </Text>
-                </Flex>
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  Region
+                </Text>
+                <Text as="p" width={1 / 2}>
+                  {camelCaseFormatter(data.projectDetails[0].region)}
+                </Text>
               </Flex>
               <Flex
-                as="ol"
-                flexDirection="column"
-                width={[1, null, null, '42%']}
-                sx={{ paddingInlineStart: 0 }}>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    Type
-                  </Text>
-                  <Text as="p" width={1 / 2}>
-                    {camelCaseFormatter(pageContext.data.projectDetails[0].destinationType)}
-                  </Text>
-                </Flex>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    Warp
-                  </Text>
-                  <Text as="p" width={1 / 2}>{`/${_lowerCase(
-                    pageContext.data.projectDetails[0].warp
-                  )}`}</Text>
-                </Flex>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    Project lead(s)
-                  </Text>
-                  <Text as="p" width={1 / 2}>
-                    {pageContext.data.projectDetails[0].projectLead}
-                  </Text>
-                </Flex>
-                <Flex
-                  as="li"
-                  justifyContent={['space-between', null, null, 'flex-start']}
-                  py={2}
-                  width={1}>
-                  <Text as="h4" fontWeight={600} width={1 / 2}>
-                    Date completed
-                  </Text>
-                  <Text as="p" width={1 / 2}>
-                    {formatDate(pageContext.data.projectDetails[0].dateCompleted)}
-                  </Text>
-                </Flex>
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  House
+                </Text>
+                <Text as="p" width={1 / 2}>
+                  {data.projectDetails[0].house}
+                </Text>
+              </Flex>
+              <Flex
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  Status
+                </Text>
+                <Text as="p" width={1 / 2}>
+                  {camelCaseFormatter(data.projectDetails[0].destinationStatus)}
+                </Text>
+              </Flex>
+              <Flex
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  Date started
+                </Text>
+                <Text as="p" width={1 / 2}>
+                  {formatDate(data.projectDetails[0].dateStarted)}
+                </Text>
               </Flex>
             </Flex>
-          )}
-        {pageContext.data && pageContext.data.copy && (
-          <Redactor dangerouslySetInnerHTML={{ __html: pageContext.data.copy }} />
+            <Flex
+              as="ol"
+              flexDirection="column"
+              width={[1, null, null, '42%']}
+              sx={{ paddingInlineStart: 0 }}>
+              <Flex
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  Type
+                </Text>
+                <Text as="p" width={1 / 2}>
+                  {camelCaseFormatter(data.projectDetails[0].destinationType)}
+                </Text>
+              </Flex>
+              <Flex
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  Warp
+                </Text>
+                <Text as="p" width={1 / 2}>{`/${_lowerCase(data.projectDetails[0].warp)}`}</Text>
+              </Flex>
+              <Flex
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  Project lead(s)
+                </Text>
+                <Text as="p" width={1 / 2}>
+                  {data.projectDetails[0].projectLead}
+                </Text>
+              </Flex>
+              <Flex
+                as="li"
+                justifyContent={['space-between', null, null, 'flex-start']}
+                py={2}
+                width={1}>
+                <Text as="h4" fontWeight={600} width={1 / 2}>
+                  Date completed
+                </Text>
+                <Text as="p" width={1 / 2}>
+                  {formatDate(data.projectDetails[0].dateCompleted)}
+                </Text>
+              </Flex>
+            </Flex>
+          </Flex>
         )}
+        {data && data.copy && <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />}
       </WikiLayout>
     </>
   );
 };
 
-export async function getStaticPaths() {
+export async function getStaticProps({ params }) {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: DESTINATION_QUERY
+  });
+
   return {
-    paths: [
-      { params: { region: 'test', destination: 'dest' } } // See the "paths" section below
-    ],
-    fallback: true // See the "fallback" section below
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+      slug: params.regions
+    },
+    revalidate: 1
   };
 }
 

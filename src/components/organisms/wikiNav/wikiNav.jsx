@@ -52,7 +52,7 @@ const WikiNavGroup = ({ navItem }) => {
             }}>
             {navItem.children.map((child) => (
               <Link key={child.title} href={buildLink(child)} passHref>
-                <Box as="li">
+                <Box as="li" sx={{ cursor: 'pointer' }}>
                   <Text
                     py={1}
                     color="gray.100"

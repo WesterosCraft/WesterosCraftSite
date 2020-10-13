@@ -7,10 +7,13 @@ import Popup from 'reactjs-popup';
 import { camelCaseFormatter } from '../../../utility/helpers';
 import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon';
 
-export const EntryCard = React.forwardRef(({ data }, ref) => {
+export const EntryCard = React.forwardRef(({ data, href }, ref) => {
   const theme = useTheme();
   return (
     <Box
+      as="a"
+      href={href}
+      className="entry-card"
       ref={ref}
       sx={{
         position: 'relative',
@@ -18,7 +21,8 @@ export const EntryCard = React.forwardRef(({ data }, ref) => {
         padding: 0,
         background: data.projectDetails ? theme.colors[data.projectDetails[0].region] : '#333333',
         zIndex: 1,
-        width: 'auto'
+        width: 'auto',
+        cursor: 'pointer'
       }}
       mt={[5]}
       mr={[0, null, 5]}>
