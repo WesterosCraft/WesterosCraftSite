@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { WIKI_QUERY } from '../queries/wikiQuery.gql';
 import { initializeApollo } from '../../lib/apolloClient';
 import { useQuery } from '@apollo/client';
+import { computeBreadcrumbs } from '../utility/helpers';
 
 const WikiPage = () => {
   const { data } = useQuery(WIKI_QUERY);
@@ -20,7 +21,9 @@ const WikiPage = () => {
         description={data.entry.pageDescription}
         image={data.entry.pageEntry && data.entry.pageImage[0].url}
       />
-      <WikiLayout title={data.entry.title || 'WesterosCraft Wiki'} breadcrumb={router.asPath}>
+      <WikiLayout
+        title={data.entry.title || 'WesterosCraft Wiki'}
+        breadcrumb={computeBreadcrumbs(router.asPath)}>
         <WikiSliceZone slices={data.entry.wikiSlices} />
       </WikiLayout>
     </>

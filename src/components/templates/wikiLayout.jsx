@@ -1,29 +1,33 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Box, Flex, Text } from 'rebass';
 import { WikiNav } from '../organisms/wikiNav/wikiNav';
 import { WikiContent } from '../organisms/wikiContent';
-import { camelCaseFormatter } from '../../utility/helpers';
 import { IoIosArrowForward } from 'react-icons/io';
 import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 import { WIKI_NAV_QUERY } from '../../queries/wikiNavQuery.gql';
 
+const BreadcrumbItem = React.forwardRef(({ children, index, ...rest }, ref) => {
+  return (
+    <Text
+      ref={ref}
+      sx={{ cursor: 'pointer' }}
+      fontSize={['14px', null, '16px']}
+      color="white"
+      pr={1}
+      pl={index !== 0 && 1}
+      {...rest}>
+      {children}
+    </Text>
+  );
+});
+
 export const WikiLayout = ({ children, title, breadcrumb }) => {
   const { data, loading } = useQuery(WIKI_NAV_QUERY);
-  const [crumbs, setCrumbs] = useState([]);
 
   if (loading) {
     return null;
   }
-
-  const getBreadcrumbs = () => {
-    const paths = [];
-    breadcrumb.split('/').reduce((prev, curr, index) => {
-      paths[index] = `${prev}/${curr}`;
-      return paths[index];
-    });
-    setCrumbs(paths);
-  };
 
   return (
     <Box className="wiki-layout" pb={[15, 20]}>
@@ -45,18 +49,15 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
           mx="auto"
           width={1}
           px={[0, null, 5]}>
-          {crumbs.length > 1 &&
-            crumbs.map((crumb, i) => (
+          {breadcrumb &&
+            Array.isArray(breadcrumb) &&
+            breadcrumb.length > 1 &&
+            breadcrumb.map((crumb, i) => (
               <Fragment key={i}>
-                <Link href={`/${crumb}`}>
-                  <Text
-                    fontSize={['14px', null, '16px']}
-                    color="white"
-                    key={crumb}
-                    pr={1}
-                    pl={i !== 0 && 1}>
-                    {camelCaseFormatter(crumb)}
-                  </Text>
+                <Link href={`${crumb.link}`} passHref>
+                  <BreadcrumbItem key={i} index={i} crumb={crumb}>
+                    {crumb.text}
+                  </BreadcrumbItem>
                 </Link>
                 {breadcrumb.length - 1 !== i ? <IoIosArrowForward color="white" /> : null}
               </Fragment>

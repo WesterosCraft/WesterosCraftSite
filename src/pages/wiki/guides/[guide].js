@@ -8,6 +8,7 @@ import { useQuery } from '@apollo/client';
 import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
+import { computeBreadcrumbs } from '../../../utility/helpers';
 
 const GuidePage = ({ slug }) => {
   const { data, loading } = useQuery(GUIDE_QUERY, { variables: { slug: slug } });
@@ -34,7 +35,7 @@ const GuidePage = ({ slug }) => {
       )}
       <WikiLayout
         title={(data && data.entry.title) || 'WesterosCraft Wiki'}
-        breadcrumb={router.asPath}>
+        breadcrumb={computeBreadcrumbs(router.asPath)}>
         <WikiSliceZone slices={data.entry.wikiSlices} />
       </WikiLayout>
     </>

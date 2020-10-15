@@ -8,6 +8,7 @@ import { useQuery } from '@apollo/client';
 import { MISC_QUERY, ALL_MISC_QUERY } from '../../../queries/miscQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
+import { computeBreadcrumbs } from '../../../utility/helpers';
 
 const MiscellaneousPage = ({ slug }) => {
   const { data, loading } = useQuery(MISC_QUERY, { variables: { slug: slug } });
@@ -34,7 +35,7 @@ const MiscellaneousPage = ({ slug }) => {
       )}
       <WikiLayout
         title={(data && data.entry.title) || 'WesterosCraft Wiki'}
-        breadcrumb={router.asPath}>
+        breadcrumb={computeBreadcrumbs(router.asPath)}>
         <WikiSliceZone slices={data && data.entry && data.entry.wikiSlices} />
       </WikiLayout>
     </>

@@ -99,3 +99,17 @@ export const getDestinationLevel = (num) => {
       return 0;
   }
 };
+
+export const computeBreadcrumbs = (breadcrumb) => {
+  const paths = [{ text: 'Home', link: '/' }];
+  const crumbs = breadcrumb.split('/');
+
+  for (var i = 0; i < crumbs.length; i++) {
+    var part = crumbs[i];
+    var text = camelCaseFormatter(part);
+    var link = crumbs.slice(0, i + 1).join('/');
+    paths.push({ text: text, link: link });
+  }
+
+  return paths.filter((item) => item.text !== '');
+};

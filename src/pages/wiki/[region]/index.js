@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { EntryCard } from '../../../components/atoms/entryCard';
 import { Flex } from 'rebass';
 import Link from 'next/link';
 import { regionSlugFormatter } from '../../../utility/regionSlugFormatter';
+import { computeBreadcrumbs } from '../../../utility/helpers';
 import { Redactor } from '../../../components/atoms/redactor';
 import { RegionFilters } from '../../../components/atoms/regionFilters/regionFilters';
 import SEO from '../../../components/organisms/seo/seo';
@@ -55,7 +56,9 @@ const RegionPage = ({ slug }) => {
           image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
         />
       )} */}
-      <WikiLayout title={slug || 'WesterosCraft Wiki'} breadcrumb={router.asPath}>
+      <WikiLayout
+        title={slug || 'WesterosCraft Wiki'}
+        breadcrumb={computeBreadcrumbs(router.asPath)}>
         {loading || !data ? (
           <Spinner />
         ) : (
