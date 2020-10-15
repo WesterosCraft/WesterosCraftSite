@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Box, Flex, Text } from 'rebass';
 import { WikiNav } from '../organisms/wikiNav/wikiNav';
 import { WikiContent } from '../organisms/wikiContent';
@@ -10,10 +10,20 @@ import { WIKI_NAV_QUERY } from '../../queries/wikiNavQuery.gql';
 
 export const WikiLayout = ({ children, title, breadcrumb }) => {
   const { data, loading } = useQuery(WIKI_NAV_QUERY);
+  const [crumbs, setCrumbs] = useState([]);
 
   if (loading) {
     return null;
   }
+
+  const getBreadcrumbs = () => {
+    const paths = [];
+    breadcrumb.split('/').reduce((prev, curr, index) => {
+      paths[index] = `${prev}/${curr}`;
+      return paths[index];
+    });
+    setCrumbs(paths);
+  };
 
   return (
     <Box className="wiki-layout" pb={[15, 20]}>
@@ -35,20 +45,20 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
           mx="auto"
           width={1}
           px={[0, null, 5]}>
-          {breadcrumb &&
-            breadcrumb.crumbs.map((crumb, i) => (
+          {crumbs.length > 1 &&
+            crumbs.map((crumb, i) => (
               <Fragment key={i}>
-                <Link to={crumb.pathname}>
+                <Link href={`/${crumb}`}>
                   <Text
                     fontSize={['14px', null, '16px']}
                     color="white"
-                    key={crumb.crumbLabel}
+                    key={crumb}
                     pr={1}
                     pl={i !== 0 && 1}>
-                    {camelCaseFormatter(crumb.crumbLabel)}
+                    {camelCaseFormatter(crumb)}
                   </Text>
                 </Link>
-                {breadcrumb.crumbs.length - 1 !== i ? <IoIosArrowForward color="white" /> : null}
+                {breadcrumb.length - 1 !== i ? <IoIosArrowForward color="white" /> : null}
               </Fragment>
             ))}
         </Flex>

@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { WikiLayout } from '../../components/templates/wikiLayout';
-import { EntryCard } from '../../components/atoms/entryCard';
+import { WikiLayout } from '../../../components/templates/wikiLayout';
+import { EntryCard } from '../../../components/atoms/entryCard';
 import { Flex } from 'rebass';
 import Link from 'next/link';
-import { regionSlugFormatter } from '../../utility/regionSlugFormatter';
-import { Redactor } from '../../components/atoms/redactor';
-import { RegionFilters } from '../../components/atoms/regionFilters/regionFilters';
-import SEO from '../../components/organisms/seo/seo';
-import { Spinner } from '../../components/atoms/spinner';
-import { REGION_QUERY, ALL_REGIONS_QUERY } from '../../queries/regionQuery.gql';
-import { initializeApollo } from '../../../lib/apolloClient';
+import { regionSlugFormatter } from '../../../utility/regionSlugFormatter';
+import { Redactor } from '../../../components/atoms/redactor';
+import { RegionFilters } from '../../../components/atoms/regionFilters/regionFilters';
+import SEO from '../../../components/organisms/seo/seo';
+import { Spinner } from '../../../components/atoms/spinner';
+import { REGION_QUERY, ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gql';
+import { initializeApollo } from '../../../../lib/apolloClient';
 import { useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
+import flatten from 'lodash/flatten';
 
 const RegionPage = ({ slug }) => {
   const { data, loading } = useQuery(REGION_QUERY, { variables: { slug: slug } });
 
   const [items, setItems] = useState([]);
-  console.log('DATA', items);
+  const router = useRouter();
 
   // useEffect(() => {
   //   setItems(data);
@@ -53,10 +55,7 @@ const RegionPage = ({ slug }) => {
           image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
         />
       )} */}
-      <WikiLayout
-        title={slug || 'WesterosCraft Wiki'}
-        // breadcrumb={pageContext.breadcrumb}
-      >
+      <WikiLayout title={slug || 'WesterosCraft Wiki'} breadcrumb={router.asPath}>
         {loading || !data ? (
           <Spinner />
         ) : (
@@ -89,12 +88,18 @@ export async function getStaticPaths() {
     query: ALL_REGIONS_QUERY
   });
 
-  const paths = regions.data.entries.map((region) => ({
-    params: {
-      regions: region.slug,
-      destination: region.children.map((destination) => `${region.slug}/${destination.slug}`)
-    }
-  }));
+  const pages = regions.data.entries.map((item) => {
+    return item.children.map((child) => {
+      return {
+        params: {
+          region: item.slug,
+          destination: child.slug
+        }
+      };
+    });
+  });
+
+  const paths = flatten(pages);
 
   return { paths, fallback: false };
 }
@@ -109,7 +114,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
-      slug: params.regions
+      slug: params.region
     },
     revalidate: 1
   };

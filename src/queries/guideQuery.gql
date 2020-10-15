@@ -1,0 +1,23 @@
+#import './fragments/wikiFragments.gql'
+
+query GUIDE_QUERY($slug: [String]) {
+  entry(site: "westeroscraft", type: "wikiGuide", slug: $slug) {
+    title
+    ... on wiki_wikiGuide_Entry {
+      title
+      wikiSlices {
+        ...WIKI_TEXT_FRAGMENT
+        ...ENTRY_GRID_FRAGMENT
+        ...IMAGE_GRID_FRAGMENT
+      }
+    }
+  }
+}
+
+query ALL_GUIDES_QUERY {
+  entries(site: "westeroscraft", type: "wikiGuide") {
+    ... on wiki_wikiGuide_Entry {
+      slug
+    }
+  }
+}
