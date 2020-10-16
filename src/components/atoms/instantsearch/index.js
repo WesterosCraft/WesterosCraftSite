@@ -5,6 +5,6 @@ const indexName = 'Wiki';
 
 // Keys are supplied from Algolio's instant search example
 // https://github.com/algolia/react-instantsearch
-const searchClient = algoliasearch('latency', '6be0576ff61c053d5f9a3225e2a90f76');
+const searchClient = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
 
 export { findResultsState, indexName, searchClient };

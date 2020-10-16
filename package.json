@@ -23,6 +23,7 @@
     "lunr": "^2.3.9",
     "next": "latest",
     "node-fetch": "^2.6.1",
+    "qs": "^6.9.4",
     "react": "^16.7.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-copy-to-clipboard": "^5.0.2",

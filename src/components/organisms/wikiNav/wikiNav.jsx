@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Text, Flex } from 'rebass';
 import Link from 'next/link';
 import { IoMdArrowDropdown } from 'react-icons/io';
-// import Search from '../search';
+import { Search } from '../search';
+import Router from 'next/router';
+import qs from 'qs';
+import { findResultsState, indexName, searchClient } from '../../atoms/instantsearch';
 
 const WikiNavGroup = ({ navItem }) => {
   const [open, setOpen] = useState(true);
@@ -74,8 +77,6 @@ const WikiNavGroup = ({ navItem }) => {
 };
 
 export const WikiNav = ({ navData }) => {
-  const searchIndices = [{ name: `Wiki`, title: `Destinations`, hitComp: `DestinationHit` }];
-
   return (
     <Flex
       flexDirection="column"
@@ -83,7 +84,7 @@ export const WikiNav = ({ navData }) => {
       className="wiki-nav"
       maxWidth={['100%', null, 320]}
       sx={{ position: 'relative', flexShrink: 0, flexGrow: 1 }}>
-      {/* <Search collapse indices={searchIndices} /> */}
+      <Search />
       <Box
         className="wiki-nav-container"
         width={1}

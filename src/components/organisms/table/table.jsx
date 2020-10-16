@@ -1,5 +1,12 @@
 import React from 'react';
-import { useTable, useSortBy, usePagination, useResizeColumns, useFlexLayout, useRowSelect } from 'react-table';
+import {
+  useTable,
+  useSortBy,
+  usePagination,
+  useResizeColumns,
+  useFlexLayout,
+  useRowSelect
+} from 'react-table';
 import { Flex, Box, Text } from 'rebass';
 
 export const Table = ({ columns, data, maxWidth = '100%' }) => {
@@ -13,21 +20,21 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
       style: {
         justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
         alignItems: 'flex-start',
-        display: 'flex',
-      },
-    },
+        display: 'flex'
+      }
+    }
   ];
 
   const { getTableProps, getTableBodyProps, headerGroups, prepareRow, page } = useTable(
     {
       columns,
-      data,
+      data
     },
     useSortBy,
     usePagination,
     useResizeColumns,
     useFlexLayout,
-    useRowSelect,
+    useRowSelect
   );
 
   return (
@@ -46,18 +53,16 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
         height: 'auto',
 
         overflowY: 'hidden',
-        border: '2px solid black',
+        border: '2px solid black'
       }}
-      {...getTableProps()}
-    >
+      {...getTableProps()}>
       <Box
         py={5}
         className="table-content"
         sx={{
           overflowY: 'auto',
-          position: 'relative',
-        }}
-      >
+          position: 'relative'
+        }}>
         {headerGroups.map((headerGroup) => (
           <div className="tr" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
@@ -67,13 +72,12 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
                 fontSize="14px"
                 ml={4}
                 sx={{
-                  textTransform: 'uppercase',
+                  textTransform: 'uppercase'
                 }}
                 pb={4}
                 key={column.index}
                 {...column.getHeaderProps(headerProps)}
-                className="th"
-              >
+                className="th">
                 {column.render('Header')}
               </Text>
             ))}
@@ -82,8 +86,7 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
         <Box
           className="table-items tbody"
           sx={{ border: 'none', borderTop: '1px solid black' }}
-          {...getTableBodyProps()}
-        >
+          {...getTableBodyProps()}>
           {page.map((row) => {
             prepareRow(row);
             return (
@@ -97,10 +100,9 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
                 py={1}
                 sx={{
                   borderBottom: '1px solid #e2e8f0',
-                  minHeight: '48px',
+                  minHeight: '48px'
                 }}
-                {...row.getRowProps()}
-              >
+                {...row.getRowProps()}>
                 {row.cells.map((cell, i) => {
                   return (
                     <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
