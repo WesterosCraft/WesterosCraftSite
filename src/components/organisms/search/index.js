@@ -4,7 +4,9 @@ import { Input } from '@rebass/forms';
 import algoliaClient from 'algoliasearch/lite';
 import debounce from 'lodash/debounce';
 
-const algolia = algoliaClient('FTNH17E4SB', 'f60764e638ac871c384b425a4f90be78').initIndex('Wiki');
+const algolia = algoliaClient(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY).initIndex(
+  'Wiki'
+);
 
 const search = (query, params = {}) =>
   algolia.search(query, {
