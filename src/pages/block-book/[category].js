@@ -1,27 +1,39 @@
 import React from 'react';
-import SEO from '../components/organisms/seo/seo';
+import SEO from '../../components/organisms/seo/seo';
 import Popup from 'reactjs-popup';
-
-import { graphql } from 'gatsby';
 import { Heading, Box, Flex, Image, Text } from 'rebass';
-import { BlockBookLayout } from '../components/templates/blockBookLayout';
+import { BlockBookLayout } from '../../components/templates/blockBookLayout';
 import { RiCloseCircleLine } from 'react-icons/ri';
-import { Tag } from '../components/atoms/tag';
-import { Link } from 'gatsby';
+import { Tag } from '../../components/atoms/tag';
+import Link from 'next/link';
+import { initializeApollo } from '../../../lib/apolloClient';
+import { useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
+import { computeBreadcrumbs } from '../../utility/helpers';
+import { CATEGORY_QUERY, ALL_CATEGORY_PAGES_QUERY } from '../../queries/blockBookQuery.gql';
 
-const CategoryPage = ({ data, pageContext }) => {
+const CategoryPage = ({ slug }) => {
+  const { data, loading } = useQuery(CATEGORY_QUERY, { variables: { slug: slug } });
+  const router = useRouter();
+
+  console.log(data);
+
+  if (loading) {
+    return null;
+  }
+
   return (
     <>
-      {pageContext && pageContext.data && (
+      {data && (
         <SEO
-          title={pageContext.data.pageTitle || pageContext.data.title}
-          description={pageContext.data.pageDescription}
-          image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
+          title={data.pageTitle || data.title}
+          description={data.pageDescription}
+          image={data.pageEntry && data.pageImage[0].url}
         />
       )}
       <BlockBookLayout
-        title={(pageContext && pageContext.data && pageContext.data.title) || 'Category'}
-        breadcrumb={pageContext.breadcrumb}>
+        title={(data && data.title) || 'Category'}
+        breadcrumb={computeBreadcrumbs(router.asPath)}>
         <Box
           sx={{
             display: 'grid',
@@ -251,7 +263,7 @@ const CategoryPage = ({ data, pageContext }) => {
                     flexWrap="wrap">
                     {entry.blockCategory.length &&
                       entry.blockCategory.map((cat, i) => (
-                        <Link to={`/block-book/${cat.slug}`}>
+                        <Link key={i} href={`/block-book/${cat.slug}`}>
                           <Tag key={i}>{cat.title}</Tag>
                         </Link>
                       ))}
@@ -266,32 +278,35 @@ const CategoryPage = ({ data, pageContext }) => {
   );
 };
 
-export const pageQuery = graphql`
-  query categoryQuery($id: [Int]) {
-    craft {
-      entries(section: "block", type: "block", relatedTo: $id) {
-        title
-        slug
-        ... on Craft_block_block_Entry {
-          parentBlockName
-          blockId
-          meta
-          namespacedId
-          blockType
-          material
-          sound
-          blockCategory {
-            title
-            slug
-          }
-          textures {
-            url
-            title
-          }
-        }
-      }
+export async function getStaticPaths() {
+  const apolloClient = initializeApollo();
+
+  const categories = await apolloClient.query({
+    query: ALL_CATEGORY_PAGES_QUERY
+  });
+
+  const paths = categories.data.entries.map((page) => ({
+    params: {
+      category: page.id
     }
-  }
-`;
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: CATEGORY_QUERY
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  };
+}
 
 export default CategoryPage;

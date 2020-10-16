@@ -43,3 +43,16 @@ query NAV_QUERY {
     }
   }
 }
+
+query BLOCKBOOK_NAV_QUERY {
+  categories: categories(group: "blocks") {
+    title
+    slug
+    ... on blocks_Category {
+      pageImage {
+        url
+      }
+      pageDescription
+    }
+  }
+}

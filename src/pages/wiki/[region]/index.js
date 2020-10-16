@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { EntryCard } from '../../../components/atoms/entryCard';
 import { Flex } from 'rebass';
@@ -18,44 +18,48 @@ import flatten from 'lodash/flatten';
 const RegionPage = ({ slug }) => {
   const { data, loading } = useQuery(REGION_QUERY, { variables: { slug: slug } });
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(data && data.entry.children);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   setItems(data);
-  // }, [data]);
+  const regionItems = useMemo(() => {
+    return data && data.entry.children;
+  }, [data]);
 
-  // const onTypeChange = (option) => {
-  //   if (option === null) {
-  //     setItems(items.entry.children);
-  //     return;
-  //   }
-  //   const filtered = items.entry.children.filter(
-  //     (thing) => thing.projectDetails[0].destinationType === option.value
-  //   );
-  //   setItems(filtered);
-  // };
+  if (loading) {
+    return null;
+  }
 
-  // const onStatusChange = (option) => {
-  //   if (option === null) {
-  //     setItems(items.entry.children);
-  //     return;
-  //   }
-  //   const filtered = items.entry.children.filter(
-  //     (thing) => thing.projectDetails[0].destinationStatus === option.value
-  //   );
-  //   setItems(filtered);
-  // };
+  const onTypeChange = (option) => {
+    if (option === null) {
+      setItems(regionItems);
+      return;
+    }
+    const filtered = items.filter(
+      (thing) => thing.projectDetails[0].destinationType === option.value
+    );
+    setItems(filtered);
+  };
+
+  const onStatusChange = (option) => {
+    if (option === null) {
+      setItems(regionItems);
+      return;
+    }
+    const filtered = items.filter(
+      (thing) => thing.projectDetails[0].destinationStatus === option.value
+    );
+    setItems(filtered);
+  };
 
   return (
     <>
-      {/* {data && (
+      {data && (
         <SEO
-          title={pageContext.data.pageTitle || pageContext.data.title}
-          description={pageContext.data.pageDescription}
-          image={pageContext.data.pageEntry && pageContext.data.pageImage[0].url}
+          title={data.entry.pageTitle || data.entry.title}
+          description={data.entry.pageDescription}
+          image={data.entry.pageEntry && data.entry.pageImage[0].url}
         />
-      )} */}
+      )}
       <WikiLayout
         title={slug || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
@@ -64,18 +68,20 @@ const RegionPage = ({ slug }) => {
         ) : (
           <>
             <Redactor dangerouslySetInnerHTML={{ __html: data.entry.copy }} />
-            {/* <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} /> */}
+            <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
             <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
-              {data.entry.children.map((entry) => (
-                <Link
-                  passHref
-                  href={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${
-                    entry.slug
-                  }`}
-                  key={entry.slug}>
-                  <EntryCard data={entry} key={entry.slug} />
-                </Link>
-              ))}
+              {items &&
+                items.length &&
+                items.map((entry) => (
+                  <Link
+                    passHref
+                    href={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${
+                      entry.slug
+                    }`}
+                    key={entry.slug}>
+                    <EntryCard data={entry} key={entry.slug} />
+                  </Link>
+                ))}
             </Flex>
           </>
         )}

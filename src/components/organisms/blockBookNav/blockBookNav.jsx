@@ -94,7 +94,7 @@ export const BlockBookNav = ({ navData }) => {
         <Text variant="heading6" fontSize="18px" fontWeight="bold">
           Categories
         </Text>
-        {navData.craft.categories.map((navItem, i) => (
+        {navData.categories.map((navItem, i) => (
           <Link href={`/block-book/${navItem.slug}`} key={i}>
             <Box as="li" sx={{ listStyleType: 'none' }}>
               <Text

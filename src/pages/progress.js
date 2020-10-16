@@ -32,8 +32,6 @@ const ProgressPage = () => {
   const theme = useTheme();
   const { data, loading } = useQuery(PROGRESS_QUERY);
 
-  console.log(data);
-
   if (loading) {
     return null;
   }

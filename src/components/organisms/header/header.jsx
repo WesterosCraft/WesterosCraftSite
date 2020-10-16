@@ -50,10 +50,22 @@ export function Header({ links }) {
                     '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)'
                 }}
                 arrowStyle={{
-                  padding: '0px',
-                  border: '1px solid #333333',
+                  background: ' #fff',
+                  border: '1px solid #333',
                   boxShadow:
-                    '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)'
+                    'rgba(50,50,93,.25) 0 30px 60px -12px,rgba(0,0,0,.3) 0 18px 36px -18px,rgba(0,0,0,.024) 0 -12px 36px -8px',
+                  color: '#fff',
+                  height: '10px',
+                  left: '50%',
+                  lineHeight: '18.4px',
+                  margin: '-5px',
+                  padding: 0,
+                  position: 'absolute',
+                  textAlign: 'center',
+                  top: 7,
+                  transform: 'rotate(225deg)',
+                  width: '10px',
+                  zIndex: -1
                 }}>
                 <Flex flexDirection="column" bg="white">
                   {link.children.map((child) => (
@@ -151,6 +163,7 @@ Header.NavGroup = function NavGroup({ children, ...restProps }) {
 Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) => {
   return (
     <Box
+      className="header-nav-item"
       ref={ref}
       {...restProps}
       color="gray.100"
@@ -158,6 +171,7 @@ Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) =>
         lineHeight: '3rem',
         height: '3rem',
         cursor: 'pointer',
+        textAlign: 'center',
         '&:hover': {
           color: dropdown ? 'gray.200' : 'red.medium',
           transform: 'translateY(-1px)',
