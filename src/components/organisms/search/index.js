@@ -3,10 +3,12 @@ import { Box, Flex, Text } from 'rebass';
 import { Input } from '@rebass/forms';
 import algoliaClient from 'algoliasearch/lite';
 import debounce from 'lodash/debounce';
+import Link from 'next/link';
 
-const algolia = algoliaClient(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY).initIndex(
-  'Wiki'
-);
+const algolia = algoliaClient(
+  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY
+).initIndex('Wiki');
 
 const search = (query, params = {}) =>
   algolia.search(query, {
@@ -15,10 +17,12 @@ const search = (query, params = {}) =>
     ...params
   });
 
-const Results = ({ results }) =>
-  results.map((result) => (
+const DropdownLink = React.forwardRef(({ children, href }, ref) => {
+  return (
     <Box
-      key={result.title}
+      as="a"
+      href={href}
+      ref={ref}
       px={4}
       py={2}
       sx={{
@@ -28,8 +32,18 @@ const Results = ({ results }) =>
           backgroundColor: 'rgba(120, 120, 120, 0.1)'
         }
       }}>
-      <Text>{result.title}</Text>
+      {children}
     </Box>
+  );
+});
+
+const Results = ({ results }) =>
+  results.map((result) => (
+    <Link href={result.url} passHref key={result.objectID}>
+      <DropdownLink>
+        <Text>{result.title}</Text>
+      </DropdownLink>
+    </Link>
   ));
 
 export const Search = () => {
@@ -43,9 +57,7 @@ export const Search = () => {
         setResults(hits);
         setLoading(false);
       });
-      console.log(results);
     }, 550),
-
     []
   );
 
