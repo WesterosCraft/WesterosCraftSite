@@ -4,6 +4,7 @@ import { Input } from '@rebass/forms';
 import algoliaClient from 'algoliasearch/lite';
 import debounce from 'lodash/debounce';
 import Link from 'next/link';
+import { BiSearchAlt } from 'react-icons/bi';
 
 const algolia = algoliaClient(
   process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
@@ -76,8 +77,8 @@ export const Search = () => {
   );
 
   return (
-    <Box sx={{ position: 'relative' }}>
-      <Input type="search" onChange={handleChange} />
+    <Box sx={{ position: 'relative' }} mb="44px">
+      <Input placeholder="Search Wiki" type="search" onChange={handleChange} />
       {results.length > 0 ? (
         <Flex
           width={1}
@@ -96,6 +97,7 @@ export const Search = () => {
       ) : (
         query.length > 2 && !loading && <div>No results</div>
       )}
+      <BiSearchAlt color="#666" size={24} style={{ position: 'absolute', right: 12, top: 16 }} />
     </Box>
   );
 };
