@@ -7,10 +7,14 @@ import Popup from 'reactjs-popup';
 import { camelCaseFormatter } from '../../../utility/helpers';
 import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon';
 
-export const EntryCard = ({ data }) => {
+export const EntryCard = React.forwardRef(({ data, href }, ref) => {
   const theme = useTheme();
   return (
     <Box
+      as="a"
+      href={href}
+      className="entry-card"
+      ref={ref}
       sx={{
         position: 'relative',
         boxShadow: '0 0 0 1px #191a1b',
@@ -18,10 +22,10 @@ export const EntryCard = ({ data }) => {
         background: data.projectDetails ? theme.colors[data.projectDetails[0].region] : '#333333',
         zIndex: 1,
         width: 'auto',
+        cursor: 'pointer'
       }}
       mt={[5]}
-      mr={[0, null, 5]}
-    >
+      mr={[0, null, 5]}>
       <Box
         height={252}
         width={[1, null, 240]}
@@ -34,7 +38,7 @@ export const EntryCard = ({ data }) => {
           transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
           '&:hover': {
             boxShadow: ' 0 0 0 2px #333333',
-            transform: 'translate(-0.35em, -0.35em)',
+            transform: 'translate(-0.35em, -0.35em)'
           },
           '&:before': {
             content: "''",
@@ -54,16 +58,18 @@ export const EntryCard = ({ data }) => {
               (data.heroImage && data.heroImage.length && data.heroImage[0].url) ||
               'https://cdn.westeroscraft.com/web/assets/images/crafting-table.svg'
             })`,
-            backgroundSize: data.images && data.images.length && data.images[0].url ? 'cover' : ['auto', null, '30%'],
+            backgroundSize:
+              data.images && data.images.length && data.images[0].url
+                ? 'cover'
+                : ['auto', null, '30%'],
             boxShadow: `inset 0 0.75rem 0 ${
               data.projectDetails ? theme.colors[data.projectDetails[0].region] : '#333333'
-            }`,
-          },
+            }`
+          }
         }}
         pt={140}
         px={4}
-        pb={5}
-      >
+        pb={5}>
         <Flex flexDirection="column">
           <Flex flexDirection="row">
             {data.typeHandle === 'wikiGuide' && (
@@ -72,14 +78,13 @@ export const EntryCard = ({ data }) => {
                 position="bottom left"
                 contentStyle={{
                   width: 'auto',
-                  borderRadius: '4px',
+                  borderRadius: '4px'
                 }}
                 trigger={
                   <span style={{ height: '24px' }}>
                     <RegionIcon region="guide" width="24px" />
                   </span>
-                }
-              >
+                }>
                 <Text as="span" color="text" px={4}>
                   Guide
                 </Text>
@@ -91,14 +96,13 @@ export const EntryCard = ({ data }) => {
                 position="bottom left"
                 contentStyle={{
                   width: 'auto',
-                  borderRadius: '4px',
+                  borderRadius: '4px'
                 }}
                 trigger={
                   <span style={{ height: '24px' }}>
                     <RegionIcon region="guide" width="24px" />
                   </span>
-                }
-              >
+                }>
                 <Text as="span" color="text" px={4}>
                   Guide
                 </Text>
@@ -110,14 +114,16 @@ export const EntryCard = ({ data }) => {
                 position="bottom left"
                 contentStyle={{
                   width: 'auto',
-                  borderRadius: '4px',
+                  borderRadius: '4px'
                 }}
                 trigger={
                   <span style={{ height: '24px' }}>
-                    <RegionIcon region={data.projectDetails.length && data.projectDetails[0].region} width="24px" />
+                    <RegionIcon
+                      region={data.projectDetails.length && data.projectDetails[0].region}
+                      width="24px"
+                    />
                   </span>
-                }
-              >
+                }>
                 <Text as="span" color="text" px={4}>
                   {camelCaseFormatter(data.projectDetails[0].region)}
                 </Text>
@@ -129,7 +135,7 @@ export const EntryCard = ({ data }) => {
                 position="bottom left"
                 contentStyle={{
                   width: 'auto',
-                  borderRadius: '4px',
+                  borderRadius: '4px'
                 }}
                 trigger={
                   <span style={{ height: '24px' }}>
@@ -139,8 +145,7 @@ export const EntryCard = ({ data }) => {
                       style={{ marginLeft: '8px' }}
                     />
                   </span>
-                }
-              >
+                }>
                 <Text as="span" color="text" px={4}>
                   {camelCaseFormatter(data.projectDetails[0].destinationType)}
                 </Text>
@@ -152,25 +157,33 @@ export const EntryCard = ({ data }) => {
                 position="bottom left"
                 contentStyle={{
                   width: 'auto',
-                  borderRadius: '4px',
+                  borderRadius: '4px'
                 }}
                 trigger={
                   <span style={{ height: '24px' }}>
                     <DestinationStatusIcon
-                      status={data.projectDetails.length && data.projectDetails[0].destinationStatus}
+                      status={
+                        data.projectDetails.length && data.projectDetails[0].destinationStatus
+                      }
                       width="24px"
                       style={{ marginLeft: '8px' }}
                     />
                   </span>
-                }
-              >
+                }>
                 <Text as="span" color="text" px={4}>
                   {camelCaseFormatter(data.projectDetails[0].destinationStatus)}
                 </Text>
               </Popup>
             )}
           </Flex>
-          <Text mt={2} variant="heading6" fontSize="18px" fontWeight="bold" as="h6" color="text" fontFamily="heading">
+          <Text
+            mt={2}
+            variant="heading6"
+            fontSize="18px"
+            fontWeight="bold"
+            as="h6"
+            color="text"
+            fontFamily="heading">
             {data.title || ''}
           </Text>
           <Text mt={2} variant="paragraph" color="text">
@@ -180,4 +193,4 @@ export const EntryCard = ({ data }) => {
       </Box>
     </Box>
   );
-};
+});

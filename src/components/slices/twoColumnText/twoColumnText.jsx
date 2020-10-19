@@ -16,18 +16,16 @@ export const TwoColumnText = ({ data }) => (
       '.button': {
         marginLeft: ['auto', null, 0],
         marginRight: ['auto', null, 0],
-        marginTop: 24,
-      },
+        marginTop: 24
+      }
     }}
-    {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
-  >
+    {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
     <Flex
       px={5}
       className="column"
       width={[1, null, data.columnWidths === '3/5' ? 3 / 5 : 1 / 2]}
       flexDirection="column"
-      alignItems="center"
-    >
+      alignItems="center">
       <ScrollAnimation animateIn="fadeInLeft" animateOnce>
         <Redactor dangerouslySetInnerHTML={{ __html: data.children[0].redactor }} />
         {data.children[0].buttons && <ButtonSelector data={data.children[0].buttons} />}
@@ -39,8 +37,7 @@ export const TwoColumnText = ({ data }) => (
       px={5}
       className="column"
       width={[1, null, data.columnWidths === '3/5' ? 2 / 5 : 1 / 2]}
-      pt={[5, null, 0]}
-    >
+      pt={[5, null, 0]}>
       <ScrollAnimation animateIn="fadeInRight" animateOnce>
         <Redactor dangerouslySetInnerHTML={{ __html: data.children[1].redactor }} />
         {data.children[1].buttons && <ButtonSelector data={data.children[1].buttons} />}

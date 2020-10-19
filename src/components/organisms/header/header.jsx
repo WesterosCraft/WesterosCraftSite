@@ -1,7 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
-
+import Link from 'next/link';
 import { Flex, Text, Box, Image } from 'rebass';
 import { IoIosArrowDown } from 'react-icons/io';
 import { DropdownLink } from '../../atoms/dropdownLink/dropdownLink';
@@ -15,7 +14,7 @@ export function Header({ links }) {
         {links.map((link) =>
           link.navLogo.length > 0 ? (
             <Header.NavGroup key={link.title}>
-              <AniLink cover duration={0.5} bg="#9E1E22" direction="left" to="/">
+              <Link href="/">
                 <Image
                   src={link.navLogo[0].url}
                   alt="WesterosCraft"
@@ -25,13 +24,13 @@ export function Header({ links }) {
                     '&:hover': {
                       transform: 'translateY(-1px)',
                       transition: 'transform 150ms ease-out 0s, color 150ms ease-out 0s',
-                      textDecoration: 'none',
-                    },
+                      textDecoration: 'none'
+                    }
                   }}
                 />
-              </AniLink>
+              </Link>
             </Header.NavGroup>
-          ) : null,
+          ) : null
         )}
         <Header.NavGroup display={['none', null, 'flex']}>
           {links.map((link) =>
@@ -48,15 +47,26 @@ export function Header({ links }) {
                   border: '1px solid #333333',
 
                   boxShadow:
-                    '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
+                    '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)'
                 }}
                 arrowStyle={{
-                  padding: '0px',
-                  border: '1px solid #333333',
+                  background: ' #fff',
+                  border: '1px solid #333',
                   boxShadow:
-                    '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
-                }}
-              >
+                    'rgba(50,50,93,.25) 0 30px 60px -12px,rgba(0,0,0,.3) 0 18px 36px -18px,rgba(0,0,0,.024) 0 -12px 36px -8px',
+                  color: '#fff',
+                  height: '10px',
+                  left: '50%',
+                  lineHeight: '18.4px',
+                  margin: '-5px',
+                  padding: 0,
+                  position: 'absolute',
+                  textAlign: 'center',
+                  top: 7,
+                  transform: 'rotate(225deg)',
+                  width: '10px',
+                  zIndex: -1
+                }}>
                 <Flex flexDirection="column" bg="white">
                   {link.children.map((child) => (
                     <DropdownLink data={child} key={child.title} />
@@ -69,7 +79,7 @@ export function Header({ links }) {
                   <Header.NavItem>{link.title}</Header.NavItem>
                 </a>
               )
-            ),
+            )
           )}
         </Header.NavGroup>
         <Popup
@@ -95,20 +105,19 @@ export function Header({ links }) {
             border: '1px solid #333333',
             zIndex: 1000,
             minWidth: '300px',
-            overflowY: 'scroll',
+            overflowY: 'scroll'
           }}
           arrowStyle={{
             padding: '0px',
             border: '1px solid #333333',
             boxShadow:
-              '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)',
+              '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)'
           }}
           trigger={
             <Box display={['block', null, 'none']}>
               <GiHamburgerMenu size="32px" style={{ cursor: 'pointer' }} />
             </Box>
-          }
-        >
+          }>
           {(close) => <MobileHeader close={close} links={links} />}
         </Popup>
       </Header.Nav>
@@ -135,10 +144,9 @@ Header.Nav = function ({ children, ...restProps }) {
       sx={{
         height: '3rem',
         textAlign: 'center',
-        zIndex: 3,
+        zIndex: 3
       }}
-      {...restProps}
-    >
+      {...restProps}>
       {children}
     </Flex>
   );
@@ -155,6 +163,7 @@ Header.NavGroup = function NavGroup({ children, ...restProps }) {
 Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) => {
   return (
     <Box
+      className="header-nav-item"
       ref={ref}
       {...restProps}
       color="gray.100"
@@ -162,20 +171,19 @@ Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) =>
         lineHeight: '3rem',
         height: '3rem',
         cursor: 'pointer',
+        textAlign: 'center',
         '&:hover': {
           color: dropdown ? 'gray.200' : 'red.medium',
           transform: 'translateY(-1px)',
           transition: 'transform 150ms ease-out 0s, color 150ms ease-out 0s',
-          textDecoration: 'none',
-        },
+          textDecoration: 'none'
+        }
       }}
-      ml={[7]}
-    >
+      ml={[7]}>
       <Box
         sx={{
-          cursor: 'pointer',
-        }}
-      >
+          cursor: 'pointer'
+        }}>
         <Text as="span" fontSize={2} fontFamily="heading" fontWeight="bold">
           <>
             {children}
@@ -186,7 +194,7 @@ Header.NavItem = React.forwardRef(({ children, dropdown, ...restProps }, ref) =>
                   position: 'relative',
                   bottom: '-0.125em',
                   marginLeft: '0.4em',
-                  zIndex: 3,
+                  zIndex: 3
                 }}
               />
             )}

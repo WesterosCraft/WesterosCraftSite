@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Text, Flex } from 'rebass';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import Search from '../search';
+import { Search } from '../search';
+import Router from 'next/router';
+import qs from 'qs';
+import { findResultsState, indexName, searchClient } from '../../atoms/instantsearch';
 
 const WikiNavGroup = ({ navItem }) => {
   const [open, setOpen] = useState(true);
@@ -22,8 +25,7 @@ const WikiNavGroup = ({ navItem }) => {
       <Box
         className="wiki-nav-group"
         key={navItem.title}
-        sx={{ boxShadow: ['none', null, 'inset -1px 0 0 rgba(48,48,49,0.2)'] }}
-      >
+        sx={{ boxShadow: ['none', null, 'inset -1px 0 0 rgba(48,48,49,0.2)'] }}>
         <Flex
           flexDirection="row"
           alignItems="center"
@@ -33,9 +35,8 @@ const WikiNavGroup = ({ navItem }) => {
             setOpen(!open);
           }}
           sx={{
-            cursor: 'pointer',
-          }}
-        >
+            cursor: 'pointer'
+          }}>
           <Text variant="heading6" fontSize="18px" fontWeight="bold">
             {navItem.title}
           </Text>
@@ -50,25 +51,23 @@ const WikiNavGroup = ({ navItem }) => {
             pb={3}
             pr={5}
             sx={{
-              listStyleType: 'none',
-            }}
-          >
+              listStyleType: 'none'
+            }}>
             {navItem.children.map((child) => (
-              <Box as="li" key={child.title}>
-                <Link to={buildLink(child)}>
+              <Link key={child.title} href={buildLink(child)} passHref>
+                <Box as="li" sx={{ cursor: 'pointer' }}>
                   <Text
                     py={1}
                     color="gray.100"
                     sx={{
                       '&:hover': {
-                        color: 'red.medium',
-                      },
-                    }}
-                  >
+                        color: 'red.medium'
+                      }
+                    }}>
                     {child.title}
                   </Text>
-                </Link>
-              </Box>
+                </Box>
+              </Link>
             ))}
           </Flex>
         )}
@@ -78,19 +77,20 @@ const WikiNavGroup = ({ navItem }) => {
 };
 
 export const WikiNav = ({ navData }) => {
-  const searchIndices = [{ name: `Wiki`, title: `Destinations`, hitComp: `DestinationHit` }];
-
   return (
     <Flex
       flexDirection="column"
       as="nav"
       className="wiki-nav"
       maxWidth={['100%', null, 320]}
-      sx={{ position: 'relative', flexShrink: 0, flexGrow: 1 }}
-    >
-      <Search collapse indices={searchIndices} />
-      <Box className="wiki-nav-container" width={1} display={['none', null, 'block']} maxWidth={246}>
-        {navData.craft.wikiNav.map((navItem, i) => (
+      sx={{ position: 'relative', flexShrink: 0, flexGrow: 1 }}>
+      <Search />
+      <Box
+        className="wiki-nav-container"
+        width={1}
+        display={['none', null, 'block']}
+        maxWidth={246}>
+        {navData.wikiNav.map((navItem, i) => (
           <WikiNavGroup navItem={navItem} key={i} />
         ))}
       </Box>

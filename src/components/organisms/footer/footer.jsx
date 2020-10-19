@@ -5,9 +5,9 @@ import {
   AiFillTwitterSquare,
   AiFillRedditSquare,
   AiFillInstagram,
-  AiFillYoutube,
+  AiFillYoutube
 } from 'react-icons/ai';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 
 export const Footer = ({ links }) => (
   <Flex
@@ -18,8 +18,7 @@ export const Footer = ({ links }) => (
     flexDirection="column"
     justifyContent="center"
     px={[3, 7]}
-    py={9}
-  >
+    py={9}>
     <Flex
       flexWrap="wrap"
       flexDirection="row"
@@ -27,12 +26,16 @@ export const Footer = ({ links }) => (
       width={1}
       maxWidth={1120}
       mx="auto"
-      justifyContent={['center', 'space-between']}
-    >
+      justifyContent={['center', 'space-between']}>
       {links.map((link) =>
         link.children.length > 0 && !link.navLogo.length > 0 ? (
           <Box p={[0, 1]} width={[160, 182, 200]} py={[4, null, 0]} key={link.title}>
-            <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
+            <Text
+              fontSize="16px"
+              color="white"
+              mb={4}
+              sx={{ textTransform: 'uppercase' }}
+              fontFamily="heading">
               {link.title}
             </Text>
 
@@ -41,12 +44,11 @@ export const Footer = ({ links }) => (
                 <Fragment key={i}>
                   {child.element && child.element.slug ? (
                     <Link
-                      to={`/${
+                      href={`/${
                         child.element && child.element.slug === 'frequently-asked-questions'
                           ? `wiki/miscellaneous/${child.element.slug}`
                           : child.element.slug
-                      }`}
-                    >
+                      }`}>
                       <Text
                         fontSize={1}
                         py={1}
@@ -63,13 +65,12 @@ export const Footer = ({ links }) => (
                             background: 'white',
                             position: 'absolute',
                             bottom: 0,
-                            left: 0,
+                            left: 0
                           },
                           '&:hover:after': {
-                            display: 'block',
-                          },
-                        }}
-                      >
+                            display: 'block'
+                          }
+                        }}>
                         {child.title}
                       </Text>
                     </Link>
@@ -92,13 +93,12 @@ export const Footer = ({ links }) => (
                           background: 'white',
                           position: 'absolute',
                           bottom: 0,
-                          left: 0,
+                          left: 0
                         },
                         '&:hover:after': {
-                          display: 'block',
-                        },
-                      }}
-                    >
+                          display: 'block'
+                        }
+                      }}>
                       {child.title}
                     </Text>
                   )}
@@ -106,19 +106,27 @@ export const Footer = ({ links }) => (
               ))}
             </Flex>
           </Box>
-        ) : null,
+        ) : null
       )}
       <Box p={[0, 1]} py={[4, null, 0]} width={[160, 182, 200]}>
-        <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
+        <Text
+          fontSize="16px"
+          color="white"
+          mb={4}
+          sx={{ textTransform: 'uppercase' }}
+          fontFamily="heading">
           Donate
         </Text>
 
         <Flex width={1} flexDirection="column" maxWidth={[200]}>
           <Text fontSize={1} py={1} color="offWhite" lineHeight="1.5">
-            We depend on user contributions to keep the community running. Please consider donating if you have enjoyed
-            the project.
+            We depend on user contributions to keep the community running. Please consider donating
+            if you have enjoyed the project.
           </Text>
-          <a href="https://forum.westeroscraft.com/donate/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://forum.westeroscraft.com/donate/"
+            target="_blank"
+            rel="noopener noreferrer">
             <Text
               fontSize={1}
               py={1}
@@ -137,10 +145,9 @@ export const Footer = ({ links }) => (
                   background: 'white',
                   position: 'absolute',
                   bottom: 0,
-                  left: 0,
-                },
-              }}
-            >
+                  left: 0
+                }
+              }}>
               Donate Here
             </Text>
           </a>
@@ -155,10 +162,14 @@ export const Footer = ({ links }) => (
       mx="auto"
       justifyContent={['center', 'space-between']}
       mt={[6, null, 8]}
-      flexWrap="wrap"
-    >
+      flexWrap="wrap">
       <Box py={[4, null, 0]} minWidth={200}>
-        <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
+        <Text
+          fontSize="16px"
+          color="white"
+          mb={4}
+          sx={{ textTransform: 'uppercase' }}
+          fontFamily="heading">
           Contact Us
         </Text>
         <a href="mailto:westeroscraft@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -177,23 +188,30 @@ export const Footer = ({ links }) => (
                 background: 'white',
                 position: 'absolute',
                 bottom: 0,
-                left: 0,
+                left: 0
               },
               '&:hover:after': {
-                display: 'block',
-              },
-            }}
-          >
+                display: 'block'
+              }
+            }}>
             westeroscraft@gmail.com
           </Text>
         </a>
       </Box>
       <Box minWidth={200} py={[4, null, 0]}>
-        <Text fontSize="16px" color="white" mb={4} sx={{ textTransform: 'uppercase' }} fontFamily="heading">
+        <Text
+          fontSize="16px"
+          color="white"
+          mb={4}
+          sx={{ textTransform: 'uppercase' }}
+          fontFamily="heading">
           Social
         </Text>
         <Flex flexDirection="row">
-          <a href="https://www.facebook.com/WesterosCraft" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.facebook.com/WesterosCraft"
+            target="_blank"
+            rel="noopener noreferrer">
             <AiFillFacebook size="28px" color="#f3f4f4" />
             <span style={{ fontSize: 0, color: 'transparent' }}>Facebook</span>
           </a>
@@ -201,15 +219,24 @@ export const Footer = ({ links }) => (
             <AiFillTwitterSquare size="28px" color="#f3f4f4" />
             <span style={{ fontSize: 0, color: 'transparent' }}>Twitter</span>
           </a>
-          <a href="https://www.youtube.com/user/WesterosCraft" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.youtube.com/user/WesterosCraft"
+            target="_blank"
+            rel="noopener noreferrer">
             <AiFillYoutube size="28px" color="#f3f4f4" />
             <span style={{ fontSize: 0, color: 'transparent' }}>Youtube</span>
           </a>
-          <a href="https://www.reddit.com/r/WesterosCraft/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.reddit.com/r/WesterosCraft/"
+            target="_blank"
+            rel="noopener noreferrer">
             <AiFillRedditSquare size="28px" color="#f3f4f4" />
             <span style={{ fontSize: 0, color: 'transparent' }}>Reddit</span>
           </a>
-          <a href="https://www.instagram.com/westeroscraft" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/westeroscraft"
+            target="_blank"
+            rel="noopener noreferrer">
             <AiFillInstagram size="28px" color="#f3f4f4" />
             <span style={{ fontSize: 0, color: 'transparent' }}>Instagram</span>
           </a>

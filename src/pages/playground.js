@@ -27,7 +27,10 @@ import { Spinner } from '../components/atoms/spinner';
 
 const PlaygroundPage = () => (
   <Flex my={200} width={1} flexDirection="column" justifyContent="center" alignItems="center">
-    <Box width={300} height={300} sx={{ boxShadow: 'inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC' }}>
+    <Box
+      width={300}
+      height={300}
+      sx={{ boxShadow: 'inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC' }}>
       <Text variant="heading4">TEST</Text>
     </Box>
     <Box>
@@ -37,7 +40,12 @@ const PlaygroundPage = () => (
       <Button variant="white" mt={9} as="div">
         <BsTriangleFill
           size="16px"
-          style={{ transform: 'rotate(90deg)', marginRight: '6px', marginTop: '-1px', marginBottom: '-2px' }}
+          style={{
+            transform: 'rotate(90deg)',
+            marginRight: '6px',
+            marginTop: '-1px',
+            marginBottom: '-2px'
+          }}
           color="#333333"
         />
         Explore the Wiki
