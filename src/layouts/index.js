@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { Box } from 'rebass';
 
@@ -6,9 +6,18 @@ import { Header } from '../components/organisms/header';
 import { Footer } from '../components/organisms/footer';
 import { NAV_QUERY } from '../queries/navQuery.gql';
 import { useQuery } from '@apollo/client';
+import { initGA, logPageView } from '../utility/analytics';
 
 const Layout = ({ children }) => {
   const { data, loading } = useQuery(NAV_QUERY);
+
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+  }, []);
 
   if (loading) {
     return null;
