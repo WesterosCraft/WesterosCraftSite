@@ -39,7 +39,8 @@ export const ContentBanner = ({ data }) => (
           <Flex flexDirection="row">
             {data.linkBuilder.map((link) => (
               <OutboundLink
-                href={link.additionalLink}
+                target="_blank"
+                to={link.additionalLink}
                 download
                 key={link.customLinkText}
                 eventLabel="launcher_page">
