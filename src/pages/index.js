@@ -10,20 +10,19 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useMediaQuery } from 'react-responsive';
 import { HOME_QUERY } from '../queries/homeQuery.gql';
 import { initializeApollo } from '../../lib/apolloClient';
-import { useQuery } from '@apollo/client';
 import { event } from 'react-ga';
 
-const IndexPage = () => {
-  const { data } = useQuery(HOME_QUERY);
-  const homepageData = data.entry.homePageContent[0];
+const IndexPage = ({ initialApolloState }) => {
+  const data = initialApolloState.ROOT_QUERY['entry({"section":"home","site":"westeroscraft"})'];
+  const homepageData = data.homePageContent[0];
   const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
 
   return (
     <>
       <SEO
-        title={data.entry.pageTitle || data.entry.title}
-        description={data.entry.pageDescription}
-        image={data.entry.pageEntry && data.entry.pageImage[0].url}
+        title={data.pageTitle || data.title}
+        description={data.pageDescription}
+        image={data.pageEntry && data.pageImage[0].url}
       />
       <Flex
         as="section"
@@ -146,7 +145,7 @@ const IndexPage = () => {
         mx="auto"
         className="homepage-content"
         px={5}>
-        <SliceZone slices={data.entry.pageSlices} />
+        <SliceZone slices={data.pageSlices} />
       </Flex>
       <Box>
         <Box sx={{ position: 'relative' }} maxWidth={1120} px={5} mx="auto" width={1}>

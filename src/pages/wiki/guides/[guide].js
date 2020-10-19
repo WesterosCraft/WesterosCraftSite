@@ -1,42 +1,35 @@
 import React from 'react';
-import { Flex } from 'rebass';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { WikiSliceZone } from '../../../components/slices/wikiSliceZone';
 import SEO from '../../../components/organisms/seo/seo';
 import { initializeApollo } from '../../../../lib/apolloClient';
-import { useQuery } from '@apollo/client';
 import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
 import { computeBreadcrumbs } from '../../../utility/helpers';
 
-const GuidePage = ({ slug }) => {
-  const { data, loading } = useQuery(GUIDE_QUERY, { variables: { slug: slug } });
+const GuidePage = ({ slug, initialApolloState }) => {
+  const data =
+    initialApolloState.ROOT_QUERY[
+      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiGuide"})`
+    ];
   const router = useRouter();
-
-  if (loading) {
-    return (
-      <Flex my={15} width={1} justifyContent="center" alignItems="center">
-        <Spinner />
-      </Flex>
-    );
-  }
 
   return (
     <>
-      {loading || !data || !data.entry ? (
+      {!data ? (
         <Spinner />
       ) : (
         <SEO
-          title={data.pageTitle || data.entry.title}
+          title={data.pageTitle || data.title}
           description={data.pageDescription}
           image={data.pageEntry && data.pageImage[0].url}
         />
       )}
       <WikiLayout
-        title={(data && data.entry.title) || 'WesterosCraft Wiki'}
+        title={(data && data.title) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        <WikiSliceZone slices={data.entry.wikiSlices} />
+        <WikiSliceZone slices={data.wikiSlices} />
       </WikiLayout>
     </>
   );
@@ -62,7 +55,8 @@ export async function getStaticProps({ params }) {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: GUIDE_QUERY
+    query: GUIDE_QUERY,
+    variables: { slug: params.guide }
   });
 
   return {

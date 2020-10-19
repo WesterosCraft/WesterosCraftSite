@@ -1,26 +1,25 @@
 import React from 'react';
-
 import { Heading } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import SEO from '../components/organisms/seo/seo';
-
 import { LAUNCHER_QUERY } from '../queries/launcherQuery.gql';
 import { initializeApollo } from '../../lib/apolloClient';
-import { useQuery } from '@apollo/client';
 
-const LauncherPage = () => {
-  const { data } = useQuery(LAUNCHER_QUERY);
+const LauncherPage = ({ initialApolloState }) => {
+  const data =
+    initialApolloState.ROOT_QUERY['entry({"section":"launcher","site":"westeroscraft"})'];
+
   return (
     <>
       <SEO
-        title={data.entry.pageTitle || data.entry.title}
-        description={data.entry.pageDescription}
-        image={data.entry.pageEntry && data.entry.pageImage[0].url}
+        title={data.pageTitle || data.title}
+        description={data.pageDescription}
+        image={data.pageEntry && data.pageImage[0].url}
       />
       <Heading variant="heading2" textAlign="center" mt={[12]}>
-        {data.entry.heading}
+        {data.heading}
       </Heading>
-      <SliceZone slices={data.entry.pageSlices} />
+      <SliceZone slices={data.pageSlices} />
     </>
   );
 };

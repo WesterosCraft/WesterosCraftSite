@@ -7,24 +7,23 @@ import { useRouter } from 'next/router';
 
 import { WIKI_QUERY } from '../queries/wikiQuery.gql';
 import { initializeApollo } from '../../lib/apolloClient';
-import { useQuery } from '@apollo/client';
 import { computeBreadcrumbs } from '../utility/helpers';
 
-const WikiPage = () => {
-  const { data } = useQuery(WIKI_QUERY);
+const WikiPage = ({ initialApolloState }) => {
+  const data = initialApolloState.ROOT_QUERY['entry({"site":"westeroscraft","slug":"wiki"})'];
   const router = useRouter();
 
   return (
     <>
       <SEO
         title="Wiki"
-        description={data.entry.pageDescription}
-        image={data.entry.pageEntry && data.entry.pageImage[0].url}
+        description={data.pageDescription}
+        image={data.pageEntry && data.pageImage[0].url}
       />
       <WikiLayout
-        title={data.entry.title || 'WesterosCraft Wiki'}
+        title={data.title || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        <WikiSliceZone slices={data.entry.wikiSlices} />
+        <WikiSliceZone slices={data.wikiSlices} />
       </WikiLayout>
     </>
   );

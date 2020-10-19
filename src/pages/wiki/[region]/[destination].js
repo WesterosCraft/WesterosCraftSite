@@ -9,7 +9,6 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import { FiExternalLink } from 'react-icons/fi';
 import { useRouter } from 'next/router';
 import { initializeApollo } from '../../../../lib/apolloClient';
-import { useQuery } from '@apollo/client';
 import { DESTINATION_QUERY } from '../../../queries/destinationQuery.gql';
 import { ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gql';
 import flatten from 'lodash/flatten';
@@ -21,9 +20,13 @@ const View = ({ data, ...props }) => (
   </>
 );
 
-const DestinationPage = ({ slug }) => {
+const DestinationPage = ({ initialApolloState, slug }) => {
   const router = useRouter();
-  const { data, loading } = useQuery(DESTINATION_QUERY, { variables: { slug: slug } });
+
+  const data =
+    initialApolloState.ROOT_QUERY[
+      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiDestination"})`
+    ];
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -31,23 +34,23 @@ const DestinationPage = ({ slug }) => {
     <>
       {data && (
         <SEO
-          title={data.entry.title}
+          title={data.title}
           description={data.pageDescription}
           image={data.pageEntry && data.pageImage[0].url}
         />
       )}
       <WikiLayout
-        title={(data && data.entry.title) || 'WesterosCraft Wiki'}
+        title={(data && data.title) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        {loading || !data ? (
+        {!data ? (
           <Spinner />
         ) : (
           <>
-            {data && data.entry.images && data.entry.images.length > 0 && (
+            {data && data.images && data.images.length > 0 && (
               <Flex flexDirection={['column', null, 'row']} justifyContent="center" mx="auto">
                 <Carousel
                   onClick={() => setModalOpen(!modalOpen)}
-                  views={data.entry.images}
+                  views={data.images}
                   components={{ View }}
                 />
               </Flex>
@@ -58,7 +61,7 @@ const DestinationPage = ({ slug }) => {
                   onClose={() => {
                     setModalOpen(!modalOpen);
                   }}>
-                  <Carousel views={data.entry.images} components={{ View }} />
+                  <Carousel views={data.images} components={{ View }} />
                 </Modal>
               ) : null}
             </ModalGateway>
@@ -67,14 +70,14 @@ const DestinationPage = ({ slug }) => {
               variant="heading3"
               as="h3"
               mb={5}
-              mt={data && data.entry.images && data.entry.images.length > 0 ? 5 : 0}>
+              mt={data && data.images && data.images.length > 0 ? 5 : 0}>
               Project details
               {data &&
-                data.entry.projectDetails &&
-                data.entry.projectDetails.length &&
-                data.entry.projectDetails[0].application && (
+                data.projectDetails &&
+                data.projectDetails.length &&
+                data.projectDetails[0].application && (
                   <a
-                    href={data.entry.projectDetails[0].application}
+                    href={data.projectDetails[0].application}
                     target="_blank"
                     rel="noreferrer noopener"
                     style={{ textDecoration: 'none', marginLeft: '8px' }}>
@@ -82,7 +85,7 @@ const DestinationPage = ({ slug }) => {
                   </a>
                 )}
             </Text>
-            {data && data.entry.projectDetails && data.entry.projectDetails.length && (
+            {data && data.projectDetails && data.projectDetails.length && (
               <Flex
                 flexDirection="row"
                 flexWrap="wrap"
@@ -93,11 +96,11 @@ const DestinationPage = ({ slug }) => {
                 mx="auto">
                 {data &&
                   data.entry &&
-                  data.entry.projectDetails &&
-                  data.entry.projectDetails.length &&
-                  data.entry.projectDetails[0].banner &&
-                  data.entry.projectDetails[0].banner.length > 0 && (
-                    <Image src={data.entry.projectDetails[0].banner[0].url} maxHeight={150} />
+                  data.projectDetails &&
+                  data.projectDetails.length &&
+                  data.projectDetails[0].banner &&
+                  data.projectDetails[0].banner.length > 0 && (
+                    <Image src={data.projectDetails[0].banner[0].url} maxHeight={150} />
                   )}
                 <Flex
                   as="ol"
@@ -113,7 +116,7 @@ const DestinationPage = ({ slug }) => {
                       Region
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {camelCaseFormatter(data.entry.projectDetails[0].region)}
+                      {camelCaseFormatter(data.projectDetails[0].region)}
                     </Text>
                   </Flex>
                   <Flex
@@ -125,7 +128,7 @@ const DestinationPage = ({ slug }) => {
                       House
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {data.entry.projectDetails[0].house}
+                      {data.projectDetails[0].house}
                     </Text>
                   </Flex>
                   <Flex
@@ -137,7 +140,7 @@ const DestinationPage = ({ slug }) => {
                       Status
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {camelCaseFormatter(data.entry.projectDetails[0].destinationStatus)}
+                      {camelCaseFormatter(data.projectDetails[0].destinationStatus)}
                     </Text>
                   </Flex>
                   <Flex
@@ -149,7 +152,7 @@ const DestinationPage = ({ slug }) => {
                       Date started
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {formatDate(data.entry.projectDetails[0].dateStarted)}
+                      {formatDate(data.projectDetails[0].dateStarted)}
                     </Text>
                   </Flex>
                 </Flex>
@@ -167,7 +170,7 @@ const DestinationPage = ({ slug }) => {
                       Type
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {camelCaseFormatter(data.entry.projectDetails[0].destinationType)}
+                      {camelCaseFormatter(data.projectDetails[0].destinationType)}
                     </Text>
                   </Flex>
                   <Flex
@@ -179,8 +182,7 @@ const DestinationPage = ({ slug }) => {
                       Warp
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {data.entry.projectDetails[0].warp &&
-                        `/${_lowerCase(data.entry.projectDetails[0].warp)}`}
+                      {data.projectDetails[0].warp && `/${_lowerCase(data.projectDetails[0].warp)}`}
                     </Text>
                   </Flex>
                   <Flex
@@ -192,7 +194,7 @@ const DestinationPage = ({ slug }) => {
                       Project lead(s)
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {data.entry.projectDetails[0].projectLead}
+                      {data.projectDetails[0].projectLead}
                     </Text>
                   </Flex>
                   <Flex
@@ -204,15 +206,13 @@ const DestinationPage = ({ slug }) => {
                       Date completed
                     </Text>
                     <Text as="p" width={1 / 2}>
-                      {formatDate(data.entry.projectDetails[0].dateCompleted)}
+                      {formatDate(data.projectDetails[0].dateCompleted)}
                     </Text>
                   </Flex>
                 </Flex>
               </Flex>
             )}
-            {data && data.entry.copy && (
-              <Redactor dangerouslySetInnerHTML={{ __html: data.entry.copy }} />
-            )}
+            {data && data.copy && <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />}
           </>
         )}
       </WikiLayout>
@@ -247,7 +247,8 @@ export async function getStaticProps({ params }) {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: DESTINATION_QUERY
+    query: DESTINATION_QUERY,
+    variables: { slug: params.destination }
   });
 
   return {

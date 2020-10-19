@@ -11,23 +11,20 @@ import SEO from '../../../components/organisms/seo/seo';
 import { Spinner } from '../../../components/atoms/spinner';
 import { REGION_QUERY, ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gql';
 import { initializeApollo } from '../../../../lib/apolloClient';
-import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import flatten from 'lodash/flatten';
 
-const RegionPage = ({ slug }) => {
-  const { data, loading } = useQuery(REGION_QUERY, { variables: { slug: slug } });
-
-  const [items, setItems] = useState(data && data.entry.children);
+const RegionPage = ({ initialApolloState, slug }) => {
+  const data =
+    initialApolloState.ROOT_QUERY[
+      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiRegion"})`
+    ];
+  const [items, setItems] = useState(data && data['children({"orderBy":"title"})']);
   const router = useRouter();
 
   const regionItems = useMemo(() => {
-    return data && data.entry.children;
+    setItems(data['children({"orderBy":"title"})']);
   }, [data]);
-
-  if (loading) {
-    return null;
-  }
 
   const onTypeChange = (option) => {
     if (option === null) {
@@ -55,19 +52,19 @@ const RegionPage = ({ slug }) => {
     <>
       {data && (
         <SEO
-          title={data.entry.pageTitle || data.entry.title}
-          description={data.entry.pageDescription}
-          image={data.entry.pageEntry && data.entry.pageImage[0].url}
+          title={data.title || data.title}
+          description={data.pageDescription}
+          image={data.pageEntry && data.pageImage[0].url}
         />
       )}
       <WikiLayout
-        title={slug || 'WesterosCraft Wiki'}
+        title={data.title || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        {loading || !data ? (
+        {!data ? (
           <Spinner />
         ) : (
           <>
-            <Redactor dangerouslySetInnerHTML={{ __html: data.entry.copy }} />
+            <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />
             <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
             <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
               {items &&
@@ -117,7 +114,8 @@ export async function getStaticProps({ params }) {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: REGION_QUERY
+    query: REGION_QUERY,
+    variables: { slug: params.region }
   });
 
   return {

@@ -1,10 +1,10 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { extractCritical } from 'emotion-server'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { extractCritical } from 'emotion-server';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    const styles = extractCritical(initialProps.html)
+    const initialProps = await Document.getInitialProps(ctx);
+    const styles = extractCritical(initialProps.html);
     return {
       ...initialProps,
       styles: (
@@ -15,19 +15,20 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{ __html: styles.css }}
           />
         </>
-      ),
-    }
+      )
+    };
   }
 
   render() {
     return (
       <Html>
         <Head />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
