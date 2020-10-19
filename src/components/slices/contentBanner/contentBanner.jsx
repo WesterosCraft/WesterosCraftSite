@@ -5,7 +5,7 @@ import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utility/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Element } from 'react-scroll';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'react-ga';
 
 export const ContentBanner = ({ data }) => (
   <Element name="launcher-download" className="element">
@@ -13,8 +13,7 @@ export const ContentBanner = ({ data }) => (
       sx={{ position: 'relative' }}
       className="content-banner"
       px={5}
-      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
-    >
+      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
       <ScrollAnimation animateIn="fadeInUp" animateOnce>
         <Flex
           className="content-banner-content-card"
@@ -24,11 +23,13 @@ export const ContentBanner = ({ data }) => (
           bg="white"
           maxWidth={1120}
           minHeight={[240, null, 220]}
-          sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC' }}
+          sx={{
+            position: 'relative',
+            boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC'
+          }}
           mx="auto"
           px={['46px', '80px', null, '100px']}
-          py={11}
-        >
+          py={11}>
           <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
             <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
           </Box>
@@ -37,16 +38,20 @@ export const ContentBanner = ({ data }) => (
           </Box>
           <Flex flexDirection="row">
             {data.linkBuilder.map((link) => (
-              <OutboundLink href={link.additionalLink} download key={link.customLinkText}>
+              <OutboundLink
+                target="_blank"
+                to={link.additionalLink}
+                download
+                key={link.customLinkText}
+                eventLabel="launcher_page">
                 <Box
                   py={2}
                   px={3}
                   color="text"
                   sx={{
                     cursor: 'pointer',
-                    listStyleType: 'none',
-                  }}
-                >
+                    listStyleType: 'none'
+                  }}>
                   <Text
                     as="span"
                     fontSize={2}
@@ -60,13 +65,12 @@ export const ContentBanner = ({ data }) => (
                         background: '#333333',
                         position: 'absolute',
                         bottom: 0,
-                        left: 0,
+                        left: 0
                       },
                       '&:hover:after': {
-                        display: 'block',
-                      },
-                    }}
-                  >
+                        display: 'block'
+                      }
+                    }}>
                     {link.customLinkText}
                   </Text>
                 </Box>
@@ -86,7 +90,7 @@ export const ContentBanner = ({ data }) => (
           right: '50%',
           marginLeft: '-50vw',
           marginRight: '-50vw',
-          transform: 'translateY(-50%)',
+          transform: 'translateY(-50%)'
         }}
         bg="gold"
         width="100vw"

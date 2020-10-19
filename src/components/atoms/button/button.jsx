@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Button as Base, Box } from 'rebass';
 
-export const Button = ({ as = 'a', children, ...props }) => (
+export const Button = React.forwardRef(({ as = 'a', children, ...props }, ref) => (
   <Base
+    ref={ref}
     as={as}
     {...props}
     mx="12px"
@@ -12,8 +13,13 @@ export const Button = ({ as = 'a', children, ...props }) => (
     px={[4]}
     minWidth={220}
     maxWidth="max-content"
-    sx={{ position: 'relative', cursor: 'pointer', minWidth: 'max-content', letterSpacing: '.5', borderRadius: 0 }}
-  >
+    sx={{
+      position: 'relative',
+      cursor: 'pointer',
+      minWidth: 'max-content',
+      letterSpacing: '.5',
+      borderRadius: 0
+    }}>
     <Box
       as="span"
       sx={{
@@ -25,10 +31,9 @@ export const Button = ({ as = 'a', children, ...props }) => (
         transition: 'transform 150ms ease-out',
         textTransform: 'uppercase',
         fontWeight: 600,
-        letterSpacing: '.5px',
-      }}
-    >
+        letterSpacing: '.5px'
+      }}>
       {children}
     </Box>
   </Base>
-);
+));

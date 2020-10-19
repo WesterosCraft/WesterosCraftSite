@@ -1,0 +1,24 @@
+#import './fragments/pageFragments.gql'
+
+query ABOUT_QUERY {
+  entry(site: "westeroscraft", section: "about") {
+    title
+    ... on about_about_Entry {
+      heading
+      pageTitle
+      pageDescription
+      pageImage {
+        url
+      }
+      pageSlices {
+        ...BANNER_FRAGMENT
+        ...DESTINATION_SLIDER_FRAGMENT
+        ...VIDEO_FRAGMENT
+        ...TEXT_FRAGMENT
+        ...TWO_COLUMN_VIDEO_FRAGMENT
+        ...TWO_COLUMN_TEXT_FRAGMENT
+        ...TIMELINE_FRAGMENT
+      }
+    }
+  }
+}

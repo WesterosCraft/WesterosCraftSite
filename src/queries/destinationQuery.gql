@@ -1,0 +1,25 @@
+query DESTINATION_QUERY($slug: [String]) {
+  entry(site: "westeroscraft", type: "wikiDestination", slug: $slug) {
+    title
+    ... on wiki_wikiDestination_Entry {
+      title
+      slug
+      copy
+      title
+      slug
+      ... on wiki_wikiDestination_Entry {
+        images {
+          url
+        }
+        projectDetails {
+          ... on projectDetails_details_BlockType {
+            region
+            house
+            destinationType
+            destinationStatus
+          }
+        }
+      }
+    }
+  }
+}

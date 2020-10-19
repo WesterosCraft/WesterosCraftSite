@@ -1,0 +1,27 @@
+#import './fragments/wikiFragments.gql'
+
+query MISC_QUERY($slug: [String]) {
+  entry(site: "westeroscraft", type: "wikiMiscellaneous", slug: $slug) {
+    title
+    ... on wiki_wikiMiscellaneous_Entry {
+      title
+      heroImage {
+        url
+      }
+      wikiSlices {
+        ...WIKI_TEXT_FRAGMENT
+        ...ENTRY_GRID_FRAGMENT
+        ...IMAGE_GRID_FRAGMENT
+        ...ACCORDION_FRAGMENT
+      }
+    }
+  }
+}
+
+query ALL_MISC_QUERY {
+  entries(site: "westeroscraft", type: "wikiMiscellaneous") {
+    ... on wiki_wikiMiscellaneous_Entry {
+      slug
+    }
+  }
+}

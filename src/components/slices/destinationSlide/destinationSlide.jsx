@@ -4,7 +4,7 @@ import Slider from '../../atoms/slider/slider';
 import styled from '@emotion/styled';
 import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utility/helpers';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 
 const SlideSelection = styled(Box)`
   color: ${({ active }) => (active ? '#9E1E22' : '#333333')};
@@ -17,19 +17,20 @@ export const DestinationSlide = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <Box className="destination-slide" {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
+    <Box
+      className="destination-slide"
+      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
       <Flex
         className="destination-slide-header"
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
         sx={{
-          textAlign: 'center',
+          textAlign: 'center'
         }}
         maxWidth={700}
         width={1}
-        mx="auto"
-      >
+        mx="auto">
         <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
       </Flex>
 
@@ -45,10 +46,9 @@ export const DestinationSlide = ({ data }) => {
             maxWidth: '632px',
             maxHeight: '360px',
             margin: '0 auto',
-            border: '2px solid #333333',
-          },
-        }}
-      >
+            border: '2px solid #333333'
+          }
+        }}>
         <Slider
           slides={data.slider}
           showThumbs={false}
@@ -58,7 +58,12 @@ export const DestinationSlide = ({ data }) => {
           selectedItem={currentSlide}
           dynamicHeight={true}
         />
-        <Flex flexDirection={['row', null, 'column']} flexWrap="wrap" as="ul" pl={[0, null, 8]} pt={[5, null, 0]}>
+        <Flex
+          flexDirection={['row', null, 'column']}
+          flexWrap="wrap"
+          as="ul"
+          pl={[0, null, 8]}
+          pt={[5, null, 0]}>
           {data.slider.map((slide, index) => (
             <SlideSelection
               as="li"
@@ -72,10 +77,9 @@ export const DestinationSlide = ({ data }) => {
               width={[1 / 2, null, 1]}
               sx={{
                 '&:hover': {
-                  color: '#9E1E22',
-                },
-              }}
-            >
+                  color: '#9E1E22'
+                }
+              }}>
               <Text as="span" fontSize={2}>
                 {slide.slideName}
               </Text>
@@ -85,7 +89,7 @@ export const DestinationSlide = ({ data }) => {
             as="li"
             sx={{
               borderTop: '1px solid #333333',
-              listStyle: 'none',
+              listStyle: 'none'
             }}
             my={2}
           />
@@ -99,22 +103,20 @@ export const DestinationSlide = ({ data }) => {
                 cursor: 'pointer',
                 listStyleType: 'none',
                 '&:hover': {
-                  color: '#9E1E22',
-                },
+                  color: '#9E1E22'
+                }
               }}
-              key={i}
-            >
-              <Link to={link.additionalLink} key={link.customLinkText}>
+              key={i}>
+              <Link href={link.additionalLink} key={link.customLinkText}>
                 <Text
                   as="span"
                   color="text"
                   sx={{
                     '&:hover': {
-                      color: '#9E1E22',
-                    },
+                      color: '#9E1E22'
+                    }
                   }}
-                  fontSize={2}
-                >
+                  fontSize={2}>
                   {link.customLinkText}
                 </Text>
               </Link>

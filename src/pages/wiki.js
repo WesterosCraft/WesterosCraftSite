@@ -1,50 +1,47 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 
 import { WikiLayout } from '../components/templates/wikiLayout';
 import { WikiSliceZone } from '../components/slices/wikiSliceZone';
 import SEO from '../components/organisms/seo/seo';
+import { useRouter } from 'next/router';
 
-const WikiPage = ({ data, pageContext }) => {
+import { WIKI_QUERY } from '../queries/wikiQuery.gql';
+import { initializeApollo } from '../../lib/apolloClient';
+import { computeBreadcrumbs } from '../utility/helpers';
+
+const WikiPage = ({ initialApolloState }) => {
+  const data = initialApolloState.ROOT_QUERY['entry({"site":"westeroscraft","slug":"wiki"})'];
+  const router = useRouter();
+
   return (
     <>
       <SEO
         title="Wiki"
-        description={data.craft.entry.pageDescription}
-        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+        description={data.pageDescription}
+        image={data.pageEntry && data.pageImage[0].url}
       />
-      <WikiLayout title={data.craft.entry.title || 'WesterosCraft Wiki'} breadcrumb={pageContext.breadcrumb}>
-        <WikiSliceZone slices={data.craft.entry.wikiSlices} />
+      <WikiLayout
+        title={data.title || 'WesterosCraft Wiki'}
+        breadcrumb={computeBreadcrumbs(router.asPath)}>
+        <WikiSliceZone slices={data.wikiSlices} />
       </WikiLayout>
     </>
   );
 };
 
-export const pageQuery = graphql`
-  query wikiQuery {
-    craft {
-      entry(site: "westeroscraft", slug: "wiki") {
-        ... on Craft_wikiHome_wikiHome_Entry {
-          title
-          pageDescription
-          pageImage {
-            url
-          }
-          wikiSlices {
-            ... on Craft_wikiSlices_text_BlockType {
-              ...wikiText
-            }
-            ... on Craft_wikiSlices_entryGrid_BlockType {
-              ...entryGrid
-            }
-            ... on Craft_wikiSlices_imageGrid_BlockType {
-              ...imageGrid
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: WIKI_QUERY
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  };
+}
 
 export default WikiPage;
