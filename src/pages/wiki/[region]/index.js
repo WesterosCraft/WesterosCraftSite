@@ -19,6 +19,8 @@ const RegionPage = ({ initialApolloState, slug }) => {
     initialApolloState.ROOT_QUERY[
       `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiRegion"})`
     ];
+  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
+
   const [items, setItems] = useState(data && data['children({"orderBy":"title"})']);
   const router = useRouter();
 
@@ -58,6 +60,7 @@ const RegionPage = ({ initialApolloState, slug }) => {
         />
       )}
       <WikiLayout
+        navData={navData}
         title={data.title || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         {!data ? (

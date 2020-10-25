@@ -27,6 +27,7 @@ const DestinationPage = ({ initialApolloState, slug }) => {
     initialApolloState.ROOT_QUERY[
       `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiDestination"})`
     ];
+  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -40,6 +41,7 @@ const DestinationPage = ({ initialApolloState, slug }) => {
         />
       )}
       <WikiLayout
+        navData={navData}
         title={(data && data.title) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         {!data ? (
