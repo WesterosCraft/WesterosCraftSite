@@ -29,8 +29,8 @@ const queries = [
         }
         return arr;
       }, []),
-    indexName: `Wiki`,
-  },
+    indexName: `Wiki`
+  }
 ];
 
 module.exports = queries;

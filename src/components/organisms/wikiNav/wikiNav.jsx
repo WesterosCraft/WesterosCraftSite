@@ -90,7 +90,7 @@ export const WikiNav = ({ navData }) => {
         width={1}
         display={['none', null, 'block']}
         maxWidth={246}>
-        {navData.wikiNav.map((navItem, i) => (
+        {navData.map((navItem, i) => (
           <WikiNavGroup navItem={navItem} key={i} />
         ))}
       </Box>

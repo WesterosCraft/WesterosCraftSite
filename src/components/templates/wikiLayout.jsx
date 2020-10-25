@@ -4,8 +4,6 @@ import { WikiNav } from '../organisms/wikiNav/wikiNav';
 import { WikiContent } from '../organisms/wikiContent';
 import { IoIosArrowForward } from 'react-icons/io';
 import Link from 'next/link';
-import { useQuery } from '@apollo/client';
-import { WIKI_NAV_QUERY } from '../../queries/wikiNavQuery.gql';
 
 const BreadcrumbItem = React.forwardRef(({ children, index, ...rest }, ref) => {
   return (
@@ -22,13 +20,7 @@ const BreadcrumbItem = React.forwardRef(({ children, index, ...rest }, ref) => {
   );
 });
 
-export const WikiLayout = ({ children, title, breadcrumb }) => {
-  const { data, loading } = useQuery(WIKI_NAV_QUERY);
-
-  if (loading) {
-    return null;
-  }
-
+export const WikiLayout = ({ children, title, breadcrumb, navData }) => {
   return (
     <Box className="wiki-layout" pb={[15, 20]}>
       <Box
@@ -73,7 +65,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
         px={5}
         maxWidth={1120}
         mx="auto">
-        <WikiNav navData={data} />
+        <WikiNav navData={navData} />
         <WikiContent title={title}>{children}</WikiContent>
       </Flex>
     </Box>

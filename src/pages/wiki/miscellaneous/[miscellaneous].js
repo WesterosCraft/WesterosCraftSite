@@ -15,6 +15,7 @@ const MiscellaneousPage = ({ initialApolloState, slug }) => {
     initialApolloState.ROOT_QUERY[
       `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiMiscellaneous"})`
     ];
+  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
 
   return (
     <>
@@ -28,6 +29,7 @@ const MiscellaneousPage = ({ initialApolloState, slug }) => {
         />
       )}
       <WikiLayout
+        navData={navData}
         title={(data && data.title) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         <WikiSliceZone slices={data && data.wikiSlices} />

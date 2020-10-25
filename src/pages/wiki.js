@@ -11,6 +11,7 @@ import { computeBreadcrumbs } from '../utility/helpers';
 
 const WikiPage = ({ initialApolloState }) => {
   const data = initialApolloState.ROOT_QUERY['entry({"site":"westeroscraft","slug":"wiki"})'];
+  const navdata = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
   const router = useRouter();
 
   return (
@@ -21,6 +22,7 @@ const WikiPage = ({ initialApolloState }) => {
         image={data.pageEntry && data.pageImage[0].url}
       />
       <WikiLayout
+        navData={navdata}
         title={data.title || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         <WikiSliceZone slices={data.wikiSlices} />
