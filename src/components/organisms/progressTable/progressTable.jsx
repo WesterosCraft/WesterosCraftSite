@@ -10,7 +10,7 @@ import {
   useRowSelect,
   useGlobalFilter,
   useAsyncDebounce,
-  useFilters,
+  useFilters
 } from 'react-table';
 import { camelCaseFormatter } from '../../../utility/helpers';
 import { levelFormatter, Styles } from './tableHelpers';
@@ -20,9 +20,15 @@ import _lowerCase from 'lodash/lowerCase';
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
   const count = preGlobalFilteredRows.length;
   const [value, setValue] = React.useState(globalFilter);
-  const onChange = useAsyncDebounce((value) => {
+
+  // useAsyncDebounce throwing error
+  // const onChange = useAsyncDebounce((value) => {
+  //   setGlobalFilter(value || undefined);
+  // }, 200);
+
+  const onChange = (value) => {
     setGlobalFilter(value || undefined);
-  }, 200);
+  };
 
   return (
     <span>
@@ -51,9 +57,9 @@ export const ProgressTable = ({ data, columns }) => {
       style: {
         justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
         alignItems: 'flex-start',
-        display: 'flex',
-      },
-    },
+        display: 'flex'
+      }
+    }
   ];
 
   const defaultColumn = useMemo(
@@ -61,9 +67,9 @@ export const ProgressTable = ({ data, columns }) => {
       // When using the useFlexLayout:
       minWidth: 30, // minWidth is only used as a limit for resizing
       width: 150, // width is used for both the flex-basis and flex-grow
-      maxWidth: 300, // maxWidth is only used as a limit for resizing
+      maxWidth: 300 // maxWidth is only used as a limit for resizing
     }),
-    [],
+    []
   );
 
   const {
@@ -81,12 +87,12 @@ export const ProgressTable = ({ data, columns }) => {
     canPreviousPage,
     canNextPage,
     preGlobalFilteredRows,
-    setGlobalFilter,
+    setGlobalFilter
   } = useTable(
     {
       columns,
       data,
-      defaultColumn,
+      defaultColumn
     },
     useFilters,
     useGlobalFilter,
@@ -94,7 +100,7 @@ export const ProgressTable = ({ data, columns }) => {
     usePagination,
     useResizeColumns,
     useFlexLayout,
-    useRowSelect,
+    useRowSelect
   );
 
   return (
@@ -111,18 +117,16 @@ export const ProgressTable = ({ data, columns }) => {
         `,
           height: 'auto',
           borderRadius: '4px',
-          overflowY: 'hidden',
+          overflowY: 'hidden'
         }}
-        {...getTableProps()}
-      >
+        {...getTableProps()}>
         <Flex
           className="progress-table-searchbar"
           flexDirection="row"
           alignItems="center"
           justifyContent="space-between"
           p={4}
-          sx={{ borderBottom: '1px solid black' }}
-        >
+          sx={{ borderBottom: '1px solid black' }}>
           <Text variant="heading4" fontFamily="heading">
             Project List
           </Text>
@@ -139,15 +143,14 @@ export const ProgressTable = ({ data, columns }) => {
                 setPageSize(Number(e.target.value));
               }}
               minWidth={120}
-              ml={4}
-            >
+              ml={4}>
               {[
                 { size: 10, label: 10 },
                 { size: 20, label: 20 },
                 { size: 30, label: 30 },
                 { size: 40, label: 40 },
                 { size: 50, label: 50 },
-                { size: data.length, label: 'All' },
+                { size: data.length, label: 'All' }
               ].map((pageSize) => (
                 <option key={pageSize.size} value={pageSize.size}>
                   Show {pageSize.label}
@@ -161,18 +164,20 @@ export const ProgressTable = ({ data, columns }) => {
           minWidth={964}
           sx={{
             overflowY: 'auto',
-            position: 'relative',
-          }}
-        >
+            position: 'relative'
+          }}>
           {headerGroups.map((headerGroup) => (
-            <div className="tr header-row" key={headerGroup.index} {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
+            <div
+              className="tr header-row"
+              key={headerGroup.index}
+              {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, i) => (
                 <Flex
+                  key={i}
                   flexDirection="row"
                   sx={{ position: 'relative' }}
                   width={1}
-                  {...column.getHeaderProps(headerProps)}
-                >
+                  {...column.getHeaderProps(headerProps)}>
                   <Text
                     fontWeight="bold"
                     fontSize="14px"
@@ -180,11 +185,10 @@ export const ProgressTable = ({ data, columns }) => {
                       textTransform: 'uppercase',
                       display: 'flex',
                       alignItems: 'center',
-                      flexDirection: 'row',
+                      flexDirection: 'row'
                     }}
                     key={column.index}
-                    className="th"
-                  >
+                    className="th">
                     {column.render('Header')}
                     <>{column.defaultCanFilter ? column.render('Filter') : null}</>
                   </Text>
@@ -192,7 +196,10 @@ export const ProgressTable = ({ data, columns }) => {
               ))}
             </div>
           ))}
-          <Box className="progress-table-items tbody" sx={{ border: 'none' }} {...getTableBodyProps()}>
+          <Box
+            className="progress-table-items tbody"
+            sx={{ border: 'none' }}
+            {...getTableBodyProps()}>
             {page.map((row) => {
               prepareRow(row);
               return (
@@ -215,15 +222,19 @@ export const ProgressTable = ({ data, columns }) => {
                       cursor: 'pointer',
                       '&:hover': {
                         borderTop: '1px solid black',
-                        borderBottom: '1px solid black',
-                      },
+                        borderBottom: '1px solid black'
+                      }
                     }}
-                    {...row.getRowProps()}
-                  >
+                    {...row.getRowProps()}>
                     {row.cells.map((cell, i) => {
                       if (cell.column.id === 'destinationLevel') {
                         return (
-                          <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
+                          <Box
+                            width={1}
+                            px={4}
+                            key={i}
+                            {...cell.getCellProps(cellProps)}
+                            className="td">
                             <Text as="span" fontSize="14px" textAlign="center" width={1}>
                               {levelFormatter(cell.value)}
                             </Text>
@@ -232,7 +243,12 @@ export const ProgressTable = ({ data, columns }) => {
                       }
                       if (cell.column.id === 'warp') {
                         return (
-                          <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
+                          <Box
+                            width={1}
+                            px={4}
+                            key={i}
+                            {...cell.getCellProps(cellProps)}
+                            className="td">
                             <Text as="span" fontSize="14px">
                               {cell.value ? `/${_lowerCase(cell.value)}` : null}
                             </Text>
@@ -240,7 +256,12 @@ export const ProgressTable = ({ data, columns }) => {
                         );
                       }
                       return (
-                        <Box width={1} px={4} key={i} {...cell.getCellProps(cellProps)} className="td">
+                        <Box
+                          width={1}
+                          px={4}
+                          key={i}
+                          {...cell.getCellProps(cellProps)}
+                          className="td">
                           <Text as="span" fontSize="14px">
                             {camelCaseFormatter(cell.value)}
                           </Text>
@@ -259,8 +280,7 @@ export const ProgressTable = ({ data, columns }) => {
               onClick={() => previousPage()}
               disabled={!canPreviousPage}
               sx={{ cursor: 'pointer' }}
-              bg="red.medium"
-            >
+              bg="red.medium">
               Back
             </Button>
             <Text fontSize={[3]} px={4}>
@@ -279,7 +299,11 @@ export const ProgressTable = ({ data, columns }) => {
             <Text fontSize={[3]} px={4}>
               of {pageOptions.length}
             </Text>
-            <Button onClick={() => nextPage()} disabled={!canNextPage} sx={{ cursor: 'pointer' }} bg="red.medium">
+            <Button
+              onClick={() => nextPage()}
+              disabled={!canNextPage}
+              sx={{ cursor: 'pointer' }}
+              bg="red.medium">
               Next
             </Button>
           </Flex>

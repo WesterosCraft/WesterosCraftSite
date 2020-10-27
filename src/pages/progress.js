@@ -16,7 +16,6 @@ import { useTheme } from 'emotion-theming';
 import { Select } from '@rebass/forms';
 import { IoIosArrowDropdown } from 'react-icons/io';
 import { initializeApollo } from '../../lib/apolloClient';
-import { useQuery } from '@apollo/client';
 import { PROGRESS_QUERY } from '../queries/progressQuery.gql';
 
 const RegionProgress = ({ children, percent = 40, theme }) => (
@@ -28,15 +27,15 @@ const RegionProgress = ({ children, percent = 40, theme }) => (
   </Flex>
 );
 
-const ProgressPage = () => {
+const ProgressPage = ({ initialApolloState }) => {
   const theme = useTheme();
-  const { data, loading } = useQuery(PROGRESS_QUERY);
+  const entries =
+    initialApolloState.ROOT_QUERY[
+      'entries({"orderBy":"title","section":"wiki","site":"westeroscraft","type":"wikiDestination"})'
+    ];
+  const entry = initialApolloState.ROOT_QUERY['entry({"section":"progress"})'];
 
-  if (loading) {
-    return null;
-  }
-
-  const memoData = useMemo(() => flatten(data.entries), [data.entries]);
+  const memoData = useMemo(() => flatten(entries), [entries]);
   const totalComplete = memoData.filter((item) => item.destinationStatus === 'completed');
   const totalInProgress = memoData.filter(
     (item) => item.destinationStatus === 'inProgress' || item.destinationStatus === 'redoInProgress'
@@ -252,16 +251,16 @@ const ProgressPage = () => {
   return (
     <>
       <SEO
-        title={data.entry.pageTitle || data.entry.title}
-        description={data.entry.pageDescription}
-        image={data.entry.pageEntry && data.entry.pageImage[0].url}
+        title={entry.pageTitle || entry.title}
+        description={entry.pageDescription}
+        image={entry.pageEntry && entry.pageImage[0].url}
       />
       <Flex px={5} flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {data.entry.heading}
+          {entry.heading}
         </Heading>
         <Heading variant="heading4" textAlign="center" maxWidth={756} mx="auto" px={5} mt={4}>
-          {data.entry.subheading}
+          {entry.subheading}
         </Heading>
         <Flex
           width={1}
@@ -308,7 +307,7 @@ const ProgressPage = () => {
           justifyContent="center"
           mt={7}>
           <Card color={theme.colors.ironIslands}>
-            <Text variant="heading3">{data.entries.length}</Text>
+            <Text variant="heading3">{entries.length}</Text>
             <Text>total projects</Text>
           </Card>
           <Card color={theme.colors.success}>
