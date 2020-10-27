@@ -40,12 +40,9 @@ const DropdownLink = React.forwardRef(({ children, href }, ref) => {
 
 const Results = ({ results }) =>
   results.map((result) => (
-    <Link
-      href={result.url.replace(/^[a-zA-Z]{3,5}\:\/{2}[a-zA-Z0-9_.:-]+\//, '')}
-      passHref
-      key={result.objectID}>
+    <Link href={result.url} passHref key={result.objectID}>
       <DropdownLink>
-        <Text>{result.title}</Text>
+        <Text py={2}>{result.title}</Text>
       </DropdownLink>
     </Link>
   ));
@@ -61,7 +58,7 @@ export const Search = () => {
         setResults(hits);
         setLoading(false);
       });
-    }, 550),
+    }, 850),
     []
   );
 
