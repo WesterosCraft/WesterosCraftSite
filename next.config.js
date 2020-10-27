@@ -6,5 +6,8 @@ module.exports = {
       loader: 'graphql-tag/loader'
     });
     return config;
+  },
+  images: {
+    domains: ['cdn.westeroscraft.com']
   }
 };

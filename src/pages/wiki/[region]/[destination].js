@@ -242,7 +242,7 @@ export async function getStaticPaths() {
 
   const paths = flatten(pages);
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
