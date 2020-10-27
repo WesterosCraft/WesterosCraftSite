@@ -23,6 +23,10 @@ const View = ({ data, ...props }) => (
 const DestinationPage = ({ initialApolloState, slug }) => {
   const router = useRouter();
 
+  if (router.isFallback) {
+    return <Spinner />;
+  }
+
   const data =
     initialApolloState.ROOT_QUERY[
       `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiDestination"})`
@@ -242,7 +246,7 @@ export async function getStaticPaths() {
 
   const paths = flatten(pages);
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {

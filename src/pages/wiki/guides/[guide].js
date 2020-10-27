@@ -9,13 +9,16 @@ import { Spinner } from '../../../components/atoms/spinner';
 import { computeBreadcrumbs } from '../../../utility/helpers';
 
 const GuidePage = ({ slug, initialApolloState }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Spinner />;
+  }
   const data =
     initialApolloState.ROOT_QUERY[
       `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiGuide"})`
     ];
   const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
-
-  const router = useRouter();
 
   return (
     <>
@@ -51,7 +54,7 @@ export async function getStaticPaths() {
     }
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {

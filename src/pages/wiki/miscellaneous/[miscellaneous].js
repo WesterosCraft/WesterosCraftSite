@@ -11,6 +11,10 @@ import { computeBreadcrumbs } from '../../../utility/helpers';
 const MiscellaneousPage = ({ initialApolloState, slug }) => {
   const router = useRouter();
 
+  if (router.isFallback) {
+    return <Spinner />;
+  }
+
   const data =
     initialApolloState.ROOT_QUERY[
       `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiMiscellaneous"})`
@@ -51,7 +55,7 @@ export async function getStaticPaths() {
     }
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
