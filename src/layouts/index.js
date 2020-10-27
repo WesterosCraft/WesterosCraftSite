@@ -4,8 +4,6 @@ import { Box } from 'rebass';
 
 import { Header } from '../components/organisms/header';
 import { Footer } from '../components/organisms/footer';
-import { NAV_QUERY } from '../queries/navQuery.gql';
-import { useQuery } from '@apollo/client';
 import { initGA, logPageView } from '../utility/analytics';
 
 const data = {
