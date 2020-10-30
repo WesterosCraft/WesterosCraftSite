@@ -17,6 +17,10 @@ query DESTINATION_QUERY($slug: [String]) {
             house
             destinationType
             destinationStatus
+            warp
+            dateCompleted
+            projectLead
+            dateStarted
           }
         }
       }
