@@ -124,7 +124,7 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
                     />
                   </span>
                 }>
-                <Text as="span" color="text" px={4}>
+                <Text as="span" color="text" px={4} bg="white" sx={{ border: '1px solid black' }}>
                   {camelCaseFormatter(data.projectDetails[0].region)}
                 </Text>
               </Popup>
@@ -146,7 +146,7 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
                     />
                   </span>
                 }>
-                <Text as="span" color="text" px={4}>
+                <Text as="span" color="text" px={4} bg="white" sx={{ border: '1px solid black' }}>
                   {camelCaseFormatter(data.projectDetails[0].destinationType)}
                 </Text>
               </Popup>
@@ -170,7 +170,7 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
                     />
                   </span>
                 }>
-                <Text as="span" color="text" px={4}>
+                <Text as="span" color="text" px={4} bg="white" sx={{ border: '1px solid black' }}>
                   {camelCaseFormatter(data.projectDetails[0].destinationStatus)}
                 </Text>
               </Popup>
