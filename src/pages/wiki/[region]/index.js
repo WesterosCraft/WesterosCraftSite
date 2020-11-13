@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { EntryCard } from '../../../components/atoms/entryCard';
-import { Flex } from 'rebass';
+import { Flex, Text } from 'rebass';
 import Link from 'next/link';
 import { regionSlugFormatter } from '../../../utility/regionSlugFormatter';
 import { computeBreadcrumbs } from '../../../utility/helpers';
@@ -28,16 +28,12 @@ const RegionPage = ({ initialApolloState, slug }) => {
 
   const [items, setItems] = useState(data && data['children({"orderBy":"title"})']);
 
-  const regionItems = useMemo(() => {
-    setItems(data['children({"orderBy":"title"})']);
-  }, [data]);
-
   const onTypeChange = (option) => {
     if (option === null) {
-      setItems(regionItems);
+      setItems(data['children({"orderBy":"title"})']);
       return;
     }
-    const filtered = items.filter(
+    const filtered = data['children({"orderBy":"title"})'].filter(
       (thing) => thing.projectDetails[0].destinationType === option.value
     );
     setItems(filtered);
@@ -45,10 +41,10 @@ const RegionPage = ({ initialApolloState, slug }) => {
 
   const onStatusChange = (option) => {
     if (option === null) {
-      setItems(regionItems);
+      setItems(data['children({"orderBy":"title"})']);
       return;
     }
-    const filtered = items.filter(
+    const filtered = data['children({"orderBy":"title"})'].filter(
       (thing) => thing.projectDetails[0].destinationStatus === option.value
     );
     setItems(filtered);
@@ -74,8 +70,7 @@ const RegionPage = ({ initialApolloState, slug }) => {
             <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />
             <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
             <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
-              {items &&
-                items.length &&
+              {items && items.length >= 1 ? (
                 items.map((entry) => (
                   <Link
                     passHref
@@ -85,7 +80,10 @@ const RegionPage = ({ initialApolloState, slug }) => {
                     key={entry.slug}>
                     <EntryCard data={entry} key={entry.slug} />
                   </Link>
-                ))}
+                ))
+              ) : (
+                <Text mt={3}>None found</Text>
+              )}
             </Flex>
           </>
         )}
