@@ -101,7 +101,6 @@ const DestinationPage = ({ initialApolloState, slug }) => {
                 mb={10}
                 mx="auto">
                 {data &&
-                  data.entry &&
                   data.projectDetails &&
                   data.projectDetails.length &&
                   data.projectDetails[0].banner &&
