@@ -21,6 +21,10 @@ query DESTINATION_QUERY($slug: [String]) {
             dateCompleted
             projectLead
             dateStarted
+            application
+            banner {
+              url
+            }
           }
         }
       }
