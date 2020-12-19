@@ -36,7 +36,7 @@ const IndexPage = ({ initialApolloState }) => {
         sx={{
           position: 'relative'
         }}>
-        <Box textAlign="center">
+        <Box textAlign="center" className="homepage-text" zIndex={1}>
           <ScrollAnimation animateIn="fadeIn" delay={200} animateOnce>
             <Heading as="h1" variant="heading1">
               {homepageData.heading || ''}
@@ -98,8 +98,8 @@ const IndexPage = ({ initialApolloState }) => {
             position: 'absolute',
             bottom: 0,
             left: 0,
-            zIndex: -1,
-            backgroundColor: 'rgba(81, 179, 255, 0.14)',
+            zIndex: 0,
+            backgroundColor: 'rgba(81, 179, 255, 0.25)',
             backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%), url('/bright-squares.png')`
           }}
         />
