@@ -338,7 +338,7 @@ export const Spinner = (props) => (
         position: 'absolute',
         top: '50%',
         left: '50%',
-        margin: '-5px',
+        margin: '-5px'
       }}
     />
   </Box>

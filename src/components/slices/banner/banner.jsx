@@ -9,8 +9,7 @@ export const Banner = ({ data }) => (
   <Box
     sx={{ position: 'relative' }}
     className="banner"
-    {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
-  >
+    {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
     <ScrollAnimation animateIn="fadeInUp" animateOnce>
       <Flex
         className="banner-content-card"
@@ -23,8 +22,7 @@ export const Banner = ({ data }) => (
         sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC' }}
         mx="auto"
         px={['46px', '80px', null, '100px']}
-        py={11}
-      >
+        py={11}>
         <Box textAlign={['center', null, 'left']} mb={[9, null, 0]} mr={[0, null, 7]}>
           <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
         </Box>
@@ -42,7 +40,7 @@ export const Banner = ({ data }) => (
         right: '50%',
         marginLeft: '-50vw',
         marginRight: '-50vw',
-        transform: 'translateY(-50%)',
+        transform: 'translateY(-50%)'
       }}
       bg="gold"
       width="100vw"

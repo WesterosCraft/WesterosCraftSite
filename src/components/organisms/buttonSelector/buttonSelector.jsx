@@ -1,14 +1,14 @@
 import React from 'react';
 import { Button } from '../../atoms/button';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { event } from 'react-ga';
 
 export const ButtonSelector = ({ data }) =>
   data.map((button, index) => {
     if (button.buttonType === 'internal') {
       return (
-        <Link to={button.buttonLink} key={index}>
+        <Link href={button.buttonLink} key={index} passHref>
           <Button as="button" variant={button.variant} download={button.download === 'true'}>
             {button.buttonText}
           </Button>
@@ -23,13 +23,12 @@ export const ButtonSelector = ({ data }) =>
           href={button.buttonLink}
           download={button.download === 'true'}
           onClick={() => {
-            trackCustomEvent({
+            event({
               category: 'Button',
               action: 'Click',
-              label: `${button.buttonType}_${button.buttonText}`,
+              label: `${button.buttonType}_${button.buttonText}`
             });
-          }}
-        >
+          }}>
           {button.buttonText}
         </Button>
       );

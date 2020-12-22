@@ -1,18 +1,22 @@
 import React, { useMemo } from 'react';
 
-import { graphql } from 'gatsby';
 import { Heading, Flex, Text, Box } from 'rebass';
 import { ProgressTable } from '../components/organisms/progressTable/progressTable';
 import SEO from '../components/organisms/seo/seo';
 import { Card } from '../components/atoms/card/card';
 import { Progress } from 'react-sweet-progress';
 import { useCountUp } from 'react-countup';
-import { completionPercentage, getDestinationLevel, flatten, camelCaseFormatter } from '../utility/helpers';
+import {
+  completionPercentage,
+  getDestinationLevel,
+  flatten,
+  camelCaseFormatter
+} from '../utility/helpers';
 import { useTheme } from 'emotion-theming';
 import { Select } from '@rebass/forms';
 import { IoIosArrowDropdown } from 'react-icons/io';
-
-import 'react-sweet-progress/lib/style.css';
+import { initializeApollo } from '../../lib/apolloClient';
+import { PROGRESS_QUERY } from '../queries/progressQuery.gql';
 
 const RegionProgress = ({ children, percent = 40, theme }) => (
   <Flex flexDirection={['column', 'row']} width={1} my={1}>
@@ -23,16 +27,21 @@ const RegionProgress = ({ children, percent = 40, theme }) => (
   </Flex>
 );
 
-const ProgressPage = ({ data }) => {
+const ProgressPage = ({ initialApolloState }) => {
   const theme = useTheme();
+  const entries =
+    initialApolloState.ROOT_QUERY[
+      'entries({"orderBy":"title","section":"wiki","site":"westeroscraft","type":"wikiDestination"})'
+    ];
+  const entry = initialApolloState.ROOT_QUERY['entry({"section":"progress"})'];
 
-  const memoData = useMemo(() => flatten(data.craft.entries), [data.craft.entries]);
+  const memoData = useMemo(() => flatten(entries), [entries]);
   const totalComplete = memoData.filter((item) => item.destinationStatus === 'completed');
   const totalInProgress = memoData.filter(
-    (item) => item.destinationStatus === 'inProgress' || item.destinationStatus === 'redoInProgress',
+    (item) => item.destinationStatus === 'inProgress' || item.destinationStatus === 'redoInProgress'
   );
   const totalNotStarted = memoData.filter(
-    (item) => item.destinationStatus === 'abandoned' || item.destinationStatus === 'notStarted',
+    (item) => item.destinationStatus === 'abandoned' || item.destinationStatus === 'notStarted'
   );
 
   // Overall percentage //
@@ -75,57 +84,57 @@ const ProgressPage = ({ data }) => {
   const TOTAL_DORNE_PERCENTAGE = completionPercentage(
     regionLevelComplete('dorne'),
     regionLevelInProgress('dorne'),
-    regionLevelNotStarted('dorne'),
+    regionLevelNotStarted('dorne')
   );
   const TOTAL_WESTERLANDS_PERCENTAGE = completionPercentage(
     regionLevelComplete('westerlands'),
     regionLevelInProgress('westerlands'),
-    regionLevelNotStarted('westerlands'),
+    regionLevelNotStarted('westerlands')
   );
   const TOTAL_CROWNLANDS_PERCENTAGE = completionPercentage(
     regionLevelComplete('crownlands'),
     regionLevelInProgress('crownlands'),
-    regionLevelNotStarted('crownlands'),
+    regionLevelNotStarted('crownlands')
   );
   const TOTAL_REACH_PERCENTAGE = completionPercentage(
     regionLevelComplete('reach'),
     regionLevelInProgress('reach'),
-    regionLevelNotStarted('reach'),
+    regionLevelNotStarted('reach')
   );
   const TOTAL_STORMLANDS_PERCENTAGE = completionPercentage(
     regionLevelComplete('stormlands'),
     regionLevelInProgress('stormlands'),
-    regionLevelNotStarted('stormlands'),
+    regionLevelNotStarted('stormlands')
   );
   const TOTAL_VALE_PERCENTAGE = completionPercentage(
     regionLevelComplete('vale'),
     regionLevelInProgress('vale'),
-    regionLevelNotStarted('vale'),
+    regionLevelNotStarted('vale')
   );
   const TOTAL_WALL_PERCENTAGE = completionPercentage(
     regionLevelComplete('theWall'),
     regionLevelInProgress('theWall'),
-    regionLevelNotStarted('theWall'),
+    regionLevelNotStarted('theWall')
   );
   const TOTAL_NORTH_PERCENTAGE = completionPercentage(
     regionLevelComplete('north'),
     regionLevelInProgress('north'),
-    regionLevelNotStarted('north'),
+    regionLevelNotStarted('north')
   );
   const TOTAL_BEYONDTHEWALL_PERCENTAGE = completionPercentage(
     regionLevelComplete('beyondTheWall'),
     regionLevelInProgress('beyondTheWall'),
-    regionLevelNotStarted('beyondTheWall'),
+    regionLevelNotStarted('beyondTheWall')
   );
   const TOTAL_RIVERLANDS_PERCENTAGE = completionPercentage(
     regionLevelComplete('riverlands'),
     regionLevelInProgress('riverlands'),
-    regionLevelNotStarted('riverlands'),
+    regionLevelNotStarted('riverlands')
   );
   const TOTAL_IRONISLANDS_PERCENTAGE = completionPercentage(
     regionLevelComplete('ironIslands'),
     regionLevelInProgress('ironIslands'),
-    regionLevelNotStarted('ironIslands'),
+    regionLevelNotStarted('ironIslands')
   );
 
   const { countUp } = useCountUp({ start: 0, end: TOTAL_PERCENTAGE, duration: 2.5 });
@@ -152,11 +161,10 @@ const ProgressPage = ({ data }) => {
           height: '20px',
           select: {
             '&::placeholder': {
-              color: 'transparent',
-            },
-          },
-        }}
-      >
+              color: 'transparent'
+            }
+          }
+        }}>
         <IoIosArrowDropdown
           className="progress-icon"
           size="20px"
@@ -177,14 +185,13 @@ const ProgressPage = ({ data }) => {
               boxShadow: 'none',
               border: '0',
               '&:focus': {
-                outline: 'none',
-              },
+                outline: 'none'
+              }
             }}
             value={filterValue}
             onChange={(e) => {
               setFilter(e.target.value || undefined);
-            }}
-          >
+            }}>
             <option value="">All</option>
             {options.map((option, i) => (
               <option key={i} value={option}>
@@ -202,60 +209,65 @@ const ProgressPage = ({ data }) => {
       {
         Header: 'Level',
         accessor: 'destinationLevel',
-        width: 64,
+        width: 64
       },
       {
         Header: 'Destination',
-        accessor: 'title',
+        accessor: 'title'
       },
       {
         Header: 'Region',
         accessor: 'region',
         Filter: SelectColumnFilter,
         filter: 'includes',
-        defaultCanFilter: true,
+        defaultCanFilter: true
       },
       {
         Header: 'Status',
         accessor: 'destinationStatus',
         Filter: SelectColumnFilter,
         filter: 'includes',
-        defaultCanFilter: true,
+        defaultCanFilter: true
       },
       {
         Header: 'Type',
         accessor: 'destinationType',
         Filter: SelectColumnFilter,
         filter: 'includes',
-        defaultCanFilter: true,
+        defaultCanFilter: true
       },
       {
         Header: 'House',
-        accessor: 'house',
+        accessor: 'house'
       },
       {
         Header: 'Warp',
-        accessor: 'warp',
-      },
+        accessor: 'warp'
+      }
     ],
-    [],
+    []
   );
 
   return (
     <>
       <SEO
-        title={data.craft.entry.pageTitle || data.craft.entry.title}
-        description={data.craft.entry.pageDescription}
-        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+        title={entry.pageTitle || entry.title}
+        description={entry.pageDescription}
+        image={entry.pageEntry && entry.pageImage[0].url}
       />
       <Flex px={5} flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {data.craft.entry.heading}
+          {entry.heading}
         </Heading>
         <Heading variant="heading4" textAlign="center" maxWidth={756} mx="auto" px={5} mt={4}>
-          {data.craft.entry.subheading}
+          {entry.subheading}
         </Heading>
-        <Flex width={1} flexDirection={['column', null, 'row']} justifyContent="center" alignItems="center" mt={14}>
+        <Flex
+          width={1}
+          flexDirection={['column', null, 'row']}
+          justifyContent="center"
+          alignItems="center"
+          mt={14}>
           <Progress
             symbolClassName="circle-progress-symbol"
             type="circle"
@@ -265,25 +277,37 @@ const ProgressPage = ({ data }) => {
             theme={{
               error: {
                 trailColor: '#efefef',
-                color: theme.colors.error,
+                color: theme.colors.error
               },
               active: {
                 trailColor: '#efefef',
-                color: theme.colors.ironIslands,
+                color: theme.colors.ironIslands
               },
               success: {
                 trailColor: '#efefef',
-                color: theme.colors.success,
-              },
+                color: theme.colors.success
+              }
             }}
           />
-          <Text variant="heading4" fontFamily="heading" fontWeight="bold" mb={6} mt={[4, null, 0]} pl={[0, null, 6]}>
+          <Text
+            variant="heading4"
+            fontFamily="heading"
+            fontWeight="bold"
+            mb={6}
+            mt={[4, null, 0]}
+            pl={[0, null, 6]}>
             Total Project Progress
           </Text>
         </Flex>
-        <Flex flexDirection="row" flexWrap="wrap" mx="auto" width={1} justifyContent="center" mt={7}>
+        <Flex
+          flexDirection="row"
+          flexWrap="wrap"
+          mx="auto"
+          width={1}
+          justifyContent="center"
+          mt={7}>
           <Card color={theme.colors.ironIslands}>
-            <Text variant="heading3">{data.craft.entries.length}</Text>
+            <Text variant="heading3">{entries.length}</Text>
             <Text>total projects</Text>
           </Card>
           <Card color={theme.colors.success}>
@@ -306,26 +330,24 @@ const ProgressPage = ({ data }) => {
           width={1}
           my={10}
           maxWidth={1156}
-          mx="auto"
-        >
+          mx="auto">
           <Box mt={6} width={1}>
             <RegionProgress
               percent={TOTAL_DORNE_PERCENTAGE}
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.dorne,
+                  color: theme.colors.dorne
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Dorne
             </RegionProgress>
             <RegionProgress
@@ -333,18 +355,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.riverlands,
+                  color: theme.colors.riverlands
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Riverlands
             </RegionProgress>
             <RegionProgress
@@ -352,18 +373,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.north,
+                  color: theme.colors.north
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               North
             </RegionProgress>
             <RegionProgress
@@ -371,18 +391,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.vale,
+                  color: theme.colors.vale
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Vale
             </RegionProgress>
             <RegionProgress
@@ -390,18 +409,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.ironIslands,
+                  color: theme.colors.ironIslands
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Iron Islands
             </RegionProgress>
             <RegionProgress
@@ -409,18 +427,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.westerlands,
+                  color: theme.colors.westerlands
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Westerlands
             </RegionProgress>
             <RegionProgress
@@ -428,18 +445,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.crownlands,
+                  color: theme.colors.crownlands
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Crownlands
             </RegionProgress>
             <RegionProgress
@@ -447,18 +463,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.stormlands,
+                  color: theme.colors.stormlands
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Stormlands
             </RegionProgress>
             <RegionProgress
@@ -466,18 +481,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.reach,
+                  color: theme.colors.reach
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Reach
             </RegionProgress>
             <RegionProgress
@@ -485,18 +499,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.theWall,
+                  color: theme.colors.theWall
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               The Wall
             </RegionProgress>
             <RegionProgress
@@ -504,18 +517,17 @@ const ProgressPage = ({ data }) => {
               theme={{
                 error: {
                   trailColor: '#efefef',
-                  color: theme.colors.error,
+                  color: theme.colors.error
                 },
                 active: {
                   trailColor: '#efefef',
-                  color: theme.colors.beyondTheWall,
+                  color: theme.colors.beyondTheWall
                 },
                 success: {
                   trailColor: '#efefef',
-                  color: theme.colors.success,
-                },
-              }}
-            >
+                  color: theme.colors.success
+                }
+              }}>
               Beyond the Wall
             </RegionProgress>
           </Box>
@@ -528,41 +540,19 @@ const ProgressPage = ({ data }) => {
   );
 };
 
-export const pageQuery = graphql`
-  query progressQuery {
-    craft {
-      entry(section: "progress") {
-        title
-        ... on Craft_progress_progress_Entry {
-          heading
-          subheading
-          pageTitle
-          pageDescription
-          pageImage {
-            url
-          }
-        }
-      }
-      entries(site: "westeroscraft", section: "wiki", type: "wikiDestination", orderBy: "title") {
-        title
-        slug
-        ... on Craft_wiki_wikiDestination_Entry {
-          projectDetails {
-            ... on Craft_projectDetails_details_BlockType {
-              house
-              region
-              destinationStatus
-              destinationType
-              warp
-              redoAvailable
-              serverBuild
-              destinationLevel
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: PROGRESS_QUERY
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  };
+}
 
 export default ProgressPage;

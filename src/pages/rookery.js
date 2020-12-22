@@ -1,18 +1,21 @@
 import React, { useMemo } from 'react';
 
-import { graphql } from 'gatsby';
 import { Heading, Box, Flex, Text, Image } from 'rebass';
 import Iframe from 'react-iframe';
 import { Table } from '../components/organisms/table';
 import SEO from '../components/organisms/seo/seo';
+import { initializeApollo } from '../../lib/apolloClient';
+import { ROOKERY_QUERY } from '../queries/rookeryQuery.gql';
 
-const RookeryPage = ({ data }) => {
+const RookeryPage = ({ initialApolloState }) => {
+  const data = initialApolloState.ROOT_QUERY['entry({"section":"rookery","site":"westeroscraft"})'];
+
   const columns = useMemo(
     () => [
       {
         accessor: 'rookeryTitle',
         Header: 'Rookery Title',
-        filterable: false,
+        filterable: false
       },
       {
         accessor: 'rookeryUrl',
@@ -22,27 +25,27 @@ const RookeryPage = ({ data }) => {
           <a href={row.original.rookeryUrl} target="_blank" rel="noopener noreferrer">
             {row.original.rookeryUrl}
           </a>
-        ),
-      },
+        )
+      }
     ],
-    [],
+    []
   );
 
-  const rookeryData = useMemo(() => data.craft.entry.rookeryList, [data.craft.entry.rookeryList]);
+  const rookeryData = useMemo(() => data.rookeryList, [data.rookeryList]);
 
   return (
     <>
       <SEO
-        title={data.craft.entry.pageTitle || data.craft.entry.title}
-        description={data.craft.entry.pageDescription}
-        image={data.craft.entry.pageEntry && data.craft.entry.pageImage[0].url}
+        title={data.pageTitle || data.title}
+        description={data.pageDescription}
+        image={data.pageEntry && data.pageImage[0].url}
       />
       <Flex width={1} justifyContent="center" flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {data.craft.entry.heading}
+          {data.heading}
         </Heading>
         <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
-          {data.craft.entry.subheading}
+          {data.subheading}
         </Heading>
         <Image
           mt={4}
@@ -56,7 +59,7 @@ const RookeryPage = ({ data }) => {
       <Flex flexDirection="column" mb={17}>
         <Box width={1} maxWidth={1256} height={[495, null, 792]} my={10} mx="auto">
           <Iframe
-            url={data.craft.entry.rookeryList[0].rookeryUrl}
+            url={data.rookeryList[0].rookeryUrl}
             width="100%"
             maxWidth="100%"
             height="100%"
@@ -67,7 +70,13 @@ const RookeryPage = ({ data }) => {
           />
         </Box>
       </Flex>
-      <Flex width={1} px={5} flexDirection="column" maxWidth={1536} justifyContent="center" mx="auto">
+      <Flex
+        width={1}
+        px={5}
+        flexDirection="column"
+        maxWidth={1536}
+        justifyContent="center"
+        mx="auto">
         <Text variant="heading4" as="h4" mb={5}>
           Previous Rookery Editions
         </Text>
@@ -76,29 +85,20 @@ const RookeryPage = ({ data }) => {
     </>
   );
 };
-export const pageQuery = graphql`
-  query rookeryQuery {
-    craft {
-      entry(site: "westeroscraft", section: "rookery") {
-        title
-        ... on Craft_rookery_rookery_Entry {
-          heading
-          subheading
-          pageTitle
-          pageDescription
-          pageImage {
-            url
-          }
-          rookeryList {
-            ... on Craft_rookeryList_rookery_BlockType {
-              rookeryUrl
-              rookeryTitle
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: ROOKERY_QUERY
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract()
+    },
+    revalidate: 1
+  };
+}
 
 export default RookeryPage;
