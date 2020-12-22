@@ -100,6 +100,14 @@ const data = {
         },
         {
           __typename: 'mainNav_Node',
+          title: 'Merch',
+          url: 'https://www.redbubble.com/people/westeroscraft/shop?asc=u',
+          type: '',
+          uri: null,
+          element: null
+        },
+        {
+          __typename: 'mainNav_Node',
           title: 'Apply',
           url: 'https://forum.westeroscraft.com/form/builder-application.3/select',
           type: null,
