@@ -1,0 +1,58 @@
+query NAV_QUERY {
+  navData: nodes(navHandle: "mainNav", level: 1) {
+    title
+    url
+    uri
+    type
+    element {
+      slug
+      uri
+    }
+    ... on mainNav_Node {
+      navLogo {
+        url
+      }
+    }
+    children {
+      title
+      url
+      type
+      uri
+      element {
+        slug
+        uri
+      }
+    }
+  }
+  footerData: nodes(navHandle: "mainFooter") {
+    title
+    url
+    type
+    element {
+      slug
+      uri
+    }
+    children {
+      title
+      url
+      type
+      element {
+        slug
+        uri
+      }
+    }
+  }
+}
+
+query BLOCKBOOK_NAV_QUERY {
+  categories: categories(group: "blocks") {
+    title
+    slug
+    ... on blocks_Category {
+      pageImage {
+        url
+      }
+      pageDescription
+    }
+  }
+}
