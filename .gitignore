@@ -9,6 +9,9 @@
 /coverage
 
 # next.js
+.next
+web/.next
+/.next
 /.next/
 /out/
 

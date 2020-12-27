@@ -3,5 +3,8 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/": "pages/index.js",
+  "/wiki": "pages/wiki.js",
+  "/wiki/guides/[guide]": "pages/wiki/guides/[guide].js",
+  "/wiki/[region]": "pages/wiki/[region].js",
   "/wiki/[region]/[destination]": "pages/wiki/[region]/[destination].js"
 }

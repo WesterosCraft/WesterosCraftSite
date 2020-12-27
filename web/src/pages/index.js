@@ -36,7 +36,7 @@ const IndexPage = ({ initialApolloState }) => {
         sx={{
           position: 'relative'
         }}>
-        <Box textAlign="center" className="homepage-text" zIndex={1}>
+        <Box textAlign="center" className="homepage-text" sx={{ zIndex: 1 }}>
           <ScrollAnimation animateIn="fadeIn" delay={200} animateOnce>
             <Heading as="h1" variant="heading1">
               {homepageData.heading || ''}

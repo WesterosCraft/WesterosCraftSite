@@ -23,8 +23,6 @@ const View = ({ data, ...props }) => (
 const DestinationPage = ({ initialApolloState, slug }) => {
   const router = useRouter();
 
-  console.log(initialApolloState);
-
   if (router.isFallback) {
     return <Spinner />;
   }
@@ -46,8 +44,7 @@ const DestinationPage = ({ initialApolloState, slug }) => {
           image={data.pageEntry && data.pageImage[0].url}
         />
       )}
-      test
-      {/* <WikiLayout
+      <WikiLayout
         navData={navData}
         title={(data && data.title) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
@@ -223,7 +220,7 @@ const DestinationPage = ({ initialApolloState, slug }) => {
             {data && data.copy && <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />}
           </>
         )}
-      </WikiLayout> */}
+      </WikiLayout>
     </>
   );
 };

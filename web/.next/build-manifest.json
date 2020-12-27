@@ -29,10 +29,25 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
+    "/wiki": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/wiki.js"
+    ],
+    "/wiki/[region]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/wiki/[region].js"
+    ],
     "/wiki/[region]/[destination]": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/wiki/[region]/[destination].js"
+    ],
+    "/wiki/guides/[guide]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/wiki/guides/[guide].js"
     ]
   },
   "ampFirstPages": []
