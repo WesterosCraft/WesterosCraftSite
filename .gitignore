@@ -40,3 +40,5 @@ node_modules
 
 .now
 cache
+public/studio
+studio/dist
