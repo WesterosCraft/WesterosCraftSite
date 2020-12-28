@@ -9,7 +9,7 @@ import SEO from '../components/organisms/seo/seo';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useMediaQuery } from 'react-responsive';
 import { HOME_QUERY } from '../queries/homeQuery.gql';
-import { initializeApollo } from '../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 import { event } from 'react-ga';
 
 const IndexPage = ({ initialApolloState }) => {
@@ -36,7 +36,7 @@ const IndexPage = ({ initialApolloState }) => {
         sx={{
           position: 'relative'
         }}>
-        <Box textAlign="center" className="homepage-text" zIndex={1}>
+        <Box textAlign="center" className="homepage-text" sx={{ zIndex: 1 }}>
           <ScrollAnimation animateIn="fadeIn" delay={200} animateOnce>
             <Heading as="h1" variant="heading1">
               {homepageData.heading || ''}

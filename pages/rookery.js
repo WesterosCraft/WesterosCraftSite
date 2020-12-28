@@ -4,7 +4,7 @@ import { Heading, Box, Flex, Text, Image } from 'rebass';
 import Iframe from 'react-iframe';
 import { Table } from '../components/organisms/table';
 import SEO from '../components/organisms/seo/seo';
-import { initializeApollo } from '../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 import { ROOKERY_QUERY } from '../queries/rookeryQuery.gql';
 
 const RookeryPage = ({ initialApolloState }) => {
