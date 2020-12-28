@@ -2,9 +2,13 @@
   "name": "with-apollo",
   "version": "1.0.0",
   "scripts": {
-    "dev": "concurrently \"next --port $PORT\" \"cd studio && sanity start\"",
-    "build": "echo 'Building Sanity to public/studio' && cd studio && sanity build ../public/studio -y && cd .. && next build",
-    "start": "vercel dev"
+    "dev": "next",
+    "build": "npm run build:sanity && npm run build:web",
+    "build:web": "next build",
+    "start:web": "next start",
+    "build:sanity": "cd studio && npx sanity build ../public/studio -y && cd ..",
+    "start:sanity": "cd studio && sanity start",
+    "postinstall": "lerna bootstrap"
   },
   "dependencies": {
     "@apollo/client": "^3.2.0",
@@ -23,6 +27,7 @@
     "lodash": "^4.17.20",
     "lunr": "^2.3.9",
     "next": "^10.0.0",
+    "next-sanity": "^0.1.8",
     "next-seo": "^4.14.1",
     "node-fetch": "^2.6.1",
     "qs": "^6.9.4",
@@ -59,6 +64,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "lerna": "^3.22.1",
     "prettier": "2.1.2",
     "prop-types": "^15.7.2",
     "react-ga": "^3.1.2"
