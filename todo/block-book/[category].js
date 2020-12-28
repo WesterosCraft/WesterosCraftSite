@@ -6,7 +6,7 @@ import { BlockBookLayout } from '../../components/templates/blockBookLayout';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { Tag } from '../../components/atoms/tag';
 import Link from 'next/link';
-import { initializeApollo } from '../../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { computeBreadcrumbs } from '../../utility/helpers';

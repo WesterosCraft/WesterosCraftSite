@@ -4,7 +4,7 @@ import { BlockBookLayout } from '../../components/templates/blockBookLayout';
 import SEO from '../../components/organisms/seo/seo';
 import { WikiSliceZone } from '../../components/slices/wikiSliceZone';
 import Link from 'next/link';
-import { initializeApollo } from '../../../lib/apolloClient';
+import { initializeApollo } from '../../lib/apolloClient';
 import { useQuery } from '@apollo/client';
 import { BLOCK_BOOK_QUERY } from '../../queries/blockBookQuery.gql';
 import { useRouter } from 'next/router';

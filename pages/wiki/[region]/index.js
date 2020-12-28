@@ -10,7 +10,7 @@ import { RegionFilters } from '../../../components/atoms/regionFilters/regionFil
 import SEO from '../../../components/organisms/seo/seo';
 import { Spinner } from '../../../components/atoms/spinner';
 import { REGION_QUERY, ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gql';
-import { initializeApollo } from '../../../../lib/apolloClient';
+import { initializeApollo } from '../../../lib/apolloClient';
 import { useRouter } from 'next/router';
 import flatten from 'lodash/flatten';
 

@@ -15,7 +15,7 @@ import {
 import { useTheme } from 'emotion-theming';
 import { Select } from '@rebass/forms';
 import { IoIosArrowDropdown } from 'react-icons/io';
-import { initializeApollo } from '../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 import { PROGRESS_QUERY } from '../queries/progressQuery.gql';
 
 const RegionProgress = ({ children, percent = 40, theme }) => (

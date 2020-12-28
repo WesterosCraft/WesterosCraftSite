@@ -2,7 +2,7 @@ import { CacheProvider } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from '../theme/theme';
 import { ApolloProvider } from '@apollo/client';
-import { useApollo } from '../../lib/apolloClient';
+import { useApollo } from '../lib/apolloClient';
 
 import 'react-vertical-timeline-component/style.min.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';

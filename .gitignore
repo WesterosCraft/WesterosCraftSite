@@ -9,6 +9,9 @@
 /coverage
 
 # next.js
+.next
+web/.next
+/.next
 /.next/
 /out/
 
@@ -37,3 +40,5 @@ node_modules
 
 .now
 cache
+public/studio
+studio/dist

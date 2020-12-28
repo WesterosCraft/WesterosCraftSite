@@ -2,11 +2,12 @@ import React from 'react';
 import { Heading } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import SEO from '../components/organisms/seo/seo';
-import { ABOUT_QUERY } from '../queries/aboutQuery.gql';
-import { initializeApollo } from '../../lib/apolloClient';
+import { LAUNCHER_QUERY } from '../queries/launcherQuery.gql';
+import { initializeApollo } from '../lib/apolloClient';
 
-const AboutPage = ({ initialApolloState }) => {
-  const data = initialApolloState.ROOT_QUERY['entry({"section":"about","site":"westeroscraft"})'];
+const LauncherPage = ({ initialApolloState }) => {
+  const data =
+    initialApolloState.ROOT_QUERY['entry({"section":"launcher","site":"westeroscraft"})'];
 
   return (
     <>
@@ -27,7 +28,7 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: ABOUT_QUERY
+    query: LAUNCHER_QUERY
   });
 
   return {
@@ -38,4 +39,4 @@ export async function getStaticProps() {
   };
 }
 
-export default AboutPage;
+export default LauncherPage;

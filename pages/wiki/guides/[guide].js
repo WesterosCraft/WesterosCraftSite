@@ -2,22 +2,21 @@ import React from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { WikiSliceZone } from '../../../components/slices/wikiSliceZone';
 import SEO from '../../../components/organisms/seo/seo';
-import { initializeApollo } from '../../../../lib/apolloClient';
-import { MISC_QUERY, ALL_MISC_QUERY } from '../../../queries/miscQuery.gql';
+import { initializeApollo } from '../../../lib/apolloClient';
+import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
 import { computeBreadcrumbs } from '../../../utility/helpers';
 
-const MiscellaneousPage = ({ initialApolloState, slug }) => {
+const GuidePage = ({ slug, initialApolloState }) => {
   const router = useRouter();
 
   if (router.isFallback) {
     return <Spinner />;
   }
-
   const data =
     initialApolloState.ROOT_QUERY[
-      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiMiscellaneous"})`
+      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiGuide"})`
     ];
   const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
 
@@ -36,7 +35,7 @@ const MiscellaneousPage = ({ initialApolloState, slug }) => {
         navData={navData}
         title={(data && data.title) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        <WikiSliceZone slices={data && data.wikiSlices} />
+        <WikiSliceZone slices={data.wikiSlices} />
       </WikiLayout>
     </>
   );
@@ -45,13 +44,13 @@ const MiscellaneousPage = ({ initialApolloState, slug }) => {
 export async function getStaticPaths() {
   const apolloClient = initializeApollo();
 
-  const miscs = await apolloClient.query({
-    query: ALL_MISC_QUERY
+  const guides = await apolloClient.query({
+    query: ALL_GUIDES_QUERY
   });
 
-  const paths = miscs.data.entries.map((page) => ({
+  const paths = guides.data.entries.map((page) => ({
     params: {
-      miscellaneous: page.slug
+      guide: page.slug
     }
   }));
 
@@ -62,17 +61,17 @@ export async function getStaticProps({ params }) {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: MISC_QUERY,
-    variables: { slug: params.miscellaneous }
+    query: GUIDE_QUERY,
+    variables: { slug: params.guide }
   });
 
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
-      slug: params.miscellaneous
+      slug: params.guide
     },
     revalidate: 1
   };
 }
 
-export default MiscellaneousPage;
+export default GuidePage;
