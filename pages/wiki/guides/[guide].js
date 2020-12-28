@@ -2,7 +2,7 @@ import React from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { WikiSliceZone } from '../../../components/slices/wikiSliceZone';
 import SEO from '../../../components/organisms/seo/seo';
-import { initializeApollo } from '../../../../lib/apolloClient';
+import { initializeApollo } from '../../../lib/apolloClient';
 import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';

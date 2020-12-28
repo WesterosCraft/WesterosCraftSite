@@ -8,7 +8,7 @@ import SEO from '../../../components/organisms/seo/seo';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { FiExternalLink } from 'react-icons/fi';
 import { useRouter } from 'next/router';
-import { initializeApollo } from '../../../../lib/apolloClient';
+import { initializeApollo } from '../../../lib/apolloClient';
 import { DESTINATION_QUERY } from '../../../queries/destinationQuery.gql';
 import { ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gql';
 import flatten from 'lodash/flatten';

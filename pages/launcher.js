@@ -3,7 +3,7 @@ import { Heading } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import SEO from '../components/organisms/seo/seo';
 import { LAUNCHER_QUERY } from '../queries/launcherQuery.gql';
-import { initializeApollo } from '../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 
 const LauncherPage = ({ initialApolloState }) => {
   const data =

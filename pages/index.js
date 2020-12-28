@@ -9,7 +9,7 @@ import SEO from '../components/organisms/seo/seo';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useMediaQuery } from 'react-responsive';
 import { HOME_QUERY } from '../queries/homeQuery.gql';
-import { initializeApollo } from '../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 import { event } from 'react-ga';
 
 const IndexPage = ({ initialApolloState }) => {

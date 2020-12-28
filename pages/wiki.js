@@ -6,7 +6,7 @@ import SEO from '../components/organisms/seo/seo';
 import { useRouter } from 'next/router';
 
 import { WIKI_QUERY } from '../queries/wikiQuery.gql';
-import { initializeApollo } from '../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 import { computeBreadcrumbs } from '../utility/helpers';
 
 const WikiPage = ({ initialApolloState }) => {
