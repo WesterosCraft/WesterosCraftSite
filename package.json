@@ -11,6 +11,7 @@
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "@rebass/forms": "^4.0.6",
+    "@sanity/cli": "^2.1.0",
     "algoliasearch": "^4.5.1",
     "dayjs": "^1.8.36",
     "emotion": "10.0.27",

@@ -454,6 +454,11 @@
   dependencies:
     reflexbox "^4.0.6"
 
+"@sanity/cli@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-2.1.0.tgz#a14d0fbd791f8f465d43f02cc30730e80c7dad55"
+  integrity sha512-ii8xhHcXmVGb5hANxASAStZ7C1WeAIA0MW70FSdjfpvhpesAGcZgq+n18TCxbKHThfhqBWvCK5gWHZba8Shzbw==
+
 "@styled-system/background@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@styled-system/background/-/background-5.1.2.tgz#75c63d06b497ab372b70186c0bf608d62847a2ba"
