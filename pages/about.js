@@ -3,7 +3,7 @@ import { Heading } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import SEO from '../components/organisms/seo/seo';
 import { ABOUT_QUERY } from '../queries/aboutQuery.gql';
-import { initializeApollo } from '../../lib/apolloClient';
+import { initializeApollo } from '../lib/apolloClient';
 
 const AboutPage = ({ initialApolloState }) => {
   const data = initialApolloState.ROOT_QUERY['entry({"section":"about","site":"westeroscraft"})'];
