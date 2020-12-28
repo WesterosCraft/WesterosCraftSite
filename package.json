@@ -8,7 +8,7 @@
     "start:web": "next start",
     "build:sanity": "cd studio && npx sanity build ../public/studio -y && cd ..",
     "start:sanity": "cd studio && sanity start",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap && cd studio && yarn"
   },
   "dependencies": {
     "@apollo/client": "^3.2.0",
