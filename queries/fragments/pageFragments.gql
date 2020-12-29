@@ -164,6 +164,7 @@ fragment TWO_COLUMN_VIDEO_FRAGMENT on pageSlices_twoColumnVideo_BlockType {
 fragment CONTENT_BANNER_FRAGMENT on pageSlices_contentBanner_BlockType {
   typeHandle
   redactor
+  warningText
   buttons {
     ... on buttons_button_BlockType {
       buttonType
