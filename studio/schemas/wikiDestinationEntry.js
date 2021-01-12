@@ -3,18 +3,24 @@ export default {
   name: 'wikiDestination',
   type: 'document',
   initialValue: {
-    projectStatus: 'notStarted'
+    projectStatus: 'notStarted',
+    redoAvailable: false,
+    serverBuild: false,
+    difficultyLevel: 'one'
   },
   fields: [
     {
       title: 'Name',
       name: 'name',
-      type: 'string'
+      type: 'string',
+      description: 'Name of destination',
+      validation: (Rule) => Rule.required()
     },
     {
       title: 'Region',
       name: 'region',
       type: 'string',
+      description: 'Region project is located in',
       options: {
         list: [
           { title: 'Dorne', value: 'dorne' },
@@ -29,12 +35,14 @@ export default {
           { title: 'Reach', value: 'reach' },
           { title: 'Beyond the Wall', value: 'beyondTheWall' }
         ]
-      }
+      },
+      validation: (Rule) => Rule.required()
     },
     {
       title: 'Build Type',
       name: 'buildType',
       type: 'string',
+      description: 'Designation of build',
       options: {
         list: [
           { title: 'Castle', value: 'castle' },
@@ -50,7 +58,8 @@ export default {
           { title: 'Ruin', value: 'ruin' },
           { title: 'Miscellaneous', value: 'miscellaneous' }
         ]
-      }
+      },
+      validation: (Rule) => Rule.required()
     },
     {
       title: 'Project Status',
@@ -65,7 +74,8 @@ export default {
           { title: 'Abandoned', value: 'abandoned' },
           { title: 'Redo In Progress', value: 'redoInProgress' }
         ]
-      }
+      },
+      validation: (Rule) => Rule.required()
     },
     {
       title: 'House',
@@ -84,6 +94,79 @@ export default {
       name: 'projectLead',
       description: 'Leader(s) of the project',
       type: 'string'
+    },
+    {
+      title: 'Date Started',
+      name: 'dateStarted',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        calendarTodayLabel: 'Today'
+      }
+    },
+    {
+      title: 'Date Completed',
+      name: 'dateCompleted',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        calendarTodayLabel: 'Today'
+      }
+    },
+    {
+      title: 'Redo Available',
+      name: 'redoAvailable',
+      description: 'Check true if this project is available to apply for redo',
+      type: 'boolean'
+    },
+    {
+      title: 'Server Build',
+      name: 'serverBuild',
+      description: 'Check true if this project was a server build',
+      type: 'boolean'
+    },
+    {
+      title: 'Difficulty Level',
+      name: 'difficultyLevel',
+      type: 'string',
+      description:
+        'Each project is assigned a level of difficulty.  This is used to calculate region and total project completeness.',
+      options: {
+        list: [
+          { title: '1', value: 'one' },
+          { title: '2', value: 'two' },
+          { title: '3', value: 'three' },
+          { title: '4', value: 'four' },
+          { title: '5', value: 'five' },
+          { title: '6', value: 'six' }
+        ]
+      },
+      validation: (Rule) => Rule.required()
+    },
+    {
+      title: 'Application',
+      name: 'application',
+      description: 'Link to users project application, if available',
+      type: 'string'
+    },
+    {
+      title: 'Banner',
+      name: 'banner',
+      description: 'Image of House banner, if available',
+      type: 'image'
+    },
+    {
+      title: 'Images',
+      name: 'images',
+      type: 'array',
+      description: 'Screenshots and renders of destination',
+      of: [{ type: 'image' }]
+    },
+    {
+      title: 'Entry',
+      name: 'entry',
+      type: 'array',
+      of: [{ type: 'block' }]
     }
   ]
 };
