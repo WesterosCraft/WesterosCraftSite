@@ -1,4 +1,4 @@
-import spacings from './spacings';
+import spacingSettings from '../settings/spacing';
 
 export default {
   title: 'Text Slice',
@@ -12,6 +12,6 @@ export default {
       type: 'array',
       of: [{ type: 'block' }]
     },
-    ...spacings
+    ...spacingSettings
   ]
 };
