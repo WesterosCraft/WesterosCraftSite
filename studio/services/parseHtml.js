@@ -1,6 +1,6 @@
 const blockTools = require('@sanity/block-tools').default;
 const jsdom = require('jsdom');
-
+const util = require('util');
 const { JSDOM } = jsdom;
 
 const schema = require('../schemas/schema').default;
@@ -11,28 +11,30 @@ const blockContentType = schema
 
 function parseHTML(HTMLDoc) {
   const rules = [
-    {
-      deserialize(el, next, block) {
-        if (el.tagName.toLowerCase() !== 'figure') {
-          return undefined;
-        }
-        const img = Array.from(el.children).find((child) => child.tagName.toLowerCase() === 'img');
-        const caption = Array.from(el.children).find(
-          (child) => child.tagName.toLowerCase() === 'figcaption'
-        );
+    // {
+    //   deserialize(el, next, block) {
+    //     if (el.tagName.toLowerCase() !== 'img') {
+    //       return undefined;
+    //     }
+    //     const img = Array.from(el.children).find((child) => console.log('CHILD: ', child));
+    //     const caption = Array.from(el.children).find(
+    //       (child) => child.tagName.toLowerCase() === 'figcaption'
+    //     );
 
-        return block({
-          _type: 'figure',
-          image: {
-            // using the format for importing assets via the CLI
-            // https://www.sanity.io/docs/data-store/importing-data#import-using-the-cli
-            // _sanityAsset: `image@${img.getAttribute('src')}`
-          }
-          //   alt: img.getAttribute('alt'),
-          //   caption: caption.textContent
-        });
-      }
-    },
+    //     console.log(util.inspect(el, { showHidden: false, depth: null }));
+
+    //     return block({
+    //       _type: 'figure',
+    //       image: {
+    //         // using the format for importing assets via the CLI
+    //         // https://www.sanity.io/docs/data-store/importing-data#import-using-the-cli
+    //         // _sanityAsset: `image@${img.getAttribute('src')}`
+    //       }
+    //       // alt: img.getAttribute('alt'),
+    //       // caption: caption.textContent
+    //     });
+    //   }
+    // },
     {
       // Special case for code blocks (wrapped in pre and code tag)
       deserialize(el, next, block) {

@@ -1,6 +1,7 @@
 const testJson = require('./testData.json');
 const fs = require('fs');
-const parseHTML = require('./parseHTML');
+const parseHTML = require('./parseHtml');
+const jq = require('node-jq');
 
 function convertNullToDefault(value, defaultValue = '') {
   if (value === null) {
@@ -38,17 +39,30 @@ function transformCraftDestination(destination) {
       _type: 'image',
       _sanityAsset: `image@${destination.projectDetails[0].banner[0].url}`
     },
-    images: destination.images.map((image) => `image@${image.url}`),
+    images: destination.images.map((image) => {
+      return { _type: 'image', _sanityAsset: `image@${image.url}` };
+    }),
     entry: parseHTML(destination.copy)
   };
 }
 
-fs.writeFile(
-  'testnode.json',
-  JSON.stringify(transformCraftDestination(testJson.data.destination)),
+fs.writeFileSync(
+  'transformedJson.json',
+  JSON.stringify([transformCraftDestination(testJson.data.destination)]),
   function () {
     console.log('done!');
   }
 );
+
+jq.run('.[]', './transformedJson.json', {
+  output: 'compact'
+})
+  .then((output) => {
+    fs.writeFileSync('testConversion.json', output);
+    console.log(`✨ The file was converted to NDJSON!`);
+  })
+  .catch((err) => {
+    console.error(`🐛  Something went wrong: ${err}`);
+  });
 
 console.log(transformCraftDestination(testJson.data.destination));
