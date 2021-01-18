@@ -58,11 +58,9 @@ jq.run('.[]', './transformedJson.json', {
   output: 'compact'
 })
   .then((output) => {
-    fs.writeFileSync('testConversion.json', output);
+    fs.writeFileSync('convertedNDJSON.json', output);
     console.log(`✨ The file was converted to NDJSON!`);
   })
   .catch((err) => {
     console.error(`🐛  Something went wrong: ${err}`);
   });
-
-console.log(transformCraftDestination(testJson.data.destination));

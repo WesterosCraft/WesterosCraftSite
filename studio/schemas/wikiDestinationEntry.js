@@ -175,7 +175,27 @@ export default {
       title: 'Entry',
       name: 'entry',
       type: 'array',
-      of: [{ type: 'block' }]
+      of: [
+        { type: 'block' },
+        {
+          name: 'figure',
+          type: 'object',
+          fields: [
+            {
+              name: 'alt',
+              type: 'string'
+            },
+            {
+              name: 'caption',
+              type: 'string'
+            },
+            {
+              name: 'image',
+              type: 'image'
+            }
+          ]
+        }
+      ]
     }
   ]
 };

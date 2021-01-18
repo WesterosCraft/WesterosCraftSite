@@ -11,10 +11,18 @@ import videoSlice from './slices/videoSlice';
 // pages
 import aboutPage from './pages/aboutPage';
 import launcherPage from './pages/launcherPage';
+import figure from './objects/figure';
 
 const schema = createSchema({
   name: 'default',
-  types: schemaTypes.concat([wikiDestinationEntry, textSlice, videoSlice, aboutPage, launcherPage])
+  types: schemaTypes.concat([
+    wikiDestinationEntry,
+    textSlice,
+    videoSlice,
+    aboutPage,
+    launcherPage,
+    figure
+  ])
 });
 
 export default schema;
