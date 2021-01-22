@@ -9,6 +9,10 @@ const blockContentType = schema
   .get('wikiDestination')
   .fields.find((field) => field.name === 'entry').type;
 
+const chopWikiaString = (url) => {
+  return url.split('/revision')[0];
+};
+
 function parseHTML(HTMLDoc) {
   const rules = [
     {
@@ -16,18 +20,22 @@ function parseHTML(HTMLDoc) {
         if (el.tagName.toLowerCase() !== 'figure') {
           return undefined;
         }
-        const img = Array.from(el.children).find((child) => child.tagName.toLowerCase() === 'img');
+        const anchor = Array.from(el.children).find((child) => child.tagName.toLowerCase() === 'a');
+        const img =
+          anchor && anchor.children
+            ? Array.from(anchor.children).find((child) => child.tagName.toLowerCase() === 'img')
+            : null;
         const caption = Array.from(el.children).find(
           (child) => child.tagName.toLowerCase() === 'figcaption'
         );
 
-        if (img) {
+        if (img && img.getAttribute('src')) {
           return block({
             _type: 'figure',
             image: {
               // using the format for importing assets via the CLI
               // https://www.sanity.io/docs/data-store/importing-data#import-using-the-cli
-              _sanityAsset: `image@${img.getAttribute('src')}`
+              _sanityAsset: `image@${chopWikiaString(img.getAttribute('src'))}`
             },
             alt: img.getAttribute('alt'),
             caption: caption.textContent
