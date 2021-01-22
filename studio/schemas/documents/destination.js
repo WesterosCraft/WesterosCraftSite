@@ -1,6 +1,6 @@
 export default {
-  title: 'Wiki Destination',
-  name: 'wikiDestination',
+  title: 'Destination',
+  name: 'destination',
   type: 'document',
   initialValue: {
     projectStatus: 'notStarted',

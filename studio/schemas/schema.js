@@ -1,28 +1,19 @@
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-// schema types
-import wikiDestinationEntry from './wikiDestinationEntry';
-
-// slice types
-import textSlice from './slices/textSlice';
-import videoSlice from './slices/videoSlice';
-
 // pages
-import aboutPage from './pages/aboutPage';
-import launcherPage from './pages/launcherPage';
+import destination from './documents/destination';
+import about from './documents/about';
+import launcher from './documents/launcher';
+
+// objects
+import textSlice from './objects/textSlice';
+import videoSlice from './objects/videoSlice';
 import figure from './objects/figure';
 
 const schema = createSchema({
   name: 'default',
-  types: schemaTypes.concat([
-    wikiDestinationEntry,
-    textSlice,
-    videoSlice,
-    aboutPage,
-    launcherPage,
-    figure
-  ])
+  types: schemaTypes.concat([destination, textSlice, videoSlice, about, launcher, figure])
 });
 
 export default schema;

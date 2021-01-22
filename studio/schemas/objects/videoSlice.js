@@ -1,4 +1,4 @@
-import spacingSettings from '../settings/spacing';
+import spacingSettings from './spacing';
 
 export default {
   title: 'Video Slice',

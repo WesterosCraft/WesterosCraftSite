@@ -1,4 +1,4 @@
-const testJson = require('./testData.json');
+const dataToConvert = require('./jsonToConvert.json');
 const fs = require('fs');
 const parseHTML = require('./parseHtml');
 const jq = require('node-jq');
@@ -14,7 +14,7 @@ function convertNullToDefault(value, defaultValue = '') {
 function transformCraftDestination(destination) {
   return {
     _id: destination.title.toLowerCase().replace(/\s+/g, '-').slice(0, 200), // use the id of the record from the external source (we happen to know the API only return unique values for `id`)
-    _type: 'wikiDestination',
+    _type: 'destination',
     name: destination.title,
     slug: {
       _type: 'slug',
@@ -46,9 +46,13 @@ function transformCraftDestination(destination) {
   };
 }
 
+const transformArray = (arr) => {
+  return arr.map((item) => transformCraftDestination(item));
+};
+
 fs.writeFileSync(
   'transformedJson.json',
-  JSON.stringify([transformCraftDestination(testJson.data.destination)]),
+  JSON.stringify(transformArray(dataToConvert)),
   function () {
     console.log('done!');
   }

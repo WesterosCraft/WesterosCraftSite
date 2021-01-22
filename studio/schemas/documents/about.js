@@ -1,8 +1,8 @@
-import textSlice from '../slices/textSlice';
+import textSlice from '../objects/textSlice';
 
 export default {
-  title: 'About Page',
-  name: 'aboutPage',
+  title: 'About',
+  name: 'about',
   type: 'document',
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fieldsets: [{ name: 'slices', title: 'Slices' }],

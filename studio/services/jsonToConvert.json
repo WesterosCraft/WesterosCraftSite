@@ -1,0 +1,199 @@
+[
+  {
+    "title": "Craster's Keep",
+    "slug": "crasters-keep",
+    "copy": "<p>Craster's Keep is located in the haunted forest, not so far north of the Wall. It is not an actual keep, although the men of the Night's Watch designate it as so. As its name suggests, it is the home of Craster, a wildling, and his numerous wives. The man deals with the Night's Watch on occasions for southern goods, otherwise unavailable, in exchange for information or temporary housing.<br></p>\r\n\r\n<h3>Features</h3>\r\n<ul><li><strong>The \"Keep\": </strong>It is located atop a small hill, surrounded by an earthen dyke. Skulls on pikes serve as point of entry inside the dyke, where there's room for small livestock such as pigs and sheep. The inside is a wide, open area. It features a centered fireplace serving as cooking station for the inhabitants, who mostly sleep on the second floor. There is also a basement where goods and provisions are stored.</li></ul><p>Note: The original plans called for the construction of abandoned settlements in the region around Craster's Keep but these were never constructed. It was suggested that they be built along with the <a href=\"https://westeroscraft.com/wiki/beyond-the-wall/white-tree\">Whitetree</a> project. </p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/crasterskeep.jpg"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": "Free Folk",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "warp": "/warp crasters",
+        "dateCompleted": "2017-06-29T07:00:00+00:00",
+        "projectLead": "JustCallMeJack",
+        "dateStarted": "2016-04-09T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Mance's Camp",
+    "slug": "mances-camp",
+    "copy": "<p><a href=\"https://forum.westeroscraft.com/threads/mances-camp-a-farewell-project-to-ottys-sanity.1530/\">Link to Forum Thread</a></p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": "Free Folk",
+        "destinationType": "miscellaneous",
+        "destinationStatus": "inProgress",
+        "warp": "/warp mancescramp",
+        "dateCompleted": null,
+        "projectLead": "otty",
+        "dateStarted": "2019-07-04T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Whitetree",
+    "slug": "white-tree",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": "Free Folk",
+        "destinationType": "landmark",
+        "destinationStatus": "notStarted",
+        "warp": "/warp whitetree",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Last Greenseer",
+    "slug": "last-greenseer",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": null,
+        "destinationType": "landmark",
+        "destinationStatus": "notStarted",
+        "warp": "/warp lastgreenseer",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Hardhome",
+    "slug": "hardhome",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": "Free Folk",
+        "destinationType": "ruin",
+        "destinationStatus": "notStarted",
+        "warp": "/warp hardhomenew",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Fist of the First Men",
+    "slug": "fist-of-the-first-men",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": null,
+        "destinationType": "landmark",
+        "destinationStatus": "notStarted",
+        "warp": "/warp fist",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Ruddy Hall",
+    "slug": "ruddy-hall",
+    "copy": "<p>No warp or exact location has been determined for this project.</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": "Free Folk",
+        "destinationType": "keep",
+        "destinationStatus": "inProgress",
+        "warp": "/warp ruddyhall",
+        "dateCompleted": null,
+        "projectLead": "AerioOndos",
+        "dateStarted": "2020-11-20T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/ruddy-hall-on-storrold%E2%80%99s-point-project-application.2494/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Thenn",
+    "slug": "thenn",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": "Free Folk",
+        "destinationType": "clan",
+        "destinationStatus": "notStarted",
+        "warp": "/warp thenn",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Lorn Point",
+    "slug": "lorn-point",
+    "copy": "<h3>Description<br></h3>\r\n<ul><li>Lorn Point is located along the frozen shore, beyond the wall. Its location on the frozen shore is chosen for its long distance from the wall. But also, its relative closeness for a naval approach along the shore, which could justify its naming.</li><li>A ranger named Redwyn, who lived during the reign of Dorren Stark King of the North. Made a great ranging to Lorn Point. He wrote this ranging which took from the Shadow Tower all the way to Lorn Point. On that ranging he and his company fought giants and traded with children of the forest.</li><li>Aemon maester of Castle Black, wrote a letter to the Citadel, in the early reign of King Aegon V, where he told of Redwyns journey.</li></ul><h3>Features<br></h3>\r\n<ul><li>The lonely rock formation of Lorn Point.<br></li></ul>\r\n<h3>Construction<br></h3>\r\n<p>Lorn Point was made solely by the project lead, as a closed project, since it was relatively minor project. The immediate shores around Lorn Point was made as well.</p><ul></ul>\r\n<h3>Inspiration<br></h3>\r\n<ul><li>Trolltunga - A cliff in Norway.<br><br><img src=\"https://cdn.westeroscraft.com/web/assets/images/lorninsp1.png\" data-image=\"99811\"><br><br></li><li>Old Man of Storr - Ilse of Skye, Scotland.</li></ul><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/lorninsp2.png\" data-image=\"99810\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/LornPoint5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/lornpoint-6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/LornPoint4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/lornpoint-3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "beyondTheWall",
+        "house": null,
+        "destinationType": "landmark",
+        "destinationStatus": "completed",
+        "warp": "/warp lornpoint",
+        "dateCompleted": "2020-04-07T07:00:00+00:00",
+        "projectLead": "JohanKR850",
+        "dateStarted": "2020-04-07T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/lorn-point-by-johan.2124/",
+        "banner": []
+      }
+    ]
+  }
+]

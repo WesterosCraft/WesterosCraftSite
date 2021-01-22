@@ -5,9 +5,8 @@ const { JSDOM } = jsdom;
 
 const schema = require('../schemas/schema').default;
 
-const blockContentType = schema
-  .get('wikiDestination')
-  .fields.find((field) => field.name === 'entry').type;
+const blockContentType = schema.get('destination').fields.find((field) => field.name === 'entry')
+  .type;
 
 function parseHTML(HTMLDoc) {
   const rules = [
@@ -16,10 +15,13 @@ function parseHTML(HTMLDoc) {
         if (el.tagName.toLowerCase() !== 'figure') {
           return undefined;
         }
-        const img = Array.from(el.children).find((child) => child.tagName.toLowerCase() === 'img');
+
+        const img = el.children[0];
         const caption = Array.from(el.children).find(
           (child) => child.tagName.toLowerCase() === 'figcaption'
         );
+
+        console.log(util.inspect(img, true, null, true /* enable colors */));
 
         if (img) {
           return block({

@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 
-const hiddenDocTypes = (listItem) => !['aboutPage', 'launcherPage'].includes(listItem.getId());
+const hiddenDocTypes = (listItem) => !['about', 'launcher'].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -12,8 +12,8 @@ export default () =>
           S.list()
             .title('Pages')
             .items([
-              S.documentListItem().schemaType('aboutPage').id('aboutPage'),
-              S.documentListItem().schemaType('launcherPage').id('launcherPage')
+              S.documentListItem().schemaType('about').id('about'),
+              S.documentListItem().schemaType('launcher').id('launcher')
             ])
         ),
       ...S.documentTypeListItems().filter(hiddenDocTypes)
