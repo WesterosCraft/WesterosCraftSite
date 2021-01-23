@@ -1,5 +1,5 @@
 export default {
-  title: 'Destination',
+  title: 'Destinations',
   name: 'destination',
   type: 'document',
   initialValue: {
