@@ -12,7 +12,6 @@ function convertNullToDefault(value, defaultValue = '') {
 }
 
 function transformCraftGuide(guide) {
-  console.log('GUIDE: ', guide);
   return {
     _id: guide.title
       .toLowerCase()
@@ -32,11 +31,18 @@ function transformCraftGuide(guide) {
         .replace(/\(/g, '')
         .replace(/\)/g, '')
         .slice(0, 200)
-    }
+    },
+    pageBuilder: [
+      {
+        _type: 'richText',
+        text: parseHTML(guide.wikiSlices.find((item) => item.typeHandle === 'text').redactor)
+      }
+    ]
   };
 }
 
 const transformArray = (arr) => {
+  console.log(arr[0]);
   return arr.map((item) => transformCraftGuide(item));
 };
 

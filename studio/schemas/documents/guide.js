@@ -31,7 +31,7 @@ export default {
       type: 'array',
       title: 'Page builder',
       of: [
-        { type: 'object', name: 'Rich Text', fields: [{ type: 'simpleRichText', name: 'idk' }] },
+        { type: 'object', name: 'richText', fields: [{ name: 'text', type: 'simpleRichText' }] },
         { type: 'documentGrid' },
         { type: 'imageGallery' },
         { type: 'accordion' }
