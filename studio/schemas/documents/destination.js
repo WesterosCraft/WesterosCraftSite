@@ -194,6 +194,16 @@ export default {
               type: 'image'
             }
           ]
+        },
+        {
+          name: 'video',
+          type: 'object',
+          fields: [
+            {
+              name: 'url',
+              type: 'url'
+            }
+          ]
         }
       ]
     }

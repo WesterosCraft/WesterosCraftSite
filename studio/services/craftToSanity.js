@@ -13,12 +13,24 @@ function convertNullToDefault(value, defaultValue = '') {
 
 function transformCraftDestination(destination) {
   return {
-    _id: destination.title.toLowerCase().replace(/\s+/g, '-').slice(0, 200), // use the id of the record from the external source (we happen to know the API only return unique values for `id`)
+    _id: destination.title
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/'/g, '')
+      .replace(/\(/g, '')
+      .replace(/\)/g, '')
+      .slice(0, 200), // use the id of the record from the external source (we happen to know the API only return unique values for `id`)
     _type: 'destination',
     name: destination.title,
     slug: {
       _type: 'slug',
-      current: destination.title.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+      current: destination.title
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/'/g, '')
+        .replace(/\(/g, '')
+        .replace(/\)/g, '')
+        .slice(0, 200)
     },
     region: destination.projectDetails[0].region,
     buildType: destination.projectDetails[0].destinationType,
@@ -26,23 +38,28 @@ function transformCraftDestination(destination) {
       destination.projectDetails[0].destinationStatus,
       'notCompleted'
     ),
-    house: convertNullToDefault(destination.projectDetails[0].house, ''),
-    warp: convertNullToDefault(destination.projectDetails[0].warp, ''),
-    projectLead: convertNullToDefault(destination.projectDetails[0].projectLead, ''),
-    dateStarted: destination.projectDetails[0].dateStarted,
-    dateCompleted: destination.projectDetails[0].dateCompleted,
+    house: convertNullToDefault(destination.projectDetails[0].house, undefined),
+    warp: convertNullToDefault(destination.projectDetails[0].warp, undefined),
+    projectLead: convertNullToDefault(destination.projectDetails[0].projectLead, undefined),
+    dateStarted: convertNullToDefault(destination.projectDetails[0].dateStarted, undefined),
+    dateCompleted: convertNullToDefault(destination.projectDetails[0].dateCompleted, undefined),
     redoAvailable: convertNullToDefault(destination.projectDetails[0].redoAvailable, false),
     serverBuild: convertNullToDefault(destination.projectDetails[0].serverBuild, false),
-    difficultyLevel: convertNullToDefault(destination.projectDetails[0].destinationLevel, ''),
-    application: convertNullToDefault(destination.projectDetails[0].application, ''),
-    banner: {
-      _type: 'image',
-      _sanityAsset: `image@${destination.projectDetails[0].banner[0].url}`
-    },
+    difficultyLevel: convertNullToDefault(
+      destination.projectDetails[0].destinationLevel,
+      undefined
+    ),
+    application: convertNullToDefault(destination.projectDetails[0].application, undefined),
+    banner: destination.projectDetails[0].banner.length
+      ? {
+          _type: 'image',
+          _sanityAsset: `image@${destination.projectDetails[0].banner[0].url}`
+        }
+      : undefined,
     images: destination.images.map((image) => {
       return { _type: 'image', _sanityAsset: `image@${image.url}` };
     }),
-    entry: parseHTML(destination.copy)
+    entry: destination.copy && destination.copy !== [] ? parseHTML(destination.copy) : undefined
   };
 }
 

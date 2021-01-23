@@ -14,6 +14,7 @@ const chopWikiaString = (url) => {
 
 function parseHTML(HTMLDoc) {
   const rules = [
+    // finds img with structure figure > a > img
     {
       deserialize(el, next, block) {
         if (el.tagName.toLowerCase() !== 'figure') {
@@ -23,7 +24,7 @@ function parseHTML(HTMLDoc) {
         const img =
           anchor && anchor.children
             ? Array.from(anchor.children).find((child) => child.tagName.toLowerCase() === 'img')
-            : null;
+            : undefined;
         const caption = Array.from(el.children).find(
           (child) => child.tagName.toLowerCase() === 'figcaption'
         );
@@ -38,6 +39,76 @@ function parseHTML(HTMLDoc) {
             },
             alt: img.getAttribute('alt'),
             caption: caption.textContent
+          });
+        }
+      }
+    },
+    // finds img with structure figure > img
+    {
+      deserialize(el, next, block) {
+        if (el.tagName.toLowerCase() !== 'figure') {
+          return undefined;
+        }
+        const img = Array.from(el.children).find((child) => child.tagName.toLowerCase() === 'img');
+
+        const caption = Array.from(el.children).find(
+          (child) => child.tagName.toLowerCase() === 'figcaption'
+        );
+
+        if (img && img.getAttribute('src')) {
+          return block({
+            _type: 'figure',
+            image: {
+              // using the format for importing assets via the CLI
+              // https://www.sanity.io/docs/data-store/importing-data#import-using-the-cli
+              _sanityAsset: `image@${chopWikiaString(img.getAttribute('src'))}`
+            },
+            alt: img.getAttribute('alt') || undefined,
+            caption: (caption && caption.textContent) || undefined
+          });
+        }
+      }
+    },
+    // finds img with structure li > img
+    {
+      deserialize(el, next, block) {
+        if (el.tagName.toLowerCase() !== 'li') {
+          return undefined;
+        }
+        const img = Array.from(el.children).find((child) => child.tagName.toLowerCase() === 'img');
+
+        const caption = Array.from(el.children).find(
+          (child) => child.tagName.toLowerCase() === 'figcaption'
+        );
+
+        if (img && img.getAttribute('src')) {
+          return block({
+            _type: 'figure',
+            image: {
+              // using the format for importing assets via the CLI
+              // https://www.sanity.io/docs/data-store/importing-data#import-using-the-cli
+              _sanityAsset: `image@${chopWikiaString(img.getAttribute('src'))}`
+            },
+            alt: img.getAttribute('alt') || undefined,
+            caption: (caption && caption.textContent) || undefined
+          });
+        }
+      }
+    },
+    // finds video links
+    {
+      deserialize(el, next, block) {
+        if (el.tagName.toLowerCase() !== 'figure') {
+          return undefined;
+        }
+        const iframe = Array.from(el.children).find(
+          (child) => child.tagName.toLowerCase() === 'iframe'
+        );
+
+        if (iframe && iframe.getAttribute('src')) {
+          return block({
+            _type: 'video',
+            url: iframe.getAttribute('src')
           });
         }
       }

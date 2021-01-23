@@ -1,0 +1,1386 @@
+[
+  {
+    "title": "Blackpool",
+    "slug": "slate",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/blackpool-1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Slate",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp blackpool",
+        "dateCompleted": "2014-07-23T07:00:00+00:00",
+        "projectLead": "NoahRYS",
+        "dateStarted": "2014-01-13T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Skane",
+    "slug": "skane",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": null,
+        "destinationType": "landmark",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp skane",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Overton",
+    "slug": "overton",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/overton-1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/overton-3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Overton",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp overton",
+        "dateCompleted": "2013-06-11T07:00:00+00:00",
+        "projectLead": "WolfeG",
+        "dateStarted": "2013-06-11T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Mollen",
+    "slug": "mollen",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Mollen",
+        "destinationType": "keep",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "three",
+        "warp": "/warp mollen",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Marsh",
+    "slug": "marsh",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Marsh",
+        "destinationType": "keep",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "warp not set",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Liddle",
+    "slug": "liddle",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Clan Liddle",
+        "destinationType": "clan",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp liddle",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Long",
+    "slug": "long",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Long",
+        "destinationType": "keep",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp long",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Ironsmith",
+    "slug": "ironsmith",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Ironsmith",
+        "destinationType": "keep",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp ironsmith",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Holt",
+    "slug": "holt",
+    "copy": "<p>Located to the north of <a href=\"https://westeroscraft.com/wiki/north/white-harbor\">White Harbor</a>, the seat of House Holt is a small castle near a hamlet and many farming fields, with a weirwood tree in front of the castle. Its lands include the forests around it.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/holt-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/holt-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/holt-2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Holt",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp holt",
+        "dateCompleted": "2019-07-13T07:00:00+00:00",
+        "projectLead": "lord_damascus",
+        "dateStarted": "2019-04-28T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Condon",
+    "slug": "condon",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/condon1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Condon",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp condon",
+        "dateCompleted": "2015-01-10T08:00:00+00:00",
+        "projectLead": "TurtleSnipesz",
+        "dateStarted": "2014-11-08T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Ashwood",
+    "slug": "ashwood",
+    "copy": "<p><strong>Ashwood </strong>castle sits along the White Knife northwest of <a href=\"https://westeroscraft.com/wiki/north/white-harbor\" target=\"_blank\">White Harbor</a>, almost nothing is known about the house apart from its name and region.</p><h3>Features</h3><ul><li>Ashwood Castle - A motte and bailey castle sitting on a small hill with a large manmade ditch on one side.<em> /warp ashwood</em></li><li>Ashwood Ruins - Ruins of an ancient castle in the middle of the Ashwood moors. <em>/warp ashruins</em></li><li>Ashwood Ringfort - Remains of an old ringfort in the middle of an ashwood bog. <em>/warp ashringfort</em></li><li>Ashwood Tower - A tower overlooking a nearby village. <em>/warp ashwoodhf</em></li><li>Ashwood Charcoal Burners - Two camps of charcoal burners located in the forests<em>.</em></li><li>Ashwood Barrows - and burial location of heroes long forgotten.</li></ul><h3>Construction</h3>\r\n<p>Ashwood got the approved for construction on the 20th of February 2020, like with most of projects done by _Simbaa its original plans largely differ from the end product, the castle design went through drastic changes along with its location, and land layout this has been partially done due to _Simbaa abandoning the project around June 12th, only to reapply for it on September 20th 2019. On September 16th 2020 _Simbaa has finished the project and asked for its post approval. Ashwood took 19 months to finish. </p><h3>Inspiration</h3>\r\n<p>Neither version of the Ashwood Castle had any particular inspiration, most of it was planned on the go, however the house style took some elements from White Harbor sprawl due to its close proximity to the Project. For the lands the inspiration came mostly from random google search images that _Simbaa felt like wanting to tryout/incorporate into the project, nearby White Harbor area once again served as a basic guideline regarding the block choice and vegetation.</p>\r\n",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Ashwood1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Ashwood2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Ashwood3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Ashwood4.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Ashwood",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp ashwood",
+        "dateCompleted": "2020-09-16T07:00:00+00:00",
+        "projectLead": "_Simbaa",
+        "dateStarted": "2019-02-20T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-application-ashwood-by-_simbaa.1525/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Amber",
+    "slug": "amber",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Amber",
+        "destinationType": "ruin",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "one",
+        "warp": "/warp amber",
+        "dateCompleted": null,
+        "projectLead": "EverlastEvil",
+        "dateStarted": "2020-12-30T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-application-house-amber-by-everlastevil.2566/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Barrowton",
+    "slug": "barrowton",
+    "copy": "<p><strong>Barrowton</strong> is a walled town in The North, the largest community in the North after <a href=\"https://westeroscraft.com/wiki/north/white-harbor\">White Harbor</a>. The town lies in the Barrowlands, an area of broad rolling plains with howling winds, and is build east of the confluence of two rivers which flow south to the Saltspear. Barrowton's name is attributed is centered around the large hill Great Barrow, on which was built the Dustins' castle, Barrow Hall. The town itself is wooden and has broad straight streets. House Stout of <a href=\"https://westeroscraft.com/wiki/north/goldgrass\">Goldgrass</a> has a keep near the eastern gate of Barrowton, but House Dustin is the major house of the area, claiming to have descended from the First King of the First Men and the Barrow Kings of the barrowlands. <strong>House Dustin</strong> blazon their shield with two rusted longaxes with black shafts crossed, a black crown between their points, on yellow.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Barrowton,</strong> large wooden walls surround this prosperous Northern town, which is slightly smaller than <a href=\"https://westeroscraft.com/wiki/riverlands/stoney-sept\">Stoney Sept</a> in the <a href=\"https://westeroscraft.com/wiki/riverlands\">Riverlands</a>, but still the second largest settlement in the North after <a href=\"https://westeroscraft.com/wiki/north/white-harbor\">White Harbor</a>. A port on the rivers connects Barrowton to the Sunset Sea via the Saltspear making the town critical to the Norths economy and transportation. The streets of Barrowton are wide and level, using wooden planks. The largest street runs from the main gate on the west, past the base of the stairs leading up to Barrow Hall, and to the east gate near Goldgrass.</li><li><strong>Great Barrow,</strong> a large, grassy hill surrounded by Barrowton and the windswept plains of the barrowlands, which contain several burial mounds called barrows. According to folklore the Great Barrow contains the grave of the First King of the First Men or a King of the Giants. Maester Kennet's <em>Passages of the Dead</em> mentions a curse was supposedly placed on the Great Barrow allowing none to rival the First King. The curse is said to have weakened and made corpselike any living man who pretended to the title, such as the Barrow Kings.</li><li><strong>Barrow Hall,</strong> a large wooden hall built on the Great Barrow. The hall has wooden walls and square towers. There is an old windmill and a grassy courtyard located near the gatehouse. Wide and wooden stairs lead up the hill to Barrow Hall's keep.</li><li><strong>Goldgrass,</strong> a modest keep of House Stout near the eastern gate of Barrowton within the wooden walls.</li><li><strong>Hamlets and Villages,</strong> surrounding Barrowton are a handful of small villages and hamlets, each with a few houses and buildings near fields and pastures. Beyond these structures is the vast plains of the barrowlands.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Barrowton was built in January 2014, led by barkus and carcinogenius. The current Barrowton replaced a very early version.</p>\r\n<h3>Inspiration</h3>\r\n<p>Barrowton was inspired by Medieval Nordic architecture and concept art, similar to many builds in the North, specifically Dragonsreach Keep. The town and Barrow Hall have often been compared to the architecture of Skyrim and also Edoras from <em>Lord of the Rings</em>, which both incorporate elements of fantasy as well as realistic Nordic architecture.</p><h3>Video</h3><p>Barrowton was featured in Episode 4 of WesterosCraft Walks. DutchGuard begins outside the town, explores various buildings, including the massive wooden Barrow Hall of House Dustin.</p>\r\n\r\n\r\n<figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/6IV4KpUaUJ4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Barrowton2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Barrowton5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Barrowton4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Barrowton3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Dustin",
+        "destinationType": "town",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp barrowton",
+        "dateCompleted": "2014-01-20T08:00:00+00:00",
+        "projectLead": "barkus, carcinogenius",
+        "dateStarted": "2013-12-28T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Dustin.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Bear Island",
+    "slug": "bear-island",
+    "copy": "<p><strong>Bear Island</strong> is a remote island in the sea between <a href=\"https://westeroscraft.com/wiki/north/deepwood-motte\">Deepwood Motte</a> and the Frozen Shore. It is described as rich in trees and bears, and poor in everything else. Apart from a few crofters, the inhabitants are fisherfolk living along the coast. Historically, Bear Island has been raided by wildings from Beyond the Wall and raids by the Ironborn. House Woodfoot once controlled the island, but became extinct when House Hoare of conquered the island for the Ironborn and used it for a reaving base. When the island has be retaken by both House Greyjoy and House Stark, who ultimately re-won the island and established <strong>House Mormont</strong> as its protectors. House Mormont holds the island from their wooden ringfort called Mormont Hall. They blazon their arms a black bear over a green wood and their motto is \"Here We Stand.\" The women of Bear Island take an active role in the defense of the island, forming an important part of the rugged, warrior culture of the North.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Mormont Keep,</strong> is no more than a wooden longhall built from huge logs - a wood-walled castle with a smoky keep, surrounded by an earthen palisade. On the gate there is a carving of a woman in a bearskin with a babe suckling at her breast in one arm and a battleaxe in the other. Behind the keep is a small godswood.</li><li><strong>Earth and Wood Palisade,</strong> surrounds the keep and a small village that includes watchtowers, a larder, an armory, and a smithy.</li><li><strong>Bear Bay,</strong> a small bay on the southern shore of the island. A river empties into the bay after passing under a stone bridge. Although the bay is covered in ice, a ship is anchored nearby.</li><li><strong>Fishing Villages</strong>,<strong> </strong>five small villages are spread across the large island, connected by snowy trails through dense coniferous and oak forests.</li><li><strong>Bear Caves,</strong> on the northern shores of the island are several bear caves in the snow covered hills and bluffs. These caves give the island its name and a large bear appears on the House Mormont sigil.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Bear Island was built by barkus in Summer 2014. It replaced an older version that was built on the old map. On the new map, Bear Island is fully encased in snow and ice and barkus desired to explore new blocks to make snow covered roofs.</p>\r\n<h3>Inspiration</h3>\r\n<p>Mormont Hall was inspired by Viking longhouses, which are built from wood and earthern ramps. The middle of a longhall includes an open fire pit.<br><br></p>\r\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/bearislandinsp.jpg\" data-image=\"99044\"></figure>\r\n<h3>Video</h3>\r\n<p>Bear Island was featured in Episode 42 of WesterosCraft Walks. DutchGuard begins in one of the fishing villages and walks to the earthen and wooden palisade before exploring Mormont Hall and its outbuildings. The video is filmed during a gentle snowstorm.<br><br></p>\r\n<figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/UDePKt9QF0M\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Bear_Island_6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Bear_Island_2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Bear_Island_1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Mormont",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "five",
+        "warp": "/warp bearisland",
+        "dateCompleted": "2014-10-06T07:00:00+00:00",
+        "projectLead": "barkus",
+        "dateStarted": "2014-07-13T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Mormont.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Cerwyn",
+    "slug": "cerwyn",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/cerwyn-2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Cerwyn",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp cerwyn",
+        "dateCompleted": "2014-03-27T07:00:00+00:00",
+        "projectLead": "xkrillen43x, AttackOnMars",
+        "dateStarted": "2014-01-02T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Cerwyn.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Deepwood Motte",
+    "slug": "deepwood-motte",
+    "copy": "<p><a href=\"https://awoiaf.westeros.org/index.php/House_Woods\">House Woods</a>, <a href=\"https://awoiaf.westeros.org/index.php/House_Bole\">House Bole</a>, and <a href=\"https://awoiaf.westeros.org/index.php/House_Branch\">House Branch</a> are all vassals to House Glover and are included in this project.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/deepwoodmotte1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Glover",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp deepwoodmotte",
+        "dateCompleted": "2014-04-21T07:00:00+00:00",
+        "projectLead": "starcat98, JustCallMeJack",
+        "dateStarted": "2013-12-30T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Glover.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Flint's Finger",
+    "slug": "flints-finger",
+    "copy": "<p><a href=\"https://awoiaf.westeros.org/index.php/Blind_Lord\">The Blind Lord's Tower</a> is assigned to the lands of House Flint.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/flintsfinger1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Flint",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp flintsfinger",
+        "dateCompleted": "2012-04-21T07:00:00+00:00",
+        "projectLead": "JTGN7",
+        "dateStarted": "2012-04-21T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Ironrath",
+    "slug": "forrester",
+    "copy": "<p><strong>Ironrath</strong> is the modest seat of <strong>House Forrester</strong> in the Wolfswood. They are a minor Northern house sworn to House Glover of <a href=\"https://westeroscraft.com/wiki/north/deepwood-motte\">Deepwood Motte</a>. The Forresters are hard and stoic, like most Northerners, and their isolated position in the Wolfswood makes them mistrustful of outsiders. The longhall houses the entirity of their small workforce of farmhands and the Forresters themselves. The outpost provides simple fare and cheap wood for passing traders and merchants.</p>\r\n<h3>Features</h3>\r\n<ul><li>The <strong>longhall</strong> itself is two floors high, with a large stair tower connecting the two. On the ground floor there is the main mess hall, a well-stocked kitchen, and a private room for the Forresters. The few farmhands and loggers that live with them have straw beds on the ground of the mess hall that are rolled up during day hours. The first floor in the roof of the longhall houses the Forresters' bedchambers and a solar for the head of the house. There is also an attic in the stair tower which holds spare beds for any important guests, and a small bailey to hold chickens, the hounds, various other amenities and a guard tower.</li><li>The small <strong>fields</strong> surrounding the longhall provide wheat, barley, pumpkins, turnips and pease depending on the time of year. There is more than enough to feed the small number of inhabitants, so the Forresters make a decent trade selling their excess. In recent months, however, they have started hoarding the food for the winter, which, as the Starks are wont to remind everybody, is coming.</li><li>A tall, spindly <strong>weirwood</strong> casts a shadow over the longhall in the morning.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Ironrath was built over a few days in the months of December 2013 and January 2014 by builder OllieDisc as a sub-project within the overproject of House Glover of Deepwood Motte and the Wolfswood, posted by builders JustCallMeJack and Starcat98.</p>\r\n<h3>Inspiration</h3>\r\n<p>The main inspiration for the style of the build was the generic Nordic longhall, while the style was developed from the Westeroscraft Northern Style Guide and existing builds in the North.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/forrester1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/forrester2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Forrester",
+        "destinationType": "holdfast",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp forrester",
+        "dateCompleted": "2014-01-04T08:00:00+00:00",
+        "projectLead": "OllieDiscs",
+        "dateStarted": "2014-01-01T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Hornwood",
+    "slug": "hornwood",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/hornwood-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/hornwood-2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Hornwood",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp hornwood",
+        "dateCompleted": "2013-12-28T08:00:00+00:00",
+        "projectLead": "WolfeG",
+        "dateStarted": "2013-12-27T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Hornwood.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Karhold",
+    "slug": "karhold",
+    "copy": "<p><strong>Karhold</strong> is a strong castle on the eastern side of <a href=\"https://westeroscraft.com/wiki/north\">The North</a> and the seat of <strong>House Karstark</strong>, one of <a href=\"https://westeroscraft.com/wiki/north/winterfell\">Winterfell</a>'s strongest bannermen and distant relatives. House Karstark's words are \"The Sun of Winter,\" and their sigil is a white sunburst on black. House Karstark was created when Karlon Stark put down a rebel lord and was granted his own lands as a reward. Over the years, his seat, known originally as Karl's Hold became Karhold and the family name evolved into Karstark.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>The Village,</strong> on a frozen river are a small docks with a few houses spread across a small bluff. A weirwood grows near the village and the road to the Karhold Keep.</li><li><strong>Karhold's West Keep,</strong> the larger part of the keep sits high on cliff above the village. Both square and round towers surround a small courtyard. Within the keep is a wynch system to bring up water from the river below</li><li><strong>Karhold's East Keep,</strong> across a narrow bridge is a much smaller keep, which includes the lord's chambers and apartments. This keep also has a wynch system similar to the western side of the keep.</li><li><strong>Hamlets,</strong> the Karstark lands have several small hamlets and holdfasts to the south, such Flayer's End, the holdfast nearest the Bolton lands and Ramsfield, a hamlet.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Karhold was begun in December 2013 and the main town and keep were completed in Spring 2014. The surrounding lands, including several holdfasts and hamlets are completed, but a few hamlets in the overall planned have yet to be completed.</p>\r\n<h3>Inspiration</h3>\r\n<p>The main inspiration for Karhold came from an artist's interpretation, supposedly based on communication with GRRM about the layout and appearance of Karhold.<br></p><h3>Video</h3>\r\n\r\n<p>Karhold was featured in Episode 5 of WesterosCraft Walks. DutchGuard begins on the frozen docks, tours the village, and explores both sides of the castle, providing excellent views of this beautiful northern build.<br><br></p>\r\n<figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/chFe2oPezwY\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/karhold-1.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/karhold-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/karhold-2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Karstark",
+        "destinationType": "castle",
+        "destinationStatus": "abandoned",
+        "destinationLevel": "four",
+        "warp": "/warp karhold",
+        "dateCompleted": null,
+        "projectLead": "FlemishGuard, MrTXI",
+        "dateStarted": "2013-12-27T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/old-project-application-karhold-by-mrtxi-flemishguard.2240/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Karstark.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Last Hearth",
+    "slug": "last-hearth",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/lasthearth.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/lasthearth.jpeg"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Umber",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp lasthearth",
+        "dateCompleted": "2014-06-04T07:00:00+00:00",
+        "projectLead": "AdricTW",
+        "dateStarted": "2014-01-30T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Umber.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Greywater Watch",
+    "slug": "greywater-watch",
+    "copy": "<p>A new Greywater Watch project will need to include the known crannogmen Houses of the Neck as sub-projects. </p><p>Blackmyre, Boggs, Cray, Fenn, Greengood, Peat, and Quagg.</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Reed",
+        "destinationType": "castle",
+        "destinationStatus": "abandoned",
+        "destinationLevel": "four",
+        "warp": "/warp greywaterwatch",
+        "dateCompleted": null,
+        "projectLead": "KokitoCraft",
+        "dateStarted": "2014-01-03T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Reed.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Moat Cailin",
+    "slug": "moat-cailin",
+    "copy": "<p><strong>Moat Cailin</strong> is a ruined castle on a causeway of the Kingsroad when it travels through the marshes of the Neck. This fortress stands as a choke point for any travel by land into <a href=\"https://westeroscraft.com/wiki/north\">The North</a> and has been critical in numerous historical military campaigns, with many considering the \"key to holding the North.\" The castle itself is a crumbling ancient fortress of built by the First Men, possibly the oldest continuously used structure in Westeros. Originally, the castle had twenty towers and basalt curtain walls as high as Winterfell, but today only three towers remain and a small portion of the wall. The rest of the towers have crumbled away and been submerged into the marsh. According to legend, it was from one the towers, that the Children of the Forest tried using powerful magic to break Westeros in half to stop the advancement of the Andals into the North. Although they ultimately failed, Moat Cailin has successfully repelled generations of southerners from capturing the North. The castle is garrisoned by the North but does not belong to a specific house, although House Reed, the most prominent family of the Neck with strong allegiance to the Starks and the North protects the area with their knowledge of the swamps and its winding streams and pathways.</p><h3>Features</h3><ul><li><strong>Drunkard's Tower,</strong> a tower on the southwest corner of the ruins which has begun to sink, causing it to lean to one side. This tower would be the first to fire upon enemies from the south.</li><li><strong>Children's Tower,</strong> a tall, slender tower to the east. Although it remains quite straight, the top has been shattered and is open to the elements. The tower is named after the Children of the Forest, who according to legend tried to flood the Neck during the Andal Invasion.</li><li><strong>Gatehouse Tower,</strong> the most intact and largest remaining tower on the northern wall of Moat Cailin which contains the gate on the causeway, making it the last defense against advancing armies.</li><li><strong>Swamplands,</strong> surrounding Moat Cailin on all sides is an expansive swamplands, home to lion-lizards (crocodiles) and the Crannogmen, a mysterious people who know the secret ways of the marsh and like House Reed, are fiercely loyal to the North even though they are viewed suspiciously by many people.</li></ul><h3>History</h3><p>Raised by the ancient First Men, it is claimed that Moat Cailin has defended against southern invasions for thousands of years</p><p>According to myth, the Greenseers of the Children of the Forest worked dark magic at Moat Cailin. From the Children's Tower, they are said to have used the Hammer of the Waters on the Neck to break Westeros in two, separating the North from the south in the same manner in which they shattered the Arm of Dorne. The Children failed and only succeeded in flooding it, however, creating bogs and swamps. Some scholars discount the legend, instead attributing the watery landscape to natural events.</p><p>The Marsh Kings and their Crannogmen held Moat Cailin, sometimes with the assistance of the Barrow Kings, Red Kings, and Kings of Winter, against all attacks from the south. The swampy terrain was enough to prevent Moat Cailin from falling in the Andal invasion. It was a key defense of the North, against which the Andal armies threw themselves time after time with no success. The Kings of Winter from House Stark eventually defeated the Marsh Kings, adding Moat Cailin to the realm of Winterfell.</p><p>The wooden keep rotted away a thousand years past. The three remaining towers are more than capable of defending the passage to the south, however, providing that they are fully manned. Moat Cailin has never been taken from the south, although it is vulnerable from the north and the east.</p>During Aegon's Conquest, some Northern lords urged King Torrhen Stark to resist House Targaryen at Moat Cailin. Rather than fighting the Targaryen dragons, Torrhen instead submitted to Aegon Targaryen at the Trident, becoming the King Who Knelt.<h3>Construction<br></h3><p>The current version of Moat Cailin was organized by SMP and completed in December 2013. It replaced an earlier version, also created by SMP in June 2012. The newest version incorporates canon information more precisely and makes use of the updated texture packs and the newly painted marshlands of the Neck.</p><h3>Inspiration</h3><p>Since Moat Cailin is described in detail in the books, canon information inspired the majority of the build using specific quotes. Although the old version of Moat Cailin used the same information, the newest version is significantly more flooded and uses a darker palate.</p><h2>Video</h2>Moat Cailin was featured in Episode 11 of WesterosCraft Walks. DutchGuard explores the remaining three towers and explains the lore and current history of this critical location in the series. <br><figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/laIYUoDgXeQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure><br>The old version of Moat Cailin was featured in a cinematic film created by SMP.<br><figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/zQtBiByZuWQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/moatcailin.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/moatcailin.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Reed",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp moatcailin",
+        "dateCompleted": "2013-12-31T08:00:00+00:00",
+        "projectLead": "SMP",
+        "dateStarted": "2013-12-26T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Reed.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Lightfoot",
+    "slug": "lightfoot",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/lightfoot-2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/lightfoot-1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Lightfoot",
+        "destinationType": "holdfast",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp lightfoot",
+        "dateCompleted": "2013-12-28T08:00:00+00:00",
+        "projectLead": "NickShaiB",
+        "dateStarted": "2013-12-28T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Moss",
+    "slug": "moss",
+    "copy": "<p><strong>House Moss,</strong> a minor house in the North loyal to House Manderly of <a href=\"https://westeroscraft.com/wiki/north/white-harbor\">White Harbor</a> controls lands that border <a href=\"https://westeroscraft.com/wiki/north/hornwood\">House Hornwood</a>. The castle, known as Fallowfell, was originally a clearing made by settlers for farmland. At some point a little after Andal boats landed the shores of Westeros, a small holdfast was built in the clearing. This would eventually become Fallowfell, named after the original land's use and the felling of the trees to clear it. The lands of House Moss are large, covered by woods with few people and fewer settlements. A minor house, the Moss dynasty has avoided the politics of the greater families for centuries.</p><h3>Features</h3>\r\n<ul><li><strong>Fallowfell,</strong> a small castle with thick walls, an old mossy weirwood lies nearby among the pine trees.</li><li><strong>Marna's Mill,</strong> perhaps the most prosperous village in the wide wooded lands, the minor settlement hosts an inn for travelers, a blacksmith and store for general goods. The few houses it has sit on the main trading route of the Moss lands.</li><li><strong>The Sadlebury Ferry,</strong> floating on the headwaters of the Broken Branch river, on the northern border of the Moss lands. The ferry is managed by a lone ferryman, who lives in an abandoned village. A mile south is an old stone holdfast, manned by a few Moss soldiers. It guards the way into the Moss lands, ready to warn its liege of foes.</li><li><strong>The Coldferry,</strong> lying near the only farm for miles, the Coldferry takes travellers across the White Knife to or from the Kingsroad. The farmer runs the ferry, which is just wide enough to take small carts across the fast, cold waters of the bitter river. It sits on the western border of the Moss lands.</li><li><strong>Mining</strong> south and then east along the road from Marna's Mill lies the main source of stone and iron - a small, slightly flooded mine, dug deep into the ground. Near the mine on the shores of the large lake sits a quiet village. The villagers rely on the sales of their fish, stone and iron to survive the harsh climate of the North.</li><li><strong>Lumber and Fishing</strong> North west of Fallowfell is a small encampment, where great pine trees are cut down and the lumber taken to the mill in Marna's Mill. The wood is then cut for use in houses or sale to the Manderlys and traders. This is the main source of wood for the region. Just a few miles further along the road which passes the encampment is a small hamlet of fishermen, which sell their own wares by taking the docked riverrunner upstream. Fishing is also prominent among the other settlements.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The project was made by longtime builder Howy. Construction began by covering vast swathes of the land with colored wool, which would later be changed to the block palette mix for the forest floor once trees and ground cover had been placed. The castle was the first structure to be built, along with the nearby godswood. Throughout the completion of the large forest, the hamlets were built. All but two were built by the project lead Howy, with a few houses gaining the helping hand of other builders. The hamlet with the riverrunner and the mining hamlet were built by external builders. There was little to no canon on House Moss or its lands, and as such the project had great flexibility, including naming the keep Fallowfell.</p>\r\n<h3>Inspiration</h3>\r\n<p>The build was originally inspired by the in-progress rivers and forests of the Vale build Wickenden by Emoticone11. The house style was inspired by the video game Skyrim, from which the general atmosphere of the build also took influence.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Moss1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Moss2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Moss3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Moss5.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Moss",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp moss",
+        "dateCompleted": "2015-10-16T07:00:00+00:00",
+        "projectLead": "Howy",
+        "dateStarted": "2015-07-11T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Ramsgate",
+    "slug": "ramsgate",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/ramsgate.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Woolfield",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp ramsgate",
+        "dateCompleted": "2014-02-28T08:00:00+00:00",
+        "projectLead": "ErtyLink",
+        "dateStarted": "2014-01-02T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "The Rills",
+    "slug": "the-rills",
+    "copy": "<p><strong>House Ryswell</strong> is a major house in The North sworn to House Stark of <a href=\"https://westeroscraft.com/wiki/north/winterfell\">Winterfell</a>. They rule the Rills, a vast territory between the Barrowlands and the <a href=\"https://westeroscraft.com/wiki/north/stoneyshore\">Stoney Shore</a> in the North. The sigil of the Ryswells is a black horse head with eyes and mane red, with a bronze background within a black border.</p>\r\n<p>The seat of House Ryswell is named Rills, and it is located east of <a href=\"https://westeroscraft.com/wiki/north/barrowton\">Barrowton</a>, by a small river.</p><h3>Features</h3><p><strong>Keep and Holdfasts</strong><br></p><ul><li>Rills - Main keep, seat of House Ryswell</li><li>Lonelyfire - Medium holdfast, fields and a couple houses</li><li>Tworivers - Big holdfast, fields and a small village</li><li>Shorefort - Big holdfast, fields and a medium village</li><li>Northhill - Small holdfast, northernmost settlement in the Rills</li></ul><p><strong>Villages </strong>(not attached to a holdfast)</p><ul><li>Streamside - Main Rills village, also the biggest, close to the keep</li><li>Rivercrossing - Small fishing village</li><li>Southshore- Small fishing village</li><li>Fishpond - Small fishing vilage right next to a little lake</li></ul><p><strong>Farms</strong></p><ul><li>Rivermill - Medium farm</li><li>Spinetpond - Medium-big farm</li><li>Noonwraith - Medium farm</li><li>Roadmill - Medium farm</li></ul><p><strong>Horse Breeders</strong></p><ul><li>Stonystable - Two pastures</li><li>Stallionsring (Stallion's Ring) - Two pastures</li></ul><p><strong>Lumberjack Camps</strong></p><ul><li>Forestmill - Medium camp</li><li>Oldmill - Medium Camp</li><li>Stumpfield - Medium Camp</li><li>Birchgrove - Medium Camp</li><li>Jackwood - Medium Camp</li></ul><p><strong>Cabins</strong></p><ul><li>Rillscabin1 - Medium-sized house at a crossroad</li><li>Rillscabin2 - Small house at a pond</li><li>Rillscabin3 - Small hunter's house</li><li>Rillscabin4 - Small house at a crossroad</li><li>Rillscabin5 - Small hunter's house</li><li>Rillshunting1 - Hunting cabin in the spruce forest in the north of the Rills</li><li>Rillshunting2 - Hunting cabin in the spruce forest in the north of the Rills</li><li>Rillshunting3 - Hunting cabin in the spruce forest in the north of the Rills</li></ul><p><strong>Haunted Stuff</strong></p><ul><li>Bloodmoon - An old lumberjack camp where the houses are burnt or destroyed, and strange blood trails are leading down the well...</li></ul><p><strong>Other</strong></p><ul><li>Lakeferry - Two houses with a pier and a barge, used for crossing the lake</li><li>Cliffhunt - A small hunting camp, built on a cliff, with a few tents and a watchtower in a tree</li><li>Stonybeacon - A quarry with a medium-sized village in the east of the Rills</li></ul><h3>Construction<br></h3><p>Redklink and Steineke96 submitted their project on January 1st, 2014. On January 4th of that same year, the project was approved and the building started. The project ended on May 3rd 2014.</p><p><strong>Chronological order of building</strong></p><p>Since the Rills are a region, many locations (read the section \"Locations\" above) needed to be done. Here is a list, in chronological order, of the builds.</p><ul><li>The Rills Keep was built first.</li><li>The keep was closely followed by Streamside and Rivercrossing, both villages and server builds.</li><li>Then, the holdfasts started:<ul><li>Shorefort, made by Redklink</li><li>Lonelyfire, made by Steineke96</li><li>Tworivers, made by Hoosfoos</li></ul></li><li>After that, many minor projects were done (lumberjack camps, horse breeders, farms).<ul><li>Rivermill was made by erikiglesiass</li><li>Stumpfield was made by CartoonLooney</li><li>Everything else was made by Redklink and Steineke96</li></ul></li><li>Added a holdfast, two camps, a hamlet and some hunting cabins in the northernmost part of the Rills.</li><li>Finally, the five last cabins were built.</li></ul><h3>Inspiration<br></h3><p>First, an image of a Skyrim Jarl Longhouse, for the general shape of the keep, and for the fact that it has \"spiky roofs\". Also, the two main materials of our keep and holdfasts are stone and wood, just like these longhouses.<br></p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/rillinsp2.png\" data-image=\"99359\"></figure><p>Second, the image of the weird temple has inspired us for something: the spiky roofs for pretty much all of the buildings, and the shape of the keep's towers.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/rillinsp1.png\" data-image=\"99358\"></figure><p>Third, the image of the wooden house has inspired us for the middle class houses. They are pretty much all wooden, with a wood roof and stone foundation.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/rillinsp3.png\" data-image=\"99360\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/rills1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Ryswell",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp rills",
+        "dateCompleted": "2014-05-03T07:00:00+00:00",
+        "projectLead": "Redklink, Steineke96",
+        "dateStarted": "2014-01-04T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Torrhen's Square",
+    "slug": "torrhens-square",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/torrhenssquare-5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/torrhenssquare-2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Tallhart",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp torrhenssqaure",
+        "dateCompleted": "2014-03-04T08:00:00+00:00",
+        "projectLead": "Dav4",
+        "dateStarted": "2013-12-30T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Tallhart.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Widow's Watch",
+    "slug": "widows-watch",
+    "copy": "<p><strong>Widow's Watch</strong> is the seat of <strong>House Flint of Widow's Watch</strong> in The North. It is located at the end of a peninsula between the Shivering Sea and the Bite, east of <a href=\"https://westeroscraft.com/wiki/north/ramsgate\">Ramsgate</a> and the Broken Branch. House Flint of Widow's Watch is probably the most powerful branch of House Flint, and they are the senior branch of the Flints, though the Flints of the mountains claim to be the oldest and another branch is settled on Flint's Finger. They blazon their banner with a blue field strewn with whitecaps, on a yellow chief with crested line a pair of blue eyes and their motto as \"Ever Vigilant\". Widow's Watch is an important port in the North, being a likely connection point between White Harbor, Eastwatch-by-the-Sea, and Braavos on the Shivering Sea.</p><h3>Features</h3>\r\n<ul><li><strong>Widow's Keep,</strong> a large stone and timber keep built on a cliff that includes the main hall, kitchens, apartments, stables, kennels, and barracks. A godswood with a weirwood is included in its yard, which is surrounded by tall stone walls and a large gatehouse. The keep can be accessed from the harbor on a winding wooden path through the warehouses or by the main road from the town.</li><li><strong>Sea Tower,</strong> across a wooden bridge, a round stone tower sits above the waves where the lord's apartments are located and has many balconies called widow's watches. The top of the tower has a very small rookery.</li><li><strong>Widow's Watch Harbor,</strong> an ample harbor with several docks and ships. The houses in the town face the sea. The harbor is divided into two areas, with general docks and a shipwright located in the town, and a fortified harbor guarded by towers and battlements at the base of the Widow's Keep.</li><li><strong>Holdfasts,</strong> House Flint controls eight holdfasts on the peninsula, including Tarrenmure, Pinefield, Greenwig, Scarwood, Fallenheath, Direfork, Bymure, and Overton Keep. The vast amounts of land make these holdfasts critical to controlling the area.</li><li><strong>Hamlets,</strong> some of the holdfasts protect small hamlets sprinkled through the wild lands including Snowmelt, Tarrenrun, Stonne Valley, Forstrun, Ravenwood, Overton, Bluestone, Bitter Birch, Shephardton, Diregrove, Hollowpointe, and Fayview. Many hamlets are built around logging or agriculture. Near the holdfast of Scarwood, there is a large cranberry bog.</li></ul><h3>Construction</h3><p>The current Widow's Watch was completed in May 2014. Many applications were submitted but the one chose was by BimJeam4. Before construction began, the application was taken over by QuikFox with help from many builders. Many hamlets and holdfasts were completed by different builders, including Briven, FlavD, Knight_Krawler, MisterMilborn, AttackOnMars, and CHAOSiron13 as well as QuickFox. The region also involved extensive terraforming with large forests. (See Forum)</p><h3>Inspiration</h3><p>Widow's Watch was inspired by the general style in the North, but using more stone than the more inland builds. The assumption that House Flint of Widow's Watch controlled this important port gave the build its prominence. Since a widow's watch is a large part of naval and marine culture, it informed the backstory for the town and castle.</p><h3>Video</h3>Widow's Watch is featured in Episode 22 of WesterosCraft Walks. DutchGuard starts on the docks, explains the prominence of the build, and explores the town and keep, ending on one of the infamous widow's watches facing the sea.<br><br><figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/DRK7TRSfXNQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/widowswatch2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/widowswatch1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Flint of Widow's Watch",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp widowswatch",
+        "dateCompleted": "2014-08-12T07:00:00+00:00",
+        "projectLead": "BimJeam4, QuikFox",
+        "dateStarted": "2014-03-07T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Flint.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Winterfell",
+    "slug": "winterfell",
+    "copy": "<p>The castle <strong>Winterfell</strong>, seat of power of <strong>House Stark</strong>, capital of the <a href=\"https://westeroscraft.com/wiki/north\">North</a>, is located south of the northern mountains, and east of The Wolfswood. The Kingsroad, which traverses The North passes close by to the east of the castle. House Stark has been the main political power in The North for thousands of years, which is why Winterfell is considered to be the capital of this region. Over the course of history, the castle had been extended several times. Nowadays, it is a massive complex of interconnected structures interupted by a dozen of small yards and passages. With its system of hotsprings, the water of which is pumped through the walls, life within the castle stays comfortable even during the coldest years of winter.</p>\r\n<p>In the south, in front of the main gate of Winterfell, a seasonal town is situated. The town is often referred to as Winter Town, since it only really comes to life during winter, when the smallfolk returns from their summer farms and the grazing ground for their lifestock farther away.</p>\r\n<h2>Features</h2>\r\n<ul><li><strong>Winterfell,</strong> massive granite complex consisting of several structures that have been constructed progressively over the course of the castle's history. From oldest to youngest: Old Keep (Unused), Old Keep Fortification, Guards Hall, Broken Tower (Ex. tallest watchtower, collapsed after fire), Bell Tower, Great Keep, Inner Walls, Great Hall, Kitchens, Brewery, Rookery, Glass Gardens, Armory, Library, Stables, Warehouse, Kennels, Guesthouse, Storehouse, Granaries, Outer Walls. Some of the structures are interconnected via walkways, cellars or galleries.</li><li><strong>Hot'n'Steamy,</strong> thermal water rushes through the walls of Winterfell's countless rooms and halls. Over centuries, the Starks have developed a clever system to control and divert the flow.</li><li><strong>Battling the Elements, </strong>rain and snow, freezing and thawing, the sun's fire and the night's ice take their toll on the ancient fortress. Despite of regular maintenance and structures built to dispose of excess surface water, the Starks sometimes fail to keep their feet dry.</li><li><strong>A Home to Beasts, </strong>while the Starks are famous for allowing their Direwolves to freely roam the grounds, these are not the only beasts to call the castle's halls and yards their home.</li><li><strong>A Home to Men, </strong>without a host of servants, Winterfell could never be held in shape or held at all. Masonry, Hunting, Cooking, Leatherwork, Carpentry, etc. Somewhere within the tall walls, there is a someone working on that.</li><li><strong>Winter Town, </strong>located south of the castle.<br></li><li><strong>Flooded Quarry, </strong>located west of the castle, in the Wolfswood.<br></li><li><strong>Abandoned Crofters Village, </strong>located west of the castle, in the Wolfswood.<br></li></ul>\r\n<p>Note: <a href=\"https://awoiaf.westeros.org/index.php/House_Cassel\">House Cassel</a>, <a href=\"https://awoiaf.westeros.org/index.php/House_Poole\">House Poole</a>, <a href=\"https://awoiaf.westeros.org/index.php/Tumbledown_Tower\">Tumbledown Tower</a>, <a href=\"https://awoiaf.westeros.org/index.php/Crofters%27_village\">Crofter's Village</a>, and the <a href=\"https://asoiaf.westeros.org/index.php?/topic/95113-winterfells-holdfast/\">North-east Holdfast</a> are considered part of the lands in and around Winterfell. </p>\r\n<h3>Construction</h3>\r\n<p>After some previous deliberation among the staff as to which server build should be next, Thamus_Knoward began to research for Winterfell on the 10th of February 2014. In order to account for all the decriptions of Winterfell by P.O.V. characters from the books (Catelyn, Eddard, Jon, Arya, Bran, Tyrion, Theon and Sansa), an internal research document was compiled that combined all first-hand quotes about Winterfell with screenshots from the HBO show and depictions of Winterfell by individual artists. On the basis of these quotes and screenshots Thamus_Knoward tested how to relate the canon information in 3D space within Minecraft. This resulted in three models: An off-scale model depicting the show's Winterfell, a 1:4 model that depicted the book's Winterfell and 3 models depicting individual rooms (Catelyn's and Bran's Room, Interior of the Great Hall).</p>\r\n<p>In his position of co-leading Winterfell, SMP was tasked with driving the testing/ style determination process that was to be carried out by builders in game at /warp winterfelltest. Hence, SMP plotted the test area, which was subsequently opened to the builders on May 15, 2014. After some initial tests had been build the project ground to a halt. As to not take things over from Thamus_Knoward, who had been busy IRL, SMP resigned his co-leadership position. Staff now focused all efforts towards the completion of the <a href=\"https://westeroscraft.com/wiki/vale/the-eyrie\">Eyrie</a>.</p>\r\n<p>On the 5th of July, in order to regain momentum and in search of a new co-lead for Wintefell, Thamus_Knoward translated the book model into a 1:1 2D layout plot made from wool blocks at the intended location. At the time Brookerz and thecoddfish both showed interest in co-leading the project yet declined later due to various reasons. During August, the terrain right under the 2D wool layout was terraformed to account for the differences in elevation described in the books. Public testing for individual structures slowly picked up again. On September 11, Barkus requested to construct a 1:1 rendition of the godswood as a proof of concept, which could later be inserted into the castle. It was granted, because it was hard to see how a dense, atmospheric forest would translate in the concept of a server build.</p>\r\n<p>Starting from the 1st of February, IwanDeLarch, Thamus_Knoward, Kor_Bro, and other builders gradually translated the 2D layout plot into 3D wireframe models, with exact canon descriptions and a fully laid-out floorplan for each structure. At this time the godswood that Barkus had completed was pasted in. On the 15th of February 2015, Thamus_Knoward completed a Winterfell style guide platform on the basis of the common tests and the 3D wool models. The platform displayed guideines on how to construct eaves and bays, palettes for walls, roads and interior, as well as recurring architectural motives:</p>\r\n<ul><li>The roofs of stone buildings are all crow-stepped gables with a 1-2 alternation in the step height.</li><li>There is not a single hallway that is only 1 block wide. All are 2 blocks or more</li><li>Square Towers have large triangular merlons or a crow-stepped gable roof, Round towers usually have a walkway and a flat funnel roof. There are some hybrids of this, e.g. the old granary and the belltower</li><li>Colour/palette is indicative of the age: Darker colours = older, lighter colours = younger.</li></ul>\r\n<p>After a year had passed since its inception, the server build of Winterfell was officially kicked off on the 7th of March 2015. It was intended to be different from previous server builds: Instead of working in large groups under one lead on principal structures, and then spurring them to completion over the course of a weekend, Winterfell was dissected into small individual projects, which were tackled by smaller teams of 4-6 people in their own time. The sections and their contributors are listed below:</p>\r\n<ul><li>Sept: Lead: BenPwen</li><li>Brewery: Lead: xKrillenx, Members: Estoop</li><li>North-Eastern Servants Cottages: Lead: Steineke</li><li>Guesthouse: Lead: RockroG(Ash), Members: Wanted</li><li>Old-Keep Maesters Tower: Lead: Emoticone, Members: HowyJ</li><li>Servants Lichyard: Lead: Barkus</li><li>Stark Crypts: Lead: Dutchguard</li><li>Old-Keep South-East Inner Ward: Members: Benpwen, lEcthelionl, Elfqueen</li><li>Guards Hall: Lead jakeyquack, Member: JmcMarq</li><li>First/Old Keep: Lead: Reygame, Members: CaptScribble, Kor_Bro, NewEnglandRed,Soccarsoc,Tiny_Rhino</li><li>Old Keep Cellars: Lead: Jakeyquack</li><li>Washing Well and Archery Butts: Lead: Thamus_Knoward: Members: PrinceLafoo</li><li>Old-Keep North-West Inner Ward: lead: woeninja, Members: starcat</li><li>Bell Tower: Lead: Fduarte</li><li>Northern Servants Cottages & Granaries: Lead: JMP, Members: wordsmith, wazzy, scribble</li><li>Maesters Tower: Lead: SMP</li><li>Maesters Tower Cellars: Lead: Jack</li><li>Cell Tower: Lead: Howy</li><li>Kennel Buildings: Lead: JmcMarq, Members: Soccarsoc</li><li>Glass Gardens: Lead: Bafflement, Members: Ben, Ash, Knight, pooza, jose, pizza, veggie</li><li>Great Hall: Lead: Tact, Members: jMp007, Knight_Krawler, Kor_Bro, Jose, Emile</li><li>Great Hall Cellars: Lead: NickShaiB</li><li>Great Kitches: Lead: Bluecichlid, Members: HRSIDKPI, Mamorb, NewEnglandRed09, Ben, RockRoGash, Whoguy, JakeyQuack, Thamus</li><li>Kitchen Basements: Leader: NewEnglandRed, Members, Jakeyquak, SerJmp, whoguy</li><li>Livestock, Foals Stables and Servants near Kitches: Lead: Jose, Members: Jack, Lyl, Knight, NewEnglandRed,Soccarsoc</li><li>Main Stables: discs</li><li>Warehouse: Lead: Hoosfroos</li><li>Storehouse: Lead: jmcmarq</li><li>Library Tower: Lead: InfinityMe123, Members: Reygame, Jakeyquack, Estoop, Tiny_Rhino, CaptnScribble, copper</li><li>Library Tower Cellars: Lead: Jakeyquack</li><li>Armory and Forge: Lead: NickShaiB, Members: Dyvim</li><li>Great Keep: Lead: IwanDelarch</li><li>Great Keep Cellars: Lead: BlueCichlid</li><li>Hunter's Gate (West) Lead: SMP, Members: Fduarte</li><li>Battlements Gate (North). Lead: JakeyQuack</li><li>Kingsroad Gate (East) Lead: Thamus, Members: Copper, IwanDeLarch</li><li>Main Gate (South) Lead: Carc, Members: Hoosfroos, Fduarte, Ertylink, Tsarkaiser</li><li>4 Inner Corner Watchtowers: Lead: Thamus, Members: Reygame, InfinityMe, RockRoGash</li><li>4 Inner Wall Watchtowers: Lead: Thamus, Members: Reygame, InfinityMe, RockRoGash</li><li>8 Outer Wall Watchtowers: Lead: Thamus, Members: Liant, Nick, Knight_Krawler</li><li>The Broken Tower: Lead: InfinityMe, Members: JakeyQuack</li></ul>\r\n<p>While initially there was a lot of fast progress, uninteresting structures were not started at all, which stretched out the entire construction process. On the 14th of July, all structures had been completed at last. A final check-up with the canon descriptions was conducted and minor errors were fixed or their existance agreed to be minor enough to stay.</p>\r\n<p>The construction of Winterfell was concluded by more details: The older, inner wall was eroded slightly, snow was placed in the shadows of all structures, mud and vegetation was added on the south sides, further details in the form of moss and lichen as well as gutters and rain drains were added. These people contributed to these finishing touches: Knight_Krawler, Fduarte, MiniAlpha, Axel, Lemonbear, Bafflement, Dutchguard, IwanDeLarch and Thamus_Knoward.</p>\r\n<p>On Saturday the 18th of July 2015, the construction of Winterfell castle was officially completed.</p>\r\n<p>Winterfell 2015 replaced the previous rendition, which had been kicked off on the 29th of February in 2012 and completed shortly after. Although Maruku's renders of the old version have become iconic for Westeroscraft, the build itself did not keep up with the change in style that occurred on the server along with the rising version count of Minecraft, and the addition of WesterosBlocks. Hence, the build was soon outdated and in need of a worthy replacement.<br></p>\r\n<h3>Inspiration</h3>\r\n<p>The architectural motives of Winterfell came from interweaving the already established styles of builds in the <a href=\"https://westeroscraft.com/wiki/north\">North</a> such as Long Lake with the highly recognizable visual of <a href=\"https://gameofthrones.fandom.com/wiki/Winterfell\">HBO's rendition of the castle</a>. As a result, Winterfell maintains crow-stepped gables for square buildings and the iconic tower style from the show, flat roofs with a wooden bay walkway below. Adding massive bullwarks to either side of the three principal gates is another feature that was adapted to reflect the imposing nature of the show's castle.</p>\r\n<p>Conceptually, most of the content of Winterfell and the arrangement of structures was taken directly from the canonical description by POV characters from the books. IwanDeLarch and Thamus_Knoward aimed at recreating Winterfell as faithfully to the books as possible. This was meant to enable a reader to walk through the castle, alongside with their favourite characters, allowing the greatest immersion.</p>\r\n<h3>Videos</h3>\r\n<figure><iframe src=\"https://www.youtube.com/embed/ARzqImQ6vUI\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" width=\"560\" height=\"315\" frameborder=\"0\"></iframe></figure>\r\n<p>Since Winterfell is such an iconic location, many visitors to the server have filmed the old version, such as Lord Dakr in May 2014 as part of the Let's Tour: WesterosCraft series.</p>\r\n<figure><iframe src=\"https://www.youtube.com/embed/oqYb6DRpO2c\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" width=\"560\" height=\"315\" frameborder=\"0\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Winterfell1.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-9.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-8.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-7.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-2.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/winterfell-1.jpg"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Stark",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "five",
+        "warp": "/warp winterfell",
+        "dateCompleted": "2015-07-18T07:00:00+00:00",
+        "projectLead": "IwanDeLarch, Thamus_Knoward",
+        "dateStarted": "2015-03-07T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Stark.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Knott",
+    "slug": "knott",
+    "copy": "<p>The Clan of Knott is one of the seven largest mountain clans that inhabit the northern mountains which is wilder and more primitive, than the rest of the north.</p>\r\n<p>The clans are famed for their hospitality and large feasts. The clans have lived in the mountains for thousands of years and frequently wage war on each other. They are descendants the first men and their leader is known as the “The Knott”.</p><h3><b>Features</b></h3>\r\n<p>- <strong>Knott - </strong>The main village on a sloping and rocky hill surrounded by strong wood and dirt palisade walls and stout wooden towers. It has a marketplace, were the local goods are traded. It has a large tannery and a ropemaking facility. Higher up, the hill is surrounded by cliffs and has hot springs and a large weirwood on the edge of the cliffs. On the top of the hill the castle of Knott is nestled.</p>\r\n<p>- <strong>KnottHF -</strong> The holdfast overlooks pastures and fields. The hamlet around it his focused on breeding the strong and surefooted mounts of the northern mountains.</p>\r\n<p>- <strong>KnottMine -</strong> The ancient and yet active iron mine, produces iron for the people of the clans. The men working the mine lives in barracks dug in the cliffs of the crevice. There is one way in and out of the crevice and its shielded by a palisade wall. The shafts of the mines run deep, some abandoned some collapsed or flooded, others into to great caves.<br></p>\r\n\r\n<p>- <strong>KnottHam1-3 - </strong>The hamlets vary greatly. From the fishers of the bay of ice (ham1) to the woodworkers of the deep forests (ham2) to the hunters of the high mountains (ham3).</p>\r\n\r\n<p>- <strong>KnottRuins -</strong> Two ruined seats of the Knotts can be seen, the first is the ringfort on the edge of a large lake. The second the hamlet at bay of ice (/warp KnottRuins). An old holdfast stands vigil at the Knott and Wull border (/warp KnottRuinHF).</p>\r\n<p>- <strong>KnottDruids -</strong> These druids live in tunnels of a great hill crowned by a ancient weirwood tree. The druids grow herbs in the vicinity of the hot spring which heats the area. The local folk come to the great tree on hill to pray, and to seek guidance from the druids.</p><p><strong>Path of Knott:</strong></p>\r\n\r\n\r\n<p>At the mountainous Knottham3 starts a path to the highest point of the mountains. The path is a ritual for the bravest and boldest of men, a chance to prove their worth and strength. The path will the lead the bold adventurer through forest, bear caves and ruins, and them climb up high cliffs and into deep icy tunnels, over long rope bridges some of them collapsed. Until the the succeeded adventurer reaches the top where he may knell before the stone alter, like so many before him.</p><p><strong>Castle layout:</strong></p>\r\n\r\n\r\n<p>The castle has cliffs to all sides and its impossible to approach with siege weapons or cavalry. The castle tunnels under it to make movement during winter easier due to the heavy snow.</p><h3><strong>Construction</strong></h3>\r\n\r\n\r\n<p>This was the first project of the builder JohanKR850, who had dreamt of doing a mountain clan since he first joined. The snowy terrain is infamous for being difficult, but he had his editor o0i0oMajic, who helped and thought him how to do terraform of the snow-clad lands.</p>\r\n<p>The project was overseen and approved by the moderators Coddfish and the mountain clan veteran Cashbanks.</p><h3><strong>Inspiration</strong></h3>\r\n\r\n\r\n<p>The main inspiration was Viking and Scottish architecture and culture. Other than that, logic and the small amount of existing canon dictated every move.</p><h3><strong>Video</strong></h3>\r\n\r\n\r\n<p>Knott was featured in the special WesterosCraft walks episode number 97: Behind the Scenes</p><figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hUubwyv0Svc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/knott-8.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/knott-1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Clan Knott",
+        "destinationType": "clan",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp Knott",
+        "dateCompleted": "2019-11-13T08:00:00+00:00",
+        "projectLead": "JohanKR850",
+        "dateStarted": "2019-04-05T23:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/projekt-application-clan-knott-by-johan.1568/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Wull",
+    "slug": "wull",
+    "copy": "<p>The Wull mountain clan is the largest of the groups of Northmen who dwell in the mountains north of Winterfell and in their foothills along the shore of the Bay of Ice.Of First Men origin, the northern clansmen have inhabited the mountains north of the wolfswood for thousands of years and are famous for their hospitality.</p>\r\n<p>The lands of the Wull Clan spread around the eastern shore of the Bay of Ice, due east of Bear Island.</p><h3>Clan Settlements</h3>\r\n<ul><li><strong>Wull - </strong>the clan's primary stronghold, a large motte and bailly stronghold with extensive wooden pallisades. /warp wull</li><li><strong>Wull Village 1 - </strong>a large village along the shore of the Bay of Ice south of the main Wull stronghold. Features a large sprawl of houses and farmland. /warp wullvillage1</li><li><strong>Wull Village 2 -</strong> a village perched high in the Northern Mountains, requires traversing long mountain trails to reach and is centred around a frozen mountain stream. /warp wullvillage2</li><li><strong>Wull Village 3 -</strong> the largest village, built out from the base of the mountains with vast stretches of grazing pastures soaked by a glacial stream. /warp wullvillage3</li><li><strong>Wull Hamlets 1-7 -</strong> seven hamlets of varying size are scattered throughout the Wull lands, some focused on the raising of livestock, lumber, fishing. Others simply hunt and survive off the land. /warp wullhamlet1, wullhamlet2 etc</li><li><strong>Wull Mine - </strong>the Northern Clans are known for carrying large two handed broadswords into battle. Wull retains control of a deep iron ore mine deep in the mountains. /warp wullmine</li><li><strong>Mountain Caves -</strong> legend speaks of an enormous dire bear somewhere in the mountains, brave explorers should take heed before venturing too deep.</li></ul><h3>Construction</h3>\r\n<p>The task of building the lands, villages and hamlets of the Wull clan was first started in the early days of the server by builders whose names have been lost to time. It was then re-done by Droidsteel who did some substantial work on the original stronghold, holdfasts and hamlets, but orphaned in May 2015. The mantle was then picked up by 2008ash, who did some more work on the stronghold, hamlets 1, 2 and 3 and plotted the remaining villages, hamlets and iron mine. However the project was once again orphaned in April 2016.</p>\r\n<p>CashBanks applied to redo/complete the project in October 2017, and was approved and supervised by Wazgamer and Elduwin.</p>\r\n<p>CashBanks commenced an update and expansion of the main Wull village, adding the great hall, houses, fields, docks, shipyards, godswood, shipwrecks and fighting arena. He completed village 1 - 3, hamlets 3-7 and the mine.</p>\r\n<p>Significant terraforming of the region was necessary to bring the area up the the latest server standards. The forests in the region were significantly expanded with hundreds of trees, and a number of streams, mountains, glaciers and other geological features were added. The shoreline was updated with pebbles and rocks, as well as pack ice ridges scattered along the coast.</p>\r\n<h3>Inspiration</h3>\r\n<p>Much of the architectural style was inspired by bronze age Celtic tribes and Viking culture. The distinctive bee-hive shaped keeps are based on the Scottish broche designs. All efforts were made to address the canon provided by the books.</p>\r\n<h3>Contributors</h3>\r\n<p>(apologies to anyone missed)</p>\r\n<p>Droidsteel, 2008ash, GangstaCat, BalrogSlayer, SerLothric, Aeksio, Sajjetta, SchmiefOlaf, Yewty, Vertechs, W1ck3dWolf, DylanLovesYouJP, Iiell, Hannojo, Pigxle, Deadbody12, Polopolo, JohanKr850, IronGiant, Xeson, Savitz, KnightsofIkke, Ryxia, Soup, Olaf, Schwarzenberg, jmcmarq, AeksioOndos, Javiv, shelFryt, epicbc, Ikarus2222, Banty, IwanDeLarch, LectheLionl, ziggster, 2008Ash, Rootwieler, Princelafoo, _ready, seashellbs, vitorgas, hambone</p>\r\n\r\n\r\n\r\n\r\n\r\n",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Wull1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Wull2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wull3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wull4.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Clan Wull",
+        "destinationType": "clan",
+        "destinationStatus": "completed",
+        "destinationLevel": "four",
+        "warp": "/warp Wull",
+        "dateCompleted": "2019-05-26T07:00:00+00:00",
+        "projectLead": "CashBanks",
+        "dateStarted": "2017-11-14T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-application-wull.157/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Wull.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The Dreadfort",
+    "slug": "the-dreadfort",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/dreadfort-3.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/dreadfort-4.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/dreadfort-6.jpg"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Bolton",
+        "destinationType": "castle",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "five",
+        "warp": "/warp dreadfort",
+        "dateCompleted": null,
+        "projectLead": "SMP",
+        "dateStarted": "2019-05-28T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/appeal-approved-project-application-dreadfort-by-banty-smp.1149/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Bolton.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "White Harbor",
+    "slug": "white-harbor",
+    "copy": "<p><strong>White Harbor</strong> is the smallest city in Westeros and the only one in the <a href=\"https://westeroscraft.com/wiki/north\" target=\"_blank\">North</a>. It is ruled by <strong>House Manderly</strong> and is where their seat, New Castle, is located. It also is the center of the Faith of the Seven in the North, with most of it’s citizens following the new gods rather than the old ones.</p>\r\n<p>House Manderly is originally from the <a href=\"https://westeroscraft.com/wiki/reach\" target=\"_blank\">Reach</a>, but was exiled from there by lord Lorimar Peake and king Perceon III Gardener. They then fled north and were welcomed by the Starks, who gave them the Wolf’s Den in exchange for they loyalty. Some time after that, the Manderlys built the New Castle and, with the city growing, they built the walls around it. House Manderly managed to become the richest house in the North, thanks to all the trade done in their ports.</p>\r\n<p>The city is located right next to the mouth of the White Knife river, on the eastern shore. Being one of the most southern settlements in the North, along with the connection of house Manderly to the Reach, White Harbor has more knights than any other place in the North.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>New Castle </strong><em>(/warp newcastle)</em>: The seat of house Manderly, it is located on top of a hill, being connected to the Wolf’s Den through the Castle Stair, a white stone street. The castle was built to resemble <a href=\"https://westeroscraft.com/wiki/reach/dunstonbury\" target=\"_blank\">Dustonbury</a>, the former seat of house Manderly in the Reach. One of the main features of the castle is the Merman’s Court, a decorated hall where lord Manderly holds courts and feasts.</li><li><strong><a href=\"https://awoiaf.westeros.org/index.php/Wolf%27s_Den\">Wolf’s Den</a></strong> <em>(/warp wolfsden)</em>: An ancient castle, built with the purpose of defending the White Knife, it held many lords throughout the years, until the Starks decided to give it to the Manderlys. Currently being used as a prison, the castle has a big weirwood heart tree, with it’s limbs growing through walls and windows.</li><li><strong>Snowy Sept</strong> <em>(/warp snowysept; /warp septofthesnows)</em>: Unlike most of the North, in White Harbor the Faith of the Seven is the main religion, having a big sept known as the Snowy Sept (or the Sept of the Snows) as one of the main point’s in the city.</li><li><strong>Seal Rock</strong><em> (/warp sealrock)</em>: A small rocky island that guards the way to the ports of White Harbor, it has an ancient and ruined ringfort at it’s top, which the Manderlys fortified to defend the city.</li><li><strong>Stark Manse</strong> <em>(/warp starkmanse)</em>: Home to a branch of the Stark family, it is located not far from the city, having it’s own small godswood.</li><li><strong>Briarwatch </strong><em>(/warp briarwatch)</em>: A holdfast, Briarwatch is located to the south of the city, surrounded by many of the fields that feed the city and the inhabitants of it's sprawl. The holdfast guards the southern lands of the White Harbor, as one of the its first levels of defense.<br></li><li><strong>White Harbor Holdfast</strong> <em>(/warp WHholdfast)</em>: Located in the northern parts of the Manderly lands, this holdfast offers defense against threats that may come from the north in the direction of the city.</li><li><strong><a href=\"https://westeroscraft.com/wiki/north/holt\" target=\"_blank\">House Holt</a></strong> <em>(/warp holt)</em>: Located to the north of the city, the seat of house Holt is a small castle near a hamlet and many farming fields, with a weirwood tree in front of the castle. It’s lands include the forests around it.</li><li><strong><a href=\"https://awoiaf.westeros.org/index.php/House_Greenwood\">House Greenwood</a> Ruins</strong> <em>(/warp greenwood)</em>: House Greenwood was a first men noble house that was vanquished by the Starks when they were still Kings of Winter. Its former seat, now a ruin in the middle of the forest, is currently being used by bandits as an outpost.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The construction of the project had a intense start, with 386 houses being made by 16th of May 2017, in just almost six months of work. In the following years, part by part of the city itself and the sprawl were done, along with many mini-builds. There is a total of 1124 houses, built by 159 unique builders (see <a href=\"https://forum.westeroscraft.com/threads/white-harbor-news-stats.51/#post-12583\" target=\"_blank\">Stats</a>) that helped with the process. Here are the credits for some of them:</p>\r\n<ul><li>Great part of sprawl plotting: made by Lyliana;</li><li>Most of the terraforming to the east of the city: made by Kor_Bro;<br></li><li>New Castle: made by tsarkaiser;</li><li>Wolf's Den: made by Steineke96, finished by Benpwen;</li><li>Stark Manse: made by Kor_bro, finished by Benpwen;</li><li>House Greenwood Ruins: made by Emoticone11;</li><li>White Habor Holdfast: made by Codd;</li><li>Briarwatch: made by Endy;<br></li><li>Seal Rock: made by IronGentleGiant;</li><li>House Holt: made by lord_damascus.</li></ul>\r\n<p>The original leader of the project as a whole was SMP, but later Emoticone11 took the lead until the project was finished.</p>\r\n<h3>Inspiration</h3>\r\n<p>Inspirations for the city were a <a href=\"https://imgur.com/a/MgCzL\" target=\"_blank\">model of Dublin in 1500, Tuku Castle in Finland and Polperro in Cornwall, UK</a>. </p>\r\n<p>For the Seal Rock, it was research done by IronGentleGiant on ringforts (see <a href=\"https://forum.westeroscraft.com/threads/irongiants-seal-rock-application.1858/#post-10980\" target=\"_blank\">Application</a>).</p>\r\n<p>For the New Castle, the main inspiration was <a href=\"https://imgur.com/a/kK33b\" target=\"_blank\">Niedzica Castle</a> in Poland.</p>\r\n<p>For the Wolf’s Den, the main inspiration was <a href=\"https://imgur.com/a/kqlRL\" target=\"_blank\">Ogrodzieniec Castle</a> in Poland.</p>\r\n<p>The Stark Manse was based on the <a href=\"https://en.wikipedia.org/wiki/Traquair_House\" target=\"_blank\">Traquair House</a> in Scotland (see <a href=\"https://forum.westeroscraft.com/threads/white-harbor-sprawl-plotting-applications.274/page-3#post-3343\" target=\"_blank\">Application</a>).</p>\r\n<h3>Videos</h3>\r\n<p>Episodes 110-116 of WesterosCraft Walks explored White Harbor with Kobe and Lucia. </p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/cc4k6EexHZU\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/nUyaDEtykv0\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/oNRIySrx28o\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/ybAhvteeU5Q\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/ADcAJVyBVIk\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/Xl1F0zYT5hw\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/uluNU5IfwMc\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/2020-06-21_19.28.56.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/whiteharbor-7.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/whiteharbor-5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/whiteharbor-8.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/whiteharbor-6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/whiteharbor-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/whiteharbor-1.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/greenwood1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Manderly",
+        "destinationType": "city",
+        "destinationStatus": "completed",
+        "destinationLevel": "six",
+        "warp": "/warp whiteharbor",
+        "dateCompleted": "2020-01-06T08:00:00+00:00",
+        "projectLead": "Emoticone11, SMP",
+        "dateStarted": "2016-10-29T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/forum/whiteharbor.17/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Manderly.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Waterman",
+    "slug": "waterman",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Waterman",
+        "destinationType": "castle",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "two",
+        "warp": "/warp waterman",
+        "dateCompleted": null,
+        "projectLead": "lord_damascus",
+        "dateStarted": "2015-08-22T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/waterman-by-lord_damascus.517/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Waterman.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Burley",
+    "slug": "burley",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Clan Burley",
+        "destinationType": "clan",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "three",
+        "warp": "/warp burley",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Flint",
+    "slug": "flint",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Clan Flint",
+        "destinationType": "clan",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp flint",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Norrey",
+    "slug": "norrey",
+    "copy": "<h3>Description<br></h3>\r\n<p>Clan Norrey is one of the major clans of the Northern Mountains and along with the Flints of the Mountains are closest to the Gift.<br>The clan is currently headed by Brandon Norrey the Elder, a tall, foxish man with a deep-seated dislike of wildlings.<br>According to semi-canon sources, their arms are 6 thistles on a yellow field and no words are known.<br>Norrey is among the families of whom the Night's King was thought to have been from, along with Stark and Flint.<br>Arra Norrey was the childhood companion and first wife of Cregan Stark.<br><br>The clan is closely allied with the black brothers of the Shadow Tower.</p>\r\n<h3>Features</h3>\r\n<p>The build features a mixture of both high mountain and lowlands terrain, all covered with snow. The main village is situated next to and partly in an old stony ground and mine and mining, along with farming, form the main industry of the village.<br>A path leading southward goes splits off to the east and west at a small shepherds croft, with the eastern path leading to a hamlet in the hills to the south of the Gift's grasslands (norreyhf2). The farming hamlet sits around the edge of a lake with a broch, a type of large roundhouse, overlooking the area from a nearby hilltop.<br><br>If one takes the path to the west, one re-enters the mountains and moves into tight mountain passes. If one takes the eastern path continuously one reaches the lands of clan Knott. On the northern branches of the path are a mining valley soon to be unviable because of certain environmental conditions (norreymine) and a hamlet in a glacial valley that stretches to the sea (norreyham2).<br>A glacier is still in the process of moving through and has melted into a long lake that grew through the long summer. Now that winter is coming, the glacier will likely grow in length again. The hamlet focuses on sheep and goat breeding and weaves its own cloth in the summer.<br><br>The path continues onto another large glacial valley, through which a stream runs. On the mountain above a bay a walled settlement watches the sea, surrounded to the south and east by pastures and fields (norreyham1). Upstream are more fields and forest and eventually a large village at the foot of a waterfall (norreyvillage). Above the village sits a large broch and attached hall on a spur of the surrounding mountains.<br><br>Hidden in the mountains and forests is a stone circle, logging hamlet (norreyham3) and weirwood grove.</p>\r\n<h3>Construction</h3>\r\n<p>Construction was inevitably slowed by the terraforming process which is greatly extended by snow.<br>All areas progressed slowly but surely towards completion over the course of 6 months, with most things complete by November 2019. After a partial redo of the main village in January 2020, the last portion of the project progressed rapidly towards completion. Post-approval was eventually achieved November 4, 2020. </p>\r\n<h3>Inspiration</h3>\r\n<p>As the northern most of the clans, Aeksio and Iron created styles based on early to late iron age structures, with the inclusion of some roundhouse and wheelhouse variants scattered throughout the map.<br>Other bronze and iron age structures contributed to the style, including Scottish blackhouses, Sardinian Nuraghi and Scandinavian longhouses.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Norrey-1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Norrey-2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Norrey-3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Clan Norrey",
+        "destinationType": "clan",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp norrey",
+        "dateCompleted": "2020-06-12T07:00:00+00:00",
+        "projectLead": "AeksioOndos, GentleIronGiant",
+        "dateStarted": "2019-06-27T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-update-application-norrey.1695/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Glenmore",
+    "slug": "glenmore",
+    "copy": "<p><strong>House Glenmore</strong> of Rillwater Crossing is a noble house located in the North. They have been allies of House Forrester since before the War of the Five Kings, and the alliance exists to the current day. The Glenmore family is a less significant house of the North, yet still an important location. In their lands there are various hamlets and numerous farms to be found. Their sigil is a bow pointed to the right, with red and white colours, whereas their words are not known. Glenmore economy relies both farming and fishing. House Glenmore is mentioned only in <em>Game of Thrones - A Telltale Series Game</em>.</p><h3>Features </h3>\r\n<ul><li>Glenmore has two broken down fort ruins remaining from the age of the First Men.The condition of the ruins is terrible and no restoration attempts have been made.The one ruin one the South-Eastern part of Glenmore was simply a watchtower near the rills.The second ruin on the North-Western part of Glenmore was a big ring fort to protect the surrounding lands.</li><li>The Glenmore keep has a distinctive triangle shape with very good defensive walls.Inside the walls ,there are guest rooms,servant rooms,a mess hall and various facilities that an average keep posseses.</li><li>The large fields surrounding Glenmores hamlets provide the people with wheat,a product they use either to feed themselvs or to sell it down at the docks of the main hamlet.</li><li>Even though Glenmore isnt much of a prosperous land,it still has numerous ports and locations where fishermen dock their boats and trade various products.</li></ul>\r\n<h3>Construction </h3>\r\n<p>GrayJedi and Cl0udkid started building the project around January 2018 and finished around July 2018. It was a co-op built and since very little is known of the land the hamlets where build from the perspective of the builders.</p>\r\n<h3>Inspiration </h3>\r\n<p>The inspiration for the Glenmore keep is a castle located in Scotland, R.R.Martin's inspiration for the north.Caerlaverock castle is a triangular shaped keep built in the 13th century in Scotland.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/glenmore.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Glenmore",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp glenmore",
+        "dateCompleted": "2019-03-03T08:00:00+00:00",
+        "projectLead": "GrayJedi ,Cl0udkid",
+        "dateStarted": "2018-05-29T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-application-glenmore.510/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Runnymudd",
+    "slug": "runnymudd",
+    "copy": "<p>The ruins of <a href=\"https://awoiaf.westeros.org/index.php/House_Towers\">House Towers</a> is included as part of the Runnymudd project.</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Unknown",
+        "destinationType": "village",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "one",
+        "warp": "/warp runnymudd",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Harclay",
+    "slug": "harclay",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Clan Harclay",
+        "destinationType": "clan",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp harclay",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Highpoint",
+    "slug": "highpoint",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Whitehill",
+        "destinationType": "castle",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "four",
+        "warp": "/warp highpoint",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Frost",
+    "slug": "frost",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Frost",
+        "destinationType": "ruin",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "one",
+        "warp": "/warp frost",
+        "dateCompleted": null,
+        "projectLead": "Scubooty",
+        "dateStarted": "2020-08-31T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-application-house-frost-by-scubooty.2408/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Oldcastle",
+    "slug": "oldcastle",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/oldscastle.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Locke",
+        "destinationType": "castle",
+        "destinationStatus": "abandoned",
+        "destinationLevel": "three",
+        "warp": "/warp oldcastle",
+        "dateCompleted": "2017-08-21T07:00:00+00:00",
+        "projectLead": "Cpt_Jamo",
+        "dateStarted": "2014-01-20T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Stoney Shore",
+    "slug": "stoneyshore",
+    "copy": "<p><strong>Stony Shore</strong> is a large area of <a href=\"https://westeroscraft.com/wiki/north\">The North </a>on it's westerly coast. It was once ruled by <strong>House Fisher</strong> who were First Men kings of The Stony Shore and its surrounding lands. Their sigil is no longer known and their lands have been given to small minor houses of The North after their long and hard war with The Winter Kings of House Stark. The largest house of Stony Shore occupies the large village of Stony Fort along the Northerly coast of Stony Shore</p>\r\n<h2>Features</h2>\r\n<ul><li><strong>Ruined Castle,</strong> /warp Fisher is the location of the ancient ruined castle of House Fisher, it has began to sink into the marshy ground created by the lake in the godswood. (/warp fisher)</li><li><strong>Stony Fort,</strong> the keep of the current occupants of the former Fisher lands. The fort overlooks a small docks (/warp stonyshore). By entering the old crypts beneath the keep you will find a statue of a man wielding a sword with a banner which has been discolored in the background, apparently the statue is of a member of House Fisher who died in a battle with the Winter Kings forces, it's unknown why they built the statue but it's one of the only remaining signs of House Fisher of the StonyShore. The fort also includes a small godswood with a weirwood. (/warp stonyfort)</li><li><strong>Holdfasts and Hamlets,</strong> throughout the Stony Shore area are a few holdfasts and hamlets, many are dedicated to fishing or the lumber industry.</li></ul>\r\n<h3>Construction</h3>\r\n<p>For the beginning of the project wazgamer had to build a couple of hamlets with only a couple houses built by CaptScribble. Later, when planning Stonyfort, the mods approved the hill fort and village. At this time more and more people were helping with houses. Aslanio constructed the ruin of Castle Fisher and the project was closed by wazgamer in September 2015.</p>\r\n<h3>Inspiration</h3>\r\n\r\n<p>wazgamer used medieval island castles around Scotland (his native land) especially those along the west coast. While looking at ruins, he chose the Skara Brae houses which inspired the ruined houses in this project.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/stoneyseptinsp.jpg\" data-image=\"99116\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/stoneyshore1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/stoneyshore2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Fisher",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp stonyshore",
+        "dateCompleted": "2015-09-23T07:00:00+00:00",
+        "projectLead": "wazgamer",
+        "dateStarted": "2015-06-17T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Long Lake",
+    "slug": "long-lake",
+    "copy": "<p><strong>Long Lake</strong> is a large narrow lake in <a href=\"https://westeroscraft.com/wiki/north\">The North</a> located northeast of <a href=\"https://westeroscraft.com/wiki/north/winterfell\">Winterfell</a>, east of the northern mountains, southwest of Last Hearth, and west of the Lonely Hills. The kingsroad runs along its northwestern shore on its way to the Wall. Long Lake is the source of the White Knife, which flows south into the Bite. Although not specified, <strong>House Lake</strong> is thought to control the lake and its surrounding lands. House Lake blazon their arms with 7 pommes, 2-2-2-1, green on brown. Long Lake is the site of an important wildling raid led by Raymond Redbear, one of the many Kings-Beyond-the-Wall, who was defeated by armies from the north.</p><h3>Features</h3>\r\n<ul><li><strong>Long Lake,</strong> a narrow lake east of the kingsroad. Ice has begun to form on this lake as winter approaches.</li><li><strong>Long Lake Keep,</strong> an island keep in the southern part of Long Lake. The keep dominates the small island with dark stone walls. In the summer, the keep can only be reached by boat, and a small dock sits below the keep. But in winter, one could walk to the keep across the ice. A weirwood grows on the northern tip of the island, the only vegetation near the walls of the keep.</li><li><strong>Village,</strong> on the western shore of the lake is a village with sod-roofed houses. The docks contain small vessels for lake and river travel. A road leading west connects to the kingsroad.</li><li><strong>Frostlodge Inn,</strong> an inn on the kingsroad, one of many small inns between Winterfell and Castle Black.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Long Lake was built by georni, with portions of the build being transferred to the new map and updated by georni in December 2013 and January 2014. The new terraform of the lake added the snow and ice that are forming on the water. The village was updated to fit the new northern palette and the keep was re-textured.</p><h3>Inspiration</h3>\r\n<p>The island keep was inspired by Castle Stalker in Scotland, for both the old and new versions of Long Lake. </p><h2>Video</h2>Long Lake was featured in Episode 54 of WesterosCraft Walks. DutchGuard explores the town, its dockyard, and crosses the treacherous ice before visiting the island keep.<br><figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Xw3mIr9nFdI\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Long_Lake_2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Long_Lake_1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Lake",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp longlake",
+        "dateCompleted": "2014-02-13T08:00:00+00:00",
+        "projectLead": "georni",
+        "dateStarted": "2013-12-27T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Goldgrass",
+    "slug": "goldgrass",
+    "copy": "<p><strong>Goldgrass</strong> is a keep within the walls of <a href=\"https://westeroscraft.com/wiki/north/barrowton\">Barrowton</a> in the <a href=\"https://westeroscraft.com/wiki/north\">North</a>. The small wooden keep is the seat of <strong>House Stout</strong>, which is directly sworn to House Dustin of Barrowton. The keep guards the eastern gate into Barrowton, beyond which is the vast rolling plains of the barrowlands. They blazon arms as chevronny russet and gold.</p><h3>Features</h3>\r\n<ul><li><strong>Goldgrass Keep,</strong> a modest wooden keep near the eastern gate of Barrowton.</li><li><strong>Barrowton East Gate,</strong> a large gate to the main street of Barrowton, which runs east to west and is broad and made of wooden planks.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Goldgrass was built in January 2014, led by barkus and carcinogenius and included in the construction of Barrowton, which replaced a very early version. Initially, it was built outside the walls until a closer interpretation of canon uncovered that one can hear the wind rushing beyond the town, implying that when viewing the walls from Goldgrass, one is inside the walls. At this point, Goldgrass was already plotted, but the builders simply extended the walls around the keep as part of the town.</p><h2>Inspiration</h2><figure class=\"article-thumb tright show-info-icon\" style=\"border: 0px; font-style: normal; font-weight: 400; margin: 0px 0px 16px 20px; padding: 0px; vertical-align: baseline; display: block; clear: right; float: right; color: rgb(58, 58, 58); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(84, 84, 84); text-decoration-style: initial; text-decoration-color: initial; width: 300px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/f/f1/449px-Borgund_stavkirke.jpg/revision/latest?cb=20150225200758\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/f/f1/449px-Borgund_stavkirke.jpg/revision/latest/scale-to-width-down/300?cb=20150225200758\" alt=\"449px-Borgund stavkirke\" class=\"thumbimage lzyPlcHld lzyTrns lzyLoaded\" data-image-key=\"449px-Borgund_stavkirke.jpg\" data-image-name=\"449px-Borgund stavkirke.jpg\" data-src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/f/f1/449px-Borgund_stavkirke.jpg/revision/latest/scale-to-width-down/300?cb=20150225200758\" width=\"300\" height=\"401\" data-image=\"h27j6lgp1f8t\"></a><figcaption style=\"border: 0px; font-style: inherit; font-weight: inherit; margin: 0px; padding: 0px; vertical-align: baseline; display: block; text-align: left;\"><p class=\"caption\">Borgund Church, used as inspiration for Goldgrass Keep and Barrowton.</p></figcaption></figure>Goldgrass uses the same inspiration as Barrowton, which is based on Medieval Nordic architecture. Steep roofs with ornate peaks are used, such as those found on Borgund Church.<h2>Video</h2>Goldgrass was featured in Episode 4 of WesterosCraft Walks. DutchGuard begins outside the town of Barrowton and mentions its relationship with Goldgrass.<br><br><figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/6IV4KpUaUJ4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Barrowton1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Stout",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp goldgrass",
+        "dateCompleted": "2014-01-30T08:00:00+00:00",
+        "projectLead": "barkus, carcinogenius",
+        "dateStarted": "2013-12-28T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Wells (North)",
+    "slug": "wells-north",
+    "copy": "<p><strong>House Wells</strong> is a noble house from The North, located between Torrhen's Square and Barrowton. There is no documented history of this house and their words are not known.</p>\r\n<h3>Features<br></h3>\r\n<p><strong>Castle: </strong>The seat of house Wells is located on a hill with a good view over the surrounding lands. To its feat lays the main village, inhabited mostly by farmers and fishermen.</p>\r\n\r\n<p><strong>Holdfasts: </strong>There are two fortified structures besides the castle. One holdfast is located west of the main keep, while another was built on a hill surrounded by forest south of the castle.</p>\r\n\r\n<p><strong>Other Buildings</strong></p>\r\n<p>- A <strong>lumberjack </strong>camp west of the main keep; they provide both firewood and building material.</p>\r\n<p>- A <strong>peat farm </strong>located even further west in a bog; they provide mostly fuel.<br></p>\r\n\r\n<p>- The lords <strong>horse breeder</strong> near the main village.</p>\r\n",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wells4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/WellsNorth2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wells5.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "House Wells (North)",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp wellsnorth",
+        "dateCompleted": "2020-04-23T07:00:00+00:00",
+        "projectLead": "zanji",
+        "dateStarted": "2019-12-16T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/application-for-house-wells-in-the-north.2014/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Skagos",
+    "slug": "skagos",
+    "copy": "<p>The Skagos project includes the following houses:</p><ul><li><a href=\"https://awoiaf.westeros.org/index.php/House_Crowl\">House Crowl</a> of <a href=\"https://awoiaf.westeros.org/index.php/Deepdown\" title=\"Deepdown\">Deepdown</a></li><li><a href=\"https://awoiaf.westeros.org/index.php/House_Magnar\" title=\"House Magnar\">House Magnar</a> of <a href=\"https://awoiaf.westeros.org/index.php/Kingshouse\" title=\"Kingshouse\">Kingshouse</a></li><li><a href=\"https://awoiaf.westeros.org/index.php/House_Stane\" title=\"House Stane\">House Stane</a> of <a href=\"https://awoiaf.westeros.org/index.php/Driftwood_Hall\" title=\"Driftwood Hall\">Driftwood Hall</a></li></ul>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "north",
+        "house": "Houses Crowl, Magnar, Stane",
+        "destinationType": "landmark",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "three",
+        "warp": "/warp skagos",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  }
+]

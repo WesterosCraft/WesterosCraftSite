@@ -10,10 +10,11 @@ import launcher from './documents/launcher';
 import textSlice from './objects/textSlice';
 import videoSlice from './objects/videoSlice';
 import figure from './objects/figure';
+import video from './objects/video';
 
 const schema = createSchema({
   name: 'default',
-  types: schemaTypes.concat([destination, textSlice, videoSlice, about, launcher, figure])
+  types: schemaTypes.concat([video, destination, textSlice, videoSlice, about, launcher, figure])
 });
 
 export default schema;

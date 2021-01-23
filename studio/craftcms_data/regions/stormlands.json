@@ -1,0 +1,1176 @@
+[
+  {
+    "title": "Swygert",
+    "slug": "swygert",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Swygert1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Swygert",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp swygert",
+        "dateCompleted": "2015-08-31T07:00:00+00:00",
+        "projectLead": "QuikFox, Kesin",
+        "dateStarted": "2014-09-17T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Rain House",
+    "slug": "rainhouse",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/RainHouse1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Wylde",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp rainhouse",
+        "dateCompleted": "2018-06-01T07:00:00+00:00",
+        "projectLead": "Aslanio",
+        "dateStarted": "2014-11-13T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/house-wylde-of-rainhouse-by-aslan.1019/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Lonmouth",
+    "slug": "lonmouth",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Lonmouth",
+        "destinationType": "castle",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "warp not set",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Blackberry",
+    "slug": "blackberry",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Blackberry",
+        "destinationType": "keep",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp blackberry",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Blackhaven",
+    "slug": "blackhaven",
+    "copy": "<p><strong>Blackhaven</strong> is the seat of <strong>House Dondarrion</strong> in the southern part of The Stormlands. The Dondarrion line was founded when a messenger from the Storm King was ambushed by two Dornishmen while riding on a stormy night. An arrow killed his horse and his sword broke when he fell. When he thought he was doomed, a bright purple lightning bolt struck the Dornishmen killing both. The man was thus able to deliver his crucial message on time. For this, the Storm King raised him to lordship, and he became the first Dondarrion.</p>\r\n<p>Ser Arlan and Dunk served Lord Caron and Old Lord Dondarrion when they fought the Vulture King in the Red Mountains three years before the Ashford Tourney. Lord Dondarrion took eight hundred knights and near four thousand foot in the campaign. Dunk recognized Lord Dondarrion's purple lightning at Ashford. Ser Manfred Dondarrion refused to vouch for Dunk's knighthood, even after he repeated the story of the origin of House Dondarrion and their arms as he had heard it in Dondarrion's camp</p>\r\n<p>At a tourney at Blackhaven, a ten-year old Barristan Selmy entered the lists as a mystery knight. He was eventually unhorsed and unmasked by Prince Duncan Targaryen, earning Barristan the nickname 'Bold'.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Blackhaven Castle,</strong> dark stone towers are perched above a river valley, providing a strong defense from the south with walls and protected gates. The source of the river is near Gallowsgrey.</li><li><strong>Manse, </strong>further upstream is a manse near a wooded lake. </li><li><strong>Blackhaven Town, </strong>at the base of the valley is a market town that is protected to the south by a wall across the river and from the mountains by the castle's defense.</li><li><strong>Blackhaven Port,</strong> at the mouth of the river is the main town of House Dondarrion on the shores of the Sea of Dorne near the Dornish city of Wyl. The thriving port has several docks that are shipping goods from nearby fields and wineries.</li><li><strong>Hamlets and Cadets, </strong>to the east of the port are a few small hamlets, one of which is controlled by a cadet branch of House Dondarrion and once belonged to House Cole, now exiled.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Blackhaven began as a co-op project between JustCallMeeJack and SMP. The construction started with the terraforming of the river valley, raising the ground and building up the mountain upon which the castle perches.</p>\r\n<h3>Inspiration</h3>\r\n<p>Blackhaven was inspired by a variety of Gothic castles, but especially Gochem Castle in Germany.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/blackhaveninsp.jpg\" data-image=\"102574\"></figure>\r\n<h3>Video</h3>\r\n<p>Blackhaven was featured in Episode 68 of WesterosCraft Walks. HardzzGaming explores the cadet branch lands, spends the night in a inn, then explores the main town and large castle.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/kp6E39Hx4vc\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/blackhaven.jpg"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Dondarrion",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "four",
+        "warp": "/warp Blackhaven",
+        "dateCompleted": "2015-09-29T07:00:00+00:00",
+        "projectLead": "JustCallMeeJack, SMP",
+        "dateStarted": "2014-06-29T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-dondarrion.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Broad Arch",
+    "slug": "broadarch",
+    "copy": "<p><strong>Broad Arch</strong> is a castle in the Red Watch region at the borders between the Dornish Marches and the Rainwood in The Stormlands. It is the seat of <strong>House Staedmon.</strong> The Lord, and only known member of House Staedmon is Alesander Staedmon, called \"Pennylover\".<br></p>\r\n<p>The Staedmon sigil is a black dagger piercing a red heart on a white de sang field, within an undulating red border.<br></p>\r\n<h3>Features</h3>\r\n<ul><li>A strong and solid <strong>stone castle</strong> with elements of daub and wattle.</li><li>A large <strong>sept</strong> with a tiled green roof.</li><li><strong>The Arch,</strong> a large stone arch bridge spanning between two solid guard towers, guarding the entrance towards the castle. The castle takes it's name from said Arch.</li><li><strong>Rosehedge,</strong> (/warp rosehedge) the main village close to the castle.</li><li><strong>Potter's Ridge,</strong> (/warp pottersridge) a holdfast and village near the southern border of the Staedmon lands. Famous for it's potter industry.</li><li><strong>Beacon Hill,</strong> (/warp beaconhill) a holdfast and village northeast of Broad Arch.</li><li><strong>Silver Mines,</strong> three profitable silver mines just outside the Broad Arch castle as well as more near Beacon Hill called Silver Peak (/warp silverpeak)</li><li><strong>Oakglade,</strong> (/warp oakglade) a small village on the eastern border of the Staedmon lands.</li><li>A <strong>horse breeder and trainer</strong>, making sure the knights of the area are supplied with well trained horses for battle.</li><li>A <strong>cidery</strong>. Making the finest cider in the Red Watch region.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The construction of Broad Arch began on July 13th 2014 and took over 10 months, partly because I, Georni, is a master of procrastination, and partly because I wanted to make sure I could make a finished project I could be satisfied with.</p>\r\n<p>The idea behind the castle itself, is that it was built around already existing and operational silver mines, and the idea is that the castle was built in three major stages. The oldest part being the gatehouse and the West/East wing attached to it. The second section being the North/South wing, that includes the Feast Hall, Lord's Apartments and Maester's chambers; the bell tower was also built in this stage. And the newest section is the Guest wing West of the bell tower.</p>\r\n<p>As time grew, the silver mines within the castle grounds ran dry, and they were abandoned. Instead one of the mines was turned into a dungeon, while the other was turned into a crypt for the Lords and ladies of House Staedmon and chambers and working area for the silent sisters.</p>\r\n<p>Even though the mines inside the castle are dry, House Staedmon are not short of funds. New mines were established, three of them just outside the castle. But money can play tricks on even they strongest of minds, Lord Alesander was not spared. He is nicknamed \"pennylover\", and is often considered somewhat of a miser among the people in the villages around Broad Arch. It is said he has several hidden stores around the castle, filled with riches to keep his wealth hidden. Can you find them all?</p>\r\n<p>The holdfast of Potter's Ridge and the village layout was done by Demodocus, while the holdfast and village at Beacon Hill was done by NewEnglandRed09.</p>\r\n<h3>Inspiration</h3>\r\n<p>There is very little canon information on Broad Arch and House Staedmon, therefore the location of Broad Arch and everything tied to it, is pure imagination by me, Georni. The only canon information we have is the House Sigil, the name of the castle, Broad Arch, the name of the current lord, Alesander Staedmon, and his nickname \"Pennylover\". Apart from that House Staedmon and Lord Alesander has a couple of brief mentions in the books. Inspiration for the castle is taken from Dehaar Castle in the Netherlands and Kreuzenstein castle in Austria.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/broadarchinsp1.jpg\" data-image=\"102578\"></figure><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/Broadarchinsp2.jpg\" data-image=\"102579\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Broadarch1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Staedmon",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp broadarch",
+        "dateCompleted": "2015-06-19T07:00:00+00:00",
+        "projectLead": "Georni",
+        "dateStarted": "2014-07-13T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Crow's Nest",
+    "slug": "crows-nest",
+    "copy": "<p><strong>Crow’s Nest</strong> is the seat of <strong>House Morrigen</strong>, located on Cape Wrath in The Stormlands. House Morrigen is one of the most important houses sworn to the House Baratheon because of their strategic location between the Rainwood and the mountains of the Stormlands. Their sigil is a black crow on green.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Crow’s Nest Keep,</strong> an imposing big castle located on the top of a plateau. The keep is divided into two levels. In the first one includes the feast hall, barracks, stables, main gate and guest quarters. The second level is divided by a second gate consists of two big stone towers of green slate roofs connected by a covered bridge.</li><li><strong>Blind Valley,</strong> the main village of Crow’s Nest is called “Blind Valley”. It’s filled with terraced fields and houses scattered along the slopes of the mountains.</li><li><strong>Northern Gate,</strong> located northwest of Crows Nest is a holdfast that guards the second entrance into Blind Valley.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The first thing to do after the approval of the app was the terraforming of the plateau for the keep made by MrTxi. Then a full wool version of the keep was built to allow to have a main view of how each part of the keep would fit with the other ones. After that the real construction of Crow’s Nest keep started. It took around one month to finish all the exteriors, the septs and its gardens were made by Quikfox and BarkusMollingmo respectively. The interiors took a bit more, around two months because the Blind Valley terraform was done at the same time.</p>\r\n<p>The main difference between the old version of Crow’s Nest and the new is the new palette of the Stormalnds with the dark brown blocks. The old version was completed by Landtank in August 2012.</p>\r\n<h3>Inspiration</h3>\r\n<p>Crow’s Nest main inspiration is Hohenwerfen Castle located in Austria. With that dark colored stone walls and its location in the top of a hill in a valley filled with trees achieve the exact feeling wanted for Crows Nest. </p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/crowsnestinsp.jpg\" data-image=\"102582\"></figure>\r\n<h3>Video</h3>\r\n<p>Crow's Nest is featured in Epoisode 41 of WesterosCraft Walks, hosted by DutchGuard.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/tKvJXufSR6A\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/crowsnest.jpg"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Morrigen",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp crowsnest",
+        "dateCompleted": "2016-03-21T07:00:00+00:00",
+        "projectLead": "erikiglesiass",
+        "dateStarted": "2014-07-18T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Fawnton",
+    "slug": "fawnton",
+    "copy": "<p><strong>House Cafferen</strong> is noble house from The Stormlands. They blazon their arms with two white fawns counter salient on green. They were Targaryen loyalists until they turned to Robert's side during the rebellion. <strong>Fawnton</strong> is located right on the northwest border of the Stormlands and Reach, near the Kingswood.<br></p>\r\n\r\n<h3>Features</h3>\r\n<ul><li><strong>Cafferen Keep,</strong> in the middle of the town is a tall stone-walled keep with a brown-tiled roof. The keep is a blend of the stormlands palate with the architecture of the Reach.</li><li><strong>Town of Fawnton,</strong> with approximately fifty houses, Fawnton is one of the few true towns in the stormlands. It is a center of trade in the both the stormlands and the Reach, especially in the lumber trade since it is close to the Kingswood and other forests.</li><li><strong>Farmhouses,</strong> the farmers of Fawnton live in modest stone houses with thatch roofs outside the main town.</li><li><strong>Agriculture,</strong> because the region is close to the Reach, the agricultural land is very fertile. There are many fields with a variety of crops, including blue fields of flax (pictured).</li></ul>\r\n<h3>Construction</h3>\r\n<p>The construction of Fawnton was a lengthy process. It took just under a year to complete the build. At least fifty people helped build this location. An older version of Fawnton by mgleim was never truly completed and was a series of wooden structures built beneath a dense canopy of trees. </p>\r\n<h3>Inspiration</h3>\r\n<p>The Cafferen Keep and Fawnton were inspired by Austrian and Czech castles, which form the basis of much of the Stormlands style. </p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Fawnton1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Fawnton2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Cafferen",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp fawnton",
+        "dateCompleted": "2015-07-27T07:00:00+00:00",
+        "projectLead": "Dav4",
+        "dateStarted": "2014-10-15T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Grandview",
+    "slug": "grandview",
+    "copy": "<p><strong>House Grandison </strong> is a noble house from<strong> Grandview</strong> in The Stormlands. It blazons its arms with a black sleeping lion on yellow. According to semi-canon sources, their words are \"Rouse Me Not\".</p>\r\n<p>The only historical members of the house to be mentioned are Lord Lorent Grandison, one of King Aegon III Targaryen's regents; old Ser Harlan Grandison, a knight of the Kingsguard who died in his sleep and was replaced by Ser Jaime Lannister; and Lord Grandison who died of wounds sustained during the Battle of the Trident. </p>\r\n<p>This Lord Grandison, along with Lords Fell of Felwood and Cafferen of Fawnton, planned to remain loyal to King Aerys and they were going to join forces to attack Lord Robert. Robert, catching the wind of it, raced to their designated meeting place of Summerhall and defeated each army in turn as it came up. Lord Grandison was captured and soon became Robert’s man. He fought throughout the war for Robert and died a year after of a wound he took at the Trident.<br><br>Lord Hugh Grandison, called \"the Greybeard\", is the present lord of Grandview and was among the possible matches offered to Princess Arianne Martell. Ser Humrey Wagstaff once served as Castellan of Grandview, so it is likely his house is a vassal of the Grandisons, or at least has close connections to it.<br></p>\r\n\r\n<h3>Features</h3>\r\n<ul><li><strong>The Grandview Keep</strong> sits atop a prominent rock outcropping overlooking the humble beginnings of the River Slayne. There are a few different ways up into the castle from the lower yard.</li><li><strong>The Stair Tower,</strong> is the most straightforward way up and also includes a few guest rooms and a passage to the Maester's tower. Next to the Stair Tower is a hoist that was built during the construction of the main keep and is still used to lift supplies and the occasional guest who can't make the stairs.</li><li><strong>Cave System,</strong> the final way up (besides scaling the rock) is to take the cave system that leads from the gatehouse up through the rock to a storage room in the cellars of the main keep. The main keep features “grand views” from the covered walkway that extends all sides of the keep.</li><li><strong>Economy,</strong> there is a sawmill and charcoal processing facility just south of the castle. The Grandison Mine, (/warp grandisonmine) and just south of that along the river is the blast furnace that serves both the Grandison and Wagstaff mines.</li><li><strong>Villages and Holdfasts,</strong> there are also two notable communities, besides the village across the river at Grandview itself. To the north there is a small holdfast and village at /warp grandisoncrossing and to the south a larger village and holdfast that is controlled by Grandison vassals, the Wagstaffs, (/warp wagstaff).</li></ul>\r\n<h3>Construction</h3>\r\n<p>Construction started after project approval on July 19, 2014 and mostly wrapped up on Oct 24, 2014. After initial completion there was a slight shift of borders and some former Wagstaff lands became Grandison lands, so 3 towers were constructed to defend the road to Summerhall. Several builders assisted with houses built in Grandview Village and there were also some more substantial contributions by Dyvim (blast furnace) and Tsarkaiser (Sept) The holdfast and village of Grandison Crossing was lead by MrQuentini and Wagstaff which was more of an independent project was lead by carcinogenius. </p>\r\n<p>This build of Grandview is the second version, but hoosfoos built the first version as well. The first version of Grandview predates the server's adoption of the regional style guides and was modeled after Gravensteen in Gent Belgium. The first Grandview was built in the same general location at the head of the River Slayne, surrounded by several streams and mountainous forests.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/GrandviewOld.png\" data-image=\"102596\"><figcaption>The old version of Grandview by hoosfoos</figcaption></figure>\r\n<h3>Inspiration</h3>\r\n<p>The inspiration for the build was Orava Castle in Slovakia. I traveled through the mountains of Slovakia on a trip through Eastern Europe in the summer of 2014 and saw this castle in person as I went by on the highway. I was intrigued by the castle so I did some more research on it when I got home and decided to use it as the inspiration for my ideas for Grandview. It changed quite a bit as the planning process went on, but there is still a little bit of it in the final build. <br></p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/grandviewinsp.jpg\" data-image=\"102595\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/grandview1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/grandview2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Grandison",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp grandview",
+        "dateCompleted": "2014-11-07T08:00:00+00:00",
+        "projectLead": "hoosfoos",
+        "dateStarted": "2014-01-11T00:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Griffin's Roost",
+    "slug": "griffins-roost",
+    "copy": "<p><strong>Griffin's Roost</strong> is a castle located in The Stormlands, on the shore of Shipbreaker Bay between Storm's End and Cape Wrath. It is seat of <strong>House Connington</strong>. Its most prominent recent member is Lord Jon Connington who followed Owen Merryweather as Hand of the Mad King when Robert's rebellion broke out, but was later exiled to Essos where he reportedly died there.<br></p>\r\n\r\n<ul></ul>\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle,</strong> the castle had been built on a tall crag connected to the mainland by a natural ridge called \"The Griffin's Throat\". From the towers of the castle, you can see the once vast lands of House Connigton (of which nine tenths were redistributed to other lords after Robert Baratheon became king). </li><li><strong>Griffin's Town,</strong> a small fishing village located in the bay west of the castle. It's market day and all the vendors are out and selling their goods.</li><li><strong>Secret Passageways,</strong> there are two canon secret passages, which are described in a Dance of Dragons.</li><li><strong>Griffin Statues,</strong> some say the griffin statues in the central courtyard maintain free-floating hands in some kind of anti-gravitational spell. However, if you step back and look at the big picture, you realize it's Minecraft and there are limitations. They're simply holding hands.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Griffin's roost has a long and troubled history on WesterosCraft having been built and rebuilt four times now. The original Griffin's Roost was a tiny castle, built in a time when the server's overall build quality was very crude. After some drama, the second one was built on an old map before the \"new\" 2012 map or the newest South Part 2. Marken4 decided to rebuild it in it's current iteration on the \"old\" map. Unfortunately, Marken4 disappeared before he could finish the interiors of Griffin's Roost. It existed as just an exterior until January 2013 when LeonEuler decided to furnish the rest of it. SMP led the newest version of Griffin's Roost (often called \"groost\" by builders) in 2015 on the newest map with the latest texture pack. Griffin's Town was made mostly by one person, improvised on the spot, and completed in about two weeks. Castle construction was 90% done in about another two weeks, but progress remained stagnant until almost seven months later when it was finished in January 2016.</p><h3>Inspiration</h3>\r\n<p>Many elements of the latest Griffin's Roost iteration were directly inspired by the previous ones and the extensive amount of canon information. An old version of Griffin's Roost can be found at /warp old builds.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/GriffinsRoostold.jpg\" data-image=\"102601\"><figcaption>Old Griffin's Roost by Marken4</figcaption></figure>\r\n",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/griffinsroost-2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/griffinsroost-7.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/griffinsroost-8.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Connington",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "four",
+        "warp": "/warp griffinsroost",
+        "dateCompleted": "2016-01-17T08:00:00+00:00",
+        "projectLead": "WolfeG, SMP, Marken4",
+        "dateStarted": "2015-05-22T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Hasty",
+    "slug": "hasty",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Hasty1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Hasty",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp hasty",
+        "dateCompleted": "2014-10-05T07:00:00+00:00",
+        "projectLead": "HowyJ",
+        "dateStarted": "2014-10-05T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Haystack Hall",
+    "slug": "haystack-hall",
+    "copy": "<p><strong>Haystack Hall</strong> is the seat of <strong>House Errol</strong> in the northern portion of The Stormlands just southeast of the Kingswood. House Errol blazons their shield with a yellow haystack on a field of orange. The head of the house is Lady Shyra Errol. The only other known member of House Errol is Sebastion.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Location</strong> - situated on a lone mountain jutting up through a large forest clearing</li><li><strong>Materials</strong> - built using a unique white stone</li><li><strong>Main Village</strong> - located at the base of the mountain (northeast)</li><li><strong>Countryside</strong> - vast fields dominate the outer lands which are surrounded by forests</li><li><strong>Minor Builds</strong> - two forest holdfasts and one coastal holdfasts along with numerous hamlets</li></ul>\r\n<h3>Haystack Hall Castle Layout</h3>\r\n<p><strong>Bailey:</strong> Contains a possible Kennel, a shelter for a wheelbarrow, and 2 shelters for horses.</p>\r\n<p><strong>Guard Towers</strong>: 3 guard towers with no beds, provided only for lookout</p>\r\n<p><strong>Sept Chamber:</strong> A small building on the eastern wall. Contains a sept and quarters for the Septon.</p>\r\n<p><strong>West Chamber:</strong> West of the main keep. Has a dining area and a sitting room at ground level, and 2 unused rooms (one of them for servants) and 1 room with a decent bed.</p>\r\n<p><strong>Well:</strong> Located in the inner bailey of the main keep. Beneath a mossy cave.</p>\r\n<p><strong>Dungeon:</strong> Contains 2 bloody cells and a small armory. Beneath a lumber storage area immediately left of the north entrance</p>\r\n<p><strong>Main Keep:</strong></p>\r\n<p><strong>Ground Level:</strong> Entrance to the well and dungeon. Has hay storage, food storage, and stables near the west entrance.</p>\r\n<p><strong>1st Level:</strong> Has a “Great Hall” located in the tower keep. Rooms in the keep surrounding the bailey includes 1 unused and 1 used guard room leading to a mess hall in the north wall, and food storage and kitchens in the west and south areas.</p>\r\n<p><strong>2nd Level</strong>: Has a small seating area and maester’s quarters, which lead to the rookery and roof storage, in the west area. A servants room, small storage room, and an unclear room are in the north area. 2 unclear beds in south area. An unclear room and an unused room are in the tower house.</p>\r\n<p><strong>3rd Level (Surrounding keep):</strong> Relatively unused roof area, with some thatch beds. Connects to the Rookery.</p>\r\n<p><strong>3rd Level (Tower house):</strong> Has 1 two-bed room, possibly for twins, and 2 rooms for guards or Errol nobles</p>\r\n<p><strong>4th Level (Tower House):</strong> Has the modest lord's room, with a seating area with a mirror.</p>\r\n<p><strong>5th Level (Tower House):</strong> Roof Storage</p>\r\n<h3>Construction</h3>\r\n<p>Haystack Hall features the Northern Stormlands style, notable for its white stone and militaristic characteristics. CaptScribble, MorrisMos, and syorre were responsible for the three holdfasts located on Errol Lands. Construction took around 4 months to complete, but the bulk of the build was constructed very early on.</p>\r\n<p>The original Haystack Hall was built by Marken and has many of the same characteristics including a castle courtyard, tall square towers, a mountain location and vast fields surrounding the build.</p>\r\n<h3>Inspiration</h3>\r\n<p>Haystack Hall was heavily inspired by Castle Tarasp in Switzerland, even the geography and surrounding lands offer noticeable resemblances.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/HaystackHallInsp.png\" data-image=\"102606\"></figure>\r\n<h3>Video</h3>\r\n<p>Haystack Hall was featured in Episode 71 of WesterosCraft Walks. Hosts HardzzGaming and electricthrusts explore the nearby villages before walking up to the castle.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/UQh1sqCrsoI\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/haystackhall-4.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/haystackhall-2.jpg"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/haystackhall-3.jpg"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Errol",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp haystackhall",
+        "dateCompleted": "2015-07-13T07:00:00+00:00",
+        "projectLead": "BantyRooster",
+        "dateStarted": "2015-04-06T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Kellington",
+    "slug": "kellington",
+    "copy": "<p><strong>House Kellington</strong> is a minor noble house from The Stormlands. It is sworn to House Baratheon of Storm's End. House Kellington is not mentioned in the books, however,a black book bound in bronze on a blue field shows their coats of arms. Kellington is located in a bay on the eastern coast of Cape Wrath and consists of a town with about 35 houses and a castle, the seat of Lord Kellington. To the south of Kellington are the lands of House Gower, to the north is House Wylde of Rain House and to the east lies the island of Estermont.<br></p>\r\n<ul></ul>\r\n<h3>Features</h3>\r\n<ul><li><strong>Keep,</strong> a modest keep built from the dark sandstone of the Stormlands overlooks the town and bay from its perch. The tallest tower is a watchtower, which overlooks the Rainwood to the west. The lord's tower and the guest tower are the second and third tallest, respectively.</li><li><strong>Town,</strong> a bustling town on the natural harbor is protected from the famous storms of Cape Wrath by islands such as Estermont, making it an important shelter for ships on the Narrow Sea.</li><li><strong>Villages,</strong> three villages are located in the outer parts of the Kellington Lands. The major economic products of the region are leather, meat, lumber, and fish.</li><li><strong>Eagle Roosts,</strong> migratory eagles, such as the bateleur move regularly through the lands of Lord Kellington.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The project was led by _Ready and was started on February 22, 2015 and completed on September 20, 2015. Some time later, a few issues were pointed out by Thamus_Knoward after _Ready had resigned from being a builder, which were addressed by TheYoungWolf in August 2016.</p>\r\n<h3>Inspiration</h3>\r\n<p>Although there is no specific castle that inspired the layout of House Kellington, _Ready used several German castles and the general style of the Stormlands to design the keep on graph paper before building it in game.</p>\r\n<h3>Videos</h3>\r\n<p>Kellington was featured in episode 59 of WesterosCraft Walks. DutchGuard begins in the Rainwood, shows the port town and inn located in it. Later he makes shortcut through the fields, and visits Kellington Keep.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/uRjRh-qnNyg\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/kellington1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/kellington2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Kellington",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp kellington",
+        "dateCompleted": "2016-09-01T07:00:00+00:00",
+        "projectLead": "_Ready",
+        "dateStarted": "2015-02-22T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Nightsong",
+    "slug": "nightsong",
+    "copy": "<p>The castle of <strong>Nightsong</strong> is the seat of <strong>House Caron</strong>, the Lords of the Marches. The Marcher Lords guard the region of The Stormlands on the border of Dorne, and they are know for their large strong castles. The Carons protect the entrance to the Prince's Pass, one of the major entrances into Dorne. The Carons are a powerful house, or at least were at one time. As Lord of the Marches, they have nominal ascendancy over the other lords of that region, such as the Dondarrions and the Swanns. In recent years, they have fallen in power, and Lord Bryce Caron, the current lord, is the last remaining Caron. The future of his house depends on himself, and his bastard brother, Ser Robert Storm.<a title=\"Expand slideshow\" id=\"slideshow-0-0\"></a></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>The Castle of Nightsong,</strong> a large castle perched on a rocky spur. The castle has many great halls, including a cavernous feast hall, as well as a council chamber hung with the banners of the marcher lords. Many of the rooms formerly used by the Carons who succumbed to a recent plague are abandoned.</li><li><strong>Smith's Forge,</strong> a small village of Smith's Forge is below the castle itself. The inhabitants are mostly smiths and miners, who make a living off of the rich iron mines nearby. A small statue of the Smith is in the center of the village.</li><li><strong>Marcher towers,</strong> to protect their lands, the Carons constructed several formidable towers around their borders. These towers are strong and old structures that have helped to defend the Marches from Dornish incursions.</li><li><strong>Mines,</strong> there are two mines in Caron lands, and both are excellent sources of iron. The Carons have used these mines to build up an impressive weaponry and armory.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Construction took Tsarkaiser84 about a month. The castle was started first, and with the help of great terraforming from Georni, it was completed it in a few weeks. The rest of the village and houses were completed mostly by Tsarkaiser84 and a few other builders. <br></p>\r\n\r\n<p>The original Nightsong was built by Landtank in 2012, but it was never completed. Dondarrion built a 2nd version in June 2013, but it was not transferred to the new map. This version is the third version of Nightsong. </p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/Nightsongold.png\" data-image=\"102615\"><figcaption>An old version of Nightsong</figcaption></figure>\r\n<h3>Inspiration</h3>\r\n<p>Nightsong has had a reputation for looking an awful lot like Hogwarts. This is not really an accident, as it was one of several inspirations, but still remains quite unique. However, it combined styles of the three regions that Nightsong borders, Stormlands, Reach, and Dorne. The castle has larger round towers like the Reach, sandstone for Dorne, and defensive structures for the Stormlands. </p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/nightsong.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Caron",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp nightsong",
+        "dateCompleted": "2014-10-06T07:00:00+00:00",
+        "projectLead": "tsarkaiser84",
+        "dateStarted": "2014-08-24T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Carron.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Parchments",
+    "slug": "parchments",
+    "copy": "<p><strong>Parchments</strong> is the seat of <strong>House Penrose,</strong> located in the northern Stormlands on Shipbreaker Bay. The Penroses have had many notable members including Lord Ronnel Penrose, who married Elaena Targaryen and served as Master of Coin, Aelinor Penrose, who married Aerys I, Ser Jon Penrose, who fought at Ashford Tourney and managed to unseat Tybolt Lannister, though he lost the duel, and finally Ser Cortnay Penrose, who served as the castellan of Storm’s End. During the Blackfyre Rebellion, the Penroses remained loyal to the Targaryens.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle Parchments,</strong> a pale castle located astride Shipbreaker Bay, it is a simple castle with numerous yards and strong towers. With a seawall on the northern side, a comfortable Lord’s Tower, a lush castle garden overlooked by the Maiden’s Keep, Castle Parchments is a comfortable yet stark castle.</li><li><strong>Parchments Town,</strong> located outside the castle, the town contains a sept, a market hall and a number of barns and farmsteads.</li><li><strong>The Old Motte,</strong> an old motte and bailey to the north which serves to overlook the northern forests, it’s hamlet and their respective pastures. The old wooden keep has been replaced by a stone one, and an old knight retains a small garrison there.</li><li><strong>The Septry of Elaena,</strong> named for Elaena Targaryen, who sponsored the septry, this monastery is located off the coast of Parchments. Containing a simple sept, a chapter house, and a graveyard that is said to hold a number of prominent Penroses, it is an integral part of the Penrose lands. There is an old holdfast across the bay, overlooking another hamlet, which was used to keep Ironmen at bay.</li></ul>\r\n<h3>Castle Layout</h3>\r\n<p><strong>Granary and Storage Building:</strong> Contains 2 granaries on ground level and lumber and grain storage on the second floor</p>\r\n<p><strong>Guard Towers:</strong> Various guard towers surround the walls of the castle, are mostly unfurnished and some contain bags of grain or flour.</p>\r\n<p><strong>Stables:</strong> Single story structure with stables for horses who visit Parchments</p>\r\n<p><strong>Armory Tower</strong>: A squat tower that contains the armory at ground floor and belowground. Has a mess hall at ground level and the chambers and solar of the possible Master-at-arms further up.</p>\r\n<p><strong>Guard Barracks:</strong> Houses the barracks of many of the guards in Parchments. Has 2 dormitories on the 2nd and 3rd floors, with rooms for higher-ranking officers. A mess hall and lounge are also here respectively.</p>\r\n<p><strong>Great Hall:</strong> A large one room hall with the lords dais in Brown and white, the house colors. 2 small tables have been set, possibly for household and guards.</p>\r\n<p><strong>Kitchen Keep</strong>: Houses a small storage area belowground, and the kitchens above. Houses many servants in the dormitories at the top of the structure.</p>\r\n<p><strong>Kennels</strong>: Small structure that houses the hunting dogs of the Penrose’s. Has a collection of meat used by the Kennelmaster.</p>\r\n<p><strong>Maester’s Tower:</strong> Tower with the Maester’s chambers, as well as the castle library and rookery</p>\r\n<p><strong>Garden Keep:</strong> So named for the garden it looks over. A small lounge is on ground level. Has a possible sewing room on 2nd floor, and a large bedroom above that.</p>\r\n<p><strong>Harp Keep:</strong> Named for the large harp located in it. Has a large bedroom on the first floor, although the occupation is unclear. Has a large room above that with the signature harp. Possibly a woman’s room, because of the Mirror room connecting to it.</p>\r\n<p><strong>Main Keep:</strong> A large tower that houses the Penroses. Has a large wine cellar below the castle. Has a large sitting room and a solar on the first floor. Has barracks for the household guard and a bed for a possible noble woman on the second floor. Has a large noble bedroom on the third floor, and the lords solar on the fourth, and what looks to be the lords chamber on the fifth floor.</p>\r\n<p><strong>Smithy:</strong> Contains the Smithy and the Blacksmith’s bedrooms, has a heavily sloped roof</p>\r\n<p><strong>Bathhouse</strong>: A small shack with rows of clothing and pools of water inside, Washerwomen possibly sleep in Main or Kitchen Keep.<br></p>\r\n<ul></ul>\r\n<h3>Construction</h3>\r\n<p>Building commenced in May 2015 and proceeded at a decent pace, until the builder NickShaiB lost motivation. Building was resumed at a relatively swift pace in September, being completed before the month’s end.<br></p>\r\n\r\n<h3>Inspiration</h3>\r\n<p>The primary inspiration for this build was the Chateau de Chatillon. This was chosen for two reasons. Firstly, it is a stark castle with a simple palette which the builder felt suited the Stormlands. Secondly, it had a similar palette to BantyRooster’s <a href=\"https://westeroscraft.com/wiki/stormlands/haystack-hall\">Haystack Hall</a>, on which this build was also based.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/parchmentsinsp.jpg\" data-image=\"102618\"></figure>\r\n<h3>Video</h3>\r\n<p>Parchments has been featured in both a WesterosCraft Cinemtic as well as in Episode 67 of WesterosCraft Walks.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/ztYz1IaoTeM\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/7jAPdxQX0Z8\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/parchments-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/parchments-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/parchments-2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/parchments-1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Penrose",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp parchments",
+        "dateCompleted": "2015-09-23T07:00:00+00:00",
+        "projectLead": "NickShaiB",
+        "dateStarted": "2015-05-11T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Penrose.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Poddingfield",
+    "slug": "poddingfield",
+    "copy": "<p><strong>House Peasebury</strong> is a noble house from The Stormlands. They live in a castle called <strong>Poddingfield</strong>, which can be found in the Dornish Marches, at the border of the Stormlands and The Reach, northeast of Harvest Hall. Their sigil shows a pea pod burst open, green on white, bordered by three rows of green peas, which is a reference to the pease fields surrounding the castle. The castle guards a mountainpass that gives acess to the Stormlands.<br></p>\r\n\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle,</strong> located on the foothills of the Dornish Marches. It is surrounded by fields and small farming hamlets. The walls are brown, which is a common feature in the Dornish Marches.</li><li><strong>Poddingwoods,</strong> can be found northeast of the castle. It contains a hunting cabin and camp, and is bordered by wetlands.</li><li><strong>Mountainpass,</strong> gives access to the Stormlands. It is guarded by two small holdfasts, inhabited by knights.</li><li><strong>Sept,</strong> located in the mountains, only accessible by following a small goat trail.</li><li><strong>Mine,</strong> used to mine iron. It is surrounded by a small hamlet.</li><li><strong>Lumberjack,</strong> can be found at a waterfall. It is home of a big lumbermill that is driven by a dam.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Poddingfield has been built by Steineke96. Construction started at the start of August and was finished two months later.</p>\r\n<h3>Inspiration</h3>\r\n<p>Poddingfield is inspired by Hunedoara Castle and the Wartenstein Castle in Austria.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/poddingfieldinsp1.jpg\" data-image=\"102621\"></figure>\r\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/poddingfieldinsp2.jpg\" data-image=\"102622\"></figure><h3>Video</h3>\r\n<p>Poddingfield was featured in Episode 39 of WesterosCraft Walks. DutchGuard started at the mountain pass and made his way down through the fields and hamlets to the castle.<br></p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/5i-9oCZf04o\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Poddingfield_3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Peasebury",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp poddingfield",
+        "dateCompleted": "2014-09-22T07:00:00+00:00",
+        "projectLead": "Steineke96",
+        "dateStarted": "2014-08-09T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Stonehelm",
+    "slug": "stonehelm",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Stonehelm1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Swann",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp stonehelm",
+        "dateCompleted": "2015-09-28T07:00:00+00:00",
+        "projectLead": "NewEnglandRed09",
+        "dateStarted": "2014-11-04T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Swann.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Seaworth",
+    "slug": "seaworth",
+    "copy": "<p><strong>Seaworth </strong>is the seat of House Seaworth of Cape Wrath. The house was created after Davos, which was just smuggler, smuggled food to the people inside Storms End during the siege imposed by the Tyrell in the context of Robert's Rebellion. For this bravery he was made a knight and recieved lands on Cape Wrath, including a small keep and a forest to hunt in, by lord Stannis Baratheon.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Keep:</strong> the seat of House Seaworth, where Davos' family resides.</li><li><strong>Hamlet: </strong>the main settlement of the Seaworth lands, located right next to the keep.</li><li><strong>Hunting Camp: </strong>a hunting camp located inside the forest.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The project was approved on 1st of October 2014 and was finished in 4th of October 2014.</p>\r\n<h3>Video</h3>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/fnxhHh1IIyA\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/seaworth-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/seaworth-2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/seaworth-3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Seaworth",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp seaworth",
+        "dateCompleted": "2014-10-04T07:00:00+00:00",
+        "projectLead": "AttackOnMars, xkrillen43x",
+        "dateStarted": "2014-10-01T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Toyne",
+    "slug": "toyne",
+    "copy": "<p><strong>House Toyne</strong> was a noble house from the Stormlands. The house once controlled sizable holdings on Cape Wrath, but after falling into disfavor with the Targaryens, the house diminished in power and eventually went extinct. Today, houses Morrigen and Connington are both feuding over the right to the Toyne lands, causing unrest in the region. Some notable house members include Simon Toyne, leader of the infamous Kingswood Brotherhood, Ser Terrence Toyne of the Kingsguard, and Myles Toyne, also known as Blackheart, captain-general of the Golden Company. The house's sigil displayed a black, winged heart on gold. Their words were \"Fly High, Fly Far\".<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Toyne Keep,</strong> the former keep of House Toyne. After the keep was abandoned when the house went extinct, men loyal to House Connington have garrisoned it, currently holding it against the Morrigens. The keep is in poor condition and has a partially collapsed roof.</li><li><strong>The Main Village,</strong> located just west of the castle. The village is mostly still inhabited and remains the most important trade hub in the former Toyne lands.</li><li><strong><a href=\"https://awoiaf.westeros.org/index.php/Shady_Glen\">Shady Glen</a>,</strong> a small abandoned hamlet, razed by Morrigen raiders. The birthplace of Ser Shadric of Shady Glen.</li><li><strong>Stormy Crag,</strong> a small hamlet with a holdfast to protect the villagers in times of need.</li><li><strong>The Ruined Mill,</strong> the ruin of an old mill who was destroyed during one of the many storms of the region. Now it serves as a shelter for weary travellers.</li><li><strong>The Rainy Wood Inn,</strong> an old inn in the middle of the Rainwood, frequently visited by travellers coming from the former Toyne lands and Seaworth lands.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The application for house Toyne was submitted September 10, 2014, and it was approved on September 20. Ertylink00 immediately started work on the keep, and after its completion, he started working on the surrounding lands. House Toyne was finished on January 11, 2015, and 22 builders participated in the project.</p>\r\n<h3>Inspiration</h3>\r\n<p>For the build, Ertylink00 took inspiration from existing ruined and abandoned castles on the server, as well as castles from real life. The architectural style was heavily influenced by the neighbouring Stormlands castles.</p>\r\n<h3>Video</h3>\r\n<p>House Toyne was featured in Episode 55 of WesterosCraft Walks. DutchGuard explains the backstory of House Toyne and explores the partially ruined tower and army camps.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/OskWb1nx-EI\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/toyne1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Toyne",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp toyne",
+        "dateCompleted": "2015-01-11T08:00:00+00:00",
+        "projectLead": "ErtyLink",
+        "dateStarted": "2014-09-20T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Tudbury",
+    "slug": "tudbury",
+    "copy": "<p><strong>Tudbury</strong> is the seat of <strong>House Tudbury</strong> and nestled on a small isle located in the Sea of Dorne. Their sigil is a brown turtle on a field of green and yellow. Tudbury is an island of sea caves, rocky cliffs and pine trees and located south of Cape Wrath. House Tudbury is a relatively poor house, reaping its wealth from the occasional shipwreck that crashes along its rocky shores and from stray whales that find themselves near the isle. Due to these practices many sailors believe that the people of Tudbury are more alike to Iron Islanders than Stormlanders.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Tudbury Keep,</strong> a squat keep built to withstand the storms of the Narrow Sea. Tudbury Keep is a relatively new keep, built after the old keep sunk away into the sea.</li><li><strong>Tudton,</strong> largest of the hamlets, located along the western shores of the island Tudton is the lifeblood of trade for Tudbury.</li><li><strong>Little Tud,</strong> a small island with a large beacon, warning galleys sailing towards Weeping Town .</li></ul>\r\n<h3>Construction</h3>\r\n<p>Tudbury was constructed during October 2014, by Nonillionman, Knight_Krawler and Matrio. The region style was inspired by other Stormland projects such as Seaworth and Swygert, it was completed in early November.</p>\r\n<h3>Inspiration</h3>\r\n<p>Tudbury Keep was inspired by the Mains Castle in Scotland.<br></p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/tudburyinsp.jpg\" data-image=\"102633\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/tudbury1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Tudbury",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp Tudbury",
+        "dateCompleted": "2015-04-08T07:00:00+00:00",
+        "projectLead": "Knight Krawler, Nonillionman",
+        "dateStarted": "2014-04-09T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Wagstaff",
+    "slug": "wagstaff",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Wagstaff1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Wagstaff",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp wagstaff",
+        "dateCompleted": "2014-11-04T08:00:00+00:00",
+        "projectLead": "carcinogenius",
+        "dateStarted": "2014-10-04T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Cole",
+    "slug": "cole",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Cole1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Cole",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp cole",
+        "dateCompleted": "2016-04-20T07:00:00+00:00",
+        "projectLead": "Tact327",
+        "dateStarted": "2015-09-25T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Gower",
+    "slug": "gower",
+    "copy": "<p><strong>House Gower</strong> is a minor noble house sworn to House Baratheon of Storm's End located on the southeast coast of Cape Wrath. The Gowers are not mentioned much in the books, but we do know the \"broad, bluff, and blonde Ser Gerald Gower fought stoutly on the Blackwater\" for King Stannis, and later went on to be part of Davos Seaworth's kingsmen. The words of House Gower are unknown, but their sigil shows nine yellow trefoils on a black cross, on an ermine field.​</p><h3>Features</h3>\r\n\r\n<ul><li><strong>Keep, </strong>a tall, solitary tower rises from the cliff-side, surrounded by thick walls and stout towers. Drawbridges and strong spruce iron gates provide access to both the castle and main keep tower,</li><li><strong>Settlements, </strong>there is three settlements in Gower lands, the first, and largest, is a modest lumbering village with both a saw mill and a stone holdfast. The other large village is on an island just off the coast, it boasts a holdfast and its own small sept. The third settlement is a small fishing/farming village just out of the walls of Gower.</li><li><strong>Other points of interest,</strong> just down the road from the lumber village, a small ruined tower stands, being reclaimed by nature...and bandits. Furthermore, north of the castle, a quaint inn may provide sanctuary for any weary travelers.</li><li><strong>Prison Tower,</strong> over the other side of the bay, the prison tower of the Gowers stands in disrepair, but the cells still function.</li></ul>\r\n<h3>Construction</h3>\r\n<p>House Gower was a project by Tiny_Rhino. He started work on the project on the August 28, 2015 and completed work on November 27, 2015.</p>\r\n<h3>Inspiration</h3>\r\n<p>Living in the northeast of England makes it very hard to not be influenced by the Northumbrian castles such as Bamburgh Castle and Dunstanburgh, and House Gower is no exception of this. the surrounding Stormlands' castles such as Kellington also provided inspiration. </p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/gower1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Gower",
+        "destinationType": "tower",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp gower",
+        "dateCompleted": "2015-12-14T08:00:00+00:00",
+        "projectLead": "Tiny_Rhino",
+        "dateStarted": "2015-08-28T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Horpe",
+    "slug": "horpe",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Horpe1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Horpe",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp horpe",
+        "dateCompleted": "2015-05-25T07:00:00+00:00",
+        "projectLead": "wazgamer",
+        "dateStarted": "2014-12-01T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Wensington",
+    "slug": "wensington",
+    "copy": "<p>Directly west of Storm's End lies the motte and bailey keep of <strong>House Wensington</strong>. Surrounded by pine forests, a large marsh, and small hamlets; the lands have been settled since the First Men arrived in Westeros. Originally founded by a member from House Durrandon, this loyal cadet branch found prosperity so close to Storm's End. Although noble and proud, the destruction of their lands during the siege of Storm's End has left the house in a crippled state. Their arms are two golden trumpets crossed on blue, a gold chief with three black stags.<br></p>\r\n<ul></ul>\r\n<h3>Features</h3>\r\n<ul><li><strong>Wensington Keep,</strong> a modest motte and bailey keep rising above the canopy of the surrounding forest.</li><li><strong>Eldshire,</strong> a small village adjacent to the keep, contains a large graveyard in memorial to great warriors across the Stormlands.</li><li><strong>Andover,</strong> (/warp andover) a hamlet east of Eldshire, serving as the breadbasket of the region.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Construction began on August 2015, however due to inactivity it wasn't completed until late January 2016. Great consideration was put into the housing style due to the vastly different styles of neighboring lands.</p>\r\n<p>In May 2013, KanylKay applied to build Wensington however put the application on hold until the new world was imported. The application was never revisited.</p>\r\n<h3>Inspiration</h3>\r\n<p>Wensington keep was inspired by Eschenheimer Turm in Frankfurt, Germany.<br></p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/wensingtoninsp.jpg\" data-image=\"102645\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wensington1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Wensington",
+        "destinationType": "keep",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp wensington",
+        "dateCompleted": "2016-02-23T08:00:00+00:00",
+        "projectLead": "Knight_Krawler",
+        "dateStarted": "2016-01-01T00:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Amberly",
+    "slug": "amberly",
+    "copy": "<p><strong>Amberly</strong> is the seat of <strong>House Rogers</strong>, a noble house from Cape Wrath, The Stormlands. Their house sigil is supposedly nine unicorns around a maze, silver on black, which according to <a rel=\"nofollow\" href=\"http://awoiaf.westeros.org/index.php/House_Rogers\">A Wiki of Ice and Fire</a> is an homage to colleague Roger Zelazny and <em>The Chronicles of Amber</em>. There are no known characters to appear in the A Song Of Ice And Fire book series, however, Harrold Rogers is married to someone with the surname Stark, and Ser Corwin Rogers attended the tourney at Ashford Meadow in 209 AC.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Amberly Lands,</strong> House Rogers controls much of the land in the Cape Wrath region, which is mostly covered in forests, including parts of the Rainwood. These trees likely produce a lot of amber, hence the name. However some speculate the name is derived from the small bell mines situated near a holdfast in which amber is also accumulated.</li><li><strong>Amberly Castle,</strong> the main castle is situated in the north of the peninsula, where a stone keep sits atop a motte, surrounded by a bailey and log walls.</li><li><strong>Other Features,</strong> there are a Docks, farmland, and a milling plantation scattered throughout the House Rogers holdings.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Amberly was constructed over the course of a few years by Cedric_asoiaf (AKA Mr. Quentini). The original application was submitted in December 2014, construction began in early 2015 and continued into the fall with minor changes to the layout and the addition of amber collecting in the forests and bell mines. In Summer 2016, the house style needed to be brought up to server standards and changes were made to several structures. The project was delayed because of possible changes to the Rainwood, but was submitted for approval in March 2017.</p>\r\n<p>The forest around Amberly remains unfinished.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Amberly1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Rogers",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp amberly",
+        "dateCompleted": "2017-03-13T07:00:00+00:00",
+        "projectLead": "Cedric_asoiaf aka Mr. Quentini",
+        "dateStarted": "2014-12-24T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Storm's End",
+    "slug": "storms-end",
+    "copy": "<p><strong>Storm's End</strong> is the seat of <strong>House Baratheon,</strong> the Lords Paramount of the Stormlands and is located on Durran's Point on the northern coast of Shipbreaker Bay in The Stormlands. The kingsroad runs north from Storm's End to King's Landing through the Kingswood.</p>\r\n<p>Storm's End is considered one of the strongest castles in the Seven Kingdoms. It was once the ancestral seat of the Storm Kings of House Durrandon, and in the Dawn Age, Durran Godsgrief supposedly won the heart of Elenei, daughter of the sea god and goddess of the wind. The storm god retaliated by destroying the first six castles that Durran tried to build, until a young boy who grew to be called Bran the Builder, constructed the seventh version of Storm's End, which has stood against wind and rain ever since.</p>\r\n<p>Throughout history, Storm's End has been laid seige multiple times, but has never fallen. It repelled the Andals in seven failed seiges, though eventually the Andals married into the Durrandon line. During Aegon's War of Conquest, the last Storm King, Argilac the Arrogant, lost to Orys Baratheon in open battle by leaving the fortress. Orys took Argella, Argilac's daughter, as his wife and began the Baratheon reign of Storm's End.</p>\r\n<p>The castle was seiged during Robert's Rebellion by Lord Mace Tyrell on the land and Lord Paxter Redwyne's fleet on the sea, but Stannis Baratheon resisted the seige with help from Davos, a smuggler that became known as the Onion Knight for sneaking past the fleet with a ship full of onions. After the Rebellion, Robert gave Storm's End to his youngest brother Renly, and gave Dargonstone to Stannis. During the War of the Five Kings, Stannis lays seige to the castle and Renly's host arrives from the Reach to attack Stannis, but Melisandre uses dark magic to assassinate both Renly and Ser Cortnay Penrose, who holds the castle. Melisandre believes the castle to be protected by magic spells, and ask Ser Davos Seaworth to smuggle her inside its walls so her shadow assassin will not be repelled. The castle will be seiged again by Lord Mace Tyrell and likely by others as the War of the Five Kings continues.</p>\r\n<p>House Baratheon of Storm's End's sigil is a black crowned stag, on a gold field (Or, a stag salient, crowned, sable), and their words are <em>Ours is the Fury,</em> though Joffrey, Renly, and Stannis modify the banner for their respective houses. (Joffrey to a black crowned stag and a gold lion, combatant, on a per pale gold and crimson field; Renly often dressing the sigil with green, and Stannis placing the stag within a burning heart after his conversion to the Lord of Light, R'hllor.)<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Storm's End,</strong></li><li><strong>Caves</strong></li><li><strong>Surrounding Lands</strong></li></ul>\r\n<h3>Construction</h3>\r\n<p><strong>First Server Build. </strong>In April 2013, Storm's End officially began using plans created by Feasting that included concentric circles and ovals. The outer wall was to be made of large fitted stones and sloped, so the base was wider than the walkways on the top. The castle is described very precisely in the books, and this canon informed the build. A timelapse video was created that shows the construction of the buildings inside the outer wall.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/stormsendlayout.jpg\" data-image=\"102654\"></figure>\r\n<p><strong>Retouch Phase. </strong>In Fall 2014, several builders and mods began discussing a retouch of Storm's End. Plans were made and some buildings and walls were retouched, but the project was stalled for nearly a year. But in July 2015, tsarkaiser84 picked up the project, which involved gutting all of the interiors, creating a new palette for the walls, and fixing some of the layout issues. The general shape, size, and organization of the castle stayed very similar, but was initially just a quick touchup, became a long and arduous redo. The surrounding lands were also updated and expanded.</p>\r\n<h3>Inspiration</h3>\r\n<p>Storm's End is described in detail in the books and at the Citadel</p>\r\n<ul><li><em>Storm's End is one of the strongest castles in the Seven Kingdoms. The castle is surrounded by a massive outer curtain wall, one hundred feet high and forty feet thick on its thinnest side and nearly eighty feet thick on its seaward side. It is composed of a double course of stones with an inner core of sand and rubble. The wall is smooth and curving, the stones so well placed so perfectly together that the wind can find no purchase. On the seaward side, there is a 150-foot drop below the wall into the sea.</em></li><li><em>The castle itself consists of one huge drum tower crowned with formidable battlements, so that from a distance enemies can see what appears to be a single huge, spiked fist thrusting towards the sky in defiance. The tower is so large that it comfortably contains the granary, barracks, armoury, feast hall and lord's chambers all at once. There are spells woven into the stonework. The seaward side of the castle stands upon a high white cliffs overlooking the sea, and there is a barred, watery passage through a cavern that leads beneath the castle.</em></li></ul>\r\n<p>The original Storm's End used both concept art for the castle and real world examples such as weathered castles in Northern Ireland such as Dunluce Castle.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/stormsendinsp1.jpg\" data-image=\"102652\"></figure>\r\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/stormsendinsp2.jpg\" data-image=\"102653\"></figure><h3>Video<br></h3>\r\n<p>The first server build (before the retouch phase) was documented in a timelapse video. After the retouch phase was completed, the build was featured in a Cinematic, alongside Starfall and other builds. Later, in 2019, Kobe and Lucia made a WesterosCraft Walks there.<br></p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/9cAOfzeB-GU\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/9bOeCaK4yx4\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/AW8Ly6OKmV0\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/jNK_b1J8JRE\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/stormsend-1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/stormsend-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/stormsend-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/stormsend-5.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Baratheon",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "four",
+        "warp": "/warp stormsend",
+        "dateCompleted": "2015-08-15T07:00:00+00:00",
+        "projectLead": "tsarkaiser84, Feastings",
+        "dateStarted": "2015-07-04T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/baratheon.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Herston",
+    "slug": "herston",
+    "copy": "<p><strong>Herston</strong> is the seat of House Herston, located in the southern Stormlands, on the north bay of the Sea of Dorne. House Herston blazons their shields with a yellow rooster's head with red comb, within a white escutcheon, on a red field. Their words are not known and they have no known members and no known historical members.</p><h3>Features<br></h3>\r\n<ul><li><strong>Herston Castle,</strong> a grey tower standing tall on a natural cliff with a nice overview of the bay. It's a small castle with a tower, feasthall, rookery, gatehouse, smith and a small bailey with stables and kennels.</li><li><strong>Herston Town,</strong> a small town located in the bay of Herston. The Town is mainly based on fishing & trade, due to its location on the sea of Dorne, but also some agriculture and wood from the forest. The town also has a small marketplace, inn, and some warehouses.</li><li><strong>Herston Holdfast,</strong> an old and tiny first men keep, conquered by house Herston long ago and made into a holdfast, located on the northern side of the Forest, guarding the the border towards house Bolling.</li><li><strong>Hamlets & Logging Camp,</strong> Herston has two fishing hamlets on the seashore on the Sea of Dorne. A logcamp exists deep in the forest of Herston.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Boliiid applied for the project in mid-November 2016 and construction started the 3rd of December the same year. Initially, the construction of the castle started and later the town and hamlets as well. The project was finished on 12 of April 2017.</p>\r\n<h3>Inspiration</h3>\r\n<p>Herston was inspired by numerous other nearby already built Stormlands projects, such as <a href=\"https://westeroscraft.com/wiki/stormlands/weeping-town\">Weeping Tower</a>, <a href=\"https://westeroscraft.com/wiki/stormlands/kellington\">Kellington</a>, and <a href=\"https://westeroscraft.com/wiki/stormlands/gower\">Gower</a>. </p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/herston-6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/herston-5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/herston-2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/herston-1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Herston",
+        "destinationType": "tower",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp herston",
+        "dateCompleted": "2017-04-13T07:00:00+00:00",
+        "projectLead": "Boliiid",
+        "dateStarted": "2016-12-02T08:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Mistwood",
+    "slug": "mistwood",
+    "copy": null,
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-11.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-10.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-9.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-8.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-7.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/mistwood-3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Mertyns",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp mistwood",
+        "dateCompleted": "2019-05-12T07:00:00+00:00",
+        "projectLead": "SerLoras, Dartman",
+        "dateStarted": "2017-10-11T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/house-mertyns-of-mistwood.168/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Mertyns.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Weeping Town",
+    "slug": "weeping-town",
+    "copy": "<h3><strong>(The below text is for the previous version of Weeping Town)</strong></h3><p><strong>Weeping Town</strong> is a large town located on the southern tip of the Stormlands, south of the Mistwood and on the coast. The town is a thriving and lively port despite the dim weather and mucky stone buildings scattered over the hilly landscape. An unknown house resides in the nearby seat of Weeping Tower, an old withered and leaning fortress that overlooks the town from the penisula.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Weeping Tower, </strong>this slumped tower sits on the edge of the town, inside an unknown house sits, watching over the town and keeping it safe from invaders. </li><li><strong>Town, </strong>the main hub of Weeping Town is the town itself. Here travelers from all over Westeros trade in the harbor. Weeping Town is one of the major ports of the Stormlands, and ships out and receives plenty of goods everyday. </li><li><strong>\"Pirate's Cove Inn</strong>\", though not the official name, on the edge of the town you can find this notorious inn that harbors the no-good that dock at Weeping Town. The innkeeper says that the long walk from the docks to his inn keeps his usual rowdy crowd a bit more placid by the time they arrive. </li><li><strong>Forest,</strong> just outside the town, a deep forest shrouds the land. </li><li><strong>Cave Pass,</strong> one way through the forest is through an old cavern that cuts through the hillside through the forest. Inside, old water springs can be seen if you bring a lantern. </li><li><strong>Farm, </strong>travel through the forest and you may find the little farm settled by Weeping Town residents. /warp weepingfarm</li><li><strong>Holdfast</strong>, north of the town lies a small holdfast that watches over the northern part of the house's land. Go any further and you'll be heading into house Gower's territory. </li></ul>\r\n<h3>Construction</h3>\r\n<p>In late November of 2014 ItsPabs started work on Weeping Town. The terraforming was started by Dyvim, and later taken over by Bafflement as well as help from a rag-team of other editors doing small projects from time to time. However, by the time the town's terraform was finished, ItsPabs had received Editor-Lite, and finished up the remaining forest and farm by his lonesome. </p>\r\n<h3>Inspiration</h3>\r\n<p>Like most builds in the Stormlands, the town and tower was inspired by German architecture.</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Whitehead",
+        "destinationType": "town",
+        "destinationStatus": "abandoned",
+        "destinationLevel": "four",
+        "warp": "/warp weepingtown",
+        "dateCompleted": null,
+        "projectLead": "Howy",
+        "dateStarted": "2019-11-12T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-application-weeping-town.2004/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Harvest Hall",
+    "slug": "harvest-hall",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Selmy",
+        "destinationType": "castle",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "three",
+        "warp": "/warp harvesthall",
+        "dateCompleted": null,
+        "projectLead": "IwanDeLarch",
+        "dateStarted": "2014-06-30T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/ported-harvest-hall-by-iwandelarch.147/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Selmy.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Felwood",
+    "slug": "felwood",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Fell",
+        "destinationType": "castle",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "three",
+        "warp": "/warp felwood",
+        "dateCompleted": null,
+        "projectLead": "Kor_Bro",
+        "dateStarted": "2016-07-08T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/ported-project-application-felwood-by-kor.2247/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Summerhall",
+    "slug": "summerhall",
+    "copy": "<p><em>“After unifying Dorne into the Seven Kingdoms, King Daeron II raised a great seat in the Dornish Marches, near to where the boundaries of the </em><em>Reach, the Stormlands, and Dorne met. Calling it Summerhall to mark the </em><em>peace he had created, it was more palace than castle and lightly </em><em>fortified at best; in the years to come, many sons of House Targaryen </em><em>would hold the seat as Prince of Summerhall.”<br></em></p>\r\n<p><strong>Summerhall </strong>is a ruined Targaryen castle located in the Dornish Marches region of the <a href=\"https://westeroscraft.com/wiki/stormlands\" target=\"_blank\">Stormlands</a>.</p>\r\n<p>Formerly a lightly fortified castle constructed by House Targaryen as a summer palace and royal residence in 188 AC, it was destroyed in a great and mysterious fire in 259 AC. At the time of the server it has stood in ruin for 40 years, now only serving host to a token garrison of House Trant to dissuade looters and bandits.</p>\r\n<p>As one of the few remaining examples of Targaryen architecture and a location of historical significance, particular attention was sought to be paid to Summerhall’s style and status. The “tragedy” of Summerhall evokes a notion of lamentable, dreadful, terrible loss. Tragedy should not only refer to the lives lost in the fire, but to the loss of the castle itself. Summerhall is a symbol of the Targaryen dynasty. Proud, mighty and awe-inspiring power sundered by fickle human weakness.</p>\r\n<h3>Features</h3>\r\n<p>Summerhall can be found on a round hill in the opening valley of the Dornish Marches in the foothills of the Red Mountains.</p>\r\n<p>The Tragedy saw flames and crumbling stone gut the vast majority of the palace. Few structures remain in anything close to habitable condition. Two of the castle’s three towers have collapsed, with the third central tower just barely standing and on the brink of shattering completely.</p>\r\n<p>The sturdy walls of the Great Hall still stand but only to cast shadow on the piles of rubble within. Those spacious apartments, solars and towers not destroyed completely by the fire now lie in buried in stone, wood and debris, with the fire having spread through nearly all of the roof causing it to collapse onto the floors below.</p>\r\n<p>An overgrown Kingswood can be found in the Palace’s western grounds, with the rows of coniferous hedging trees, statues and rotundas now all but lost in the wild mess of garden.</p>\r\n<p>Summerhall also features an abandoned castle town, unofficially dubbed Summertown. The town was designed with the view that it was built to cater to the royal court and its substantial demand for resources and luxuries. In much the same way <a href=\"https://westeroscraft.com/wiki/crownlands/kings-landing\" target=\"_blank\">King's Landing</a> grew around the Aegon Fort (and subsequent <a href=\"https://westeroscraft.com/wiki/crownlands/red-keep\" target=\"_blank\">Red Keep</a>), so too did the town grow around Summerhall.</p>\r\n<p>While Summerhall stood, Summertown thrived. Following the Tragedy though, the town may have tried to persevere, but without the demand for produce from the palace or the protection of the royal guard, much of the town’s people chose to leave for the nearby towns of <a href=\"https://westeroscraft.com/wiki/stormlands/blackhaven\" target=\"_blank\">Blackhaven</a> and <a href=\"https://westeroscraft.com/wiki/stormlands/gallowsgrey\" target=\"_blank\">Gallowsgrey</a>. The rumors of vengeful Targaryen spirits haunting Summerhall, and the growing threat of looters and bandits picking over the palace’s remains only spurred the exodus.</p>\r\n<p>Summertown is now too completely abandoned, save for a small garrison of House Trant guards from Gallowsgrey down the valley posted in the abandoned stables. These guards are stationed to deter squatters and bandits from encamping in the crumbling town and palace, allowing House Trant to command the mouth of the Boneway.</p>\r\n<h3>Construction</h3>\r\n<p>CashBanks began testing castle designs and layouts in early 2019, with an application submitted with further revisions in March 2019. Significant time was spent fleshing out iterations of the palace in its pre-destruction state, with it essentially being fully built, so it then could be destroyed by hand (and World Edit).</p>\r\n<p>Completing the Summerhall region also required confirming the overall terra of the Dornish Marches, which had seen significant clarification to its climate and vegetation in canon since the initial creation of the server map. A consensus was reached to replace the dark brown Stormlands terrain set with the new lighter variant to better transition into the red/yellow tones of Dorne. CashBanks completed the terra update in late November 2020.</p>\r\n<h3>Inspiration</h3>\r\n<p>Summerhall is only described in general terms in canon, so inspiration was largely drawn from the Red Keep and large late medieval royal residences.</p>\r\n<p>The large red brick castles of Malbork Castle and Heidelberg Castle were heavy influences. Malbork for its sheer size and sweeping, spacious layout, and Heidelberg as an example of a lavish castle gutted by fire. The old Westminster Palace, the illustration from A World of Ice and Fire and Lancaster Castle were also inspirations.</p>\r\n<p>The design was also intended to echo elements of the Red Keep, but with a higher focus on comfort rather than strength. Given that Summerhall was built 140 years after the Red Keep, the style elements were intended as an evolution of the Red Keep’s best architectural features and styles with more modern elements to reflect the passage of time and influences from the other great castles of Westeros.<em><br></em></p>\r\n",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-7.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-8.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-9.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Summerhall-10.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Targaryen",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp summerhall",
+        "dateCompleted": "2020-12-12T08:00:00+00:00",
+        "projectLead": "CashBanks",
+        "dateStarted": "2019-03-03T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/summerhall-cash.1554/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Musgood",
+    "slug": "musgood",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Musgood",
+        "destinationType": "tower",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "three",
+        "warp": "/warp musgood",
+        "dateCompleted": null,
+        "projectLead": "Hgkoolaid",
+        "dateStarted": "2016-09-04T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/musgood-by-hg-kool-aid.990/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-musgood.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Bolling",
+    "slug": "bolling",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Bolling",
+        "destinationType": "castle",
+        "destinationStatus": "inProgress",
+        "destinationLevel": "three",
+        "warp": "/warp bolling",
+        "dateCompleted": null,
+        "projectLead": "Boliiid",
+        "dateStarted": "2018-01-16T08:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/house-bolling.521/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Gallowsgrey",
+    "slug": "gallowsgrey",
+    "copy": "<p><strong>House Trant of Gallowsgrey</strong> is a noble family from the <a href=\"https://westeroscraft.com/wiki/stormlands\" target=\"_blank\">Stormlands</a>. They are one of the principal houses sworn to <a href=\"https://westeroscraft.com/wiki/stormlands/storms-end\" target=\"_blank\">House Baratheon of Storm's End</a>. </p>\r\n<p>Gallowsgrey, the seat of House Trant, is one of several formidable Marcher strongholds guarding the Boneway from <a href=\"https://westeroscraft.com/wiki/dorne\" target=\"_blank\">Dornish</a>\r\n armies coming from the south. Gallows are a theme of House Trant, the \r\nnamesake of their seat and their arms featuring a hanged man on blue.</p>\r\n<h3>Features</h3>\r\n<p>Gallowsgrey\r\n castle stands tall, hewn from the stone of the Red Mountains, watching \r\nover the Boneway which runs through the valley below. The castle and \r\ntown feature many gallows and scattered hamlets, with their lands \r\nstretching to <a href=\"https://westeroscraft.com/wiki/stormlands/summerhall\" target=\"_blank\">Summerhall</a> up the valley to the north east.</p>\r\n<h3>Construction</h3>\r\n<p>Emileld\r\n began work on Gallowsgrey in 2014, with substantial progress made on \r\ncompleting the castle, town and hamlets. Emileld's plans envisioned the \r\ncastle standing in a densely wooded valley, in the dark, wet style of \r\nthe Stormlands to the North.</p>\r\n<p>These plans for the region were sadly torpedoed when GRRM released <em>A World of Ice and Fire </em>in\r\n late 2014 which clarified that the Dornish Marches region had a \r\nmarkedly different climate and vegetation to the central Stormlands in \r\nthe north east. Rather than wet forests, the Marches are covered in dry,\r\n wind swept plains.</p>\r\n<p>Was this the reason why Emileld abandoned \r\nGallowsgrey? Who can say. Emileld probably. Anyway CashBanks fostered \r\nthe project in March 2019 as part of completing Summerhall.</p>\r\n<h3>Inspiration</h3>\r\n<p>Kreuzenstein castle</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/Gallowsgrey-inspiration-Kreuzenstein-castle.png\" data-image=\"118646\"></figure>Vajdahunyad Castle<br><br><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/Gallowsgrey-inspiration-Vajdahunyad-Castle.png\" data-image=\"118647\"></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Gallowsgrey-4.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Gallowsgrey-5.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Gallowsgrey-6.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Gallowsgrey-7.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Gallowsgrey-8.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Trant",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp gallowsgrey",
+        "dateCompleted": "2020-12-12T08:00:00+00:00",
+        "projectLead": "Emileld, fostered by CashBanks",
+        "dateStarted": "2014-06-27T07:00:00+00:00",
+        "application": "https://docs.google.com/document/d/1xRlJJrK8NtUQPxEXczG7ha1fFNtWW5qBHMLUsW5T4ck/edit?usp=sharing",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Trant.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Tarth",
+    "slug": "tarth",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Tarth",
+        "destinationType": "landmark",
+        "destinationStatus": "abandoned",
+        "destinationLevel": "four",
+        "warp": "/warp tarth",
+        "dateCompleted": null,
+        "projectLead": "carcinogenius",
+        "dateStarted": "2016-08-05T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Tarth.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Bronzegate",
+    "slug": "bronzegate",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Buckler",
+        "destinationType": "castle",
+        "destinationStatus": "abandoned",
+        "destinationLevel": "four",
+        "warp": "/warp bronzegate",
+        "dateCompleted": null,
+        "projectLead": "KanylKay",
+        "dateStarted": "2014-07-21T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/old-project-application-bronzegate.946/",
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Greenstone",
+    "slug": "greenstone",
+    "copy": "<p>The project was first started in 2014 by Reygame, who became inactive around early 2017. It was then picked up as a foster project by wazgamer and otty about a year later, but then wazgamer himself resigned from regular activity in August, 2019, whereupon otty no longer felt able to complete the project on her own. So again, the project became abandoned. </p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Estermont",
+        "destinationType": "castle",
+        "destinationStatus": "abandoned",
+        "destinationLevel": "four",
+        "warp": "/warp estermont",
+        "dateCompleted": "2020-04-19T07:00:00+00:00",
+        "projectLead": "reygame, wazgamer, otty",
+        "dateStarted": "2014-10-28T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/foster-project-house-estermont-of-green-stone.1000/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Estermont.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Greenpools",
+    "slug": "greenpools",
+    "copy": "<p>This project may be assigned as a mini build to another larger parent project in the Stormlands</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "Unknown",
+        "destinationType": "village",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "one",
+        "warp": "warp not set",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Redpool",
+    "slug": "redpool",
+    "copy": "<p>This project may be assigned to a larger parent project as a mini build.</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "Unknown",
+        "destinationType": "village",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "one",
+        "warp": "warp not set",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Brownhill",
+    "slug": "brownhill",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Brownhill",
+        "destinationType": "keep",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "one",
+        "warp": "warp not set",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Sweet",
+    "slug": "sweet",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "stormlands",
+        "house": "House Sweet",
+        "destinationType": "castle",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "one",
+        "warp": "/warp sweet",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": []
+      }
+    ]
+  }
+]
