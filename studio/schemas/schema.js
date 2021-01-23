@@ -8,13 +8,13 @@ import launcher from './documents/launcher';
 import guide from './documents/guide';
 
 // objects
-import textSlice from './objects/textSlice';
-import videoSlice from './objects/videoSlice';
 import figure from './objects/figure';
 import video from './objects/video';
 import simpleRichText from './objects/simpleRichText';
 import callToAction from './objects/callToAction';
 import documentGrid from './objects/documentGrid';
+import imageGallery from './objects/imageGallery';
+import accordion from './objects/accordion';
 
 const schema = createSchema({
   name: 'default',
@@ -22,14 +22,14 @@ const schema = createSchema({
     guide,
     video,
     destination,
-    textSlice,
-    videoSlice,
     about,
     launcher,
     figure,
     simpleRichText,
     callToAction,
-    documentGrid
+    documentGrid,
+    imageGallery,
+    accordion
   ])
 });
 

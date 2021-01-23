@@ -1,839 +1,312 @@
 [
   {
-    "title": "Ghost Hill",
-    "slug": "ghost-hill",
-    "copy": "<p><strong>Ghost Hill</strong> is one of the premiere harbors for traders and travellers sailing between southern Westeros and Essos. Dornish travellers wishing to sail north might consider setting out from Ghost Hill, so as not to risk their lives in the Stepstones amidst the pirates and mercenaries.</p>\r\n<p><strong>House Toland</strong> is noted for \"successfully resisting\" Aegon the Conquerer's dragon conquest. Rather than face them on the field of battle or a siege, they instead left behind their fool to fight as a champion while the noble family and their army escaped into the sands. They returned some time later, after Aegon had moved on.</p>\r\n<p>Their sigil is a green dragon biting it's own tail (a.k.a an ouroborous) on yellow.<br></p>\r\n<ul></ul>\r\n<h3>Features</h3>\r\n<ul><li><strong>Harbor,</strong> a lively harbor for all the coastal fisherman. Most of the sustenance in Ghost Hill comes from these hard working individuals!</li><li><strong>Caravanserai,</strong> a large caravanserai for land traders braving the drylands and parched plains.</li><li><strong>Temple to R'hollr,</strong> a temple to the red god! Ghost Hill lies in close proximity to Tyrosh in Essos, where the red god's faith thrives.</li><li><strong>Sea Cave,</strong> a secret sea cave for the castle's inhabitants to use.</li></ul>\r\n<h3>Construction</h3>\r\n<p>While there had never been an approved Ghost Hill beforehand, there were a few failed applications. Until the current Ghost Hill, it had been known as a \"cursed\" build. If you compare SMP's first app, a year prior, you can see the similarities to the final Ghost Hill.</p>\r\n<p>Cuhthomas' App (Early 2012) </p>\r\n<p>Georni's App (Aug 17 2012)</p>\r\n<p>dspa1r's App (Mar 7 2013)</p>\r\n<p>SMP's First App (Mar 24 2013): </p>\r\n<p>znda32's App (May 23 2013) </p>\r\n<p>SMP's Second App (Jun 27 2014) </p>\r\n<h3>Inspiration</h3>\r\n<p>Inspiration for the final Ghost Hill included a bell tower in Seville called Giralda, the white and blue buildings of coastal towns in Greece, such as Santorini, as wells as other features from Dornish builds.</p>\r\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/ghosthillinsp1.jpg\" data-image=\"102804\"></figure>\r\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/ghosthillinsp2.jpg\" data-image=\"102805\"></figure>\r\n\r\n<h3>Video</h3>\r\n<p>Ghost Hill was featured in the episode 58 of WesterosCraft Walks. DutchGuard begins in the harbour, shows the caravanserai and the the temple of R'hlorr. Later he visits the castle and finishes at the top of the belltower.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/4Uj9IU8JQfY\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
-    "images": [
+    "title": "Troubleshooting Guide",
+    "wikiSlices": [
       {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/GhostHill1.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/GhostHill2.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/GhostHill3.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/GhostHill4.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/GhostHill5.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/GhostHill6.png"
+        "typeHandle": "text",
+        "redactor": "<h3>The following describes a number of common issues and the solutions to them. Following rules apply:<br /></h3>\n<ul><li>Read this page carefully and in its entirety before heading to the forums to ask for help.</li><li>This Troubleshooting Guide was originally made for the previous version of the WesterosCraft Launcher.</li><li>A full breakdown of the new launcher can be found at <a href=\"https://github.com/WesterosCraftCode/ElectronLauncher/wiki\">WesterosCraft Launcher Wiki</a> .</li><li>If you have to ask for help on the forums, use the <a href=\"https://forum.westeroscraft.com/forum/support.40/\">Support Subforum</a>.</li><li>Always include as much information in your post as possible. Always include the launcher log using a <a href=\"http://pastebin.com/\">pastebin</a>.</li><li>See here if you're using the <a href=\"http://westeroscraft.com/forum/m/12700545/viewthread/10334646-westeroscraft-custom-client-as-technic-launcher-mod-pack/page/1\">Technic Launcher</a> or the standard <a href=\"http://westeroscraft.com/forum/m/12700545/viewthread/19367215-manually-building-westeroscraft-custom-client-1710\">Minecraft Launcher</a>.</li></ul><h5><strong><strong><strong>\"Why can I not connect to mc.westeroscraft.com?\"</strong></strong></strong></h5>\n<p>You cannot join the server using the normal Minecraft launcher. To enter you need to use our custom-built launcher, which allows us to implement a number of modifications to the game.</p>\n<p>Simply download the <a href=\"https://westeroscraft.com/launcher/\">Launcher</a> and follow the installation steps as described there. The launcher will automatically choose the appropriate minecraft version, texture pack etc., set everything up for you and directly connect you to the server.</p>\n<h5><strong>\"I'm using the latest WesterosCraft Launcher, but I still can't connect.\"</strong></h5>\n<p>There are several fixes you can attempt in order to connect to the WesterosCraft Server through the custom launcher:</p>\n<ul><li>Ensure that you are using the most updated version of the WesterosCraft Launcher. Found at the <a href=\"http://www.westeroscraft.com/launcher\">WesterosCraft Launcher Download</a></li><li>Ensure that you have the WesterosCraft Production Server selected in the bottom right-hand corner of the launcher.</li><li>Ensure that you are have Java 8 installed on your computer. This can be accomplished by searching: \"About Java\" in Start.</li><li>Allow both Minecraft and WesterosCraft through your firewall in Security settings.</li><li>Attempt to generate a new client token by logging out of the Launcher (Settings&gt;Account&gt;Cursor over Selected Account&gt;Log Out) and then logging back in.</li><li>Attempt to generate a new client token by manually deleting the config.json file located in: C:\\Users\\[name]\\AppData\\Roaming\\.westeroscraft and then restarting the WesterosCraft Launcher.</li></ul><h5><strong>\"What do I do if the game is out of date?\"</strong></h5>\n<p>Your version is not up to date with the server and you need to update the launcher. Simply hit the <em>Update</em> button, wait for the update to finish and try launching again. Rarely, it doesn't update all files correctly and you need to go through the update process a couple times before it works.</p>\n<h5><strong>\"How do I launch the game?\"</strong></h5>\n<p>On the lefthand side of the launcher select the W<em>esterosCraft Production Server</em> When prompted, enter your MineCraft credentials, so the same e-mail address and password you use to log into regular Minecraft.</p>\n<h5><strong>\"What do I do if the connection times out?\"</strong></h5>\n<p>If you cannot reach the server, make sure you are connected to the internet and that Java is not blocked by your antivirus or firewall.</p>\n<p>As a server we depend on both the Minecraft infrastructure and our server hosts. Contact Mojang to see if the <a href=\"https://help.mojang.com/\">session and login servers</a> are down. If the server is down due to maintainance on our or our server host's side we will inform you via the forums. In either way, be patient, we will be back as quickly as possible.</p>\n<h5><strong>\"How do I get whitelisted on the server?\"</strong></h5>\n<p>You do not require to be whitelisted to join WesterosCraft, everyone is welcome to visit at any time, as long as you have a valid Minecraft account.</p>\n<p>Very rarely we have to whitelist for maintenance issues. If that is the case, refer to our <a href=\"http://www.westeroscraft.com/\">Website</a> and <a href=\"https://forum.westeroscraft.com/forum/\">Forums</a> for status updates. And again, please be patient.</p>\n<h5><strong>\"What if I can not start the launcher?\"</strong></h5>\n<p>The launcher requires you to download the latest and correct version of the Java Runtime Environment in order to work correctly. If you can't even start the launcher, or if the launcher fails to start the game, you're most likely not using the correct version.</p>\n<h5><strong>\"I can connect but I lag really badly, what can I do?\"</strong></h5>\n<p>Not using the correct version of Java may lead to performance issues. Make sure you're using the most recent, 64bit version of Java.</p>\n<p>If you're using a Laptop you might accidentally use your built-in graphics card instead of the better, additional one. Make sure Java programs are set to use the better GPU by default. Refer to your graphics card's manual.</p>\n<h5><strong>\"Why do I keep crashing from the server?\"</strong></h5>\n<p>Not using the correct version of Java may lead to crashes. Make sure you're using the most recent, 64bit version of Java.</p>\n<p>In rare cases, server issues may lead to crashes. If that is the case it's likely that we are already aware and working on resolving the issue as quickly as possible.</p>\n<h5><strong>\"How do I know I'm not using the correct version of Java?\"</strong></h5>\n<p>Your launcher gives you a detailed overview of what it's doing under the <em>Log </em>tab. If something goes wrong this is the place to look first.</p>\n<p>The easiest way to find out which Java version the launcher is using is to copy the log into a text file and to search for the \"launch args\".</p>\n<p>If you are using a 32bit version of Java, you will find the following line:</p>\n<blockquote><em>\"C:\\Program Files(x86)\\Java\\jre1.8.0_xxx\\bin\\javaw.exe\" </em>(\"<em>xxx</em>\" = version numbers, e.g. 101)</blockquote>\n<p>In this case the game may not launch, or you may experience performance issues or crashes.</p>\n<p><br />64bit Windows systems are by default set to install 32bit software under <em>C:\\Program Files<strong>(x86)</strong>\\...</em> while they install 64bit software at <em>C:\\Program Files\\...</em> If you're using a Java version installed at the former location, it means that it is a 32bit program, which will most likely lead to issues with our launcher.</p>\n<h5><strong>\"Where do I get the correct version of Java from?\"</strong></h5>\n<p>The most recent Java download can be found on the <a href=\"http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html\">oracle website</a> .</p>\n<p>The version you want to pick is <em>Windows x64 Offline:</em></p>\n<p>If you're using a Mac, download the OSx version.<br /></p>\n<h5><strong>\"The game crashes and I found something about a heap size in the log, what do I do?\"</strong></h5>\n<p>The error message reads:</p>\n<p><em>'Error occurred during initialization of VM. Initial heap size set to a larger values than the maximum heap size'</em></p>\n<p>This may occur when previous Java installations set environment variables which are no longer needed. Please check out <a href=\"https://forum.westeroscraft.com/threads/electron-launcher-tech-support-read-before-you-post.1511/\">this post</a> for more information.</p>\n<h5><strong>\"I made sure Java is up to date, but it's still not working. Is there anything else I can do?\"</strong></h5>\n<p>The launcher was probably not able to download and set up everything correctly. This may, for instance happen if you have a weak internet connection.</p>\n<p>As a general approach a <em>soft reset</em> of the launcher can solve some common problems.</p>\n<ol><li>Hitting the <em>Windows</em>-<em>button</em> (between ALT and CTRL) and <em>R</em> simultaneously prompts the execute tab</li><li>Enter <em>%appdata%</em> and hit <em>enter</em>.</li><li>Find the <em>WesterosCraft</em> folder</li><li>Delete the <em>WesterosCraft</em> folder. <strong>Make sure you made backups of screenshots and similar before doing this!</strong></li></ol><h5><strong>\"What do I do if I was banned from the server?\"</strong></h5>\n<p>You've potentially broken one or more of our <a href=\"https://westeroscraft.com/wiki/guides/server-rules\">Rules</a>. You are potentially allowed to appeal via our <a href=\"https://forum.westeroscraft.com/forum/ban-mute-demotion-appeals.33/\">forums</a>.</p>\n<h5><strong>\"Do I need to purchase Minecraft in order to play WesterosCraft?\"</strong></h5>\n<p>Yes.</p>\n<h5><strong>\"What do I do if it's still not working?\"</strong></h5>\n<p>Post your problem on our <a href=\"https://forum.westeroscraft.com/forum/support.40/\">Support Forum</a>, but read <a href=\"https://forum.westeroscraft.com/threads/electron-launcher-tech-support-read-before-you-post.1511/\">the tech support guidelines</a> first.</p>"
       }
-    ],
-    "projectDetails": [
+    ]
+  },
+  {
+    "title": "WorldEdit Basics",
+    "wikiSlices": [
       {
-        "region": "dorne",
-        "house": "House Toland",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp ghosthill",
-        "dateCompleted": "2014-10-13T07:00:00+00:00",
-        "projectLead": "SMP",
-        "dateStarted": "2014-06-29T07:00:00+00:00",
-        "application": null,
-        "banner": [
+        "typeHandle": "text",
+        "redactor": "<p>In this guide we'll go through the most useful basic WorldEdit concepts, tools and commands. For a complete list of WorldEdit commands and tools, click <a href=\"https://worldedit.enginehub.org/en/latest/commands/\">here</a>.<br /></p>\n<h4>Block id:meta</h4>\n<p>Each block has a name and a number by which WE recognises them. For example, a dirt block is known as \"dirt\" and \"3\", a block of wool can be called either \"wool\" or \"35\", and so on.</p>\n<blockquote>Open your inventory and press f3 + h. Now, when you hover your mouse pointer over a block, you'll get a tooltip telling you the block name and id:meta of the block.</blockquote>\n<p>Meta is basically a variant of a certain block. For example, white wool can be \"wool:white\" or \"35:0\" (note: \"wool:0\" or \"35:white\" will also work), and orange wool is \"wool:orange\" or \"35:1\". If you don't specify the meta type you want, WE will use the value of 0. So, \"//set wool\" fills the selection with white wool. Also, if meta is not specified, WE will apply the given command to all metatypes of a block. For example \"//replace wool dirt\" will change wool of any colour within the selection into dirt.</p>\n<p>All WE brushes, selection commands and masks will also accept multiple block types at once. For example, to fill your selection with an even mix of white and orange wool, type \"//set wool:white,wool:orange\" (or //set 35:0,35:1). You can use as many different block types you want.</p>\n<p>If you don't want an even mix, you can specify percentages for each block type. So, \"//set 90%35:0,10%35:1\" fills your selection with (approximately) 90% white and 10% orange wool. A good example of this is the basic grassland ground mix consisting of mostly grass, with some dirt (3) and gravel (13) scattered here and there: \"//set 95%2,3%3,2%13\"</p>\n<h4>Tools and brushes:</h4>\n<h5>Wand</h5>\n<p>With an empty hand, type<strong> //wand</strong> and you'll be given a wooden axe. This'll be your standard tool for making WE selections.</p>\n<h5>Brushes</h5>\n<p>Brushes can be bound to pretty much all tools, weapons and other non-placeable items (sticks, feathers, blaze rods etc). Note: you can also bind a WE tool (usually by accident) to empty hand, so make sure you're holding the item you want to use as a brush when typing the command. To get rid of the brush, just drop the item (or if you want to keep the item without a WE brush bound to it, type \"//none\")</p>\n<p><strong>Spherical brush: //br s [id:meta] [radius]</strong></p>\n<p><strong>Cylinder brush: //br cyl [id:meta] [radius] [height]</strong></p>\n<p><br />Spherical brush will create a ball of blocks specified with [id:meta], of size defined with [radius]. As diameter is radius times two and the minimum diameter of a brush is 1, [radius] of 3 will give you a seven blocks wide ball. In addition to [radius], cylinder brush also accepts a height value (If you don't define a height, you'll get a one block thick disc). So, \"//br cyl 35:0 3 4\" will create a 7 blocks wide, 4 blocks tall cylinder of white wool, with the center of the bottom layer on the block where you click with the brush. Height value can also be negative; in that case the block you click with the brush will be the center of the top layer of the cylinder. Currently maximum radius/height for a WE brush is 10.</p>\n<h4>Basic Commands</h4>\n<h5>//set [id:meta]</h5>\n<p>Fills the selection with specified block(s).</p>\n<p>Examples: </p>\n<pre>//set 4 - fills the selection with cobblestone.\n\n//set 40%3,40%13,20%2034:0 - fills the selection with 40% dirt, 40% gravel and 20% mud.\n</pre>\n<h4>//replace [id:meta1] [id:meta2]</h4>\n<p>Replaces [id:meta1] with [id:meta2].</p>\n<p>Examples:</p>\n<pre>//replace 41 3,13 - replaces gold blocks (41) within the selection with dirt and gravel.\n\n//replace 2,3,13 35:3 - replaces grass, dirt and gravel within the selection with light blue wool.\n\n//replace 103 - replaces all non-air blocks within the selection with melons (103).\n</pre>\n<h4>//copy</h4>\n<p>Copies the selected blocks to clipboard (relative to your position).</p>\n<h4>//paste (-a)</h4>\n<p>Pastes the clipboard (relative to your position). With -a you'll only paste non-air blocks, which is useful in tight spaces and generally makes pasting large selections much faster.</p>\n<h4>//move [amount] [direction] [-s]</h4>\n<p>Moves the selected blocks [amount] of blocks towards [direction]. Accepted parameters for direction are n, e, s, w, u and d (compass directions, up and down, independent of your position and orientation) and f, b, l and r (front, back, left, right; dependent of your position and orientation). If you add -s in the end, the command will also move the selection.</p>\n<h4>//stack [repeats] [direction]</h4>\n<p>Stacks the selected blocks [repeats] of times towards [direction].</p>\n<h4>//rotate [degrees]</h4>\n<p>Rotates the clipboard. Accepted parameters for [degrees] are 90,180 and 270 (clockwise) and -90, -180 and -270 (counterclockwise). Note: currently, custom stair blocks won't rotate properly.</p>\n<h4>//flip [direction]</h4>\n<p>Mirrors the clipboard according to axis defined with [direction]</p>\n<h4>//shift [amount] [direction]</h4>\n<p>Moves the selection (<em>note: just the selection, not the blocks inside it</em>) [amount] of blocks towards [direction].</p>\n<h4>//setbiome [biometype]</h4>\n<p>Changes the biome of the selection to [biometype]. For a list of available biome types and regions where they should be used, click <a title=\"Someone make this page (page does not exist)\">here</a> .</p>\n<h3>Masks</h3>\n<p>Masks are one of the most useful features of WE. Without masking, WE brushes will create blocks on all blocks/spaces within the defined brush size, air included. If you only want to change certain blocks, you have to use a mask. You'll also be able to fine-tune your selection commands with masks.</p>\n<p><br />WorldEdit has two different mask types:</p>\n<p><strong>//mask [id:meta]</strong></p>\n<p><strong>//gmask [id:meta]</strong></p>\n<p>Regular //mask will only work with brushes, //gmask (a.k.a. global mask) also works with selections. With brushes you can use either one or both at the same time. Example: Let's assume you got a build with dozens of different blocks and you want to only paint white wool blocks into an even mix of cobblestone and small stone bricks. In this case, you'd have to first define the brush:</p>\n<pre>//br s 4,2029:10 5\n</pre>\n<p>(4 is cobblestone, 2029:10 is small stone brick, 5 is the radius) and then define the mask (with the brush in your hand):</p>\n<pre>//mask 35:0\n</pre>\n<p>Now your brush will only replace white wool with cobble and small stone bricks. This is your basic \"whitelist\" mask.</p>\n<p>Note: As stated above in block:id section, masks may have multiple block types. For example with \"//mask 35:0,95:2,2027:1\" you'll only change white wool, magenta stained glass and mossy oak logs. In addition standard \"whitelisting\", you can use the following filters on masks:</p>\n<p><strong>//mask ![id:meta]</strong> - blacklist mask, paint on everything else but the blocks defined</p>\n<p><strong>//mask &gt;[id:meta]</strong> - only paint above defined blocks</p>\n<p><strong>//mask &lt;[id:meta]</strong> - only paint below defined blocks</p>\n<p><strong>//mask #region</strong> - only paint within your current selection</p>\n<p>If you're using multiple WE brushes at the same time, you can set an individual //mask to each brush.</p>\n<h3>Global mask</h3>\n<p>Unlike regular //mask, <strong>//gmask</strong> also works with selection commands (//set, //replace etc). Also, you can have both //mask and //gmask defined at the same time to give you more control.</p>\n<p>A good example of this is tall grassing. Let's assume you have an area of ungrassed terrain, and you want to paint a layer of tall grass and fern (31:1,31:2) above grass (2) and dirt (3) blocks. </p>\n<p><br /><strong>Method one: brushing</strong></p>\n<pre>//br s 31:1,31:2 10 (a large spherical brush of tall grass and fern)\n\n//mask 0 (only paint on air)\n\n//gmask &gt;2,3 (only paint above grass and dirt)\n</pre>\n<p><strong>Method two: selection</strong></p>\n<pre>(make a selection of the area you want to tall grass)\n\n//gmask &gt;2,3 (only change blocks above grass and dirt)\n\n//replace 0 31:1,31:2 (replace air with tall grass and fern)\n</pre>\n<p>In both methods, //gmask &gt;2,3 makes sure you'll end up with a nice one block thick layer of tall grass and fern, only above grass and dirt blocks.</p>\n<p><strong>Note: If you're using multiple WE brushes at the same time, a //gmask will affect all of them.</strong></p>\n<p>To disable a mask/global mask, just type \"//mask\" or \"//gmask\"</p>\n<h3>Other useful tools</h3>\n<p><strong>//info </strong>- shows you the name and id:meta of the block you right click with the tool.</p>\n<p><strong>//repl [id:meta]</strong> - replaces the block you right click with [id:meta]</p>\n<h3>Selection options</h3>\n<p>In addition to the default rectangular selection, WorldEdit has several other selection shapes available.</p>\n<p><strong>//sel cuboid</strong> - default, rectangular selection</p>\n<p><strong>//sel sphere</strong> - spherical selection: left click for center, right click for radius.</p>\n<p><strong>//sel cyl</strong> - cylindrical selection: left click for center, right click to extend.</p>\n<p><strong>//sel poly</strong> - polygonal selection: left/right click to add a point, 20 selection points maximum.</p>\n<p><strong>//sel ellipsoid</strong> - ellipsoid selection: left click for center, right click to extend.</p>\n<p><strong>//sel convex</strong> - convex selection: left click for first vertex, right click for additional points.</p>\n<h3>Other</h3>\n<p><strong>//replacenear [radius] [id:meta1] [id:meta2] </strong>- replaces [id:meta1] with [id:meta2] within [radius] block around you (on all directions). Potentially very destructive, <strong>DO NOT USE</strong> unless you're 100% sure of what you're doing.</p>"
+      }
+    ]
+  },
+  {
+    "title": "Basic Building Guide for Applicants",
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>Welcome and thank you for your interest in becoming a builder! The purpose of this guide is to prepare you for the application process and identify common building mistakes.<br /></p>\n<h4><strong>Before an Application</strong></h4>\n<p>To get a basic foundational understanding of our server style, do the following:</p>\n<ul><li>Explore the various warps found at /warp map, particularly the ones featured below. </li><li>Look for ways to improve your own builds from examples found on the server. </li><li>Visit and observe our builders work on new additions to the map. Try not to get in the way, but feel free to ask questions or give feedback at any time!</li><li>Familiarize yourself with the server rules as well as our styles and expectations and read and <strong>review the application guidelines carefully; your application will not be reviewed if they are not followed correctly</strong>.</li></ul><h4><strong>Regions</strong></h4>\n<figure class=\"article-thumb tright show-info-icon\" style=\"border:0px;font-style:normal;font-weight:400;margin:0px 0px 16px 20px;padding:0px;vertical-align:baseline;clear:right;float:right;color:rgb(58,58,58);font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;letter-spacing:normal;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px;background-color:rgb(84,84,84);width:200px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/9/96/RegionMap.png/revision/latest?cb=20140213021853\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/9/96/RegionMap.png/revision/latest/scale-to-width-down/200?cb=20140213021853\" alt=\"RegionMap\" class=\"thumbimage\" width=\"200\" height=\"398\" /></a><figcaption><p class=\"caption\">Map of the different regions</p></figcaption></figure><ul><li>As a server, we have developed a series of styles that create a sense of transition and seamlessness throughout the map. Each region is generally comprised of approximately 3-5 different sub-regions which differ slightly from sub-region to sub-region, creating the sense of transition and seamlessness mentioned earlier. </li><li>Each of the 7 main regions are relatively unique and have distinct traits that can make combining more than one region problematic. When you begin a build, make sure you fully understand the regional style you are building before proceeding.</li></ul><p>A list of some exemplary builds in various styles. We recommend visiting each of these places and their surroundings.</p>\n<ul><li>The North: <a href=\"https://westeroscraft.com/wiki/north/winterfell\">Winterfell</a>, <a href=\"https://westeroscraft.com/wiki/north/white-harbor\">White Harbor</a></li><li>​The Vale: <a href=\"https://westeroscraft.com/wiki/vale/wickenden\">Wickenden</a>, <a href=\"https://westeroscraft.com/wiki/vale/witch-isle\">Witch Isle</a></li><li>The Riverlands: <a href=\"https://westeroscraft.com/wiki/riverlands/fairmarket\">Fairmarket</a>, <a href=\"https://westeroscraft.com/wiki/riverlands/stoney-sept\">Stoney Sept</a></li><li>The Westerlands: <a href=\"https://westeroscraft.com/wiki/westerlands/banefort\">Banefort</a>, <a href=\"https://westeroscraft.com/wiki/westerlands/the-crag\">The Crag</a></li><li>​The Crownlands: <a href=\"https://westeroscraft.com/wiki/crownlands/kings-landing\">King's Landing</a>, <a href=\"https://westeroscraft.com/wiki/crownlands/mallery\">Mallery</a>, <a href=\"https://westeroscraft.com/wiki/crownlands/gaunt\">Gaunt</a></li><li>The Reach: <a href=\"https://westeroscraft.com/wiki/reach/highgarden\">Highgarden</a>, <a href=\"https://westeroscraft.com/wiki/reach/bandallon\">Bandallon</a>, <a href=\"https://westeroscraft.com/wiki/reach/bitterbridge\">Bitterbridge</a></li><li>The Stormlands: <a href=\"https://westeroscraft.com/wiki/stormlands/griffins-roost\">Griffins Roost</a>, <a href=\"https://westeroscraft.com/wiki/stormlands/musgood\">Musgood</a></li><li>Dorne: <a href=\"https://westeroscraft.com/wiki/dorne/hellholt\">Hellholt</a>, <a href=\"https://westeroscraft.com/wiki/dorne/wyl\">Wyl</a></li></ul><h4><strong>Block Variation</strong></h4>\n<ul><li>A fundamental principle of creating an engaging aesthetic is to vary the blocks used in your palette. </li><li>While building, consider whether placing the same block immediately next to each other multiple times is aesthetically pleasing. Consider what other blocks you can incorporate to break up the monotony.</li><li>However a mix should never be totally random. When using dark, lighter and very light materials, make sure that the dark and the light materials never touch directly. Most of the time our gradients are darkest towards the ground where it is exposed to dirt and areas where the wall is exposed to weather. </li></ul><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/variation.png\" alt=\"\" /><figcaption>From left to right: No gradient, bad gradient, proper gradient.</figcaption></figure><h4><strong>Exteriors</strong></h4>\n<p><strong>Layout</strong> </p>\n<ul><li>The first thing done before beginning a build is planning the structural frame. Often, this is done by constructing a wool frame that makes an outline. By doing this you get a general idea of the size of the build as well as a rough visualization of the interiors. Doing so will help prevent creating short or cramped rooms (2 block tall rooms, for example).</li><li>Another important concept of layout is the shape. Avoid cuboid and rectangular layouts as they will often result in a plain and boring structure.</li><li>Vary the shape of the structure by employing more 3-dimensional shapes, such as L-shapes, a T-shapes, slight offsets (respectively, as shown on the photo to the right), or whatever other shape you can come up.</li></ul><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/House-Layouts.png\" alt=\"\" /><figcaption>L-Shape, T-shape, Offset and Diagonal Layouts</figcaption></figure><p><strong>Foundation</strong></p>\n<ul><li><strong>​</strong>Usually a structure should have some sort of stone foundation that extends far enough down that nothing is visible beneath it. </li><li>A foundation that does not extend down far enough and leaves dirt/sand visible beneath it makes the build look incomplete and more importantly compromises the builds structural integrity.</li></ul><p><strong>Facade</strong></p>\n<ul><li>Minecraft tends to have a rather blocky nature which does not lend itself towards interesting yet realistic structures. Often used to overcome this obstacle is Depth, but in Vanilla and at older builds on the server this is used to an unpleasant amount. With the custom blocks our launcher offers you get the chance to create an interesting and beautiful Facade in just one layer, if you want to. </li><li>Planks are a good material for walls, however a wall of one plank type is not an acceptable level of detail in most places. Take it further and employ more detail, for example by mixing two different wood types. Good combinations are birch-oak, oak-jungle or jungle-spruce. When experimenting with other combinations, be wary as sometimes certain blocks clash when mixed.<br /></li><li>Daub and wattle is a great block and a staple of medieval architecture. However, it can be hard to use correctly. There are five different wattle and daub types. Each type has four different designs (or “hatches”), as well as one plain Daub block, which lend themselves to various design patterns.Try to experiment with the different designs to create interesting patterns. However, usually you should use only one wattle and daub color per build.</li></ul><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/wattlefacade.png\" alt=\"\" /><figcaption>Daub and Wattle Pattern, properly done. Different roof shapes.</figcaption></figure><p>​<strong>Roof</strong></p>\n<ul><li>The roof is another important element of a structure. Many roofs, especially those that have a relatively steep pitch, comprise a large part of the build; ensure that sufficient thought and planning goes into it.</li><li>A roof should in most, but not all places include some sort of eave, or overhang. Eaves help give the build a little more depth and prevent rain from washing out the foundation.</li><li>Most roofs should be made from either sod, wood, thatch, or slate - always depending on the region you are building in. Some regions such as Dorne and the Westerlands incorporate brick/slate as a roofing material but for the most part try to avoid heavy stone roofs.<br /><br /><img src=\"https://cdn.westeroscraft.com/web/assets/images/roof-building-guide.png\" alt=\"\" /></li><li>A wooden roof <em>can</em> also be mixed a little with its plank pair as was mentioned in the Facade section. Doing so helps give the roof a worn look and makes it a little more interesting. Be careful that you do not create a roof that is jumbled; try to discolor it in ways that make sense from a weathering standpoint (sun-bleaching, leaf tannins, etcetera), and only add a few larger patches of another colour.​</li><li>Thatch is probably the most common roof material, as it fits a few middle class and almost all low class house styles. When using thatch as roof material, there are a few things to look out for. The two thatch types should never be mixed. The thatch would never become that severely discolored and it creates something that looks jumbled. Thatch roofs have to be at least 45° steep, since thatch would not be waterproof on a lower angle. A common mistake often made is making a thatch roof into a shapeless blob. It should still have a defined roof shape albeit a little roughed up.</li></ul><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/PoorThatchExample.png\" alt=\"\" /><figcaption>Example of a thatch roof that lacks shape and slope.</figcaption></figure><h4><strong>Interiors</strong></h4>\n<ul><li>Interiors can be a challenging, yet rewarding aspect of building. An important part of interior design is the partitioning of space into smaller, more useable spaces. A method of achieving this effect is simply placing more walls, hence making more rooms, to divide the larger rooms into smaller ones.</li><li>On a similar note of division of rooms, applying different purposes to different rooms is a good way to employ a sense of coherence and sequentiality throughout the interiors. Consider what you have in your own home: separate rooms for sleeping, food preparing, clothes washing and so on. Attempt to employ these into your own builds to base the build in reality.</li><li> Although this tip is not exclusive to interiors, ensure that <strong>each block that you place has a specific purpose</strong>. If the block is only there to fill space, it is not serving a worthy purpose and should be replaced by something else that would contribute to a more engaging environment. For example, a pile of crates may occupy space, thus making the build slightly less boring, but do not serve any other purpose. </li><li>When using our custom blocks, you should come across blocks like Bench Drawers, Table Drawers, Cabinets, all kinds of tool-blocks and bookshelves. Those blocks have multiple sides with the exact same look. Since it wouldn't make any sense to be able to pull out drawers to all sides, you should always cover all but one side of these blocks. You can use walls, halfdoors or wattle fences for that. In very few cases it is ok to not completly cover a side, for example when placing a drawer next to a bed.</li></ul><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/PoorInteriorExample.png\" alt=\"\" /><figcaption>A sub-par interior; poor use of space, no rafters, poor block usage (from an old build).</figcaption></figure><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/loft.png\" alt=\"\" /><figcaption>Good interiors at an attic, good roof structure.</figcaption></figure><h3><strong>General Dos and Don'ts</strong></h3>\n<h4><strong>Do:</strong></h4>\n<ul><li><strong>Add rafters </strong>- It's important to make sure that roof blocks are seen to have the support necessary to hold them up, we do this with a combination of wooden stair blocks/stairs and half doors. A general rule of thumb is to make sure the external roof blocks are not visible from inside the house.<br /><br /><img src=\"https://cdn.westeroscraft.com/web/assets/images/Rafters.PNG.png\" alt=\"\" /><figcaption>Stairs and half doors have been added beneath the external roof slate to create roof rafters.</figcaption></li><li><strong>Cover up cabinets/drawers/profession blocks </strong>- When using our custom blocks, you should come across blocks like Bench Drawers, Table Drawers, Cabinets, all kinds of tool-blocks and bookshelves. Those blocks have multiple sides with the exact same look. Since it wouldn't make any sense to be able to pull out drawers to all sides, you should always cover all but one side of these blocks. You can use walls, halfdoors or wattle fences for that.<br /><br /><img src=\"https://cdn.westeroscraft.com/web/assets/images/Profession_Blocks.png\" alt=\"\" /><figcaption>A half door block has been added to the side so that only one side is exposed.</figcaption></li><li><strong>Use slabs/half stairs to create cross beams </strong>- When adding another floor to a building, you can use rows of stairs to create the effect of floor rafter cross beams. It's best to have these rafters span the width of the house rather than the length (means the beams are shorter/more structurally sound).<br /><img src=\"https://cdn.westeroscraft.com/web/assets/images/2020-05-21_14.03.25.png\" alt=\"\" /><figcaption>An example of how stairs and slabs can be used to create floorboard cross beams</figcaption></li><li><strong>Add a profession </strong>- Most homeowners would use some portion of the home for professional use (e.g. a carpenter would have their workshop downstairs below their living area). The exception to this is the common farm worker, but these houses will tend to be smaller by virtue of just having a sleeping/kitchen area, but it is still good think about other details you can add (e.g. an animal pen, vegetable garden, wood chopping area).</li><li><strong>Add a yard </strong>- Most houses in small towns and hamlets will have a square yard out the back for growing vegetables, doing washing, storage and animal pens.</li><li><img src=\"https://cdn.westeroscraft.com/web/assets/images/house-corners.png\" alt=\"\" /></li></ul><h4><strong>Don't:</strong></h4>\n<ul><li><strong>Use torch blocks -</strong> a fireplace or a candle on a table or bench is fine.</li><li><strong>Use log blocks </strong>- we try to avoid using log blocks as they look clunky and don't allow for much variation.</li><li><strong>Use trapdoors</strong> - like with log blocks these are an outdated building block and half doors/shutters are better suited for their purpose.</li><li><strong>Mix stone block palettes </strong>- When deciding what bricks/stone to build with, it's best to maintain a consistent style and color of stone, e.g don't mix yellow sandstone bricks with dark cobblestone.</li></ul><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/Logs.PNG.png\" alt=\"\" /><figcaption>Incorrect use of logs and trapdoors.</figcaption></figure><h3><strong>Conclusion</strong></h3>\n<p>There is a lot of information contained within this article and it's important that you understand and remember it. However there is still much more for you to learn, so spend some time exploring around the server. Apply these principals in your new builds and see what you can do to improve. Builder applicants are almost always eager, but there's no need to rush; there's plenty of cool builds to come. Good luck and feel free to ask questions!</p>"
+      }
+    ]
+  },
+  {
+    "title": "Manually Building the Custom Client",
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>This procedure is intended to allow folks that, for whatever reason, would prefer to use the standard <span style=\"color: rgb(54,91,65)\"><strong>Minecraft Java Edition Launcher</strong></span> to run the WesterosCraft Custom Client. Do understand that the <a href=\"https://westeroscraft.com/launcher\">WesterosCraft Launcher</a> is the supported mechanism for accessing our server - don't expect much support for the manual process, beyond what you see in this guide: its not a matter of wanting to be difficult, but supporting the manual process defeats the point of having produced the launcher, and will ultimately result in even more work for the staff and the few others that can support these methods.<br /></p>\n<p><span style=\"color: rgb(158,30,34)\"><strong>NOTICE: As of v1.11.2, we require Java 8 and we STRONGLY recommend running with at least 4GB of memory configured (which implies a requirement for a 64-bit Java). Confirm these by looking at the 'Java Executable' and 'JVM Options' settings on your profile in the launcher. If the vanilla launcher freezes while loading WesterosCraft or our Resource Pack, bump up the memory to 6GB or even higher.</strong></span><span style=\"color: rgb(158,30,34)\"><strong><br /></strong></span></p>\n<p><span style=\"color: rgb(0,0,0)\">Before starting, please ensure the following:</span></p>\n<ul><li><span style=\"color: rgb(0,0,0)\"></span>Install Java 8 64bit for Windows 10 here: <a href=\"https://java.com/en/download/win10.jsp\">https://java.com/en/download/win10.jsp</a></li><li>Make sure you've run <strong>vanilla v1.12.2</strong> on your Minecraft Java Launcher at least once, so that the necessary files for v1.12.2 have been downloaded</li></ul><h3>Steps: </h3>\n<p>1) Download the installer for <strong>MinecraftForge v1.12.2</strong> <strong>version <strong>14.23.5.2854</strong></strong> from <a href=\"http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.11.2-13.20.1.2393/forge-1.11.2-13.20.1.2393-installer.jar\" target=\"_blank\" rel=\"noreferrer noopener\"></a></p>\n<p><a href=\"https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar\" target=\"_blank\" rel=\"noreferrer noopener\">https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar</a></p>\n<p>2) Run the <strong>MinecraftForge installer JAR file</strong>. Select \"Install Client\" and click OK. </p>\n<p>3) Open up the <span style=\"color: rgb(54,91,65)\"><strong>Minecraft Java Edition Launcher </strong><span style=\"color: rgb(0,0,0)\">(restart it if it was open during the Forge installation), navigate to the <strong>Installations </strong>tab,</span></span> and create a new release (if needed) for our client, named \"<strong>WesterosCraft v1.12.2</strong>\", set the 'Version' to '<strong>release 1.12.2-forge1.12.2-14.23.5.2854</strong>'.</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/website/forgeinstaller.jpg\" alt=\"\" /></figure><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-2.jpg\" alt=\"\" /></figure><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-3.jpg\" alt=\"\" /></figure><p>4) On the same screen, locate the 'Game Directory' field and change the directory to a directory of your choosing (this will keep the mods from our client from interfering with other mods you might have installed). <strong>Remember this directory</strong> - for the sake of this example, we'll refer to this directory as &lt;client-dir&gt; in the future (as all other steps will be adding files in and under this directory). <strong>You should create this directory, if needed</strong>.</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-4.jpg\" alt=\"\" /></figure><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-5.jpg\" alt=\"\" /></figure><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-6.jpg\" alt=\"\" /></figure><p>5) If you have not dedicated more memory to your installation, this is the time to do it. Click on the 'MORE OPTIONS' button and change the argument '-Xmx2G' to '-Xmx4G' (or 6G, or 8G, however much memory you wish to dedicate). <strong>Press Save</strong>.</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-11.jpg\" alt=\"\" /></figure><p>6) Go back to the 'Play' tab on the launcher,and select the new release you just created. Hit the Play button to launch the client: this should download other needed files, and create needed directories. If things start properly, you should see \"Powered by Forge 14.23.5.2854\" in the lower left corner of the main window. <strong>Close the client</strong>.</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/website/poweredbyforge.jpg\" alt=\"\" /></figure><p>7) Open the folder for the &lt;client-dir&gt; created in step 4. Download each of the following files, and place them in the '<strong>mods</strong>' subdirectory under the &lt;client-dir&gt;:</p>\n<p><strong><span style=\"color: rgb(0,0,0)\">REQUIRED MODS</span></strong>:</p>\n<ul><li>OptiFine 1.12.2 HD U F5 - <a href=\"https://optifine.net/adloadx?f=OptiFine_1.12.2_HD_U_F5.jar\">https://optifine.net/adloadx?f=OptiFine_1.12.2_HD_U_F5.jar</a></li><li>WesterosBlocks v4.0.1-84 - <a href=\"http://mc.westeroscraft.com/WesterosCraftLauncher/prod-1.12.2/mods/WesterosBlocks.jar\" target=\"_blank\" rel=\"noreferrer noopener\">http://mc.westeroscraft.com/WesterosCraftLauncher/prod-1.12.2/mods/WesterosBlocks.jar</a></li><li>Horse Colors - <a href=\"http://mc.westeroscraft.com/WesterosCraftLauncher/prod-1.12.2/mods/horse_colors.jar\">http://mc.westeroscraft.com/WesterosCraftLauncher/prod-1.12.2/mods/horse_colors.jar</a></li></ul><p><strong><span style=\"color: rgb(158,30,34)\"><span style=\"color: rgb(0,0,0)\">OPTIONAL (BUT RECOMMENDED) MODS</span>:</span></strong><br /></p>\n<ul><li>JustEnoughItems mod (1.12.2-4.14.3.242) - <a href=\"https://www.curseforge.com/minecraft/mc-mods/jei/files/2652749\">https://www.curseforge.com/minecraft/mc-mods/jei/files/2652749</a></li></ul><p>8) Download and install the <strong><span style=\"color: rgb(158,30,34)\">WesterosCraft Resource Pack</span></strong> into the 'resourcepacks' directory under &lt;client-dir&gt;: <a href=\"http://mc.westeroscraft.com/WesterosCraftLauncher/prod-1.12.2/resourcepacks/WesterosCraft.zip\" target=\"_blank\" rel=\"noreferrer noopener\">http://mc.westeroscraft.com/WesterosCraftLauncher/prod-1.12.2/resourcepacks/WesterosCraft.zip</a>.</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-10.jpg\" alt=\"\" /></figure><p>9) Start Minecraft client again from the <strong><span style=\"color: rgb(54,91,65)\">Minecraft Java Edition Launcher</span></strong>. Click 'Options'. Click 'Resource Packs'. Move the 'WesterosCraftRP' resource pack to active.</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-12.jpg\" alt=\"\" /></figure><p>10) Click \"Multiplayer\". Click \"Add Server\". Enter \"<strong>WesterosCraft</strong>\" for name, and \"<strong>mc.westeroscraft.com</strong>\" for the address. Click 'Done\".</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/manual-launcher-step-13.jpg\" alt=\"\" /></figure><p>11) Launch the server selection, and start exploring Westeros!</p>"
+      }
+    ]
+  },
+  {
+    "title": "New Builders' Guide",
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>If you are reading this and are a new builder, congratulations and welcome to the team! You are now a part of the build team of WesterosCraft.<br /></p>\n<p>After you have successfully completed all the challenges that moderators give you during your application process, your <strong>probation</strong> begins. Think of probation as an in-game continuation of the application process; it helps to slowly introduce new builders to how the server operates. The probation period normally lasts around <strong>one month</strong>. Once you have completed the following steps to the satisfaction of the moderating team, you will be promoted to full builder status.<br /></p>\n<h3>Probation</h3>\n<p>After being approved, every new builder will be required to undergo a one month probationary period and will be required to do the following to be promoted:</p>\n<p>1. Make a new thread called: \"<strong>Probation: yourplayername</strong>\" in the <a href=\"https://forum.westeroscraft.com/forum/probation.39/\">Probation forum</a>.<br /></p>\n<p>​2. <strong>Build at least five houses in five different locations.</strong> Be sure to place a builder tag with your name on it at each build. Once a build is completed, comment on your probation thread with the following information: <br /></p>\n<p><strong>Build number</strong><br /><strong>/warp</strong> <br /><strong>XYZ coordinates</strong></p>\n<p>- Place a sign with your name and the build number above the house (you can use a distinctive block so that it stands out as yours).<br />- The warp should be the nearest available warp as seen from the <a href=\"http://mc.westeroscraft.com/\" target=\"_blank\" rel=\"noreferrer noopener\">Dynamic Map</a><br />- The XYZ coordinates should be near to the center of your build, found by pressing F3 in game.</p>\n<p>3. Wait for a probation leader to claim your probation and give you feedback on your builds. Any builder who is an approved probation leader or a moderator may assume leadership of probation. Project leaders, though not responsible for your probation, will likely also give you feedback which you must also follow. For how our in-game feedback system works, check out the <a href=\"https://westeroscraft.com/wiki/guides/general-building-guidelines\">General Building Guidelines</a>.<br /><br />​​4. Assuming you successfully completed all requirements of probation (build five quality houses at five different locations, maintain activity, and display a favourable attitude) you will be promoted to full builder status by a moderator.<br /></p>\n<h3>Find Something to Build<br /></h3>\n<p>The best place to start is by looking at our <a href=\"http://mc.westeroscraft.com/\">Dynmap</a> for any <strong><a href=\"https://forum.westeroscraft.com/threads/marker-signs.2405/\">plot markers</a></strong>. These show up as little green flags on the map. Make sure you have the \"<strong>Open Plot</strong>\" layer turned on in the layers list (top left corner). </p>\n<p>Check all <a href=\"https://forum.westeroscraft.com/forum/solo-projects.13/\">recent projects on the forums</a> and see if any of them have villages or hamlets open to build at. If that fails, just ask anyone in game and more often than not someone will point you in the right direction.</p>\n<p>Be sure to check out our <a href=\"https://westeroscraft.com/wiki/guides/general-building-guidelines\">General Building Guidelines</a> or more information on our plot building system.</p>\n<h3>Can't Find any Plots? </h3>\n<p>Waiting for feedback on a house you've built? Here are a few things you can do keep busy on the server.<br /></p>\n<p>- <strong>Ask builders if they need any help with their project.</strong> Projects are more than just house plots. Castles need to be furnished, fields fenced, barns built, boats added to rivers, forests planted. Just because they don't have any plots, doesn't mean project leaders don't need you.</p>\n<p>- <strong>Plan a mini-app</strong>. Completing mini-apps (hamlets, quarries, lumber camps, mills) is the quickest way to getting your first project started. Check the forums and /warp build or just ask around to find out what mini-apps are available. Just bear in mind you cannot officially apply until you are a full builder.</p>\n<p> - <strong>Test for a server build</strong>. Scattered around the Test world are areas dedicated to testing for major locations that haven't been started or are planned for re-do (e.g. Dorne, Old Town, Gull Town, Harrenhal). Feel free to test out ideas for these at any time (just remember to tag your work!).</p>\n<p>- <strong>Build something in the playground</strong>. Playground can be used to build anything you like (within community guidelines). </p>\n<h3>Community</h3>\n<p>As a new builder, we want you to keep in touch with the community and the latest happenings. Read the <a href=\"https://forum.westeroscraft.com/forum/\">forums</a>, like our <a href=\"https://www.facebook.com/WesterosCraft/\">facebook page</a>, subscribe to our <a href=\"https://www.youtube.com/user/WesterosCraft\">YouTube channel</a>, follow our <a href=\"https://www.instagram.com/westeroscraft/?hl=en\">instagram</a>, or hang out in <a href=\"https://discord.com/invite/pBS5TH4\">Discord</a>, up to you, just don't be shy!</p>\n<h3>Notes</h3>\n<p>- Once you are promoted to full builder status, you are welcome to claim a 200x200<strong> test plot</strong> in our test world. Find an empty plot and ask a moderator in game to assign it to you. </p>\n<p>- If you would prefer to have another probation leader (due to time zones, communication issues, or whatever), please notify a moderator through private message.</p>\n<p>- For builders re-applying after a long period of inactivity: once the re-application is approved, a moderator may still ask you to undergo a full probation period or, depending on the circumstances, allow you to skip probation altogether. </p>\n<p>- Note that probationary builders may not apply for projects, including mini-builds and immersion projects. <br /></p>\n\n<p>- If for some reason your forum name does not match your in-game name, please request it to be changed <a href=\"https://forum.westeroscraft.com/threads/forum-name-change-request.2254/\">here</a>.</p>"
+      }
+    ]
+  },
+  {
+    "title": "Block Usage Guide",
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>The creation of the continent of Westeros is driven by the desire to provide a cohesive, logical and vivid environment for the upcoming MMORPG. In order to coordinate this, a number of agreements have been made that assign distinct styles to the 7 principal regions of Westeros. These styles are based on based on cultural, socio-economic and canonical knowledge and govern the usage of our custom blocks to various degrees. The original style guides can be found at /warp regiontest. It is important to distinguish between primary and secondary palette blocks. Primary palette denotes the usage of a block in those parts of a build that make up the bulk structure e.g. exterior or interior walls, pillars, roof. Secondary palette means those blocks that are used as individual accents or unique patterns in a structure. They would usually appear in a very limited quantity.</p>\n<ul><li>Free Blocks: Standard vanilla building blocks, without a dedicated regional-name can generally be used in any region as the primary and secondary palette. The only factor influencing this free usage is the assumption that the 7 kingdoms due to climatic and cultural differences, unique traditions and limited regional exchange/ transport of materials have developed self-contained styles i.e. architectural patterns and motives as well as preferred building materials (blocks) that they use. Towards the borders of a region these styles may blend.</li><li>Primary Region Blocks: Custom blocks that have a name pointing to a specific region or style (i.e. stormlands stone, reach pink bricks, etc.), These shouldn't be used as the primary building material outside of their region, unless canon states otherwise. For example, there shouldn't be any dark brown castles in the Westerlands nor should there be light pink castles in the North. We trust you to use your common sense when using them outside of the region for other (secondary) purposes (roads, special features, etc).</li><li>Canonically or logically location-specific and culture-specific Blocks (Short: Canon Blocks): There are certain blocks that do not make sense outside of their specific region or build. This might be because they: a) clearly reflect a regional tradition/culture/circumstance (i.e. Hanging Frogs block &gt; said only to be consumed in the neck and greenblood area), b) depict a location-specific material (i.e. Winterfell granite, black basalt) or c) incorporate a motive that is canonically mentioned for one build only (i.e. Dragon Carvings &gt; Dragonstone). For these blocks, the traditional region rules still apply, which means they are restricted and cannot be used as primary or secondary palette outside of their respective build or region. Following is a list of those specific blocks:<ul><li>Hanging frogs &gt; Greenblood, The neck</li><li>Mance Tents and Giant Antlers &gt; Mance's Camp</li><li>Hanging rats &gt; Flea Bottom</li><li>Baelors Orbs &gt; Sept of Baelor</li><li>KL Sewer Lids &gt; King's Landing</li><li>Wolf statues &gt; Winterfell</li><li>Dragon carvings &gt; Dragonstone</li><li>Eyrie carved door &gt; Eyrie</li><li>Both Oldtown Plaster and Keystone Blocks! &gt; Oldtown</li><li>Winterfell Granite (Carved and uncarved) &gt; Winterfell</li><li>Alyssas Tears &gt; Alyssas Tears</li><li>Fruit baskets * &gt; Mostly Dorne, its immediate border and ports with dornish merchant</li></ul></li></ul><p>(*Fruit baskets are Dorne-specific because the crops that are inside them only really make sense in Dorne. They might feasibly be placed in the very Southern areas of the Reach, and even then only areas near a port. Remember, fruit goes bad pretty quickly.)</p>\n<ul><li>This list is subject to change at our discretion, but we aim to keep it minimal.</li></ul><ul><li>The terrainsets are a special case similar to the canonical blocks. They must never be used outside their region or in any form of \"manmade\" build. Ocean and River rock can be used to display \"wet\" areas in conjunction with any of the regional sets.</li></ul><p>We reserve the right to enforce any changes in builds regarding block usage we find inappropriate.</p>"
+      }
+    ]
+  },
+  {
+    "title": "Canon Project Application Guidelines",
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>Canon Projects are the bread and butter of WesterosCraft. These projects concentrate on canon locations within the Song of Ice and Fire universe, have one or multiple project leaders, and enlist the help of many others in their construction. Projects can range from the very small (<a href=\"https://westeroscraft.com/wiki/riverlands/crossroads-inn\">Crossroads Inn</a>) to the very large (<a href=\"https://westeroscraft.com/wiki/riverlands/fairmarket\">Fairmarket</a>). </p>\n<h3>Choosing a Project</h3>\n<p><strong>Viability</strong>: Anything listed on our <a href=\"https://westeroscraft.com/progress\">Progress Page</a> can be considered significant enough to be a standalone project. It may also be worth discussing your ideas with a moderator so that you understand what might be expected of you as a project leader (terraforming, project size, etc). </p>\n<p><strong>Location</strong>: Most canon locations already have in-game warps placed according to canon details. You are welcome to make a case for the relocation of the warp in your project application. Check out the <a href=\"https://westeroscraft.com/wiki/miscellaneous/map-repository\">Map Repository</a> for more information on project placement. Do also check the \"Borders\" layer on the <a href=\"http://mc.westeroscraft.com/\">DynMap</a> to see the area your project will be expected to address. </p>\n<p><strong>Redo or Update</strong>: If you are considering redoing or updating an old project, please consult the <a href=\"https://westeroscraft.com/wiki/miscellaneous/official-no-redo-rule\">Official No-Redo Rule</a>. <br /></p>\n<p><strong>Foster</strong>: If you are interested in completing or \"fostering\" an abandoned project, please check out the <a href=\"https://westeroscraft.com/wiki/miscellaneous/projects-orphanage\">Projects Orphanage</a>.</p>\n<h3>Before Applying<br /></h3>\n<p><strong>Rank</strong>: In order to apply you need to be a full, non-probationary builder.</p>\n<p><strong>Experience</strong>: To apply for a canon project you must have completed at least two Mini Builds, or at least one Mini Build and one <a href=\"https://westeroscraft.com/wiki/guides/immersion-build-application-guidelines\">Immersion Build</a><a href=\"https://westeroscraft.com/wiki/guides/general-building-guidelines\"></a>.</p>\n<h3>Application Format</h3>\n<p>Project applications should be posted in the <a href=\"https://forum.westeroscraft.com/forum/solo-projects.13/\">subforum</a> corresponding to the project's region. Thread titles should be formatted as the following</p>\n<p><strong>Project Application: [Project name] by [Builder name(s)]</strong><br /><br />In the body of the thread or in an attached Google doc or PDF you must include the following information:<br /><br /><strong>Project Title<br />Builder name(s)<br />Resumé of previous builds<br /><br />Canon/Research</strong><br />What information about the project and its context can you find in the books (<a href=\"http://asearchoficeandfire.com/\" target=\"_blank\" rel=\"noreferrer noopener\">A Search of Ice and Fire</a>) or in secondary sources like <a href=\"http://awoiaf.westeros.org/\" target=\"_blank\" rel=\"noreferrer noopener\">A Wiki of Ice and Fire</a> and <a href=\"https://www.westeros.org/Citadel/Heraldry/\" target=\"_blank\" rel=\"noreferrer noopener\">The Citadel</a>?<br /><br /><strong>Inspiration</strong><br />What type of real world locations and buildings have influenced your plans? What type of feel are you going for? Check out the #inspiration channel on Discord.<br /><br /><strong>Plans</strong><br />Outline your specific plans with as much detail as possible. These plans can include maps, planned Mini Builds, guides, or anything else that might help the moderators understand your vision for the area. Please also check the \"Borders\" layer on the <a href=\"http://mc.westeroscraft.com/\">DynMap</a> to see the extent of your project area. <br /><br /><strong>Tests</strong><br />Tests for castles must include: gradient, façade, wall, and tower tests.<br />Tests for towns/villages must include: façade tests for all relevant house classes; Can include: special buildings like guildhalls, septs, etc.<br />Test for terrain are highly recommended, especially if your project area includes significant geologic features such as coastline and mountains. If you are a beginner to terraforming, please ask some of our more experienced builders for help with your tests.</p>\n<h3>After Submission</h3>\n<p><strong>Approval</strong>: The project application must be approved by at least two moderators before it can begin.</p>\n<p><strong>Plots</strong>: Please advertise available plots using <a href=\"https://forum.westeroscraft.com/threads/marker-signs.2405/\">marker signs</a> and by posting in your project application thread.</p>\n<p><strong>Mini Builds</strong>: If your project has Mini Builds, you must advertise these on the project application thread. Builders can take on these projects by applying for them within the thread, and must be approved in writing by you before they can begin.<br />Note: Even if you have an in progress canon project, you may still apply for other Mini-Builds and <a href=\"https://westeroscraft.com/wiki/guides/immersion-build-application-guidelines\">Immersion Builds</a>. </p><h3>Completion</h3>\n<p><strong>Final Checks:</strong> Once your project app has been approved, you are required to finish the project to 100% incl. all holdfasts/ terraforming/ side projects and <a href=\"https://forum.westeroscraft.com/threads/immersion-build-application-a-ruined-septry-dating-from-the-justman-era-by-antony_justman.2012/\">wiki submission</a>. It is your responsibility to see that all areas of your projects are completed and finished to an acceptable standard, including those delegated to others. </p>\n<p><strong>Post Approval</strong>: After you have completed your project to 100%, the moderators who originally approved the application will do a final quality check and post-approve the project.</p>\n<p><strong>Cooling-Off Period</strong>: Once your project is completed, you may begin testing for another project, but you will not be approved for a new project until your previous one has been fully post-approved.<br /><br /></p>"
+      }
+    ]
+  },
+  {
+    "title": "General Building Guidelines",
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>WesterosCraft organizes building into seven levels: <strong>Singleplayer Builds</strong>, server <strong>Plot Building</strong>, taking on <strong>Mini Builds </strong>and <strong>Immersion Builds</strong>, leading <strong>Canon</strong><strong> Projects</strong>, and participating in <strong>Megabuilds</strong> and <strong>Server Builds</strong>.</p>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/BuildsFlowchart-4.png\" alt=\"\" /></figure><h3>Singleplayer Builds</h3>\n<p>In your <a href=\"https://forum.westeroscraft.com/form/builder-application.3/select\">builder application</a> you will need to submit builds in singleplayer using our <a href=\"https://westeroscraft.com/launcher\">WesterosCraft launcher</a>. Be sure to check out our<a href=\"https://westeroscraft.com/wiki/guides/applicant-building-guide\"> Basic Building Guide for Applicants</a> if you are applying to become a builder. Once you are approved for builder status you will be given build permissions on our server, where you can start your <a href=\"https://westeroscraft.com/wiki/guides/new-builders-guide\">probation</a> and will be expected to start building on plots.</p>\n<h3>Plot Building<br /></h3>\n<p><strong>What are Plots?</strong>: When you first check out a build, you might see a lot of square shapes on the ground made of various colored glass or wool; these are <strong>plots</strong>. Plots are basically big markers saying \"Hey! Build this building here, in this shape!\"<br /></p>\n<p><strong>What do the Colors Mean?</strong>: When you first warp to a work in progress (WIP) build, the first thing you will usually see is a style guide with project information. Colors indicate the type of building the project leaders want to build there. Colors might be different from build to build so be sure to check the guide when you warp somewhere new. Red and orange might mean rich and poor, while blue and purple might mean different kinds of shops.<br /></p>\n<p><strong>Special Plots</strong>: In the plot there may be a sign with <strong>specific instructions</strong> for that building. There might also be a single block sitting in it. Usually this block shows you what material you are supposed to use for the roof.</p>\n<p><strong>Builder Tags</strong>: When you have claimed a plot and are working on a build, <strong>always leave a tag there</strong>, even if you have just started. What's a tag? It's a block floating above the building with your name signed on it. It lets us know who is responsible for what and helps us keep track of things. Be sure to keep your tag up even when you are done building. <strong>Always tag your buildings!</strong></p>\n<p><strong>Do not take more than one plot at a time. </strong>Please ensure you finish a building before starting another. <br /></p>\n<p><strong>Feedback</strong>: Everyone on the server is allowed to leave feedback or constructive criticisms on WIP builds. If you have feedback, place a <span style=\"color: rgb(54,91,65)\"><strong>melon block</strong> </span>somewhere above their building with your message written on it with signs. If you are replying to feedback, use any other block but melon. Generally people use <strong><span style=\"color: rgb(158,30,34)\">pumpkins</span></strong> to reply but you can use anything as long as it sticks out.</p>\n<p>Always be sure to keep checking back at your individual builds for any feedback until the entire project is done or the project leader has approved it. If the leader of a project tells you to change something, listen to them. It's their build and they have the option to remove your build entirely if they think it isn't suitable.</p>\n<p>If you have addressed all the feedback and think your build is done, place a \"<strong>Done</strong>\" block near your builder tag.<br /></p>\n<p><strong>How to Find Available Plots</strong>: Check out <strong>/warp build</strong>, ask around in game, or check the forums.</p>\n<h3>Mini Builds</h3>\n<p>Mini Builds are non-canon sub projects of any larger project, and could include holdfasts, mines, quarries or other points of interest. Every builder who has not planned and led a Mini Build will not be permitted to lead a canon project until they have done so. This rule is to ensure that each builder has some level of planning experience before they embark on larger projects. They usually involve a set of buildings of some type that the applicant has to test, plan/plot and oversee to construction of in coordination with other builders. <br /></p>\n<p>You can find opportunities to lead mini builds on project application threads in the <a href=\"https://forum.westeroscraft.com/forum/solo-projects.13/\">Canon Project forums</a>. You can apply to lead these mini builds on a projects application thread, which will need to be approved by the canon project lead before you can begin. <strong>Only full, non-probationary builders may apply for Mini Builds</strong>.<br /></p>\n<h3>Immersion Builds </h3>\n<p>Immersion Builds are a step up from Mini Builds in that they operate independently of a parent project. Please refer to the <a href=\"https://westeroscraft.com/wiki/guides/immersion-build-application-guidelines\">Immersion Build Application Guidelines</a> for more details. <strong>You must be a full, non-probation Builder and completed one Mini Build to apply for an Immersion Build</strong>.</p>\n<h3>Canon Projects</h3>\n<p>Canon Projects are of significant canon locations in Westeros, have one or multiple project leaders, and enlist the help of many others to complete. Projects can range from the very small (<a href=\"https://westeroscraft.com/wiki/riverlands/crossroads-inn\">Crossroads Inn</a>) to the very large (<a href=\"https://westeroscraft.com/wiki/riverlands/fairmarket\">Fairmarket</a>). Any location found on our <a href=\"https://westeroscraft.com/progress\">Progress Page</a> and on our <a href=\"https://westeroscraft.com/wiki\">Wiki</a> can be considered significant enough to be a canon project. </p>\n<p><strong>To apply for a Canon Project you must have completed at least two Mini Builds, or one Mini Build and one <a href=\"https://westeroscraft.com/wiki/guides/immersion-build-application-guidelines\">Immersion Build</a></strong>. Check out our <a href=\"https://westeroscraft.com/wiki/guides/project-application-guidelines\">Canon Project Application Guidelines</a> for more details.<br /></p>\n<h3>Megabuilds</h3>\n<p>Megabuilds are projects which combine several locations into one cohesive area. The <a href=\"https://forum.westeroscraft.com/threads/central-westerlands-megabuild-tarbeck-hall-sarsfield-oxcross-hornvale-by-lemonbear.1801/\">Central Westerlands Megabuild</a> is a good example. <strong>Only builders with experience of all other levels of planning and building are eligible to apply for Megabuilds</strong>. </p>\n<h3>Server Builds</h3>\n<p>Server builds are usually coordinated by community moderators, and seek to involve as many members of the community as possible. Server builds sometimes culminate in a <strong>server-wide build day </strong>where teams of builders are assigned to different areas of the project. Check the <a href=\"https://forum.westeroscraft.com/forum/server-builds.12/\">Server Build forum</a> for information on any current or upcoming server builds. Server builds are organized and delegated by the moderating team, so please get in touch with a moderator if you have any ideas for the following builds.</p>\n<p>The following locations are considered canonically significant and large enough to be considered Server Builds. </p>\n<p><a href=\"https://westeroscraft.com/wiki/beyond-the-wall/mances-camp\">Mance's Camp</a><br /><a href=\"https://westeroscraft.com/wiki/the-wall/castle-black\">Castle Black<br /></a><a href=\"https://westeroscraft.com/wiki/the-wall/nightfort\">Nightfort<br /></a><a href=\"https://westeroscraft.com/wiki/north/winterfell\">Winterfell</a><br /><a href=\"https://westeroscraft.com/wiki/north/white-harbor\">White Harbor</a><br /><a href=\"https://westeroscraft.com/wiki/riverlands/the-twins\">The Twins<br /></a><a href=\"https://westeroscraft.com/wiki/vale/the-eyrie\">The Eyrie</a><br /><a href=\"https://westeroscraft.com/wiki/vale/gulltown\">Gulltown<br /></a><a href=\"https://westeroscraft.com/wiki/iron-islands/pyke\">Pyke</a><br /><a href=\"https://westeroscraft.com/wiki/riverlands/riverrun\">Riverrun<br /></a><a href=\"https://westeroscraft.com/wiki/riverlands/harrenhal\">Harrenhal</a><br /><a href=\"https://westeroscraft.com/wiki/crownlands/dragonstone\">Dragonstone</a><br /><a href=\"https://westeroscraft.com/wiki/crownlands/duskendale\">Duskendale</a><br /><a href=\"https://westeroscraft.com/wiki/westerlands/lannisport\">Lannisport</a><br /><a href=\"https://westeroscraft.com/wiki/westerlands/casterly-rock\">Casterly Rock</a><br /><a href=\"https://westeroscraft.com/wiki/crownlands/kings-landing\">King's Landing</a><br /><a href=\"https://westeroscraft.com/wiki/crownlands/red-keep\">The Red Keep<br /></a><a href=\"https://westeroscraft.com/wiki/stormlands/storms-end\">Storm's End<br /></a><a href=\"https://westeroscraft.com/wiki/reach/highgarden\">Highgarden</a><br /><a href=\"https://westeroscraft.com/wiki/reach/oldtown\">Oldtown</a><br /><a href=\"https://westeroscraft.com/wiki/reach/the-arbor\">The Arbor<br /></a><a href=\"https://westeroscraft.com/wiki/dorne/sunspear\">Sunspear</a><br /><br /></p>"
+      }
+    ]
+  },
+  {
+    "title": "Immersion Build Application Guidelines",
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>Our current system of projects is centered around the Great Houses, towns and cities of Westeros, and their respective vassal houses, communities and features. I.e., Builders lead or co-lead one project at a time, focused on a single house and their lands. While we have no intention of changing this approach, we do want to explore other options beyond just: “One house. One project.” As it currently stands, this method of organising our projects has led to us running the risk of our map of Westeros becoming a series of walled gardens (rich and detailed builds/projects, but with wide and dull empty spaces between them), which will make the spaces between projects feel unfinished and dull to visitors exploring the map.<strong><br /><br />Immersion Builds</strong> are therefore meant to fill the void caused by our current project system. They would be small builds, not necessarily tied to any particular piece of canon or lordly house, but instead intended to add points of interest and life to the empty parts of Westeros, which can include inns, taverns, camps, farms, First Men ruins, terrain features etc. The priority will be to fill mostly empty stretches along the main roads and travel routes, but off the beaten path areas can also be considered for immersion builds. And not everything has to imply human presence; small terraforming/nature projects like rock formations, enchanted groves, spooky forests, caves, etc., also fit into the Immersion Build category. The sky’s the limit!<br /><br />Immersion Build applications most often require two approving moderators before they can proceed. However, if the plans are considered small enough, one moderator is sufficient. <strong>You must be a full, non-probationary builder and have completed at least one <a href=\"https://westeroscraft.com/wiki/guides/general-building-guidelines\">Mini Build</a> to apply for an Immersion Build.<br /></strong>Builders who are in the process of leading a Canon Project, Megabuild, or Server Build are permitted to apply for Immersion Builds.</p>\n<h3>How to Find a Location</h3>\n<p>Check out the <a href=\"http://mc.westeroscraft.com/\">Map</a>, and turn on the warp markers (top left). Areas without warps are usually pretty boring and empty; the perfect place for an immersion build!</p>\n<h3>How to Apply</h3>\n<p>Immersion Build applications should be posted in the <a href=\"https://forum.westeroscraft.com/forum/immersion-builds.65/\">Immersion Builds subforum</a> corresponding to the project's region. Thread titles should be formatted as the following: </p>\n<p><strong>[Project name] by [Builder name(s)]</strong><br /><br />In the body of the thread or in an attached Google doc or PDF you must include the following information:<br /><strong><br />Builder Name(s)<br />Approximate Coordinates</strong><br /><br /><strong>Research/Inspiration</strong><br />* Is it mentioned in canon but not included in any of the surrounding finished projects?<br />* What information about the surrounding region can you find in the books (or on <a href=\"http://asearchoficeandfire.com/\" target=\"_blank\" rel=\"noreferrer noopener\">A Search of Ice and Fire</a>) or on secondary sources like <a href=\"http://awoiaf.westeros.org/\" target=\"_blank\" rel=\"noreferrer noopener\">A Wiki of Ice and Fire</a> or <a href=\"https://www.westeros.org/Citadel/Heraldry/\" target=\"_blank\" rel=\"noreferrer noopener\">The Citadel</a>?<br />* What type of real world locations and buildings (or other sources) have influenced your plans? What type of feel are you going for?<br /><br /><strong>Plans</strong><br />* Outline your specific plans with as much detail as possible. These plans can include maps, minis, layouts, and anything else you feel you need for the project.<br /><br /><strong>Tests</strong><br />* Include tests for anything relevant to your project. These can include terra tests, facade tests, etc.</p>\n<h3>After Completion</h3>\n<p><strong>Wiki Submission</strong><br />* You are not required to submit content for Immersion Build projects, but if you would like to, please fill out a <a href=\"https://forum.westeroscraft.com/form/wiki-article-submission-form.6/select\">Wiki Submission Form</a>.</p>\n<p><strong>Post-Approval<br /></strong>* As with all build projects, you must seek post-approval from the originally approving mods before you can apply for another project.<strong><br /></strong></p>"
+      }
+    ]
+  },
+  {
+    "title": "Rules and Guides",
+    "wikiSlices": [
+      {
+        "typeHandle": "entryGrid",
+        "heading": "Rules",
+        "entryList": [
           {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-toland.png"
+            "title": "Server Rules",
+            "slug": "server-rules",
+            "typeHandle": "wikiMiscellaneous",
+            "parent": {
+              "slug": "miscellaneous"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/serverrulesicon.png"
+              }
+            ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "title": "Godsgrace",
-    "slug": "godsgrace",
-    "copy": "<p><strong>Godsgrace</strong> is the seat of the noble Dornish <strong>House Allyrion</strong>. It is located where the Scorge and the Vaith meet to form the Greenblood. House Allyrion originated with the Andal invasion of Westeros. Their sigil is <em>a golden hand on gyronny red and black</em>. The house words are \"No Foe May Pass.\"</p>\r\n<p>The current head of House Allyrion is Lady Delonne Allyrion. Her son and heir is Ser Ryon Allyion, married to Ynys Yronwood. They have two children together, and Ryon has one Bastard son of notoriety- Ser Daemon Sand.<br></p>\r\n\r\n<h3>Features</h3>\r\n<ul><li><strong>Eastern Walls,</strong> east of Godsgrace there is a partial wall. This wall helps guard the most important asset of the Allryion lands: the river meeting of the Vaith and Scorge. This wall features a chain stretching across the river, in the event of a threat from downriver the chain would be raised and ships would no longer be able to access the docs of Godsgrace.</li><li><strong>The Market Square,</strong> The market square of Godsgrace is the financial hub of the town</li><li><strong>Southern Sprawl</strong> On the south side of the Greenblood river, across from the town of Godsgrace is some town sprawl around a caravansary.</li><li><strong>Northern Guardtower</strong> north of the castle is a trail leading to the crypts of Godsgrace and a watchtower that helps guard the Allyrion lands from any possible threats across the northern sands.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Godsgrace was started on Feb 17th 2015, and it was completed on June 4th 2015. Building of Godsgrace went quickly, and it was considered a probation build location for 3 of those months. The current version of Godsgrace replaces an older version built by a currently unknown builder. Old Godsgrace can be found at /warp oldgodsgrace</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/godsgraceold.png\" data-image=\"102808\"><figcaption>Old Godsgrace as seen from the Map</figcaption></figure>\r\n<h3>Inspiration</h3>\r\n<p>Inspiration for this build was taken from examples of Moorish architecture found on the web. Anyone interested in viewing those images can check out the original application for the build. Other inspiration for Godsgrace came from our servers other builds in Dorne such as Vaith and Ghost Hill specifically.</p>\r\n<p>The build sits on the north side of an exotic river, so much of the planning revolved around how that land would be considered extremely valuable in the desert. Food production would of been taken very seriously and so irrigation was a must, and served as the irreplaceable backbone to the planning of the lands.</p>\r\n<h3>Video</h3>\r\n<p>Godsgrace was featured in Episode 85 of the WesterosCraft Walks, released on February 4, 2019.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/SdH5UEvHL5k\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/godsgrace1.png"
       },
       {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Godsgrace2.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Godsgrace3.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Allyrion",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp godsgrace",
-        "dateCompleted": "2015-06-04T07:00:00+00:00",
-        "projectLead": "Bafflement",
-        "dateStarted": "2015-02-17T08:00:00+00:00",
-        "application": null,
-        "banner": [
+        "typeHandle": "entryGrid",
+        "heading": "For Visitors",
+        "entryList": [
           {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Allyrion.png"
+            "title": "Troubleshooting Guide",
+            "slug": "troubleshooting-guide",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/troubleshootingicon.png"
+              }
+            ]
+          },
+          {
+            "title": "Manually Building the Custom Client",
+            "slug": "manually-building-the-westeroscraft-custom-client",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/customclienticon.png"
+              }
+            ]
+          },
+          {
+            "title": "Basic Building Guide for Applicants",
+            "slug": "applicant-building-guide",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/buildingguideicon.png"
+              }
+            ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "title": "Kingsgrave",
-    "slug": "kingsgrave",
-    "copy": "<p><strong>Kingsgrave</strong> is the seat of <strong>House Manwoody</strong>, located in the Red Mountains of Dorne. It takes its name from the fact that the founder of House Manwoody slew a king of The Reach long, long ago. Their banners are crowned skull on a field of black.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Kingsgrave Castle</strong>, a square castle resting on a flat area of a mountainside. It features all the essentials a castle needs, and little more. Its most distinguishing feature is its outdoor feast hall, shaded by large cloth triangles stitched together.</li><li><strong>Kingsgrave Village</strong>, a modest village situated at the base of the mountain, near an oasis of sorts. It contains a sept, lichyard, orchard, and over a dozen houses.</li><li><strong>Kingsgrave Hamlet</strong>, a cluster of three shepherd's houses to the north of Kingsgrave. Further to the north of the hamlet lie the Tower of Joy and a mountain pass to Nightsong.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Kingsgrave's construction started on July 1, 2014, and was dragged out all the way until November 16. It replaced the previous version built by Lonelyworm in December 2012.</p>\r\n<h3>Inspiration</h3>\r\n<p>Kingsgrave was initially inspired by Alhambra, a palace in Spain, but quickly evolved into something of its own right. The lands surrounding Kingsgrave were based on the green valleys that can be found in parts of the Zagros Mountains which lie to the north and west of Mesopotamia, since there are many parallels between the Red Mountains and the Zagros Mountains.<br></p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/kingsgraveinsp.jpg\" data-image=\"102815\"></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/kingsgrave1.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Manwoody",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "one",
-        "warp": "/warp kingsgrave",
-        "dateCompleted": "2014-11-16T08:00:00+00:00",
-        "projectLead": "ZeRamenGuy",
-        "dateStarted": "2014-07-01T07:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Ladybright",
-    "slug": "ladybright",
-    "copy": null,
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Ladybright1.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Ladybright",
-        "destinationType": "keep",
-        "destinationStatus": "completed",
-        "destinationLevel": "one",
-        "warp": "/warp ladybright",
-        "dateCompleted": "2014-10-11T07:00:00+00:00",
-        "projectLead": "xkrillen43x",
-        "dateStarted": "2014-10-04T07:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Lemonwood",
-    "slug": "lemonwood",
-    "copy": "<p><strong>Lemonwood</strong> is the seat of <strong>House Dalt</strong>, a knightly house in Dorne, on the southern shores of the Greenblood immediately south of Planky Town. The knightly houses is likely one of the protectors of Plankytown, the bustling market town and port at the mouth of the Greenblood, the major artery for trade in Dorne. House Dalt's sigil includes lemons on a purple field. An extensive orchard of lemons and other fruits gives Lemonwood its name and also connects to the sigil of the knightly house.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Lemon Orchards,</strong> on the southern shore of the Greenblood is a series of lemon orchards, which are irrigated by ditches with sluices in the fertile soil near the delta. The orchards are immediately outside of Plankytown, obscuring the border between the town and House Dalt, which is likely one of the protectors of Plankytown.</li><li><strong>Lemonwood Castle,</strong> a small square castle build from sandstone and decorated in the Dornish style. The courtyard includes a forge, blacksmith, and a well.</li><li><strong>Canopied Terrace,</strong> on the southern wall of the castle is a canopied terrace overlooking the sea, which uses the gentle sea breezes as natural air-conditioning in this arid and hot climate.</li><li><strong>The Fleet,</strong> two large warships with purple and yellow sails are House Dalt's fleet, which would protect the harbor of Plankytown or Sunspear from naval attacks.</li><li><strong>Battlements,</strong> the castle is defensible from all sides, but on the southern wall is a large scorpion, a type of crossbow that could fire upon enemy ships at sea from a great distance.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Bafflement built Lemonwood shortly after completely Plankytown, which further intertwines the two builds into a cohesive unit. The current Lemonwood replaced an earlier version built by NickShaiB in August 2012, before the complete overhaul of the Dornish textures, palette, and terrain. </p>\r\n<h3>Inspiration</h3>\r\n<p>Lemonwood is inspired largely by Moroccan castles and uses a similar style of palette and architecture as neighboring Plankytown. The orchards use an ancient type of irrigation and although the majority of the orchard is lemons, there are other citrus trees, herbs, and crops as well. </p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/lemonwoodinsp.jpg\" data-image=\"102820\"></figure>\r\n<h3>Video</h3>\r\n<p>Lemonwood was featured in Episode 37 of WesterosCraft Walks. DutchGuard begins in Plankytown before explore the orchards, the castle and its battlements.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/_EqTEXR3uNI\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/lemonwood.jpg"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Dalt",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp lemonwood",
-        "dateCompleted": "2014-10-01T07:00:00+00:00",
-        "projectLead": "Bafflement",
-        "dateStarted": "2014-09-15T07:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Planky Town",
-    "slug": "planky-town",
-    "copy": "<p><strong>Planky Town</strong> is located at the mouth of the Greenblood in Dorne. It is hailed as the Home to the Orphans of the Greenblood, who are the Dornish decendants of Rhoynar who fled to Dorne after the Rhoynar Invasion. Plankytown is where the game cyvasse was introduced to Westeros. Many of the Orphans live on the river in houseboats and travel the Greenblood, as they once did on Mother Rhoyne, their old homeland in Essos.<a title=\"Expand slideshow\" id=\"slideshow-0-9\"></a><br></p>\r\n\r\n<h3>Features</h3>\r\n<ul><li><strong>The Lighthouse</strong> The lighthouse of Planky Town is the tallest structure of the town and features a Oil-burning flame. The customs officer lives in the lighthouse and visiting vessels are expected to pay there docking fees there.</li><li><strong>Knightly Manor 1</strong> located North of the lighthouse in the hills, this Knightly manor produces silk.</li><li><strong>Knightly Manor 2</strong> This knightly manor found at the West side of Planky Town produces olive oil.</li><li><strong>Plankytown Hamlet</strong> This Hamlet located West of Planky Town on the Northern banks of the Greenblood is inhabited by Farmers and Orphans of the Greenblood.</li><li><strong>Nymeria Statue</strong> This large statue located in the heart of Planky Town next to the Sept is placed in honor of the Warrior Queen Nymeria, who lead the Rhoynar to Dorne.</li><li><strong>The Floating Market</strong> This Market located near the mouth of the river is jam-packed with the boats of the Orphans selling there goods.</li></ul>\r\n<h3>Construction</h3>\r\n<p>This version of Planky Town by Bafflement replaces and older version by an unknown builder. It was started in late June 2014 and completed in September 2014. It was open to all builders and remained a quite active building spot during its construction.</p>\r\n<h3>Inspiration</h3>\r\n<p>The inspiration behind Planky Town came mostly from Moorish architecture. The Orphans of the Greenblood boats are based on the Flatboats of the Mississpipi.</p>\r\n<h3>Video</h3>\r\n<p>Plankytown was featured in Episode 24 of WesterosCraft Walks. DutchGuard interviews Bafflement as they explore the area.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/UhZ25T_TsIQ\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/plankytown1.png"
       },
       {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/planktown2.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/plankytown3.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Martell",
-        "destinationType": "town",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp plankytown",
-        "dateCompleted": "2014-09-10T07:00:00+00:00",
-        "projectLead": "Bafflement",
-        "dateStarted": "2014-06-30T07:00:00+00:00",
-        "application": null,
-        "banner": [
+        "typeHandle": "entryGrid",
+        "heading": "For New Builders",
+        "entryList": [
           {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-martell.png"
+            "title": "New Builders' Guide",
+            "slug": "new-builders-guide",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/newbuildersguideicon.png"
+              }
+            ]
+          },
+          {
+            "title": "Block Usage Guide",
+            "slug": "block-usage-guide",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/blockusageicon.png"
+              }
+            ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "title": "Salt Shore",
-    "slug": "salt-shore",
-    "copy": "<p><strong>House Gargalen</strong> is one of the major Dornish houses sworn to the Martells. Their seat is located at <strong>Salt Shore</strong> along the southern coast of Dorne and on the shores of the Summer Sea. Their arms depict a red cockatrice on gold with a black snake in its beak.<br></p>\r\n<h3>Features</h3>\r\n<ul><li>Salt Shore - a castle situated on a series of rocky crags among the waves of the Summer Sea</li><li>Salt Shore Town - a small port town near the castle, with houses built on top of the cliffs</li><li>Sand Steed Breeder - a facility where the famed Sand Steeds of Dorne are bred. It also has a small hippodrome.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Salt Shore was a co-op between InfinityMe123 and Deadlyzero98. It began in February 2015 and was finished in April the same year.</p>\r\n<h3>Inspiration</h3>\r\n<p>Salt Shore was inspired by numerous fortresses and structures in northern Africa, particularly Morocco. The choice of inspiration shows the fact that Dorne was inspired by areas such as Spain, north Africa and the Middle East.</p>\r\n<h3>Video</h3>\r\n<p>Salt Shore was featured in Episode 53 of WesterosCraft Walks, hosted by DutchGuard.</p>\r\n<figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Mpup-uVvGAs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>\r\n",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/SaltShore1.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Gargalen",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp saltshore",
-        "dateCompleted": "2015-04-08T07:00:00+00:00",
-        "projectLead": "InfinityMe123, Deadlyzero98",
-        "dateStarted": "2015-01-28T08:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Sandstone",
-    "slug": "sandstone",
-    "copy": "<p><strong>Sandstone</strong> is the seat of <strong>House Qorgyle</strong>, a noble house from Dorne. Their arms are three black scorpions over red. Known members of House Qorgyle in the books are Lord Commander Qorgyle, the predecessor of Jeor Mormont as commander of the Night's Watch, Lord Quentyn Qorgyle, and his son Ser Arron Qorgyle. In addition, Prince Oberyn Martell was fostered at Sandstone when he was younger. Sandstone is fairly isolated, located on a rocky outcrop in the middle of the deep sands, with the Prince's Pass to the north and Hellholt to the east. House Qorgyle holds a defensible position over the sandstone mesas, including a natural oasis. As such, they are an important pit stop for travelling caravans, providing water, resources, and respite from the dangerous deep sands. In addition, they also breed sand-steeds, horses bred specifically to endure the harsh Dornish conditions.<br></p>\r\n<ul></ul>\r\n<h3>Features</h3>\r\n<ul><li><strong>Sandstone Castle,</strong> the castle itself sits upon a large mesa, giving it a very defensible position. The castle is rather sprawling, having, in addition to a throne room and great hall, two general wings, one for servants and utility rooms and another for nobles and guests. The throne room of the castle also has a scorpion pit, allowing for a uniquely Dornish method of execution.</li><li><strong>Mesa Settlement</strong>, the main village lies within the mesas, where it is somewhat protected from the elements, and has direct access to the oasis for drinking water. Despite Sandstone being isolated, the village tends to be a bustling place, especially when travelling caravans stop for a few nights and trade various goods.</li><li><strong>Southern Settlement,</strong> a smaller village lies outside of the mesas, along the road to the south gate. This area is less protected than the other village, so it is less desirable. Most of Sandstone's animals are raised and butchered here, as it has access to more open space than the inside village does.</li><li><strong>Caravansaries,</strong> Sandstone contains three caravansaries, inns for caravans, each one situated by one of Sandstone's three gates. In addition, it also has two horse-breeding facilities, where Dornish sand-steeds are bred and sold.</li><li><strong>Caves, </strong>Sandstone's mesas are perforated by caves from general erosion, making it an interesting location to go spelunking. One particular cave, near the mesa settlement, has been turned into a makeshift fighting pit. The castle's dungeons are carved into the side of another cave, providing a convient way to dispose of bodies.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Emoticone11 and birdman7 first began terraforming on June 30th, 2014, and from there we plotted the villages, and then built the castle. The following people helped create the villages and other miscellaneous tasks:</p>\r\n<p>Ironmanthing<br>OllieDisc<br>LordThan<br>QuikFox<br>Bafflement<br>KillerGuppi<br>Kulmen29<br>mamorb<br>Thamus_Knoward<br>starcat98<br>Antalex<br>SMP<br>AdricTW<br>lEcthelionl<br>bigpeking<br>Syorre<br>Roottweiler<br>VeggieVampires<br>Denthead1409<br>InfinityMe123<br>larshping98<br>ImaginaryMdA<br>Madamayo<br>jMp007</p>\r\n<p>The southern caravansary was built by birdman7, while the eastern one was built by Ze_Ramen_Guy, and the western one was built by Bafflement. The southern horse-breeding complex was built by carcinogenius, and the western one was started by SMP but finished by Owid.</p>\r\n<p>The project was finished on October 16, 2014.</p>\r\n<h3>Inspiration</h3>\r\n\r\n\r\n<p>Sandstone used Wadi Rum, Jordan, as inspiration for the terraforming and mesas. </p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/sandstoneinsp.jpg\" data-image=\"102832\"></figure><p>Ait-benaddou in Morocco was used as the primary inspiration for the castle architectural style.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/sandstoneinsp1.jpg\" data-image=\"102833\"></figure>\r\n<h3>Build History</h3>\r\n\r\n<p>Sandstone was originally built by a1994j, however when the new map was released, we decided not to copy it over due to improvements in the server's building style.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/sandstoneold.jpg\" data-image=\"102834\"></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/sandstone1.png"
       },
       {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/sandstone2.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Qorgyle",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp sandstone",
-        "dateCompleted": "2014-10-16T07:00:00+00:00",
-        "projectLead": "Emoticone11, birdman7",
-        "dateStarted": "2014-06-30T07:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Shandystone",
-    "slug": "shandystone",
-    "copy": null,
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Martell",
-        "destinationType": "ruin",
-        "destinationStatus": "completed",
-        "destinationLevel": "one",
-        "warp": "/warp shadystone",
-        "dateCompleted": "2014-11-15T08:00:00+00:00",
-        "projectLead": "Bafflement",
-        "dateStarted": "2014-10-15T07:00:00+00:00",
-        "application": null,
-        "banner": [
+        "typeHandle": "entryGrid",
+        "heading": "Project Planning",
+        "entryList": [
           {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-martell.png"
+            "title": "General Building Guidelines",
+            "slug": "general-building-guidelines",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/buildingguidelinesicon.png"
+              }
+            ]
+          },
+          {
+            "title": "Immersion Build Application Guidelines",
+            "slug": "immersion-build-application-guidelines",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/immersionbuildicon.png"
+              }
+            ]
+          },
+          {
+            "title": "Canon Project Application Guidelines",
+            "slug": "project-application-guidelines",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/soloprojecticon.png"
+              }
+            ]
+          },
+          {
+            "title": "Official No-Redo Rule",
+            "slug": "official-no-redo-rule",
+            "typeHandle": "wikiMiscellaneous",
+            "parent": {
+              "slug": "miscellaneous"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/redoruleicon.png"
+              }
+            ]
+          },
+          {
+            "title": "Map Repository",
+            "slug": "map-repository",
+            "typeHandle": "wikiMiscellaneous",
+            "parent": {
+              "slug": "miscellaneous"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/maprepositoryicon.png"
+              }
+            ]
+          },
+          {
+            "title": "Projects Orphanage",
+            "slug": "projects-orphanage",
+            "typeHandle": "wikiMiscellaneous",
+            "parent": {
+              "slug": "miscellaneous"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/projectsorphanageicon.png"
+              }
+            ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "title": "Skyreach",
-    "slug": "skyreach",
-    "copy": null,
-    "images": [
+      },
       {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Skyreach1.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Fowler",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "one",
-        "warp": "/warp skyreach",
-        "dateCompleted": "2014-10-13T07:00:00+00:00",
-        "projectLead": "BantyRooster",
-        "dateStarted": "2014-06-29T07:00:00+00:00",
-        "application": null,
-        "banner": [
+        "typeHandle": "entryGrid",
+        "heading": "Other",
+        "entryList": [
           {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Fowler.png"
+            "title": "Custom Resource Pack",
+            "slug": "custom-resource-pack",
+            "typeHandle": "wikiMiscellaneous",
+            "parent": {
+              "slug": "miscellaneous"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/custompackicon.png"
+              }
+            ]
+          },
+          {
+            "title": "WorldEdit Basics",
+            "slug": "worldedit-basics",
+            "typeHandle": "wikiGuide",
+            "parent": {
+              "slug": "guides"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/webasicsicon.png"
+              }
+            ]
+          },
+          {
+            "title": "Schem Sets",
+            "slug": "schem-sets",
+            "typeHandle": "wikiMiscellaneous",
+            "parent": {
+              "slug": "miscellaneous"
+            },
+            "heroImage": [
+              {
+                "url": "https://cdn.westeroscraft.com/web/assets/website/schemsetsicon.png"
+              }
+            ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "title": "Spottswood",
-    "slug": "spottswood",
-    "copy": "<p><strong>Spottswood</strong> is a castle and village on the tip of the Broken Arm in Dorne, northeast of Sunspear. It is the seat of <strong>House Santagar</strong>, a knightly house. Of the two known members of House Santagar, one is Ser Aron Santagar, maester-at-arms at the Red Keep, and the other is Sylva Santigar, called \"Spotted Sylva\" because of her freckles but also because according to Dornish law, she is the heir to Spottswood. Their sigil is a spotted leopard with a golden axe, over a per bend sinister blue and white field.<br></p>\r\n<h3>Features</h3>\r\n<ul><li>A <strong>Sandstone Keep </strong>protects a small bay on one of the peninsulas reaching into the Narrow Sea to form the Broken Arm. On an island near the keep is a beacon, to guide sailors through the treacherous waters into the harbor.</li><li><strong>Village, </strong>a small cluster of stone houses sit across the bay from the Santagar keep. Notable is a small salt panning facility, which turns seawater into salt for preserving and flavoring food.</li><li><strong>Harbor Market, </strong>wooden docks support a small open market where ships unload goods from their trading in the Narrow Sea.</li><li><strong>Sand Dunes, </strong>beyond oasis of the coastal springs of Spottswood are endless sand dunes formed by coastal winds.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Ertylink00 and mamorb co-led the construction of Spottswood, which began in July 2014 and was completed in September 2014.</p>\r\n<h3>Inspiration</h3>\r\n<p>A fortress in Tunisia called the Ribat Monastir was the inspiration for the keep and some of the village houses.</p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/spottswoodinsp.jpg\" data-image=\"102843\"></figure>\r\n<h3>Video</h3>\r\n<p>Spottswood was featured in Episode 32 of WesterosCraft Walks. DutchGuard visits the villages, harbor market, and the keep. He also discusses some history of the Broken Arm, which was a land bridge connecting Westeros and Essos. The Children of the Forest destroyed the bridge, but not before the First Men had crossed over.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/GIftVnu_pQw\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Spottswood1.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Santagar",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "one",
-        "warp": "/warp spottswood",
-        "dateCompleted": "2014-09-10T07:00:00+00:00",
-        "projectLead": "ErtyLink, mamorb",
-        "dateStarted": "2014-07-08T07:00:00+00:00",
-        "application": null,
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Santagar.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Tower of Joy",
-    "slug": "tower-of-joy",
-    "copy": "<p><strong>Tower of Joy</strong> is a ruined, round tower in the Red Mountains of Dorne. It lays in the Prince's Pass. It was used as a hideout by Prince Rhaegar Targaryen, where he kept Lyanna Stark. Lyanna stayed there after Rhaegar left to lead his father's army against Robert Baratheon's rebells. At the end of the War, Eddard Stark found his sister there, dying, after he and six of his companions approached the tower, finding it guarded by three members of the Kingsguard.</p>\r\n<h3>Features</h3>\r\n<ul><li>The unfortunately named Tower of Joy.</li><li>The eight stone cairns Eddard made for those who died that day.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The Tower of Joy was first built in 2012 by SMP and manbearpig727, and was redone by Dav4 in 2014. </p><h3>Inspiration</h3><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/towerofjoyinsp1.jpg\" data-image=\"102846\"></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/TowerofJoy1.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "Abandoned",
-        "destinationType": "ruin",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp thetowerofjoy",
-        "dateCompleted": "2014-08-04T07:00:00+00:00",
-        "projectLead": "Dav4",
-        "dateStarted": "2014-07-04T07:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Vaith",
-    "slug": "vaith",
-    "copy": "<p><strong>House Vaith</strong> rules from their castle along the river that bears their name in Dorne. They are an Andal family sworn to House Martell. Their sigil includes three black leopards standing on a yellow pile on orange. Lord Vaith also bears the title of Lord of the Red Dunes, a reference to the beautiful landscape that unfolds near their castle. Vaith is both the name of the house and the small town</p>\r\n<ul></ul>\r\n<h3>Features</h3>\r\n<ul><li><strong>Vaith Castle,</strong> the Vaiths first built a sept and small keep on this great hill, the lighter colored stone of these buildings show their age. The rest of the great castle followed throughout the years. Panthers lazily lounge outside the gate and bedeck much of the castle. Luxurious gardens were commissioned to copy the famous Water Gardens of the Martells.</li><li><strong>Vaith Town,</strong> this market town is centered around its colorful marketplace. The ever-present black leopard is featured in mosaic on the square. Many of the townspeople have constructed towers in competition with their neighbors.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Construction on Vaith began January 24, 2015 and ended on March 24, 2015.<br></p>\r\n",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/vaith1.jpg"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Vaith",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp vaith",
-        "dateCompleted": "2015-03-24T07:00:00+00:00",
-        "projectLead": "Veggie, Tsarkaiser, NickShaiB",
-        "dateStarted": "2015-01-24T08:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Yronwood",
-    "slug": "yronwood",
-    "copy": "<p><strong>House Yronwood of Yronwood</strong> is the most powerful house in Dorne after the Martells. Yronwood Castle is the last fortress defending the Boneway; this is reflected in their title \"Warden of the Stone Way.\" The Yronwoods were kings in Dorne before the arrival of the Rhoynar and the head of the house continues to hold the title The Bloodroyal. According to semi-canon sources, their motto is \"We Guard the Way.\" Their blazon is a black portcullis grill over sand.</p>\r\n<p>House Yronwood is an ancient family who once ruled half of Dorne as the Kings of Yronwood, with domains significantly greater than House Martell of Sunspear, a fact the Yronwoods let no one forget. House Yronwood established Yronwood in the high valleys and green foothills below the peaks and seized control of the Stone Way, the second of the two great passes into Dorne. Well protected and comparably fertile, their lands were also well timbered and possessed of valuable deposits of iron, tin, and silver, making them the richest and most powerful of the Dornish kings. The Yronwood domain reached from Wyl to the headwaters of the Greenblood, and, at times, even the Sandship of House Martell. In Nymeria's War during the Rhoynish Invasion, House Martell and House Fowler sided with the invaders, another reason for the deep rivalry between these houses.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Yronwood Castle,</strong> a large, fortified castle at the base of the Red Mountains. (/warp yronwood)</li><li><strong>Yronwood Town,</strong> the town is located near the river and surrounded by lush farmland for crops and grazing. A bridge over the river connects Yronwood to the southern part of Dorne. (/warp yronwoodtown)</li><li><strong>Drinkwater,</strong> to the west of Yronwood Town is the holdings of House Drinkwater, landed knights sworn to the Yronwoods. (/warp drinkwater)</li><li><strong>Yronwood River and Delta,</strong> the river is the source of life for House Yronwood. It's banks are fertile and well-developed (/warp ywdelta)</li><li><strong>Marsh and Mining,</strong> the source of the river is a large marsh at the base of the Red Mountains. Several mines give the region a strong economy in metals, which House Yronwood makes into armor and weapons. (/warp ywmarsh and /warp ywmine1)</li><li><strong>Fishing Hamlets,</strong> the coastal waters are abundant with fish. (/warp ywh1 and /warp ywh2)</li><li><strong>Vineyard,</strong> the westernmost point of the Yronwood lands is a small hamlet with a flourishing vineyard. (/warp ywh3)</li></ul>\r\n<h3>Construction</h3>\r\n<p>This project was built by birdman7, lemonbear and Tact327. Construction began with terraforming a flat area at the end of the Boneway where the castle would be located. The castle was completed after about five months, and then the focus was shifted to the sprawling surrounding lands of House Yronwood.</p>\r\n<p>The area is canonically a green belt, a fact not known at the time of the initial terraform of the area. So to fulfil canon, extensive terraforming was needed. Terraforming began with painting the preexisting sandy/rocky terrain to a grassier mix, and then adding fields and pastures. The most extensive terraforming was done at the Yronwood delta and at the marshes, which completely changed the landscape. At the same time as the terraform, the large main town was being built, which is composed of roughly 80 houses. Altogether, the terraform and the town were completed in about four months.</p>\r\n<p>The build replaced an older version of Yronwood.started NickShaiB in October 2012 and completed in February 2013. </p>\r\n<h3>Inspiration</h3>\r\n<p>Spanish castles were the main source of inspiration for the castle of Yronwood, such as Castillo de la Mota and Butron Castle. </p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/yronwoodinsp1.jpg\" data-image=\"102852\"></figure><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/yronwoodinsp2.jpg\" data-image=\"102853\"></figure><p>The surrounding lands were based on desert floodplains, like the Nile in Egypt. <br></p><figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/yronwoodinsp3.jpg\" data-image=\"102854\"></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/yronwood-1.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/yronwood-7.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/yronwood-5.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/yronwood-1.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Yronwood",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "four",
-        "warp": "/warp yronwood",
-        "dateCompleted": "2015-07-31T07:00:00+00:00",
-        "projectLead": "birdman7, lemonbear, tacticaln00b27",
-        "dateStarted": "2014-11-19T08:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "High Hermitage",
-    "slug": "high-hermitage",
-    "copy": "<p><strong>High Hermitage</strong> is the seat of a cadet branch of House Dayne of Starfall in Dorne. They command the valley of the river Torentine, more specifically its canyon. The villagers earn their living from the vast pastures, citrus orchards and olive groves.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>High Hermitage,</strong> and old septry which was taken over by the Daynes and is now used as their seat. It is located at the end of a treacherous mountain road, sitting in the mouth of a cave.</li></ul>\r\n<ul><li><strong>Old Dayne fortress,</strong> a stronghold destroyed and rebuilt several times throughout history, commanded by the Daynes. As the last war in Dorne left it in the current state, it now towers over a village, reminding the smallfolk of its former glory. It is told that ghosts haunt the ruins of the fortress.</li></ul>\r\n<ul><li><strong>Bridge village,</strong> a village on the border with Blackmont, collecting taxes from everyone who desires to pass the bridge.</li></ul>\r\n<ul><li><strong>Twin fortress,</strong> a fortress on the left bank of the Torentine, it guards the entrance to the western part of the Dayne's holding.</li></ul>\r\n<ul><li><strong>Other settlements,</strong> small hamlets growing citruses and olives but also relying on small trade.<a title=\"Expand slideshow\" id=\"slideshow-0-5\"></a></li></ul>\r\n<ul></ul>\r\n<h3>Construction</h3>\r\n<p>High Hermitage is WhereRmyDragons' second project. The construction started in mid August and finished by the end of November.</p>\r\n<h3>Inspiration</h3>\r\n<p>The castle was inspired by Predjama castle in Slovenia and the surrounding lands by the Croatian region of Dalmatia. The project leader wanted to show two yet unseen sides of Dorne - a poor one, because of the infertile, rocky soil, and the side destroyed by war and time. Because of this, the Torentine's valley is full of numerous ruins of once great fortresses.</p>\r\n<h3>Video</h3>\r\n<p>High Hermitage is featured in Episode 64 of WesterosCraft Walks. HardzzGaming explains the layout of the region, the history of this castle, and explores the villages and castle.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/pWhLwq9ehWA\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/highhermitage-1.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/highhermitage-3.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/highhermitage-4.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/HighHermitage10.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Dayne",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "three",
-        "warp": "/warp highhermitage",
-        "dateCompleted": "2017-04-13T07:00:00+00:00",
-        "projectLead": "WhereRmyDragons",
-        "dateStarted": "2016-08-12T07:00:00+00:00",
-        "application": null,
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Dayne.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Starfall",
-    "slug": "starfall",
-    "copy": "<p><strong>House Dayne of Starfall</strong> is one of the oldest houses of Westeros, claiming ancestry from the Dawn Age. <strong>Starfall</strong> castle sits atop an island in the mouth of the Torentine, a vast river stretching throughout the red mountains. House Dayne, as with many Dornish houses were once kings, classically titled The Kings of the Torentine. The Daynes are famed for their ancient sword Dawn supposedly forged from the heart of a fallen star. Their sigil is a falling star crossed with a sword on a lilac field.</p>\r\n<p>Though their fame largely rests on their ancestral sword, called Dawn, and the men who wield it. The Daynes are also famed for their ancient keep. Supposedly the founding member of House Dayne followed a falling star, erecting a castle at the location which it fell.</p>\r\n<p>The Daynes have taken part in many battles between <a href=\"https://westeroscraft.com/wiki/dorne\" target=\"_blank\">Dorne</a> and the <a href=\"https://westeroscraft.com/wiki/reach\" target=\"_blank\">Reach</a>. The Daynes are famed for their feuding with <a href=\"https://westeroscraft.com/wiki/reach/old-oak\" target=\"_blank\">House Oakheart</a>, killing them for thousands of years. King Samwell \"The Starfire\" Dayne once burned and sacked <a href=\"https://westeroscraft.com/wiki/reach/oldtown\" target=\"_blank\">Oldtown</a>. House Dayne, as with all Dornish houses, eventually bent the knee to <a href=\"https://westeroscraft.com/wiki/dorne/sunspear\" target=\"_blank\">Nymeria</a>, but not before the last Dayne king Vorian, the sword of the evening, made sure she knew the might of House Dayne. The Daynes subsequently became fervent supporters of Nymeria, supporting her in her war against King Yorick V <a href=\"https://westeroscraft.com/wiki/dorne/yronwood\" target=\"_blank\">Yronwood</a>. Nymeria's third husband was Ser Davos Dayne, the Sword of the Morning.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Starfall Castle</strong>, a large, fortified castle in the mouth of the Torentine. (<em>/warp starfallcastle</em>)</li><li><strong>Starfall Town</strong>, the town is located on the banks of the river and surrounded by Spanish-style fields and ancient crumbling structures. A bridge over the river connects the town to an ancient sept.</li><li><strong>Palestone Tower</strong>, from which Lady Ashara Dayne jumped, is part of the castle</li></ul>\r\n<ul><li><strong>Starfall town</strong> (<em>/warp starfall</em>), is a town close to the castle. It contains ruins of a sept, new sept built on island on the river. Statue of Lady Ashara Dayne is located close to the road leading to the bridge on Torentine.</li></ul>\r\n<ul><li><strong>Starfall Holdfast</strong> (<em>/warp sfholdfast</em>), to the west of Starfall is an ancient crumbling holdfast, on the border of the Cuy and Dayne lands. House Dayne still collects tolls from the Reachmen which wish to trade with Dorne.</li></ul>\r\n<h3>Construction</h3>\r\n<p>This project was built by Veggie, with Tsarkaiser84 supporting initially on the castle. Extensive terraforming was required due to prior attempts by other builders to build Starfall. The main terraforming was due to the island on which Starfall castle sat.</p>\r\n<p>The area is canonically home to the Stoney Dornish. Thankfully, the land at Starfall reflects this, and is rocky and relatively mountainous. As such it is not the lush area of Dorne which you would find at Yronwood, or the arid lands of <a href=\"https://westeroscraft.com/wiki/dorne/wells\" target=\"_blank\">House Wells</a>.</p>\r\n<p>The build replaced an older version of Starfall began by Starcat. The project lead took efforts to remain somewhat faithful to Starcat's plans.</p>\r\n<h3>Inspiration</h3>\r\n<p>The builders took inspiration mainly from the Royal Palace of Olite in Spain. This fit the fantastical nature of Starfall which many builders were looking for. The starfall town was inspired by the medieval towns and cities of rural Spain.</p>\r\n<h3>Videos</h3>\r\n<p>Starfall was featured alongside Storm's End and other builds in WesterosCraft Cinematic One, released in January 2016. WesterosCraft Cinematic Three and episode 117 of WesterosCraft Walks both featured Starfall.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/9bOeCaK4yx4\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/FI6c2DtilM8\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/tPYSX1N8o-A\" allowfullscreen=\"\" frameborder=\"0\"></iframe></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Starfall10.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/starfall-1.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/starfall-3.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/starfall-2.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Dayne",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "four",
-        "warp": "/warp starfall",
-        "dateCompleted": "2017-04-12T07:00:00+00:00",
-        "projectLead": "Veggie, Tsarkaiser84",
-        "dateStarted": "2015-09-20T07:00:00+00:00",
-        "application": null,
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Dayne.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Wells (Dorne)",
-    "slug": "wells",
-    "copy": "<p><strong>Wells</strong> is the seat of the Dornish noble house of the same name. The village and keep of <strong>House Wells</strong> are located in the dunes north of the Greenblood river. House Wells was formed by a family of Westerosi descent who were exiled from their home. Members of the house braved the Dornish sands and stumbled upon an oasis right as they were about to succumb to exhaustion and defeat. Here, the members of this house raised a keep and vowed to aid any poor souls who stumbled upon their oasis. Members of House Wells are considered to be Sandy Dornishmen. Their faces are burned brown by the hot Dornish sun. House Wells' sigil and words are unknown, but the builder of this project has chosen the bright and lush colors you see around the keep as a representation of this house.</p>\r\n<p>The only known member of House Wells of Dorne is Ser William Wells, the heir of the house. He is a trusted friend and companion of Prince Quentyn Nymeros-Martell.</p>\r\n<p>There is also a House Wells of the North. It is unknown if this house is related to House Wells of Dorne.<br></p>\r\n<h3>Features</h3>\r\n<p><strong>Castle:</strong> The formidable keep was built by generations of members of this ancient house. House Wells has a very close connection to the Faith of the Seven. Some stories claim that the Crone's lantern lead the exiled ancestors of this house to the oasis which now serves as their home. Because of this, the family has centered the sept in their keep and dug their crypts underneath this holy building.</p>\r\n<p><strong>Oasis:</strong> The main attraction of House Wells' holdings. This luscious oasis helps irrigate the surrounding fields which have been strategically placed so as to obtain the most water possible from the underground spring.</p>\r\n<p><strong>Town Center:</strong> The cobbled town square is always very busy with merchants selling their wares and travelers strolling through with their animals to stay at the adjacent caravansary. </p>\r\n<p><strong>Motherhouse:</strong> There is a gray motherhouse in the village that is occupied by septas who dedicate their lives to the Crone and her teachings. These septas live out their days here in prayer and solitude with only the dry desert breeze to comfort them.</p>\r\n<h3>Construction</h3>\r\n<p>Construction for this build started on June 4, 2015 and ended on January 17, 2016. Building of Wells took a rather long time as the builder was currently in school and could not work on the project very often. However, when he did find time, he accomplished a lot in a short time. The current version of House Wells of Dorne replaces an older version built by a past builder by the name of 'dspa1r'. The old version of Wells can be found at <strong>/warp oldwells</strong>.</p>\r\n<h3>Video</h3>\r\n<p>House Wells of Dorne was featured in Episode 66 of WesterosCraft Walks, hosted by HardzzGaming.</p>\r\n<figure><iframe style=\"width: 500px; height: 281px;\" src=\"//www.youtube.com/embed/EPSh_bc-Chw\" frameborder=\"0\" allowfullscreen=\"\"></iframe></figure>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wells-3.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wells-2.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wells-1.jpg"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Wells (Dorne)",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "two",
-        "warp": "/warp wells",
-        "dateCompleted": "2017-04-12T07:00:00+00:00",
-        "projectLead": "bEnPwEn",
-        "dateStarted": "2015-04-06T07:00:00+00:00",
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Wyl",
-    "slug": "wyl",
-    "copy": "<p><strong>Wyl</strong> is a castle located in the north of Dorne, on the border between The Stormlands and Dorne. <strong>House Wyl</strong> played a big part during the wars of conquest when they captured Orys Baratheon and cut his and his knight’s hands off. They later on held Aemon the Dragonknight hostage, suspending him above a pit of snakes. Their sigil is a black adder biting a heel on a yellow field.<br></p>\r\n\r\n<h3>Features</h3>\r\n<ul><li><strong>The castle</strong> is a quite defensible stronghold, forcing people to go underground in order to get to the keep. There are three main towers: the lord’s tower, the guest’s tower and the staff tower.</li><li><strong>The main village,</strong> located north of the castle is comprised of a small market, an inn and a brothel. It is one of the first places people stop in when entering Dorne.</li><li><strong>The drawbridge,</strong> situated on the river Wyl, can be raised or lowered to prevent people from accessing Dorne.</li><li><strong>House Wyl’s flagship</strong> located to the east of the castle is a three masted galley used by the Wyls to protect the entrance to the river. It has an adder as a prow that surrounds the ship with it’s black colours.</li><li><strong>The Caravanserai,</strong> build by InfinityMe, situated to the west along the boneway, used by travellers wanting to rest.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The first verion of Wyl was done by jMp007 in 2015, the construction took about 4 months to finish.<br>Wyl is currently being redone by Endymion. <br></p>\r\n",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wyl-7.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wyl-6.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wyl-5.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wyl-4.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wyl-3.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wyl-1.png"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/wyl-2.png"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Wyl",
-        "destinationType": "castle",
-        "destinationStatus": "redoInProgress",
-        "destinationLevel": "three",
-        "warp": "/warp wyl",
-        "dateCompleted": null,
-        "projectLead": "Endymion",
-        "dateStarted": "2018-12-24T08:00:00+00:00",
-        "application": "https://forum.westeroscraft.com/threads/wyl-by-endymion.1463/",
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Wyl.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Blackmont",
-    "slug": "blackmont",
-    "copy": "<p><strong>Blackmont</strong> is the seat of <strong>House Blackmont</strong>, in the Red Mountains of Dorne and on the banks of the Torentine river. The Blackwoods are known for a history of fighting with neighbouring houses and raids on the Dornish Marches. House Blackmont's sigil is a black vulture carrying a pink infant, on yellow.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>A town, </strong>with multiple fruit stalls and a small dock and fishing boats.</li><li><strong>Four holdfasts, </strong>guarding outlying villages and pastures/fields.</li><li><strong>A sept,</strong> with a small village close-by housing the septon and a vineyard.</li><li><strong>Jousting lists,</strong> made of wood and painted with the house colours, located next to</li><li><strong>Stables,</strong> suitable to hold 8 horses, with an upper floor to store supplies and house stable workers.</li><li><strong>Blackmont Castle, </strong>built on a peak overlooking the town, made of sandstone with brown slate roofing</li><li><strong>A watchtower, </strong>only accessible from the castle, giving a view of the town and river.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Redklink put his application for the project in on the 28th June, 2014. After changing the application on 30th June, he received full approval on the 2nd July. On 14th July, hc25653 applied to build the first holdfast in the area. It was given full approval on July 22nd. deadlyzero98 applied to build the second holdfast and the nearby village on 27th July. He received a day later, on the 28th July.</p><p>Blackmont is currently being redone by Tsarkaiser84. <br></p>\r\n",
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Blackmont",
-        "destinationType": "castle",
-        "destinationStatus": "redoInProgress",
-        "destinationLevel": "two",
-        "warp": "/warp blackmont",
-        "dateCompleted": null,
-        "projectLead": "Tsarkaiser84",
-        "dateStarted": "2018-07-25T07:00:00+00:00",
-        "application": "https://forum.westeroscraft.com/threads/blackmont-by-tsar.1327/",
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Hellholt",
-    "slug": "hellholt",
-    "copy": null,
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Uller",
-        "destinationType": "castle",
-        "destinationStatus": "inProgress",
-        "destinationLevel": "two",
-        "warp": "/warp hellholt",
-        "dateCompleted": null,
-        "projectLead": "Majortom12466, _Benja",
-        "dateStarted": "2017-09-05T07:00:00+00:00",
-        "application": "https://forum.westeroscraft.com/threads/project-application-hellholt-by-majortom12466-_benja.50/",
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Sunspear",
-    "slug": "sunspear",
-    "copy": "<p><strong>Sunspear</strong> is the capital of <a href=\"https://westeroscraft.com/wiki/dorne\" title=\"Dorne\" target=\"_blank\">Dorne</a> and the seat of <strong>House Martell</strong>, the Great House of Dorne. It is a dense, coastal town and the buildings are cramped and they \"clung to the castle like barnacles to a galley’s hull.\"</p>\r\n<p>The three main structures of the castle are the Spear Tower, the Tower of the Sun, and the Sandship.</p>\r\n<p>There is an old version of Sunspear at <em>/warp sunspearold</em></p>",
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Martell",
-        "destinationType": "city",
-        "destinationStatus": "notStarted",
-        "destinationLevel": "six",
-        "warp": "/warp sunspear",
-        "dateCompleted": null,
-        "projectLead": null,
-        "dateStarted": null,
-        "application": "https://forum.westeroscraft.com/threads/sunspear-dorne-redo-discussion-megathread.2077/",
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-martell.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Ghaston Grey",
-    "slug": "ghaston-grey",
-    "copy": "\r\n<p><strong>Ghaston Grey </strong>is a small, bleak island in the Sea of <a href=\"https://westeroscraft.com/wiki/dorne\" target=\"_blank\">Dorne</a>. The castle is now used as a prison by <a href=\"https://westeroscraft.com/wiki/dorne/sunspear\" target=\"_blank\">House Martell</a>, as its insular nature would make an escape incredibly difficult.</p><h3>Features</h3>\r\n<p>The castle covers most of the island, and is composed of multiple layers of yards with gates leading up to the main tower. Most of the rooms around the castle are now used as prison cells, some in use and some currently empty, and there are a couple of more comfortably furnished cells to hold noble prisoners. </p>\r\n\r\n<h3>Construction</h3>\r\n<p>The castle layout plans went through multiple iterations, starting off as a smaller, more concentrated castle that evolved into the more spread out final layout.The island was completely re-terraformed for this project, as the existing island was too large for the castle plans and the terrain was also very outdated. Construction of the castle was relatively slow, taking over a year to complete.</p><h3>Inspiration</h3>\r\n<p>Stylistically, the castle drew on various castles from around the Mediterranean for inspiration, such as the the Spanish fort of Velez de la Gomera and the Aragonese castle on Ischia Island, Italy, as well as the Crimean Sudak Fortress. The build also drew some inspiration from Alcatraz, San Francisco, being a prison built on a small island, although the 1934 architectural style of Alcatraz was not thought to be fitting for Ghaston Grey. </p><ul></ul>",
-    "images": [
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey1.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey2.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey3.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey4.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey5.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey6.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey7.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey8.jpg"
-      },
-      {
-        "url": "https://cdn.westeroscraft.com/web/assets/destinations/ghastongrey9.jpg"
-      }
-    ],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Martell",
-        "destinationType": "castle",
-        "destinationStatus": "completed",
-        "destinationLevel": "three",
-        "warp": "/warp ghastongrey",
-        "dateCompleted": "2020-09-09T07:00:00+00:00",
-        "projectLead": "MDMeaux",
-        "dateStarted": "2019-08-15T07:00:00+00:00",
-        "application": "https://forum.westeroscraft.com/threads/ghaston-grey-by-mdmeaux.1827/",
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-martell.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Hellgate Hall",
-    "slug": "hellgate-hall",
-    "copy": "<p><a href=\"https://awoiaf.westeros.org/index.php/Hellgate_Hall\">From AWoIaF: </a></p>\r\n<p>\"<strong>Hellgate Hall</strong> was the seat of <a href=\"https://awoiaf.westeros.org/index.php/House_Dryland\" title=\"House Dryland\">House Dryland</a>, who ruled as <a href=\"https://awoiaf.westeros.org/index.php/King_of_the_Brimstone\" title=\"King of the Brimstone\">Kings</a> of the <a href=\"https://awoiaf.westeros.org/index.php/Brimstone\" title=\"Brimstone\">Brimstone</a> in <a href=\"https://awoiaf.westeros.org/index.php/Dorne\" title=\"Dorne\">Dorne</a> prior to <a href=\"https://awoiaf.westeros.org/index.php/Nymeria%27s_War\" title=\"Nymeria's War\">Nymeria's War</a>. It is unknown what happened to the castle after the defeat of King <a href=\"https://awoiaf.westeros.org/index.php/Lucifer_Dryland\" title=\"Lucifer Dryland\">Lucifer Dryland</a>, as he was the last of his line.\"</p>\r\n<p>It might be interesting if the castle was abandoned and, in time, swallowed up by the sands of the Dornish desert, leaving only what appears to be a gate to hell on the surface. Hence the name \"Hellgate Hall.\"</p>",
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Dryland",
-        "destinationType": "ruin",
-        "destinationStatus": "notStarted",
-        "destinationLevel": "one",
-        "warp": "/warp hellgatehall",
-        "dateCompleted": null,
-        "projectLead": null,
-        "dateStarted": null,
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Vulture's Roost",
-    "slug": "vultures-roost",
-    "copy": null,
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "Unknown",
-        "destinationType": "ruin",
-        "destinationStatus": "notStarted",
-        "destinationLevel": "one",
-        "warp": "/warp vulturesroost",
-        "dateCompleted": null,
-        "projectLead": null,
-        "dateStarted": null,
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Water Gardens",
-    "slug": "water-gardens",
-    "copy": null,
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Martell",
-        "destinationType": "miscellaneous",
-        "destinationStatus": "notStarted",
-        "destinationLevel": "one",
-        "warp": "/warp watergardens",
-        "dateCompleted": null,
-        "projectLead": null,
-        "dateStarted": null,
-        "application": null,
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-martell.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "The Tor",
-    "slug": "the-tor",
-    "copy": "<p>Originally started by <a href=\"https://forum.westeroscraft.com/threads/old-project-application-the-tor.940/\" target=\"_blank\">dspa1r on september 30 of 2014</a>, currently being redone by Margaery_Tyrell_.</p>",
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "House Jordayne",
-        "destinationType": "castle",
-        "destinationStatus": "inProgress",
-        "destinationLevel": "two",
-        "warp": "/warp thetor",
-        "dateCompleted": null,
-        "projectLead": "Margaery_Tyrell",
-        "dateStarted": "2020-12-11T08:00:00+00:00",
-        "application": "https://forum.westeroscraft.com/threads/the-tor-by-margaery-tyrell.2533/",
-        "banner": [
-          {
-            "url": "https://cdn.westeroscraft.com/web/assets/website/banner-Jordayne.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Extinct Houses of Dorne",
-    "slug": "extinct-houses-of-dorne",
-    "copy": "<p>There are several canon extinct houses of Dorne, the ruins of which might be built together as a Megabuild, or split off separately as full projects or Mini Builds. </p>\r\n<p>These houses were among the dozen First Men houses of the Greenblood who chose a High King of Dorne from among their number. Three of the houses (unspecified) were destroyed after a generation of warfare following a disputed election. The remaining houses were conquered during the Andal invasion.</p>\r\n<p>They are:</p>\r\n<p><a href=\"https://awoiaf.westeros.org/index.php/House_Lake_(Dorne)\">House Lake</a><a href=\"https://awoiaf.westeros.org/index.php/House_Briar\"><br>House Briar</a><a href=\"https://awoiaf.westeros.org/index.php/House_Brook\"><br>House Brook</a><br><a href=\"https://awoiaf.westeros.org/index.php/House_Brownhill\">House Brownhill</a><a href=\"https://awoiaf.westeros.org/index.php/House_Holt_(Dorne)\"><br>House Holt</a> - Possibly related to House Holt of the North, their former seat might have been <a href=\"https://westeroscraft.com/wiki/dorne/hellholt\">Hellholt</a>.<a href=\"https://awoiaf.westeros.org/index.php/House_Hull\"><br>House Hull</a><br><a href=\"https://awoiaf.westeros.org/index.php/House_Wade\">House Wade</a><a href=\"https://awoiaf.westeros.org/index.php/House_Shell_(Dorne)\"><br>House Shell</a> - Possibly related to House Shell of the Vale</p>",
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "Various",
-        "destinationType": "ruin",
-        "destinationStatus": "notStarted",
-        "destinationLevel": "one",
-        "warp": "warps not set",
-        "dateCompleted": null,
-        "projectLead": null,
-        "dateStarted": null,
-        "application": null,
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Bloodstone",
-    "slug": "bloodstone",
-    "copy": null,
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": null,
-        "destinationType": "landmark",
-        "destinationStatus": "inProgress",
-        "destinationLevel": "one",
-        "warp": "/warp bloodstone",
-        "dateCompleted": null,
-        "projectLead": "Birdman7",
-        "dateStarted": "2019-08-16T07:00:00+00:00",
-        "application": "https://forum.westeroscraft.com/threads/bloodstone-by-birdman7.1880/",
-        "banner": []
-      }
-    ]
-  },
-  {
-    "title": "Grey Gallows",
-    "slug": "grey-gallows",
-    "copy": null,
-    "images": [],
-    "projectDetails": [
-      {
-        "region": "dorne",
-        "house": "Unknown",
-        "destinationType": "landmark",
-        "destinationStatus": "notStarted",
-        "destinationLevel": "one",
-        "warp": "/warp greygallows",
-        "dateCompleted": null,
-        "projectLead": null,
-        "dateStarted": null,
-        "application": null,
-        "banner": []
       }
     ]
   }
