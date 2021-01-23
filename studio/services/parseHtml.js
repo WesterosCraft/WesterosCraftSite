@@ -43,6 +43,35 @@ function parseHTML(HTMLDoc) {
         }
       }
     },
+    // finds img with structure ul > li > img
+    {
+      deserialize(el, next, block) {
+        if (el.tagName.toLowerCase() !== 'ul') {
+          return undefined;
+        }
+        const list = Array.from(el.children).find((child) => child.tagName.toLowerCase() === 'li');
+        const img =
+          list && list.children
+            ? Array.from(list.children).find((child) => child.tagName.toLowerCase() === 'img')
+            : undefined;
+        const caption = Array.from(el.children).find(
+          (child) => child.tagName.toLowerCase() === 'figcaption'
+        );
+
+        if (img && img.getAttribute('src')) {
+          return block({
+            _type: 'figure',
+            image: {
+              // using the format for importing assets via the CLI
+              // https://www.sanity.io/docs/data-store/importing-data#import-using-the-cli
+              _sanityAsset: `image@${chopWikiaString(img.getAttribute('src'))}`
+            },
+            alt: img.getAttribute('alt'),
+            caption: (caption && caption.textContent) || undefined
+          });
+        }
+      }
+    },
     // finds img with structure figure > img
     {
       deserialize(el, next, block) {

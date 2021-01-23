@@ -1,6 +1,6 @@
 export default {
-  name: 'accordion',
-  title: 'Accordion',
+  name: 'accordionContent',
+  title: 'Accordion Content',
   type: 'object',
 
   fields: [
@@ -10,9 +10,8 @@ export default {
       title: 'Heading'
     },
     {
-      name: 'accordionContent',
-      type: 'array',
-      of: [{ type: 'accordionContent' }]
+      name: 'copy',
+      type: 'simpleRichText'
     }
   ]
 };

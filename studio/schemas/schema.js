@@ -15,6 +15,7 @@ import callToAction from './objects/callToAction';
 import documentGrid from './objects/documentGrid';
 import imageGallery from './objects/imageGallery';
 import accordion from './objects/accordion';
+import accordionContent from './objects/accordionContent';
 
 const schema = createSchema({
   name: 'default',
@@ -29,7 +30,8 @@ const schema = createSchema({
     callToAction,
     documentGrid,
     imageGallery,
-    accordion
+    accordion,
+    accordionContent
   ])
 });
 
