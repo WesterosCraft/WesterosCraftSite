@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Flex } from 'rebass';
 import { ButtonSelector } from '../../organisms/buttonSelector';
 import { Redactor } from '../../atoms/redactor/redactor';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 export const Banner = ({ data }) => (

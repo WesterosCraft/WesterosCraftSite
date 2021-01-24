@@ -4,7 +4,7 @@ import { Box } from 'rebass';
 
 import { Header } from '../components/organisms/header';
 import { Footer } from '../components/organisms/footer';
-import { initGA, logPageView } from '../utility/analytics';
+import { initGA, logPageView } from '../utils/analytics';
 
 const data = {
   navData: [

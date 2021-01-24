@@ -11,7 +11,7 @@ import {
   getDestinationLevel,
   flatten,
   camelCaseFormatter
-} from '../utility/helpers';
+} from '../utils/helpers';
 import { useTheme } from 'emotion-theming';
 import { Select } from '@rebass/forms';
 import { IoIosArrowDropdown } from 'react-icons/io';

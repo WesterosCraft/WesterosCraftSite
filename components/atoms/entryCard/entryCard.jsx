@@ -4,7 +4,7 @@ import { RegionIcon } from '../icons/regionIcon';
 import { useTheme } from 'emotion-theming';
 import { LocationTypeIcon } from '../icons/locationTypeIcon/locationTypeIcon';
 import Popup from 'reactjs-popup';
-import { camelCaseFormatter } from '../../../utility/helpers';
+import { camelCaseFormatter } from '../../../utils/helpers';
 import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon';
 
 export const EntryCard = React.forwardRef(({ data, href }, ref) => {

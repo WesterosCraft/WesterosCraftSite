@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 import { WIKI_QUERY } from '../queries/wikiQuery.gql';
 import { initializeApollo } from '../lib/apolloClient';
-import { computeBreadcrumbs } from '../utility/helpers';
+import { computeBreadcrumbs } from '../utils/helpers';
 
 const WikiPage = ({ initialApolloState }) => {
   const data = initialApolloState.ROOT_QUERY['entry({"site":"westeroscraft","slug":"wiki"})'];

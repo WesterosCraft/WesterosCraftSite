@@ -3,7 +3,7 @@ import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { Redactor } from '../../../components/atoms/redactor';
 import { Flex, Image, Text } from 'rebass';
 import _lowerCase from 'lodash/lowerCase';
-import { camelCaseFormatter, formatDate, computeBreadcrumbs } from '../../../utility/helpers';
+import { camelCaseFormatter, formatDate, computeBreadcrumbs } from '../../../utils/helpers';
 import SEO from '../../../components/organisms/seo/seo';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { FiExternalLink } from 'react-icons/fi';

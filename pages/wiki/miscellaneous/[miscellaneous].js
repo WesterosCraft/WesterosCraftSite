@@ -6,7 +6,7 @@ import { initializeApollo } from '../../../lib/apolloClient';
 import { MISC_QUERY, ALL_MISC_QUERY } from '../../../queries/miscQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
-import { computeBreadcrumbs } from '../../../utility/helpers';
+import { computeBreadcrumbs } from '../../../utils/helpers';
 
 const MiscellaneousPage = ({ initialApolloState, slug }) => {
   const router = useRouter();

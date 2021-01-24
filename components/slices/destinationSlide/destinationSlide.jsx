@@ -3,7 +3,7 @@ import { Text, Box, Flex } from 'rebass';
 import Slider from '../../atoms/slider/slider';
 import styled from '@emotion/styled';
 import { Redactor } from '../../atoms/redactor/redactor';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import Link from 'next/link';
 
 const SlideSelection = styled(Box)`

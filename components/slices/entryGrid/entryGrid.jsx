@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Heading } from 'rebass';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import { EntryCard } from '../../atoms/entryCard';
 import Link from 'next/link';
 

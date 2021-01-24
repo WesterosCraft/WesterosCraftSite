@@ -1,7 +1,7 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { Box } from 'rebass';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import { Redactor } from '../../atoms/redactor';
 
 export const Timeline = ({ data }) => {

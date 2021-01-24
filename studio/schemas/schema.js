@@ -6,6 +6,7 @@ import destination from './documents/destination';
 import about from './documents/about';
 import launcher from './documents/launcher';
 import guide from './documents/guide';
+import home from './documents/home';
 
 // objects
 import figure from './objects/figure';
@@ -21,6 +22,7 @@ import richText from './objects/richText';
 const schema = createSchema({
   name: 'default',
   types: schemaTypes.concat([
+    home,
     guide,
     video,
     destination,

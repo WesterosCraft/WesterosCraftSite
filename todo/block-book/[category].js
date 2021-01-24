@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { initializeApollo } from '../lib/apolloClient';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import { computeBreadcrumbs } from '../../utility/helpers';
+import { computeBreadcrumbs } from '../../utils/helpers';
 import { CATEGORY_QUERY, ALL_CATEGORY_PAGES_QUERY } from '../../queries/blockBookQuery.gql';
 
 const CategoryPage = ({ slug }) => {

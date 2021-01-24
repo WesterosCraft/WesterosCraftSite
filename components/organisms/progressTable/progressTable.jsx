@@ -12,9 +12,9 @@ import {
   useAsyncDebounce,
   useFilters
 } from 'react-table';
-import { camelCaseFormatter } from '../../../utility/helpers';
+import { camelCaseFormatter } from '../../../utils/helpers';
 import { levelFormatter, Styles } from './tableHelpers';
-import { regionSlugFormatter } from '../../../utility/regionSlugFormatter';
+import { regionSlugFormatter } from '../../../utils/regionSlugFormatter';
 import _lowerCase from 'lodash/lowerCase';
 
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Flex, Box, Text } from 'rebass';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { IoIosCopy } from 'react-icons/io';
 import styled from '@emotion/styled';
@@ -21,7 +21,9 @@ export const ImageGrid = ({ data }) => {
   const [open, setOpen] = useState(true);
 
   return (
-    <Box className="image-grid" {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
+    <Box
+      className="image-grid"
+      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
       <Flex
         flexDirection="row"
         alignItems="center"
@@ -31,9 +33,8 @@ export const ImageGrid = ({ data }) => {
           setOpen(!open);
         }}
         sx={{
-          cursor: 'pointer',
-        }}
-      >
+          cursor: 'pointer'
+        }}>
         <Text variant="heading3" as="h3">
           {data.heading || ''}
         </Text>
@@ -41,7 +42,10 @@ export const ImageGrid = ({ data }) => {
       </Flex>
 
       {open && (
-        <Flex flexDirection={['column', null, 'row']} flexWrap="wrap" className="image-grid-content-container">
+        <Flex
+          flexDirection={['column', null, 'row']}
+          flexWrap="wrap"
+          className="image-grid-content-container">
           {data.imageList.map((image, i) => {
             const script = _replace(data.clickToCopyScript, '<ID>', ` ${image.imageTitle}`);
             return (
@@ -58,7 +62,7 @@ export const ImageGrid = ({ data }) => {
                   overflow: 'hidden',
                   transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
                   '&:hover': {
-                    boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)',
+                    boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
                   },
                   '&:before': {
                     content: "''",
@@ -75,14 +79,13 @@ export const ImageGrid = ({ data }) => {
                     backgroundPosition: 'center',
                     zIndex: 1,
                     backgroundImage: `url(${(image.image.length && image.image[0].url) || null})`,
-                    backgroundSize: 'cover',
-                  },
+                    backgroundSize: 'cover'
+                  }
                 }}
                 pt={140}
                 px={4}
                 pb={5}
-                key={i}
-              >
+                key={i}>
                 <Flex flexDirection="column">
                   <Text
                     mt={2}
@@ -91,8 +94,7 @@ export const ImageGrid = ({ data }) => {
                     fontWeight="bold"
                     as="h6"
                     color="text"
-                    fontFamily="heading"
-                  >
+                    fontFamily="heading">
                     {image.imageTitle || ''}
                   </Text>
                   <Text mt={2} variant="paragraph" color="text">
@@ -104,9 +106,8 @@ export const ImageGrid = ({ data }) => {
                         sx={{
                           position: 'absolute',
                           bottom: '12px',
-                          right: '12px',
-                        }}
-                      >
+                          right: '12px'
+                        }}>
                         <IoIosCopy size="20px" />
                       </SVGWrapper>
                     </CopyToClipboard>

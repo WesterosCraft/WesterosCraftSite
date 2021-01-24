@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Flex, Text } from 'rebass';
 import { ButtonSelector } from '../../organisms/buttonSelector';
 import { Redactor } from '../../atoms/redactor/redactor';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Element } from 'react-scroll';
 import { OutboundLink } from 'react-ga';
@@ -33,7 +33,11 @@ export const ContentBanner = ({ data }) => (
           <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
             <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
           </Box>
-          {data.warningText &&  <Box mt={4}><Redactor dangerouslySetInnerHTML={{ __html: data.warningText }} /></Box>}
+          {data.warningText && (
+            <Box mt={4}>
+              <Redactor dangerouslySetInnerHTML={{ __html: data.warningText }} />
+            </Box>
+          )}
           <Box mt={[10]} mb={[8]}>
             <ButtonSelector data={data.buttons} mt="42px" />
           </Box>

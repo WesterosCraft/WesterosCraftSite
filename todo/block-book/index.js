@@ -8,7 +8,7 @@ import { initializeApollo } from '../../lib/apolloClient';
 import { useQuery } from '@apollo/client';
 import { BLOCK_BOOK_QUERY } from '../../queries/blockBookQuery.gql';
 import { useRouter } from 'next/router';
-import { computeBreadcrumbs } from '../../utility/helpers';
+import { computeBreadcrumbs } from '../../utils/helpers';
 
 const BlockBookPage = () => {
   const { data, loading } = useQuery(BLOCK_BOOK_QUERY);

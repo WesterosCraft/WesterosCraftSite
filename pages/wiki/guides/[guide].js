@@ -6,7 +6,7 @@ import { initializeApollo } from '../../../lib/apolloClient';
 import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
-import { computeBreadcrumbs } from '../../../utility/helpers';
+import { computeBreadcrumbs } from '../../../utils/helpers';
 
 const GuidePage = ({ slug, initialApolloState }) => {
   const router = useRouter();

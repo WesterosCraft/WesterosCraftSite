@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from 'rebass';
 import { Redactor } from '../../atoms/redactor/redactor';
 import { ButtonSelector } from '../../organisms/buttonSelector';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 export const TwoColumnText = ({ data }) => (
