@@ -4,6 +4,17 @@ export default {
   title: 'Image Gallery',
   fields: [
     {
+      name: 'heading',
+      type: 'string',
+      title: 'Heading'
+    },
+    {
+      name: 'copyScript',
+      type: 'string',
+      title: 'Copy Script',
+      description: 'A string thats copied to your clipboard on click'
+    },
+    {
       name: 'images',
       type: 'array',
       title: 'Images',
@@ -19,7 +30,18 @@ export default {
             {
               name: 'alt',
               type: 'string',
-              title: 'Alternative text'
+              title: 'Alternative text',
+              options: {
+                isHighlighted: true
+              }
+            },
+            {
+              name: 'description',
+              type: 'string',
+              title: 'Image Description',
+              options: {
+                isHighlighted: true
+              }
             }
           ]
         }

@@ -80,6 +80,23 @@ function transformCraftGuide(guide) {
                 };
               })
             }
+          : {},
+        slice.typeHandle === 'imageGrid'
+          ? {
+              _type: 'imageGallery',
+              heading: slice.heading,
+              copyScript: slice.clickToCopyScript,
+              images: slice.imageList.map((item) => {
+                return {
+                  _type: 'image',
+                  _sanityAsset:
+                    item && item.image.length > 0 ? `image@${item.image[0].url}` : undefined,
+                  heading: item.imageTitle,
+                  alt: item && item.image.length > 0 && item.image[0].title,
+                  description: item.imageDescription
+                };
+              })
+            }
           : {}
       );
     })
