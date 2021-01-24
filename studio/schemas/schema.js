@@ -18,6 +18,11 @@ import imageGallery from './objects/imageGallery';
 import accordion from './objects/accordion';
 import accordionContent from './objects/accordionContent';
 import richText from './objects/richText';
+import twoColumnText from './objects/twoColumnText';
+import destinationSlider from './objects/destinationSlider';
+import links from './objects/links';
+import buttons from './objects/buttons';
+import banner from './objects/banner';
 
 const schema = createSchema({
   name: 'default',
@@ -35,7 +40,12 @@ const schema = createSchema({
     imageGallery,
     accordion,
     accordionContent,
-    richText
+    richText,
+    twoColumnText,
+    destinationSlider,
+    links,
+    buttons,
+    banner
   ])
 });
 

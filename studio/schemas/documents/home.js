@@ -11,13 +11,46 @@ export default {
       validation: (Rule) => Rule.required()
     },
     {
-      title: 'Slug',
-      name: 'slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
-      }
+      title: 'Heading',
+      name: 'heading',
+      type: 'string'
+    },
+    {
+      title: 'Subheading',
+      name: 'subgheading',
+      type: 'string'
+    },
+    {
+      name: 'pageBuilder',
+      type: 'array',
+      title: 'Page builder',
+      of: [
+        { type: 'twoColumnText' },
+        { type: 'destinationSlider' },
+        { type: 'banner' },
+        {
+          name: 'twoColumnVideo',
+          type: 'object',
+          title: 'Two Column With Video',
+          fields: [
+            {
+              title: 'Text Column',
+              name: 'textColumn',
+              type: 'richText'
+            },
+            {
+              title: 'Video Link',
+              name: 'videoLink',
+              type: 'string'
+            },
+            {
+              title: 'Video Thumbnail',
+              name: 'videoThumbnail',
+              type: 'image'
+            }
+          ]
+        }
+      ]
     }
   ]
 };
