@@ -13,6 +13,8 @@ import { DESTINATION_QUERY } from '../../../queries/destinationQuery.gql';
 import { ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gql';
 import flatten from 'lodash/flatten';
 import { Spinner } from '../../../components/atoms/spinner';
+import Error from 'next/error';
+import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 
 const View = ({ data, ...props }) => (
   <>
@@ -20,24 +22,27 @@ const View = ({ data, ...props }) => (
   </>
 );
 
-const DestinationPage = ({ initialApolloState, slug }) => {
+const query = `*[_type == "destination" && slug.current == $slug][0]`;
+
+const DestinationPage = ({ preview, slug }) => {
   const router = useRouter();
 
-  if (router.isFallback) {
-    return <Spinner />;
+  if (!router.isFallback && !productsData) {
+    return <Error statusCode={404} />;
   }
 
-  const data =
-    initialApolloState.ROOT_QUERY[
-      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiDestination"})`
-    ];
-  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
+  // const data =
+  //   initialApolloState.ROOT_QUERY[
+  //     `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiDestination"})`
+  //   ];
+  // const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
 
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
-      {data && (
+      <h1>destination page</h1>
+      {/* {data && (
         <SEO
           title={data.title}
           description={data.pageDescription}
@@ -220,49 +225,66 @@ const DestinationPage = ({ initialApolloState, slug }) => {
             {data && data.copy && <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />}
           </>
         )}
-      </WikiLayout>
+      </WikiLayout> */}
     </>
   );
 };
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
+  const routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
+    "params": {"slug": slug.current}
+  }`);
 
-  const regions = await apolloClient.query({
-    query: ALL_REGIONS_QUERY
-  });
+  return {
+    paths: routes || null,
+    fallback: true
+  };
+  // const apolloClient = initializeApollo();
 
-  const pages = regions.data.entries.map((item) => {
-    return item.children.map((child) => {
-      return {
-        params: {
-          region: item.slug,
-          destination: child.slug
-        }
-      };
-    });
-  });
+  // const regions = await apolloClient.query({
+  //   query: ALL_REGIONS_QUERY
+  // });
 
-  const paths = flatten(pages);
+  // const pages = regions.data.entries.map((item) => {
+  //   return item.children.map((child) => {
+  //     return {
+  //       params: {
+  //         region: item.slug,
+  //         destination: child.slug
+  //       }
+  //     };
+  //   });
+  // });
 
-  return { paths, fallback: true };
+  // const paths = flatten(pages);
+
+  // return { paths, fallback: true };
 }
 
-export async function getStaticProps({ params }) {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: DESTINATION_QUERY,
-    variables: { slug: params.destination }
+export async function getStaticProps({ params = {}, preview = false }) {
+  const { slug } = params;
+  console.log(slug);
+  const test = await getClient(preview).fetch(query, {
+    slug
   });
 
   return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-      slug: params.destination
-    },
-    revalidate: 1
+    props: { preview, test, slug }
   };
+  // const apolloClient = initializeApollo();
+
+  // await apolloClient.query({
+  //   query: DESTINATION_QUERY,
+  //   variables: { slug: params.destination }
+  // });
+
+  // return {
+  //   props: {
+  //     initialApolloState: apolloClient.cache.extract(),
+  //     slug: params.destination
+  //   },
+  //   revalidate: 1
+  // };
 }
 
 export default DestinationPage;

@@ -5,6 +5,8 @@ import {
   createPreviewSubscriptionHook
 } from 'next-sanity';
 
+// Check https://github.com/sanity-io/sanity-template-nextjs-ecommerce/blob/b21897d2c9068acbd73f744e9590d607eef2afbc/pages/index.js for nextjs/sanity example
+
 const config = {
   /**
    * Find your project ID and dataset in `sanity.json` in your studio project.

@@ -11,15 +11,31 @@ import { useMediaQuery } from 'react-responsive';
 import { HOME_QUERY } from '../queries/homeQuery.gql';
 import { initializeApollo } from '../lib/apolloClient';
 import { event } from 'react-ga';
+import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { useRouter } from 'next/router';
+import Error from 'next/error';
 
-const IndexPage = ({ initialApolloState }) => {
-  const data = initialApolloState.ROOT_QUERY['entry({"section":"home","site":"westeroscraft"})'];
-  const homepageData = data.homePageContent[0];
-  const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
+const query = `*[_type == "home"]`;
+
+const IndexPage = ({ preview, productsData }) => {
+  // const data = initialApolloState.ROOT_QUERY['entry({"section":"home","site":"westeroscraft"})'];
+  // const homepageData = data.homePageContent[0];
+  // const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
+  const router = useRouter();
+
+  if (!router.isFallback && !productsData) {
+    return <Error statusCode={404} />;
+  }
+
+  const { data: products } = usePreviewSubscription(query, {
+    initialData: productsData,
+    enabled: preview || router.query.preview !== null
+  });
 
   return (
     <>
-      <SEO
+      <h1>hi hello</h1>
+      {/* <SEO
         title={data.pageTitle || data.title}
         description={data.pageDescription}
         image={data.pageEntry && data.pageImage[0].url}
@@ -207,24 +223,32 @@ const IndexPage = ({ initialApolloState }) => {
             loading="lazy"
           />
         </Box>
-      </Box>
+      </Box> */}
     </>
   );
 };
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: HOME_QUERY
-  });
+export async function getStaticProps({ params = {}, preview = false }) {
+  const productsData = await getClient(preview).fetch(query);
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract()
-    },
-    revalidate: 1
+      preview,
+      productsData
+    }
   };
+  // const apolloClient = initializeApollo();
+
+  // await apolloClient.query({
+  //   query: HOME_QUERY
+  // });
+
+  // return {
+  //   props: {
+  //     initialApolloState: apolloClient.cache.extract()
+  //   },
+  //   revalidate: 1
+  // };
 }
 
 export default IndexPage;
