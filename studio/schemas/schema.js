@@ -16,6 +16,7 @@ import documentGrid from './objects/documentGrid';
 import imageGallery from './objects/imageGallery';
 import accordion from './objects/accordion';
 import accordionContent from './objects/accordionContent';
+import richText from './objects/richText';
 
 const schema = createSchema({
   name: 'default',
@@ -31,7 +32,8 @@ const schema = createSchema({
     documentGrid,
     imageGallery,
     accordion,
-    accordionContent
+    accordionContent,
+    richText
   ])
 });
 

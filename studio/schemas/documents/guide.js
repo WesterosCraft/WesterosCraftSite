@@ -23,15 +23,14 @@ export default {
     {
       title: 'Icon',
       name: 'icon',
-      type: 'image',
-      description: 'Name of guide'
+      type: 'image'
     },
     {
       name: 'pageBuilder',
       type: 'array',
       title: 'Page builder',
       of: [
-        { type: 'object', name: 'richText', fields: [{ name: 'text', type: 'simpleRichText' }] },
+        { type: 'richText' },
         { type: 'documentGrid' },
         { type: 'imageGallery' },
         { type: 'accordion' }

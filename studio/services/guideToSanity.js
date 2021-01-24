@@ -2,6 +2,7 @@ const dataToConvert = require('./jsonToConvert.json');
 const fs = require('fs');
 const parseHTML = require('./parseHtml');
 const jq = require('node-jq');
+const sliceZone = require('./sliceZone');
 
 function convertNullToDefault(value, defaultValue = '') {
   if (value === null) {
@@ -43,63 +44,7 @@ function transformCraftGuide(guide) {
             _sanityAsset: `image@${guide.heroImage[0].url}`
           }
         : undefined,
-    pageBuilder: guide.wikiSlices.map((slice) => {
-      return (
-        slice.typeHandle === 'text'
-          ? {
-              _type: 'richText',
-              text: parseHTML(slice.redactor)
-            }
-          : {},
-        slice.typeHandle === 'entryGrid'
-          ? {
-              _type: 'documentGrid',
-              heading: slice.heading,
-              documents: slice.entryList.map((entry) => {
-                return {
-                  _type: 'reference',
-                  _ref: entry.title
-                    .toLowerCase()
-                    .replace(/\s+/g, '-')
-                    .replace(/'/g, '')
-                    .replace(/\(/g, '')
-                    .replace(/\)/g, '')
-                    .slice(0, 200)
-                };
-              })
-            }
-          : {},
-        slice.typeHandle === 'accordion'
-          ? {
-              _type: 'accordion',
-              heading: slice.heading,
-              accordionContent: slice.accordionContent.map((item) => {
-                return {
-                  heading: item.heading,
-                  copy: parseHTML(item.copy)
-                };
-              })
-            }
-          : {},
-        slice.typeHandle === 'imageGrid'
-          ? {
-              _type: 'imageGallery',
-              heading: slice.heading,
-              copyScript: slice.clickToCopyScript,
-              images: slice.imageList.map((item) => {
-                return {
-                  _type: 'image',
-                  _sanityAsset:
-                    item && item.image.length > 0 ? `image@${item.image[0].url}` : undefined,
-                  heading: item.imageTitle,
-                  alt: item && item.image.length > 0 && item.image[0].title,
-                  description: item.imageDescription
-                };
-              })
-            }
-          : {}
-      );
-    })
+    pageBuilder: sliceZone(guide.wikiSlices)
   };
 }
 
@@ -120,7 +65,7 @@ function clean(object) {
 }
 
 const transformArray = (arr) => {
-  return clean(arr.map((item) => transformCraftGuide(item)));
+  return arr.map((item) => transformCraftGuide(item));
 };
 
 fs.writeFileSync(
