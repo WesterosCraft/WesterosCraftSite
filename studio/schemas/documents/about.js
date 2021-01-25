@@ -18,6 +18,18 @@ export default {
         source: 'title',
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
       }
+    },
+    {
+      title: 'Heading',
+      name: 'heading',
+      type: 'string'
+    },
+    { name: 'video', type: 'video' },
+    {
+      name: 'pageBuilder',
+      type: 'array',
+      title: 'Page builder',
+      of: [{ type: 'twoColumnText' }, { type: 'richText' }]
     }
   ]
 };

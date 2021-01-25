@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Text, Box, Flex } from 'rebass';
 import Slider from '../../atoms/slider/slider';
 import styled from '@emotion/styled';
-import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utils/helpers';
 import Link from 'next/link';
 import { SanityBlockContent } from '../../atoms/blockContent';
@@ -16,8 +15,6 @@ const SlideSelection = styled(Box)`
 
 export const DestinationSlide = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  console.log(data)
 
   return (
     <Box
@@ -96,7 +93,7 @@ export const DestinationSlide = ({ data }) => {
             }}
             my={2}
           />
-          {/* {data.linkBuilder.map((link, i) => (
+          {data.linkBuilder.map((link, i) => (
             <Box
               py={2}
               px={3}
@@ -110,7 +107,7 @@ export const DestinationSlide = ({ data }) => {
                 }
               }}
               key={i}>
-              <Link href={link.additionalLink} key={link.customLinkText}>
+              <Link href={link.link} key={i}>
                 <Text
                   as="span"
                   color="text"
@@ -120,11 +117,11 @@ export const DestinationSlide = ({ data }) => {
                     }
                   }}
                   fontSize={2}>
-                  {link.customLinkText}
+                  {link.linkText}
                 </Text>
               </Link>
             </Box>
-          ))} */}
+          ))}
         </Flex>
       </Flex>
     </Box>

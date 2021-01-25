@@ -8,8 +8,6 @@ import { BsTriangleFill } from 'react-icons/bs';
 import SEO from '../components/organisms/seo/seo';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useMediaQuery } from 'react-responsive';
-import { HOME_QUERY } from '../queries/homeQuery.gql';
-import { initializeApollo } from '../lib/apolloClient';
 import { event } from 'react-ga';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import { useRouter } from 'next/router';
@@ -19,15 +17,12 @@ const query = `*[_type == "home"]`;
 
 const IndexPage = ({ preview, homeData }) => {
   const data = homeData[0];
-  // const homepageData = data.homePageContent[0];
   const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
   const router = useRouter();
 
   if (!router.isFallback && !homeData) {
     return <Error statusCode={404} />;
   }
-
-  console.log(data);
 
   // const { data: products } = usePreviewSubscription(query, {
   //   initialData: homeData,

@@ -6,7 +6,6 @@ import { event } from 'react-ga';
 
 export const ButtonSelector = ({ buttons }) =>
   buttons.map((button, index) => {
-    console.log(button)
     if (button.linkType === 'internal') {
       return (
         <Link href={button.link} key={index} passHref>

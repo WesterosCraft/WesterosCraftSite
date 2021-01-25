@@ -2,10 +2,8 @@ import React from 'react';
 import { Box, Flex, Image } from 'rebass';
 import { TwoColumnLayout } from '../../organisms/twoColumnLayout';
 import { VideoEmbed } from '../../organisms/videoEmbed';
-import { Redactor } from '../../atoms/redactor/redactor';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { SanityBlockContent } from '../../atoms/blockContent'
-import { urlFor } from '../../../utils/sanity';
+import { SanityBlockContent } from '../../atoms/blockContent';
 
 export const TwoColumnVideo = ({ data }) => (
   <Box className="two-column-video">
@@ -42,7 +40,7 @@ export const TwoColumnVideo = ({ data }) => (
       </TwoColumnLayout.ColumnOne>
       <TwoColumnLayout.ColumnTwo ml={0} sx={{ position: 'relative' }}>
         <ScrollAnimation animateIn="fadeInRight" animateOnce>
-          <VideoEmbed embedUrl={data.videoLink} thumbnail={urlFor(data.videoThumbnail.asset)} p={0} />
+          <VideoEmbed embedUrl={data.videoLink} thumbnail={data.videoThumbnail.asset._ref} p={0} />
         </ScrollAnimation>
       </TwoColumnLayout.ColumnTwo>
     </TwoColumnLayout>
