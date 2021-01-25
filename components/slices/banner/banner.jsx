@@ -4,12 +4,14 @@ import { ButtonSelector } from '../../organisms/buttonSelector';
 import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { SanityBlockContent } from '../../atoms/blockContent';
 
-export const Banner = ({ data }) => (
+export const Banner = ({ data: { copy, buttonBuilder } }) => (
   <Box
     sx={{ position: 'relative' }}
     className="banner"
-    {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
+    // {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
+  >
     <ScrollAnimation animateIn="fadeInUp" animateOnce>
       <Flex
         className="banner-content-card"
@@ -24,9 +26,9 @@ export const Banner = ({ data }) => (
         px={['46px', '80px', null, '100px']}
         py={11}>
         <Box textAlign={['center', null, 'left']} mb={[9, null, 0]} mr={[0, null, 7]}>
-          <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
+          <SanityBlockContent blocks={copy.copy} />
         </Box>
-        <ButtonSelector data={data.buttons} />
+        {buttonBuilder && buttonBuilder.length > 0 && <ButtonSelector buttons={buttonBuilder} />}
       </Flex>
     </ScrollAnimation>
     <Box

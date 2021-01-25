@@ -4,19 +4,21 @@ import ReactPlayer from 'react-player';
 import { configProps } from '../../../utils/helpers';
 import { IoMdPlay } from 'react-icons/io';
 import { VideoWrapper, VideoThumbnail, PlayButton } from './styledVideo';
+import { urlFor } from '../../../utils/sanity';
 
-export const VideoEmbed = ({ data, ...props }) => {
+export const VideoEmbed = ({ maxWidth, thumbnail, embedUrl, ...props }) => {
   const [isPlaying, setPlaying] = useState(false);
 
   return (
     <Box
       width={1}
-      maxWidth={data.maxWidth || 756}
+      maxWidth={maxWidth || 756}
       mx="auto"
       className="video-embed"
       px={5}
       {...props}
-      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
+      // {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
+      >
       <VideoWrapper
         alignItems="center"
         justifyContent="center"
@@ -24,7 +26,7 @@ export const VideoEmbed = ({ data, ...props }) => {
         onClick={() => setPlaying(!isPlaying)}>
         <ReactPlayer
           className="react-player"
-          url={data.videoUrl}
+          url={embedUrl}
           playing={isPlaying}
           width="100%"
           height="100%"
@@ -43,7 +45,7 @@ export const VideoEmbed = ({ data, ...props }) => {
         </PlayButton>
         <VideoThumbnail
           display={isPlaying ? 1 : 0}
-          src={data.thumbnail[0].url}
+          src={urlFor(thumbnail)}
           alt="Video thumbnail"
           loading="lazy"
         />

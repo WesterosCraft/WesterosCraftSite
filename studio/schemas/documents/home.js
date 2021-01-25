@@ -17,7 +17,7 @@ export default {
     },
     {
       title: 'Subheading',
-      name: 'subgheading',
+      name: 'subheading',
       type: 'string'
     },
     {

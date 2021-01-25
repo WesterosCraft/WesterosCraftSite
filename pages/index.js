@@ -17,28 +17,29 @@ import Error from 'next/error';
 
 const query = `*[_type == "home"]`;
 
-const IndexPage = ({ preview, productsData }) => {
-  // const data = initialApolloState.ROOT_QUERY['entry({"section":"home","site":"westeroscraft"})'];
+const IndexPage = ({ preview, homeData }) => {
+  const data = homeData[0];
   // const homepageData = data.homePageContent[0];
-  // const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
   const router = useRouter();
 
-  if (!router.isFallback && !productsData) {
+  if (!router.isFallback && !homeData) {
     return <Error statusCode={404} />;
   }
 
-  const { data: products } = usePreviewSubscription(query, {
-    initialData: productsData,
-    enabled: preview || router.query.preview !== null
-  });
+  console.log(data);
+
+  // const { data: products } = usePreviewSubscription(query, {
+  //   initialData: homeData,
+  //   enabled: preview || router.query.preview !== null
+  // });
 
   return (
     <>
-      <h1>hi hello</h1>
-      {/* <SEO
+      <SEO
         title={data.pageTitle || data.title}
-        description={data.pageDescription}
-        image={data.pageEntry && data.pageImage[0].url}
+        description={data.pageDescription || ''}
+        // image={data.pageEntry && data.pageImage[0].url}
       />
       <Flex
         as="section"
@@ -55,12 +56,12 @@ const IndexPage = ({ preview, productsData }) => {
         <Box textAlign="center" className="homepage-text" sx={{ zIndex: 1 }}>
           <ScrollAnimation animateIn="fadeIn" delay={200} animateOnce>
             <Heading as="h1" variant="heading1">
-              {homepageData.heading || ''}
+              {data.heading || ''}
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
             <Heading as="h2" variant="heading2" mt={5}>
-              {homepageData.subheading || ''}
+              {data.subheading || ''}
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce>
@@ -161,7 +162,7 @@ const IndexPage = ({ preview, productsData }) => {
         mx="auto"
         className="homepage-content"
         px={5}>
-        <SliceZone slices={data.pageSlices} />
+        <SliceZone slices={data.pageBuilder} />
       </Flex>
       <Box>
         <Box sx={{ position: 'relative' }} maxWidth={1120} px={5} mx="auto" width={1}>
@@ -223,32 +224,20 @@ const IndexPage = ({ preview, productsData }) => {
             loading="lazy"
           />
         </Box>
-      </Box> */}
+      </Box>
     </>
   );
 };
 
 export async function getStaticProps({ params = {}, preview = false }) {
-  const productsData = await getClient(preview).fetch(query);
+  const homeData = await getClient(preview).fetch(query);
 
   return {
     props: {
       preview,
-      productsData
+      homeData
     }
   };
-  // const apolloClient = initializeApollo();
-
-  // await apolloClient.query({
-  //   query: HOME_QUERY
-  // });
-
-  // return {
-  //   props: {
-  //     initialApolloState: apolloClient.cache.extract()
-  //   },
-  //   revalidate: 1
-  // };
 }
 
 export default IndexPage;

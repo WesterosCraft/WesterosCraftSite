@@ -10,7 +10,7 @@ import { Timeline } from '../timeline';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
-    switch (slice.typeHandle) {
+    switch (slice._type) {
       case 'banner':
         return <Banner data={slice} key={index} />;
       case 'destinationSlider':
