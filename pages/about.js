@@ -6,6 +6,7 @@ import { getClient, usePreviewSubscription } from '../utils/sanity';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
 import { VideoEmbed } from '../components/organisms/videoEmbed';
+import { Spacer } from '../components/slices/spacer';
 
 const query = `*[_type == "about"]`;
 
@@ -27,6 +28,7 @@ const AboutPage = ({ preview, aboutData }) => {
       <Heading variant="heading2" textAlign="center" mt={[12]}>
         {data.heading}
       </Heading>
+      <Spacer data={{ mobile: 72 }} />
       <VideoEmbed
         maxWidth={756}
         thumbnail={data.video.thumbnail.asset._ref}

@@ -1,6 +1,6 @@
 export default {
-  title: 'Launcher',
-  name: 'launcher',
+  title: 'Progress',
+  name: 'progress',
   type: 'document',
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fields: [
@@ -25,10 +25,9 @@ export default {
       type: 'string'
     },
     {
-      name: 'pageBuilder',
-      type: 'array',
-      title: 'Page builder',
-      of: [{ type: 'twoColumnText' }, { type: 'richText' }, { type: 'banner' }, { type: 'spacer' }]
+      title: 'Subheading',
+      name: 'subheading',
+      type: 'string'
     }
   ]
 };

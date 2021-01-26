@@ -15,8 +15,9 @@ import {
 import { useTheme } from 'emotion-theming';
 import { Select } from '@rebass/forms';
 import { IoIosArrowDropdown } from 'react-icons/io';
-import { initializeApollo } from '../lib/apolloClient';
-import { PROGRESS_QUERY } from '../queries/progressQuery.gql';
+import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { useRouter } from 'next/router';
+import Error from 'next/error';
 
 const RegionProgress = ({ children, percent = 40, theme }) => (
   <Flex flexDirection={['column', 'row']} width={1} my={1}>
@@ -27,55 +28,60 @@ const RegionProgress = ({ children, percent = 40, theme }) => (
   </Flex>
 );
 
-const ProgressPage = ({ initialApolloState }) => {
-  const theme = useTheme();
-  const entries =
-    initialApolloState.ROOT_QUERY[
-      'entries({"orderBy":"title","section":"wiki","site":"westeroscraft","type":"wikiDestination"})'
-    ];
-  const entry = initialApolloState.ROOT_QUERY['entry({"section":"progress"})'];
+const query = `*[_type == "progress"]`;
+const destinationQuery = `*[_type == "destination"]`;
 
-  const memoData = useMemo(() => flatten(entries), [entries]);
-  const totalComplete = memoData.filter((item) => item.destinationStatus === 'completed');
+const ProgressPage = ({ preview, progressData, destinationData }) => {
+  const theme = useTheme();
+  const router = useRouter();
+  const data = progressData[0];
+
+  if (!router.isFallback && !progressData) {
+    return <Error statusCode={404} />;
+  }
+
+  const memoData = useMemo(() => flatten(destinationData), [destinationData]);
+
+  const totalComplete = memoData.filter((item) => item.projectStatus === 'completed');
   const totalInProgress = memoData.filter(
-    (item) => item.destinationStatus === 'inProgress' || item.destinationStatus === 'redoInProgress'
+    (item) => item.projectStatus === 'inProgress' || item.projectStatus === 'redoInProgress'
   );
   const totalNotStarted = memoData.filter(
-    (item) => item.destinationStatus === 'abandoned' || item.destinationStatus === 'notStarted'
+    (item) => item.projectStatus === 'abandoned' || item.projectStatus === 'notStarted'
   );
 
   // Overall percentage //
   const levelComplete = totalComplete.reduce((a, b) => {
-    return a + getDestinationLevel(b.destinationLevel);
+    return a + getDestinationLevel(b.difficultyLevel);
   }, 0);
 
   const levelInProgress = totalInProgress.reduce((a, b) => {
-    return a + getDestinationLevel(b.destinationLevel);
+    return a + getDestinationLevel(b.difficultyLevel);
   }, 0);
 
   const levelNotStarted = totalNotStarted.reduce((a, b) => {
-    return a + getDestinationLevel(b.destinationLevel);
+    return a + getDestinationLevel(b.difficultyLevel);
   }, 0);
 
   const regionLevelComplete = (region) =>
     totalComplete
       .filter((item) => item.region === region)
       .reduce((a, b) => {
-        return a + getDestinationLevel(b.destinationLevel);
+        return a + getDestinationLevel(b.difficultyLevel);
       }, 0);
 
   const regionLevelInProgress = (region) =>
     totalInProgress
       .filter((item) => item.region === region)
       .reduce((a, b) => {
-        return a + getDestinationLevel(b.destinationLevel);
+        return a + getDestinationLevel(b.difficultyLevel);
       }, 0);
 
   const regionLevelNotStarted = (region) =>
     totalNotStarted
       .filter((item) => item.region === region)
       .reduce((a, b) => {
-        return a + getDestinationLevel(b.destinationLevel);
+        return a + getDestinationLevel(b.difficultyLevel);
       }, 0);
 
   // Region percentages //
@@ -251,16 +257,16 @@ const ProgressPage = ({ initialApolloState }) => {
   return (
     <>
       <SEO
-        title={entry.pageTitle || entry.title}
-        description={entry.pageDescription}
-        image={entry.pageEntry && entry.pageImage[0].url}
+        title={data.pageTitle || data.title}
+        description={data.pageDescription}
+        image={data.pageEntry}
       />
       <Flex px={5} flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {entry.heading}
+          {data.heading}
         </Heading>
         <Heading variant="heading4" textAlign="center" maxWidth={756} mx="auto" px={5} mt={4}>
-          {entry.subheading}
+          {data.subheading}
         </Heading>
         <Flex
           width={1}
@@ -307,7 +313,7 @@ const ProgressPage = ({ initialApolloState }) => {
           justifyContent="center"
           mt={7}>
           <Card color={theme.colors.ironIslands}>
-            <Text variant="heading3">{entries.length}</Text>
+            <Text variant="heading3">{destinationData.length}</Text>
             <Text>total projects</Text>
           </Card>
           <Card color={theme.colors.success}>
@@ -540,18 +546,16 @@ const ProgressPage = ({ initialApolloState }) => {
   );
 };
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: PROGRESS_QUERY
-  });
+export async function getStaticProps({ params = {}, preview = false }) {
+  const progressData = await getClient(preview).fetch(query);
+  const destinationData = await getClient(preview).fetch(destinationQuery);
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract()
-    },
-    revalidate: 1
+      preview,
+      progressData,
+      destinationData
+    }
   };
 }
 

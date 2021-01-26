@@ -25,6 +25,7 @@ import buttons from './objects/buttons';
 import banner from './objects/banner';
 import spacer from './objects/spacer';
 import rookery from './documents/rookery';
+import progress from './documents/progress';
 
 const schema = createSchema({
   name: 'default',
@@ -49,7 +50,8 @@ const schema = createSchema({
     buttons,
     banner,
     spacer,
-    rookery
+    rookery,
+    progress
   ])
 });
 
