@@ -11,7 +11,6 @@ const query = `*[_type == "about"]`;
 
 const AboutPage = ({ preview, aboutData }) => {
   const data = aboutData[0];
-  console.log(data);
   const router = useRouter();
 
   if (!router.isFallback && !aboutData) {

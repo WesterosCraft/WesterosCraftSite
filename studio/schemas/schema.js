@@ -23,6 +23,8 @@ import destinationSlider from './objects/destinationSlider';
 import links from './objects/links';
 import buttons from './objects/buttons';
 import banner from './objects/banner';
+import spacer from './objects/spacer';
+import rookery from './documents/rookery';
 
 const schema = createSchema({
   name: 'default',
@@ -45,7 +47,9 @@ const schema = createSchema({
     destinationSlider,
     links,
     buttons,
-    banner
+    banner,
+    spacer,
+    rookery
   ])
 });
 

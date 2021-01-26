@@ -7,6 +7,7 @@ import { TwoColumnVideo } from '../twoColumnVideo';
 import { ContentBanner } from '../contentBanner/contentBanner';
 import { Timeline } from '../timeline';
 import { SanityBlockContent } from '../../atoms/blockContent';
+import { Spacer } from '../spacer';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -27,6 +28,8 @@ export const SliceZone = ({ slices }) => {
         return <ContentBanner data={slice} key={index} />;
       case 'timeline':
         return <Timeline data={slice} key={index} />;
+      case 'spacer':
+        return <Spacer data={slice} key={index} />;
       default:
         return null;
     }

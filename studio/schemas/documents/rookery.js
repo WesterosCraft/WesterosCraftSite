@@ -1,6 +1,6 @@
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'Rookery',
+  name: 'rookery',
   type: 'document',
   // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fields: [
@@ -9,6 +9,15 @@ export default {
       name: 'title',
       type: 'string',
       validation: (Rule) => Rule.required()
+    },
+    {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+      }
     },
     {
       title: 'Heading',
@@ -21,36 +30,27 @@ export default {
       type: 'string'
     },
     {
-      name: 'pageBuilder',
+      name: 'editions',
+      title: 'Editions',
       type: 'array',
-      title: 'Page builder',
       of: [
-        { type: 'twoColumnText' },
-        { type: 'destinationSlider' },
-        { type: 'banner' },
         {
-          name: 'twoColumnVideo',
           type: 'object',
-          title: 'Two Column With Video',
+          name: 'editions',
+          title: 'Editions',
           fields: [
             {
-              title: 'Text Column',
-              name: 'textColumn',
-              type: 'richText'
-            },
-            {
-              title: 'Video Link',
-              name: 'videoLink',
+              name: 'title',
+              title: 'Title',
               type: 'string'
             },
             {
-              title: 'Video Thumbnail',
-              name: 'videoThumbnail',
-              type: 'image'
+              name: 'link',
+              title: 'Link',
+              type: 'url'
             }
           ]
-        },
-        { type: 'spacer' }
+        }
       ]
     }
   ]

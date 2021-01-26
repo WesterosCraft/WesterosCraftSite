@@ -1,3 +1,6 @@
+import { BsTextCenter } from 'react-icons/bs';
+import { TextCenteredRender } from '../../../components/atoms/textCenteredRender';
+
 export default {
   name: 'simpleRichText',
   type: 'array',
@@ -16,7 +19,28 @@ export default {
         { title: 'H6', value: 'h6' },
         { title: 'Quote', value: 'blockquote' }
       ],
-      lists: []
+      lists: [{ title: 'Bullet', value: 'bullet' }],
+      marks: {
+        // Decorators usually describe a single property – e.g. a typographic
+        // preference or highlighting by editors.
+        decorators: [
+          {
+            title: 'Text center',
+            value: 'textCenter',
+            blockEditor: {
+              icon: BsTextCenter,
+              render: TextCenteredRender
+            }
+          },
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Code', value: 'code' },
+          { title: 'Underline', value: 'underline' },
+          { title: 'Strike', value: 'strike-through' }
+        ]
+        // Annotations can be any object structure – e.g. a link or a footnote.
+        // annotations: [{ type: 'link' }, { type: 'internalLink' }]
+      }
     },
     {
       name: 'figure',

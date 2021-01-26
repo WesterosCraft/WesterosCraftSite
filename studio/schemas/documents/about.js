@@ -29,7 +29,7 @@ export default {
       name: 'pageBuilder',
       type: 'array',
       title: 'Page builder',
-      of: [{ type: 'twoColumnText' }, { type: 'richText' }]
+      of: [{ type: 'twoColumnText' }, { type: 'richText' }, { type: 'spacer' }]
     }
   ]
 };
