@@ -24,10 +24,10 @@ const View = ({ data, ...props }) => (
 
 const query = `*[_type == "destination" && slug.current == $slug][0]`;
 
-const DestinationPage = ({ preview, slug }) => {
+const DestinationPage = ({ preview, slug, destinationData }) => {
   const router = useRouter();
 
-  if (!router.isFallback && !productsData) {
+  if (!router.isFallback && !destinationData) {
     return <Error statusCode={404} />;
   }
 
@@ -239,31 +239,10 @@ export async function getStaticPaths() {
     paths: routes || null,
     fallback: true
   };
-  // const apolloClient = initializeApollo();
-
-  // const regions = await apolloClient.query({
-  //   query: ALL_REGIONS_QUERY
-  // });
-
-  // const pages = regions.data.entries.map((item) => {
-  //   return item.children.map((child) => {
-  //     return {
-  //       params: {
-  //         region: item.slug,
-  //         destination: child.slug
-  //       }
-  //     };
-  //   });
-  // });
-
-  // const paths = flatten(pages);
-
-  // return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params = {}, preview = false }) {
   const { slug } = params;
-  console.log(slug);
   const test = await getClient(preview).fetch(query, {
     slug
   });
@@ -271,20 +250,6 @@ export async function getStaticProps({ params = {}, preview = false }) {
   return {
     props: { preview, test, slug }
   };
-  // const apolloClient = initializeApollo();
-
-  // await apolloClient.query({
-  //   query: DESTINATION_QUERY,
-  //   variables: { slug: params.destination }
-  // });
-
-  // return {
-  //   props: {
-  //     initialApolloState: apolloClient.cache.extract(),
-  //     slug: params.destination
-  //   },
-  //   revalidate: 1
-  // };
 }
 
 export default DestinationPage;

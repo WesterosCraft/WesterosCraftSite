@@ -7,22 +7,28 @@ import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
 import { computeBreadcrumbs } from '../../../utils/helpers';
+import { getClient, usePreviewSubscription } from '../utils/sanity';
+import Error from 'next/error';
 
-const GuidePage = ({ slug, initialApolloState }) => {
+const query = `*[_type == "guide" && slug.current == $slug][0]`;
+
+const GuidePage = ({ preview, slug, guideData }) => {
   const router = useRouter();
+  const data = guideData[0];
 
-  if (router.isFallback) {
-    return <Spinner />;
+  if (!router.isFallback && !guideData) {
+    return <Error statusCode={404} />;
   }
-  const data =
-    initialApolloState.ROOT_QUERY[
-      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiGuide"})`
-    ];
-  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
+
+  // const data =
+  //   initialApolloState.ROOT_QUERY[
+  //     `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiGuide"})`
+  //   ];
+  // const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
 
   return (
     <>
-      {!data ? (
+      {!guideData ? (
         <Spinner />
       ) : (
         <SEO
@@ -32,7 +38,7 @@ const GuidePage = ({ slug, initialApolloState }) => {
         />
       )}
       <WikiLayout
-        navData={navData}
+        // navData={navData}
         title={(data && data.title) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         <WikiSliceZone slices={data.wikiSlices} />
@@ -42,35 +48,25 @@ const GuidePage = ({ slug, initialApolloState }) => {
 };
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
+  const routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
+    "params": {"slug": slug.current}
+  }`);
 
-  const guides = await apolloClient.query({
-    query: ALL_GUIDES_QUERY
-  });
-
-  const paths = guides.data.entries.map((page) => ({
-    params: {
-      guide: page.slug
-    }
-  }));
-
-  return { paths, fallback: true };
+  return {
+    paths: routes || null,
+    fallback: true
+  };
 }
 
-export async function getStaticProps({ params }) {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: GUIDE_QUERY,
-    variables: { slug: params.guide }
+export async function getStaticProps({ params = {}, preview = false }) {
+  const { slug } = params;
+  console.log(slug);
+  const test = await getClient(preview).fetch(query, {
+    slug
   });
 
   return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-      slug: params.guide
-    },
-    revalidate: 1
+    props: { preview, test, slug }
   };
 }
 

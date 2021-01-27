@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box } from 'rebass';
+import { Flex } from 'rebass';
 import { ButtonSelector } from '../../organisms/buttonSelector';
 import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
