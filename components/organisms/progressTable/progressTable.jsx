@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Flex, Box, Text, Button } from 'rebass';
 import { Select, Input } from '@rebass/forms';
 import {
@@ -62,15 +62,12 @@ export const ProgressTable = ({ data, columns }) => {
     }
   ];
 
-  const defaultColumn = useMemo(
-    () => ({
-      // When using the useFlexLayout:
-      minWidth: 30, // minWidth is only used as a limit for resizing
-      width: 150, // width is used for both the flex-basis and flex-grow
-      maxWidth: 300 // maxWidth is only used as a limit for resizing
-    }),
-    []
-  );
+  const defaultColumn = () => ({
+    // When using the useFlexLayout:
+    minWidth: 30, // minWidth is only used as a limit for resizing
+    width: 150, // width is used for both the flex-basis and flex-grow
+    maxWidth: 300 // maxWidth is only used as a limit for resizing
+  });
 
   const {
     getTableProps,
@@ -87,7 +84,8 @@ export const ProgressTable = ({ data, columns }) => {
     canPreviousPage,
     canNextPage,
     preGlobalFilteredRows,
-    setGlobalFilter
+    setGlobalFilter,
+    rows
   } = useTable(
     {
       columns,
@@ -203,58 +201,46 @@ export const ProgressTable = ({ data, columns }) => {
             {page.map((row) => {
               prepareRow(row);
               return (
-                row.original.title && (
-                  <Flex
-                    as="a"
-                    target="_blank"
-                    href={`/wiki/${regionSlugFormatter(row.original.region)}/${row.original.slug}`}
-                    className="tr"
-                    flexDirection="row"
-                    alignItems="center"
-                    justifyContent="space-around"
-                    key={row.index}
-                    width={1}
-                    sx={{
-                      color: 'inherit',
-                      textDecoration: 'none',
-                      borderBottom: '1px solid #e2e8f0',
-                      height: '48px',
-                      cursor: 'pointer',
-                      '&:hover': {
-                        borderTop: '1px solid black',
-                        borderBottom: '1px solid black'
-                      }
-                    }}
-                    {...row.getRowProps()}>
-                    {row.cells.map((cell, i) => {
-                      if (cell.column.id === 'destinationLevel') {
-                        return (
-                          <Box
-                            width={1}
-                            px={4}
-                            key={i}
-                            {...cell.getCellProps(cellProps)}
-                            className="td">
-                            <Text as="span" fontSize="14px" textAlign="center" width={1}>
-                              {levelFormatter(cell.value)}
-                            </Text>
-                          </Box>
-                        );
-                      }
-                      if (cell.column.id === 'warp') {
-                        return (
-                          <Box
-                            width={1}
-                            px={4}
-                            key={i}
-                            {...cell.getCellProps(cellProps)}
-                            className="td">
-                            <Text as="span" fontSize="14px">
-                              {cell.value ? `/${_lowerCase(cell.value)}` : null}
-                            </Text>
-                          </Box>
-                        );
-                      }
+                <Flex
+                  as="a"
+                  target="_blank"
+                  href={`/wiki/${regionSlugFormatter(row.original.region)}/${
+                    row.original.slug.current
+                  }`}
+                  className="tr"
+                  flexDirection="row"
+                  alignItems="center"
+                  justifyContent="space-around"
+                  key={row.index}
+                  width={1}
+                  sx={{
+                    color: 'inherit',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid #e2e8f0',
+                    height: '48px',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      borderTop: '1px solid black',
+                      borderBottom: '1px solid black'
+                    }
+                  }}
+                  {...row.getRowProps()}>
+                  {row.cells.map((cell, i) => {
+                    if (cell.column.id === 'difficultyLevel') {
+                      return (
+                        <Box
+                          width={1}
+                          px={4}
+                          key={i}
+                          {...cell.getCellProps(cellProps)}
+                          className="td">
+                          <Text as="span" fontSize="14px" textAlign="center" width={1}>
+                            {levelFormatter(cell.value)}
+                          </Text>
+                        </Box>
+                      );
+                    }
+                    if (cell.column.id === 'warp') {
                       return (
                         <Box
                           width={1}
@@ -263,13 +249,25 @@ export const ProgressTable = ({ data, columns }) => {
                           {...cell.getCellProps(cellProps)}
                           className="td">
                           <Text as="span" fontSize="14px">
-                            {camelCaseFormatter(cell.value)}
+                            {cell.value ? `/${_lowerCase(cell.value)}` : null}
                           </Text>
                         </Box>
                       );
-                    })}
-                  </Flex>
-                )
+                    }
+                    return (
+                      <Box
+                        width={1}
+                        px={4}
+                        key={i}
+                        {...cell.getCellProps(cellProps)}
+                        className="td">
+                        <Text as="span" fontSize="14px">
+                          {camelCaseFormatter(cell.value)}
+                        </Text>
+                      </Box>
+                    );
+                  })}
+                </Flex>
               );
             })}
           </Box>

@@ -6,12 +6,7 @@ import SEO from '../components/organisms/seo/seo';
 import { Card } from '../components/atoms/card/card';
 import { Progress } from 'react-sweet-progress';
 import { useCountUp } from 'react-countup';
-import {
-  completionPercentage,
-  getDestinationLevel,
-  flatten,
-  camelCaseFormatter
-} from '../utils/helpers';
+import { completionPercentage, getDestinationLevel, camelCaseFormatter } from '../utils/helpers';
 import { useTheme } from 'emotion-theming';
 import { Select } from '@rebass/forms';
 import { IoIosArrowDropdown } from 'react-icons/io';
@@ -40,13 +35,11 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
     return <Error statusCode={404} />;
   }
 
-  const memoData = useMemo(() => flatten(destinationData), [destinationData]);
-
-  const totalComplete = memoData.filter((item) => item.projectStatus === 'completed');
-  const totalInProgress = memoData.filter(
+  const totalComplete = destinationData.filter((item) => item.projectStatus === 'completed');
+  const totalInProgress = destinationData.filter(
     (item) => item.projectStatus === 'inProgress' || item.projectStatus === 'redoInProgress'
   );
-  const totalNotStarted = memoData.filter(
+  const totalNotStarted = destinationData.filter(
     (item) => item.projectStatus === 'abandoned' || item.projectStatus === 'notStarted'
   );
 
@@ -214,12 +207,12 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
     () => [
       {
         Header: 'Level',
-        accessor: 'destinationLevel',
+        accessor: 'difficultyLevel',
         width: 64
       },
       {
         Header: 'Destination',
-        accessor: 'title'
+        accessor: 'name'
       },
       {
         Header: 'Region',
@@ -230,14 +223,14 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
       },
       {
         Header: 'Status',
-        accessor: 'destinationStatus',
+        accessor: 'projectStatus',
         Filter: SelectColumnFilter,
         filter: 'includes',
         defaultCanFilter: true
       },
       {
         Header: 'Type',
-        accessor: 'destinationType',
+        accessor: 'buildType',
         Filter: SelectColumnFilter,
         filter: 'includes',
         defaultCanFilter: true
@@ -539,7 +532,7 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
           </Box>
         </Flex>
 
-        <ProgressTable columns={columns} data={memoData} />
+        <ProgressTable columns={columns} data={destinationData} />
       </Flex>
       <Box mb={[72, 140]} />
     </>
