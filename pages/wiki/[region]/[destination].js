@@ -24,7 +24,7 @@ const View = ({ data, ...props }) => (
 
 const query = `*[_type == "destination" && slug.current == $slug][0]`;
 
-const DestinationPage = ({ preview, slug, destinationData }) => {
+const DestinationPage = ({ preview, destination, destinationData }) => {
   const router = useRouter();
 
   if (!router.isFallback && !destinationData) {
@@ -232,7 +232,7 @@ const DestinationPage = ({ preview, slug, destinationData }) => {
 
 export async function getStaticPaths() {
   const routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
-    "params": {"slug": slug.current}
+    "params": {"destination": slug.current}
   }`);
 
   return {
@@ -242,13 +242,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params = {}, preview = false }) {
-  const { slug } = params;
+  const { destination } = params;
   const test = await getClient(preview).fetch(query, {
-    slug
+    destination
   });
 
   return {
-    props: { preview, test, slug }
+    props: { preview, test, destination }
   };
 }
 

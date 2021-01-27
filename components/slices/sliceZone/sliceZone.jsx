@@ -9,6 +9,7 @@ import { Timeline } from '../timeline';
 import { SanityBlockContent } from '../../atoms/blockContent';
 import { Spacer } from '../spacer';
 import { Box } from 'rebass';
+import { EntryGrid } from '../entryGrid';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -23,8 +24,8 @@ export const SliceZone = ({ slices }) => {
         return <VideoEmbed data={slice} key={index} />;
       case 'richText':
         return (
-          <Box width={1} maxWidth={slice.maxWidth} mx="auto">
-            <SanityBlockContent blocks={slice.copy} key={index} />
+          <Box width={1} maxWidth={slice.maxWidth} mx="auto" key={index}>
+            <SanityBlockContent blocks={slice.copy} />
           </Box>
         );
       case 'twoColumnVideo':
@@ -33,6 +34,8 @@ export const SliceZone = ({ slices }) => {
         return <ContentBanner data={slice} key={index} />;
       case 'timeline':
         return <Timeline data={slice} key={index} />;
+      case 'documentGrid':
+        return <EntryGrid data={slice} key={index} />;
       case 'spacer':
         return <Spacer data={slice} key={index} />;
       default:

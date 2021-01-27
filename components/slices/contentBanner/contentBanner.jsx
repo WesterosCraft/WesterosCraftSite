@@ -34,7 +34,6 @@ export const ContentBanner = ({ data }) => (
           <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
             <SanityBlockContent blocks={data.copy.copy} />
           </Box>
-          {console.log('DATA: ', data)}
           {data.warningText.copy && (
             <Box mt={4}>
               <SanityBlockContent blocks={data.warningText.copy} />

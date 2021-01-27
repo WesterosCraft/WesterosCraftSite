@@ -13,18 +13,22 @@ import { REGION_QUERY, ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gq
 import { initializeApollo } from '../../../lib/apolloClient';
 import { useRouter } from 'next/router';
 import flatten from 'lodash/flatten';
+import Error from 'next/error';
+import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 
-const RegionPage = ({ initialApolloState, slug }) => {
+const query = `*[_type == "destination" && slug.current == $slug][0]`;
+
+const RegionPage = ({ preview, destination, destinationData }) => {
   const router = useRouter();
-  if (router.isFallback) {
-    return <Spinner />;
+  if (!router.isFallback && !destinationData) {
+    return <Error statusCode={404} />;
   }
 
-  const data =
-    initialApolloState.ROOT_QUERY[
-      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiRegion"})`
-    ];
-  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
+  // const data =
+  //   initialApolloState.ROOT_QUERY[
+  //     `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiRegion"})`
+  //   ];
+  // const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
 
   const [items, setItems] = useState(data && data['children({"orderBy":"title"})']);
 
@@ -93,42 +97,24 @@ const RegionPage = ({ initialApolloState, slug }) => {
 };
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
+  const routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
+    "params": {"region": slug.current}
+  }`);
 
-  const regions = await apolloClient.query({
-    query: ALL_REGIONS_QUERY
-  });
-
-  const pages = regions.data.entries.map((item) => {
-    return item.children.map((child) => {
-      return {
-        params: {
-          region: item.slug,
-          destination: child.slug
-        }
-      };
-    });
-  });
-
-  const paths = flatten(pages);
-
-  return { paths, fallback: true };
+  return {
+    paths: routes || null,
+    fallback: true
+  };
 }
 
-export async function getStaticProps({ params }) {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: REGION_QUERY,
-    variables: { slug: params.region }
+export async function getStaticProps({ params = {}, preview = false }) {
+  const { destination } = params;
+  const test = await getClient(preview).fetch(query, {
+    destination
   });
 
   return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-      slug: params.region
-    },
-    revalidate: 1
+    props: { preview, test, destination }
   };
 }
 

@@ -1,14 +1,16 @@
 import React from 'react';
 
 import { WikiLayout } from '../components/templates/wikiLayout';
-import { WikiSliceZone } from '../components/slices/wikiSliceZone';
+import { SliceZone } from '../components/slices/sliceZone';
 import SEO from '../components/organisms/seo/seo';
 import { useRouter } from 'next/router';
 import { computeBreadcrumbs } from '../utils/helpers';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import Error from 'next/error';
 
-const query = `*[_type == "wiki"]`;
+const query = `*[_type == "wiki"]{
+  ...,pageBuilder[]{_type,documents[]->{...},...}
+  }`;
 
 const WikiPage = ({ preview, wikiData }) => {
   const data = wikiData[0];
@@ -26,10 +28,9 @@ const WikiPage = ({ preview, wikiData }) => {
         image={data.pageEntry && data.pageImage[0].url}
       />
       <WikiLayout
-        // navData={navdata}
         title={data.title || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        <WikiSliceZone slices={data.wikiSlices} />
+        <SliceZone slices={data.pageBuilder} />
       </WikiLayout>
     </>
   );
