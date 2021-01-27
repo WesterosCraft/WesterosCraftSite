@@ -17,6 +17,11 @@ export default {
       }
     },
     {
+      title: 'Max Width',
+      name: 'maxWidth',
+      type: 'number'
+    },
+    {
       title: 'Left Column',
       name: 'leftColumn',
       type: 'richText'
@@ -25,6 +30,16 @@ export default {
       title: 'Right Column',
       name: 'rightColumn',
       type: 'richText'
+    },
+    {
+      name: 'buttonBuilder',
+      type: 'array',
+      title: 'Button Builder',
+      of: [
+        {
+          type: 'buttons'
+        }
+      ]
     }
   ],
   preview: {

@@ -6,6 +6,7 @@ import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Element } from 'react-scroll';
 import { OutboundLink } from 'react-ga';
+import { SanityBlockContent } from '../../atoms/blockContent';
 
 export const ContentBanner = ({ data }) => (
   <Element name="launcher-download" className="element">
@@ -31,23 +32,24 @@ export const ContentBanner = ({ data }) => (
           px={['46px', '80px', null, '100px']}
           py={11}>
           <Box textAlign={['center', null, 'left']} mb={[5, null, 0]}>
-            <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
+            <SanityBlockContent blocks={data.copy.copy} />
           </Box>
-          {data.warningText && (
+          {console.log('DATA: ', data)}
+          {data.warningText.copy && (
             <Box mt={4}>
-              <Redactor dangerouslySetInnerHTML={{ __html: data.warningText }} />
+              <SanityBlockContent blocks={data.warningText.copy} />
             </Box>
           )}
           <Box mt={[10]} mb={[8]}>
-            <ButtonSelector data={data.buttons} mt="42px" />
+            <ButtonSelector buttons={data.buttonBuilder} mt="42px" />
           </Box>
           <Flex flexDirection="row">
             {data.linkBuilder.map((link) => (
               <OutboundLink
                 target="_blank"
-                to={link.additionalLink}
+                to={link.link}
                 download
-                key={link.customLinkText}
+                key={link.link}
                 eventLabel="launcher_page">
                 <Box
                   py={2}
@@ -76,7 +78,7 @@ export const ContentBanner = ({ data }) => (
                         display: 'block'
                       }
                     }}>
-                    {link.customLinkText}
+                    {link.linkText}
                   </Text>
                 </Box>
               </OutboundLink>

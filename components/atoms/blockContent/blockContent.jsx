@@ -17,7 +17,6 @@ export const SanityBlockContent = ({ blocks }) => {
     marks: {
       textCenter: (props) => (
         <Text as="div" textAlign="center">
-          {console.log(props)}
           {props.children}
         </Text>
       )

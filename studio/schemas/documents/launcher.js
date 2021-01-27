@@ -28,7 +28,12 @@ export default {
       name: 'pageBuilder',
       type: 'array',
       title: 'Page builder',
-      of: [{ type: 'twoColumnText' }, { type: 'richText' }, { type: 'banner' }, { type: 'spacer' }]
+      of: [
+        { type: 'twoColumnText' },
+        { type: 'richText' },
+        { type: 'contentBanner' },
+        { type: 'spacer' }
+      ]
     }
   ]
 };

@@ -6,6 +6,10 @@ export default {
     {
       name: 'copy',
       type: 'simpleRichText'
+    },
+    {
+      name: 'maxWidth',
+      type: 'number'
     }
   ],
   preview: {

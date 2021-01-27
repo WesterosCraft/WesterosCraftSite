@@ -14,13 +14,13 @@ export const ButtonSelector = ({ buttons }) =>
           </Button>
         </Link>
       );
-    } else if (button.linkType === 'external') {
+    } else if (button.linkType === 'external' || button.linkType === 'download') {
       return (
         <Button
           as="a"
           variant={button.variant}
           key={index}
-          href={button.buttonLink}
+          href={button.buttonLink || button.link}
           download={button.linkType === 'download'}
           onClick={() => {
             event({
@@ -34,7 +34,7 @@ export const ButtonSelector = ({ buttons }) =>
       );
     } else if (button.linkType === 'scroll') {
       return (
-        <ScrollLink to={button.buttonLink} smooth={true} offset={-100} key={index}>
+        <ScrollLink to={button.link} smooth={true} offset={-100} key={index}>
           <Button as="button" variant={button.variant}>
             {button.linkText}
           </Button>

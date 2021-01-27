@@ -1,6 +1,5 @@
 import React from 'react';
-import { Flex } from 'rebass';
-import { Redactor } from '../../atoms/redactor/redactor';
+import { Flex, Box } from 'rebass';
 import { ButtonSelector } from '../../organisms/buttonSelector';
 import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -28,19 +27,7 @@ export const TwoColumnText = ({ data }) => (
       flexDirection="column"
       alignItems="center">
       <ScrollAnimation animateIn="fadeInLeft" animateOnce>
-        <SanityBlockContent
-          blocks={data.leftColumn.copy}
-          serializers={{
-            types: {
-              figure: (props) => (
-                <figure data-language={props.node.language}>
-                  <code>{props.node.code}</code>
-                </figure>
-              )
-            }
-          }}
-        />
-        {/* {data.buttons && <ButtonSelector data={data.leftColumn.buttons} />} */}
+        <SanityBlockContent blocks={data.leftColumn.copy} />
       </ScrollAnimation>
     </Flex>
     <Flex
@@ -51,19 +38,8 @@ export const TwoColumnText = ({ data }) => (
       width={[1, null, data.layout === 'sixtyfourty' ? 2 / 5 : 1 / 2]}
       pt={[5, null, 0]}>
       <ScrollAnimation animateIn="fadeInRight" animateOnce>
-      <SanityBlockContent
-          blocks={data.rightColumn.copy}
-          serializers={{
-            types: {
-              figure: (props) => (
-                <figure data-language={props.node.language}>
-                  <code>{props.node.code}</code>
-                </figure>
-              )
-            }
-          }}
-        />
-        {data.buttons && <ButtonSelector data={data.buttons} />}
+        <SanityBlockContent blocks={data.rightColumn.copy} />
+        {data.buttonBuilder && <ButtonSelector buttons={data.buttonBuilder} />}
       </ScrollAnimation>
     </Flex>
   </Flex>

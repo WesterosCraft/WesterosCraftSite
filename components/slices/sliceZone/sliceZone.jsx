@@ -8,6 +8,7 @@ import { ContentBanner } from '../contentBanner/contentBanner';
 import { Timeline } from '../timeline';
 import { SanityBlockContent } from '../../atoms/blockContent';
 import { Spacer } from '../spacer';
+import { Box } from 'rebass';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -21,7 +22,11 @@ export const SliceZone = ({ slices }) => {
       case 'video':
         return <VideoEmbed data={slice} key={index} />;
       case 'richText':
-        return <SanityBlockContent blocks={slice.copy} key={index} />;
+        return (
+          <Box width={1} maxWidth={slice.maxWidth} mx="auto">
+            <SanityBlockContent blocks={slice.copy} key={index} />
+          </Box>
+        );
       case 'twoColumnVideo':
         return <TwoColumnVideo data={slice} key={index} />;
       case 'contentBanner':
