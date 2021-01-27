@@ -7,7 +7,7 @@ import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
 import { computeBreadcrumbs } from '../../../utils/helpers';
-import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 import Error from 'next/error';
 
 const query = `*[_type == "guide" && slug.current == $slug][0]`;
