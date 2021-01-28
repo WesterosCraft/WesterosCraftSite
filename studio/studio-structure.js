@@ -1,7 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder';
 
 const hiddenDocTypes = (listItem) =>
-  !['about', 'launcher', 'home', 'rookery', 'progress', 'wiki'].includes(listItem.getId());
+  !['about', 'launcher', 'home', 'rookery', 'progress', 'wiki', 'media.tag'].includes(
+    listItem.getId()
+  );
 
 export default () =>
   S.list()
