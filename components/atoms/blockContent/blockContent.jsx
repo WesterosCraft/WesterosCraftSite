@@ -15,7 +15,7 @@ export const SanityBlockContent = ({ blocks }) => {
         </figure>
       ),
       video: (props) => (
-        <Box maxWidth={500}>
+        <Box maxWidth={500} py={4}>
           <VideoEmbed embedUrl={props.node.url} />
         </Box>
       )

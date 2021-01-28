@@ -7,9 +7,13 @@ import Popup from 'reactjs-popup';
 import { camelCaseFormatter } from '../../../utils/helpers';
 import { DestinationStatusIcon } from '../icons/destinationStatusIcon/destinationStatusIcon';
 import { urlFor } from '../../../utils/sanity';
+import Image from 'next/image';
 
 export const EntryCard = React.forwardRef(({ data, href }, ref) => {
   const theme = useTheme();
+  const entryImage =
+    (data.images && data.images.length && urlFor(data.images[0].asset._ref)) ||
+    'https://cdn.westeroscraft.com/web/assets/images/crafting-table.svg';
 
   return (
     <Box
@@ -55,20 +59,21 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
             backgroundPosition: 'center',
             zIndex: 1,
             borderBottom: '2px solid #333333',
-            backgroundImage: `url(${
-              (data.images && data.images.length && urlFor(data.images[0].asset._ref)) ||
-              'https://cdn.westeroscraft.com/web/assets/images/crafting-table.svg'
-            })`,
-            backgroundSize:
-              data.images && data.images.length && data.images[0].asset._ref
-                ? 'cover'
-                : ['auto', null, '30%'],
+            // backgroundImage: `url(${
+            //   (data.images && data.images.length && urlFor(data.images[0].asset._ref)) ||
+            //   'https://cdn.westeroscraft.com/web/assets/images/crafting-table.svg'
+            // })`,
+            // backgroundSize:
+            //   data.images && data.images.length && data.images[0].asset._ref
+            //     ? 'cover'
+            //     : ['auto', null, '30%'],
             boxShadow: `inset 0 0.75rem 0 ${data.region ? theme.colors[data.region] : '#333333'}`
           }
         }}
         pt={140}
         px={4}
         pb={5}>
+        <Image height={130} width={240} src={entryImage.toString()} />
         <Flex flexDirection="column">
           <Flex flexDirection="row">
             {data._type === 'guide' && (

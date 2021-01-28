@@ -17,6 +17,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ['cdn.westeroscraft.com']
+    domains: ['cdn.westeroscraft.com', 'cdn.sanity.io']
   }
 };
