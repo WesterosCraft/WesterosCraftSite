@@ -18,7 +18,7 @@ export const VideoEmbed = ({ maxWidth, thumbnail, embedUrl, ...props }) => {
       px={5}
       {...props}
       // {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
-      >
+    >
       <VideoWrapper
         alignItems="center"
         justifyContent="center"
@@ -43,12 +43,14 @@ export const VideoEmbed = ({ maxWidth, thumbnail, embedUrl, ...props }) => {
           height={['65px', '100px']}>
           <IoMdPlay color="#4d6371" />
         </PlayButton>
-        <VideoThumbnail
-          display={isPlaying ? 1 : 0}
-          src={urlFor(thumbnail)}
-          alt="Video thumbnail"
-          loading="lazy"
-        />
+        {thumbnail && (
+          <VideoThumbnail
+            display={isPlaying ? 1 : 0}
+            src={urlFor(thumbnail)}
+            alt="Video thumbnail"
+            loading="lazy"
+          />
+        )}
       </VideoWrapper>
     </Box>
   );

@@ -2,7 +2,8 @@ import React from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import { urlFor } from '../../../utils/sanity';
 import { Redactor } from '../redactor/redactor';
-import { Text } from 'rebass';
+import { Text, Box } from 'rebass';
+import { VideoEmbed } from '../../organisms/videoEmbed';
 
 export const SanityBlockContent = ({ blocks }) => {
   const serializers = {
@@ -12,6 +13,11 @@ export const SanityBlockContent = ({ blocks }) => {
           <img alt={props.node.image.alt} src={urlFor(props.node.image.asset._ref)} />
           {props.node.image.caption && <figcaption>{props.node.image.caption}</figcaption>}
         </figure>
+      ),
+      video: (props) => (
+        <Box maxWidth={500}>
+          <VideoEmbed embedUrl={props.node.url} />
+        </Box>
       )
     },
     marks: {

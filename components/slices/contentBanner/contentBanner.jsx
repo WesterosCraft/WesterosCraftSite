@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Flex, Text } from 'rebass';
 import { ButtonSelector } from '../../organisms/buttonSelector';
-import { Redactor } from '../../atoms/redactor/redactor';
 import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Element } from 'react-scroll';
