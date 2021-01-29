@@ -10,6 +10,7 @@ import { SanityBlockContent } from '../../atoms/blockContent';
 import { Spacer } from '../spacer';
 import { Box } from 'rebass';
 import { EntryGrid } from '../entryGrid';
+import { Accordion } from '../accordion';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -25,7 +26,7 @@ export const SliceZone = ({ slices }) => {
       case 'richText':
         return (
           <Box width={1} maxWidth={slice.maxWidth} mx="auto" key={index}>
-            <SanityBlockContent blocks={slice.copy} />
+            <SanityBlockContent blocks={slice.copy || slice.text} />
           </Box>
         );
       case 'twoColumnVideo':
@@ -38,6 +39,8 @@ export const SliceZone = ({ slices }) => {
         return <EntryGrid data={slice} key={index} />;
       case 'spacer':
         return <Spacer data={slice} key={index} />;
+      case 'accordion':
+        return <Accordion data={slice} key={index} />;
       default:
         return null;
     }

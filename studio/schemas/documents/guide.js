@@ -33,7 +33,8 @@ export default {
         { type: 'richText' },
         { type: 'documentGrid' },
         { type: 'imageGallery' },
-        { type: 'accordion' }
+        { type: 'accordion' },
+        { type: 'spacer' }
       ]
     }
   ]

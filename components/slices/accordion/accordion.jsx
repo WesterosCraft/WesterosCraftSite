@@ -3,6 +3,7 @@ import { Box, Flex, Text } from 'rebass';
 import { Redactor } from '../../atoms/redactor';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { configProps } from '../../../utils/helpers';
+import SanityBlockContent from '@sanity/block-content-to-react';
 
 const AccordionItem = ({ data, dataLength, index }) => {
   const [open, setOpen] = useState(false);
@@ -32,7 +33,7 @@ const AccordionItem = ({ data, dataLength, index }) => {
       </Flex>
       {open && (
         <Box mb={6} className="accordion-content">
-          <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />
+          <SanityBlockContent blocks={data.copy} />
         </Box>
       )}
     </Box>

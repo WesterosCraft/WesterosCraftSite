@@ -170,10 +170,10 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
         },
         {
           title: 'Basic Building Guide for Applicants',
-          url: 'https://westeroscraft.com/wiki/guides/applicant-building-guide',
+          url: 'https://westeroscraft.com/wiki/guides/basic-building-guide-for-applicants',
           type: 'craft\\elements\\Entry',
           element: {
-            slug: 'applicant-building-guide'
+            slug: 'basic-building-guide-for-applicants'
           },
           parent: {
             title: 'Guides'
@@ -200,18 +200,10 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
           parent: {
             title: 'Guides'
           }
-        }
-      ]
-    },
-    {
-      title: 'Miscellaneous',
-      url: '',
-      type: null,
-      element: null,
-      children: [
+        },
         {
           title: 'Frequently Asked Questions',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/frequently-asked-questions',
+          url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
           type: 'craft\\elements\\Entry',
           element: {
             slug: 'frequently-asked-questions'
@@ -222,7 +214,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
         },
         {
           title: 'Server Rules',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/server-rules',
+          url: 'https://westeroscraft.com/wiki/guides/server-rules',
           type: 'craft\\elements\\Entry',
           element: {
             slug: 'server-rules'
@@ -233,7 +225,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
         },
         {
           title: 'Custom Resource Pack',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/custom-resource-pack',
+          url: 'https://westeroscraft.com/wiki/guides/custom-resource-pack',
           type: 'craft\\elements\\Entry',
           element: {
             slug: 'custom-resource-pack'
@@ -244,7 +236,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
         },
         {
           title: 'Map Repository',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/map-repository',
+          url: 'https://westeroscraft.com/wiki/guides/map-repository',
           type: 'craft\\elements\\Entry',
           element: {
             slug: 'map-repository'
@@ -255,7 +247,7 @@ export const WikiLayout = ({ children, title, breadcrumb }) => {
         },
         {
           title: 'Projects Orphanage',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/projects-orphanage',
+          url: 'https://westeroscraft.com/wiki/guides/projects-orphanage',
           type: 'craft\\elements\\Entry',
           element: {
             slug: 'projects-orphanage'

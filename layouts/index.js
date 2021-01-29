@@ -152,13 +152,13 @@ const data = {
         {
           __typename: 'mainNav_Node',
           title: 'FAQ',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/frequently-asked-questions',
+          url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
           type: 'craft\\elements\\Entry',
           uri: null,
           element: {
             __typename: 'wiki_wikiMiscellaneous_Entry',
             slug: 'frequently-asked-questions',
-            uri: 'wiki/miscellaneous/frequently-asked-questions'
+            uri: 'wiki/guides/frequently-asked-questions'
           }
         },
         {
@@ -349,12 +349,12 @@ const data = {
         {
           __typename: 'mainFooter_Node',
           title: 'FAQ',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/frequently-asked-questions',
+          url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
           type: 'craft\\elements\\Entry',
           element: {
             __typename: 'wiki_wikiMiscellaneous_Entry',
             slug: 'frequently-asked-questions',
-            uri: 'wiki/miscellaneous/frequently-asked-questions'
+            uri: 'wiki/guides/frequently-asked-questions'
           }
         }
       ]
@@ -374,12 +374,12 @@ const data = {
     {
       __typename: 'mainFooter_Node',
       title: 'FAQ',
-      url: 'https://westeroscraft.com/wiki/miscellaneous/frequently-asked-questions',
+      url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
       type: 'craft\\elements\\Entry',
       element: {
         __typename: 'wiki_wikiMiscellaneous_Entry',
         slug: 'frequently-asked-questions',
-        uri: 'wiki/miscellaneous/frequently-asked-questions'
+        uri: 'wiki/guides/frequently-asked-questions'
       },
       children: []
     }
