@@ -33,7 +33,7 @@ const GuidePage = ({ preview, guideData }) => {
       <WikiLayout
         title={(guideData && guideData.name) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        {guideData.pageBuilder && <SliceZone slices={guideData.pageBuilder} />}
+        {guideData && guideData.pageBuilder && <SliceZone slices={guideData.pageBuilder} />}
       </WikiLayout>
     </>
   );
