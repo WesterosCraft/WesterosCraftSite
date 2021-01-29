@@ -132,8 +132,8 @@ const IndexPage = ({ preview, homeData }) => {
               className="hero-image"
               loading="eager"
               alt="The Wall"
-              placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
-              src="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png"
+              placeholderSrc="/wall-light-loading-1920.png"
+              src="/wall-light-520.png"
               width="512px"
               height="100%"
             />
@@ -141,10 +141,10 @@ const IndexPage = ({ preview, homeData }) => {
             <LazyLoadImage
               className="hero-image"
               loading="eager"
-              srcSet="https://cdn.westeroscraft.com/web/assets/website/wall-light-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1200.png 1200w, https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png 1920w"
+              srcSet="/wall-light-520.png 520w, /wall-light-1200.png 1200w, /wall-light-1920.png 1920w"
               alt="The Wall"
-              placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/wall-light-loading-1920.png"
-              src="https://cdn.westeroscraft.com/web/assets/website/wall-light-1920.png"
+              placeholderSrc="/wall-light-loading-1920.png"
+              src="/wall-light-1920.png"
               width="100%"
               height="100%"
             />
@@ -207,16 +207,15 @@ const IndexPage = ({ preview, homeData }) => {
         </Box>
         <Box className="footer-image" sx={{ transform: 'scaleX(-1)' }}>
           <LazyLoadImage
-            srcSet="https://cdn.westeroscraft.com/web/assets/website/redkeep-520.png 520w, https://cdn.westeroscraft.com/web/assets/website/redkeep-1640.png 1640w"
+            srcSet="/redkeep-520.png 520w, /redkeep-1640.png 1640w"
             alt="Red Keep"
-            placeholderSrc="https://cdn.westeroscraft.com/web/assets/website/redkeep-loading-1640.png"
-            src="https://cdn.westeroscraft.com/web/assets/website/redkeep-1640.png"
+            placeholderSrc="/redkeep-loading-1640.png"
+            src="/redkeep-1640.png"
             width="100%"
             height="100%"
             wrapperClassName="lazy-loaded-image-span"
             threshold={300}
             style={{ display: 'block' }}
-            loading="lazy"
           />
         </Box>
       </Box>

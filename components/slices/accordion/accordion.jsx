@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Box, Flex, Text } from 'rebass';
-import { Redactor } from '../../atoms/redactor';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { configProps } from '../../../utils/helpers';
 import SanityBlockContent from '@sanity/block-content-to-react';

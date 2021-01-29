@@ -23,7 +23,7 @@ const data = {
       navLogo: [
         {
           __typename: 'images_Asset',
-          url: 'https://cdn.westeroscraft.com/web/assets/images/westeroscraft_logo.svg'
+          url: '/westeroscraft_logo.svg'
         }
       ]
     },

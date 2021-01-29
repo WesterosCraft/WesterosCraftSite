@@ -55,13 +55,7 @@ const RookeryPage = ({ preview, rookeryData }) => {
         <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
           {data.subheading}
         </Heading>
-        <Image
-          mt={4}
-          src="https://cdn.westeroscraft.com/web/assets/images/crow-icon.png"
-          width="40px"
-          alt="crow"
-          mx="auto"
-        />
+        <Image mt={4} src="/crow-icon.png" width="40px" alt="crow" mx="auto" />
       </Flex>
 
       <Flex flexDirection="column" mb={17}>
