@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { EntryCard } from '../../../components/atoms/entryCard';
 import { Flex, Text } from 'rebass';
@@ -20,9 +20,11 @@ const RegionPage = ({ preview, regionData }) => {
     return <Error statusCode={404} />;
   }
 
-  console.log('REGION DATA: ', regionData);
-
   const [items, setItems] = useState(regionData);
+
+  useEffect(() => {
+    setItems(regionData);
+  }, [regionData]);
 
   const onTypeChange = (option) => {
     if (option === null) {
@@ -46,19 +48,18 @@ const RegionPage = ({ preview, regionData }) => {
     <>
       {regionData && (
         <SEO
-          title={camelCaseFormatter(regionData[0].region) || ''}
+          title={camelCaseFormatter(regionData && regionData[0].region) || ''}
           description={regionData.pageDescription}
           image={regionData.pageEntry && regionData.pageImage[0].url}
         />
       )}
       <WikiLayout
-        title={regionData[0].region || 'WesterosCraft Wiki'}
+        title={(regionData && regionData[0].region) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         {!regionData ? (
           <Spinner />
         ) : (
           <>
-            {/* <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} /> */}
             <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
             <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
               {items && items.length >= 1 ? (
@@ -89,15 +90,15 @@ export async function getStaticPaths() {
   const routes = [
     { params: { region: 'dorne' } },
     { params: { region: 'riverlands' } },
-    { params: { region: 'theWall' } },
+    { params: { region: 'th-wall' } },
     { params: { region: 'north' } },
     { params: { region: 'vale' } },
-    { params: { region: 'ironIslands' } },
+    { params: { region: 'iron-islands' } },
     { params: { region: 'westerlands' } },
     { params: { region: 'crownlands' } },
     { params: { region: 'stormlands' } },
     { params: { region: 'reach' } },
-    { params: { region: 'beyondTheWall' } }
+    { params: { region: 'beyond-the-wall' } }
   ];
 
   return {
@@ -106,11 +107,25 @@ export async function getStaticPaths() {
   };
 }
 
+const regionFormatter = (reg) => {
+  if (reg === 'the-wall') {
+    return 'theWall';
+  } else if (reg === 'iron-islands') {
+    return 'ironIslands';
+  } else if (reg === 'beyond-the-wall') {
+    return 'beyondTheWall';
+  } else {
+    return reg;
+  }
+};
+
 export async function getStaticProps({ params = {}, preview = false }) {
   const { region } = params;
 
+  const thing = regionFormatter(region);
+
   const regionData = await getClient(preview).fetch(query, {
-    region
+    region: thing
   });
 
   return {
