@@ -8,7 +8,9 @@ import { computeBreadcrumbs } from '../../../utils/helpers';
 import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 import Error from 'next/error';
 
-const query = `*[_type == "guide" && slug.current == $slug][0]`;
+const query = `*[_type == "guide" && slug.current == $slug][0]{
+  ...,pageBuilder[]{_type,documents[]->{...},...}
+  }`;
 
 const GuidePage = ({ preview, guideData }) => {
   const router = useRouter();

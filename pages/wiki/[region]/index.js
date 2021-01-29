@@ -90,7 +90,7 @@ export async function getStaticPaths() {
   const routes = [
     { params: { region: 'dorne' } },
     { params: { region: 'riverlands' } },
-    { params: { region: 'th-wall' } },
+    { params: { region: 'the-wall' } },
     { params: { region: 'north' } },
     { params: { region: 'vale' } },
     { params: { region: 'iron-islands' } },

@@ -51,7 +51,12 @@ const Table = () => (
 
 export const EntryCard = React.forwardRef(({ data, href }, ref) => {
   const theme = useTheme();
-  const entryImage = data.images && data.images.length && urlFor(data.images[0].asset._ref);
+  const entryImage =
+    data.images && data.images.length > 0
+      ? urlFor(data.images[0].asset._ref)
+      : data.icon
+      ? urlFor(data.icon.asset._ref)
+      : undefined;
 
   return (
     <Box
@@ -100,8 +105,12 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
             boxShadow: `inset 0 0.75rem 0 ${data.region ? theme.colors[data.region] : '#333333'}`
           }
         }}>
-        {entryImage ? (
+        {data.images && entryImage ? (
           <Image height={130} width={240} src={entryImage.toString()} />
+        ) : data.icon && entryImage ? (
+          <Flex width={240} height={130} justifyContent="center" alignItems="center">
+            <Image height={86} width={86} src={entryImage.toString()} />
+          </Flex>
         ) : (
           <Flex width={240} height={130} justifyContent="center" alignItems="center">
             <Table />
