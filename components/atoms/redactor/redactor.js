@@ -42,7 +42,7 @@ export const Redactor = styled.div`
     margin: 0;
     padding: 14px 0 14px 36px;
     list-style: none;
-    background-image: url('https://cdn.westeroscraft.com/web/assets/images/checkmark.svg');
+    background-image: url('/checkmark.svg');
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 20px;

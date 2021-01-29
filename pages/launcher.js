@@ -2,12 +2,19 @@ import React from 'react';
 import { Heading } from 'rebass';
 import { SliceZone } from '../components/slices/sliceZone/sliceZone';
 import SEO from '../components/organisms/seo/seo';
-import { LAUNCHER_QUERY } from '../queries/launcherQuery.gql';
-import { initializeApollo } from '../lib/apolloClient';
+import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { useRouter } from 'next/router';
+import Error from 'next/error';
 
-const LauncherPage = ({ initialApolloState }) => {
-  const data =
-    initialApolloState.ROOT_QUERY['entry({"section":"launcher","site":"westeroscraft"})'];
+const query = `*[_type == "launcher"]`;
+
+const LauncherPage = ({ preview, launcherData }) => {
+  const data = launcherData[0];
+  const router = useRouter();
+
+  if (!router.isFallback && !launcherData) {
+    return <Error statusCode={404} />;
+  }
 
   return (
     <>
@@ -19,23 +26,19 @@ const LauncherPage = ({ initialApolloState }) => {
       <Heading variant="heading2" textAlign="center" mt={[12]}>
         {data.heading}
       </Heading>
-      <SliceZone slices={data.pageSlices} />
+      <SliceZone slices={data.pageBuilder} />
     </>
   );
 };
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: LAUNCHER_QUERY
-  });
+export async function getStaticProps({ params = {}, preview = false }) {
+  const launcherData = await getClient(preview).fetch(query);
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract()
-    },
-    revalidate: 1
+      preview,
+      launcherData
+    }
   };
 }
 

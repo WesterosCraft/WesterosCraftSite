@@ -1,0 +1,2715 @@
+[
+  {
+    "title": "Schem Sets",
+    "heroImage": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/website/schemsetsicon.png"
+      }
+    ],
+    "wikiSlices": [
+      {
+        "typeHandle": "imageGrid",
+        "heading": "Tree Sets",
+        "clickToCopyScript": "/schbr &<ID>",
+        "imageList": [
+          {
+            "imageTitle": "AlderM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Alder M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AlderM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AlderS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Alder S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AlderS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Alder TallM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Alder Tall M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AlderTallM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AleppoDead",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Aleppo Dead",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AleppoDead.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AleppoL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Aleppo L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AleppoL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AleppoM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Aleppo M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AleppoM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AleppoS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Aleppo S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AleppoS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AlmondS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Almond S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AlmondS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AppleM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Apple M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AppleM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AppleS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Apple S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AppleS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ApricotS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Apricot S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ApricotS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AshL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Ash L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AshL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AshS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Ash S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AshS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AspenM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Aspen M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AspenM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AspenS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Aspen S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AspenS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BAshM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Ash M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BAshM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BCypress",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Cypress",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BCypress.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BDatePalmM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Date Palm M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BDatePalmM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BeechL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Beech L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BeechL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BeechM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Beech M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BeechM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BeechS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Beech S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BeechS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirchM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Birch M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirchM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirchS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Birch S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirchS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BIronwoodS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Ironwood S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BIronwoodS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BMapleM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Maple M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BMapleM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BOliveS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Olive S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BOliveS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BPineBPine",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Pine",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BPine.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BSentinelM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Sentinel M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BSentinelM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Buddleja",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Buddleja",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Buddleja.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BWeirwoodL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Weirwood L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BWeirwoodL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BWeirwoodM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Weirwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BWeirwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BWeirwoodS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "B Weirwood S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BWeirwoodS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcSmallBirch",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Carc Small Birch",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcSmallBirch.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcSmallPine",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Carc Small Pine",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcSmallPine.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcSmallPineOak",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Carc Small Pine Oak",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcSmallPineOak.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcTallPine",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Carc Tall Pine",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcTallPine.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcTallPineL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Carc Tall Pine L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcTallPineL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcTallPineM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Carc Tall Pine M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcTallPineM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CherryS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Cherry S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CherryS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ChestnutL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Chestnut L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ChestnutL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ChestnutS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Chestnut S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ChestnutS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CorkM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Cork M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CorkM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CottonwoodL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Cottonwood L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CottonwoodL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CottonwoodM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Cottonwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CottonwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CottonwoodS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Cottonwood S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CottonwoodS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CypressS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Cypress S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CypressS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "DeadEvergreenS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Dead Evergreen S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/DeadEvergreenS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "DeadBirch",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Dead Birch",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/DeadBirch.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "DeadPine",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Dead Pine",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/DeadPine.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "EmilyPine",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Emily Pine",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/EmilyPine.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "EmilyPineD",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Emily Pine D",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/EmilyPineD.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "EvergreenS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Evergreen S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/EvergreenS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "EvergreenNoSnowM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Evergreen No Snow M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/EvergreenNoSnowM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "EvergreenOakM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Evergreen Oak M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/EvergreenOakM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ForestAlder",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Forest Alder",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ForestAlder.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ForestDetail",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Forest Detail",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ForestDetail.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ForestMaple",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Forest Maple",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ForestMaple.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ForestAlder",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Forest Alder",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ForestAlder.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ForestOak",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Forest Oak",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ForestOak.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "GenericFruit",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Generic Fruit",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/GenericFruit.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Hawthorn",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Hawthorn",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Hawthorn.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "HawthornL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Hawthorn L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/HawthornL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "HawthornM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Hawthorn M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/HawthornM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "HawthornS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Hawthorn S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/HawthornS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "HermBirch",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Herm Birch",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/HermBirch.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "HermEvergreen",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Herm Evergreen",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/HermEvergreen.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "HermWillowWood",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Herm Willow Wood",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/HermWillowWood.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Jacaranda",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Jacaranda",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Jacaranda.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LarchM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Larch M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LarchM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LarchS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Larch S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LarchS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LemonS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Lemon S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LemonS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LilacM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Lilac M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LilacM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LJungleL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Jungle L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LJungleL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LJungleM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Jungle M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LJungleM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LJungleS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Jungle S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LJungleS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LOakL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Oak L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LOakL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LOakM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Oak M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LOakM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LOakS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Oak S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LOakS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LowRedwoodM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Low Redwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LowRedwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LSpruceL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Spruce L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LSpruceL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LSpruceM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Spruce M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LSpruceM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LSpruceS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "L Spruce S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LSpruceS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MulberryS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mulberry S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MulberryS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MangroveTreeM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mangrove Tree M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MangroveTreeM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MangroveTreeS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mangrove Tree S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MangroveTreeS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MapleS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mangrove Tree M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MangroveTreeM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistAshM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mist Ash M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistAshM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistMapleL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mist Maple L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistMapleL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistOakL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mist Oak L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistOakL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistPineL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mist Pine L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistPineL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistPineM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mist Pine M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistPineM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistPineXL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mist Pine XL",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistPineXL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistSentinelL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mist Sentinel L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistSentinelL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MixedThinBirch",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Mixed Thin Birch",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MixedThinBirch.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "NewRedwoodM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "New Redwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/NewRedwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "NorthernThinBirch",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Northern Thin Birch",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/NorthernThinBirch.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Oak L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Oak M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Oak S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakXL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Oak XL",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakXL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OleanderSOleanderS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Oleander S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OleanderS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OliveS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Olive S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OliveS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OrangeS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Orange S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OrangeS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PeachM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Peach M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PeachM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PeachS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Peach S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PeachS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PecanM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Pecan M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PecanM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PecanS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Pecan S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PecanS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PineS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Pine S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PineS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PlumM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Plum M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PlumM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PlumS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Plum S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PlumS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PPomegranateS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Pomegranate S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PomegranateS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "PoplarM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Poplar M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/PoplarM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "RedwoodM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Redwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/RedwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "RedwoodS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Redwood S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/RedwoodS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SandalwoodS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Sandalwood S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SandalwoodS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SandbeggarM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Sandbeggar M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SandbeggarM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SentinelS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Sentinel S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SentinelS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SkinnyBAshM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Skinny B Ash M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SkinnyBAshM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SoldierPineS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Soldier Pine S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SoldierPineS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SpruceL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Spruce L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SpruceL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SpruceM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Spruce M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SpruceM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SpruceS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Spruce S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SpruceS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SwampS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Swamp S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SwampS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Tamarix",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Tamarix",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Tamarix.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ThinRedwoodM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Thin Redwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ThinRedwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "TinyPineTinyPine",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Tiny Pine",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/TinyPine.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ValePineS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Vale Pine S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ValePineS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Willow L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowMWillowM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Willow M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowS",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Willow S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WeepingWillow",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Weeping Willow",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WeepingWillow.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowSFreshPoll",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Willow S Fresh Poll",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowSFreshPoll.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowSOnePoll",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Willow S One Poll",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowSOnePoll.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowSTwoPoll",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Willow S Two Poll",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowSTwoPoll.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WeirwoodM",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Weirwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WeirwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowXL",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Willow XL",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowXL.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeHandle": "imageGrid",
+        "heading": "Mixed",
+        "clickToCopyScript": "/schbr &<ID>",
+        "imageList": [
+          {
+            "imageTitle": "AlderAll",
+            "imageDescription": "A mixture of AlderS and AlderM variants",
+            "image": [
+              {
+                "title": "Alder All",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AlderAll.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AllBushLow",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "All Bush Low",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AllBushLow.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "AllBushTall",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "All Bush Tall",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AllBushTall.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirchAll",
+            "imageDescription": "A mixture of BirchS and BirchM variants",
+            "image": [
+              {
+                "title": "Birch All",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirchAll.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BroadleafL",
+            "imageDescription": "A mixture of large oaks, willows, and chestnuts. Good for forests",
+            "image": [
+              {
+                "title": "Broadleaf L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BroadleafL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BroadLeafMixed",
+            "imageDescription": "A mixture of ForestMaple, ForestOak, CottonwoodM, ForestMaple",
+            "image": [
+              {
+                "title": "Broad Leaf Mixed",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BroadLeafMixed.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BroadleafXL",
+            "imageDescription": "A mixture of very large oaks, willows, and chestnuts. For deep forest only",
+            "image": [
+              {
+                "title": "Broadleaf XL",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BroadleafXL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcFallenTree",
+            "imageDescription": "Fallen trees of mixed logs. Don't overuse!",
+            "image": [
+              {
+                "title": "Carc Fallen Tree",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcFallenTree.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcBushMix",
+            "imageDescription": "Small mixed bushes",
+            "image": [
+              {
+                "title": "Carc Bush Mix",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcBushMix.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcSmallTree",
+            "imageDescription": "Small mixed trees",
+            "image": [
+              {
+                "title": "Carc Small Tree",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcSmallTree.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "FillerForest",
+            "imageDescription": "A mixture of alders, cottonwoods, and oaks",
+            "image": [
+              {
+                "title": "Filler Forest",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/FillerForest.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LeafyForest",
+            "imageDescription": "A mixture of AspenM, BeechM, HawthornS,BeechS, OakS, OakM, OakL",
+            "image": [
+              {
+                "title": "Leafy Forest",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LeafyForest.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "LovelyForest",
+            "imageDescription": "A mixture of OakM, AshM, BMapleM, CottonwoodM, AlderM",
+            "image": [
+              {
+                "title": "Lovely Forest",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/LovelyForest.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MixedRedwoodM",
+            "imageDescription": "Mixed medium redwoods",
+            "image": [
+              {
+                "title": "Mixed Redwood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MixedRedwoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MixedBushLow",
+            "imageDescription": "Mixed low bushes",
+            "image": [
+              {
+                "title": "Mixed Bush Low",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MixedBushLow.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MixedBushTall",
+            "imageDescription": "Mixed large bushes",
+            "image": [
+              {
+                "title": "Mixed Bush Tall",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MixedBushTall.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MixedForest",
+            "imageDescription": "A mixture of ForestMaple, ForestOak, ForestAlder",
+            "image": [
+              {
+                "title": "Mixed Forest",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MixedForest.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakAll",
+            "imageDescription": "A mixture of OakS, OakM, OakL",
+            "image": [
+              {
+                "title": "Oak All",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakAll.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "RainwoodXL",
+            "imageDescription": "Very large trees with vines, for the rainwood only",
+            "image": [
+              {
+                "title": "Rainwood XL",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/RainwoodXL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Spottswood",
+            "imageDescription": "Mix of UmbrellaPineL, SandbeggarS, SandbeggarL",
+            "image": [
+              {
+                "title": "Spottswood",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Spottswood.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WolfswoodAll",
+            "imageDescription": "Mixture of WolfswoodS and WolfswoodM",
+            "image": [
+              {
+                "title": "Wolfswood All",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WolfswoodAll.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WolfswoodL",
+            "imageDescription": "Mixture of large trees for northern forests",
+            "image": [
+              {
+                "title": "Wolfswood L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WolfswoodL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WolfswoodM",
+            "imageDescription": "Mixture of medium trees, for northern forests (oak and spruce trunks)",
+            "image": [
+              {
+                "title": "Wolfswood M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WolfswoodM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WolfswoodS",
+            "imageDescription": "Mixture of small trees, for northern forests (spruce and jungle trunks)",
+            "image": [
+              {
+                "title": "Wolfswood S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WolfswoodS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WolfswoodXL",
+            "imageDescription": "Mixture of extra large trees, for northern forests (deep forest only!)",
+            "image": [
+              {
+                "title": "Wolfswood XL",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WolfswoodXL.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeHandle": "imageGrid",
+        "heading": "Snowy Trees",
+        "clickToCopyScript": "/schbr &<ID>",
+        "imageList": [
+          {
+            "imageTitle": "SnowyEvergreenM",
+            "imageDescription": "Medium Evergreen trees with snow",
+            "image": [
+              {
+                "title": "Snowy Evergreen M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SnowyEvergreenM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SnowyLeafless",
+            "imageDescription": "Dead trees with snow",
+            "image": [
+              {
+                "title": "Snowy Leafless",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SnowyLeafless.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SnowyPineL",
+            "imageDescription": "Large pine with snow",
+            "image": [
+              {
+                "title": "Snowy Pine L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SnowyPineL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SnowyPineM",
+            "imageDescription": "Medium pines with snow",
+            "image": [
+              {
+                "title": "Snowy Pine M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SnowyPineM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SnowySoldierL",
+            "imageDescription": "Large soldier pines with snow",
+            "image": [
+              {
+                "title": "Snowy Soldier L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SnowySoldierL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SnowySpruceL",
+            "imageDescription": "Large spruce trees with snow",
+            "image": [
+              {
+                "title": "Snowy Spruce L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SnowySpruceL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SnowyWeirwood",
+            "imageDescription": "Mix of weirwoods with snow",
+            "image": [
+              {
+                "title": "Snowy Weirwood",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SnowyWeirwood.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeHandle": "imageGrid",
+        "heading": "Bushes",
+        "clickToCopyScript": "/schbr &<ID>",
+        "imageList": [
+          {
+            "imageTitle": "AlderBush",
+            "imageDescription": "Tall, alder type bushes",
+            "image": [
+              {
+                "title": "Alder Bush",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/AlderBush.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirchBushL",
+            "imageDescription": "Large scatterings of birch bushes",
+            "image": [
+              {
+                "title": "Birch Bush L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirchBushL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirchBushLow",
+            "imageDescription": "Small birch bushes",
+            "image": [
+              {
+                "title": "Birch Bush Low",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirchBushLow.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirchBushS",
+            "imageDescription": "More small birch bushes",
+            "image": [
+              {
+                "title": "Birch Bush S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirchBushS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirchBushTall",
+            "imageDescription": "Large birch bushes",
+            "image": [
+              {
+                "title": "Birch Bush Tall",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirchBushTall.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirdBush",
+            "imageDescription": "Collections of small bushes/vegetation",
+            "image": [
+              {
+                "title": "Bird Bush",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirdBush.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "BirdBushS",
+            "imageDescription": "Smaller collections of bushes/vegetation",
+            "image": [
+              {
+                "title": "Bird Bush S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirdBushS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcBushS",
+            "imageDescription": "Small bushes, mixed leaves",
+            "image": [
+              {
+                "title": "Carc Bush S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcBushS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcBocage3",
+            "imageDescription": "medium size bushes",
+            "image": [
+              {
+                "title": "Carc Bocage3",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcBocage3.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "JSprawlingFernL",
+            "imageDescription": "Large groups of jungle ferns",
+            "image": [
+              {
+                "title": "J Sprawling Fern L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JSprawlingFernL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "JungleBushL",
+            "imageDescription": "Large groups of jungle bushes",
+            "image": [
+              {
+                "title": "Jungle Bush L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JungleBushL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "JungleBushLow",
+            "imageDescription": "Small jungle bushes",
+            "image": [
+              {
+                "title": "Jungle Bush Low",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JungleBushLow.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "JungleBushS",
+            "imageDescription": "Groups of small jungle bushes",
+            "image": [
+              {
+                "title": "Jungle Bush S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JungleBushS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "JungleBushTall",
+            "imageDescription": "Tall jungle bushes",
+            "image": [
+              {
+                "title": "Jungle Bush Tall",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JungleBushTall.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MBocage",
+            "imageDescription": "Mix of medium sized blobs of bushes",
+            "image": [
+              {
+                "title": "Jungle Bush S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JungleBushS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakBushM",
+            "imageDescription": "Medium scatterings of oak bushes",
+            "image": [
+              {
+                "title": "Oak Bush M",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakBushM.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakBushL",
+            "imageDescription": "Large scatterings of oak bushes",
+            "image": [
+              {
+                "title": "Oak Bush L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakBushL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakBushLow",
+            "imageDescription": "Small oak bushes",
+            "image": [
+              {
+                "title": "Oak Bush Low",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakBushLow.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakBushS",
+            "imageDescription": "Small scatterings of oak bushes",
+            "image": [
+              {
+                "title": "Oak Bush S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakBushS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakBushTall",
+            "imageDescription": "Tall oak bushes",
+            "image": [
+              {
+                "title": "Oak Bush Tall",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakBushTall.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "OakShrub",
+            "imageDescription": "Small oak leaf shrubs",
+            "image": [
+              {
+                "title": "Oak Shrub",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/OakShrub.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SBocageSBocage",
+            "imageDescription": "Small bocage",
+            "image": [
+              {
+                "title": "S Bocage",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SBocage.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "ValeShrubS",
+            "imageDescription": "Small shrubs for mountains, mixed leaves",
+            "image": [
+              {
+                "title": "Vale Shrub S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/ValeShrubS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WillowBush",
+            "imageDescription": "Small shrubs for mountains, mixed leaves",
+            "image": [
+              {
+                "title": "Willow Bush",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WillowBush.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeHandle": "imageGrid",
+        "heading": "Rocks",
+        "clickToCopyScript": "/schbr &<ID>",
+        "imageList": [
+          {
+            "imageTitle": "BirdRock",
+            "imageDescription": "Blobs of iron blocks in varying sizes",
+            "image": [
+              {
+                "title": "Bird Rock",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BirdRock.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "GenRockS",
+            "imageDescription": "Small blobs of ironore, after placing do a big replace to the right terrainset",
+            "image": [
+              {
+                "title": "Gen Rock S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/GenRockS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistRockL",
+            "imageDescription": "Large Mistwood rocks",
+            "image": [
+              {
+                "title": "Mist Rock L",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistRockL.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MistRockS",
+            "imageDescription": "Small Mistwood rocks",
+            "image": [
+              {
+                "title": "Mist Rock S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistRockS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "MossyBoulder",
+            "imageDescription": "Mossy boulders",
+            "image": [
+              {
+                "title": "Mist Rock S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/MistRockS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "NorthernBoulder",
+            "imageDescription": "Northern Terrain mix boulders",
+            "image": [
+              {
+                "title": "Northern Boulder",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/NorthernBoulder.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "RockTaiga",
+            "imageDescription": "Northern mix rock",
+            "image": [
+              {
+                "title": "Rock Taiga",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/RockTaiga.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "RockTaigaLarge",
+            "imageDescription": "Large Northern mix rock",
+            "image": [
+              {
+                "title": "Rock Taiga Large",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/RockTaigaLarge.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "TorentineRiverBankRock",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Torentine River Bank Rock",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/TorentineRiverBankRock.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "TorentineRiverBanks",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Torentine River Banks",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/TorentineRiverBanks.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "TorentineRiverRock",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Torentine River Rock",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/TorentineRiverRock.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeHandle": "imageGrid",
+        "heading": "Flowers",
+        "clickToCopyScript": "/schbr &<ID>",
+        "imageList": [
+          {
+            "imageTitle": "BlackEyedSusan",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Black Eyed Susan",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BlackEyedSusan.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Cattails",
+            "imageDescription": null,
+            "image": []
+          },
+          {
+            "imageTitle": "Cosmos",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Cosmos",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Cosmos.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Crocus",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Crocus",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Crocus.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Flowers",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Flowers",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Flowers.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Daffodils",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Daffodils",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Daffodils.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Dandelion",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Dandelion",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Dandelion.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Daisies",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Daisies",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Daisies.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Datura",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Datura",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Datura.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "DesertFlowers",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Desert Flowers",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/DesertFlowers.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Forgetmenot",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Forgetmenot",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Forgetmenot.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Iris",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Iris",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Iris.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Lavender",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Lavender",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Lavender.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Marigolds",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Marigolds",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Marigolds.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "NasturiumNasturium",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Nasturium",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Nasturium.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "NettleFlower",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Nettle Flower",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/NettleFlower.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Pansies",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Pansies",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Pansies.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Poppy",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Poppy",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Poppy.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Ragweed",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Ragweed",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Ragweed.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SweetPea",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Sweet Pea",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SweetPea.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "SGoldenFlowers",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "S Golden Flowers",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SGoldenFlowers.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Tulips",
+            "imageDescription": null,
+            "image": [
+              {
+                "title": "Tulips",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Tulips.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "typeHandle": "imageGrid",
+        "heading": "Miscellaneous",
+        "clickToCopyScript": "/schbr &<ID>",
+        "imageList": [
+          {
+            "imageTitle": "BhStump",
+            "imageDescription": "Medium size tree stumps",
+            "image": []
+          },
+          {
+            "imageTitle": "Bracken",
+            "imageDescription": "Clusters of bracken, to be used on its own or to create larger patches",
+            "image": []
+          },
+          {
+            "imageTitle": "BWater",
+            "imageDescription": "Clusters of water vegetation. Place 1 lower than eventual water level",
+            "image": [
+              {
+                "title": "B Water",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/BWater.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcMeadow",
+            "imageDescription": "Small bushes, rocks, and clusters of flowers for meadows",
+            "image": [
+              {
+                "title": "Carc Meadow",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcMeadow.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcMeadowFlowers",
+            "imageDescription": "Clusters of flowers for meadows",
+            "image": [
+              {
+                "title": "Carc Meadow Flowers",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcMeadowFlowers.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CarcStump",
+            "imageDescription": "Small tree stumps",
+            "image": [
+              {
+                "title": "Carc Stump",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CarcStump.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Cart",
+            "imageDescription": "Just a cart, pretty average, nothing special",
+            "image": [
+              {
+                "title": "Cart",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Cart.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "CowParsley",
+            "imageDescription": "Clusters of cow parsley, to be used on its own mostly",
+            "image": [
+              {
+                "title": "Cow Parsley",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/CowParsley.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "DeadBracken",
+            "imageDescription": "Clusters of dead bracken, to be used on its own or to create larger patches in the north",
+            "image": [
+              {
+                "title": "Dead Bracken",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/DeadBracken.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Fireweed",
+            "imageDescription": "Clusters of fireweed, to be used on its own or to create larger patches, mostly in the north",
+            "image": []
+          },
+          {
+            "imageTitle": "GroundCoverS",
+            "imageDescription": "Mushrooms, rocks, tree stumps. For forest floors",
+            "image": [
+              {
+                "title": "Ground Cover S",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/GroundCoverS.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "JungleTallFern",
+            "imageDescription": "Clusters of ferns, to be used on its own or to create larger patches",
+            "image": [
+              {
+                "title": "Jungle Tall Fern",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JungleTallFern.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "JungleTallGrass",
+            "imageDescription": "Clusters of grass, to be used on its own or to create larger patches",
+            "image": [
+              {
+                "title": "Jungle Tall Grass",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/JungleTallGrass.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Nettles",
+            "imageDescription": "Clusters of nettles, to be used on its own or to create larger patches",
+            "image": [
+              {
+                "title": "Nettles",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/Nettles.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "RiverBankDetails",
+            "imageDescription": "Rocks and grass for river panks",
+            "image": []
+          },
+          {
+            "imageTitle": "SavannaTallGrass",
+            "imageDescription": "Clusters of savanna grass, to be used on its own or to create larger patches",
+            "image": [
+              {
+                "title": "Savannah Tall Grass",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/SavannahTallGrass.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "TorentineFallenTree",
+            "imageDescription": "Fallen tree",
+            "image": [
+              {
+                "title": "Torentine Fallen Tree",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/TorentineFallenTree.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "TorentineGroundcover",
+            "imageDescription": "Misc ground cover",
+            "image": [
+              {
+                "title": "Torentine Groundcover",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/TorentineGroundcover.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WolfswoodDetail",
+            "imageDescription": "Rocks and tree stumps, for northern forests",
+            "image": [
+              {
+                "title": "Wolfswood Detail",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WolfswoodDetail.png"
+              }
+            ]
+          },
+          {
+            "imageTitle": "WolfswoodLog",
+            "imageDescription": "Larger fallen logs, for northern forests",
+            "image": [
+              {
+                "title": "Wolfswood Log",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/WolfswoodLog.png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Frequently Asked Questions",
+    "heroImage": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/website/faqicon.png"
+      }
+    ],
+    "wikiSlices": [
+      {
+        "typeHandle": "accordion",
+        "heading": "General",
+        "accordionContent": [
+          {
+            "heading": "What is WesterosCraft?",
+            "copy": "<p>Our mission is to recreate the universe imagined by author <a href=\"http://www.georgerrmartin.com/\">George RR Martin</a> in his book series <a href=\"http://en.wikipedia.org/wiki/A_Song_of_Ice_and_Fire\">A Song of Ice and Fire</a> (ASoIaF) as accurately and precisely as possible within the confines of <a href=\"https://minecraft.net/\">Minecraft</a>, in an effort to custom create a world which will be the stage for a <a href=\"https://forum.westeroscraft.com/forum/mmo.44/\">roleplaying game</a>.<strong> In pursuit of this endeavor we aim to provide a friendly and encouraging atmosphere for our creative community at all times.</strong></p>\n<p>To accomplish this we use our <a href=\"https://forum.westeroscraft.com/forum/\">Forums</a> , this <a href=\"https://westeroscraft.com/wiki\">Wiki </a>, a <a href=\"http://mc.westeroscraft.com/\">Dynamic Map</a> , <a href=\"https://discordapp.com/\">Discord</a> , a <a href=\"http://www.westeroscraft.com/launcher\">Custom Launcher</a> , and the <a href=\"http://www.amazon.com/George-Martins-Thrones-5-Book-Boxed/dp/0345535529/ref=la_B000APIGH4_1_1?s=books&amp;ie=UTF8&amp;qid=1391856345&amp;sr=1-1\">Song of Ice and Fire books</a> in addition to hundreds of online resources that we use to learn as much as possible about the world we are building.</p>\n<p>Most importantly, we are a community of people dedicated to both our loves for Minecraft and the ASoIaF series, and use this project as a way to explore our relevant interests.</p>"
+          },
+          {
+            "heading": "What is a custom launcher and why do you have one?",
+            "copy": "<p>Over the years we found that we were slowly pushing the limits of what a traditional Minecraft game could handle, and decided we needed to develop our own launcher in order to handle our constantly growing needs. A launcher is a program designed to 'launch' an application, such as Minecraft. As long as you have a legal copy of the Minecraft game, you should be able to use our launcher without issue. You can purchase a digital copy of Minecraft <a href=\"https://minecraft.net/\">here</a> . The launcher enables us to expand our inventory of custom blocks, provide everyone with easy-access to our custom texture pack, and to be able to implement roleplaying elements into the game which could otherwise not exist. You can easily download our launcher <a href=\"http://www.westeroscraft.com/launcher\"><strong>here</strong>.</a></p>"
+          },
+          {
+            "heading": "I am having difficulty logging into the server, what can I do?",
+            "copy": "<p>Head over to our <a href=\"https://westeroscraft.com/wiki/guides/troubleshooting-guide\">Troubleshooting Guide</a>. It answers the most frequent issues users had in the past, and is likely to contain the answer to your problem as well. If your problem persists you may contact us via the <a href=\"https://forum.westeroscraft.com/forum/support.40/\">Support Forum</a> or on <a href=\"https://discord.com/invite/pBS5TH4\">Discord</a>. Please note that requests not following the <a href=\"https://forum.westeroscraft.com/threads/electron-launcher-tech-support-read-before-you-post.1511/\">Submission Rules</a> will be deleted.</p>"
+          },
+          {
+            "heading": "When can I roleplay on the map?",
+            "copy": "<p>We're working on this project since late 2011. So far, we've done and redone our map a couple of times, at present we are roughly at 60% completion. We can not make a reliable prediction about when we would be able to finish this, but we're getting closer with every house and every castle that's built.</p>\n<p>Here is a link to our list of<strong> <a href=\"https://www.westeroscraft.com/progress\">WesterosCraft Projects</a></strong> .</p>"
+          },
+          {
+            "heading": "Can I download the map?",
+            "copy": "<p>Unfortunately the map is not available for download. One reason would be the large file size of the map, another is the project isn't completed, and another is that the map is and always will be free to visit.<br /></p>\n"
+          },
+          {
+            "heading": "Are you going to build Essos? (Qarth, Astapor, Braavos, etc)",
+            "copy": "<p>While the immediate goal is to finish Westeros, there is a great deal of interest in Essos and its creation. It is more than likely we will create all of Essos, but it will still be quite some time before we get there.</p>"
+          },
+          {
+            "heading": "What are the ranks of the server?",
+            "copy": "<ul><li>Nobuild: Exactly what it means, these members and visitors do not have any permissions to alter our map. This is the default starting rank.</li><li>NewBuilder, [N]-Builder: Also called Probation Builder, or Probie. They have permissions to build, but are required to meet certain requirements. An experienced builder assists them during their first weeks of buildership.</li><li>Builder: The server's workforce. They create most of the content by hand.</li><li>Builders with Editor Lite, [E]-Lites: Builders can apply for limited WorldEdit perms to use for terraforming heavy operations at their own projects.</li><li>Editors: These are builders with permissions for WorldEdit and VoxelSniper. They handle minor worldediting requests as well as large terraformings</li><li>Moderators: Handle the administration of the server. They reply to builder applications, organise and moderate content creation, serve justice and officially represent the community.</li><li>Coders: The technical backbone of the server, they maintain the complex workings 'behind the scenes'</li><li>Administrators: The founders and captains of the server, they are in control of the finances and hardware.</li></ul>"
+          },
+          {
+            "heading": "How do I become a Builder?",
+            "copy": "<p>Read the <a href=\"https://forum.westeroscraft.com/form/builder-application.3/select\">Application Guidelines</a> carefully, they are very important. Then fill out the application form completely.</p>\n<p>As a word of advice, be sure to explore our server thoroughly before submitting your application so that you know what kinds of builds we are looking for. If you do not submit any images of builds, your application will be rejected. Check out our <a href=\"https://westeroscraft.com/wiki/guides/applicant-building-guide\">Basic Building Guide for Applicants</a> for more helpful advice.</p>"
+          }
+        ]
+      },
+      {
+        "typeHandle": "accordion",
+        "heading": "Gameplay",
+        "accordionContent": [
+          {
+            "heading": "What can I do on the server?",
+            "copy": "<p>If you are a new visitor, you are free to explore the server and it's builds at your leisure. Please check our <a href=\"https://westeroscraft.com/wiki/miscellaneous/server-rules\">Server Rules</a> before going online.</p>\n<p>Unfortunately you will not be able to build until you have put in an <a href=\"https://forum.westeroscraft.com/form/builder-application.3/select\">application on our forums</a> and been accepted. For more info about this, check out our <a href=\"https://westeroscraft.com/wiki/guides/applicant-building-guide\">Basic Building Guide for Applicants</a> before making an application.</p>"
+          },
+          {
+            "heading": "How do I visit a location?",
+            "copy": "<p>If you know the name of the place you want to visit, type <strong>/warp [location]</strong> in the chat. Replace [location] with the name of your destination. Warp names are one word only with no punctuation. For example, to warp to King's Landing type <strong>/warp kingslanding</strong> in chat. If you don't know the name or you are unsure about the spelling you are welcome to ask.</p><p>A great way to explore new locations is<strong> /warp map</strong> in game</p><p>To see all of our warps in one place, or just to check out the scale of our map, check out our <strong><a href=\"http://mc.westeroscraft.com/\">dynamic map</a></strong> . You can focus it on your character to follow your journey through Westeros, as well as enable and disable different layers of information, such as player names or warps (this can be useful to find out where you are - but beware, there is a lot of warps! Enabling this layer while zoomed out may cause your browser to freeze or crash.)</p>"
+          }
+        ]
+      },
+      {
+        "typeHandle": "accordion",
+        "heading": "The World",
+        "accordionContent": [
+          {
+            "heading": "How big is the map?",
+            "copy": "<p>The map is currently several dozen gigs in file size. If you're wondering about the dimensions, it's roughly 22,000 x 59,000 blocks. About 1298 sq km / 501.14 sq mi, roughly the size of Los Angeles.</p>"
+          },
+          {
+            "heading": "How did you make the map?",
+            "copy": "<p>We used a program called <a href=\"http://worldpainter.net/\">WorldPainter</a> to shape the map and do basic terraforming. In-game we use a mixture of hand work, <a href=\"https://dev.bukkit.org/projects/worldedit\">WorldEdit</a> and <a href=\"https://dev.bukkit.org/projects/voxelsniper-rebooted\">VoxelSniper</a> to refine the terrain further.</p>"
+          },
+          {
+            "heading": "How many people have worked on the server?",
+            "copy": "<p>Since the beginning, we've had hundreds of contributors, but people come and go. For scale, 173 people built houses in the city of <a href=\"https://westeroscraft.com/wiki/crownlands/kings-landing\">King's Landing</a>. We currently have 160 active builders.</p>"
+          },
+          {
+            "heading": "What cities are currently finished?",
+            "copy": "<p>You can check out all our projects by visiting our <a href=\"http://mc.westeroscraft.com/\"><strong>livemap</strong></a> or our <strong><a href=\"https://westeroscraft.com/progress\">progress page</a></strong>. We have quite a lot of the most famous landmarks done though, including <a href=\"https://westeroscraft.com/wiki/north/winterfell\">Winterfell</a>, <a href=\"https://westeroscraft.com/wiki/the-wall/castle-black\">Castle Black</a>, <a href=\"https://westeroscraft.com/wiki/the-wall\">The Wall</a> and <a href=\"https://westeroscraft.com/wiki/crownlands/kings-landing\">King's Landing</a>.</p>"
+          },
+          {
+            "heading": "Is the server based on the books or the HBO show?",
+            "copy": "<p>Our builds are based on the books, but we do use the HBO show as inspiration.</p>"
+          },
+          {
+            "heading": "What book is the the server set in?",
+            "copy": "<p>The server is set on 3/3/299 according to this<a href=\"https://docs.google.com/spreadsheets/d/1ZsY3lcDDtTdBWp1Gx6mfkdtZT6-Gk0kdTGeSC_Dj7WM/edit#gid=8\"> timeline</a>. This puts us at the start of A Clash of Kings, specifically the first Davos chapter. Explore with caution, Westeroscraft has destinations that contain show spoilers.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Custom Resource Pack",
+    "heroImage": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/website/custompackicon.png"
+      }
+    ],
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<h3>Introduction<br /></h3>\n<p>The WesterosCraft Resource Pack (WCRP) not only makes a plethora of new textures available to the game, but swaps out most of Minecraft's standard sounds for more realistic counterparts.</p>\n<p>The WCRP is a remix of <a href=\"http://dokucraft.co.uk/\">Dokucraft</a>, <a href=\"http://www.minecraftforum.net/topic/513093-16x32x64x162-dokucraft-the-saga-continues/\">Doku TSC</a> and custom textures specifically tailored to fit the atmosphere of the WesterosCraft Creative Server. The sound effects are from <a href=\"http://www.soundjay.com/\">Soundjay.com</a> and <a href=\"http://www.pond5.com/\">Pond5.com</a>, either paid for under an Attribution 3.0 license or considered in the public domain.</p>\n<h3>Tailored to Fit</h3>\n<p>In several ways, the WCRP has been adapted to help convey a true-to-the-lore atmosphere of the world of \"A Song of Ice and Fire\".</p>\n<p>Additions to the Textures have been made to account for the Religions mentioned in ASOIF like painted images of of the Seven (on the Dye Items), the seven-pointed star as a metal adornment on plaster blocks and the colours of the seven on a crystal glass windows and the enchantment table.</p>\n<p>Other textures e.g. the daub &amp; wattle blocks (on the Endstone metadatas) were created to emphasize the cultural and geographical differences between the regions of Westeros . The wealth or educational level of a build can be expressed by adding various types of (book)shelves, cabinets and chests that are made from different materials.</p>\n<p>The interior detail of a project is just as important as the exterior, which is why several blocks display household items (food plates on pressure plates, tankard on flower pot) or even foodstuffs (hanging sausages, hares, fowls on cobbweb metadatas). Just as George R. R. Martin put great effort into describing foods and beverages, we put great effort into recreating that diversity. Netherwarts have been retextured to peas, potatos to turnips and the creeper head is now a head of lettuce and lots of other ingredients have been added as the content of crates and barrels.</p>\n<p>There are a lot of textures that only differ slightly in tone or texture e.g. the sandstones. This helps to portray a realistic weathering or aging effect to walls and roofs of builds without creating harsh contrasts.</p>\n<p>This pack is purely a Creative Mode pack. Currently there are no plans to make this into a pack that works with vanilla Survival.<br /></p>\n<h3>CTM &amp; MCPatcher</h3>\n<p>In the <a title=\"Pre-launcher versions (page does not exist)\">pre-launcher versions</a> the RP made excessive use of <a href=\"http://www.minecraftforum.net/topic/1496369-173pre-172-164-and-earlierupdate-127-mcpatcher-hd-fix-431/\">MCPatcher's</a> most notable feature, the Connected Textures Mod (CTM). The CTM allowed the creators of the WCRP to increase the amount of textures a block can display, by assigning textures to the <a href=\"http://minecraft.gamepedia.com/Data_values#Data\">metadatas</a> of a block ID that the vanilla game did not use. The mod also comes with a set of different <a href=\"http://www.minecraftforum.net/topic/1414510-a-texture-artists-guide-to-mcpatchers-features/\">features</a> on how textures on a block change with the placement of the block in 3D space.</p>\n<p>We learned a lot about the CTM by studing the Packs of <a href=\"http://fyreuk.com/\">FyreUK</a>,<a href=\"http://www.jslegacy.com/\">John Smith</a> &amp; <a href=\"http://www.minecraftforum.net/topic/69354-64x162-misas-realistic-texture-pack-updated-1jul13/\">Misa's Texture Pack.</a> We would like to thank them for being pioneers of CTM.</p>\n<h3>History of Resource Pack Development</h3>\n<h3>Current Situation</h3>\n<p>The current WCRP is specificly designed to complement the corresponding version of the <a title=\"WesterosBlocks (page does not exist)\">WesterosBlocks</a> mod, which has to be installed on a Forge based server and client. The WCRP features 177 textures that use various CTM methods, significant changes to standard MC blocks, a custom sky set with several moving clouds, customs sounds and lots of biome dependent colour-overlays.</p>\n<p>It is about 44 MB large.</p>\n<h3>Outlook</h3>\n<p>In the future, development will focus on refreshing the item and sound portion of the Resource Pack. Check out our ongoing development on the <a href=\"https://forum.westeroscraft.com/threads/westeroscraft-texture-pack-megathread.34/\">forums.</a></p>\n<h3>Creators &amp; Contributors</h3>\n<p>Emoticone, Marken4, Moozipan, Hal9007, Jack05, Thamus_Knoward, WhitefireNeo</p>\n<p>Special thanks to <a href=\"http://www.minecraftforum.net/topic/207781-32x17x-dokucraft-25-free-to-use/\">Doku</a>, <a href=\"http://www.minecraftforum.net/topic/69354-64x162-misas-realistic-texture-pack-updated-1jul13/\">Misa</a>, <a href=\"http://dokucraft.co.uk/\">Hickerydickery, WantedRobot,</a><a href=\"http://smptextures.com/\">SMP,</a> and the following users from the DokuCommunity for their input on the respective textures:</p>\n<p>Balloftape - Skull, CreeperHead, SurvivorHead, Redstone Lamp<br />Metatron - Zombie Head<br />Savage Alien - Empty Map<br />Gabriel MBR - Baked Potatoe, Pumpkin Pie<br />Duru - Armor Icons, Compass, Pork, Brewing Stand<br />Foodstamp - Armor Icons<br />CCCode - Chainmail Icons<br />LordofSax - Helmet, Chestplate, Leggins, etc.<br />Dark_Tundra - Banner<br />Wessexstock - Survivor Skin, Zombie Skin<br />Zaph34r - Sign<br />Diet Taco - Trap Door<br />Alexium - Cake, Cake Item<br />Kloporte - Bread<br />Noodaa - Rotten Flesh, Melon Slice<br />Dark Defender - ChickenMeat, Cauldron, Mushroom Block<br />Aceofhrts97 - Beef<br />Dubca7 - Cauldron<br />SerAaron - Book, Flagstones<br />Straxael - Explosion<br />JetStorm - Wooden Planks, Chiseled Stone Brick, SandStone<br />Staretta - Glasspanes<br />AwesomeSauceUK- NetherBrick<br />Recreps4444, SeanFletcher,DWSkanska, TheBaconizer - Oak Sapling, Assorted Flowers<br />Max - DiamondBlock<br />DWSkanska - Carrot, Skull, Language Buttons.</p>"
+      },
+      {
+        "typeHandle": "imageGrid",
+        "heading": "WesterosCraft Custom Textures",
+        "clickToCopyScript": null,
+        "imageList": [
+          {
+            "imageTitle": "The Seven",
+            "imageDescription": "Blocks tailored for \"The Faith of the Seven\"",
+            "image": [
+              {
+                "title": "Faithseventextures",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/faithseventextures.jpg"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Furnishings",
+            "imageDescription": "Various bookshelves and cabinets",
+            "image": [
+              {
+                "title": "Furnishingtextures",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/furnishingtextures.jpg"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Building Material",
+            "imageDescription": "Variations of daub and wattle blocks",
+            "image": [
+              {
+                "title": "Daubandwattletextures",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/daubandwattletextures.jpg"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Agriculture",
+            "imageDescription": "Crates and crops",
+            "image": [
+              {
+                "title": "Cropstextures",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/cropstextures.jpg"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Decoration",
+            "imageDescription": "A variety of blocks that could be used for decoration",
+            "image": [
+              {
+                "title": "Decortextures",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/decortextures.jpg"
+              }
+            ]
+          },
+          {
+            "imageTitle": "Stone wall types",
+            "imageDescription": "Weathered sandstone wall gradient",
+            "image": [
+              {
+                "title": "Walltextures",
+                "url": "https://cdn.westeroscraft.com/web/assets/images/walltextures.jpg"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Official No-Redo Rule",
+    "heroImage": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/website/redoruleicon.png"
+      }
+    ],
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<h3>Preamble</h3>\n<p>All of our builders and guests have a vested interest in seeing the project complete. Not only does this provide a sense of accomplishment and completion, it also allows the map to be passed to our Developers, who will then start the process of using the map to create an RPG game. Currently, it's estimated that our project stands somewhere in the ballpark of 65%-70% complete, with major builds such as Oldtown still looming. One persistent problem we've faced is the aging process of older builds, and the desire by people to redo builds which are considered outdated. It is believed that allowing for redos in general would create a vicious cycle, where we would never finish due to builds constantly becoming outdated, or at the very least would set us back by a great many completion points. Consequently, we've operated under a rule forbidding redos in general.<br /><br />Thus far, however, the no-redo rule has been applied as somewhat of a precedent law. This has, in the past, lead to a large amount of confusion and debates about how the rule is applied. This post intends to solidify the no-redo rule, and to make it unambiguously applicable.<br /><br /><em>Please note that none of these rules or stipulations are new; they are merely a formalization of the cumulative discussions and precedent cases we've had previously regarding redos.</em></p>\n<h3>Definitions in Use</h3>\n<p>1. A \"redo\", for the purposes and intents of this post, is defined as the action of wiping clean all or most of a build, and re-building it from scratch according to new plans.<br /><br />2. An \"update\", for the purposes and intents of this post, is defined as (1) adding on to an existing build without removing the existing portions (for instance, adding surrounding lands which weren't there before), and/or (2) modifying the exteriors or interiors of an existing build without removing the build and starting from scratch.</p>\n<h3>The Rule</h3>\n<p><strong>1. Redos Forbidden: </strong>Redoing a build is expressly forbidden, under any circumstances, except for in the case where one of the following clauses holds true. Note that while appeals to quality or appeals to planning can be used as <em>motivation</em> for a redo, they <em>cannot</em> be used as reasons for why a redo should be allowed. Only the following clauses can be used to claim that a redo should be allowed:<br /><br />a) <u>Server Build Clause:</u> If the build under consideration is a server build, it may be allowed to be redone after extensive discussion. However, server build redos will in general be postponed until <em>all incomplete</em> server builds are either complete or in progress. When server builds are redone, it will only be done if the redo does not have substantial impact on the direction of our completion rate.<br /><br />b) <u>Inadequate Canon Clause:</u> If the build under consideration objectively lacks important canon, which directly impacts the planning or style of the build, it may be allowed to be redone. For this to be satisfied, the claimant must prove <em>unambiguously</em> that a substantial amount of canon has been missed. The claimant's case will be assisted if it can be shown that this lack of canon was understood to be an issue before they intended to apply for redo.<br />[UPDATE (12/16/18)]: Redos will be tentatively allowed for builds which get new canon in new publications, but giving mods the right reject these on a case-by-case basis depending on circumstances.<br /><br />c) <u>Abandoned Build Clause:</u> If a build is incomplete and filed under the <a href=\"https://westeroscraft.com/wiki/miscellaneous/projects-orphanage\">projects orphanage</a> as an abandoned build, it may be allowed to be redone. The intuition behind this clause is that it can be difficult to pick up someone else's outdated work, and if we expect people to do this very few people would want to apply to finish abandoned builds. However, moderators reserve the right to veto a redo for an abandoned build if they deem the existing portions to be particularly high quality.<br /><br /><strong>2. Updates Allowed with Stipulations: </strong>Updating a build is not expressly forbidden, however an update must abide by the following stipulations to be approved:<br /><br />a) <u>Sufficient Additional Value Clause:</u> The update under consideration adds <em>sufficient value</em> to the existing project. As there is no strict criteria to judge this by, it will be analyzed on a case-by-case basis. Some general principles are that an update is more likely to be allowed if it completes underdeveloped or non-existent surrounding lands. If a build has poor layout or planning to begin with, an update may be less likely to be allowed because interior/exterior updates are unlikely to solve the fundamental source of low-quality, and these efforts would be better allocated to increasing our completion rate through doing incomplete builds.<br /><br />b) <u>Abiding by Update Clause:</u> An approved update cannot, under any circumstances, turn into a full redo. If a builder attempts to get something approved as an update and then transition into a redo, approval may be revoked.<br /><br /><strong>3. Conditions for Lifting Redo Ban:</strong> Only once the following two conditions have been satisfied will we lift the general ban on redos:<br /><br />i) The world has reached <em>100% completion rate</em>, judged by a thorough investigation and quality check by the entire team. This may not necessarily include detailed terraforming and non-canon space fillers everywhere, but it does include at the very least all canon builds on the official project list. All WIP terraforms must be finished at this point in time as well.<br /><br />ii) The 100% complete world has been <em>backed up</em> and exported to the Development team.<br /><br />The lifting of the redo rule may be coupled by the introduction of a plethora of new blocks which we were previously unable to introduce due to aging concerns. Following this point, the server will operate under an \"incremental updates\" model: every time a redo is fully completed on the production server, that build is <em>ported</em> over to the development server in place of the existing one. Thus, the development server remains at 100% completion, but quality increases incrementally.</p>\n<p><strong>4. Submitting an Appeal: </strong>In the case where an individual believes a project is exempt from the no-redo rule, or believes a build qualifies for an update, they will be expected to start a new thread in the appropriate regional sub-forum entitled \"[Project] Redo Appeal\" or \"[Project] Update Appeal\" wherein a public discussion surrounding the project and appeal may begin. The moderating team will then by majority vote approve or deny the appeal. </p>\n<p>Projects approved under 1(a-c) for redo are open to all builders per standard project rules. While the original builder who appealed the project for redo will be given greater consideration, all builders are as welcome to apply for the redo through the formal application process as much as the original appealing builder.</p>\n<h3>Conclusion<br /></h3>\n<p>We hope that the formalization of this rule may prevent future confusion and debate, and allow us to consistently apply the rule in a way which does not bring fairness into question. Above all, we hope that this rule helps us to see the light at the end of the tunnel, and focus our effort to completing the mammoth task of recreating Westeros in Minecraft.<br /></p>"
+      }
+    ]
+  },
+  {
+    "title": "Map Repository",
+    "heroImage": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/website/maprepositoryicon.png"
+      }
+    ],
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<h4><strong>Regional Maps</strong></h4>\n<p><strong>North</strong><br /><a href=\"https://imgur.com/e1DsZRl\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​ </p>\n<p><strong>Riverlands</strong><br /><a href=\"https://docs.google.com/document/d/13W3P7GSpVC5MGcLDAVsMgmuVmtFPsIQhbCVSUmtlzUg/edit#heading=h.qzmx3ffoq359\" target=\"_blank\" rel=\"noreferrer noopener\">Research</a><br /><a href=\"https://imgur.com/D42yRQW\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a><br /><a href=\"https://imgur.com/FBd904j\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a><br /><a href=\"https://imgur.com/MfoHrF9\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a><br /><a href=\"https://imgur.com/ag8QZgw\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a><br /><a href=\"https://imgur.com/RuRGMEJ\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a><br /><a href=\"https://imgur.com/wY620YL\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​ </p>\n<p><strong>Westerlands</strong><br /><a href=\"https://docs.google.com/document/d/1b6Ny0bgl35E88oe0cRERruHPyef0IrAK60AzsxpNfH8/edit?usp=sharing\" target=\"_blank\" rel=\"noreferrer noopener\">Research</a><br /><a href=\"https://imgur.com/pDoz4fw\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​ </p>\n<p><strong>Crownlands</strong><br /><a href=\"https://docs.google.com/document/d/1BTIRF13_ZP-yhsvddrMuAFQ3LfeRdxqbx97MGdpVNXk/edit?usp=sharing\" target=\"_blank\" rel=\"noreferrer noopener\">Research</a><br /><a href=\"https://imgur.com/vV45h2u\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a> </p>\n<p><strong>​Iron Islands</strong><br /><a href=\"https://imgur.com/HZgNlVe\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​ </p>\n<p><strong>Vale</strong><br /><a href=\"https://docs.google.com/document/d/1bxM09oswCxvErdX1eKR2y_wyIm3Nx8-Inher-DNtESw/edit?usp=sharing\" target=\"_blank\" rel=\"noreferrer noopener\">Research</a><br /><a href=\"https://imgur.com/6eP6EBW\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​ </p>\n<p><strong>Reach</strong><br /><a href=\"https://imgur.com/Gn505fJ\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​ </p>\n<p><strong>Stormlands</strong><br /><a href=\"https://i.imgur.com/WCfwU4l.jpg\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a><br /><a href=\"https://imgur.com/Gn505fJ\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​ </p>\n<p><strong>Dorne</strong><br /><a href=\"https://i.imgflip.com/1freth.jpg\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a></p><p><strong>Climate Maps<br /></strong><a href=\"https://s3.amazonaws.com/files.enjin.com/403550/modules/forum/attachments/Westeros+climate_1440473770.jpg\" target=\"_blank\" rel=\"noreferrer noopener\">Map</a>​</p>\n<h4><strong>Vegetation Maps<br /></strong><a href=\"https://docs.google.com/document/d/1LIjWAMIrjLvDnKMa0wEbGm5WzvkFqapG7yrKk0kP7U8/edit?usp=sharing\" target=\"_blank\" rel=\"noreferrer noopener\">Doc<br /></a><a href=\"https://docs.google.com/document/d/1951reoZC3UkG9chNlgUrHbQGOrHzjNfJ0OTnevQyPoc/edit?usp=sharing\" target=\"_blank\" rel=\"noreferrer noopener\">Doc</a></h4><h4>​<strong>Stylized Maps<br /></strong><a href=\"https://www.flickr.com/photos/96601762@N02/10391669173/sizes/l/in/set-72157636186641263/\" target=\"_blank\" rel=\"noreferrer noopener\">carcinogenius' map</a></h4>\n<figure><img src=\"https://cdn.westeroscraft.com/web/assets/images/carcmaporiginal.png\" alt=\"\" /></figure>"
+      }
+    ]
+  },
+  {
+    "title": "Projects Orphanage",
+    "heroImage": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/website/projectsorphanageicon.png"
+      }
+    ],
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p>The below list is of projects which have, sadly, become orphaned by their project leaders. Projects on the list have links to their original applications unless otherwise noted.</p>\n<p>Projects can become abandoned in two ways:</p>\n<p>- The project leader announces that they have no intention of completing their project.<br />- The project leader has become inactive (as decided by the moderating team).</p>\n<p>We hope some among you may find a place in your hearts to foster one of the below projects, many are very near to completion and just need a little attention. </p>\n<p>A foster project application should respect the original project leaders vision and not significantly alter any existing parts of the build. Fostering a project is essentially picking up where the previous leader left off. If you intend to remove or heavily update any existing part of the build, please consider instead appealing for a redo or an update. Refer to clause 1.c of the <a href=\"https://westeroscraft.com/wiki/miscellaneous/official-no-redo-rule\">Official No-Redo Rule</a>. </p>\n<p>You do not need to make an appeal to apply for a foster project.<br /></p>\n<p>The North:<br /><a href=\"https://forum.westeroscraft.com/threads/old-project-application-graywater-watch.943/\"><strong>Greywater Watch</strong></a><br /><strong><a href=\"https://forum.westeroscraft.com/threads/old-project-application-karhold-by-mrtxi-flemishguard.2240/\">Karhold</a><br /></strong><strong>Oldcastle </strong>(original application unavailable)<br /><br />The Riverlands:<a href=\"https://forum.westeroscraft.com/threads/house-deddings-rattlez.401/\"><strong><br />Deddings</strong></a><br /><a href=\"https://forum.westeroscraft.com/threads/old-project-application-house-grell.2229/\"><strong>Grell</strong></a><strong><br />Atranta, </strong>formerly<strong> </strong><a href=\"https://forum.westeroscraft.com/threads/old-project-app-wayfarers-rest-by-barkus-smp.2230/\"><strong>Wayfarer's Rest</strong></a><br /><br />The Vale:<br /><a href=\"https://forum.westeroscraft.com/threads/old-project-application-mountain-clans-of-the-vale.942/\"><strong>Mountain Clans of the Vale</strong></a><br /><strong><a href=\"https://forum.westeroscraft.com/threads/wydman-thread-now-open.415/#post-8270\"><strong>Wydman</strong></a></strong><strong><strong><a href=\"https://forum.westeroscraft.com/threads/house-hersy-of-newkeep.35/\"><br />Newkeep</a><br /><a href=\"https://forum.westeroscraft.com/threads/project-application-house-crayne-by-zsomiking-alexistragic.2177/\">Crayne<br /></a><br /></strong></strong>The Westerlands:<br /><a href=\"https://forum.westeroscraft.com/threads/old-project-application-house-foote.945/\"><strong>Foote</strong></a><br /><a href=\"https://forum.westeroscraft.com/threads/house-doggett-desmera.1774/\"><strong><strong>Doggett</strong></strong></a><a href=\"https://forum.westeroscraft.com/threads/old-project-application-house-myatt-by-padrao1796.2242/\"><br /></a><strong><a href=\"https://forum.westeroscraft.com/threads/old-project-application-house-myatt-by-padrao1796.2242/\">Myatt</a></strong></p>\n<p>The Crownlands:<a href=\"https://forum.westeroscraft.com/threads/project-application-house-boggs.972/\"><strong><br />Boggs</strong></a><a href=\"https://forum.westeroscraft.com/threads/house-cave.1483/\"><strong><br />Cave</strong></a><br /><strong>Sweetport Sound (+Tally Hill)</strong><strong><br /></strong><br />The Stormlands:<br /><strong><a href=\"https://forum.westeroscraft.com/threads/project-application-weeping-town.2004/\">Weeping Town</a></strong><a href=\"https://forum.westeroscraft.com/threads/old-project-application-bronzegate.946/\"><br /></a><strong><a href=\"https://forum.westeroscraft.com/threads/old-project-application-bronzegate.946/\">Bronzegate</a></strong><strong><a href=\"https://forum.westeroscraft.com/threads/foster-project-house-estermont-of-green-stone.1000/\"><br />Greenstone</a></strong><strong><br /></strong><strong><strong>Tarth </strong></strong>(original application unavailable)<br /><br />The Reach:<br /><a href=\"https://forum.westeroscraft.com/threads/old-project-application-darkdell.944/\"><strong>Darkdell</strong></a><br /><strong><strong><a href=\"https://forum.westeroscraft.com/threads/old-project-application-greyshield.950/\"><strong>House Grimm of Greyshield</strong></a></strong></strong><br /><a href=\"https://forum.westeroscraft.com/threads/old-project-application-house-willum-by-m_a_c_i.2232/\"><strong><strong>Willum</strong></strong></a><br /><a href=\"https://forum.westeroscraft.com/threads/old-project-application-house-cockshaw-by-newenglandred09.2233/\"><strong><strong><strong>Cockshaw</strong></strong></strong></a><br /><a href=\"https://forum.westeroscraft.com/threads/redding-update.547/\"><strong>Redding</strong></a><br /><strong><a href=\"https://forum.westeroscraft.com/threads/orme-laor.513/\">Orme</a><a href=\"https://forum.westeroscraft.com/threads/smithyton-application.123/\"><br />Smithyton</a></strong><a href=\"https://forum.westeroscraft.com/threads/smithyton-application.123/\"></a><strong><br /></strong><br />Dorne:<br /><strong>The Tor<a href=\"https://forum.westeroscraft.com/threads/project-application-hellholt-by-majortom12466-_benja.50/\"><br />Hellholt</a></strong></p>"
+      }
+    ]
+  },
+  {
+    "title": "Server Rules",
+    "heroImage": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/website/serverrulesicon.png"
+      }
+    ],
+    "wikiSlices": [
+      {
+        "typeHandle": "text",
+        "redactor": "<p><strong>Read this page carefully!</strong><br /></p>\n<p><strong>Breaking any of the rules below might result in a temporary or permanent ban of your account from either our forums or server or both!</strong><br /></p>\n<h3>The Golden Rule</h3>\n<p>Don't be an asshat. This single rule covers it all. Treat others as you would like to be treated.</p>\n<h3>Rules for Gameplay</h3>\n<p>1. <strong>No griefing.</strong> Guests to the server do not have permission to build, but any attempts to grief the server will result in a ban. If you are a builder, we will consider griefing as a breach of trust, and will result in a ban. This includes altering or destroying the work of others without properly consulting them, or in their prolonged absence, the moderating team.</p><p>2. <strong>No items.</strong> Things that create entities on our server (items, minecarts, boats, arrows, snowballs, etc.) can really add up and start causing lag. In the same vein, don't place large quantities of paintings, star charts, redstone or interactive blocks or similar, neither on the Westeros nor the test world.</p><p>3. <strong>Do not attempt to download our map</strong> or parts of our map without our explicit permission. We are making an active effort to hamper world-downloading and will permanently ban you for doing so.</p><p>4. <strong>Do not abuse bugs</strong> you may find. Let a moderator or admin know. As for bugs with textures please report those to the <a href=\"https://forum.westeroscraft.com/threads/westeroscraft-texture-pack-megathread.34/\">Texturepack Megathread</a>, after checking back with others that it is not only a glitch on your end.</p><p>5. <strong>Do not impersonate</strong> Admins, Mods or other Users. This is fraud and will not be tolerated. Breaking this rule is an instant ban, with a small chance of an appeal being approved.</p><p>6. <strong>Give constructive feedback</strong>. Focus on how to improve the outcome, make suggestions, but accept that the other person might have their own view. Even negative feedback can be constructive if phrased appropriately. Refer to the Golden Rule.</p><p>7. <strong>Try to stay active and involved</strong> with the community. Check the forums regularly in case anyone is trying to reach out to you! As a builder, if you have been absent for more than three months you may be asked to reapply for builder status. </p>\n<h3>Rules for In-Game Chat and Discord</h3>\n<p>1. <strong>No racist, sexist, homophobic or any other prejudiced comments or insults</strong>. If you think you probably shouldn't say something, then don't.</p><p>2. <b>Show and book spoilers are permitted in discussion</b>. Press F1 to hide chat if you want to avoid spoilers. Intentionally spoiling someones experience is a ban worthy offense.</p><p>3. <strong>No spamming the chat</strong>. This includes, but is not limited to: sending a lot of messages, talking in all caps, and spamming characters (i.e. AAAAAAAAAAAAA).No advertising other servers or trying to recruit players on our server.</p><h3>Consequences</h3>\n<p>Our rules are visible both on the wiki and in the spawn town. If you have any questions, please contact a moderator and they will help you out. Here's what could happen if you start breaking rules.</p>\n<p><strong>Warning</strong>. A moderator may warn you to stop what you are doing. Depending on the severity of your actions, you may receive no prior warning at all.</p>\n<p><strong>Kick</strong>. You will be kicked from the server. If the server is full, you may not be able to get back in for some time.</p>\n<p><strong>Mute</strong>. A mod can chose to mute your chat output for an extended amount of time, so that no one can read what you write.</p>\n<p><strong>Temporary Ban</strong>. This is a ban with a certain time limit, frequently 24 or 48 hours. You have not followed the rules. You have not listened to the warnings and instructions. Take some time away and think about what it means to be a part of our community.</p>\n<p><strong>Extended Ban</strong>. This is a ban with an indefinite time period. After some time has passed, usually a few months or more, you are allowed to appeal your ban to show that you have changed and that you still belong on the server.</p>\n<p><strong>Demotion</strong>. As a builder, you managed to break our trust by abusing the Builder rights that have been given to you. This includes but is not limited to, building unapproved easter eggs, altering other players builds without consent, starting a project without mod approval. All of these could also be considered as griefing depending on the situation or frequency which will lead to a Permanent Ban.</p>\n<p><strong>Permanent Ban</strong>. You have disrupted the server to the point that you will never be allowed to enter again. Ever. Do not bother asking.</p>\n<p>Our rules are about following the <a href=\"http://en.wikipedia.org/wiki/Spirit_of_the_law\">spirit of the law, not the letter</a>. For visiting Nobuilds there is a lower tolerance for offenses, often merely a single warning followed by a ban. Keep that in mind when visiting us.</p>\n<h3>Appeals</h3>\n<p>If you wish to challenge a ban, mute or demotion, you may post an appeal on our <a href=\"https://forum.westeroscraft.com/forum/ban-mute-demotion-appeals.33/\">Appeal Subforum.</a><br /></p>"
+      }
+    ]
+  }
+]

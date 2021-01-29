@@ -1,76 +1,64 @@
 import React from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
-import { WikiSliceZone } from '../../../components/slices/wikiSliceZone';
+import { SliceZone } from '../../../components/slices/sliceZone';
 import SEO from '../../../components/organisms/seo/seo';
-import { initializeApollo } from '../../../lib/apolloClient';
-import { GUIDE_QUERY, ALL_GUIDES_QUERY } from '../../../queries/guideQuery.gql';
 import { useRouter } from 'next/router';
 import { Spinner } from '../../../components/atoms/spinner';
-import { computeBreadcrumbs } from '../../../utility/helpers';
+import { computeBreadcrumbs } from '../../../utils/helpers';
+import { getClient, usePreviewSubscription } from '../../../utils/sanity';
+import Error from 'next/error';
 
-const GuidePage = ({ slug, initialApolloState }) => {
+const query = `*[_type == "guide" && slug.current == $slug][0]{
+  ...,pageBuilder[]{_type,documents[]->{...},...}
+  }`;
+
+const GuidePage = ({ preview, guideData }) => {
   const router = useRouter();
 
-  if (router.isFallback) {
-    return <Spinner />;
+  if (!router.isFallback && !guideData) {
+    return <Error statusCode={404} />;
   }
-  const data =
-    initialApolloState.ROOT_QUERY[
-      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiGuide"})`
-    ];
-  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
 
   return (
     <>
-      {!data ? (
+      {!guideData ? (
         <Spinner />
       ) : (
         <SEO
-          title={data.pageTitle || data.title}
-          description={data.pageDescription}
-          image={data.pageEntry && data.pageImage[0].url}
+          title={guideData.name}
+          description={guideData.pageDescription}
+          image={guideData.pageEntry && guideData.pageImage[0].url}
         />
       )}
       <WikiLayout
-        navData={navData}
-        title={(data && data.title) || 'WesterosCraft Wiki'}
+        title={(guideData && guideData.name) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        <WikiSliceZone slices={data.wikiSlices} />
+        {guideData && guideData.pageBuilder && <SliceZone slices={guideData.pageBuilder} />}
       </WikiLayout>
     </>
   );
 };
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
+  const routes = await getClient().fetch(`*[_type == "guide" && defined(slug.current)]{
+    "params": {"guide": slug.current}
+  }`);
 
-  const guides = await apolloClient.query({
-    query: ALL_GUIDES_QUERY
-  });
-
-  const paths = guides.data.entries.map((page) => ({
-    params: {
-      guide: page.slug
-    }
-  }));
-
-  return { paths, fallback: true };
+  return {
+    paths: routes || null,
+    fallback: true
+  };
 }
 
-export async function getStaticProps({ params }) {
-  const apolloClient = initializeApollo();
+export async function getStaticProps({ params = {}, preview = false }) {
+  const { guide } = params;
 
-  await apolloClient.query({
-    query: GUIDE_QUERY,
-    variables: { slug: params.guide }
+  const guideData = await getClient(preview).fetch(query, {
+    slug: guide
   });
 
   return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-      slug: params.guide
-    },
-    revalidate: 1
+    props: { preview, guideData }
   };
 }
 

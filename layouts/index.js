@@ -4,7 +4,7 @@ import { Box } from 'rebass';
 
 import { Header } from '../components/organisms/header';
 import { Footer } from '../components/organisms/footer';
-import { initGA, logPageView } from '../utility/analytics';
+import { initGA, logPageView } from '../utils/analytics';
 
 const data = {
   navData: [
@@ -23,7 +23,7 @@ const data = {
       navLogo: [
         {
           __typename: 'images_Asset',
-          url: 'https://cdn.westeroscraft.com/web/assets/images/westeroscraft_logo.svg'
+          url: '/westeroscraft_logo.svg'
         }
       ]
     },
@@ -152,13 +152,13 @@ const data = {
         {
           __typename: 'mainNav_Node',
           title: 'FAQ',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/frequently-asked-questions',
+          url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
           type: 'craft\\elements\\Entry',
           uri: null,
           element: {
             __typename: 'wiki_wikiMiscellaneous_Entry',
             slug: 'frequently-asked-questions',
-            uri: 'wiki/miscellaneous/frequently-asked-questions'
+            uri: 'wiki/guides/frequently-asked-questions'
           }
         },
         {
@@ -349,12 +349,12 @@ const data = {
         {
           __typename: 'mainFooter_Node',
           title: 'FAQ',
-          url: 'https://westeroscraft.com/wiki/miscellaneous/frequently-asked-questions',
+          url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
           type: 'craft\\elements\\Entry',
           element: {
             __typename: 'wiki_wikiMiscellaneous_Entry',
             slug: 'frequently-asked-questions',
-            uri: 'wiki/miscellaneous/frequently-asked-questions'
+            uri: 'wiki/guides/frequently-asked-questions'
           }
         }
       ]
@@ -374,12 +374,12 @@ const data = {
     {
       __typename: 'mainFooter_Node',
       title: 'FAQ',
-      url: 'https://westeroscraft.com/wiki/miscellaneous/frequently-asked-questions',
+      url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
       type: 'craft\\elements\\Entry',
       element: {
         __typename: 'wiki_wikiMiscellaneous_Entry',
         slug: 'frequently-asked-questions',
-        uri: 'wiki/miscellaneous/frequently-asked-questions'
+        uri: 'wiki/guides/frequently-asked-questions'
       },
       children: []
     }

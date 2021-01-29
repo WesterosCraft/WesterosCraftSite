@@ -73,6 +73,7 @@ fragment ENTRY_GRID_FRAGMENT on wikiSlices_entryGrid_BlockType {
 fragment IMAGE_GRID_FRAGMENT on wikiSlices_imageGrid_BlockType {
   typeHandle
   heading
+  clickToCopyScript
   imageList {
     ... on imageList_listItem_BlockType {
       imageTitle
@@ -88,7 +89,6 @@ fragment IMAGE_GRID_FRAGMENT on wikiSlices_imageGrid_BlockType {
       ...spacings
     }
   }
-  clickToCopyScript
 }
 
 fragment ACCORDION_FRAGMENT on wikiSlices_accordion_BlockType {

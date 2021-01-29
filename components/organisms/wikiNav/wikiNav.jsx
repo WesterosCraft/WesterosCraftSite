@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Box, Text, Flex } from 'rebass';
 import Link from 'next/link';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { Search } from '../search';
-import Router from 'next/router';
-import qs from 'qs';
-import { findResultsState, indexName, searchClient } from '../../atoms/instantsearch';
 
 const WikiNavGroup = ({ navItem }) => {
   const [open, setOpen] = useState(true);
   const buildLink = (child) => {
     switch (child.parent.title) {
       case 'Miscellaneous':
-        return `/wiki/miscellaneous/${child.element.slug}`;
       case 'Guides':
         return `/wiki/guides/${child.element.slug}`;
       default:

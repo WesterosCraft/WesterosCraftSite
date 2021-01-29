@@ -1,0 +1,1 @@
+export { SanityBlockContent } from './blockContent';

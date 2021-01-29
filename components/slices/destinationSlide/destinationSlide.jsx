@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Text, Box, Flex } from 'rebass';
 import Slider from '../../atoms/slider/slider';
 import styled from '@emotion/styled';
-import { Redactor } from '../../atoms/redactor/redactor';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import Link from 'next/link';
+import { SanityBlockContent } from '../../atoms/blockContent';
 
 const SlideSelection = styled(Box)`
   color: ${({ active }) => (active ? '#9E1E22' : '#333333')};
@@ -31,7 +31,7 @@ export const DestinationSlide = ({ data }) => {
         maxWidth={700}
         width={1}
         mx="auto">
-        <Redactor dangerouslySetInnerHTML={{ __html: data.redactor }} />
+          <SanityBlockContent blocks={data.copy.copy} />
       </Flex>
 
       <Flex
@@ -67,7 +67,7 @@ export const DestinationSlide = ({ data }) => {
           {data.slider.map((slide, index) => (
             <SlideSelection
               as="li"
-              key={slide.slideName}
+              key={index}
               onClick={() => {
                 setCurrentSlide(index);
               }}
@@ -81,7 +81,7 @@ export const DestinationSlide = ({ data }) => {
                 }
               }}>
               <Text as="span" fontSize={2}>
-                {slide.slideName}
+                {slide.caption}
               </Text>
             </SlideSelection>
           ))}
@@ -107,7 +107,7 @@ export const DestinationSlide = ({ data }) => {
                 }
               }}
               key={i}>
-              <Link href={link.additionalLink} key={link.customLinkText}>
+              <Link href={link.link} key={i}>
                 <Text
                   as="span"
                   color="text"
@@ -117,7 +117,7 @@ export const DestinationSlide = ({ data }) => {
                     }
                   }}
                   fontSize={2}>
-                  {link.customLinkText}
+                  {link.linkText}
                 </Text>
               </Link>
             </Box>

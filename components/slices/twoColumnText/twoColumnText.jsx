@@ -1,9 +1,9 @@
 import React from 'react';
 import { Flex } from 'rebass';
-import { Redactor } from '../../atoms/redactor/redactor';
 import { ButtonSelector } from '../../organisms/buttonSelector';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { SanityBlockContent } from '../../atoms/blockContent';
 
 export const TwoColumnText = ({ data }) => (
   <Flex
@@ -23,12 +23,11 @@ export const TwoColumnText = ({ data }) => (
     <Flex
       px={5}
       className="column"
-      width={[1, null, data.columnWidths === '3/5' ? 3 / 5 : 1 / 2]}
+      width={[1, null, data.layout === 'sixtyfourty' ? 3 / 5 : 1 / 2]}
       flexDirection="column"
       alignItems="center">
       <ScrollAnimation animateIn="fadeInLeft" animateOnce>
-        <Redactor dangerouslySetInnerHTML={{ __html: data.children[0].redactor }} />
-        {data.children[0].buttons && <ButtonSelector data={data.children[0].buttons} />}
+        <SanityBlockContent blocks={data.leftColumn.copy} />
       </ScrollAnimation>
     </Flex>
     <Flex
@@ -36,11 +35,11 @@ export const TwoColumnText = ({ data }) => (
       justifyContent="center"
       px={5}
       className="column"
-      width={[1, null, data.columnWidths === '3/5' ? 2 / 5 : 1 / 2]}
+      width={[1, null, data.layout === 'sixtyfourty' ? 2 / 5 : 1 / 2]}
       pt={[5, null, 0]}>
       <ScrollAnimation animateIn="fadeInRight" animateOnce>
-        <Redactor dangerouslySetInnerHTML={{ __html: data.children[1].redactor }} />
-        {data.children[1].buttons && <ButtonSelector data={data.children[1].buttons} />}
+        <SanityBlockContent blocks={data.rightColumn.copy} />
+        {data.buttonBuilder && <ButtonSelector buttons={data.buttonBuilder} />}
       </ScrollAnimation>
     </Flex>
   </Flex>

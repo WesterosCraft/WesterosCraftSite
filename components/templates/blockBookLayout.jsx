@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Box, Flex, Text } from 'rebass';
 import { BlockBookNav } from '../organisms/blockBookNav';
 import { BlockBookContent } from '../organisms/blockBookContent';
-import { camelCaseFormatter } from '../../utility/helpers';
+import { camelCaseFormatter } from '../../utils/helpers';
 import { IoIosArrowForward } from 'react-icons/io';
 import { BLOCKBOOK_NAV_QUERY } from '../../queries/navQuery.gql';
 import { useQuery } from '@apollo/client';

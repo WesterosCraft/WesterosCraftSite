@@ -1,16 +1,62 @@
-// First, we must import the schema creator
-import createSchema from 'part:@sanity/base/schema-creator'
+import createSchema from 'part:@sanity/base/schema-creator';
+import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-// Then import schema types from any plugins that might expose them
-import schemaTypes from 'all:part:@sanity/base/schema-type'
+// pages/documents
+import destination from './documents/destination';
+import about from './documents/about';
+import launcher from './documents/launcher';
+import guide from './documents/guide';
+import home from './documents/home';
+import wiki from './documents/wiki';
+import rookery from './documents/rookery';
+import progress from './documents/progress';
 
-// Then we give our schema to the builder and provide the result to Sanity
-export default createSchema({
-  // We name our schema
+// objects
+import figure from './objects/figure';
+import video from './objects/video';
+import simpleRichText from './objects/simpleRichText';
+import callToAction from './objects/callToAction';
+import documentGrid from './objects/documentGrid';
+import imageGallery from './objects/imageGallery';
+import accordion from './objects/accordion';
+import accordionContent from './objects/accordionContent';
+import richText from './objects/richText';
+import twoColumnText from './objects/twoColumnText';
+import destinationSlider from './objects/destinationSlider';
+import links from './objects/links';
+import buttons from './objects/buttons';
+import banner from './objects/banner';
+import spacer from './objects/spacer';
+import contentBanner from './objects/contentBanner';
+
+const schema = createSchema({
   name: 'default',
-  // Then proceed to concatenate our document type
-  // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    /* Your types here! */
-  ]),
-})
+    home,
+    guide,
+    video,
+    destination,
+    about,
+    launcher,
+    figure,
+    simpleRichText,
+    callToAction,
+    documentGrid,
+    imageGallery,
+    accordion,
+    accordionContent,
+    richText,
+    twoColumnText,
+    destinationSlider,
+    links,
+    buttons,
+    banner,
+    spacer,
+    rookery,
+    progress,
+    contentBanner,
+    wiki
+  ])
+});
+
+export default schema;

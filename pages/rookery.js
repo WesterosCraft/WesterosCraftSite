@@ -4,16 +4,24 @@ import { Heading, Box, Flex, Text, Image } from 'rebass';
 import Iframe from 'react-iframe';
 import { Table } from '../components/organisms/table';
 import SEO from '../components/organisms/seo/seo';
-import { initializeApollo } from '../lib/apolloClient';
-import { ROOKERY_QUERY } from '../queries/rookeryQuery.gql';
+import { useRouter } from 'next/router';
+import { getClient, usePreviewSubscription } from '../utils/sanity';
+import Error from 'next/error';
 
-const RookeryPage = ({ initialApolloState }) => {
-  const data = initialApolloState.ROOT_QUERY['entry({"section":"rookery","site":"westeroscraft"})'];
+const query = `*[_type == "rookery"]`;
+
+const RookeryPage = ({ preview, rookeryData }) => {
+  const data = rookeryData[0];
+  const router = useRouter();
+
+  if (!router.isFallback && !rookeryData) {
+    return <Error statusCode={404} />;
+  }
 
   const columns = useMemo(
     () => [
       {
-        accessor: 'rookeryTitle',
+        accessor: 'title',
         Header: 'Rookery Title',
         filterable: false
       },
@@ -22,8 +30,8 @@ const RookeryPage = ({ initialApolloState }) => {
         Header: 'Rookery Link',
         filterable: false,
         Cell: ({ row }) => (
-          <a href={row.original.rookeryUrl} target="_blank" rel="noopener noreferrer">
-            {row.original.rookeryUrl}
+          <a href={row.original.link} target="_blank" rel="noopener noreferrer">
+            {row.original.link}
           </a>
         )
       }
@@ -31,14 +39,14 @@ const RookeryPage = ({ initialApolloState }) => {
     []
   );
 
-  const rookeryData = useMemo(() => data.rookeryList, [data.rookeryList]);
+  const rookeryTableData = useMemo(() => data.editions, [data.editions]);
 
   return (
     <>
       <SEO
-        title={data.pageTitle || data.title}
+        title={data.title}
         description={data.pageDescription}
-        image={data.pageEntry && data.pageImage[0].url}
+        image={data.pageEntry && data.pageImage.url}
       />
       <Flex width={1} justifyContent="center" flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
@@ -47,19 +55,13 @@ const RookeryPage = ({ initialApolloState }) => {
         <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
           {data.subheading}
         </Heading>
-        <Image
-          mt={4}
-          src="https://cdn.westeroscraft.com/web/assets/images/crow-icon.png"
-          width="40px"
-          alt="crow"
-          mx="auto"
-        />
+        <Image mt={4} src="/crow-icon.png" width="40px" alt="crow" mx="auto" />
       </Flex>
 
       <Flex flexDirection="column" mb={17}>
         <Box width={1} maxWidth={1256} height={[495, null, 792]} my={10} mx="auto">
           <Iframe
-            url={data.rookeryList[0].rookeryUrl}
+            url={data.editions[0].link}
             width="100%"
             maxWidth="100%"
             height="100%"
@@ -80,24 +82,20 @@ const RookeryPage = ({ initialApolloState }) => {
         <Text variant="heading4" as="h4" mb={5}>
           Previous Rookery Editions
         </Text>
-        <Table columns={columns} data={rookeryData} />
+        <Table columns={columns} data={rookeryTableData} />
       </Flex>
     </>
   );
 };
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: ROOKERY_QUERY
-  });
+export async function getStaticProps({ params = {}, preview = false }) {
+  const rookeryData = await getClient(preview).fetch(query);
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract()
-    },
-    revalidate: 1
+      preview,
+      rookeryData
+    }
   };
 }
 

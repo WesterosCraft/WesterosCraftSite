@@ -1,84 +1,74 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
 import { EntryCard } from '../../../components/atoms/entryCard';
 import { Flex, Text } from 'rebass';
 import Link from 'next/link';
-import { regionSlugFormatter } from '../../../utility/regionSlugFormatter';
-import { computeBreadcrumbs } from '../../../utility/helpers';
-import { Redactor } from '../../../components/atoms/redactor';
+import { regionSlugFormatter } from '../../../utils/regionSlugFormatter';
+import { computeBreadcrumbs, camelCaseFormatter } from '../../../utils/helpers';
 import { RegionFilters } from '../../../components/atoms/regionFilters/regionFilters';
 import SEO from '../../../components/organisms/seo/seo';
 import { Spinner } from '../../../components/atoms/spinner';
-import { REGION_QUERY, ALL_REGIONS_QUERY } from '../../../queries/regionQuery.gql';
-import { initializeApollo } from '../../../lib/apolloClient';
 import { useRouter } from 'next/router';
-import flatten from 'lodash/flatten';
+import Error from 'next/error';
+import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 
-const RegionPage = ({ initialApolloState, slug }) => {
+const query = `*[_type == "destination" && region == $region]`;
+
+const RegionPage = ({ preview, regionData }) => {
   const router = useRouter();
-  if (router.isFallback) {
-    return <Spinner />;
+  if (!router.isFallback && !regionData) {
+    return <Error statusCode={404} />;
   }
 
-  const data =
-    initialApolloState.ROOT_QUERY[
-      `entry({"site":"westeroscraft","slug":"${slug}","type":"wikiRegion"})`
-    ];
-  const navData = initialApolloState.ROOT_QUERY['nodes({"level":1,"navHandle":"wikiNav"})'];
+  const [items, setItems] = useState(regionData);
 
-  const [items, setItems] = useState(data && data['children({"orderBy":"title"})']);
+  useEffect(() => {
+    setItems(regionData);
+  }, [regionData]);
 
   const onTypeChange = (option) => {
     if (option === null) {
-      setItems(data['children({"orderBy":"title"})']);
+      setItems(regionData);
       return;
     }
-    const filtered = data['children({"orderBy":"title"})'].filter(
-      (thing) => thing.projectDetails[0].destinationType === option.value
-    );
+    const filtered = regionData.filter((thing) => thing.buildType === option.value);
     setItems(filtered);
   };
 
   const onStatusChange = (option) => {
     if (option === null) {
-      setItems(data['children({"orderBy":"title"})']);
+      setItems(regionData);
       return;
     }
-    const filtered = data['children({"orderBy":"title"})'].filter(
-      (thing) => thing.projectDetails[0].destinationStatus === option.value
-    );
+    const filtered = regionData.filter((thing) => thing.projectStatus === option.value);
     setItems(filtered);
   };
 
   return (
     <>
-      {data && (
+      {regionData && (
         <SEO
-          title={data.title || data.title}
-          description={data.pageDescription}
-          image={data.pageEntry && data.pageImage[0].url}
+          title={camelCaseFormatter(regionData && regionData[0].region) || ''}
+          description={regionData.pageDescription}
+          image={regionData.pageEntry && regionData.pageImage[0].url}
         />
       )}
       <WikiLayout
-        navData={navData}
-        title={data.title || 'WesterosCraft Wiki'}
+        title={(regionData && regionData[0].region) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        {!data ? (
+        {!regionData ? (
           <Spinner />
         ) : (
           <>
-            <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />
             <RegionFilters onTypeChange={onTypeChange} onStatusChange={onStatusChange} />
             <Flex flexDirection={['column', null, 'row']} flexWrap="wrap">
               {items && items.length >= 1 ? (
                 items.map((entry) => (
                   <Link
                     passHref
-                    href={`/wiki/${regionSlugFormatter(entry.projectDetails[0].region)}/${
-                      entry.slug
-                    }`}
-                    key={entry.slug}>
-                    <EntryCard data={entry} key={entry.slug} />
+                    href={`/wiki/${regionSlugFormatter(entry.region)}/${entry.slug.current}`}
+                    key={entry.slug.current}>
+                    <EntryCard data={entry} key={entry.slug.current} />
                   </Link>
                 ))
               ) : (
@@ -93,42 +83,53 @@ const RegionPage = ({ initialApolloState, slug }) => {
 };
 
 export async function getStaticPaths() {
-  const apolloClient = initializeApollo();
+  // const routes = await getClient().fetch(`*[_type == "destination"]{
+  //   "params": {"region": region}
+  // }`);
 
-  const regions = await apolloClient.query({
-    query: ALL_REGIONS_QUERY
-  });
+  const routes = [
+    { params: { region: 'dorne' } },
+    { params: { region: 'riverlands' } },
+    { params: { region: 'the-wall' } },
+    { params: { region: 'north' } },
+    { params: { region: 'vale' } },
+    { params: { region: 'iron-islands' } },
+    { params: { region: 'westerlands' } },
+    { params: { region: 'crownlands' } },
+    { params: { region: 'stormlands' } },
+    { params: { region: 'reach' } },
+    { params: { region: 'beyond-the-wall' } }
+  ];
 
-  const pages = regions.data.entries.map((item) => {
-    return item.children.map((child) => {
-      return {
-        params: {
-          region: item.slug,
-          destination: child.slug
-        }
-      };
-    });
-  });
-
-  const paths = flatten(pages);
-
-  return { paths, fallback: true };
+  return {
+    paths: routes || null,
+    fallback: true
+  };
 }
 
-export async function getStaticProps({ params }) {
-  const apolloClient = initializeApollo();
+const regionFormatter = (reg) => {
+  if (reg === 'the-wall') {
+    return 'theWall';
+  } else if (reg === 'iron-islands') {
+    return 'ironIslands';
+  } else if (reg === 'beyond-the-wall') {
+    return 'beyondTheWall';
+  } else {
+    return reg;
+  }
+};
 
-  await apolloClient.query({
-    query: REGION_QUERY,
-    variables: { slug: params.region }
+export async function getStaticProps({ params = {}, preview = false }) {
+  const { region } = params;
+
+  const thing = regionFormatter(region);
+
+  const regionData = await getClient(preview).fetch(query, {
+    region: thing
   });
 
   return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-      slug: params.region
-    },
-    revalidate: 1
+    props: { preview, regionData }
   };
 }
 

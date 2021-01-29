@@ -20,7 +20,245 @@ const BreadcrumbItem = React.forwardRef(({ children, index, ...rest }, ref) => {
   );
 });
 
-export const WikiLayout = ({ children, title, breadcrumb, navData }) => {
+export const WikiLayout = ({ children, title, breadcrumb }) => {
+  const navData = [
+    {
+      title: 'Regions',
+      url: '',
+      type: null,
+      element: null,
+      children: [
+        {
+          title: 'Beyond The Wall',
+          url: 'https://westeroscraft.com/wiki/beyond-the-wall',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'beyond-the-wall'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'The Wall',
+          url: 'https://westeroscraft.com/wiki/the-wall',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'the-wall'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'The North',
+          url: 'https://westeroscraft.com/wiki/north',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'north'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'Riverlands',
+          url: 'https://westeroscraft.com/wiki/riverlands',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'riverlands'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'The Vale',
+          url: 'https://westeroscraft.com/wiki/vale',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'vale'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'Iron Islands',
+          url: 'https://westeroscraft.com/wiki/iron-islands',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'iron-islands'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'Westerlands',
+          url: 'https://westeroscraft.com/wiki/westerlands',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'westerlands'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'Crownlands',
+          url: 'https://westeroscraft.com/wiki/crownlands',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'crownlands'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'Stormlands',
+          url: 'https://westeroscraft.com/wiki/stormlands',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'stormlands'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'The Reach',
+          url: 'https://westeroscraft.com/wiki/reach',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'reach'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        },
+        {
+          title: 'Dorne',
+          url: 'https://westeroscraft.com/wiki/dorne',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'dorne'
+          },
+          parent: {
+            title: 'Regions'
+          }
+        }
+      ]
+    },
+    {
+      title: 'Guides',
+      url: '',
+      type: null,
+      element: null,
+      children: [
+        {
+          title: 'Troubleshooting Guide',
+          url: 'https://westeroscraft.com/wiki/guides/troubleshooting-guide',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'troubleshooting-guide'
+          },
+          parent: {
+            title: 'Guides'
+          }
+        },
+        {
+          title: 'Basic Building Guide for Applicants',
+          url: 'https://westeroscraft.com/wiki/guides/basic-building-guide-for-applicants',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'basic-building-guide-for-applicants'
+          },
+          parent: {
+            title: 'Guides'
+          }
+        },
+        {
+          title: "New Builders' Guide",
+          url: 'https://westeroscraft.com/wiki/guides/new-builders-guide',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'new-builders-guide'
+          },
+          parent: {
+            title: 'Guides'
+          }
+        },
+        {
+          title: 'General Building Guidelines',
+          url: 'https://westeroscraft.com/wiki/guides/general-building-guidelines',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'general-building-guidelines'
+          },
+          parent: {
+            title: 'Guides'
+          }
+        },
+        {
+          title: 'Frequently Asked Questions',
+          url: 'https://westeroscraft.com/wiki/guides/frequently-asked-questions',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'frequently-asked-questions'
+          },
+          parent: {
+            title: 'Miscellaneous'
+          }
+        },
+        {
+          title: 'Server Rules',
+          url: 'https://westeroscraft.com/wiki/guides/server-rules',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'server-rules'
+          },
+          parent: {
+            title: 'Miscellaneous'
+          }
+        },
+        {
+          title: 'Custom Resource Pack',
+          url: 'https://westeroscraft.com/wiki/guides/custom-resource-pack',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'custom-resource-pack'
+          },
+          parent: {
+            title: 'Miscellaneous'
+          }
+        },
+        {
+          title: 'Map Repository',
+          url: 'https://westeroscraft.com/wiki/guides/map-repository',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'map-repository'
+          },
+          parent: {
+            title: 'Miscellaneous'
+          }
+        },
+        {
+          title: 'Projects Orphanage',
+          url: 'https://westeroscraft.com/wiki/guides/projects-orphanage',
+          type: 'craft\\elements\\Entry',
+          element: {
+            slug: 'projects-orphanage'
+          },
+          parent: {
+            title: 'Miscellaneous'
+          }
+        }
+      ]
+    }
+  ];
   return (
     <Box className="wiki-layout" pb={[15, 20]}>
       <Box

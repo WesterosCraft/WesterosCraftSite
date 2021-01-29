@@ -46,7 +46,7 @@ export const Footer = ({ links }) => (
                     <Link
                       href={`/${
                         child.element && child.element.slug === 'frequently-asked-questions'
-                          ? `wiki/miscellaneous/${child.element.slug}`
+                          ? `wiki/guides/${child.element.slug}`
                           : child.element.slug
                       }`}>
                       <Text

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Flex, Text } from 'rebass';
-import { Redactor } from '../../atoms/redactor';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { configProps } from '../../../utility/helpers';
+import { configProps } from '../../../utils/helpers';
+import SanityBlockContent from '@sanity/block-content-to-react';
 
 const AccordionItem = ({ data, dataLength, index }) => {
   const [open, setOpen] = useState(false);
@@ -14,9 +14,8 @@ const AccordionItem = ({ data, dataLength, index }) => {
         borderTop: '2px solid',
         borderColor: 'black',
         borderBottom: dataLength - 1 === index ? '2px solid' : null,
-        borderBottomColor: 'black',
-      }}
-    >
+        borderBottomColor: 'black'
+      }}>
       <Flex
         onClick={() => {
           setOpen(!open);
@@ -25,8 +24,7 @@ const AccordionItem = ({ data, dataLength, index }) => {
         sx={{ cursor: 'pointer' }}
         flexDirection="row"
         alignItems="center"
-        justifyContent="space-between"
-      >
+        justifyContent="space-between">
         <Text variant="heading6" as="h6" fontWeight="500" sx={{ userSelect: 'none' }}>
           {data.heading}
         </Text>
@@ -34,7 +32,7 @@ const AccordionItem = ({ data, dataLength, index }) => {
       </Flex>
       {open && (
         <Box mb={6} className="accordion-content">
-          <Redactor dangerouslySetInnerHTML={{ __html: data.copy }} />
+          <SanityBlockContent blocks={data.copy} />
         </Box>
       )}
     </Box>
@@ -43,7 +41,9 @@ const AccordionItem = ({ data, dataLength, index }) => {
 
 export const Accordion = ({ data }) => {
   return (
-    <Box className="accordion" {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
+    <Box
+      className="accordion"
+      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
       {data.heading && (
         <Text variant="heading3" as="h3">
           {data.heading}
