@@ -19,7 +19,7 @@ export const EntryGrid = ({ data }) => (
         data.documents.map((entry, i) => (
           <Link
             href={`/wiki/${
-              entry._type === 'destination' ? regionSlugFormatter(entry.region) : entry._type
+              entry._type === 'guide' ? `guides` : regionSlugFormatter(entry.region) 
             }/${entry.slug.current}`}
             key={i}
             passHref>
