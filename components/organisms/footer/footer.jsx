@@ -56,6 +56,7 @@ export const Footer = ({ links }) => (
                         as="p"
                         width="fit-content"
                         sx={{
+                          cursor: 'pointer',
                           position: 'relative',
                           '&:after': {
                             display: 'none',

@@ -13,6 +13,13 @@ export const globalStyles = (
         --theme-colors-text: #333333;
         --theme-colors-hero-gradient: linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%),
           url('/bright-squares.png');
+        --theme-colors-gray-100: #666666;
+        --theme-colors-gray-200: #333333;
+        --theme-colors-gray-300: #231f20;
+        --theme-colors-gray-400: #cccccc;
+        --theme-colors-red-light: #b32227;
+        --theme-colors-red-medium: #9e1e22;
+        --theme-colors-red-dark: #891a1d;
       }
       .dark-mode {
         --theme-colors-background: #161617;
@@ -23,6 +30,10 @@ export const globalStyles = (
             #161617 60%
           ),
           url('/bright-squares.png');
+        --theme-colors-gray-100: #f3f4f4;
+        --theme-colors-gray-200: #e3e3e3;
+        --theme-colors-gray-300: #231f20;
+        --theme-colors-gray-400: #e3e3e3;
       }
 
       .mobile-popup-content {

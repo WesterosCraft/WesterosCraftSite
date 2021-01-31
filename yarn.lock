@@ -4204,6 +4204,11 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exenv@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
+
 expand-brackets@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
@@ -7734,6 +7739,11 @@ react-focus-on@^3.3.0:
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
 
+react-from-dom@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/react-from-dom/-/react-from-dom-0.5.1.tgz#5ab82944209059aded60dc26abf43f8989126fa2"
+  integrity sha512-ki6OGVgSjDCF0Gt4SMl2cUNBA9ZB8g59bwv9ZiSEXQ37Cw9ZGY0s7EgfPFQYDvaiVx22jto7/dYgQeS+Qw1Mfw==
+
 react-full-screen@^0.2.4:
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/react-full-screen/-/react-full-screen-0.2.5.tgz#bc79a5cdb9640d8b9b09e11a17fa54f6e6fa5789"
@@ -7785,6 +7795,14 @@ react-images@^1.1.7:
     react-full-screen "^0.2.4"
     react-transition-group "^2.9.0"
     react-view-pager "^0.6.0"
+
+react-inlinesvg@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-inlinesvg/-/react-inlinesvg-2.2.2.tgz#b43ac35ed9d0b6f60274b93049a5d091fd4384b6"
+  integrity sha512-5uXTB0yL9LiRLbN5FhTnL1IK9mLg93kspY2HnKUftzoJDEqZrlscuZxzXStbMBZpNyO359U7QDspM3AqUYUrog==
+  dependencies:
+    exenv "^1.2.2"
+    react-from-dom "^0.5.1"
 
 react-input-autosize@^2.2.2:
   version "2.2.2"

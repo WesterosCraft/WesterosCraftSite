@@ -58,17 +58,16 @@ export function Header({ links }) {
                     mouseEnterDelay={0}
                     contentStyle={{
                       padding: '0px',
-                      border: '1px solid #333333',
-
+                      border: '1px solid var(--theme-colors-text, #333333)',
                       boxShadow:
                         '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)'
                     }}
                     arrowStyle={{
-                      background: ' #fff',
-                      border: '1px solid #333',
+                      background: 'var(--theme-colors-background, #FFFFFF)',
+                      border: '1px solid var(--theme-colors-text, #333333)',
                       boxShadow:
                         'rgba(50,50,93,.25) 0 30px 60px -12px,rgba(0,0,0,.3) 0 18px 36px -18px,rgba(0,0,0,.024) 0 -12px 36px -8px',
-                      color: '#fff',
+                      color: 'var(--theme-colors-background, #FFFFFF)',
                       height: '10px',
                       left: '50%',
                       lineHeight: '18.4px',
@@ -81,7 +80,10 @@ export function Header({ links }) {
                       width: '10px',
                       zIndex: -1
                     }}>
-                    <Flex flexDirection="column" bg="white">
+                    <Flex
+                      className="dropdown-link-wrapper"
+                      flexDirection="column"
+                      bg="light.background">
                       {link.children.map((child) => (
                         <DropdownLink data={child} key={child.title} />
                       ))}
@@ -120,14 +122,14 @@ export function Header({ links }) {
                 height: '100%',
                 boxShadow:
                   '0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)',
-                border: '1px solid #333333',
+                border: '1px solid var(--theme-colors-text, #333333)',
                 zIndex: 1000,
                 minWidth: '300px',
                 overflowY: 'scroll'
               }}
               arrowStyle={{
                 padding: '0px',
-                border: '1px solid #333333',
+                border: '1px solid var(--theme-colors-text, #333333)',
                 boxShadow:
                   '0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025)'
               }}

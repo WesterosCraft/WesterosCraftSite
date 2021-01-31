@@ -24,18 +24,9 @@ const IndexPage = ({ preview, homeData }) => {
     return <Error statusCode={404} />;
   }
 
-  // const { data: products } = usePreviewSubscription(query, {
-  //   initialData: homeData,
-  //   enabled: preview || router.query.preview !== null
-  // });
-
   return (
     <>
-      <SEO
-        title={data.pageTitle || data.title}
-        description={data.pageDescription || ''}
-        // image={data.pageEntry && data.pageImage[0].url}
-      />
+      <SEO title={data.pageTitle || data.title} description={data.pageDescription || ''} />
       <Flex
         as="section"
         className="homepage-hero"
@@ -95,7 +86,7 @@ const IndexPage = ({ preview, homeData }) => {
                     marginTop: '-1px',
                     marginBottom: '-2px'
                   }}
-                  color="#333333"
+                  color="var(--theme-colors-text, #ffffff)"
                 />
                 Join the Forums
               </Button>

@@ -2,31 +2,32 @@ import React from 'react';
 import { Box, Flex } from 'rebass';
 import { ButtonSelector } from '../../organisms/buttonSelector';
 import { Redactor } from '../../atoms/redactor/redactor';
-import { configProps } from '../../../utils/helpers';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { SanityBlockContent } from '../../atoms/blockContent';
 
 export const Banner = ({ data: { copy, buttonBuilder } }) => (
-  <Box
-    sx={{ position: 'relative' }}
-    className="banner"
-    // {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}
-  >
+  <Box sx={{ position: 'relative' }} className="banner">
     <ScrollAnimation animateIn="fadeInUp" animateOnce>
       <Flex
         className="banner-content-card"
         flexDirection={['column', null, 'row']}
         justifyContent={['center', null, 'space-between']}
         alignItems="center"
-        bg="white"
+        bg="light.background"
         maxWidth={1120}
         minHeight={[240, null, 220]}
-        sx={{ position: 'relative', boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC' }}
+        sx={{
+          position: 'relative',
+          boxShadow:
+            'inset 0 0 0 4px var(--theme-colors-text, #333333), inset -4px -4px 0 6px var(--theme-colors-gray-400, #cccccc)'
+        }}
         mx="auto"
         px={['46px', '80px', null, '100px']}
         py={11}>
         <Box textAlign={['center', null, 'left']} mb={[9, null, 0]} mr={[0, null, 7]}>
-          <SanityBlockContent blocks={copy.copy} />
+          <Redactor>
+            <SanityBlockContent blocks={copy.copy} />
+          </Redactor>
         </Box>
         {buttonBuilder && buttonBuilder.length > 0 && <ButtonSelector buttons={buttonBuilder} />}
       </Flex>
