@@ -413,8 +413,7 @@ const Layout = ({ children }) => {
           position: 'relative',
           overflow: 'hidden'
         }}
-        pt={[3, null, 10]}
-        bg="#FFFFFF">
+        pt={[3, null, 10]}>
         {children}
       </Box>
       <Footer links={data.navData} />

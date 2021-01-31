@@ -8,6 +8,23 @@ export const globalStyles = (
         overflow: hidden;
       }
 
+      .light-mode {
+        --theme-colors-background: #ffffff;
+        --theme-colors-text: #333333;
+        --theme-colors-hero-gradient: linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%),
+          url('/bright-squares.png');
+      }
+      .dark-mode {
+        --theme-colors-background: #161617;
+        --theme-colors-text: #f3f4f4;
+        --theme-colors-hero-gradient: linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0) 40%,
+            #161617 60%
+          ),
+          url('/bright-squares.png');
+      }
+
       .mobile-popup-content {
         left: 0 !important;
         top: 0 !important;
@@ -48,11 +65,13 @@ export const globalStyles = (
         border: 0;
         font-family: ${theme.fonts.body};
         font-size: 16px;
-        color: #333333;
+        color: var(--theme-colors-text);
+        background-color: var(--theme-colors-background);
       }
 
       main {
         display: block;
+        background-color: var(--theme-colors-background);
       }
 
       hr {

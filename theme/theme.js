@@ -3,22 +3,6 @@ export const theme = {
   space: [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 88, 96],
   fontSize: [12, 14, 16, 20, 24, 32, 36, 48, 64],
   colors: {
-    white: '#FFFFFF',
-    offWhite: '#f3f4f4',
-    green: '#365B41',
-    gold: '#DAAC58',
-    text: ' #333333',
-    red: {
-      light: '#B32227',
-      medium: '#9E1E22',
-      dark: '#891A1D'
-    },
-    gray: {
-      100: '#666666',
-      200: '#333333',
-      300: '#231F20',
-      400: '#E3E3E3'
-    },
     crownlands: '#FBBE3B',
     westerlands: '#F98972',
     reach: '#AFBB59',
@@ -32,55 +16,61 @@ export const theme = {
     beyondTheWall: '#313C46',
     success: '#365B41',
     error: '#B32227',
-    pending: '#DAAC58'
+    pending: '#DAAC58',
+    red: {
+      light: '#B32227',
+      medium: '#9E1E22',
+      dark: '#891A1D'
+    }
   },
-  fonts: {
-    body: `'Roboto', sans-serif`,
-    heading: `'Sen', sans-serif;`,
-    monospace: 'Menlo, monospace'
+  light: {
+    colors: {
+      white: '#FFFFFF',
+      offWhite: '#f3f4f4',
+      green: '#365B41',
+      gold: '#DAAC58',
+      text: 'var(--theme-colors-background, #333333)',
+      background: 'var(--theme-colors-text, #FFFFFF)',
+      gray: {
+        100: '#666666',
+        200: '#333333',
+        300: '#231F20',
+        400: '#E3E3E3'
+      }
+    }
   },
-  fontWeights: {
-    light: 300,
-    regular: 400,
-    medium: 500,
-    bold: 700,
-    extraBold: 800,
-    black: 900
+  dark: {
+    background: 'var(--theme-colors-background, #161617)',
+    text: 'var(--theme-colors-text, #f3f4f4)'
   },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.25
-  },
-
-  shadows: {},
   text: {
     heading1: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: ['36px', '48px', '64px'],
       fontWeight: 'bold'
     },
     heading2: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: ['32px', '36px', '48px'],
       fontWeight: 'bold'
     },
     heading3: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: ['24px', '32px', '36px'],
       fontWeight: 'bold'
     },
     heading4: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: [2, 3, 4],
       fontWeight: 'regular'
     },
     heading5: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: [3],
       fontWeight: 'regular'
     },
     heading6: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: [3],
       fontWeight: 'regular',
       lineHeight: 1.5
@@ -88,7 +78,7 @@ export const theme = {
   },
   buttons: {
     white: {
-      color: 'text',
+      color: '#333333',
       '&:before': {
         content: "''",
         width: '100%',
@@ -98,8 +88,8 @@ export const theme = {
         left: 0,
         right: 0,
         bottom: 0,
-        background: '#fff',
-        boxShadow: '0 0 0 2px #333'
+        background: 'var(--theme-colors-background, #161617)',
+        boxShadow: '0 0 0 2px var(--theme-colors-text, #161617)'
       },
       '&:after': {
         content: "''",
@@ -137,8 +127,8 @@ export const theme = {
         left: 0,
         right: 0,
         bottom: 0,
-        background: '#fff',
-        boxShadow: '0 0 0 2px #333'
+        background: 'var(--theme-colors-background, #161617)',
+        boxShadow: '0 0 0 2px var(--theme-colors-text, #161617)'
       },
       '&:after': {
         content: "''",
@@ -194,5 +184,21 @@ export const theme = {
     radio: {},
     checkbox: {}
   },
-  variants: {}
+  fonts: {
+    body: `'Roboto', sans-serif`,
+    heading: `'Sen', sans-serif;`,
+    monospace: 'Menlo, monospace'
+  },
+  fontWeights: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    extraBold: 800,
+    black: 900
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.25
+  }
 };

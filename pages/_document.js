@@ -25,6 +25,7 @@ export default class MyDocument extends Document {
         <Head />
         <link rel="shortcut icon" href="/favicon.ico" />
         <body>
+          <script src="noflash.js" />
           <Main />
           <NextScript />
         </body>

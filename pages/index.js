@@ -112,7 +112,7 @@ const IndexPage = ({ preview, homeData }) => {
             left: 0,
             zIndex: 0,
             backgroundColor: 'rgba(81, 179, 255, 0.25)',
-            backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%), url('/bright-squares.png')`
+            backgroundImage: 'var(--theme-colors-hero-gradient)'
           }}
         />
         <Box
