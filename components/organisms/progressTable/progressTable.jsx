@@ -9,7 +9,6 @@ import {
   useFlexLayout,
   useRowSelect,
   useGlobalFilter,
-  useAsyncDebounce,
   useFilters
 } from 'react-table';
 import { camelCaseFormatter } from '../../../utils/helpers';
@@ -20,11 +19,6 @@ import _lowerCase from 'lodash/lowerCase';
 function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) {
   const count = preGlobalFilteredRows.length;
   const [value, setValue] = React.useState(globalFilter);
-
-  // useAsyncDebounce throwing error
-  // const onChange = useAsyncDebounce((value) => {
-  //   setGlobalFilter(value || undefined);
-  // }, 200);
 
   const onChange = (value) => {
     setGlobalFilter(value || undefined);
@@ -84,8 +78,7 @@ export const ProgressTable = ({ data, columns }) => {
     canPreviousPage,
     canNextPage,
     preGlobalFilteredRows,
-    setGlobalFilter,
-    rows
+    setGlobalFilter
   } = useTable(
     {
       columns,
@@ -124,7 +117,7 @@ export const ProgressTable = ({ data, columns }) => {
           alignItems="center"
           justifyContent="space-between"
           p={4}
-          sx={{ borderBottom: '1px solid black' }}>
+          sx={{ borderBottom: '1px solid var(--theme-colors-text)' }}>
           <Text variant="heading4" fontFamily="heading">
             Project List
           </Text>
@@ -220,8 +213,8 @@ export const ProgressTable = ({ data, columns }) => {
                     height: '48px',
                     cursor: 'pointer',
                     '&:hover': {
-                      borderTop: '1px solid black',
-                      borderBottom: '1px solid black'
+                      borderTop: '1px solid var(--theme-colors-text)',
+                      borderBottom: '1px solid var(--theme-colors-text)'
                     }
                   }}
                   {...row.getRowProps()}>

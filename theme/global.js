@@ -43,7 +43,11 @@ export const globalStyles = (
 
       .circle-progress-symbol {
         font-weight: bold;
-        color: #333333;
+        color: ${theme.colors.light.text};
+      }
+
+      .react-sweet-progress-symbol {
+        color: ${theme.colors.light.text};
       }
 
       .custom-select {

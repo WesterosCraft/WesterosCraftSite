@@ -22,7 +22,7 @@ export const levelFormatter = (level) => {
 export const Styles = styled.div`
   .table {
     border-spacing: 0;
-    border: 2px solid #333333;
+    border: 2px solid var(--theme-colors-text);
     min-width: 300px !important;
 
     .thead {
@@ -39,6 +39,9 @@ export const Styles = styled.div`
       }
       :nth-of-type(even) {
         background-color: #fafafc;
+      }
+      :nth-of-type(odd) {
+        background-color: #ffff;
       }
     }
 
