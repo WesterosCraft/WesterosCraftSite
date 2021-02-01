@@ -44,7 +44,6 @@ export function Header({ links }) {
             </Header.NavGroup>
           ) : null
         )}
-        <DarkModeToggle />
         <Header.NavGroup display={['none', null, 'flex']}>
           {links.map((link) =>
             link.children.length > 0 ? (
@@ -99,9 +98,14 @@ export function Header({ links }) {
               )
             )
           )}
-        </Header.NavGroup>
-        <div suppressHydrationWarning={true}>
           {process.browser && (
+            <Flex alignItems="center" ml={6} suppressHydrationWarning={true}>
+              <DarkModeToggle />
+            </Flex>
+          )}
+        </Header.NavGroup>
+        {process.browser && (
+          <Box display={['block', null, 'none']}>
             <Popup
               on="click"
               closeOnDocumentClick
@@ -140,8 +144,8 @@ export function Header({ links }) {
               }>
               {(close) => <MobileHeader close={close} links={links} />}
             </Popup>
-          )}
-        </div>
+          </Box>
+        )}
       </Header.Nav>
     </Header.NavWrapper>
   );
