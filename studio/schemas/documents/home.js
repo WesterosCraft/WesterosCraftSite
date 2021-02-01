@@ -47,6 +47,23 @@ export default {
               title: 'Video Thumbnail',
               name: 'videoThumbnail',
               type: 'image'
+            },
+            {
+              title: 'Featured Images',
+              type: 'array',
+              name: 'featuredImages',
+              of: [
+                {
+                  type: 'image',
+                  title: 'Image',
+                  name: 'image',
+                  fields: [
+                    { type: 'string', name: 'link', title: 'Link' },
+                    { type: 'string', name: 'alt', title: 'Alt' },
+                    { type: 'boolean', name: 'inject', title: 'Inject' }
+                  ]
+                }
+              ]
             }
           ]
         },

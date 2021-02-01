@@ -9,23 +9,20 @@ import { SanityBlockContent } from '../../atoms/blockContent';
 
 export const ContentBanner = ({ data }) => (
   <Element name="launcher-download" className="element">
-    <Box
-      sx={{ position: 'relative' }}
-      className="content-banner"
-      px={5}
-      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
+    <Box sx={{ position: 'relative' }} className="content-banner" px={5}>
       <ScrollAnimation animateIn="fadeInUp" animateOnce>
         <Flex
           className="content-banner-content-card"
           flexDirection={['column']}
           justifyContent={['center', null, 'space-between']}
           alignItems="center"
-          bg="white"
+          bg="light.background"
           maxWidth={1120}
           minHeight={[240, null, 220]}
           sx={{
             position: 'relative',
-            boxShadow: 'inset 0 0 0 4px #333, inset -4px -4px 0 6px #CCC'
+            boxShadow:
+              'inset 0 0 0 4px var(--theme-colors-text, #333333), inset -4px -4px 0 6px var(--theme-colors-gray-400, #cccccc)'
           }}
           mx="auto"
           px={['46px', '80px', null, '100px']}
@@ -67,7 +64,7 @@ export const ContentBanner = ({ data }) => (
                         content: "''",
                         width: '100%',
                         height: '1.5px',
-                        background: '#333333',
+                        background: 'var(--theme-colors-text, #333333)',
                         position: 'absolute',
                         bottom: 0,
                         left: 0

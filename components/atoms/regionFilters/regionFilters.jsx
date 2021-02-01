@@ -15,7 +15,7 @@ const destinationTypes = [
   { value: 'tower', label: 'Tower' },
   { value: 'miscellaneous', label: 'Miscellaneous' },
   { value: 'clan', label: 'Clan' },
-  { value: 'crannog', label: 'Crannog' },
+  { value: 'crannog', label: 'Crannog' }
 ];
 
 const destinationStatuses = [
@@ -23,8 +23,18 @@ const destinationStatuses = [
   { value: 'inProgress', label: 'In Progress' },
   { value: 'notStarted', label: 'Not Started' },
   { value: 'abandoned', label: 'Abandoned' },
-  { value: 'redoInProgress', label: 'Redo In Progress' },
+  { value: 'redoInProgress', label: 'Redo In Progress' }
 ];
+
+const colourStyles = {
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    return {
+      ...styles,
+      color: 'var(--theme-colors-background)',
+      cursor: isDisabled ? 'not-allowed' : 'default'
+    };
+  }
+};
 
 export const RegionFilters = ({ onTypeChange, onStatusChange }) => (
   <Flex flexDirection="row" className="region-filters" mt={6}>
@@ -36,6 +46,7 @@ export const RegionFilters = ({ onTypeChange, onStatusChange }) => (
         options={destinationTypes}
         className="custom-select type"
         onChange={onTypeChange}
+        styles={colourStyles}
       />
     </Box>
     <Box width={[1 / 2, 200]} ml={6}>
@@ -46,6 +57,7 @@ export const RegionFilters = ({ onTypeChange, onStatusChange }) => (
         options={destinationStatuses}
         className="custom-select status"
         onChange={onStatusChange}
+        styles={colourStyles}
       />
     </Box>
   </Flex>

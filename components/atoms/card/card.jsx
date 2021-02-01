@@ -5,21 +5,19 @@ export const Card = ({ children, color = '#333333' }) => (
   <Box
     sx={{
       position: 'relative',
-      boxShadow: `0 0 0 1px ${color}`,
+      boxShadow: `0 0 0 2px ${color}`,
       padding: 0,
       background: color,
       zIndex: 1,
-      width: 'auto',
+      width: 'auto'
     }}
     mt={[5]}
     mr={[0, null, 5]}
-    minWidth={128}
-  >
+    minWidth={128}>
     <Box
       width={[1, null, 240]}
       sx={{
-        boxShadow: ' 0 0 0 2px #333333',
-        background: 'white',
+        background: 'var(--theme-colors-background)',
         position: 'relative',
         overflow: 'hidden',
         transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
@@ -34,12 +32,11 @@ export const Card = ({ children, color = '#333333' }) => (
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           zIndex: 1,
-          borderBottom: `5px solid ${color}`,
-        },
+          borderBottom: `5px solid ${color}`
+        }
       }}
       px={4}
-      py={5}
-    >
+      py={5}>
       {children}
     </Box>
   </Box>

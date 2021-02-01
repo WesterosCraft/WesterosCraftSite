@@ -8,6 +8,40 @@ export const globalStyles = (
         overflow: hidden;
       }
 
+      .light-mode {
+        --theme-colors-background: #ffffff;
+        --theme-colors-text: #333333;
+        --theme-colors-hero-gradient: linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%),
+          url('/bright-squares.png');
+        --theme-colors-gray-100: #666666;
+        --theme-colors-gray-200: #333333;
+        --theme-colors-gray-300: #231f20;
+        --theme-colors-gray-400: #cccccc;
+        --theme-colors-red-light: #b32227;
+        --theme-colors-red-medium: #9e1e22;
+        --theme-colors-red-dark: #891a1d;
+        --theme-colors-table-even: #fafafc;
+        --theme-colors-table-odd: #ffffff;
+        --theme-colors-table-border: #e2e8f0;
+      }
+      .dark-mode {
+        --theme-colors-background: #161617;
+        --theme-colors-text: #f3f4f4;
+        --theme-colors-hero-gradient: linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0) 40%,
+            #161617 60%
+          ),
+          url('/bright-squares.png');
+        --theme-colors-gray-100: #f3f4f4;
+        --theme-colors-gray-200: #e3e3e3;
+        --theme-colors-gray-300: #231f20;
+        --theme-colors-gray-400: #e3e3e3;
+        --theme-colors-table-even: #343a40;
+        --theme-colors-table-odd: hsla(0, 0%, 100%, 0.05);
+        --theme-colors-table-border: #454d55;
+      }
+
       .mobile-popup-content {
         left: 0 !important;
         top: 0 !important;
@@ -15,7 +49,11 @@ export const globalStyles = (
 
       .circle-progress-symbol {
         font-weight: bold;
-        color: #333333;
+        color: ${theme.colors.light.text};
+      }
+
+      .react-sweet-progress-symbol {
+        color: ${theme.colors.light.text};
       }
 
       .custom-select {
@@ -48,11 +86,27 @@ export const globalStyles = (
         border: 0;
         font-family: ${theme.fonts.body};
         font-size: 16px;
-        color: #333333;
+        color: var(--theme-colors-text);
+        background-color: var(--theme-colors-background);
       }
 
       main {
         display: block;
+        background-color: var(--theme-colors-background);
+      }
+
+      .light-mode .region-icon {
+        fill: black;
+        path: {
+          fill: black;
+        }
+      }
+
+      .dark-mode .region-icon {
+        fill: #f3f4f4;
+        path: {
+          fill: #f3f4f4;
+        }
       }
 
       hr {
@@ -69,6 +123,7 @@ export const globalStyles = (
       a {
         background-color: transparent;
         text-decoration: none;
+        color: var(--theme-colors-text);
       }
 
       abbr[title] {

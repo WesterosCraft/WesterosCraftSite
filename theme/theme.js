@@ -7,18 +7,6 @@ export const theme = {
     offWhite: '#f3f4f4',
     green: '#365B41',
     gold: '#DAAC58',
-    text: ' #333333',
-    red: {
-      light: '#B32227',
-      medium: '#9E1E22',
-      dark: '#891A1D'
-    },
-    gray: {
-      100: '#666666',
-      200: '#333333',
-      300: '#231F20',
-      400: '#E3E3E3'
-    },
     crownlands: '#FBBE3B',
     westerlands: '#F98972',
     reach: '#AFBB59',
@@ -32,55 +20,55 @@ export const theme = {
     beyondTheWall: '#313C46',
     success: '#365B41',
     error: '#B32227',
-    pending: '#DAAC58'
+    pending: '#DAAC58',
+    red: {
+      light: 'var(--theme-colors-red-light, #B32227)',
+      medium: 'var(--theme-colors-red-medium, #9E1E22)',
+      dark: 'var(--theme-colors-red-dark, #891A1D)'
+    },
+    gray: {
+      100: 'var(--theme-colors-gray-100, #666666)',
+      200: 'var(--theme-colors-gray-200, #333333)',
+      300: '#231F20',
+      400: '#E3E3E3'
+    },
+    light: {
+      background: 'var(--theme-colors-background, #FFFFFF)',
+      text: 'var(--theme-colors-text, #333333)'
+    },
+    dark: {
+      background: 'var(--theme-colors-background, #161617)',
+      text: 'var(--theme-colors-text, #f3f4f4)'
+    }
   },
-  fonts: {
-    body: `'Roboto', sans-serif`,
-    heading: `'Sen', sans-serif;`,
-    monospace: 'Menlo, monospace'
-  },
-  fontWeights: {
-    light: 300,
-    regular: 400,
-    medium: 500,
-    bold: 700,
-    extraBold: 800,
-    black: 900
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.25
-  },
-
-  shadows: {},
   text: {
     heading1: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: ['36px', '48px', '64px'],
       fontWeight: 'bold'
     },
     heading2: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: ['32px', '36px', '48px'],
       fontWeight: 'bold'
     },
     heading3: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: ['24px', '32px', '36px'],
       fontWeight: 'bold'
     },
     heading4: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: [2, 3, 4],
       fontWeight: 'regular'
     },
     heading5: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: [3],
       fontWeight: 'regular'
     },
     heading6: {
-      color: 'text',
+      color: 'var(--theme-colors-text)',
       fontSize: [3],
       fontWeight: 'regular',
       lineHeight: 1.5
@@ -88,7 +76,7 @@ export const theme = {
   },
   buttons: {
     white: {
-      color: 'text',
+      color: 'light.text',
       '&:before': {
         content: "''",
         width: '100%',
@@ -98,8 +86,8 @@ export const theme = {
         left: 0,
         right: 0,
         bottom: 0,
-        background: '#fff',
-        boxShadow: '0 0 0 2px #333'
+        backgroundColor: 'var(--theme-colors-background, #FFFFFF)',
+        boxShadow: `0 0 0 2px var(--theme-colors-text, #ffffff)`
       },
       '&:after': {
         content: "''",
@@ -110,8 +98,8 @@ export const theme = {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: '#fff',
-        boxShadow: '0 0 0 2px #333',
+        backgroundColor: 'var(--theme-colors-background, #ffffff)',
+        boxShadow: '0 0 0 2px var(--theme-colors-text, #ffffff)',
         zIndex: 1,
         transform: 'translate(-0.5em, -0.5em)',
         transition: 'transform 100ms ease-out'
@@ -137,8 +125,8 @@ export const theme = {
         left: 0,
         right: 0,
         bottom: 0,
-        background: '#fff',
-        boxShadow: '0 0 0 2px #333'
+        background: 'var(--theme-colors-background, #161617)',
+        boxShadow: '0 0 0 2px var(--theme-colors-text, #161617)'
       },
       '&:after': {
         content: "''",
@@ -194,5 +182,21 @@ export const theme = {
     radio: {},
     checkbox: {}
   },
-  variants: {}
+  fonts: {
+    body: `'Roboto', sans-serif`,
+    heading: `'Sen', sans-serif;`,
+    monospace: 'Menlo, monospace'
+  },
+  fontWeights: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    extraBold: 800,
+    black: 900
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.25
+  }
 };

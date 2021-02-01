@@ -12,9 +12,9 @@ const AccordionItem = ({ data, dataLength, index }) => {
       className="accordion-item"
       sx={{
         borderTop: '2px solid',
-        borderColor: 'black',
+        borderColor: 'light.text',
         borderBottom: dataLength - 1 === index ? '2px solid' : null,
-        borderBottomColor: 'black'
+        borderBottomColor: 'light.text'
       }}>
       <Flex
         onClick={() => {

@@ -4,6 +4,8 @@ import { TwoColumnLayout } from '../../organisms/twoColumnLayout';
 import { VideoEmbed } from '../../organisms/videoEmbed';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { SanityBlockContent } from '../../atoms/blockContent';
+import { urlFor } from '../../../utils/sanity';
+import SVG from 'react-inlinesvg';
 
 export const TwoColumnVideo = ({ data }) => (
   <Box className="two-column-video">
@@ -11,29 +13,24 @@ export const TwoColumnVideo = ({ data }) => (
       <TwoColumnLayout.ColumnOne>
         <ScrollAnimation animateIn="fadeInLeft" offset={200} animateOnce>
           <SanityBlockContent blocks={data.textColumn.copy} />
-          {data.images && (
+          {data.featuredImages && (
             <Flex width={1} flexWrap="wrap">
-              {data.images.map((image) =>
-                image.singleLink ? (
-                  <Box
-                    as="a"
-                    href={image.singleLink}
-                    width={[1, 1 / 2]}
-                    py={3}
-                    sx={{ textAlign: ['center', null, null, 'left'] }}
-                    key={image.url}>
-                    <Image src={image.url} maxHeight={36} alt={image.title || ''} />
-                  </Box>
-                ) : (
-                  <Box
-                    width={[1, 1 / 2]}
-                    py={3}
-                    sx={{ textAlign: ['center', null, null, 'left'] }}
-                    key={image.url}>
-                    <Image src={image.url} maxHeight={36} alt={image.title || ''} />
-                  </Box>
-                )
-              )}
+              {data.featuredImages.map((image, i) => (
+                <Box
+                  as={image.link ? 'a' : 'div'}
+                  href={image.link || null}
+                  target={image.link ? '_target' : null}
+                  width={[1, 1 / 2]}
+                  py={3}
+                  sx={{ textAlign: ['center', null, null, 'left'] }}
+                  key={i}>
+                  {image.inject ? (
+                    <SVG src={urlFor(image.asset._ref).toString()} title={image.alt || ''} />
+                  ) : (
+                    <Image src={urlFor(image.asset._ref)} maxHeight={36} alt={image.alt || ''} />
+                  )}
+                </Box>
+              ))}
             </Flex>
           )}
         </ScrollAnimation>

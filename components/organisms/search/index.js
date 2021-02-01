@@ -42,7 +42,9 @@ const Results = ({ results }) =>
   results.map((result) => (
     <Link href={result.url} passHref key={result.objectID}>
       <DropdownLink>
-        <Text py={2}>{result.title}</Text>
+        <Text py={2} color="black">
+          {result.title}
+        </Text>
       </DropdownLink>
     </Link>
   ));
