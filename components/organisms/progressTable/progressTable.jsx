@@ -209,7 +209,7 @@ export const ProgressTable = ({ data, columns }) => {
                   sx={{
                     color: 'inherit',
                     textDecoration: 'none',
-                    borderBottom: '1px solid #e2e8f0',
+                    borderBottom: '1px solid var(--theme-colors-table-border)',
                     height: '48px',
                     cursor: 'pointer',
                     '&:hover': {
@@ -227,7 +227,12 @@ export const ProgressTable = ({ data, columns }) => {
                           key={i}
                           {...cell.getCellProps(cellProps)}
                           className="td">
-                          <Text as="span" fontSize="14px" textAlign="center" width={1}>
+                          <Text
+                            as="span"
+                            fontSize="14px"
+                            textAlign="center"
+                            width={1}
+                            color="var(--theme-colors-text)">
                             {levelFormatter(cell.value)}
                           </Text>
                         </Box>
@@ -241,7 +246,7 @@ export const ProgressTable = ({ data, columns }) => {
                           key={i}
                           {...cell.getCellProps(cellProps)}
                           className="td">
-                          <Text as="span" fontSize="14px">
+                          <Text as="span" fontSize="14px" color="var(--theme-colors-text)">
                             {cell.value ? `/${_lowerCase(cell.value)}` : null}
                           </Text>
                         </Box>
@@ -254,7 +259,7 @@ export const ProgressTable = ({ data, columns }) => {
                         key={i}
                         {...cell.getCellProps(cellProps)}
                         className="td">
-                        <Text as="span" fontSize="14px">
+                        <Text as="span" fontSize="14px" color="var(--theme-colors-text)">
                           {camelCaseFormatter(cell.value)}
                         </Text>
                       </Box>

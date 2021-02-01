@@ -53,7 +53,7 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
         height: 'auto',
 
         overflowY: 'hidden',
-        border: '2px solid black'
+        border: '2px solid var(--theme-colors-text)'
       }}
       {...getTableProps()}>
       <Box
@@ -99,7 +99,7 @@ export const Table = ({ columns, data, maxWidth = '100%' }) => {
                 width={1}
                 py={1}
                 sx={{
-                  borderBottom: '1px solid #e2e8f0',
+                  borderBottom: '1px solid var(--theme-colors-table-border)',
                   minHeight: '48px'
                 }}
                 {...row.getRowProps()}>

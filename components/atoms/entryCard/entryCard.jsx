@@ -80,13 +80,13 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
         width={[1, null, 240]}
         sx={{
           cursor: 'pointer',
-          boxShadow: ' 0 0 0 2px #333333',
-          background: 'white',
+          boxShadow: ' 0 0 0 2px var(--theme-colors-text)',
+          background: 'var(--theme-colors-background)',
           position: 'relative',
           overflow: 'hidden',
           transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
           '&:hover': {
-            boxShadow: ' 0 0 0 2px #333333',
+            boxShadow: ' 0 0 0 2px var(--theme-colors-text)',
             transform: 'translate(-0.35em, -0.35em)'
           },
           '&:before': {
@@ -101,7 +101,7 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             zIndex: 1,
-            borderBottom: '2px solid #333333',
+            borderBottom: '2px solid var(--theme-colors-text)',
             boxShadow: `inset 0 0.75rem 0 ${data.region ? theme.colors[data.region] : '#333333'}`
           }
         }}>
@@ -132,7 +132,12 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
                     <RegionIcon region="guide" width="24px" />
                   </span>
                 }>
-                <Text as="span" color="text" px={4} bg="white" sx={{ border: '1px solid black' }}>
+                <Text
+                  as="span"
+                  color="light.text"
+                  px={4}
+                  bg="light.background"
+                  sx={{ border: '1px solid var(--theme-colors-text)' }}>
                   Guide
                 </Text>
               </Popup>
@@ -150,7 +155,12 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
                     <RegionIcon region={data.region} width="24px" />
                   </span>
                 }>
-                <Text as="span" color="text" px={4} bg="white" sx={{ border: '1px solid black' }}>
+                <Text
+                  as="span"
+                  color="light.text"
+                  px={4}
+                  bg="light.background"
+                  sx={{ border: '1px solid var(--theme-colors-text)' }}>
                   {camelCaseFormatter(data.region)}
                 </Text>
               </Popup>
@@ -172,7 +182,12 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
                     />
                   </span>
                 }>
-                <Text as="span" color="text" px={4} bg="white" sx={{ border: '1px solid black' }}>
+                <Text
+                  as="span"
+                  color="light.text"
+                  px={4}
+                  bg="light.background"
+                  sx={{ border: '1px solid var(--theme-colors-text)' }}>
                   {camelCaseFormatter(data.buildType)}
                 </Text>
               </Popup>
@@ -194,7 +209,12 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
                     />
                   </span>
                 }>
-                <Text as="span" color="text" px={4} bg="white" sx={{ border: '1px solid black' }}>
+                <Text
+                  as="span"
+                  color="light.text"
+                  px={4}
+                  bg="light.background"
+                  sx={{ border: '1px solid var(--theme-colors-text)' }}>
                   {camelCaseFormatter(data.projectStatus)}
                 </Text>
               </Popup>
@@ -206,11 +226,11 @@ export const EntryCard = React.forwardRef(({ data, href }, ref) => {
             fontSize="18px"
             fontWeight="bold"
             as="h6"
-            color="text"
+            color="light.text"
             fontFamily="heading">
             {data.name || ''}
           </Text>
-          <Text mt={2} variant="paragraph" color="text">
+          <Text mt={2} variant="paragraph" color="light.text">
             {data.house || ''}
           </Text>
         </Flex>

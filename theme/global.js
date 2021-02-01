@@ -20,6 +20,9 @@ export const globalStyles = (
         --theme-colors-red-light: #b32227;
         --theme-colors-red-medium: #9e1e22;
         --theme-colors-red-dark: #891a1d;
+        --theme-colors-table-even: #fafafc;
+        --theme-colors-table-odd: #ffffff;
+        --theme-colors-table-border: #e2e8f0;
       }
       .dark-mode {
         --theme-colors-background: #161617;
@@ -34,6 +37,9 @@ export const globalStyles = (
         --theme-colors-gray-200: #e3e3e3;
         --theme-colors-gray-300: #231f20;
         --theme-colors-gray-400: #e3e3e3;
+        --theme-colors-table-even: #343a40;
+        --theme-colors-table-odd: hsla(0, 0%, 100%, 0.05);
+        --theme-colors-table-border: #454d55;
       }
 
       .mobile-popup-content {
@@ -89,6 +95,20 @@ export const globalStyles = (
         background-color: var(--theme-colors-background);
       }
 
+      .light-mode .region-icon {
+        fill: black;
+        path: {
+          fill: black;
+        }
+      }
+
+      .dark-mode .region-icon {
+        fill: #f3f4f4;
+        path: {
+          fill: #f3f4f4;
+        }
+      }
+
       hr {
         box-sizing: content-box; /* 1 */
         height: 0; /* 1 */
@@ -103,6 +123,7 @@ export const globalStyles = (
       a {
         background-color: transparent;
         text-decoration: none;
+        color: var(--theme-colors-text);
       }
 
       abbr[title] {

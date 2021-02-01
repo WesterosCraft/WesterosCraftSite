@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Flex, Box, Text } from 'rebass';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { configProps } from '../../../utils/helpers';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { IoIosCopy } from 'react-icons/io';
 import styled from '@emotion/styled';
@@ -21,9 +20,7 @@ export const ImageGrid = ({ data }) => {
   const [open, setOpen] = useState(true);
 
   return (
-    <Box
-      className="image-grid"
-      {...(data.spacings && data.spacings.length && configProps(data.spacings[0]))}>
+    <Box className="image-grid">
       <Flex
         flexDirection="row"
         alignItems="center"

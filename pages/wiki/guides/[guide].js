@@ -14,7 +14,6 @@ const query = `*[_type == "guide" && slug.current == $slug][0]{
 
 const GuidePage = ({ preview, guideData }) => {
   const router = useRouter();
-
   if (!router.isFallback && !guideData) {
     return <Error statusCode={404} />;
   }

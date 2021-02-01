@@ -38,10 +38,10 @@ export const Styles = styled.div`
         }
       }
       :nth-of-type(even) {
-        background-color: #fafafc;
+        background-color: var(--theme-colors-table-even);
       }
       :nth-of-type(odd) {
-        background-color: #ffff;
+        background-color: var(--theme-colors-table-odd);
       }
     }
 
