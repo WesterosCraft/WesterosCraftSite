@@ -2,6 +2,7 @@ import { CacheProvider } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from '../theme/theme';
 
+import 'tailwindcss/tailwind.css';
 import 'react-vertical-timeline-component/style.min.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import 'animate.css/animate.min.css';
@@ -15,12 +16,12 @@ import Layout from '../layouts';
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
-      <CacheProvider value={cache}>
-        {globalStyles}
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </CacheProvider>
+      {/* <CacheProvider value={cache}> */}
+      {/* {globalStyles} */}
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      {/* </CacheProvider> */}
     </ThemeProvider>
   );
 }

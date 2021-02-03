@@ -1,0 +1,56 @@
+ [
+    {
+      "title": "About",
+      "url": null,
+      "children": [
+        { "title": "About Us", "url": "/about", "type": "internal" },
+        { "title": "Progress", "url": "/progress", "type": "internal" },
+        { "title": "Rookery", "url": "/rookery", "type": "internal" }
+      ]
+    },
+    {
+      "title": "Community",
+      "url": null,
+      "children": [
+        { "title": "Forums", "url": "https://forum.westeroscraft.com", "type": "external" },
+        { "title": "Discord", "url": "https://discord.gg/pBS5TH4", "type": "external" },
+        {
+          "title": "Merch",
+          "url": "https://www.redbubble.com/people/westeroscraft/shop?asc=u",
+          "type": "external"
+        },
+        {
+          "title": "Apply",
+          "url": "https://forum.westeroscraft.com/form/builder-application.3/select",
+          "type": "external"
+        }
+      ]
+    },
+    {
+      "title": "Resources",
+      "url": null,
+      "children": [
+        { "title": "Launcher", "url": "/launcher", "type": "internal" },
+        { "title": "Wiki", "url": "/wiki", "type": "internal" },
+        {
+          "title": "FAQ",
+          "url": "/wiki/guides/frequently-asked-questions",
+          "type": "internal"
+        },
+        {
+          "title": "Donate",
+          "url": "https://forum.westeroscraft.com/donate/",
+          "type": "external"
+        },
+        {
+          "title": "Rules and Guides",
+          "url": "/wiki/guides/rules-and-guides",
+          "type": "internal"
+        }
+      ]
+    },
+    {
+      "title": "Map",
+      "url": "http://mc.westeroscraft.com/"
+    }
+  ]
