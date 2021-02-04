@@ -3,26 +3,26 @@
       "title": "About",
       "url": null,
       "children": [
-        { "title": "About Us", "url": "/about", "type": "internal" },
-        { "title": "Progress", "url": "/progress", "type": "internal" },
-        { "title": "Rookery", "url": "/rookery", "type": "internal" }
+        { "title": "About Us", "url": "/about", "type": "internal", "description": "Get a better understanding of where and why WesterosCraft is a thing.", "icon": "about" },
+        { "title": "Progress", "url": "/progress", "type": "internal", "description": "Discover more in depth information on all 452 destinations in WesterosCraft.", "icon": "progress" },
+        { "title": "Rookery", "url": "/rookery", "type": "internal", "description": "Read up on current and past issues of our quarterly newsletter.", "icon": "crow" }
       ]
     },
     {
       "title": "Community",
       "url": null,
       "children": [
-        { "title": "Forums", "url": "https://forum.westeroscraft.com", "type": "external" },
-        { "title": "Discord", "url": "https://discord.gg/pBS5TH4", "type": "external" },
+        { "title": "Forums", "url": "https://forum.westeroscraft.com", "type": "external", "description": "Join or just explore the place where we plan all of our projects.", "icon": "forums" },
+        { "title": "Discord", "url": "https://discord.gg/pBS5TH4", "type": "external", "description": "Come ask questions, participate in discussions or just hang out.", "icon": "discord" },
         {
           "title": "Merch",
           "url": "https://www.redbubble.com/people/westeroscraft/shop?asc=u",
-          "type": "external"
+          "type": "external", "description": "Get your hangs on some WesterosCraft merch, all designed by community members.", "icon": "merch"
         },
         {
-          "title": "Apply",
-          "url": "https://forum.westeroscraft.com/form/builder-application.3/select",
-          "type": "external"
+          "title": "Donate",
+          "url": "https://forum.westeroscraft.com/donate/",
+          "type": "external", "description": "Like the project? Consider helping with server costs.", "icon": "donate"
         }
       ]
     },
@@ -30,22 +30,22 @@
       "title": "Resources",
       "url": null,
       "children": [
-        { "title": "Launcher", "url": "/launcher", "type": "internal" },
-        { "title": "Wiki", "url": "/wiki", "type": "internal" },
+        { "title": "Launcher", "url": "/launcher", "type": "internal", "description": "Get the tools to run our modified Minecraft server, and start exploring Westeros." },
+        { "title": "Wiki", "url": "/wiki", "type": "internal", "description": "Explore our full knowledge base, with info on every destination and guides to help your experience." },
         {
           "title": "FAQ",
           "url": "/wiki/guides/frequently-asked-questions",
-          "type": "internal"
+          "type": "internal", "description": "If you have a question, its probably been answered here."
         },
         {
-          "title": "Donate",
-          "url": "https://forum.westeroscraft.com/donate/",
-          "type": "external"
+          "title": "Apply",
+          "url": "https://forum.westeroscraft.com/form/builder-application.3/select",
+          "type": "external", "description": "Interested in helping build Westeros? Start the application process today.", "icon": "apply"
         },
         {
           "title": "Rules and Guides",
           "url": "/wiki/guides/rules-and-guides",
-          "type": "internal"
+          "type": "internal", "description": "A collection of guidelines and rules to follow while on our server."
         }
       ]
     },
