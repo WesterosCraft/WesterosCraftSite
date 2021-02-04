@@ -10,6 +10,8 @@ import home from './documents/home';
 import wiki from './documents/wiki';
 import rookery from './documents/rookery';
 import progress from './documents/progress';
+import playground from './documents/playground';
+import settings from './documents/settings';
 
 // objects
 import figure from './objects/figure';
@@ -28,6 +30,10 @@ import buttons from './objects/buttons';
 import banner from './objects/banner';
 import spacer from './objects/spacer';
 import contentBanner from './objects/contentBanner';
+import testimonials from './objects/testimonials';
+import navigation from './objects/navigation';
+import navigationSection from './objects/navigationSection';
+import navigationLink from './objects/navigationLink';
 
 const schema = createSchema({
   name: 'default',
@@ -55,7 +61,13 @@ const schema = createSchema({
     rookery,
     progress,
     contentBanner,
-    wiki
+    wiki,
+    playground,
+    testimonials,
+    navigation,
+    settings,
+    navigationSection,
+    navigationLink
   ])
 });
 

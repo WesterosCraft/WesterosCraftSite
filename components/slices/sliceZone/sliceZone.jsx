@@ -11,6 +11,8 @@ import { Spacer } from '../spacer';
 import { Box } from 'rebass';
 import { EntryGrid } from '../entryGrid';
 import { Accordion } from '../accordion';
+import { Testimonials } from '../../testimonials';
+import { VideoList } from '../../videoList';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -41,6 +43,10 @@ export const SliceZone = ({ slices }) => {
         return <Spacer data={slice} key={index} />;
       case 'accordion':
         return <Accordion data={slice} key={index} />;
+      case 'testimonials':
+        return <Testimonials data={slice} key={index} />;
+      case 'videoList':
+        return <VideoList data={slice} key={index} />;
       default:
         return null;
     }

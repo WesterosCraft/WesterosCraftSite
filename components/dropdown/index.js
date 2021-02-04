@@ -49,7 +49,7 @@ export const Dropdown = ({ dropdownData }) => {
       {open && (
         <div
           ref={dropdownRef}
-          className="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+          className="absolute bg-white right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
           <div className="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
             {dropdownData.children.map((child) => (
               <DropdownItem key={child.title} href={child.url}>
