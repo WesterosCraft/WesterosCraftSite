@@ -13,6 +13,7 @@ import { EntryGrid } from '../entryGrid';
 import { Accordion } from '../accordion';
 import { Testimonials } from '../../testimonials';
 import { VideoList } from '../../videoList';
+import { Hero } from '../../hero';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -47,6 +48,8 @@ export const SliceZone = ({ slices }) => {
         return <Testimonials data={slice} key={index} />;
       case 'videoList':
         return <VideoList data={slice} key={index} />;
+      case 'hero':
+        return <Hero data={slice} key={index} />;
       default:
         return null;
     }

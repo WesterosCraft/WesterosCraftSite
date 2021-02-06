@@ -50,15 +50,15 @@ export const Dropdown = ({ dropdownData }) => {
   }, [open]);
 
   return (
-    <div className="relative">
+    <div className="dropdown relative">
       <button
         onClick={onClick}
         type="button"
-        className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        className="group bg-white dark:bg-gray-900 rounded-md text-gray-500 dark:text-gray-200 dark:hover:text-gray-50 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
         <span>{dropdownData.title}</span>
 
         <svg
-          className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+          className="ml-2 h-5 w-5   text-gray-400 dark:text-gray-200 group-hover:text-gray-500 dark:group-hover:text-gray-50"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"

@@ -34,6 +34,8 @@ import testimonials from './objects/testimonials';
 import navigation from './objects/navigation';
 import navigationSection from './objects/navigationSection';
 import navigationLink from './objects/navigationLink';
+import videoList from './objects/videoList';
+import hero from './objects/hero';
 
 const schema = createSchema({
   name: 'default',
@@ -67,7 +69,9 @@ const schema = createSchema({
     navigation,
     settings,
     navigationSection,
-    navigationLink
+    navigationLink,
+    videoList,
+    hero
   ])
 });
 

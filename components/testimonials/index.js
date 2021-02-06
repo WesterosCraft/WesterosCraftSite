@@ -19,7 +19,6 @@ const Testimonial = ({ icon, author, position, quote }) => (
 
 export const Testimonials = ({ data }) => (
   <section className="text-gray-600 body-font">
-    {console.log(data)}
     <div className="container px-5 py-24 mx-auto">
       <div className="flex flex-wrap -m-4">
         {data.testimonials.map((testy, i) => (

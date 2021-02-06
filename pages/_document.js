@@ -26,8 +26,10 @@ export default class MyDocument extends Document {
         <link rel="shortcut icon" href="/favicon.ico" />
         <body>
           <script src="noflash.js" />
-          <Main />
-          <NextScript />
+          <div className="h-full bg-white dark:bg-gray-900">
+            <Main />
+            <NextScript />
+          </div>
         </body>
       </Html>
     );

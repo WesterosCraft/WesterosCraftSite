@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { Box } from 'rebass';
 
-import { Header } from '../components/organisms/header';
 import { Footer } from '../components/organisms/footer';
 import { initGA, logPageView } from '../utils/analytics';
 import { Navbar } from '../components/navbar';

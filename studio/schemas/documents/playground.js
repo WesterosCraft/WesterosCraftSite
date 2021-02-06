@@ -24,7 +24,7 @@ export default {
       name: 'pageBuilder',
       type: 'array',
       title: 'Page builder',
-      of: [{ type: 'testimonials' }]
+      of: [{ type: 'testimonials' }, { type: 'videoList' }, { type: 'hero' }]
     }
   ]
 };
