@@ -5,6 +5,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { IoIosCopy } from 'react-icons/io';
 import styled from '@emotion/styled';
 import _replace from 'lodash/replace';
+import { urlFor } from '../../../utils/sanity';
 
 const SVGWrapper = styled(Box)`
   &:hover {
@@ -18,6 +19,7 @@ const SVGWrapper = styled(Box)`
 
 export const ImageGrid = ({ data }) => {
   const [open, setOpen] = useState(true);
+  console.log(data);
 
   return (
     <Box className="image-grid">
@@ -43,8 +45,8 @@ export const ImageGrid = ({ data }) => {
           flexDirection={['column', null, 'row']}
           flexWrap="wrap"
           className="image-grid-content-container">
-          {data.imageList.map((image, i) => {
-            const script = _replace(data.clickToCopyScript, '<ID>', ` ${image.imageTitle}`);
+          {data.images.map((image, i) => {
+            const script = _replace(data.copyScript, '<ID>', ` ${image.heading}`);
             return (
               <Box
                 className="image-grid-item"
@@ -75,7 +77,7 @@ export const ImageGrid = ({ data }) => {
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     zIndex: 1,
-                    backgroundImage: `url(${(image.image.length && image.image[0].url) || null})`,
+                    backgroundImage: `url(${(image.asset && urlFor(image.asset._ref)) || null})`,
                     backgroundSize: 'cover'
                   }
                 }}
@@ -92,12 +94,12 @@ export const ImageGrid = ({ data }) => {
                     as="h6"
                     color="text"
                     fontFamily="heading">
-                    {image.imageTitle || ''}
+                    {image.heading || ''}
                   </Text>
                   <Text mt={2} variant="paragraph" color="text">
-                    {image.imageDescription || ''}
+                    {image.description || ''}
                   </Text>
-                  {data.clickToCopyScript !== '' && (
+                  {data.copyScript !== '' && (
                     <CopyToClipboard text={script}>
                       <SVGWrapper
                         sx={{
