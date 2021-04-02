@@ -14,6 +14,7 @@ import { Accordion } from '../accordion';
 import { Testimonials } from '../../testimonials';
 import { VideoList } from '../../videoList';
 import { Hero } from '../../hero';
+import { ImageGrid } from '../imageGrid/imageGrid';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -50,6 +51,8 @@ export const SliceZone = ({ slices }) => {
         return <VideoList data={slice} key={index} />;
       case 'hero':
         return <Hero data={slice} key={index} />;
+      case 'imageGallery':
+        return <ImageGrid data={slice} key={index} />;
       default:
         return null;
     }
