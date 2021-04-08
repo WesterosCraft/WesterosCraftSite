@@ -9,36 +9,43 @@ import Error from 'next/error';
 const query = `*[_type == "launcher"]`;
 
 const LauncherPage = ({ preview, launcherData }) => {
-  const data = launcherData[0];
   const router = useRouter();
+
+  const { data } = usePreviewSubscription(query, {
+    initialData: launcherData,
+    enabled: preview
+  });
 
   if (!router.isFallback && !launcherData) {
     return <Error statusCode={404} />;
   }
 
+  const { heading, pageBuilder, pageTitle, pageEntry, pageImage, title, pageDescription } = data[0];
+
   return (
     <>
       <SEO
-        title={data.pageTitle || data.title}
-        description={data.pageDescription}
-        image={data.pageEntry && data.pageImage[0].url}
+        title={pageTitle || title}
+        description={pageDescription}
+        image={pageEntry && pageImage[0].url}
       />
       <Heading variant="heading2" textAlign="center" mt={[12]}>
-        {data.heading}
+        {heading}
       </Heading>
-      <SliceZone slices={data.pageBuilder} />
+      <SliceZone slices={pageBuilder} />
     </>
   );
 };
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const launcherData = await getClient(preview).fetch(query);
 
   return {
     props: {
       preview,
       launcherData
-    }
+    },
+    revalidate: 1
   };
 }
 

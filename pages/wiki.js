@@ -13,8 +13,14 @@ const query = `*[_type == "wiki"]{
   }`;
 
 const WikiPage = ({ preview, wikiData }) => {
-  const data = wikiData[0];
   const router = useRouter();
+
+  const { data } = usePreviewSubscription(query, {
+    initialData: wikiData,
+    enabled: preview
+  });
+
+  const { pageEntry, pageBuilder, pageImage, title, pageDescription } = data[0];
 
   if (!router.isFallback && !wikiData) {
     return <Error statusCode={404} />;
@@ -22,28 +28,25 @@ const WikiPage = ({ preview, wikiData }) => {
 
   return (
     <>
-      <SEO
-        title="Wiki"
-        description={data.pageDescription}
-        image={data.pageEntry && data.pageImage[0].url}
-      />
+      <SEO title="Wiki" description={pageDescription} image={pageEntry && pageImage[0].url} />
       <WikiLayout
-        title={data.title || 'WesterosCraft Wiki'}
+        title={title || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        <SliceZone slices={data.pageBuilder} />
+        <SliceZone slices={pageBuilder} />
       </WikiLayout>
     </>
   );
 };
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const wikiData = await getClient(preview).fetch(query);
 
   return {
     props: {
       preview,
       wikiData
-    }
+    },
+    revalidate: 1
   };
 }
 

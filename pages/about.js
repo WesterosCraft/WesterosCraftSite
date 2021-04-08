@@ -11,42 +11,54 @@ import { Spacer } from '../components/slices/spacer';
 const query = `*[_type == "about"]`;
 
 const AboutPage = ({ preview, aboutData }) => {
-  const data = aboutData[0];
   const router = useRouter();
+
+  const { data } = usePreviewSubscription(query, {
+    initialData: aboutData,
+    enabled: preview
+  });
 
   if (!router.isFallback && !aboutData) {
     return <Error statusCode={404} />;
   }
 
+  const {
+    heading,
+    pageBuilder,
+    pageTitle,
+    pageEntry,
+    pageImage,
+    title,
+    pageDescription,
+    video
+  } = data[0];
+
   return (
     <>
       <SEO
-        title={data.pageTitle || data.title}
-        description={data.pageDescription}
-        image={data.pageEntry && data.pageImage[0].url}
+        title={pageTitle || title}
+        description={pageDescription}
+        image={pageEntry && pageImage[0].url}
       />
       <Heading variant="heading2" textAlign="center" mt={[12]}>
-        {data.heading}
+        {heading}
       </Heading>
       <Spacer data={{ mobile: 72 }} />
-      <VideoEmbed
-        maxWidth={756}
-        thumbnail={data.video.thumbnail.asset._ref}
-        embedUrl={data.video.url}
-      />
-      <SliceZone slices={data.pageBuilder} />
+      <VideoEmbed maxWidth={756} thumbnail={video.thumbnail.asset._ref} embedUrl={video.url} />
+      <SliceZone slices={pageBuilder} />
     </>
   );
 };
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const aboutData = await getClient(preview).fetch(query);
 
   return {
     props: {
       preview,
       aboutData
-    }
+    },
+    revalidate: 1
   };
 }
 

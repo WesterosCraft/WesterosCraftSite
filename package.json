@@ -1,13 +1,10 @@
 {
-  "name": "WesterosCraft",
+  "name": "westeroscraft",
   "version": "1.0.0",
   "scripts": {
-    "dev": "concurrently \"next --port 3000\" \"cd studio && sanity start\"",
-    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && next build",
-    "build:web": "next build",
-    "start:web": "next start",
-    "build:sanity": "cd studio && npx sanity build ../public/studio -y && cd ..",
-    "start:sanity": "cd studio && sanity start",
+    "dev": "concurrently \"next dev\" \"cd studio && sanity start\"",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && cross-env NODE_ENV=production next build",
+    "start": "next start",
     "postinstall": "lerna bootstrap"
   },
   "dependencies": {
@@ -29,7 +26,7 @@
     "lodash": "^4.17.20",
     "lunr": "^2.3.9",
     "next": "^10.0.0",
-    "next-sanity": "^0.1.8",
+    "next-sanity": "^0.1.12",
     "next-seo": "^4.14.1",
     "node-fetch": "^2.6.1",
     "postcss": "^8.2.4",

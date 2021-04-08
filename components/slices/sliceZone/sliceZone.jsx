@@ -17,46 +17,48 @@ import { Hero } from '../../hero';
 import { ImageGrid } from '../imageGrid/imageGrid';
 
 export const SliceZone = ({ slices }) => {
-  const module = slices.map((slice, index) => {
-    switch (slice._type) {
-      case 'banner':
-        return <Banner data={slice} key={index} />;
-      case 'destinationSlider':
-        return <DestinationSlide data={slice} key={index} />;
-      case 'twoColumnText':
-        return <TwoColumnText data={slice} key={index} />;
-      case 'video':
-        return <VideoEmbed data={slice} key={index} />;
-      case 'richText':
-        return (
-          <Box width={1} maxWidth={slice.maxWidth} mx="auto" key={index}>
-            <SanityBlockContent blocks={slice.copy || slice.text} />
-          </Box>
-        );
-      case 'twoColumnVideo':
-        return <TwoColumnVideo data={slice} key={index} />;
-      case 'contentBanner':
-        return <ContentBanner data={slice} key={index} />;
-      case 'timeline':
-        return <Timeline data={slice} key={index} />;
-      case 'documentGrid':
-        return <EntryGrid data={slice} key={index} />;
-      case 'spacer':
-        return <Spacer data={slice} key={index} />;
-      case 'accordion':
-        return <Accordion data={slice} key={index} />;
-      case 'testimonials':
-        return <Testimonials data={slice} key={index} />;
-      case 'videoList':
-        return <VideoList data={slice} key={index} />;
-      case 'hero':
-        return <Hero data={slice} key={index} />;
-      case 'imageGallery':
-        return <ImageGrid data={slice} key={index} />;
-      default:
-        return null;
-    }
-  });
+  const module = !slices
+    ? null
+    : slices.map((slice, index) => {
+        switch (slice._type) {
+          case 'banner':
+            return <Banner data={slice} key={index} />;
+          case 'destinationSlider':
+            return <DestinationSlide data={slice} key={index} />;
+          case 'twoColumnText':
+            return <TwoColumnText data={slice} key={index} />;
+          case 'video':
+            return <VideoEmbed data={slice} key={index} />;
+          case 'richText':
+            return (
+              <Box width={1} maxWidth={slice.maxWidth} mx="auto" key={index}>
+                <SanityBlockContent blocks={slice.copy || slice.text} />
+              </Box>
+            );
+          case 'twoColumnVideo':
+            return <TwoColumnVideo data={slice} key={index} />;
+          case 'contentBanner':
+            return <ContentBanner data={slice} key={index} />;
+          case 'timeline':
+            return <Timeline data={slice} key={index} />;
+          case 'documentGrid':
+            return <EntryGrid data={slice} key={index} />;
+          case 'spacer':
+            return <Spacer data={slice} key={index} />;
+          case 'accordion':
+            return <Accordion data={slice} key={index} />;
+          case 'testimonials':
+            return <Testimonials data={slice} key={index} />;
+          case 'videoList':
+            return <VideoList data={slice} key={index} />;
+          case 'hero':
+            return <Hero data={slice} key={index} />;
+          case 'imageGallery':
+            return <ImageGrid data={slice} key={index} />;
+          default:
+            return null;
+        }
+      });
 
   return <>{module}</>;
 };

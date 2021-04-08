@@ -29,11 +29,21 @@ const destinationQuery = `*[_type == "destination"]`;
 const ProgressPage = ({ preview, progressData, destinationData }) => {
   const theme = useTheme();
   const router = useRouter();
-  const data = progressData[0];
 
-  if (!router.isFallback && !progressData) {
-    return <Error statusCode={404} />;
-  }
+  const { data } = usePreviewSubscription(query, {
+    initialData: progressData,
+    enabled: preview
+  });
+
+  const {
+    heading,
+    pageTitle,
+    pageEntry,
+    destinationlength,
+    subheading,
+    title,
+    pageDescription
+  } = data[0];
 
   const totalComplete = destinationData.filter((item) => item.projectStatus === 'completed');
   const totalInProgress = destinationData.filter(
@@ -142,6 +152,7 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
     // Calculate the options for filtering
     // using the preFilteredRows
     const options = React.useMemo(() => {
+      //eslint-disable-next-line
       const options = new Set();
       preFilteredRows.forEach((row) => {
         options.add(row.values[id]);
@@ -247,19 +258,19 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
     []
   );
 
+  if (!router.isFallback && !progressData) {
+    return <Error statusCode={404} />;
+  }
+
   return (
     <>
-      <SEO
-        title={data.pageTitle || data.title}
-        description={data.pageDescription}
-        image={data.pageEntry}
-      />
+      <SEO title={pageTitle || title} description={pageDescription} image={pageEntry} />
       <Flex px={5} flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {data.heading}
+          {heading}
         </Heading>
         <Heading variant="heading4" textAlign="center" maxWidth={756} mx="auto" px={5} mt={4}>
-          {data.subheading}
+          {subheading}
         </Heading>
         <Flex
           width={1}
@@ -306,7 +317,7 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
           justifyContent="center"
           mt={7}>
           <Card color={theme.colors.ironIslands}>
-            <Text variant="heading3">{destinationData.length}</Text>
+            <Text variant="heading3">{destinationlength}</Text>
             <Text>total projects</Text>
           </Card>
           <Card color={theme.colors.success}>
@@ -539,7 +550,7 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
   );
 };
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const progressData = await getClient(preview).fetch(query);
   const destinationData = await getClient(preview).fetch(destinationQuery);
 
@@ -548,7 +559,8 @@ export async function getStaticProps({ params = {}, preview = false }) {
       preview,
       progressData,
       destinationData
-    }
+    },
+    revalidate: 1
   };
 }
 
