@@ -28,6 +28,7 @@ import buttons from './objects/buttons';
 import banner from './objects/banner';
 import spacer from './objects/spacer';
 import contentBanner from './objects/contentBanner';
+import dynmapData from './objects/dynmapData';
 
 const schema = createSchema({
   name: 'default',
@@ -55,7 +56,8 @@ const schema = createSchema({
     rookery,
     progress,
     contentBanner,
-    wiki
+    wiki,
+    dynmapData
   ])
 });
 
