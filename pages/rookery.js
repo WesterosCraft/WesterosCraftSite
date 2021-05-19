@@ -19,10 +19,6 @@ const RookeryPage = ({ preview, rookeryData }) => {
 
   const { heading, editions, subheading, title, pageDescription, pageEntry, pageImage } = data[0];
 
-  if (!router.isFallback && !rookeryData) {
-    return <Error statusCode={404} />;
-  }
-
   const columns = useMemo(
     () => [
       {
@@ -44,6 +40,10 @@ const RookeryPage = ({ preview, rookeryData }) => {
     []
   );
   const rookeryTableData = useMemo(() => editions, [editions]);
+
+  if (!router.isFallback && !rookeryData) {
+    return <Error statusCode={404} />;
+  }
 
   return (
     <>

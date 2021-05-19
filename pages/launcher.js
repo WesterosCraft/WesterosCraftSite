@@ -9,17 +9,16 @@ import Error from 'next/error';
 const query = `*[_type == "launcher"]`;
 
 const LauncherPage = ({ preview, launcherData }) => {
+  const router = useRouter();
   const { data } = usePreviewSubscription(query, {
     initialData: launcherData,
     enabled: preview
   });
-  const router = useRouter();
+  const { heading, pageBuilder, pageTitle, pageEntry, pageImage, title, pageDescription } = data[0];
 
   if (!router.isFallback && !launcherData) {
     return <Error statusCode={404} />;
   }
-
-  const { heading, pageBuilder, pageTitle, pageEntry, pageImage, title, pageDescription } = data[0];
 
   return (
     <>

@@ -16,19 +16,19 @@ import Error from 'next/error';
 const query = `*[_type == "home"]`;
 
 const IndexPage = ({ preview, homeData }) => {
-  const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
   const router = useRouter();
+  const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
 
   const { data } = usePreviewSubscription(query, {
     initialData: homeData,
     enabled: preview
   });
 
+  const { heading, pageBuilder, subheading, title, pageDescription } = data[0];
+
   if (!router.isFallback && !homeData) {
     return <Error statusCode={404} />;
   }
-
-  const { heading, pageBuilder, subheading, title, pageDescription } = data[0];
 
   return (
     <>

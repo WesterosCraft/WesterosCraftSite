@@ -17,10 +17,6 @@ const AboutPage = ({ preview, aboutData }) => {
   });
   const router = useRouter();
 
-  if (!router.isFallback && !aboutData) {
-    return <Error statusCode={404} />;
-  }
-
   const {
     heading,
     pageBuilder,
@@ -32,6 +28,9 @@ const AboutPage = ({ preview, aboutData }) => {
     video
   } = data[0];
 
+  if (!router.isFallback && !aboutData) {
+    return <Error statusCode={404} />;
+  }
   return (
     <>
       <SEO

@@ -34,10 +34,6 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
     enabled: preview
   });
 
-  if (!router.isFallback && !progressData) {
-    return <Error statusCode={404} />;
-  }
-
   const {
     heading,
     pageTitle,
@@ -259,6 +255,10 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
     ],
     []
   );
+
+  if (!router.isFallback && !progressData) {
+    return <Error statusCode={404} />;
+  }
 
   return (
     <>
