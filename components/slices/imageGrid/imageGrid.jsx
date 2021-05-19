@@ -19,7 +19,6 @@ const SVGWrapper = styled(Box)`
 
 export const ImageGrid = ({ data }) => {
   const [open, setOpen] = useState(true);
-  console.log(data);
 
   return (
     <Box className="image-grid">
