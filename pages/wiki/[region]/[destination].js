@@ -52,8 +52,8 @@ const DestinationPage = ({ preview, destinationData }) => {
     projectStatus,
     region,
     house,
-    warp,
-    dynmapInformation
+    warp
+    // dynmapInformation
   } = data;
 
   if (!router.isFallback && !destinationData) {

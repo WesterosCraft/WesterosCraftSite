@@ -52,13 +52,13 @@ const RegionPage = ({ preview, regionData }) => {
     <>
       {data && (
         <SEO
-          title={camelCaseFormatter(data && data[0].region) || ''}
+          title={camelCaseFormatter(data && data?.[0]?.region) || ''}
           description={data.pageDescription}
-          image={data.pageEntry && data.pageImage[0].url}
+          image={data.pageEntry && data.pageImage?.[0]?.url}
         />
       )}
       <WikiLayout
-        title={(data && data[0].region) || 'WesterosCraft Wiki'}
+        title={(data && data?.[0]?.region) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         {!data ? (
           <Spinner />
@@ -107,10 +107,22 @@ export async function getStaticPaths() {
   };
 }
 
+const regionFormatter = (reg) => {
+  if (reg === 'the-wall') {
+    return 'theWall';
+  } else if (reg === 'iron-islands') {
+    return 'ironIslands';
+  } else if (reg === 'beyond-the-wall') {
+    return 'beyondTheWall';
+  } else {
+    return reg;
+  }
+};
+
 export async function getStaticProps({ params = {}, preview = false }) {
   const { region } = params;
 
-  const thing = regionSlugFormatter(region);
+  const thing = regionFormatter(region);
 
   const regionData = await getClient(preview).fetch(query, {
     region: thing
