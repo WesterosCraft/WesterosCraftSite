@@ -87,10 +87,6 @@ const RegionPage = ({ preview, regionData }) => {
 };
 
 export async function getStaticPaths() {
-  // const routes = await getClient().fetch(`*[_type == "destination"]{
-  //   "params": {"region": region}
-  // }`);
-
   const routes = [
     { params: { region: 'dorne' } },
     { params: { region: 'riverlands' } },
@@ -111,22 +107,10 @@ export async function getStaticPaths() {
   };
 }
 
-const regionFormatter = (reg) => {
-  if (reg === 'the-wall') {
-    return 'theWall';
-  } else if (reg === 'iron-islands') {
-    return 'ironIslands';
-  } else if (reg === 'beyond-the-wall') {
-    return 'beyondTheWall';
-  } else {
-    return reg;
-  }
-};
-
 export async function getStaticProps({ params = {}, preview = false }) {
   const { region } = params;
 
-  const thing = regionFormatter(region);
+  const thing = regionSlugFormatter(region);
 
   const regionData = await getClient(preview).fetch(query, {
     region: thing

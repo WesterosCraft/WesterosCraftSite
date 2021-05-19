@@ -12,6 +12,7 @@ import Error from 'next/error';
 import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 import { SanityBlockContent } from '../../../components/atoms/blockContent';
 import { urlFor } from '../../../utils/sanity';
+import { regionSlugFormatter } from '../../../utils/regionSlugFormatter';
 
 const View = ({ data, ...props }) => (
   <>
@@ -27,7 +28,6 @@ const View = ({ data, ...props }) => (
 const query = `*[_type == "destination" && slug.current == $slug][0]`;
 
 const DestinationPage = ({ preview, destinationData }) => {
-  console.log('👉 ~ DestinationPage ~ destinationData', destinationData);
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -239,12 +239,19 @@ const DestinationPage = ({ preview, destinationData }) => {
 };
 
 export async function getStaticPaths() {
-  let routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
+  const routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
     "params": {"destination": slug.current, "region": region }
   }`);
 
+  const formattedRoutes = routes.map((region) => {
+    return {
+      ...region,
+      params: { ...region.params, region: regionSlugFormatter(region.params.region) }
+    };
+  });
+
   return {
-    paths: routes || null,
+    paths: formattedRoutes || null,
     fallback: true
   };
 }
