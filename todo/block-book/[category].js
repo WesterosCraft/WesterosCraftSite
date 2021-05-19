@@ -16,8 +16,6 @@ const CategoryPage = ({ slug }) => {
   const { data, loading } = useQuery(CATEGORY_QUERY, { variables: { slug: slug } });
   const router = useRouter();
 
-  console.log(data);
-
   if (loading) {
     return null;
   }

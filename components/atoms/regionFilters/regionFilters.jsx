@@ -27,10 +27,10 @@ const destinationStatuses = [
 ];
 
 const colourStyles = {
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+  option: (styles, { isDisabled }) => {
     return {
       ...styles,
-      color: 'var(--theme-colors-background)',
+      color: 'inherit',
       cursor: isDisabled ? 'not-allowed' : 'default'
     };
   }

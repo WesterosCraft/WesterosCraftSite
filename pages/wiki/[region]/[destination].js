@@ -12,6 +12,7 @@ import Error from 'next/error';
 import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 import { SanityBlockContent } from '../../../components/atoms/blockContent';
 import { urlFor } from '../../../utils/sanity';
+import { regionSlugFormatter } from '../../../utils/regionSlugFormatter';
 
 const View = ({ data, ...props }) => (
   <>
@@ -28,34 +29,58 @@ const query = `*[_type == "destination" && slug.current == $slug][0]`;
 
 const DestinationPage = ({ preview, destinationData }) => {
   const router = useRouter();
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const { data } = usePreviewSubscription(query, {
+    initialData: destinationData,
+    enabled: preview
+  });
+
+  const {
+    pageDescription,
+    pageEntry,
+    pageImage,
+    application,
+    banner,
+    buildType,
+    dateCompleted,
+    dateStarted,
+    entry,
+    images,
+    name,
+    projectLead,
+    projectStatus,
+    region,
+    house,
+    warp
+    // dynmapInformation
+  } = data || {};
 
   if (!router.isFallback && !destinationData) {
     return <Error statusCode={404} />;
   }
 
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <>
       {destinationData && (
         <SEO
-          title={destinationData.name}
-          description={destinationData.pageDescription}
-          image={destinationData.pageEntry && destinationData.pageImage[0].url}
+          title={name || ''}
+          description={pageDescription || ''}
+          image={(pageEntry && pageImage?.[0]?.url) || ''}
         />
       )}
       <WikiLayout
-        title={(destinationData && destinationData.name) || 'WesterosCraft Wiki'}
+        title={(destinationData && name) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
         {!destinationData ? (
           <Spinner />
         ) : (
           <>
-            {destinationData && destinationData.images && destinationData.images.length > 0 && (
+            {destinationData && images && images.length > 0 && (
               <Flex flexDirection={['column', null, 'row']} justifyContent="center" mx="auto">
                 <Carousel
                   onClick={() => setModalOpen(!modalOpen)}
-                  views={destinationData.images}
+                  views={images}
                   components={{ View }}
                 />
               </Flex>
@@ -66,7 +91,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                   onClose={() => {
                     setModalOpen(!modalOpen);
                   }}>
-                  <Carousel views={destinationData.images} components={{ View }} />
+                  <Carousel views={images} components={{ View }} />
                 </Modal>
               ) : null}
             </ModalGateway>
@@ -75,15 +100,11 @@ const DestinationPage = ({ preview, destinationData }) => {
               variant="heading3"
               as="h3"
               mb={5}
-              mt={
-                destinationData && destinationData.images && destinationData.images.length > 0
-                  ? 5
-                  : 0
-              }>
+              mt={destinationData && images && images.length > 0 ? 5 : 0}>
               Project details
-              {destinationData && destinationData.application && (
+              {destinationData && application && (
                 <a
-                  href={destinationData.application}
+                  href={application}
                   target="_blank"
                   rel="noreferrer noopener"
                   style={{ textDecoration: 'none', marginLeft: '8px' }}>
@@ -100,12 +121,8 @@ const DestinationPage = ({ preview, destinationData }) => {
               width={[1, 2 / 3, 1]}
               mb={10}
               mx="auto">
-              {destinationData && destinationData.banner && (
-                <Image
-                  alt={`${destinationData.name}-banner`}
-                  src={urlFor(destinationData.banner.asset._ref)}
-                  maxHeight={150}
-                />
+              {destinationData && banner && (
+                <Image alt={`${name}-banner`} src={urlFor(banner.asset._ref)} maxHeight={150} />
               )}
               <Flex
                 as="ol"
@@ -121,7 +138,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                     Region
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {camelCaseFormatter(destinationData.region)}
+                    {camelCaseFormatter(region)}
                   </Text>
                 </Flex>
                 <Flex
@@ -133,7 +150,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                     House
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {destinationData.house}
+                    {house}
                   </Text>
                 </Flex>
                 <Flex
@@ -145,7 +162,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                     Status
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {camelCaseFormatter(destinationData.projectStatus)}
+                    {camelCaseFormatter(projectStatus)}
                   </Text>
                 </Flex>
                 <Flex
@@ -157,7 +174,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                     Date started
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {formatDate(destinationData.dateStarted)}
+                    {formatDate(dateStarted)}
                   </Text>
                 </Flex>
               </Flex>
@@ -175,7 +192,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                     Type
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {camelCaseFormatter(destinationData.buildType)}
+                    {camelCaseFormatter(buildType)}
                   </Text>
                 </Flex>
                 <Flex
@@ -187,7 +204,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                     Warp
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {destinationData.warp && `/${_lowerCase(destinationData.warp)}`}
+                    {warp && `/${_lowerCase(warp)}`}
                   </Text>
                 </Flex>
                 <Flex
@@ -199,7 +216,7 @@ const DestinationPage = ({ preview, destinationData }) => {
                     Project lead(s)
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {destinationData.projectLead}
+                    {projectLead}
                   </Text>
                 </Flex>
                 <Flex
@@ -211,15 +228,13 @@ const DestinationPage = ({ preview, destinationData }) => {
                     Date completed
                   </Text>
                   <Text as="p" width={1 / 2}>
-                    {formatDate(destinationData.dateCompleted)}
+                    {formatDate(dateCompleted)}
                   </Text>
                 </Flex>
               </Flex>
             </Flex>
 
-            {destinationData && destinationData.entry && (
-              <SanityBlockContent blocks={destinationData.entry} />
-            )}
+            {destinationData && entry && <SanityBlockContent blocks={entry} />}
           </>
         )}
       </WikiLayout>
@@ -228,12 +243,19 @@ const DestinationPage = ({ preview, destinationData }) => {
 };
 
 export async function getStaticPaths() {
-  let routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
+  const routes = await getClient().fetch(`*[_type == "destination" && defined(slug.current)]{
     "params": {"destination": slug.current, "region": region }
   }`);
 
+  const formattedRoutes = routes.map((region) => {
+    return {
+      ...region,
+      params: { ...region.params, region: regionSlugFormatter(region.params.region) }
+    };
+  });
+
   return {
-    paths: routes || null,
+    paths: formattedRoutes || null,
     fallback: true
   };
 }
@@ -246,7 +268,8 @@ export async function getStaticProps({ params = {}, preview = false }) {
   });
 
   return {
-    props: { preview, destinationData }
+    props: { preview, destinationData },
+    revalidate: 1
   };
 }
 

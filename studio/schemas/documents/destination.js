@@ -160,6 +160,11 @@ export default {
       type: 'string'
     },
     {
+      title: 'Dynmap Information',
+      name: 'dynmapInformation',
+      type: 'dynmapData'
+    },
+    {
       title: 'Banner',
       name: 'banner',
       description: 'Image of House banner, if available',

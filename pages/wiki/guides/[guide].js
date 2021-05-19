@@ -13,8 +13,14 @@ const query = `*[_type == "guide" && slug.current == $slug][0]{
   }`;
 
 const GuidePage = ({ preview, guideData }) => {
-  console.log(guideData);
+  const { data } = usePreviewSubscription(query, {
+    initialData: guideData,
+    enabled: preview
+  });
+
+  const { pageDescription, pageEntry, pageImage, pageBuilder, name } = data || {};
   const router = useRouter();
+
   if (!router.isFallback && !guideData) {
     return <Error statusCode={404} />;
   }
@@ -25,15 +31,15 @@ const GuidePage = ({ preview, guideData }) => {
         <Spinner />
       ) : (
         <SEO
-          title={guideData.name}
-          description={guideData.pageDescription}
-          image={guideData.pageEntry && guideData.pageImage[0].url}
+          title={name || ''}
+          description={pageDescription || ''}
+          image={(pageEntry && pageImage?.[0]?.url) || ''}
         />
       )}
       <WikiLayout
-        title={(guideData && guideData.name) || 'WesterosCraft Wiki'}
+        title={(guideData && name) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        {guideData && guideData.pageBuilder && <SliceZone slices={guideData.pageBuilder} />}
+        {guideData && pageBuilder && <SliceZone slices={pageBuilder} />}
       </WikiLayout>
     </>
   );
@@ -58,7 +64,8 @@ export async function getStaticProps({ params = {}, preview = false }) {
   });
 
   return {
-    props: { preview, guideData }
+    props: { preview, guideData },
+    revalidate: 1
   };
 }
 

@@ -11,12 +11,13 @@ import Error from 'next/error';
 const query = `*[_type == "rookery"]`;
 
 const RookeryPage = ({ preview, rookeryData }) => {
-  const data = rookeryData[0];
+  const { data } = usePreviewSubscription(query, {
+    initialData: rookeryData,
+    enabled: preview
+  });
   const router = useRouter();
 
-  if (!router.isFallback && !rookeryData) {
-    return <Error statusCode={404} />;
-  }
+  const { heading, editions, subheading, title, pageDescription, pageEntry, pageImage } = data[0];
 
   const columns = useMemo(
     () => [
@@ -38,22 +39,21 @@ const RookeryPage = ({ preview, rookeryData }) => {
     ],
     []
   );
+  const rookeryTableData = useMemo(() => editions, [editions]);
 
-  const rookeryTableData = useMemo(() => data.editions, [data.editions]);
+  if (!router.isFallback && !rookeryData) {
+    return <Error statusCode={404} />;
+  }
 
   return (
     <>
-      <SEO
-        title={data.title}
-        description={data.pageDescription}
-        image={data.pageEntry && data.pageImage.url}
-      />
+      <SEO title={title} description={pageDescription} image={pageEntry && pageImage.url} />
       <Flex width={1} justifyContent="center" flexDirection="column">
         <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {data.heading}
+          {heading}
         </Heading>
         <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
-          {data.subheading}
+          {subheading}
         </Heading>
         <Image mt={4} src="/crow-icon.png" width="40px" alt="crow" mx="auto" />
       </Flex>
@@ -61,7 +61,7 @@ const RookeryPage = ({ preview, rookeryData }) => {
       <Flex flexDirection="column" mb={17}>
         <Box width={1} maxWidth={1256} height={[495, null, 792]} my={10} mx="auto">
           <Iframe
-            url={data.editions[0].link}
+            url={editions[0].link}
             width="100%"
             maxWidth="100%"
             height="100%"
@@ -88,14 +88,15 @@ const RookeryPage = ({ preview, rookeryData }) => {
   );
 };
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const rookeryData = await getClient(preview).fetch(query);
 
   return {
     props: {
       preview,
       rookeryData
-    }
+    },
+    revalidate: 1
   };
 }
 
