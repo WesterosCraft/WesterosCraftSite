@@ -154,15 +154,15 @@ export default {
       validation: (Rule) => Rule.required()
     },
     {
-      title: 'Dynmap Information',
-      name: 'dynmapInformation',
-      type: 'dynmapData'
-    },
-    {
       title: 'Application',
       name: 'application',
       description: 'Link to users project application, if available',
       type: 'string'
+    },
+    {
+      title: 'Dynmap Information',
+      name: 'dynmapInformation',
+      type: 'dynmapData'
     },
     {
       title: 'Banner',

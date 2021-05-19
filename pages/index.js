@@ -16,17 +16,23 @@ import Error from 'next/error';
 const query = `*[_type == "home"]`;
 
 const IndexPage = ({ preview, homeData }) => {
-  const data = homeData[0];
   const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
   const router = useRouter();
+
+  const { data } = usePreviewSubscription(query, {
+    initialData: homeData,
+    enabled: preview
+  });
 
   if (!router.isFallback && !homeData) {
     return <Error statusCode={404} />;
   }
 
+  const { heading, pageBuilder, subheading, title, pageDescription } = data[0];
+
   return (
     <>
-      <SEO title={data.pageTitle || data.title} description={data.pageDescription || ''} />
+      <SEO title={title} description={pageDescription || ''} />
       <Flex
         as="section"
         className="homepage-hero"
@@ -42,12 +48,12 @@ const IndexPage = ({ preview, homeData }) => {
         <Box textAlign="center" className="homepage-text" sx={{ zIndex: 1 }}>
           <ScrollAnimation animateIn="fadeIn" delay={200} animateOnce>
             <Heading as="h1" variant="heading1">
-              {data.heading || ''}
+              {heading || ''}
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={600} animateOnce>
             <Heading as="h2" variant="heading2" mt={5}>
-              {data.subheading || ''}
+              {subheading || ''}
             </Heading>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn" delay={1000} animateOnce>
@@ -148,7 +154,7 @@ const IndexPage = ({ preview, homeData }) => {
         mx="auto"
         className="homepage-content"
         px={5}>
-        <SliceZone slices={data.pageBuilder} />
+        <SliceZone slices={pageBuilder} />
       </Flex>
       <Box>
         <Box sx={{ position: 'relative' }} maxWidth={1120} px={5} mx="auto" width={1}>
@@ -214,14 +220,15 @@ const IndexPage = ({ preview, homeData }) => {
   );
 };
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const homeData = await getClient(preview).fetch(query);
 
   return {
     props: {
       preview,
       homeData
-    }
+    },
+    revalidate: 1
   };
 }
 

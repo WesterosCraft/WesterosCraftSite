@@ -16,47 +16,51 @@ const query = `*[_type == "destination" && region == $region]`;
 
 const RegionPage = ({ preview, regionData }) => {
   const router = useRouter();
-  if (!router.isFallback && !regionData) {
-    return <Error statusCode={404} />;
-  }
-
+  const { data } = usePreviewSubscription(query, {
+    initialData: regionData,
+    enabled: preview
+  });
   const [items, setItems] = useState(regionData);
 
   useEffect(() => {
-    setItems(regionData);
-  }, [regionData]);
+    setItems(data);
+  }, [data]);
 
   const onTypeChange = (option) => {
     if (option === null) {
-      setItems(regionData);
+      setItems(data);
       return;
     }
-    const filtered = regionData.filter((thing) => thing.buildType === option.value);
+    const filtered = data.filter((thing) => thing.buildType === option.value);
     setItems(filtered);
   };
 
   const onStatusChange = (option) => {
     if (option === null) {
-      setItems(regionData);
+      setItems(data);
       return;
     }
-    const filtered = regionData.filter((thing) => thing.projectStatus === option.value);
+    const filtered = data.filter((thing) => thing.projectStatus === option.value);
     setItems(filtered);
   };
 
+  if (!router.isFallback && !regionData) {
+    return <Error statusCode={404} />;
+  }
+
   return (
     <>
-      {regionData && (
+      {data && (
         <SEO
-          title={camelCaseFormatter(regionData && regionData[0].region) || ''}
-          description={regionData.pageDescription}
-          image={regionData.pageEntry && regionData.pageImage[0].url}
+          title={camelCaseFormatter(data && data[0].region) || ''}
+          description={data.pageDescription}
+          image={data.pageEntry && data.pageImage[0].url}
         />
       )}
       <WikiLayout
-        title={(regionData && regionData[0].region) || 'WesterosCraft Wiki'}
+        title={(data && data[0].region) || 'WesterosCraft Wiki'}
         breadcrumb={computeBreadcrumbs(router.asPath)}>
-        {!regionData ? (
+        {!data ? (
           <Spinner />
         ) : (
           <>
@@ -129,7 +133,8 @@ export async function getStaticProps({ params = {}, preview = false }) {
   });
 
   return {
-    props: { preview, regionData }
+    props: { preview, regionData },
+    revalidate: 1
   };
 }
 
