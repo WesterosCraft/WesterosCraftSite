@@ -54,7 +54,7 @@ const DestinationPage = ({ preview, destinationData }) => {
     house,
     warp
     // dynmapInformation
-  } = data;
+  } = data || {};
 
   if (!router.isFallback && !destinationData) {
     return <Error statusCode={404} />;
@@ -63,7 +63,11 @@ const DestinationPage = ({ preview, destinationData }) => {
   return (
     <>
       {destinationData && (
-        <SEO title={name} description={pageDescription} image={pageEntry && pageImage[0].url} />
+        <SEO
+          title={name || ''}
+          description={pageDescription || ''}
+          image={(pageEntry && pageImage?.[0]?.url) || ''}
+        />
       )}
       <WikiLayout
         title={(destinationData && name) || 'WesterosCraft Wiki'}

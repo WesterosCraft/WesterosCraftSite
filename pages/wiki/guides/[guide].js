@@ -18,7 +18,7 @@ const GuidePage = ({ preview, guideData }) => {
     enabled: preview
   });
 
-  const { pageDescription, pageEntry, pageImage, pageBuilder, name } = data;
+  const { pageDescription, pageEntry, pageImage, pageBuilder, name } = data || {};
   const router = useRouter();
 
   if (!router.isFallback && !guideData) {
@@ -30,7 +30,11 @@ const GuidePage = ({ preview, guideData }) => {
       {!guideData ? (
         <Spinner />
       ) : (
-        <SEO title={name} description={pageDescription} image={pageEntry && pageImage[0].url} />
+        <SEO
+          title={name || ''}
+          description={pageDescription || ''}
+          image={(pageEntry && pageImage?.[0]?.url) || ''}
+        />
       )}
       <WikiLayout
         title={(guideData && name) || 'WesterosCraft Wiki'}
