@@ -29,6 +29,18 @@ export default {
       name: 'subheading',
       type: 'string'
     },
+
+    {
+      title: 'Quote',
+      name: 'quote',
+      type: 'richText'
+    },
+    {
+      title: 'Quote Author',
+      name: 'quoteAuthor',
+      type: 'string'
+    },
+
     {
       name: 'editions',
       title: 'Editions',

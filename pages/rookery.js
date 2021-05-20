@@ -4,10 +4,12 @@ import { Heading, Box, Flex, Text, Image } from 'rebass';
 import { Input } from '@rebass/forms';
 import Iframe from 'react-iframe';
 import { Table } from '../components/organisms/table';
+import { Button } from '../components/atoms/button';
 import SEO from '../components/organisms/seo/seo';
 import { useRouter } from 'next/router';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import Error from 'next/error';
+import { QuoteBlock } from '../components/atoms/quoteBlock';
 
 const query = `*[_type == "rookery"]`;
 
@@ -49,18 +51,31 @@ const RookeryPage = ({ preview, rookeryData }) => {
   return (
     <>
       <SEO title={title} description={pageDescription} image={pageEntry && pageImage.url} />
-      <Flex justifyContent="center" flexDirection="row" width={700} mx="auto">
-        <Flex flexDirection="column" width={1 / 2}>
-          <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
+      <Flex
+        justifyContent="center"
+        flexDirection={['column', null, 'row']}
+        width={[1, null, 800]}
+        mx="auto"
+        px={5}>
+        <Flex flexDirection="column" width={[1, null, 1 / 2]} pr={[3, null, 5]}>
+          <Heading variant="heading2" textAlign="center" mt={[12]}>
             {heading}
           </Heading>
-          <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
-            {subheading}
-          </Heading>
+          <Text textAlign="left" lineHeight={1.5} maxWidth={786} mx="auto" mt={4}>
+            The Rookery is a community created magazine that details all the latest happenings in
+            the realm of WesterosCraft. Sign up to keep up to date with the server!
+            <br />
+            <br />
+            Sent once a quarter.
+            {/* {subheading} */}
+          </Text>
           <Image mt={4} src="/crow-icon.png" width="40px" alt="crow" mx="auto" />
         </Flex>
-        <Flex flexDirection="column" width={1 / 2}>
-          <Input placeholder="Email Address" />
+        <Flex flexDirection="column" my="auto" width={[1, null, 1 / 2]}>
+          <Input mb={7} placeholder="Email Address" />
+          <Flex alignItems="center" justifyContent="center">
+            <Button variant="red">Subscribe</Button>
+          </Flex>
         </Flex>
       </Flex>
 
@@ -89,6 +104,12 @@ const RookeryPage = ({ preview, rookeryData }) => {
           Previous Rookery Editions
         </Text>
         <Table columns={columns} data={rookeryTableData} />
+        <QuoteBlock
+          content="Men weren’t really the enemy. They were fellow victims suffering from an outmoded masculine mystique that made them feel unnecessarily inadequate when there were no bears to kill.
+"
+          author="Betty Friedan
+"
+        />
       </Flex>
     </>
   );
