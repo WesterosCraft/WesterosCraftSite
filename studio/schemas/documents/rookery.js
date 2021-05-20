@@ -48,6 +48,11 @@ export default {
               name: 'link',
               title: 'Link',
               type: 'url'
+            },
+            {
+              name: 'thumbnail',
+              title: 'Thumbnail',
+              type: 'image'
             }
           ]
         }

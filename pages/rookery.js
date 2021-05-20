@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { Heading, Box, Flex, Text, Image } from 'rebass';
+import { Input } from '@rebass/forms';
 import Iframe from 'react-iframe';
 import { Table } from '../components/organisms/table';
 import SEO from '../components/organisms/seo/seo';
@@ -48,14 +49,19 @@ const RookeryPage = ({ preview, rookeryData }) => {
   return (
     <>
       <SEO title={title} description={pageDescription} image={pageEntry && pageImage.url} />
-      <Flex width={1} justifyContent="center" flexDirection="column">
-        <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
-          {heading}
-        </Heading>
-        <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
-          {subheading}
-        </Heading>
-        <Image mt={4} src="/crow-icon.png" width="40px" alt="crow" mx="auto" />
+      <Flex justifyContent="center" flexDirection="row" width={700} mx="auto">
+        <Flex flexDirection="column" width={1 / 2}>
+          <Heading variant="heading2" textAlign="center" mt={[12]} px={5}>
+            {heading}
+          </Heading>
+          <Heading variant="heading4" textAlign="center" maxWidth={786} mx="auto" px={5} mt={4}>
+            {subheading}
+          </Heading>
+          <Image mt={4} src="/crow-icon.png" width="40px" alt="crow" mx="auto" />
+        </Flex>
+        <Flex flexDirection="column" width={1 / 2}>
+          <Input placeholder="Email Address" />
+        </Flex>
       </Flex>
 
       <Flex flexDirection="column" mb={17}>
