@@ -10,7 +10,9 @@ export const globalStyles = (
 
       .light-mode {
         --theme-colors-background: #ffffff;
+        --theme-colors-alt-background: #161617;
         --theme-colors-text: #333333;
+        --theme-colors-alt-text: #f3f4f4;
         --theme-colors-hero-gradient: linear-gradient(to top, rgba(255, 255, 255, 0) 40%, white 60%),
           url('/bright-squares.png');
         --theme-colors-gray-100: #666666;
@@ -26,7 +28,9 @@ export const globalStyles = (
       }
       .dark-mode {
         --theme-colors-background: #161617;
+        --theme-colors-alt-background: #ffffff;
         --theme-colors-text: #f3f4f4;
+        --theme-colors-alt-text: #333333;
         --theme-colors-hero-gradient: linear-gradient(
             to top,
             rgba(255, 255, 255, 0) 40%,
