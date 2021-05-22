@@ -38,6 +38,10 @@ const RookeryPage = ({ preview, rookeryData }) => {
     return <Error statusCode={404} />;
   }
 
+  const myLoader = () => {
+    return `/rookery-loader.jpg`;
+  };
+
   return (
     <>
       <SEO title={title} description={pageDescription} image={pageEntry && pageImage.url} />
@@ -102,56 +106,60 @@ const RookeryPage = ({ preview, rookeryData }) => {
         justifyContent="center"
         alignItems="center"
         flexWrap="wrap">
-        {editions.map((item) => {
-          const srcurl = urlFor(item.thumbnail.asset._ref).url();
+        {editions.map((item, i) => {
+          const srcurl = item && item.thumbnail && urlFor(item.thumbnail.asset._ref).url();
           return (
-            <Flex
-              as="a"
-              flexShrink={1}
-              target="_blank"
-              rel="noreferrer"
-              href={item.link}
-              key={item._key}
-              maxWidth={570}
-              width={[1, 1 / 2, 1 / 3]}
-              p={4}
-              sx={{
-                position: 'relative',
-                '&:hover .edition-image': {
-                  transform: 'scale(1.015)',
-                  transition: 'transform .3s ease, filter .3s ease',
-                  filter: 'brightness(40%)',
-                  cursor: 'pointer'
-                },
-                '&:hover .edition-title': {
-                  visibility: 'visible'
-                }
-              }}>
-              <Image
-                width={538}
-                height={696}
-                src={srcurl}
-                className="edition-image"
-                alt={item.title}
-              />
-              <Box
-                className="edition-title"
+            item &&
+            item.thumbnail && (
+              <Flex
+                as="a"
+                flexShrink={1}
+                target="_blank"
+                rel="noreferrer"
+                href={item.link}
+                key={item._key}
+                maxWidth={570}
+                width={[1, 1 / 2, 1 / 3]}
+                p={4}
                 sx={{
-                  cursor: 'pointer',
-                  visibility: 'hidden',
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)'
+                  position: 'relative',
+                  '&:hover .edition-image': {
+                    transform: 'scale(1.015)',
+                    transition: 'transform .3s ease, filter .3s ease',
+                    filter: 'brightness(40%)',
+                    cursor: 'pointer'
+                  },
+                  '&:hover .edition-title': {
+                    visibility: 'visible'
+                  }
                 }}>
-                <Heading textAlign="center" color="white" variant="h3">
-                  {item.title} Issue
-                </Heading>
-                <Text mt={3} textAlign="center" color="white" variant="h3">
-                  Click to view
-                </Text>
-              </Box>
-            </Flex>
+                <Image
+                  priority={i <= 2}
+                  width={538}
+                  height={696}
+                  src={srcurl}
+                  className="edition-image"
+                  alt={item.title}
+                />
+                <Box
+                  className="edition-title"
+                  sx={{
+                    cursor: 'pointer',
+                    visibility: 'hidden',
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)'
+                  }}>
+                  <Heading textAlign="center" color="white" variant="h3">
+                    {item.title} Issue
+                  </Heading>
+                  <Text mt={3} textAlign="center" color="white" variant="h3">
+                    Click to view
+                  </Text>
+                </Box>
+              </Flex>
+            )
           );
         })}
       </Flex>
