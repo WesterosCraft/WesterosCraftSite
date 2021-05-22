@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Box, Flex, Text, Image as RImage } from 'rebass';
+import { Heading, Box, Flex, Text } from 'rebass';
 import { Input } from '@rebass/forms';
 import { Button } from '../components/atoms/button';
 import SEO from '../components/organisms/seo/seo';
@@ -22,7 +22,17 @@ const RookeryPage = ({ preview, rookeryData }) => {
 
   const router = useRouter();
 
-  const { heading, editions, subheading, title, pageDescription, pageEntry, pageImage } = data[0];
+  const {
+    heading,
+    editions,
+    // subheading,
+    title,
+    pageDescription,
+    pageEntry,
+    pageImage,
+    quote,
+    quoteAuthor
+  } = data[0];
 
   if (!router.isFallback && !rookeryData) {
     return <Error statusCode={404} />;
@@ -94,7 +104,6 @@ const RookeryPage = ({ preview, rookeryData }) => {
         flexWrap="wrap">
         {editions.map((item) => {
           const srcurl = urlFor(item.thumbnail.asset._ref).url();
-          console.log('👉 ~ {editions.map ~ srcurl', srcurl);
           return (
             <Flex
               as="a"
@@ -148,8 +157,11 @@ const RookeryPage = ({ preview, rookeryData }) => {
       </Flex>
 
       <QuoteBlock
-        content="A reader lives a thousand lives before he dies. The man who never reads lives only one."
-        author="Jojen Reed"
+        content={
+          quote ||
+          'A reader lives a thousand lives before he dies. The man who never reads lives only one.'
+        }
+        author={quoteAuthor || 'Jojen Reed'}
         darkMode={darkMode.value}
       />
     </>

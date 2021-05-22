@@ -33,7 +33,7 @@ export default {
     {
       title: 'Quote',
       name: 'quote',
-      type: 'richText'
+      type: 'string'
     },
     {
       title: 'Quote Author',
