@@ -1,15 +1,15 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import { Heading, Box, Flex, Text, Image } from 'rebass';
+import { Heading, Box, Flex, Text, Image as RImage } from 'rebass';
 import { Input } from '@rebass/forms';
-import Iframe from 'react-iframe';
-import { Table } from '../components/organisms/table';
 import { Button } from '../components/atoms/button';
 import SEO from '../components/organisms/seo/seo';
 import { useRouter } from 'next/router';
 import { getClient, urlFor, usePreviewSubscription } from '../utils/sanity';
 import Error from 'next/error';
 import { QuoteBlock } from '../components/atoms/quoteBlock';
+import Image from 'next/image';
+import useDarkMode from 'use-dark-mode';
 
 const query = `*[_type == "rookery"]`;
 
@@ -18,10 +18,11 @@ const RookeryPage = ({ preview, rookeryData }) => {
     initialData: rookeryData,
     enabled: preview
   });
+  const darkMode = useDarkMode(false);
+
   const router = useRouter();
 
   const { heading, editions, subheading, title, pageDescription, pageEntry, pageImage } = data[0];
-  console.log('👉 ~ RookeryPage ~ editions', editions);
 
   if (!router.isFallback && !rookeryData) {
     return <Error statusCode={404} />;
@@ -45,7 +46,12 @@ const RookeryPage = ({ preview, rookeryData }) => {
             alignItems="center"
             width={[1, null, 1 / 2]}
             pr={[3, null, 5]}>
-            <Box my="auto">
+            <Box my="auto" sx={{ position: 'relative' }}>
+              {/* <Box
+                width={300}
+                sx={{ position: 'absolute', left: -175, top: -75, transform: 'scaleX(-1)' }}>
+                <Image src="/red-dragon.png" width={300} height={168} />
+              </Box> */}
               <Heading variant="heading2" textAlign="left">
                 {heading}
               </Heading>
@@ -59,15 +65,22 @@ const RookeryPage = ({ preview, rookeryData }) => {
               </Text>
             </Box>
           </Flex>
-          <Flex flexDirection="column" my="auto" width={[1, null, 1 / 2]}>
+          <Flex
+            flexDirection="column"
+            my="auto"
+            width={[1, null, 1 / 2]}
+            pl={[3, null, 5]}
+            sx={{
+              position: 'relative'
+            }}>
             <Input mb={7} placeholder="Email Address" />
             <Flex alignItems="center" justifyContent="center">
               <Button variant="red">Subscribe</Button>
             </Flex>
           </Flex>
         </Flex>
-        <Image my={10} src="/crow-icon.png" width="78px" alt="crow" mx="auto" />
-        <Heading variant="h3" textAlign="center">
+        {/* <Image src="/crow-icon.png" width={78} height={78} alt="crow" /> */}
+        <Heading variant="h3" textAlign="center" mt={20}>
           All Editions
         </Heading>
       </Flex>
@@ -79,58 +92,65 @@ const RookeryPage = ({ preview, rookeryData }) => {
         justifyContent="center"
         alignItems="center"
         flexWrap="wrap">
-        {editions.map((item) => (
-          <Flex
-            as="a"
-            flexShrink={1}
-            target="_blank"
-            rel="noreferrer"
-            href={item.link}
-            key={item._key}
-            maxWidth={570}
-            width={[1, 1 / 2, 1 / 3]}
-            p={4}
-            sx={{
-              position: 'relative',
-              '&:hover .edition-image': {
-                transform: 'scale(1.015)',
-                transition: 'transform .3s ease, filter .3s ease',
-                filter: 'brightness(40%)',
-                cursor: 'pointer'
-              },
-              '&:hover .edition-title': {
-                visibility: 'visible'
-              }
-            }}>
-            <Image
-              className="edition-image"
-              alt={item.title}
-              src={urlFor(item.thumbnail.asset._ref)}
-            />
-            <Box
-              className="edition-title"
+        {editions.map((item) => {
+          const srcurl = urlFor(item.thumbnail.asset._ref).url();
+          console.log('👉 ~ {editions.map ~ srcurl', srcurl);
+          return (
+            <Flex
+              as="a"
+              flexShrink={1}
+              target="_blank"
+              rel="noreferrer"
+              href={item.link}
+              key={item._key}
+              maxWidth={570}
+              width={[1, 1 / 2, 1 / 3]}
+              p={4}
               sx={{
-                cursor: 'pointer',
-                visibility: 'hidden',
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)'
+                position: 'relative',
+                '&:hover .edition-image': {
+                  transform: 'scale(1.015)',
+                  transition: 'transform .3s ease, filter .3s ease',
+                  filter: 'brightness(40%)',
+                  cursor: 'pointer'
+                },
+                '&:hover .edition-title': {
+                  visibility: 'visible'
+                }
               }}>
-              <Heading textAlign="center" color="white" variant="h3">
-                {item.title} Issue
-              </Heading>
-              <Text mt={3} textAlign="center" color="white" variant="h3">
-                Click to view
-              </Text>
-            </Box>
-          </Flex>
-        ))}
+              <Image
+                width={538}
+                height={696}
+                src={srcurl}
+                className="edition-image"
+                alt={item.title}
+              />
+              <Box
+                className="edition-title"
+                sx={{
+                  cursor: 'pointer',
+                  visibility: 'hidden',
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)'
+                }}>
+                <Heading textAlign="center" color="white" variant="h3">
+                  {item.title} Issue
+                </Heading>
+                <Text mt={3} textAlign="center" color="white" variant="h3">
+                  Click to view
+                </Text>
+              </Box>
+            </Flex>
+          );
+        })}
       </Flex>
 
       <QuoteBlock
         content="A reader lives a thousand lives before he dies. The man who never reads lives only one."
         author="Jojen Reed"
+        darkMode={darkMode.value}
       />
     </>
   );
