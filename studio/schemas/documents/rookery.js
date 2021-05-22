@@ -29,6 +29,18 @@ export default {
       name: 'subheading',
       type: 'string'
     },
+
+    {
+      title: 'Quote',
+      name: 'quote',
+      type: 'string'
+    },
+    {
+      title: 'Quote Author',
+      name: 'quoteAuthor',
+      type: 'string'
+    },
+
     {
       name: 'editions',
       title: 'Editions',
@@ -48,6 +60,11 @@ export default {
               name: 'link',
               title: 'Link',
               type: 'url'
+            },
+            {
+              name: 'thumbnail',
+              title: 'Thumbnail',
+              type: 'image'
             }
           ]
         }
