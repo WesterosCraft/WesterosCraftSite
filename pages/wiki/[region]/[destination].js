@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { WikiLayout } from '../../../components/templates/wikiLayout';
-import { Flex, Image, Text } from 'rebass';
+import { Flex, Image, Text, Box } from 'rebass';
 import _lowerCase from 'lodash/lowerCase';
 import { camelCaseFormatter, formatDate, computeBreadcrumbs } from '../../../utils/helpers';
 import SEO from '../../../components/organisms/seo/seo';
@@ -13,7 +13,7 @@ import { getClient, usePreviewSubscription } from '../../../utils/sanity';
 import { SanityBlockContent } from '../../../components/atoms/blockContent';
 import { urlFor } from '../../../utils/sanity';
 import { regionSlugFormatter } from '../../../utils/regionSlugFormatter';
-
+import { Button } from '../../../components/atoms/button';
 const View = ({ data, ...props }) => (
   <>
     <Image
@@ -52,8 +52,8 @@ const DestinationPage = ({ preview, destinationData }) => {
     projectStatus,
     region,
     house,
-    warp
-    // dynmapInformation
+    warp,
+    dynmapInformation
   } = data || {};
 
   if (!router.isFallback && !destinationData) {
@@ -95,23 +95,40 @@ const DestinationPage = ({ preview, destinationData }) => {
                 </Modal>
               ) : null}
             </ModalGateway>
-            <Text
-              fontFamily="heading"
-              variant="heading3"
-              as="h3"
-              mb={5}
-              mt={destinationData && images && images.length > 0 ? 5 : 0}>
-              Project details
-              {destinationData && application && (
-                <a
-                  href={application}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  style={{ textDecoration: 'none', marginLeft: '8px' }}>
-                  <FiExternalLink size="18px" color="black" />
-                </a>
+            <Flex
+              flexDirection="row"
+              justifyContent="space-between"
+              alignItems="baseline"
+              width={1}>
+              <Text
+                fontFamily="heading"
+                variant="heading3"
+                as="h3"
+                mb={5}
+                mt={destinationData && images && images.length > 0 ? 5 : 0}>
+                Project details
+                {destinationData && application && (
+                  <a
+                    href={application}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    style={{ textDecoration: 'none', marginLeft: '8px' }}>
+                    <FiExternalLink size="18px" color="var(--theme-colors-text)" />
+                  </a>
+                )}
+              </Text>
+              {destinationData && dynmapInformation && (
+                <Box>
+                  <Button
+                    href={`http://mc.westeroscraft.com/?mapname=flat&zoom=${
+                      dynmapInformation.zoom || 3
+                    }&x=${dynmapInformation.xCoord}&y=${dynmapInformation.yCoord}`}
+                    variant="white">
+                    View Map
+                  </Button>
+                </Box>
               )}
-            </Text>
+            </Flex>
 
             <Flex
               flexDirection="row"
