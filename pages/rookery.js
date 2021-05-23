@@ -10,6 +10,7 @@ import Error from 'next/error';
 import { QuoteBlock } from '../components/atoms/quoteBlock';
 import Image from 'next/image';
 import useDarkMode from 'use-dark-mode';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 const query = `*[_type == "rookery"]`;
 
@@ -34,13 +35,70 @@ const RookeryPage = ({ preview, rookeryData }) => {
     quoteAuthor
   } = data[0];
 
+  const url =
+    'https://westeroscraft.us6.list-manage.com/subscribe/post?u=f917cc7f538901fd1172c9ee9&amp;id=510f1ee5b1';
+
+  const CustomForm = ({ status, onValidated }) => {
+    let email;
+
+    const submit = (e) => {
+      e.preventDefault();
+
+      return (
+        email &&
+        email.value.indexOf('@') > -1 &&
+        onValidated({
+          EMAIL: email.value
+        })
+      );
+    };
+
+    return (
+      <form>
+        <Input
+          placeholder="Email Address"
+          className="news-input"
+          ref={(node) => (email = node)}
+          type="email"
+          mb={7}
+        />
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          sx={{ position: 'relative' }}>
+          <Button onClick={submit} variant="red" disabled={status === 'sending'}>
+            Subscribe
+          </Button>
+          <Box
+            sx={{
+              position: 'absolute',
+              bottom: -50
+            }}>
+            {status === 'sending' && (
+              <Text fontWeight="bold" color="pending">
+                sending...
+              </Text>
+            )}
+            {status === 'error' && (
+              <Text fontWeight="bold" color="error">
+                Something went wrong
+              </Text>
+            )}
+            {status === 'success' && (
+              <Text fontWeight="bold" color="success">
+                Success!
+              </Text>
+            )}
+          </Box>
+        </Flex>
+      </form>
+    );
+  };
+
   if (!router.isFallback && !rookeryData) {
     return <Error statusCode={404} />;
   }
-
-  const myLoader = () => {
-    return `/rookery-loader.jpg`;
-  };
 
   return (
     <>
@@ -87,10 +145,20 @@ const RookeryPage = ({ preview, rookeryData }) => {
             sx={{
               position: 'relative'
             }}>
-            <Input mb={7} placeholder="Email Address" />
-            <Flex alignItems="center" justifyContent="center">
+            <MailchimpSubscribe
+              url={url}
+              render={({ subscribe, status, message }) => (
+                <CustomForm
+                  status={status}
+                  message={message}
+                  onValidated={(formData) => subscribe(formData)}
+                />
+              )}
+            />
+            {/* <Input mb={7} placeholder="Email Address" /> */}
+            {/* <Flex alignItems="center" justifyContent="center">
               <Button variant="red">Subscribe</Button>
-            </Flex>
+            </Flex> */}
           </Flex>
         </Flex>
         {/* <Image src="/crow-icon.png" width={78} height={78} alt="crow" /> */}
