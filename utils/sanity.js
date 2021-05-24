@@ -15,7 +15,7 @@ const config = {
    *
    * https://nextjs.org/docs/basic-features/environment-variables
    **/
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  dataset: process.env.NODE_ENV === 'production' ? 'production' : 'develop',
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   useCdn: process.env.NODE_ENV === 'production'
   /**
