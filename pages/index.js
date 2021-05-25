@@ -12,6 +12,23 @@ import { event } from 'react-ga';
 import { getClient, usePreviewSubscription } from '../utils/sanity';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
+import Image from 'next/image';
+import { keyframes, css } from 'emotion';
+import styled from '@emotion/styled';
+import { Marquee } from '../components/organisms/marquee';
+
+const scroll = () => keyframes`
+    from {
+        transform: 'translate(0,0)';
+    }
+    to {
+      transform: 'translate(calc(-12 * 374px), 0)';
+    }
+`;
+
+const AnimatedSlider = styled(Flex)`
+  animation: 50s linear 0s infinite normal none running ${scroll};
+`;
 
 const query = `*[_type == "home"]`;
 
@@ -33,7 +50,34 @@ const IndexPage = ({ preview, homeData }) => {
   return (
     <>
       <SEO title={title} description={pageDescription || ''} />
+
       <Flex
+        className="slider-section"
+        maxWidth={'100vw'}
+        sx={{ overflow: 'hidden' }}
+        mt={120}
+        height={350}
+        mb={140}>
+        <Marquee>
+          {' '}
+          {[...Array(12).keys()].map((item, i) => (
+            <Box mx="12px" key={i} backgroundColor="rebeccapurple">
+              <Box display="block" bg="purple" width={350} height={350}>
+                <Text color="white">{item}</Text>
+              </Box>
+            </Box>
+          ))}
+          {[...Array(12).keys()].map((item, i) => (
+            <Box mx="12px" key={i} backgroundColor="rebeccapurple">
+              <Box display="block" bg="purple" width={350} height={350}>
+                <Text color="white">{item}</Text>
+              </Box>
+            </Box>
+          ))}
+        </Marquee>
+      </Flex>
+
+      {/* <Flex
         as="section"
         className="homepage-hero"
         flexDirection="column"
@@ -215,7 +259,7 @@ const IndexPage = ({ preview, homeData }) => {
             style={{ display: 'block' }}
           />
         </Box>
-      </Box>
+      </Box> */}
     </>
   );
 };
