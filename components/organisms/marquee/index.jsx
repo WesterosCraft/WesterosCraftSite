@@ -10,7 +10,7 @@ const marqueeVariants = {
       x: {
         repeat: Infinity,
         repeatType: 'loop',
-        duration: 55,
+        duration: 45,
         ease: 'linear'
       }
     }

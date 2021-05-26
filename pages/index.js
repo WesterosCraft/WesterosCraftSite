@@ -9,7 +9,7 @@ import SEO from '../components/organisms/seo/seo';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useMediaQuery } from 'react-responsive';
 import { event } from 'react-ga';
-import { getClient, usePreviewSubscription } from '../utils/sanity';
+import { getClient, urlFor, usePreviewSubscription } from '../utils/sanity';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
 import Image from 'next/image';
@@ -17,20 +17,7 @@ import { keyframes, css } from 'emotion';
 import styled from '@emotion/styled';
 import { Marquee } from '../components/organisms/marquee';
 
-const scroll = () => keyframes`
-    from {
-        transform: 'translate(0,0)';
-    }
-    to {
-      transform: 'translate(calc(-12 * 374px), 0)';
-    }
-`;
-
-const AnimatedSlider = styled(Flex)`
-  animation: 50s linear 0s infinite normal none running ${scroll};
-`;
-
-const query = `*[_type == "home"]`;
+const query = `*[_type == "home"] {..., marquee[]{...,destination->{...}, ...}}`;
 
 const IndexPage = ({ preview, homeData }) => {
   const router = useRouter();
@@ -41,7 +28,12 @@ const IndexPage = ({ preview, homeData }) => {
     enabled: preview
   });
 
-  const { heading, pageBuilder, subheading, title, pageDescription } = data[0];
+  const { heading, pageBuilder, subheading, title, pageDescription, marquee } = data[0];
+  console.log('👉 ~ IndexPage ~ marquee', marquee);
+
+  const myLoader = ({ src, width, quality }) => {
+    return `${src}?fit=crop&h=${width}&w=${width}&q=100`;
+  };
 
   if (!router.isFallback && !homeData) {
     return <Error statusCode={404} />;
@@ -50,6 +42,45 @@ const IndexPage = ({ preview, homeData }) => {
   return (
     <>
       <SEO title={title} description={pageDescription || ''} />
+      <Box px={8}>
+        <Flex flexDirection="row" justifyContent="center" alignItems="center">
+          <Flex flexDirection="row" justifyContent="center" alignItems="center">
+            <Text px={2}>Item One</Text>
+            <Text px={2}>Item Two</Text>
+          </Flex>
+        </Flex>
+        <Flex
+          flexDirection="column"
+          width="72rem"
+          height={600}
+          minHeight={600}
+          mt="1rem"
+          mx="auto"
+          sx={{
+            border: '1px solid gray',
+            background:
+              'linear-gradient(hsl(30,40%,98%) 60%,hsl(40,80%,92%) 80%,hsl(10,100%,90%) 100%)'
+          }}>
+          <Flex flexDirection="row" justifyContent="center" alignItems="center" height={60}>
+            <Flex
+              width={1}
+              flexWrap="nowrap"
+              flexDirection="row"
+              justifyContent="center"
+              alignItems="center">
+              <Text color="var(--theme-colors-gray-100)" fontSize={2} fontWeight="bold">
+                Winterfell
+              </Text>
+              <Text mx={4} color="var(--theme-colors-gray-100)" fontSize={2} fontWeight="bold">
+                King's Landing
+              </Text>
+              <Text color="var(--theme-colors-gray-100)" fontSize={2} fontWeight="bold">
+                Castle Black
+              </Text>
+            </Flex>
+          </Flex>
+        </Flex>
+      </Box>
 
       <Flex
         className="slider-section"
@@ -59,19 +90,43 @@ const IndexPage = ({ preview, homeData }) => {
         height={350}
         mb={140}>
         <Marquee>
-          {' '}
-          {[...Array(12).keys()].map((item, i) => (
-            <Box mx="12px" key={i} backgroundColor="rebeccapurple">
-              <Box display="block" bg="purple" width={350} height={350}>
-                <Text color="white">{item}</Text>
-              </Box>
+          {marquee.map((item, i) => (
+            <Box
+              mx={3}
+              display="block"
+              width={350}
+              height={350}
+              key={i}
+              sx={{
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);'
+              }}>
+              <Image
+                loader={myLoader}
+                src={`${urlFor(item.marqueeImage.asset._ref).url()}`}
+                width={350}
+                height={350}
+              />
+
+              <Text color="white">{item.destination.name}</Text>
             </Box>
           ))}
-          {[...Array(12).keys()].map((item, i) => (
-            <Box mx="12px" key={i} backgroundColor="rebeccapurple">
-              <Box display="block" bg="purple" width={350} height={350}>
-                <Text color="white">{item}</Text>
-              </Box>
+          {marquee.map((item, i) => (
+            <Box
+              mx={3}
+              display="block"
+              width={350}
+              height={350}
+              key={i}
+              sx={{
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);'
+              }}>
+              <Image
+                loader={myLoader}
+                src={`${urlFor(item.marqueeImage.asset._ref).url()}`}
+                width={350}
+                height={350}
+              />
+              <Text color="white">{item.destination.name}</Text>
             </Box>
           ))}
         </Marquee>
