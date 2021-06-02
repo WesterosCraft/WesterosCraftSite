@@ -42,7 +42,7 @@ const IndexPage = ({ preview, homeData }) => {
   return (
     <>
       <SEO title={title} description={pageDescription || ''} />
-      <Box px={8}>
+      {/* <Box px={8}>
         <Flex flexDirection="row" justifyContent="center" alignItems="center">
           <Flex flexDirection="row" justifyContent="center" alignItems="center">
             <Text px={2}>Item One</Text>
@@ -57,6 +57,7 @@ const IndexPage = ({ preview, homeData }) => {
           mt="1rem"
           mx="auto"
           sx={{
+            position: 'relative',
             border: '1px solid gray',
             background:
               'linear-gradient(hsl(30,40%,98%) 60%,hsl(40,80%,92%) 80%,hsl(10,100%,90%) 100%)'
@@ -79,8 +80,29 @@ const IndexPage = ({ preview, homeData }) => {
               </Text>
             </Flex>
           </Flex>
+
+          <Flex className="kings-landing-slide-container" width={1}>
+            <Box
+              sx={{
+                position: 'absolute',
+                bottom: 0,
+                right: 0,
+                zIndex: 10
+              }}>
+              <Image src="/kl-1.png" width={1152} height={372} />
+            </Box>
+            <Box
+              sx={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                zIndex: 5
+              }}>
+              <Image src="/kl-2.png" width={1152} height={302} />
+            </Box>
+          </Flex>
         </Flex>
-      </Box>
+      </Box> */}
 
       <Flex
         className="slider-section"

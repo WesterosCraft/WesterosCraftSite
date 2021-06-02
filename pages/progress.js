@@ -34,15 +34,7 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
     enabled: preview
   });
 
-  const {
-    heading,
-    pageTitle,
-    pageEntry,
-    destinationlength,
-    subheading,
-    title,
-    pageDescription
-  } = data[0];
+  const { heading, pageTitle, pageEntry, subheading, title, pageDescription } = data[0];
 
   const totalComplete = destinationData.filter((item) => item.projectStatus === 'completed');
   const totalInProgress = destinationData.filter(
@@ -315,7 +307,7 @@ const ProgressPage = ({ preview, progressData, destinationData }) => {
           justifyContent="center"
           mt={7}>
           <Card color={theme.colors.ironIslands}>
-            <Text variant="heading3">{destinationlength}</Text>
+            <Text variant="heading3">{destinationData.length}</Text>
             <Text>total projects</Text>
           </Card>
           <Card color={theme.colors.success}>
