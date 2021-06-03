@@ -10,6 +10,7 @@ import home from './documents/home';
 import wiki from './documents/wiki';
 import rookery from './documents/rookery';
 import progress from './documents/progress';
+import downloads from './documents/downloads';
 
 // objects
 import figure from './objects/figure';
@@ -29,6 +30,7 @@ import banner from './objects/banner';
 import spacer from './objects/spacer';
 import contentBanner from './objects/contentBanner';
 import dynmapData from './objects/dynmapData';
+import tableBuilder from './objects/tableBuilder';
 
 const schema = createSchema({
   name: 'default',
@@ -57,7 +59,9 @@ const schema = createSchema({
     progress,
     contentBanner,
     wiki,
-    dynmapData
+    dynmapData,
+    downloads,
+    tableBuilder
   ])
 });
 

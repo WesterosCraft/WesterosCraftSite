@@ -16,11 +16,14 @@
     "@sanity/desk-tool",
     "@sanity/dashboard",
     "media",
-    "@sanity/vision"
+    "@sanity/vision",
+    "table"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"],
+      "plugins": [
+        "@sanity/vision"
+      ],
       "api": {
         "dataset": "develop"
       }

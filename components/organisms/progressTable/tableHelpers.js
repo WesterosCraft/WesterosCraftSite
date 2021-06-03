@@ -20,18 +20,22 @@ export const levelFormatter = (level) => {
 };
 
 export const Styles = styled.div`
-  .table {
+  .table,
+  table {
     border-spacing: 0;
     border: 2px solid var(--theme-colors-text);
     min-width: 300px !important;
 
-    .thead {
+    .thead,
+    thead {
       overflow-y: auto;
       overflow-x: auto;
     }
-    .tbody {
+    .tbody,
+    tbody {
     }
-    .tr {
+    .tr,
+    tr {
       :last-child {
         .td {
           border-bottom: 0;
@@ -49,7 +53,8 @@ export const Styles = styled.div`
       padding: 8px 0;
       border-bottom: 1px solid black;
     }
-    .th {
+    .th,
+    th {
       padding-left: 16px;
     }
     /* .th,

@@ -139,6 +139,18 @@ const data = {
         },
         {
           __typename: 'mainNav_Node',
+          title: 'Downloads',
+          url: 'https://westeroscraft.com/downloads',
+          type: 'craft\\elements\\Entry',
+          uri: null,
+          element: {
+            __typename: 'launcher_launcher_Entry',
+            slug: 'downloads',
+            uri: 'downloads'
+          }
+        },
+        {
+          __typename: 'mainNav_Node',
           title: 'Wiki',
           url: 'https://westeroscraft.com/wiki',
           type: 'craft\\elements\\Entry',

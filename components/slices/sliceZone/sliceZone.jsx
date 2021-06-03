@@ -12,6 +12,7 @@ import { Box } from 'rebass';
 import { EntryGrid } from '../entryGrid';
 import { Accordion } from '../accordion';
 import { ImageGrid } from '../imageGrid/imageGrid';
+import { TableBuilder } from '../tableBuilder';
 
 export const SliceZone = ({ slices }) => {
   const module = slices.map((slice, index) => {
@@ -44,6 +45,8 @@ export const SliceZone = ({ slices }) => {
         return <Accordion data={slice} key={index} />;
       case 'imageGallery':
         return <ImageGrid data={slice} key={index} />;
+      case 'tableBuilder':
+        return <TableBuilder data={slice} key={index} />;
       default:
         return null;
     }
