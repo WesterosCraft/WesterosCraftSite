@@ -1,0 +1,635 @@
+[
+  {
+    "title": "Long Barrow",
+    "slug": "long-barrow",
+    "copy": null,
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "one",
+        "warp": "/warp longbarrow",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Castle Black",
+    "slug": "castle-black",
+    "copy": "<p><strong>Castle Black</strong> is one of the castles guarding the Realm from the dangers lying beyond <a href=\"https://westeroscraft.com/wiki/the-wall\">the Wall</a>. It is, alongside the <a href=\"https://westeroscraft.com/wiki/the-wall/shadow-tower\">Shadow Tower </a>and <a href=\"https://westeroscraft.com/wiki/the-wall/eastwatch-by-the-sea\">Eastwatch-by-the-Sea</a>, one of the last castles still being actively occupied by the Brothers of the Night's Watch. Located between <a href=\"https://westeroscraft.com/wiki/the-wall/oakenshield\">Oakenshield</a>, east, and the <a href=\"https://westeroscraft.com/wiki/the-wall/queensgate\">Queensgate</a>, west, it is the final destination of the kingsroad, which starts at <a href=\"https://westeroscraft.fandom.com/wiki/King%27s_Landing\" title=\"King's Landing\">King's Landing</a>.</p>\r\n<p>Once able to house five thousand fighting men, it took over the role of the <a href=\"https://westeroscraft.com/wiki/the-wall/nightfort\">Nightfort</a> as the seat of the Lord Commander of the Night's Watch some six hundred years prior to the War of the Five Kings. However, with time, their current numbers are below even a thousand, with parts of the castle in disrepair.</p>\r\n<h3>Features</h3>\r\n<p>Although being dubbed as \"castle\", there is absence of real fortifications on its southern, eastern and western sides, with only the Wall acting as defense. Despite this, the location is filled with towers and buildings of other uses:</p>\r\n<p><strong>Towers</strong></p>\r\n<ul><li><strong>The Lord Commander's Tower:</strong> A stone tower, it is where the Night's Watch's Lord Commander sleeps and live his everyday life. While living on the top floors, lower levels are cells for Brothers to sleep in.</li></ul>\r\n<p><strong>The King's Tower:</strong> Although no king has visited the Wall for over a century, the tower is reserved for honoured guests of nobility.</p>\r\n<ul><li><strong>Hardin's Tower:</strong> With a broken battlement, it is where some men of the Night's Watch have their quarters. Facing <strong>the Lance </strong>from the kingsroad, it is located on its right.</li><li><strong>Tower of the Guards:</strong> One of the strongest tower, men of the Night's Watch reside in it. It is located near the stairway.</li><li><strong>The Lance:</strong> The tallest tower of Castle Black, it stands guarding the kingsroad. Its height is approximately a third of that of th Wall.</li></ul>\r\n<p><strong>Buildings of various usage</strong></p>\r\n<figure class=\"article-thumb tright show-info-icon\" style=\"border: 0px; font-style: normal; font-weight: 400; margin: 0px 0px 16px 20px; padding: 0px; vertical-align: baseline; display: block; clear: right; float: right; color: rgb(58, 58, 58); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(84, 84, 84); text-decoration-style: initial; text-decoration-color: initial; width: 180px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/c/c2/2019-06-03_00.26.10.png/revision/latest?cb=20190607194508\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/c/c2/2019-06-03_00.26.10.png/revision/latest/scale-to-width-down/180?cb=20190607194508\" alt=\"2019-06-03 00.26.10\" class=\"thumbimage lzyPlcHld lzyTrns lzyLoaded\" data-image-key=\"2019-06-03_00.26.10.png\" data-image-name=\"2019-06-03 00.26.10.png\" data-src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/c/c2/2019-06-03_00.26.10.png/revision/latest/scale-to-width-down/180?cb=20190607194508\" data-image=\"0xl0wbx9wi61\" width=\"180\" height=\"94\"></a><figcaption><p class=\"caption\">The inner yard as seen from the ground, with the winch and the stairway on the Wall</p></figcaption></figure>\r\n<figure class=\"article-thumb tright show-info-icon\" style=\"border: 0px; font-style: normal; font-weight: 400; margin: 0px 0px 16px 20px; padding: 0px; vertical-align: baseline; display: block; clear: right; float: right; color: rgb(58, 58, 58); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(84, 84, 84); text-decoration-style: initial; text-decoration-color: initial; width: 180px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/6/6b/2019-06-03_00.30.56.png/revision/latest?cb=20190607194548\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/6/6b/2019-06-03_00.30.56.png/revision/latest/scale-to-width-down/180?cb=20190607194548\" alt=\"2019-06-03 00.30.56\" class=\"thumbimage lzyPlcHld lzyTrns lzyLoaded\" data-image-key=\"2019-06-03_00.30.56.png\" data-image-name=\"2019-06-03 00.30.56.png\" data-src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/6/6b/2019-06-03_00.30.56.png/revision/latest/scale-to-width-down/180?cb=20190607194548\" data-image=\"lc4b4rade8aa\" width=\"180\" height=\"94\"></a><figcaption><p class=\"caption\">Dining hall</p></figcaption></figure>\r\n<figure class=\"article-thumb tright show-info-icon\" style=\"border: 0px; font-style: normal; font-weight: 400; margin: 0px 0px 16px 20px; padding: 0px; vertical-align: baseline; display: block; clear: right; float: right; color: rgb(58, 58, 58); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(84, 84, 84); text-decoration-style: initial; text-decoration-color: initial; width: 180px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/8/82/2019-06-07_15.42.13.png/revision/latest?cb=20190607194604\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/8/82/2019-06-07_15.42.13.png/revision/latest/scale-to-width-down/180?cb=20190607194604\" alt=\"2019-06-07 15.42.13\" class=\"thumbimage lzyPlcHld lzyTrns lzyLoaded\" data-image-key=\"2019-06-07_15.42.13.png\" data-image-name=\"2019-06-07 15.42.13.png\" data-src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/8/82/2019-06-07_15.42.13.png/revision/latest/scale-to-width-down/180?cb=20190607194604\" data-image=\"pq9euwbvt1u0\" width=\"180\" height=\"98\"></a><figcaption><p class=\"caption\">Shieldhall</p></figcaption></figure>\r\n<figure class=\"article-thumb tright show-info-icon\" style=\"border: 0px; font-style: normal; font-weight: 400; margin: 0px 0px 16px 20px; padding: 0px; vertical-align: baseline; display: block; clear: right; float: right; color: rgb(58, 58, 58); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(84, 84, 84); text-decoration-style: initial; text-decoration-color: initial; width: 180px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/3/3e/2019-06-07_15.43.03.png/revision/latest?cb=20190607194620\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/3/3e/2019-06-07_15.43.03.png/revision/latest/scale-to-width-down/180?cb=20190607194620\" alt=\"2019-06-07 15.43.03\" class=\"thumbimage lzyPlcHld lzyTrns lzyLoaded\" data-image-key=\"2019-06-07_15.43.03.png\" data-image-name=\"2019-06-07 15.43.03.png\" data-src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/3/3e/2019-06-07_15.43.03.png/revision/latest/scale-to-width-down/180?cb=20190607194620\" data-image=\"9klaol8zif8u\" width=\"180\" height=\"98\"></a><figcaption><p class=\"caption\">Bath house</p></figcaption></figure>\r\n<figure class=\"article-thumb tright show-info-icon\" style=\"border: 0px; font-style: normal; font-weight: 400; margin: 0px 0px 16px 20px; padding: 0px; vertical-align: baseline; display: block; clear: right; float: right; color: rgb(58, 58, 58); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(84, 84, 84); text-decoration-style: initial; text-decoration-color: initial; width: 180px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/8/81/2019-06-07_15.49.21.png/revision/latest?cb=20190608172921\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/8/81/2019-06-07_15.49.21.png/revision/latest/scale-to-width-down/180?cb=20190608172921\" alt=\"2019-06-07 15.49.21\" class=\"thumbimage lzyPlcHld lzyTrns lzyLoaded\" data-image-key=\"2019-06-07_15.49.21.png\" data-image-name=\"2019-06-07 15.49.21.png\" data-src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/8/81/2019-06-07_15.49.21.png/revision/latest/scale-to-width-down/180?cb=20190608172921\" data-image=\"4obydlx7gsng\" width=\"180\" height=\"98\"></a><figcaption><p class=\"caption\">Garden, overtaken by snow.</p></figcaption></figure>\r\n<figure class=\"article-thumb tright show-info-icon\" style=\"border: 0px; font-style: normal; font-weight: 400; margin: 0px 0px 16px 20px; padding: 0px; vertical-align: baseline; display: block; clear: right; float: right; color: rgb(58, 58, 58); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(84, 84, 84); text-decoration-style: initial; text-decoration-color: initial; width: 180px;\"><a href=\"https://vignette.wikia.nocookie.net/westeroscraft/images/b/b7/2019-06-07_15.48.55.png/revision/latest?cb=20190608172902\" class=\"image image-thumbnail\"><img src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/b/b7/2019-06-07_15.48.55.png/revision/latest/scale-to-width-down/180?cb=20190608172902\" alt=\"2019-06-07 15.48.55\" class=\"thumbimage lzyPlcHld lzyTrns lzyLoaded\" data-image-key=\"2019-06-07_15.48.55.png\" data-image-name=\"2019-06-07 15.48.55.png\" data-src=\"https://vignette.wikia.nocookie.net/westeroscraft/images/b/b7/2019-06-07_15.48.55.png/revision/latest/scale-to-width-down/180?cb=20190608172902\" data-image=\"5m15kqwpma2c\" width=\"180\" height=\"98\"></a><figcaption><p class=\"caption\">Lichyard</p></figcaption></figure>\r\n\r\n<ul><li><strong>Dining hall: </strong>There is a three-storey high dining hall in which the Brothers of the Night's Watch reunite to share meals and information, as well as being entertained.</li><li><strong>Shieldhall:</strong> In a time long past, when nobles and knights were honourably joining the Night's Watch, their shields, on which their family banners were painted, were hung in this hall so the owner would now don the all-black shield of the brotherhood.</li><li><strong>Sept: </strong>A small sept is kept by septon Cellador, where those worshipping the Faith of the Seven can pronounce their vows to the Night's Watch, or simply pray for guidance.</li><li><strong>Maester's Chambers and rookery:</strong> A building behind the King's Tower is where the local maester has its chambers, and where he maintains a rookery. From there he can communicate with the rest of the Realm, including the other manned castles of the Night's Watch.</li><li><strong>Garden: </strong>A small garden, located near the maester's residence, is kept to be able to grow a small amount of food. However, it is impossible to cultivate anything with the current weather, and so it has been left uncared for.</li><li><strong>Bath house:</strong> There is a building, on the eastern side of the location, maintained in the sole purpose of making available baths in which everyone can clean themselves off. Heated off my steam from underground furnaces fueled with wood, it is a constant warm place, arguably one of the hottest in Castle Black.</li><li><strong>Lichyard:</strong> Just east of the castle is a lichyard, where graves of past brothers are located</li><li><strong>Other locations:</strong> As it is the case with most castles, some other places of importance are on the premises, such as a smithy, stables (located next to the kingsroad, at Castle Black's entrance), an armory and multiple barracks where the Brothers sleep and live.</li></ul>\r\n<p><strong>The Wall</strong></p>\r\n<ul><li><strong>Gate: </strong>Castle Black, like most castles along the Wall, has a gate guarding the tunnel going underneath the Wall.</li><li><strong>Prison cells:</strong> To keep prisoners, made from ice itself, small cells have been carved inside the Wall. They serve both as stocking area as well as maintaining prisoners under control, either they be wildlings or southern threats.</li><li><strong>Stairway:</strong> As it is the case with the castles of the Night's Watch, a stairway has been installed to move up the Wall at any given time. Unlike most of the castles, however, this one is fully maintained and whole.</li><li><strong>Winch:</strong> An iron cage is used to move up the wall, the same way an elevator would do so. It can contain up to 10 men, and can also be used to transport merchandise for use at the top of the Wall.</li><li><strong>Wall scout:</strong> A series of observation posts exist on top of the Wall, where a small wooden hut is also located to stock maintenance tools and materials. A trebuchet and a catapult are located next to each other as well, ready to defend the Wall against an invasive force.</li></ul>\r\n<p><strong>Underground</strong></p>\r\n<ul><li><strong>Tunnels: </strong>Called wormwalks or wormways, they link every building to one another. They are mainly used during the harsh winters, where snow and ice cover the surface.</li><li><strong>Granary: </strong>There are stocking areas for food, where it is maintained in dry places. Ale can also be found in kegs, just like wine.</li><li><strong>Cold chamber:</strong> There is a separate chamber where meats are maintained and preserved with salt and cold.</li><li><strong>Library:</strong> The library, cared of by the local maester, is located underground. Many books and papers in it are unique, since the Citadel and other southern noble houses do not have copies of these. They cover a vast array of subject, such as the language of the children of the forest and scrolls from Valyria, for instance.</li></ul>\r\n<h3>Video</h3>\r\n<p>Castle Black was featured in Episode 61 of the WesterosCraft Walks, released on October 11, 2015.</p>\r\n<figure><iframe src=\"https://www.youtube.com/embed/xYACDoWaFVQ\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" width=\"560\" height=\"315\" frameborder=\"0\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/castleblack1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "three",
+        "warp": "/warp castleblack",
+        "dateCompleted": "2013-03-11T07:00:00+00:00",
+        "projectLead": "NickShaiB",
+        "dateStarted": "2013-03-09T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Deep Lake",
+    "slug": "deep-lake",
+    "copy": "<p><strong>Deep Lake</strong> if one the castles guarding the Wall. It has been abandoned for some time. Constructed at first under the recommendation and financial support of Queen Alysanne Targaryen during the reign of King Jaehaerys I Targaryen, it was to serve as a cheaper-to-maintain replacement of the aging <a href=\"https://westeroscraft.com/wiki/the-wall/nightfort\">Nightfort</a>, located due west of Deep Lake. To the east is <a href=\"https://westeroscraft.com/wiki/the-wall/queensgate\">Queensgate</a>. </p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Underground tunnels: </strong>Linking the several buildings to one another, the tunnels served mainly during the harsh times of winter to avoid the weather.</li><li><strong>Wall tunnel:</strong> A tunnel blocked by ice and snow is on the premises.</li><li><strong>Castle:</strong> Even though the towers are in ruins, other areas are still complete enough to discern what they used to be;<ul><li>Stables</li><li>Dining hall</li><li>Barracks</li><li>Stocking areas </li></ul></li></ul>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/deeplake1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/deeplake2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/deeplake3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp deeplake",
+        "dateCompleted": "2015-05-05T07:00:00+00:00",
+        "projectLead": "barkus",
+        "dateStarted": "2015-03-31T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Greenguard",
+    "slug": "greenguard",
+    "copy": "<p>Greenguard is one of the many castle that guard the Wall against what's beyond it. It has for long been abandoned and is now naught but a ruin. it is positioned east of <a href=\"https://westeroscraft.com/wiki/the-wall/torches\">Torches</a> and west of <a href=\"https://westeroscraft.com/wiki/the-wall/eastwatch-by-the-sea\">Eastwatch-by-the-Sea</a>.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Door remnants:</strong> A sealed door can be observed at the Wall which used to be the entrance of a tunnel leading all the way through to Beyond the Wall.</li><li><strong>Castle:</strong> Even if it is in ruins, a few rooms remain recognizable enough;<ul><li>Stables</li><li>Dining hall</li><li>What used to be barracks</li><li>A sealed well</li><li>The Commander's Quarters</li></ul></li></ul>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/greenguard1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp greenguard",
+        "dateCompleted": "2015-04-24T07:00:00+00:00",
+        "projectLead": "Veggie, Knight_Krawler",
+        "dateStarted": "2015-04-18T07:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Greyguard",
+    "slug": "greyguard",
+    "copy": "<p><strong>Greyguard</strong> is one the Night's Watch's castles located at the Wall. It has been abandoned for around 200 years, since which most of the castle has collapsed, safe for the tower. It lies between <a href=\"https://westeroscraft.com/wiki/the-wall/sentinel-stand\">Sentinel Stand</a>, in the west, and <a href=\"https://westeroscraft.com/wiki/the-wall/stonedoor\">Stonedoor</a>, in the east.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Stairway: </strong>A stairway leading to the top of the Wall, it is largely destroyed or confined in the ice.</li><li><strong>Castle:</strong> Although in ruins, it is still possible to observe rooms that have been disused;<ul><li>A dining hall</li><li>What used to be barracks</li><li>A smithy</li><li>Stables</li><li>The commander's chambers atop the tower</li></ul></li></ul>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/greyguard1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp greyguard",
+        "dateCompleted": "2013-02-13T08:00:00+00:00",
+        "projectLead": "quetzal",
+        "dateStarted": "2013-01-26T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Queenscrown",
+    "slug": "queenscrown",
+    "copy": "<p><strong>Queenscrown</strong> is an empty holdfast built upon an isle on a cold lake in the Gift, overlooking a small settlement. Both holdfast and village are now long abandoned due to frequent wildling raids, with little left of the houses but rotting and crumbled wooden walls. Queenscrown is named thus due to a brief visit from Good Queen Alysanne Targaryen; the smallfolk painted the merlons at the peak of the tower in gold in her honour, giving it the appearance of being girdled by a gleaming crown, even though it has faded to yellow with time.</p><h3>Features</h3>\r\n<ul><li><strong>Abandoned village:</strong> Now little more than a pile of rotted wood, the village was once relatively prosperous, farming the fertile land surrounding the lake and fishing its waters. An adept archeologist may find evidence of an inn and two decently-sized barns within the ruins. Apple trees have sprouted amongst the foundations, carpeting the floors with damp brown leaf-litter.</li></ul>\r\n<ul><li><strong>Causeway:</strong> To better protect their holdfast, the villagers built a causeway leading to it from the lakeshore. Three feet wide and sunk a metre below the surface, it zigs and zags around the island before finally reaching the steps leading up to the tower door. It forces attackers to wade through chilled water for a not so inconsiderable amount of time, constantly under fire from the arrow slits built into the tower above.</li></ul>\r\n<ul><li><strong>Holdfast:</strong> A five-storey structure with rooftop and undercroft, the Queenscrown holdfast is situated upon a rocky isle dotted with hardy vegetation. Its door is warped and cannot close, but the tower remains standing and relatively intact, if draughty and uncomfortable. The painted merlons are chipped and weathered, but they retain a gilded gleam even after all these years.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The lake had to be reterraformed to a more suitable size, and woodland and hills were used to populate the shores, providing an interesting backdrop for the tower. The snow immediately around the lake was thawed somewhat, creating a friendlier, more autumnal feel than the rest of the Gift.<br></p>\r\n\r\n<p>The tower itself and the village were built solely by Discs and in an atmosphere that invoked feelings of both melancholy for the long-gone smallfolk and serenity in such a naturally beautiful spot.</p>\r\n\r\n<h3>Inspiration</h3>\r\n<p>Discs took inspiration from artworks of the <em>A Storm of Swords</em> location, as was necessary since the description in the books was so exact that alternative styles could hardly be taken into consideration. The village was abandoned to the point of being unrecognisable, so there were no exact inspirations to be found, but real medieval villages were used to help plan the layout of the settlement.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/queenscrown3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/queenscrown2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/queenscrown1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": null,
+        "destinationType": "tower",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp queenscrown",
+        "dateCompleted": "2015-06-09T07:00:00+00:00",
+        "projectLead": "Discs",
+        "dateStarted": "2015-03-20T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Shadow Tower",
+    "slug": "shadow-tower",
+    "copy": "<p><strong>The Shadow Tower </strong>is amongst the three castles along the Wall that are occupied by the Night's Watch. It is located nearby a mountain range at the western end of the Wall. It lies west of <a href=\"https://westeroscraft.com/wiki/the-wall/sentinel-stand\">Sentinel Stand</a> and east of <a href=\"https://westeroscraft.com/wiki/the-wall/westwatch-by-the-bridge\">Westwatch-by-the-Bridge</a>, both abandoned castles.</p>\r\n<p>The tower is commanded by Ser Denys Mallister and, as of book one, has a garrison of about 200 men. Since it is one of the few manned castles, the local maester, Mullin, and the commander maintain constant communication with <a href=\"https://westeroscraft.com/wiki/the-wall/castle-black\">Castle Black</a>, where the Lord Commander is located.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle: </strong>Keeps guard over the entire region being perched high up in the high mountains. On its premises are stables, dining hall and smithy.</li><li><strong>Underground:</strong> There is also a series of underground tunnels linking the buildings to one another. A few, leading to abandoned towers, have collapsed. Beds for Brothers as well as stocking areas for food and wood can be found there, as well as prison cells straight underneath the main tower, where the commander and maester live.</li><li><strong>Tunnel: </strong>The tunnel is similar to Castle Black's. A gate guards its entry and it is still functional to travel beyond the Wall.</li><li><strong>Stairway:</strong> A stairway leads to the top of the Wall. It is short due to the already high location of the Shadow Tower.</li><li><strong>Wall scout:</strong> An area on top of the Wall where Brothers of the Night's Watch stand watch against anything that may attempt to pass through. Itis not as large as the area at Castle Black, for it is located at the very end of the Wall and Sentinel Stand is close by, although it is unused.</li><li><strong>Abandoned hamlet: </strong>One of the many abandoned hamlets north of the Wall and in the Gift. This hamlet sits between the roads leading to the Shadow tower and Sentinel Stand, north side.</li><li><strong>Hamlets in the rangings:</strong> North of the Wall, these hamlets are completely abandoned as there are accounts of villages and hamlets being left so. These are used as stop points for wildlings/rangers of the Night's Watch to camp and rest.</li></ul>\r\n<h3>Construction</h3>\r\n<p>The Shadow Tower was Planned from February 2018, started on 25th October, approved, then completed on the 10th December 2018. </p>\r\n<h3>Inspiration</h3>\r\n<p>The inspiration for this castle came primarily from Artwork and Corfe Castle under snow.</p>\r\n<h3>Video</h3>\r\n<figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/4_TlzMmfWOI\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/ShadowTower1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/ShadowTower2.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "castle",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp shadowtower",
+        "dateCompleted": "2018-12-10T08:00:00+00:00",
+        "projectLead": "Majic, Endymion",
+        "dateStarted": "2018-10-25T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/shadow-tower-by-maj-endy.1396/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Torches",
+    "slug": "torches",
+    "copy": "<p><strong>Torches</strong> is one of the Wall castles lying to the east of <a href=\"https://westeroscraft.com/wiki/the-wall/long-barrow\">Long Barrow</a> and west of <a href=\"https://westeroscraft.com/wiki/the-wall/greenguard\">Greenguard</a>. It has been abandoned for quite some time due to manpower shortages and maintenance costs.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle:</strong> A small keep, abandoned and half-ruined. Occasionally used as shelter by the men of Night's Watch travelling between <a href=\"https://westeroscraft.com/wiki/the-wall/castle-black\">Castle Black</a> and <a href=\"https://westeroscraft.com/wiki/the-wall/eastwatch-by-the-sea\">Eastwatch</a>. Service buildings around are in ruins.</li><li><strong>Collapsed tunnel:</strong> As it is often the case with castle of the Night's Watch, it features a collapsed entry to the tunnel under the Wall and some remains of the staircase.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Torches was constructed by carcinogenius in November 2015. The old version of Torches completed by Lyliana can be found at /warp torchesold.</p>\r\n<h3>Inspiration</h3>\r\n<p>Torches took its inspiration from other northern builds and Wall castles, primarily Castle Black.<br></p>\r\n<p><strong>Fun fact</strong>: There's not a single torch in Torches!</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/torches1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp torches",
+        "dateCompleted": "2015-11-21T08:00:00+00:00",
+        "projectLead": "carcinogenius",
+        "dateStarted": "2015-11-06T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Mole's Town",
+    "slug": "moles-town",
+    "copy": "<p>Mole's Town is a small village located south of the Wall, near Castle Black. Within the Gift, the village supports in food and taxes the Night's Watch in their everlasting mission to guard the Realm at the Wall. <br></p>\r\n<h3>Features</h3>\r\n<p>Mainly living underground, the smallfolk have maintained a windmill with farming lands on the surface, as well as keeping use of a smith, an inn and stables alongside several shacks that connect into the underground tunnels.</p>\r\n<ul><li><strong>Underground</strong>: Several tunnels connect a plethora of rooms in which the inhabitants of Mole's Town live. From dining rooms to stocking areas, they enjoy a warmer living place than other holdfasts this far north. With space to shelter animal, they have the opportunity to survive underground during the harsh times of winter, once it comes.</li></ul>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/molestown2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/molestown1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": null,
+        "destinationType": "town",
+        "destinationStatus": "completed",
+        "destinationLevel": "two",
+        "warp": "/warp molestown",
+        "dateCompleted": "2015-03-30T07:00:00+00:00",
+        "projectLead": "Lyliana",
+        "dateStarted": "2015-03-10T07:00:00+00:00",
+        "application": null,
+        "banner": []
+      }
+    ]
+  },
+  {
+    "title": "Stonedoor",
+    "slug": "stonedoor",
+    "copy": "<p><strong>Stonedoor</strong> is the fifth castle along the Wall starting from the west, located between <a href=\"https://westeroscraft.com/wiki/the-wall/greyguard\">Greyguard</a>, west, and <a href=\"https://westeroscraft.com/wiki/the-wall/hoarfrost-hill\">Hoarfrost Hill</a>, east. In its days of service, Stonedoor used to be one of the largest castles along the Wall. It has been abandoned for a long time, but most of the castle still stands today, making it one of the castles fit to re-garrison.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>The Stone Door: </strong>Giving the castle's name, it is a large stone and iron gate on the north side of the Wall. It has not been used since the castle was abandoned, for all the gates of the abandoned wall castles were barred with ice and stone.</li><li><strong>The Lord’s Tower: </strong>It is a stout and sturdy construction, primarily made of stone. It has suffered very little from the long years of abandonment.</li><li><strong>The Great Hall:</strong> It is not unlike the Lord’s Tower, built out of stone, with a wooden roof atop. Large glass windows, now no more than holes barred off with wood, used to line the northern wall of the hall that could host a large amount of brothers of the Night's Watch.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Stonedoor was a solo project completed herm1456. Construction started on the September 19, 2015 and it was completed less than a month later, on October 13, 2015. The current build replaces a older version completed by Roble0812 in 2013.</p>\r\n<h3>Inspiration</h3>\r\n<p>Stonedoor was inspired by <a href=\"https://westeroscraft.com/wiki/the-wall/castle-black\">Castle Black</a>, the primary wall castle, which was recently finished at the time. The layout and condition of Stonedoor is discussed in the books and followed closely when planning the redo of the castle.</p>\r\n<h3>Video</h3>\r\n<p>Stonedoor was featured in Episode 70 of WesterosCraft Walks. It was the first episode that featured electricthrusts (Lucia) as co-host with HardzzGaming. The duo explore the ruined fort and explain a little about the history of the Night's Watch and the abandoned wall castles.</p>\r\n<figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/37JEIBsC62g\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/stonedoor1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp stonedoor",
+        "dateCompleted": "2015-01-10T00:00:00+00:00",
+        "projectLead": "herm1456",
+        "dateStarted": "2015-01-09T00:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Oakenshield (Wall)",
+    "slug": "oakenshield",
+    "copy": "<p><strong>Oakenshield</strong> is one of the many castles of the Night's Watch at the Wall, lying to the east of <a href=\"https://westeroscraft.com/wiki/the-wall/castle-black\">Castle Black</a> and west of <a href=\"https://westeroscraft.com/wiki/the-wall/woodswatch-by-the-pool\">Woodswatch-by-the-Pool</a>. It was abandoned years before the start of the books.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Towers:</strong> One was used as barracks, while the other collapsed tower was for the maester and commander.</li><li><strong>Feast Hall:</strong> An old feast hall with kitchens below.</li><li><strong>Barn and Smithy:</strong> Two smaller structures near the fort, in ruins.</li><li><strong>Tunnels:</strong> Similar to Castle Black, tunnels connect different buildings and are used mostly during winters.</li><li><strong>Stairway:</strong> A jump puzzle goes from Oakenshield to the top of the Wall.</li></ul>\r\n<h3>Construction</h3>\r\n<p>ZeRamenGuy created the layout and application, while Stein created the gradient tests and the destruction. The project was created solely by ZeRamenGuy and Steineke. Construction took two weeks. The barracks tower, feast hall and smithy were built first, for the gradient tests. The last part of Oakenshield to be built was the jump puzzle up the wall. </p>\r\n<p>A previous version of Oakenshield can be found east of the graveyard at /warp castleblackold and consists of a cluster of small ruined towers surrounding a large tree. It was completed by Adlern in 2013.</p>\r\n<h3>Inspiration</h3>\r\n<p>Oakenshield took its inspiration from other Wall castles, primarily Castle Black and its wormways.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/oakenshield.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp oakenshield",
+        "dateCompleted": "2015-08-24T07:00:00+00:00",
+        "projectLead": "ZeRamenGuy, Steineke",
+        "dateStarted": "2015-07-31T23:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Icemark",
+    "slug": "icemark",
+    "copy": "<p>Icemark is one of the castles guarding the Realm at the Wall belonging to the Night's Watch. Like most of the castles, it has been abandoned due to manpower shortages and heavy maintenance costs. It lies east of <a href=\"https://westeroscraft.com/wiki/the-wall/hoarfrost-hill\">Hoarfrost Hill</a> and west of the <a href=\"https://westeroscraft.com/wiki/the-wall/nightfort\">Nightfort</a>.<br></p>\r\n<h3>Features</h3>\r\n<p>Being quite a large construction, the castle has a lot of space to house the Brothers of the Night's Watch as well as store goods. </p>\r\n<ul><li><strong>Castle:</strong> The build itself, although mostly in ruins, is composed of multiple areas that used to be sorted in those activities;<ul><li>Dining hall</li><li>Stables</li><li>Stocking areas</li><li>Smithy</li><li>The Brothers' quarters</li></ul></li><li><strong>Water stream:</strong> A water stream runs down from the Wall on the western side of the castle to a small, frozen lake, located the south of the ruins, with a dam controlling its flowing.</li><li><strong>Collapsed tunnel:</strong> As it is the case with most ruined castles of the Night's Watch, the tunnel that used to go through the Wall has collapsed onto itself, unmaintained, as snow and ice now block the passage.</li><li><strong>Stairway:</strong> A stairway, now in ruins, is still visible on the Wall, going its full height.</li></ul>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/icemark1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/icemark2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/icemark3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp icemark",
+        "dateCompleted": "2016-02-10T08:00:00+00:00",
+        "projectLead": "jmcmarq",
+        "dateStarted": "2015-12-09T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Westwatch-by-the-Bridge",
+    "slug": "westwatch-by-the-bridge",
+    "copy": "<p><strong>Westwatch-by-the-Bridge</strong> is the westernmost castle of <a href=\"https://westeroscraft.com/wiki/the-wall\">The Wall</a>. It is not built adjacent to the Wall, instead built on the south side of <strong>The Gorge</strong>, leading out into the Bay of Ice. The castle guards the <strong>Bridge of Skulls</strong>, an ancient crossing named for the skulls and bones that cover the rocks below it. At the end of <em>A Game of Thrones</em>, the castle is abandoned, save for the occasional rangers from the <a href=\"https://westeroscraft.com/wiki/the-wall/shadow-tower\">Shadow Tower</a>.<br></p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Gatehouse: </strong>The primary defensive structure of Westwatch, with a gate and portcullis facing directly onto the Bridge of Skulls. To the sides of the gatehouse are walls and small defensive towers with views over the bridge.</li><li><strong>Mess Hall:</strong> Offset slightly from the gatehouse, it is where the garrison of the castle would have once eaten. Part of the roof has fallen in, but the hall is currently providing shelter for a small group of rangers.</li><li><strong>Commander's Tower:</strong> It is the largest tower on the castle's premises, and is where most of the garrison would have stayed, but is now crumbling.</li><li><strong>Bridge of Skulls:</strong> It is an old, narrow bridge arching over the <strong>Gorge</strong>. Around the bridge on the rocks below are many skulls and bones, the namesake of the bridge. It is an alternative route for wildlings to take south of the Wall, as it bypasses the Wall itself.</li><li><strong>The Gorge: </strong>It is a deep gorge where the Milkwater carves through the Frostfangs and out into the Bay of Ice. The Gorge is narrow, with steep rocky slopes on either side, and fast-flowing but icy cold water.</li></ul>\r\n<h3>Construction</h3>\r\n<p>MDMeaux applied for Westwatch on April 18, 2017, a week after finishing his previous project, <a href=\"https://westeroscraft.com/wiki/crownlands/blount\">Blount</a>. It was approved by moderators Howy and carcinogenius the same day, and by pizzainacup on May 9, 2017. However, construction on the project was unable to start until July 2017.<br></p>\r\n<p>MDMeaux began by terraforming the Gorge, a process which involved draining it and making the sides out of sand. Once the terrain was built, it was turned into the Northern TerrainSet and the water re-added. The problem he now faced was covering the new terrain with snow, as the smooth snow seen on the surrounding mountains was achieved with WorldPainter when the map was originally exported, but would be difficult to replicate on the new terrain. It was thought at first this would have to be done tediously by hand, bu it emerged that in the updates to WorldEdit that came with the server's then recent migration to 1.11.2, functionality was added for smooth snow.</p>\r\n<p>Construction of the Bridge of Skulls and Westwatch itself took very little time, both being finished in around two days, and thus leaving the project completed on July 25, 2017. After MDMeaux officially stated the project's completion, the project was post-approved formally by Howy in a matter of seconds.<br></p>\r\n<h3>Inspiration</h3>\r\n<p>MDMeaux did not take inspiration for the castle from any real life examples in particular, although the gatehouse was somewhat inspired by the medieval gatehouse over the bridge in the Welsh town <a href=\"https://en.wikipedia.org/wiki/Monmouth\">Monmouth</a>, and the gorge was also inspired simply by various gorges in real life.</p>\r\n<p>The Bridge of Skulls took inspiration from <a href=\"https://en.wikipedia.org/wiki/Devil%27s_Bridge\">Devil's Bridges</a>, ancient arched bridges found all over Europe, which are rumored to have connections to the Devil due to the skill involved in the engineering. MDMeaux believed that this design of bridge would be very appropriate for the Bridge of Skulls, not only because of the practicality of the design but also the connotations of ancient evil magic, which are also present around the Wall.</p>\r\n<h3>Video</h3>\r\n<figure><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/MDyF72cBDDA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></figure>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/2019-05-30_15.06.51.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/Westwatch3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/Westwatch2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/images/Westwatch1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp westwatch",
+        "dateCompleted": "2017-01-07T00:00:00+00:00",
+        "projectLead": "MDMeaux",
+        "dateStarted": "2017-01-05T00:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Queensgate",
+    "slug": "queensgate",
+    "copy": "<h3>Description</h3><p>Location - Queensgate is a castle along the wall, it is located west of Castle Black and east of Deeplake. It sits in the hills and forests of the central gift.</p><p>History - The castle was originally named Snowgate, but was renamed when Queen Alysanne Targaryen visited the castle on her dragon Silverwing. (ASOS, Chapter 41. Jon)<br>Six hundred years before the War of the Five Kings, the commanders of the Nightfort and Snowgate went to war with each other. (ASOS, Chapter 55. Jon)<br>Recent Events<br></p><p>Reports come to Castle Black that wildlings have been climbing near Queensgate. (ASOS, Chapter 48. Jon)<br>Lord Commander Jon Snow gives Queensgate to Morna White Mask to garrison and settle her own people. (ADWD, Chapter 69. Jon)</p><p>Invented lore - The old lord Commanders of Queensgate were buried in the crypts just west of the castle.</p><ul></ul>\r\n\r\n<h3>Features<br></h3>\r\n<ul><li>The Castle of Queensgate.</li><li>The Crypts of Queensgate.</li><li>The Nights Watch lookout point, on top of the wall.</li></ul><h3>Construction</h3><p>The project was started the 02/04/2015 by xKrillen43x and Bearic Royce. It is speculated that they abandoned it sometime in 2015 or 2016, though the exact date has been lost in the mists of history. Johan picked it up the 16/05/2020. The project was about 60-70% finished but it had outdated in the five-year gap where it had been abandoned. That meant Johan had to update the already finished parts and reorganize the planning of the castle to fit new server standards.</p>\r\n<p>Of notable help was that of JakeTheSnake who helped with many of the countless small task there is while updating an older build, and with the struggles of a snowy build. Also, of a great help was Endymion who renovated the hall from the old one left by the 2015 leads. Meanwhile Viserys made the ruined stairs to the top of the wall.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Queensgate1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Queensgate2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Queensgate-3.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/Queensgate-4.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp queensgate",
+        "dateCompleted": "2020-06-18T07:00:00+00:00",
+        "projectLead": "JohanKR850, xKrillen43x, Bearic Royce",
+        "dateStarted": "2015-04-02T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/queensgate-foster-by-johan.2208/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Woodswatch-by-the-Pool",
+    "slug": "woodswatch-by-the-pool",
+    "copy": "<p><strong>Woodswatch-by-the-Pool</strong> is one of the nineteen castles along <a href=\"https://westeroscraft.com/wiki/the-wall\">The Wall</a> belonging to the Night's Watch. Long abandoned, it is now naught but ruins. Its name derives from the small pond on its southern side. It lies between <a href=\"https://westeroscraft.com/wiki/the-wall/sable-hall\">Sable Hall</a>, to the east, and <a href=\"https://westeroscraft.com/wiki/the-wall/oakenshield\">Oakenshield</a>, to the west.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle: </strong>It is in huge disrepair. Most buildings have either collapsed or missing parts of their roof.</li><li><strong>Weirwood tree:</strong> A weirwood tree with a rather small trunk is located in one of the former buildings.</li><li><strong>Collapsed tunnel:</strong> As it is the case with most castles of the Night's Watch, the tunnel that used to pass through the Wall has now been sealed.</li><li><strong>Stairway:</strong> A ruined stairway can be observed leading all the way up to the top of the Wall.</li><li><strong>Underground tunnels:</strong> Underground passages used to link the buildings between them, useful especially during harsh winter times. Sleeping areas and prison cells are also located underneath the ground in those tunnels.</li></ul>\r\n\r\n\r\n\r\n",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/woodswatchbythepool.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp woodswatch",
+        "dateCompleted": "2013-02-05T08:00:00+00:00",
+        "projectLead": "xwx977",
+        "dateStarted": "2013-01-17T08:00:00+00:00",
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Eastwatch-by-the-Sea",
+    "slug": "eastwatch-by-the-sea",
+    "copy": "<p>Eastwatch-by-the-Sea has not been started</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "castle",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "two",
+        "warp": "/warp eastwatch",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Hoarfrost Hill",
+    "slug": "hoarfrost-hill",
+    "copy": "<p>Hoarfrost Hill is a ruined castle of the wall. Its was abandoned by the watch years ago, when their resources started to decline.<br></p>\r\n<h3><strong>Settlements</strong></h3>\r\n<p>- <strong>Hoarfrosthill</strong> - The main location of the project, its the ruined castle. It stands on rocky hill overlooking a blue lake. The surrounding forests are misty and frosty, hence the name of the castle.</p>\r\n<p>- <strong>Hoarfrostvillage</strong> - A inhabited village/hamlet in the new gift serving the wall, and paying tax to the nearby active <a href=\"https://westeroscraft.com/wiki/the-wall/shadow-tower\">Shadow Tower</a>. It has a small keep in it to protect the village from raiding wildlings. Close to the village is a big lake, where they fish.<br></p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/hoarfrosthill1.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/hoarfrosthill2.png"
+      },
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/hoarfrosthill3.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp hoarfrosthill",
+        "dateCompleted": "2020-04-07T07:00:00+00:00",
+        "projectLead": "JohanKR850",
+        "dateStarted": "2019-09-20T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/hoarfrost-hill-by-johan.1905/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Nightfort",
+    "slug": "nightfort",
+    "copy": "<p>Nightfort has not been started</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "three",
+        "warp": "/warp nightfort1",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Rimegate",
+    "slug": "rimegate",
+    "copy": "<p>Rimegate has not been started</p>",
+    "images": [],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "notStarted",
+        "destinationLevel": "one",
+        "warp": "/warp rimegate",
+        "dateCompleted": null,
+        "projectLead": null,
+        "dateStarted": null,
+        "application": null,
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Sable Hall",
+    "slug": "sable-hall",
+    "copy": "<p><strong>Sable Hall </strong>is one of the multiple castles at <a href=\"https://westeroscraft.com/wiki/the-wall\" target=\"_blank\">The Wall</a> whose role was to keep the Realm safe from what lurked beyond it. As the Night's Watch numbers dwindled, Sable Hall was eventually abandonned and left to disrepair. It is located west of west of <a href=\"https://westeroscraft.com/wiki/the-wall/rimegate\" target=\"_blank\">Rimegate</a> and east of <a href=\"https://westeroscraft.com/wiki/the-wall/woodswatch-by-the-pool\" target=\"_blank\">Woodswatch-by-the-Pool</a>.</p>\r\n<p>The castle was involved, alongside Rimegate, in a plot by two former Kingsguard, Ser Raymund Mallery and Ser Olyver Bracken, to take control of two castles belonging to the Night's Watch and make them their respective seat. While Ser Olyver failed to hold Rimegate against the Night's Watch and <a href=\"https://westeroscraft.com/wiki/north/winterfell\" target=\"_blank\">Winterfell</a>, Ser Raymund fled beyond the Wall, where he met his end.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle:</strong> The castle itself is of little stature; there are rudimentary stables next to collapsed barracks, and the dining hall is attached to a tower, emptied and filled with snow.</li><li><strong>Stairway:</strong> As it is the case with most castles of the Night's Watch, there is a ruined stairway leading to the top of the Wall.</li><li><strong>Collapsed tunnel: </strong>A tunnel leading to the other side of the Wall, now sealed.</li></ul><h3>Construction</h3><p>Sable Hall was originally built by starcat98 in 2013, but as the server progressed and new blocks and tecnices were developed, it was decided that a new map should be done, along with many castles. As such, the old Sable Hall was left in the old map and can still be visited<em>, </em>being just west of the old Rimegate (<em>/warp rimegateold</em>)<em>.<br><br></em>On 2018, jMp007 then decided to apply to a new Sable Hall, with the project being approved on 2nd of June 2018. jMp worked on the ruins and the snow around them and after the adress of some points raised by the approving mods, Sable Hall was declared done in 29th of May 2019.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/sablehall1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp sablehall",
+        "dateCompleted": "2019-05-29T07:00:00+00:00",
+        "projectLead": "jMp007",
+        "dateStarted": "2018-06-02T07:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/project-application-sable-hall-by-jmp007.1179/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Sentinel Stand",
+    "slug": "sentinel-stand",
+    "copy": "<p><strong>Sentinel Stand</strong> is an abandoned castle along the Wall belonging to the Night's Watch. It lies east of the <a href=\"https://westeroscraft.com/wiki/the-wall/shadow-tower\">Shadow Tower</a> and west of <a href=\"https://westeroscraft.com/wiki/the-wall/greyguard\">Greyguard</a>.</p>\r\n<h3>Features</h3>\r\n<ul><li><strong>Castle:</strong> With a collapsed tower, a hall, quarters for men of the Night's watch and presence of a smithy in an adjacent building.</li><li><strong>Stairway: </strong>Remains of a stairway going up the Wall.</li><li><strong>Collapsed tunnel:</strong> A sealed entry to the tunnel is now at the place there a tunnel used to be, leading through the Wall.</li></ul>\r\n<h3>Construction</h3>\r\n<p>Sentinel Stand was approved on 10 June 2018 and completed on the 12 June 2018.</p>\r\n<h3>Inspiration</h3>\r\n<p>The inspiration for this castle came primarily from <a href=\"https://westeroscraft.com/wiki/the-wall/deep-lake\">Deep Lake</a> but was also inspired by the other Wall castles.</p>",
+    "images": [
+      {
+        "url": "https://cdn.westeroscraft.com/web/assets/destinations/sentinelstand1.png"
+      }
+    ],
+    "projectDetails": [
+      {
+        "region": "theWall",
+        "house": "Night's Watch",
+        "destinationType": "ruin",
+        "destinationStatus": "completed",
+        "destinationLevel": "one",
+        "warp": "/warp sentinelstand",
+        "dateCompleted": "2018-01-06T00:00:00+00:00",
+        "projectLead": "jakeyquack",
+        "dateStarted": "2018-01-06T00:00:00+00:00",
+        "application": "https://forum.westeroscraft.com/threads/sentinel-stand-by-jakeyquack.1200/",
+        "banner": [
+          {
+            "url": "https://cdn.westeroscraft.com/web/assets/website/Banner-Nightswatch.png"
+          }
+        ]
+      }
+    ]
+  }
+]
