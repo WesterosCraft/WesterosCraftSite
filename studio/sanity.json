@@ -1,41 +1,42 @@
 {
-  "root": true,
-  "api": {
-    "projectId": "n9rqt6s5",
-    "dataset": "_dummy_"
-  },
-  "project": {
-    "name": "Studio!",
-    "basePath": "/studio"
-  },
-  "plugins": [
-    "@sanity/base",
-    "@sanity/components",
-    "@sanity/default-layout",
-    "@sanity/default-login",
-    "@sanity/desk-tool",
-    "@sanity/dashboard",
-    "dashboard-widget-document-list"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
-    }
-  },
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema.ts"
-    },
-    {
-      "name": "part:@sanity/desk-tool/structure",
-      "path": "./src/structure/index.ts"
-    },
-    {
-      "implements": "part:@sanity/dashboard/config",
-      "path": "./src/dashboard-config.ts"
-    }
-  ]
+	"root": true,
+	"api": {
+		"projectId": "n9rqt6s5",
+		"dataset": "production"
+	},
+	"project": {
+		"name": "Studio!",
+		"basePath": "/studio"
+	},
+	"plugins": [
+		"@sanity/base",
+		"@sanity/components",
+		"@sanity/default-layout",
+		"@sanity/default-login",
+		"@sanity/desk-tool",
+		"@sanity/dashboard",
+		"dashboard-widget-document-list"
+	],
+	"env": {
+		"development": {
+			"plugins": ["@sanity/vision"]
+		},
+		"api": {
+			"dataset": "develop"
+		}
+	},
+	"parts": [
+		{
+			"name": "part:@sanity/base/schema",
+			"path": "./schemas/schema.ts"
+		},
+		{
+			"name": "part:@sanity/desk-tool/structure",
+			"path": "./src/structure/index.ts"
+		},
+		{
+			"implements": "part:@sanity/dashboard/config",
+			"path": "./src/dashboard-config.ts"
+		}
+	]
 }
