@@ -16,7 +16,7 @@ type Props = {
 	siteSettings: SiteSettings;
 };
 
-const Index = ({ pageData, posts, siteSettings }: Props) => {
+const Index = ({ pageData, siteSettings }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
@@ -42,7 +42,6 @@ const Index = ({ pageData, posts, siteSettings }: Props) => {
 			<Heading as='h2' size='lg' paddingY={4}>
 				Recent articles
 			</Heading>
-			<PostList posts={posts} />
 		</Layout>
 	);
 };
@@ -53,17 +52,13 @@ export const getStaticProps: GetStaticProps = async () => {
 		slug: 'frontpage',
 	});
 
-	const posts = await sanityClient.fetch<Post[]>(postsQuery, {
-		limit: 2,
-	});
-
 	if (!pageData) {
 		return {
 			notFound: true,
 		};
 	}
 
-	return { props: { siteSettings, pageData, posts }, revalidate: 60 };
+	return { props: { siteSettings, pageData }, revalidate: 60 };
 };
 
 export default Index;

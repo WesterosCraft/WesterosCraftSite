@@ -1,20 +1,20 @@
 {
-	"name": "sanity-next-template",
+	"name": "westeroscraft",
 	"version": "0.0.0",
 	"private": true,
-	"description": "Sanity & Next.js template",
+	"description": "WesterosCraft static website",
 	"scripts": {
 		"dev": "concurrently \"next\" \"cd studio && sanity start\"",
 		"build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && next build",
 		"start": "vercel dev",
-		"postinstall": "cd studio && npm ci",
+		"postinstall": "cd studio && rm -rf node_modules && yarn install --frozen-lockfile",
 		"test": "tsc && xo && jest",
 		"tsc": "tsc"
 	},
 	"engines": {
 		"node": "12.x"
 	},
-	"author": "Aron Hafner",
+	"author": "Jacob Granberry",
 	"license": "MIT",
 	"dependencies": {
 		"@chakra-ui/react": "^1.6.0",
