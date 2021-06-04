@@ -1,5 +1,5 @@
 import slug from 'slugify';
-import {RiPagesLine} from 'react-icons/ri';
+import { RiPagesLine } from 'react-icons/ri';
 
 export default {
 	name: 'page',
@@ -12,25 +12,25 @@ export default {
 			title: 'General',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
+				collapsed: true,
+			},
 		},
 		{
 			name: 'meta',
 			title: 'Meta infomation',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
+				collapsed: true,
+			},
 		},
 		{
 			name: 'content',
 			title: 'Content',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
-		}
+				collapsed: true,
+			},
+		},
 	],
 	fields: [
 		{
@@ -39,7 +39,7 @@ export default {
 			type: 'string',
 			description: 'Title of the page',
 			fieldset: 'general',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'slug',
@@ -48,15 +48,15 @@ export default {
 			type: 'slug',
 			options: {
 				source: 'title',
-				slugify: (input: string) => slug(input, {lower: true})
+				slugify: (input: string) => slug(input, { lower: true }),
 			},
 			fieldset: 'general',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			type: 'metaFields',
 			name: 'meta',
-			fieldset: 'meta'
+			fieldset: 'meta',
 		},
 		{
 			name: 'content',
@@ -64,17 +64,17 @@ export default {
 			title: 'Page sections',
 			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
-			of: [{type: 'grid'}, {type: 'mainImage'}, {type: 'blockContent'}, {type: 'spacer'}, {type: 'youtube'}]
-		}
+			of: [{ type: 'grid' }, { type: 'mainImage' }, { type: 'blockContent' }, { type: 'spacer' }, { type: 'youtube' }],
+		},
 	],
 	preview: {
 		select: {
-			title: 'title'
+			title: 'title',
 		},
-		prepare({title}: {title: string}) {
+		prepare({ title }: { title: string }) {
 			return {
-				title: `${title}`
+				title: `${title}`,
 			};
-		}
-	}
+		},
+	},
 };

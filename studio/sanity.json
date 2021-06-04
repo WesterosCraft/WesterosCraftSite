@@ -4,6 +4,13 @@
 		"projectId": "n9rqt6s5",
 		"dataset": "production"
 	},
+	"env": {
+		"development": {
+			"api": {
+				"dataset": "develop"
+			}
+		}
+	},
 	"project": {
 		"name": "WesterosCraft",
 		"basePath": "/studio"
@@ -19,14 +26,6 @@
 		"@sanity/vision",
 		"table"
 	],
-	"env": {
-		"development": {
-			"plugins": ["@sanity/vision"]
-		},
-		"api": {
-			"dataset": "develop"
-		}
-	},
 	"parts": [
 		{
 			"name": "part:@sanity/base/schema",
