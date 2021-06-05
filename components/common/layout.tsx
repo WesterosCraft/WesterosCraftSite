@@ -22,7 +22,7 @@ const Layout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
 		<>
 			<Seo meta={meta} fallbackMeta={fallbackMeta} />
 			<Flex flexDirection='column' minHeight='100vh'>
-				<Header navigation={siteSettings?.navigation} />
+				{siteSettings?.navigation && <Header navigation={siteSettings?.navigation} maxWidth={width} />}
 				<Flex
 					as='main'
 					maxWidth={width}

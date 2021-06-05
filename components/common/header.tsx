@@ -23,12 +23,19 @@ import { InternalLink } from '@/models/objects/internal-link';
 import { ExternalLink } from '@/models/objects/external-link';
 import { NavItem } from '@/models/objects/nav-item';
 import { isEmpty } from 'lodash';
+import { SubNavItem } from '@/models/objects/sub-nav-item';
 
-export default function WithSubnavigation({ navigation }: { navigation: NavItem[] }) {
+export default function WithSubnavigation({
+	navigation,
+	maxWidth,
+}: {
+	navigation: NavItem[];
+	maxWidth: string | number;
+}) {
 	const { isOpen, onToggle } = useDisclosure();
 
 	return (
-		<Box>
+		<Box maxW={maxWidth} w={'100%'} marginX='auto'>
 			<Flex
 				bg={useColorModeValue('white', 'gray.800')}
 				color={useColorModeValue('gray.600', 'white')}
@@ -118,7 +125,6 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 							href={navItem.slug.current ?? '#'}
 							fontSize={'sm'}
 							fontWeight={500}
-							target='_blank'
 							color={useColorModeValue('gray.600', 'gray.200')}
 							_hover={{
 								textDecoration: 'none',
@@ -172,34 +178,35 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 
 const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 	return link._type === 'internalLink' && link.link?.slug.current ? (
-		<Link
-			href={link.link.slug.current === 'home' ? '/' : `/${link.link.slug.current}/`}
-			role={'group'}
-			display={'block'}
-			p={2}
-			rounded={'md'}
-			_hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
-		>
-			<Stack direction={'row'} align={'center'}>
-				<Box>
-					<Text transition={'all .3s ease'} _groupHover={{ color: 'pink.400' }} fontWeight={500}>
-						{link.title}
-					</Text>
-					<Text fontSize={'sm'}>{link.description}</Text>
-				</Box>
-				<Flex
-					transition={'all .3s ease'}
-					transform={'translateX(-10px)'}
-					opacity={0}
-					_groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-					justify={'flex-end'}
-					align={'center'}
-					flex={1}
-				>
-					<Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-				</Flex>
-			</Stack>
-		</Link>
+		<NextLink passHref href={link.link.slug.current === 'home' ? '/' : `/${link.link.slug.current}/`}>
+			<Link
+				role={'group'}
+				display={'block'}
+				p={2}
+				rounded={'md'}
+				_hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+			>
+				<Stack direction={'row'} align={'center'}>
+					<Box>
+						<Text transition={'all .3s ease'} _groupHover={{ color: 'pink.400' }} fontWeight={500}>
+							{link.title}
+						</Text>
+						<Text fontSize={'sm'}>{link.description}</Text>
+					</Box>
+					<Flex
+						transition={'all .3s ease'}
+						transform={'translateX(-10px)'}
+						opacity={0}
+						_groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+						justify={'flex-end'}
+						align={'center'}
+						flex={1}
+					>
+						<Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+					</Flex>
+				</Stack>
+			</Link>
+		</NextLink>
 	) : link._type === 'externalLink' && link.slug?.current ? (
 		<Link
 			href={link.slug.current ?? '#'}
@@ -236,58 +243,114 @@ const MobileNav = ({ navigation }: { navigation: NavItem[] }) => {
 	return (
 		<Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
 			{navigation.map((navItem) => (
-				<MobileNavItem key={navItem.title} {...navItem} />
+				<MobileNavItem key={navItem.title} link={navItem} />
 			))}
 		</Stack>
 	);
 };
 
-const MobileNavItem = ({ label, children, href }: any) => {
+const MobileNavItem = ({ link }: { link: InternalLink | ExternalLink | SubNavItem }) => {
 	const { isOpen, onToggle } = useDisclosure();
 
 	return (
-		<Stack spacing={4} onClick={children && onToggle}>
-			<Flex
-				py={2}
-				as={Link}
-				href={href ?? '#'}
-				justify={'space-between'}
-				align={'center'}
-				_hover={{
-					textDecoration: 'none',
-				}}
-			>
-				<Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
-					{label}
-				</Text>
-				{children && (
-					<Icon
-						as={ChevronDownIcon}
-						transition={'all .25s ease-in-out'}
-						transform={isOpen ? 'rotate(180deg)' : ''}
-						w={6}
-						h={6}
-					/>
-				)}
-			</Flex>
-
-			<Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-				<Stack
-					mt={2}
-					pl={4}
-					borderLeft={1}
-					borderStyle={'solid'}
-					borderColor={useColorModeValue('gray.200', 'gray.700')}
-					align={'start'}
+		<Stack spacing={4} onClick={link._type === 'navigation.section' ? link?.links && onToggle : () => {}}>
+			{link._type === 'internalLink' ? (
+				<NextLink passHref href={link?.link?.slug.current === 'home' ? '/' : `/${link?.link?.slug.current}/`}>
+					<Flex
+						py={2}
+						justify={'space-between'}
+						passHref
+						align={'center'}
+						_hover={{
+							textDecoration: 'none',
+						}}
+					>
+						<Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+							{link.title}
+						</Text>
+					</Flex>
+				</NextLink>
+			) : link._type === 'externalLink' ? (
+				<Flex
+					py={2}
+					as={Link}
+					href={link?.slug?.current ?? '#'}
+					justify={'space-between'}
+					align={'center'}
+					_hover={{
+						textDecoration: 'none',
+					}}
 				>
-					{children &&
-						children.map((child: any) => (
-							<Link key={child.label} py={2} href={child.href}>
-								{child.label}
-							</Link>
-						))}
-				</Stack>
-			</Collapse>
+					<Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+						{link.title}
+					</Text>
+				</Flex>
+			) : link._type === 'navigation.section' ? (
+				<>
+					<Flex
+						py={2}
+						as={Link}
+						href={'#'}
+						justify={'space-between'}
+						align={'center'}
+						_hover={{
+							textDecoration: 'none',
+						}}
+					>
+						<Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+							{link.title}
+						</Text>
+						{link?.links && (
+							<Icon
+								as={ChevronDownIcon}
+								transition={'all .25s ease-in-out'}
+								transform={isOpen ? 'rotate(180deg)' : ''}
+								w={6}
+								h={6}
+							/>
+						)}
+					</Flex>
+					<Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+						<Stack
+							mt={2}
+							pl={4}
+							borderLeft={1}
+							borderStyle={'solid'}
+							borderColor={useColorModeValue('gray.200', 'gray.700')}
+							align={'start'}
+						>
+							{link?.links &&
+								link?.links.map((child) => {
+									if (child._type === 'internalLink' && child.link?.slug.current) {
+										return (
+											<NextLink
+												key={child._key}
+												passHref
+												href={child.link.slug.current === 'home' ? '/' : `/${child.link.slug.current}/`}
+											>
+												<Link padding={3}>{child.title}</Link>
+											</NextLink>
+										);
+									}
+
+									if (child._type === 'externalLink' && child.slug?.current) {
+										return (
+											<Link
+												key={child._key}
+												padding={3}
+												href={child?.slug?.current ?? '#'}
+												justify={'space-between'}
+												align={'center'}
+											>
+												{child.title}
+											</Link>
+										);
+									}
+								})}
+						</Stack>
+					</Collapse>
+				</>
+			) : null}
 		</Stack>
 	);
 };
