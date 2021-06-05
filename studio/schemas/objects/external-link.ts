@@ -1,4 +1,4 @@
-import {RiExternalLinkLine} from 'react-icons/ri';
+import { RiExternalLinkLine } from 'react-icons/ri';
 
 export default {
 	title: 'External Link',
@@ -11,7 +11,13 @@ export default {
 			name: 'title',
 			title: 'Title',
 			type: 'string',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
+		},
+		{
+			name: 'description',
+			title: 'Description',
+			type: 'string',
+			description: 'Optional description for use in dropdown menu',
 		},
 		{
 			name: 'slug',
@@ -19,10 +25,10 @@ export default {
 			title: 'Slug',
 			description:
 				'There is no `link` validation on this so please type accurate urls with https://, mailto:, tel: etc.',
-			validation: (Rule: any) => Rule.required()
-		}
+			validation: (Rule: any) => Rule.required(),
+		},
 	],
 	blockEditor: {
-		icon: RiExternalLinkLine
-	}
+		icon: RiExternalLinkLine,
+	},
 };

@@ -1,4 +1,4 @@
-import {Slug} from '@sanity/types';
+import { Slug } from '@sanity/types';
 
 export interface InternalLink {
 	_type: 'internalLink';
@@ -7,4 +7,5 @@ export interface InternalLink {
 	link?: {
 		slug: Slug;
 	};
+	description?: string;
 }

@@ -1,20 +1,20 @@
 import NextLink from 'next/link';
-import {Flex, Link} from '@chakra-ui/react';
-import {InternalLink} from '@/models/objects/internal-link';
-import {ExternalLink} from '@/models/objects/external-link';
+import { Flex, Link } from '@chakra-ui/react';
+import { InternalLink } from '@/models/objects/internal-link';
+import { ExternalLink } from '@/models/objects/external-link';
 
 type Props = {
 	navigation?: Array<InternalLink | ExternalLink>;
 	direction?: 'row' | 'column';
 };
 
-const resolveLink = (item: InternalLink | ExternalLink) => {
+const resolveLink = (item: InternalLink | ExternalLink | SubNavItem) => {
 	if (item._type === 'externalLink' && item.slug?.current) {
 		return {
 			type: item._type,
 			key: item._key,
 			title: item.title,
-			url: item.slug.current
+			url: item.slug.current,
 		};
 	}
 
@@ -23,14 +23,14 @@ const resolveLink = (item: InternalLink | ExternalLink) => {
 			type: item._type,
 			key: item._key,
 			title: item.title,
-			url: item.link.slug.current === 'frontpage' ? '/' : `/${item.link.slug.current}/`
+			url: item.link.slug.current === 'home' ? '/' : `/${item.link.slug.current}/`,
 		};
 	}
 
 	return null;
 };
 
-const MainNavigation = ({navigation, direction = 'row'}: Props) => {
+const MainNavigation = ({ navigation, direction = 'row' }: Props) => {
 	if (!navigation) {
 		return null;
 	}

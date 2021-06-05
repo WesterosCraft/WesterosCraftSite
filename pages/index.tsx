@@ -19,14 +19,10 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 // import { useMediaQuery } from 'react-responsive';
 // import { event } from 'react-ga';
 import Image from 'next/image';
-import { keyframes, css } from 'emotion';
-import styled from '@emotion/styled';
 
 const query = `*[_type == "home"][0]{..., marquee[]{...,destination->{...}, ...}}`;
 
 const Index = ({ pageData, siteSettings }: any) => {
-	console.log('👉 ~ Index ~ siteSettings', siteSettings);
-	// console.log('👉 ~ Index ~ pageData', pageData);
 	const router = useRouter();
 	// const isMobile = useMediaQuery({ query: '(max-width: 520px)' });
 
@@ -110,7 +106,7 @@ const Index = ({ pageData, siteSettings }: any) => {
       </Box> */}
 
 			<Flex className='slider-section' maxWidth={'100vw'} sx={{ overflow: 'hidden' }} mt={120} height={350} mb={140}>
-				<Marquee>
+				{/* <Marquee>
 					{marquee?.map((item: any, i: number) => (
 						<Box
 							mx={3}
@@ -152,7 +148,7 @@ const Index = ({ pageData, siteSettings }: any) => {
 							<Text color='white'>{item.destination.name}</Text>
 						</Box>
 					))}
-				</Marquee>
+				</Marquee> */}
 			</Flex>
 
 			{/* <Flex

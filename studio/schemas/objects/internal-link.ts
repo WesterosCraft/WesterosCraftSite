@@ -14,6 +14,12 @@ export default {
 			validation: (Rule: any) => Rule.required(),
 		},
 		{
+			name: 'description',
+			title: 'Description',
+			type: 'string',
+			description: 'Optional description for use in dropdown menu',
+		},
+		{
 			name: 'link',
 			title: 'Link',
 			type: 'reference',
