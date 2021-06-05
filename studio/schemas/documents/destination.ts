@@ -1,3 +1,5 @@
+import slug from 'slugify';
+
 export default {
 	title: 'Destinations',
 	name: 'destination',
@@ -8,25 +10,68 @@ export default {
 		serverBuild: false,
 		difficultyLevel: 'one',
 	},
+	fieldsets: [
+		{
+			name: 'general',
+			title: 'General',
+			options: {
+				collapsible: true,
+				collapsed: true,
+			},
+		},
+		{
+			name: 'meta',
+			title: 'Meta infomation',
+			options: {
+				collapsible: true,
+				collapsed: true,
+			},
+		},
+		{
+			name: 'projectDetails',
+			title: 'Project Details',
+			options: {
+				collapsible: true,
+				collapsed: true,
+			},
+		},
+		{
+			name: 'content',
+			title: 'Content',
+			options: {
+				collapsible: true,
+				collapsed: false,
+			},
+		},
+	],
 	fields: [
+		{
+			name: 'slug',
+			title: 'Slug',
+			description: 'Some frontends will require a slug to be set to be able to show the page',
+			type: 'slug',
+			options: {
+				source: 'title',
+				slugify: (input: string) => slug(input, { lower: true }),
+			},
+			fieldset: 'general',
+			validation: (Rule: any) => Rule.required(),
+		},
+		{
+			type: 'metaFields',
+			name: 'meta',
+			fieldset: 'meta',
+		},
 		{
 			title: 'Name',
 			name: 'name',
 			type: 'string',
 			description: 'Name of destination',
 			validation: (Rule: any) => Rule.required(),
+			fieldset: 'projectDetails',
 		},
 		{
-			title: 'Slug',
-			name: 'slug',
-			type: 'slug',
-			options: {
-				source: 'name',
-				slugify: (input: string) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
-			},
-			validation: (Rule: any) => Rule.required(),
-		},
-		{
+			fieldset: 'projectDetails',
 			title: 'Region',
 			name: 'region',
 			type: 'string',
@@ -49,6 +94,7 @@ export default {
 			validation: (Rule: any) => Rule.required(),
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Build Type',
 			name: 'buildType',
 			type: 'string',
@@ -72,6 +118,7 @@ export default {
 			validation: (Rule: any) => Rule.required(),
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Project Status',
 			name: 'projectStatus',
 			type: 'string',
@@ -88,24 +135,28 @@ export default {
 			validation: (Rule: any) => Rule.required(),
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'House',
 			name: 'house',
 			description: 'If destination has a House, list it here',
 			type: 'string',
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Warp',
 			name: 'warp',
 			description: 'In game warp',
 			type: 'string',
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Project Lead',
 			name: 'projectLead',
 			description: 'Leader(s) of the project',
 			type: 'string',
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Date Started',
 			name: 'dateStarted',
 			type: 'date',
@@ -115,6 +166,7 @@ export default {
 			},
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Date Completed',
 			name: 'dateCompleted',
 			type: 'date',
@@ -124,18 +176,21 @@ export default {
 			},
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Redo Available',
 			name: 'redoAvailable',
 			description: 'Check true if this project is available to apply for redo',
 			type: 'boolean',
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Server Build',
 			name: 'serverBuild',
 			description: 'Check true if this project was a server build',
 			type: 'boolean',
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Difficulty Level',
 			name: 'difficultyLevel',
 			type: 'string',
@@ -154,23 +209,27 @@ export default {
 			validation: (Rule: any) => Rule.required(),
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Application',
 			name: 'application',
 			description: 'Link to users project application, if available',
 			type: 'string',
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Dynmap Information',
 			name: 'dynmapInformation',
 			type: 'dynmapData',
 		},
 		{
+			fieldset: 'projectDetails',
 			title: 'Banner',
 			name: 'banner',
 			description: 'Image of House banner, if available',
 			type: 'image',
 		},
 		{
+			fieldset: 'content',
 			title: 'Images',
 			name: 'images',
 			type: 'array',
@@ -178,6 +237,7 @@ export default {
 			of: [{ type: 'image' }],
 		},
 		{
+			fieldset: 'content',
 			title: 'Entry',
 			name: 'entry',
 			type: 'array',

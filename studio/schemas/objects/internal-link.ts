@@ -1,4 +1,4 @@
-import {RiLinksLine} from 'react-icons/ri';
+import { RiLinksLine } from 'react-icons/ri';
 
 export default {
 	title: 'Internal Link',
@@ -11,7 +11,7 @@ export default {
 			name: 'title',
 			title: 'Title',
 			type: 'string',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'link',
@@ -19,12 +19,33 @@ export default {
 			type: 'reference',
 			to: [
 				{
-					type: 'page'
-				}
-			]
-		}
+					type: 'about',
+				},
+				{
+					type: 'rookery',
+				},
+				{
+					type: 'launcher',
+				},
+				{
+					type: 'wiki',
+				},
+				{
+					type: 'progress',
+				},
+				{
+					type: 'downloads',
+				},
+				{
+					type: 'guide',
+				},
+				{
+					type: 'destination',
+				},
+			],
+		},
 	],
 	blockEditor: {
-		icon: RiLinksLine
-	}
+		icon: RiLinksLine,
+	},
 };

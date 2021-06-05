@@ -1,8 +1,8 @@
-import {ReactNode} from 'react';
-import {Flex} from '@chakra-ui/react';
-import {SiteSettings} from '@/models/site-settings';
-import {MetaFields} from '@/models/meta-fields';
-import {Footer, Header, Seo} from '.';
+import { ReactNode } from 'react';
+import { Flex } from '@chakra-ui/react';
+import { SiteSettings } from '@/models/site-settings';
+import { MetaFields } from '@/models/meta-fields';
+import { Footer, Header, Seo } from '.';
 
 type Props = {
 	siteSettings: SiteSettings;
@@ -11,11 +11,11 @@ type Props = {
 	width?: number;
 };
 
-const Layout = ({siteSettings, meta, children, width = 1200}: Props) => {
+const Layout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
 	const fallbackMeta = {
 		title: siteSettings?.title ?? undefined,
 		description: siteSettings?.description ?? undefined,
-		keywords: siteSettings?.keywords ?? undefined
+		keywords: siteSettings?.keywords ?? undefined,
 	};
 
 	return (

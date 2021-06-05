@@ -6,5 +6,6 @@ import Layout from './layout';
 import MainNavigation from './main-navigation';
 import PostList from './post-list';
 import Seo from './seo';
+import Marquee from './marquee';
 
-export {DarkModeSwitch, Footer, Head, Header, Layout, MainNavigation, PostList, Seo};
+export { Marquee, DarkModeSwitch, Footer, Head, Header, Layout, MainNavigation, PostList, Seo };

@@ -1,29 +1,42 @@
+import { fieldsets } from '../fieldsets';
+
 export default {
 	title: 'Home',
 	name: 'home',
 	type: 'document',
+	fieldsets: [...fieldsets],
 	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fields: [
 		{
-			title: 'Title',
 			name: 'title',
+			title: 'Title',
 			type: 'string',
+			description: 'Title of the page',
+			fieldset: 'general',
 			validation: (Rule: any) => Rule.required(),
+		},
+		{
+			type: 'metaFields',
+			name: 'meta',
+			fieldset: 'meta',
 		},
 		{
 			title: 'Heading',
 			name: 'heading',
 			type: 'string',
+			fieldset: 'content',
 		},
 		{
 			title: 'Subheading',
 			name: 'subheading',
 			type: 'string',
+			fieldset: 'content',
 		},
 		{
 			title: 'Marquee',
 			name: 'marquee',
 			type: 'array',
+			fieldset: 'content',
 			of: [
 				{
 					title: 'Marquee Item',
@@ -54,6 +67,7 @@ export default {
 			name: 'pageBuilder',
 			type: 'array',
 			title: 'Page builder',
+			fieldset: 'content',
 			of: [
 				{ type: 'twoColumnText' },
 				{ type: 'destinationSlider' },

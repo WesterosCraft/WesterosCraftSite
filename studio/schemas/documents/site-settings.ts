@@ -1,4 +1,4 @@
-import {RiSettings5Line} from 'react-icons/ri';
+import { RiSettings5Line } from 'react-icons/ri';
 
 export default {
 	name: 'siteSettings',
@@ -13,25 +13,25 @@ export default {
 			title: 'General Information',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
+				collapsed: true,
+			},
 		},
 		{
 			name: 'navigation',
 			title: 'Main Navigation',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
+				collapsed: true,
+			},
 		},
 		{
 			name: 'social',
 			title: 'Social',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
-		}
+				collapsed: true,
+			},
+		},
 	],
 	fields: [
 		{
@@ -40,7 +40,7 @@ export default {
 			type: 'string',
 			description: 'Title of the page',
 			fieldset: 'meta',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'description',
@@ -48,7 +48,7 @@ export default {
 			type: 'text',
 			description: 'Description for search engines and social media.',
 			fieldset: 'meta',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			title: 'Navigation',
@@ -58,28 +58,32 @@ export default {
 			type: 'array',
 			of: [
 				{
+					title: 'Navigation Section',
+					type: 'navigation.section',
+				},
+				{
 					title: 'Internal Link',
-					type: 'internalLink'
+					type: 'internalLink',
 				},
 				{
 					title: 'External Link',
-					type: 'externalLink'
-				}
-			]
+					type: 'externalLink',
+				},
+			],
 		},
 		{
 			name: 'socialFields',
 			type: 'socialFields',
 			description: 'Social media',
-			fieldset: 'social'
-		}
+			fieldset: 'social',
+		},
 	],
 	preview: {
 		select: {},
 		prepare() {
 			return {
-				title: 'Global Settings'
+				title: 'Global Settings',
 			};
-		}
-	}
+		},
+	},
 };

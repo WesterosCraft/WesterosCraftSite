@@ -1,10 +1,6 @@
 /* eslint-disable unicorn/prefer-spread */
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
-
-import person from './documents/person';
-import page from './documents/page';
-import post from './documents/post';
 import siteSettings from './documents/site-settings';
 
 import columns from './objects/columns';
@@ -47,18 +43,16 @@ import destinationSlider from './objects/destinationSlider';
 import links from './objects/links';
 import buttons from './objects/buttons';
 import banner from './objects/banner';
-import spacers from './objects/spacer';
 import contentBanner from './objects/contentBanner';
 import dynmapData from './objects/dynmapData';
 import tableBuilder from './objects/tableBuilder';
+import navigationSection from './objects/navigationSection';
 
 export default createSchema({
 	name: 'default',
 	types: schemaTypes.concat([
-		person,
-		page,
-		post,
 		siteSettings,
+		navigationSection,
 		metaFields,
 		columns,
 		externalLink,
@@ -90,7 +84,6 @@ export default createSchema({
 		links,
 		buttons,
 		banner,
-		spacers,
 		rookery,
 		progress,
 		contentBanner,

@@ -1,50 +1,69 @@
+import slug from 'slugify';
+import { fieldsets } from '../fieldsets';
+
 export default {
 	title: 'Rookery',
 	name: 'rookery',
 	type: 'document',
+	fieldsets: [...fieldsets],
 	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fields: [
 		{
-			title: 'Title',
 			name: 'title',
+			title: 'Title',
 			type: 'string',
+			description: 'Title of the page',
+			fieldset: 'general',
 			validation: (Rule: any) => Rule.required(),
 		},
 		{
-			title: 'Slug',
 			name: 'slug',
+			title: 'Slug',
+			description: 'Some frontends will require a slug to be set to be able to show the page',
 			type: 'slug',
 			options: {
 				source: 'title',
-				slugify: (input: string) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+				slugify: (input: string) => slug(input, { lower: true }),
 			},
+			fieldset: 'general',
+			validation: (Rule: any) => Rule.required(),
+		},
+		{
+			type: 'metaFields',
+			name: 'meta',
+			fieldset: 'meta',
 		},
 		{
 			title: 'Heading',
 			name: 'heading',
 			type: 'string',
+			fieldset: 'content',
 		},
 		{
 			title: 'Subheading',
 			name: 'subheading',
 			type: 'string',
+			fieldset: 'content',
 		},
 
 		{
 			title: 'Quote',
 			name: 'quote',
 			type: 'string',
+			fieldset: 'content',
 		},
 		{
 			title: 'Quote Author',
 			name: 'quoteAuthor',
 			type: 'string',
+			fieldset: 'content',
 		},
 
 		{
 			name: 'editions',
 			title: 'Editions',
 			type: 'array',
+			fieldset: 'content',
 			of: [
 				{
 					type: 'object',

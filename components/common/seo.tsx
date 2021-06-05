@@ -1,7 +1,7 @@
-import {NextSeo} from 'next-seo';
-import {useRouter} from 'next/router';
-import {MetaFields} from '@/models/meta-fields';
-import {urlFor} from '@/lib/sanity';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import { MetaFields } from '@/models/meta-fields';
+import { urlFor } from '@/lib/sanity';
 import SEO from '../../next-seo.config';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 	};
 };
 
-const Seo = ({meta, fallbackMeta}: Props) => {
+const Seo = ({ meta, fallbackMeta }: Props) => {
 	const router = useRouter();
 	const title = meta?.metaTitle ?? fallbackMeta?.title ?? SEO.title;
 	const description = meta?.metaDescription ?? fallbackMeta?.title ?? SEO.description;
@@ -37,9 +37,9 @@ const Seo = ({meta, fallbackMeta}: Props) => {
 						url: imageUrl,
 						alt: description,
 						width: 1280,
-						height: 720
-					}
-				]
+						height: 720,
+					},
+				],
 			}}
 		/>
 	);

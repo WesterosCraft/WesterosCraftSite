@@ -6,7 +6,6 @@ const config = {
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'undefined',
 	useCdn: process.env.NODE_ENV === 'production',
 };
-console.log('👉 ~ config', config);
 
 if (!config.projectId) {
 	throw Error('The Project ID is not set. Check your environment variables.');
