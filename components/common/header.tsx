@@ -74,13 +74,13 @@ export default function WithSubnavigation({
 						fontSize={'sm'}
 						fontWeight={600}
 						color={'white'}
-						bg={'pink.400'}
+						bg={'red.700'}
 						href={'#'}
 						_hover={{
-							bg: 'pink.300',
+							bg: 'red.600',
 						}}
 					>
-						Sign Up
+						Join The Watch
 					</Button>
 				</Stack>
 			</Flex>
@@ -124,7 +124,7 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 							p={2}
 							href={navItem.slug.current ?? '#'}
 							fontSize={'sm'}
-							fontWeight={500}
+							fontWeight='bold'
 							color={useColorModeValue('gray.600', 'gray.200')}
 							_hover={{
 								textDecoration: 'none',
@@ -143,7 +143,7 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 								<Link
 									p={2}
 									fontSize={'sm'}
-									fontWeight={500}
+									fontWeight='bold'
 									color={useColorModeValue('gray.600', 'gray.200')}
 									_hover={{
 										textDecoration: 'none',
@@ -155,11 +155,12 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 							</PopoverTrigger>
 
 							<PopoverContent
-								border={0}
+								borderWidth={1}
+								borderColor='black'
 								boxShadow={'xl'}
 								bg={useColorModeValue('white', 'gray.800')}
 								p={4}
-								rounded={'xl'}
+								rounded={'none'}
 								minW={'sm'}
 							>
 								<Stack>
@@ -184,11 +185,11 @@ const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 				display={'block'}
 				p={2}
 				rounded={'md'}
-				_hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+				_hover={{ bg: useColorModeValue('red.50', 'gray.900') }}
 			>
 				<Stack direction={'row'} align={'center'}>
 					<Box>
-						<Text transition={'all .3s ease'} _groupHover={{ color: 'pink.400' }} fontWeight={500}>
+						<Text transition={'all .3s ease'} _groupHover={{ color: 'red.600' }} fontWeight={'bold'}>
 							{link.title}
 						</Text>
 						<Text fontSize={'sm'}>{link.description}</Text>
@@ -202,7 +203,7 @@ const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 						align={'center'}
 						flex={1}
 					>
-						<Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+						<Icon color={'red.600'} w={5} h={5} as={ChevronRightIcon} />
 					</Flex>
 				</Stack>
 			</Link>
@@ -214,11 +215,11 @@ const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 			display={'block'}
 			p={2}
 			rounded={'md'}
-			_hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+			_hover={{ bg: useColorModeValue('red.50', 'gray.900') }}
 		>
 			<Stack direction={'row'} align={'center'}>
 				<Box>
-					<Text transition={'all .3s ease'} _groupHover={{ color: 'pink.400' }} fontWeight={500}>
+					<Text transition={'all .3s ease'} _groupHover={{ color: 'red.600' }} fontWeight={'bold'}>
 						{link.title}
 					</Text>
 					<Text fontSize={'sm'}>{link.description}</Text>
@@ -232,7 +233,7 @@ const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 					align={'center'}
 					flex={1}
 				>
-					<Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+					<Icon color={'red.600'} w={5} h={5} as={ChevronRightIcon} />
 				</Flex>
 			</Stack>
 		</Link>

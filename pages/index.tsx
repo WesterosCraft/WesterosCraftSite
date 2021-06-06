@@ -106,7 +106,7 @@ const Index = ({ pageData, siteSettings }: any) => {
       </Box> */}
 
 			<Flex className='slider-section' maxWidth={'100vw'} sx={{ overflow: 'hidden' }} mt={120} height={350} mb={140}>
-				{/* <Marquee>
+				<Marquee>
 					{marquee?.map((item: any, i: number) => (
 						<Box
 							mx={3}
@@ -148,7 +148,7 @@ const Index = ({ pageData, siteSettings }: any) => {
 							<Text color='white'>{item.destination.name}</Text>
 						</Box>
 					))}
-				</Marquee> */}
+				</Marquee>
 			</Flex>
 
 			{/* <Flex
