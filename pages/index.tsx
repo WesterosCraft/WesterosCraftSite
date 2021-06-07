@@ -9,7 +9,7 @@ import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { PageSections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
-import { Heading, Text } from '@chakra-ui/react';
+import { Heading, Text, Box } from '@chakra-ui/react';
 
 type PageProps = {
 	content?: PageSections[];
@@ -47,12 +47,16 @@ const Index = ({ pageData, siteSettings }: Props) => {
 
 	return (
 		<Layout meta={page?.meta} siteSettings={siteSettings}>
-			<Text textTransform='uppercase' fontWeight='bold' color='green.600'>
-				{page.caption}
-			</Text>
-			<Heading fontSize='6xl'>{page.heading1}</Heading>
-			<Heading fontSize='6xl'>{page.heading2}</Heading>
-			<Text>{page.subheading}</Text>
+			<Box textAlign='center'>
+				<Text textTransform='uppercase' fontWeight='bold' color='green.600'>
+					{page.caption}
+				</Text>
+				<Heading fontSize='5xl'>{page.heading2}</Heading>
+				<Heading fontSize='7xl' letterSpacing={5.3}>
+					{page.heading1}
+				</Heading>
+				<Text>{page.subheading}</Text>
+			</Box>
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {
 					return null;

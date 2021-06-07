@@ -21,7 +21,7 @@ const Layout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
 	return (
 		<>
 			<Seo meta={meta} fallbackMeta={fallbackMeta} />
-			<Flex flexDirection='column' minHeight='100vh'>
+			<Flex flexDirection='column' minHeight='100vh' overflow='hidden'>
 				{siteSettings?.navigation && <Header navigation={siteSettings?.navigation} maxWidth={width} />}
 				<Flex
 					as='main'

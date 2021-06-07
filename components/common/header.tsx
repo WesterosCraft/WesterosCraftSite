@@ -12,7 +12,6 @@ import {
 	PopoverTrigger,
 	PopoverContent,
 	useColorModeValue,
-	useBreakpointValue,
 	useDisclosure,
 } from '@chakra-ui/react';
 
@@ -25,6 +24,8 @@ import { ExternalLink } from '@/models/objects/external-link';
 import { NavItem } from '@/models/objects/nav-item';
 import { isEmpty } from 'lodash';
 import { SubNavItem } from '@/models/objects/sub-nav-item';
+import Image from 'next/image';
+import { Logo } from './logo';
 
 export default function WithSubnavigation({
 	navigation,
@@ -56,14 +57,11 @@ export default function WithSubnavigation({
 						aria-label={'Toggle Navigation'}
 					/>
 				</Flex>
-				<Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-					<Text
-						textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-						fontFamily={'heading'}
-						color={useColorModeValue('gray.800', 'white')}
-					>
-						Logo
-					</Text>
+				<Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} align='center'>
+					<Image src='/shield-logomark.png' width={36} height={44.3} />
+					<Box ml={2}>
+						<Logo />
+					</Box>
 				</Flex>
 
 				<Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} direction={'row'} spacing={6}>
