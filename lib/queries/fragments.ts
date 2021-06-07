@@ -34,3 +34,13 @@ export const youtube = `
 		...
 	}
 `;
+
+export const marquee = `
+	_type == 'marquee' => {
+		...,
+		marqueeItems[]{
+			...,
+			destination->{name, region, slug}
+		}
+	}
+`;

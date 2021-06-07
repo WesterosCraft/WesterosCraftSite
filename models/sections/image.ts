@@ -1,4 +1,4 @@
-import {SanityAsset} from '../utils';
+import { SanityAsset } from '../utils';
 
 export interface Image {
 	_type: 'mainImage';

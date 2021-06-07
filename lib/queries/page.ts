@@ -1,15 +1,16 @@
-import {groq} from 'next-sanity';
-import {blockContent, grid, mainImage, spacer, youtube} from './fragments';
+import { groq } from 'next-sanity';
+import { blockContent, grid, mainImage, spacer, youtube, marquee } from './fragments';
 
 export const pageQuery = groq`
-	*[_type == 'page' && slug.current == $slug][0] {
+	*[_type == $type && slug.current == $slug][0] {
 		...,
 		content[] {
 			${blockContent},
 			${grid},
 			${mainImage},
 			${spacer},
-			${youtube}
+			${youtube},
+			${marquee}
 		}
 	}
 `;

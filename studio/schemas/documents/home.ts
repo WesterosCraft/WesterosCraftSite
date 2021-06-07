@@ -1,3 +1,4 @@
+import slug from 'slugify';
 import { fieldsets } from '../fieldsets';
 
 export default {
@@ -16,13 +17,31 @@ export default {
 			validation: (Rule: any) => Rule.required(),
 		},
 		{
+			name: 'slug',
+			title: 'Slug',
+			description: 'Some frontends will require a slug to be set to be able to show the page',
+			type: 'slug',
+			options: {
+				source: 'title',
+				slugify: (input: string) => slug(input, { lower: true }),
+			},
+			fieldset: 'general',
+			validation: (Rule: any) => Rule.required(),
+		},
+		{
 			type: 'metaFields',
 			name: 'meta',
 			fieldset: 'meta',
 		},
 		{
-			title: 'Heading',
-			name: 'heading',
+			title: 'Heading Line 1',
+			name: 'heading1',
+			type: 'string',
+			fieldset: 'content',
+		},
+		{
+			title: 'Heading Line 2',
+			name: 'heading2',
 			type: 'string',
 			fieldset: 'content',
 		},
@@ -33,84 +52,22 @@ export default {
 			fieldset: 'content',
 		},
 		{
-			title: 'Marquee',
-			name: 'marquee',
-			type: 'array',
+			title: 'Caption',
+			name: 'caption',
+			type: 'string',
 			fieldset: 'content',
-			of: [
-				{
-					title: 'Marquee Item',
-					name: 'marqueeItem',
-					type: 'object',
-					fields: [
-						{
-							type: 'reference',
-							name: 'destination',
-							to: [
-								{
-									type: 'destination',
-								},
-							],
-						},
-						{ type: 'image', name: 'marqueeImage', title: 'Marquee Image' },
-					],
-					preview: {
-						select: {
-							title: 'destination.name',
-							media: 'marqueeImage',
-						},
-					},
-				},
-			],
 		},
 		{
-			name: 'pageBuilder',
+			name: 'content',
 			type: 'array',
-			title: 'Page builder',
+			title: 'Page sections',
+			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
 			of: [
 				{ type: 'twoColumnText' },
 				{ type: 'destinationSlider' },
 				{ type: 'banner' },
-				{
-					name: 'twoColumnVideo',
-					type: 'object',
-					title: 'Two Column With Video',
-					fields: [
-						{
-							title: 'Text Column',
-							name: 'textColumn',
-							type: 'richText',
-						},
-						{
-							title: 'Video Link',
-							name: 'videoLink',
-							type: 'string',
-						},
-						{
-							title: 'Video Thumbnail',
-							name: 'videoThumbnail',
-							type: 'image',
-						},
-						{
-							title: 'Featured Images',
-							type: 'array',
-							name: 'featuredImages',
-							of: [
-								{
-									type: 'image',
-									title: 'Image',
-									name: 'image',
-									fields: [
-										{ type: 'string', name: 'link', title: 'Link' },
-										{ type: 'string', name: 'alt', title: 'Alt' },
-										{ type: 'boolean', name: 'inject', title: 'Inject' },
-									],
-								},
-							],
-						},
-					],
-				},
+				{ type: 'marquee' },
 				{ type: 'spacer' },
 			],
 		},

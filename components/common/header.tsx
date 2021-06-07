@@ -17,6 +17,7 @@ import {
 } from '@chakra-ui/react';
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import { GiRaven } from 'react-icons/gi';
 
 import NextLink from 'next/link';
 import { InternalLink } from '@/models/objects/internal-link';
@@ -70,14 +71,15 @@ export default function WithSubnavigation({
 						<DesktopNav navigation={navigation} />
 					</Flex>
 					<Button
+						leftIcon={<GiRaven size={20} />}
 						display={{ base: 'none', md: 'inline-flex' }}
 						fontSize={'sm'}
 						fontWeight={600}
 						color={'white'}
-						bg={'red.700'}
+						bg={'blackAlpha.800'}
 						href={'#'}
 						_hover={{
-							bg: 'red.600',
+							bg: 'blackAlpha.700',
 						}}
 					>
 						Join The Watch

@@ -1,13 +1,13 @@
-import {GetStaticProps} from 'next';
+import { GetStaticProps } from 'next';
 import Error from 'next/error';
-import {useRouter} from 'next/router';
-import {pageQuery, postsQuery, siteSettingsQuery} from '@/lib/queries';
-import {sanityClient, usePreviewSubscription} from '@/lib/sanity';
-import {Page as PageProps} from '@/models/page';
-import {Post as PostProps} from '@/models/post';
-import {SiteSettings} from '@/models/site-settings';
-import {Layout, PostList} from '@/components/common';
-import {RenderSection} from '@/components/utils';
+import { useRouter } from 'next/router';
+import { pageQuery, postsQuery, siteSettingsQuery } from '@/lib/queries';
+import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
+import { Page as PageProps } from '@/models/page';
+import { Post as PostProps } from '@/models/post';
+import { SiteSettings } from '@/models/site-settings';
+import { Layout, PostList } from '@/components/common';
+import { RenderSection } from '@/components/utils';
 
 type Props = {
 	pageData: PageProps;
@@ -15,13 +15,13 @@ type Props = {
 	siteSettings: SiteSettings;
 };
 
-const Posts = ({pageData, posts, siteSettings}: Props) => {
+const Posts = ({ pageData, posts, siteSettings }: Props) => {
 	const router = useRouter();
 
-	const {data: page} = usePreviewSubscription(pageQuery, {
-		params: {slug: pageData?.slug?.current},
+	const { data: page } = usePreviewSubscription(pageQuery, {
+		params: { slug: pageData?.slug?.current },
 		initialData: pageData,
-		enabled: pageData && router.query.preview !== null
+		enabled: pageData && router.query.preview !== null,
 	});
 
 	if ((!router.isFallback && !page?.slug) || !page) {
@@ -45,20 +45,20 @@ const Posts = ({pageData, posts, siteSettings}: Props) => {
 export const getStaticProps: GetStaticProps = async () => {
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 	const pageData = await sanityClient.fetch<PageProps>(pageQuery, {
-		slug: 'posts'
+		slug: 'posts',
 	});
 
 	const posts = await sanityClient.fetch<PostProps[]>(postsQuery, {
-		limit: 100
+		limit: 100,
 	});
 
 	return {
 		props: {
 			pageData,
 			posts,
-			siteSettings
+			siteSettings,
 		},
-		revalidate: 60
+		revalidate: 60,
 	};
 };
 

@@ -11,11 +11,13 @@ import metaFields from './objects/meta';
 import socialFields from './objects/social-fields';
 import simpleBlockContent from './objects/simple-block-content';
 
+// sections
 import blockContent from './sections/block-content';
 import grid from './sections/grid';
 import mainImage from './sections/main-image';
 import spacer from './sections/spacer';
 import youtube from './sections/youtube';
+import marquee from './sections/marquee';
 
 // pages/documents
 import destination from './documents/destination';
@@ -51,6 +53,7 @@ import navigationSection from './objects/navigationSection';
 export default createSchema({
 	name: 'default',
 	types: schemaTypes.concat([
+		marquee,
 		siteSettings,
 		navigationSection,
 		metaFields,

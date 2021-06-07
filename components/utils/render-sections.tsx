@@ -1,7 +1,7 @@
-import {Sections} from '@/models/sections';
-import {BlockContent, Grid, MainImage, Spacer, Youtube} from '@/components/sections';
+import { Sections } from '@/models/sections';
+import { BlockContent, Grid, MainImage, Spacer, Youtube, Marquee } from '@/components/sections';
 
-const RenderSection = ({section}: {section: Sections}) => {
+const RenderSection = ({ section }: { section: Sections }) => {
 	switch (section._type) {
 		case 'blockContent':
 			return <BlockContent data={section} />;
@@ -13,6 +13,8 @@ const RenderSection = ({section}: {section: Sections}) => {
 			return <Spacer data={section} />;
 		case 'youtube':
 			return <Youtube data={section} />;
+		case 'marquee':
+			return <Marquee data={section} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 
