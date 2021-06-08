@@ -69,6 +69,7 @@ export default {
 				{ type: 'banner' },
 				{ type: 'marquee' },
 				{ type: 'spacer' },
+				{ type: 'quoteBlock' },
 			],
 		},
 	],

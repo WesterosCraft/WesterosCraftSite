@@ -9,7 +9,9 @@ import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { PageSections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
-import { Heading, Text, Box } from '@chakra-ui/react';
+import { Heading, Text, Box, Button, useColorModeValue } from '@chakra-ui/react';
+import { Spacer } from '@/components/sections';
+import { GiRaven } from 'react-icons/gi';
 
 type PageProps = {
 	content?: PageSections[];
@@ -47,6 +49,7 @@ const Index = ({ pageData, siteSettings }: Props) => {
 
 	return (
 		<Layout meta={page?.meta} siteSettings={siteSettings}>
+			<Spacer data={{ size: 'medium', _type: 'spacer', _key: '909' }} />
 			<Box textAlign='center'>
 				<Text textTransform='uppercase' fontWeight='bold' color='green.600'>
 					{page.caption}
@@ -55,7 +58,25 @@ const Index = ({ pageData, siteSettings }: Props) => {
 				<Heading fontSize='7xl' letterSpacing={5.3}>
 					{page.heading1}
 				</Heading>
-				<Text>{page.subheading}</Text>
+				<Text color={useColorModeValue('gray.500', 'gray.300')} mb='6'>
+					{page.subheading}
+				</Text>
+				<Button
+					size='lg'
+					leftIcon={<GiRaven size={20} />}
+					display={{ base: 'none', md: 'inline-flex' }}
+					fontSize={'md'}
+					fontWeight={600}
+					color={useColorModeValue('white', 'black')}
+					bg={useColorModeValue('blackAlpha.800', 'white')}
+					href={'#'}
+					_hover={{
+						color: 'white',
+						bg: 'blackAlpha.700',
+					}}
+				>
+					Begin Your Watch
+				</Button>
 			</Box>
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {

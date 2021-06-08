@@ -1,10 +1,10 @@
 import { GetStaticProps } from 'next';
 import { pageQuery, siteSettingsQuery } from '@/lib/queries';
 import { SiteSettings } from '@/models/site-settings';
-import { Heading, Box, Flex, Text, Button, Input } from '@chakra-ui/react';
-import { Layout, Seo } from '@/components/common';
+import { Heading, Box, Flex, Text, Button, Input, Stack } from '@chakra-ui/react';
+import { Layout } from '@/components/common';
 import { useRouter } from 'next/router';
-import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
+import { sanityClient, usePreviewSubscription, urlFor } from '@/lib/sanity';
 import Error from 'next/error';
 // import { QuoteBlock } from '../components/atoms/quoteBlock';
 import Image from 'next/image';
@@ -14,23 +14,12 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
-		params: { type: 'home', slug: pageData?.slug?.current },
+		params: { type: 'rookery', slug: pageData?.slug?.current },
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
-	// const darkMode = useDarkMode(false);
-
-	// const {
-	// 	heading,
-	// 	editions,
-	// 	// subheading,
-	// 	title,
-	// 	pageDescription,
-	// 	pageEntry,
-	// 	pageImage,
-	// 	quote,
-	// 	quoteAuthor,
-	// } = data[0];
+	console.log('👉 ~ RookeryPage ~ page', page);
+	const { heading, editions, content } = page;
 
 	const url = 'https://westeroscraft.us6.list-manage.com/subscribe/post?u=f917cc7f538901fd1172c9ee9&amp;id=510f1ee5b1';
 
@@ -53,7 +42,7 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 			<form>
 				<Input placeholder='Email Address' className='news-input' ref={(node) => (email = node)} type='email' mb={7} />
 				<Flex flexDirection='column' alignItems='center' justifyContent='center' sx={{ position: 'relative' }}>
-					<Button onClick={submit} variant='red' disabled={status === 'sending'}>
+					<Button onClick={submit} disabled={status === 'sending'}>
 						Subscribe
 					</Button>
 					<Box
@@ -89,71 +78,59 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 
 	return (
 		<Layout meta={page?.meta} siteSettings={siteSettings}>
-			<Flex flexDirection='column'>
+			<Flex
+				mt={[3, 10, 75]}
+				justifyContent='center'
+				flexDirection={['column', null, 'row']}
+				width={[1, null, 800]}
+				mx='auto'
+				px={5}
+			>
 				<Flex
-					mt={[3, 10, 75]}
+					height={300}
+					flexDirection='column'
 					justifyContent='center'
-					flexDirection={['column', null, 'row']}
-					width={[1, null, 800]}
-					mx='auto'
-					px={5}
+					alignItems='center'
+					width={['100%', null, '50%']}
+					pr={[3, null, 5]}
 				>
-					<Flex
-						height={300}
-						flexDirection='column'
-						justifyContent='center'
-						alignItems='center'
-						width={[1, null, 1 / 2]}
-						pr={[3, null, 5]}
-					>
-						<Box my='auto' sx={{ position: 'relative' }}>
-							{/* <Box
-                width={300}
-                sx={{ position: 'absolute', left: -175, top: -75, transform: 'scaleX(-1)' }}>
-                <Image src="/red-dragon.png" width={300} height={168} />
-              </Box> */}
-							<Heading variant='heading2' textAlign='left'>
-								{/* {heading}asd */}sad
-							</Heading>
-							<Text textAlign='left' lineHeight={1.5} maxWidth={786} mx='auto' mt={4}>
-								The Rookery is a community created magazine that details all the latest happenings in the realm of
-								WesterosCraft. Sign up to keep up to date with the server!
-								<br />
-								<br />
-								Sent once a quarter.
-								{/* {subheading} */}
-							</Text>
-						</Box>
-					</Flex>
-					<Flex
-						flexDirection='column'
-						my='auto'
-						width={[1, null, 1 / 2]}
-						pl={[3, null, 5]}
-						sx={{
-							position: 'relative',
-						}}
-					>
-						<MailchimpSubscribe
-							url={url}
-							render={({ subscribe, status, message }) => (
-								<CustomForm status={status} message={message} onValidated={(formData: any) => subscribe(formData)} />
-							)}
-						/>
-						{/* <Input mb={7} placeholder="Email Address" /> */}
-						{/* <Flex alignItems="center" justifyContent="center">
-              <Button variant="red">Subscribe</Button>
-            </Flex> */}
-					</Flex>
+					<Box my='auto' sx={{ position: 'relative' }}>
+						<Heading variant='heading2' textAlign='left'>
+							{heading}
+						</Heading>
+						<Text textAlign='left' lineHeight={1.5} maxWidth={786} mx='auto' mt={4}>
+							The Rookery is a community created magazine that details all the latest happenings in the realm of
+							WesterosCraft. Sign up to keep up to date with the server!
+							<br />
+							<br />
+							Sent once a quarter.
+							{/* {subheading} */}
+						</Text>
+					</Box>
 				</Flex>
-				{/* <Image src="/crow-icon.png" width={78} height={78} alt="crow" /> */}
-				<Heading variant='h3' textAlign='center' mt={20}>
-					All Editions
-				</Heading>
+				<Flex
+					flexDirection='column'
+					my='auto'
+					width={['100%', null, '50%']}
+					pl={[3, null, 5]}
+					sx={{
+						position: 'relative',
+					}}
+				>
+					<MailchimpSubscribe
+						url={url}
+						render={({ subscribe, status, message }) => (
+							<CustomForm status={status} message={message} onValidated={(formData: any) => subscribe(formData)} />
+						)}
+					/>
+				</Flex>
 			</Flex>
+			<Heading variant='h3' textAlign='center' mt={20}>
+				All Editions
+			</Heading>
 
-			<Flex mt={8} width={1} flexDirection='row' justifyContent='center' alignItems='center' flexWrap='wrap'>
-				{/* {editions.map((item, i) => {
+			<Stack mt={8} flexDirection='row' justifyContent='center' alignItems='center' flexWrap='wrap'>
+				{editions.map((item: any, i: number) => {
 					const srcurl = item && item.thumbnail && urlFor(item.thumbnail.asset._ref).url();
 					return (
 						item &&
@@ -165,8 +142,7 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 								rel='noreferrer'
 								href={item.link}
 								key={item._key}
-								maxWidth={570}
-								width={[1, 1 / 2, 1 / 3]}
+								maxWidth={368}
 								p={4}
 								sx={{
 									position: 'relative',
@@ -183,8 +159,8 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 							>
 								<Image
 									priority={i <= 2}
-									width={538}
-									height={696}
+									width={336}
+									height={435}
 									src={srcurl}
 									className='edition-image'
 									alt={item.title}
@@ -210,8 +186,8 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 							</Flex>
 						)
 					);
-				})} */}
-			</Flex>
+				})}
+			</Stack>
 
 			{/* <QuoteBlock
 				content={quote || 'A reader lives a thousand lives before he dies. The man who never reads lives only one.'}
@@ -223,7 +199,7 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<any>(pageQuery, { type: 'rookery', slug: '/rookery' });
+	const pageData = await sanityClient.fetch<any>(pageQuery, { type: 'rookery', slug: 'rookery' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {

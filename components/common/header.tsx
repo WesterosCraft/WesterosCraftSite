@@ -3,7 +3,6 @@ import {
 	Flex,
 	Text,
 	IconButton,
-	Button,
 	Stack,
 	Collapse,
 	Icon,
@@ -16,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { GiRaven } from 'react-icons/gi';
+import { DarkModeSwitch } from '.';
 
 import NextLink from 'next/link';
 import { InternalLink } from '@/models/objects/internal-link';
@@ -44,9 +43,6 @@ export default function WithSubnavigation({
 				minH={'60px'}
 				py={{ base: 2 }}
 				px={{ base: 4 }}
-				borderBottom={1}
-				borderStyle={'solid'}
-				borderColor={useColorModeValue('gray.200', 'gray.900')}
 				align={'center'}
 			>
 				<Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
@@ -64,24 +60,11 @@ export default function WithSubnavigation({
 					</Box>
 				</Flex>
 
-				<Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} direction={'row'} spacing={6}>
+				<Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} align='center' direction={'row'} spacing={6}>
 					<Flex display={{ base: 'none', md: 'flex' }} ml={10}>
 						<DesktopNav navigation={navigation} />
 					</Flex>
-					<Button
-						leftIcon={<GiRaven size={20} />}
-						display={{ base: 'none', md: 'inline-flex' }}
-						fontSize={'sm'}
-						fontWeight={600}
-						color={'white'}
-						bg={'blackAlpha.800'}
-						href={'#'}
-						_hover={{
-							bg: 'blackAlpha.700',
-						}}
-					>
-						Join The Watch
-					</Button>
+					<DarkModeSwitch />
 				</Stack>
 			</Flex>
 
@@ -156,7 +139,7 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 
 							<PopoverContent
 								borderWidth={1}
-								borderColor='black'
+								borderColor={useColorModeValue('black', 'white')}
 								boxShadow={'xl'}
 								bg={useColorModeValue('white', 'gray.800')}
 								p={4}

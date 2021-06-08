@@ -45,20 +45,21 @@ export default {
 			type: 'string',
 			fieldset: 'content',
 		},
-
 		{
-			title: 'Quote',
-			name: 'quote',
-			type: 'string',
+			name: 'content',
+			type: 'array',
+			title: 'Page sections',
+			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
+			of: [
+				{ type: 'twoColumnText' },
+				{ type: 'destinationSlider' },
+				{ type: 'banner' },
+				{ type: 'marquee' },
+				{ type: 'spacer' },
+				{ type: 'quoteBlock' },
+			],
 		},
-		{
-			title: 'Quote Author',
-			name: 'quoteAuthor',
-			type: 'string',
-			fieldset: 'content',
-		},
-
 		{
 			name: 'editions',
 			title: 'Editions',
