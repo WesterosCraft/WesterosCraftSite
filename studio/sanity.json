@@ -24,7 +24,8 @@
 		"@sanity/dashboard",
 		"dashboard-widget-document-list",
 		"@sanity/vision",
-		"table"
+		"table",
+		"media-library"
 	],
 	"parts": [
 		{

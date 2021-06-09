@@ -19,6 +19,7 @@ import spacer from './sections/spacer';
 import youtube from './sections/youtube';
 import marquee from './sections/marquee';
 import quote from './sections/quote';
+import editions from './sections/editions';
 
 // pages/documents
 import destination from './documents/destination';
@@ -56,6 +57,7 @@ export default createSchema({
 	types: schemaTypes.concat([
 		marquee,
 		quote,
+		editions,
 		siteSettings,
 		navigationSection,
 		metaFields,

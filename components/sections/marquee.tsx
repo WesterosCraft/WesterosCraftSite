@@ -32,7 +32,7 @@ const Marquee = ({ data }: Props) => {
 
 	return (
 		<Flex
-			className='slider-section'
+			className={`${data._type}__section`}
 			maxWidth={'100vw'}
 			mt={120}
 			height={370}

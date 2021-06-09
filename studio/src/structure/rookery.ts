@@ -1,7 +1,7 @@
 import { StructureBuilder as S } from '@sanity/structure';
-import { RiQuestionnaireLine } from 'react-icons/ri';
+import { FaCrow } from 'react-icons/fa';
 
 export const RookeryMenuItem = S.listItem()
 	.title('Rookery')
-	.icon(RiQuestionnaireLine)
+	.icon(FaCrow)
 	.child(S.documentTypeList('rookery').title('Rookery').filter('_type == $type').params({ type: 'rookery' }));

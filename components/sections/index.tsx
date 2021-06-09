@@ -5,5 +5,6 @@ import Spacer from './spacer';
 import Youtube from './youtube';
 import Marquee from './marquee';
 import Quote from './quote';
+import Editions from './editions';
 
-export { BlockContent, Grid, MainImage, Spacer, Youtube, Marquee, Quote };
+export { BlockContent, Grid, MainImage, Spacer, Youtube, Marquee, Quote, Editions };

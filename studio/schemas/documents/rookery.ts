@@ -1,4 +1,5 @@
 import slug from 'slugify';
+import { contentObjects } from '../contentObjects';
 import { fieldsets } from '../fieldsets';
 
 export default {
@@ -45,50 +46,14 @@ export default {
 			type: 'string',
 			fieldset: 'content',
 		},
+		{ title: 'Caption', name: 'caption', type: 'string', fieldset: 'content' },
 		{
 			name: 'content',
 			type: 'array',
 			title: 'Page sections',
 			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
-			of: [
-				{ type: 'twoColumnText' },
-				{ type: 'destinationSlider' },
-				{ type: 'banner' },
-				{ type: 'marquee' },
-				{ type: 'spacer' },
-				{ type: 'quoteBlock' },
-			],
-		},
-		{
-			name: 'editions',
-			title: 'Editions',
-			type: 'array',
-			fieldset: 'content',
-			of: [
-				{
-					type: 'object',
-					name: 'editions',
-					title: 'Editions',
-					fields: [
-						{
-							name: 'title',
-							title: 'Title',
-							type: 'string',
-						},
-						{
-							name: 'link',
-							title: 'Link',
-							type: 'url',
-						},
-						{
-							name: 'thumbnail',
-							title: 'Thumbnail',
-							type: 'image',
-						},
-					],
-				},
-			],
+			of: contentObjects,
 		},
 	],
 };

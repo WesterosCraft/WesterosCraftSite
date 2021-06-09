@@ -1,16 +1,40 @@
 import { GetStaticProps } from 'next';
 import { pageQuery, siteSettingsQuery } from '@/lib/queries';
 import { SiteSettings } from '@/models/site-settings';
-import { Heading, Box, Flex, Text, Button, Input, Stack } from '@chakra-ui/react';
+import { Heading, Box, Flex, Text, Button, Input } from '@chakra-ui/react';
 import { Layout } from '@/components/common';
 import { useRouter } from 'next/router';
-import { sanityClient, usePreviewSubscription, urlFor } from '@/lib/sanity';
+import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import Error from 'next/error';
-// import { QuoteBlock } from '../components/atoms/quoteBlock';
-import Image from 'next/image';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import { RenderSection } from '@/components/utils';
+import { PageSections } from '@/models/sections';
+import { MetaFields } from '@/models/meta-fields';
+import { Slug } from '@sanity/types';
 
-const RookeryPage = ({ pageData, siteSettings }: any) => {
+type PageProps = {
+	content?: PageSections[];
+	meta?: MetaFields;
+	heading?: string;
+	slug: Slug;
+	subheading?: string;
+	caption?: string;
+	title?: string;
+	caption?: string;
+	editions?: any;
+	_createdAt: string;
+	_id: 'rookery';
+	_rev: string;
+	_type: 'rookery';
+	_updatedAt: string;
+};
+
+type Props = {
+	pageData: PageProps;
+	siteSettings: SiteSettings;
+};
+
+const RookeryPage = ({ pageData, siteSettings }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
@@ -18,8 +42,7 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
-	console.log('👉 ~ RookeryPage ~ page', page);
-	const { heading, editions, content } = page;
+	const { heading, content, caption, subheading } = page;
 
 	const url = 'https://westeroscraft.us6.list-manage.com/subscribe/post?u=f917cc7f538901fd1172c9ee9&amp;id=510f1ee5b1';
 
@@ -82,7 +105,7 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 				mt={[3, 10, 75]}
 				justifyContent='center'
 				flexDirection={['column', null, 'row']}
-				width={[1, null, 800]}
+				width={['100%', null, 800]}
 				mx='auto'
 				px={5}
 			>
@@ -99,12 +122,10 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 							{heading}
 						</Heading>
 						<Text textAlign='left' lineHeight={1.5} maxWidth={786} mx='auto' mt={4}>
-							The Rookery is a community created magazine that details all the latest happenings in the realm of
-							WesterosCraft. Sign up to keep up to date with the server!
+							{subheading}
 							<br />
 							<br />
-							Sent once a quarter.
-							{/* {subheading} */}
+							{caption}
 						</Text>
 					</Box>
 				</Flex>
@@ -125,75 +146,14 @@ const RookeryPage = ({ pageData, siteSettings }: any) => {
 					/>
 				</Flex>
 			</Flex>
-			<Heading variant='h3' textAlign='center' mt={20}>
-				All Editions
-			</Heading>
 
-			<Stack mt={8} flexDirection='row' justifyContent='center' alignItems='center' flexWrap='wrap'>
-				{editions.map((item: any, i: number) => {
-					const srcurl = item && item.thumbnail && urlFor(item.thumbnail.asset._ref).url();
-					return (
-						item &&
-						item.thumbnail && (
-							<Flex
-								as='a'
-								flexShrink={1}
-								target='_blank'
-								rel='noreferrer'
-								href={item.link}
-								key={item._key}
-								maxWidth={368}
-								p={4}
-								sx={{
-									position: 'relative',
-									'&:hover .edition-image': {
-										transform: 'scale(1.015)',
-										transition: 'transform .3s ease, filter .3s ease',
-										filter: 'brightness(40%)',
-										cursor: 'pointer',
-									},
-									'&:hover .edition-title': {
-										visibility: 'visible',
-									},
-								}}
-							>
-								<Image
-									priority={i <= 2}
-									width={336}
-									height={435}
-									src={srcurl}
-									className='edition-image'
-									alt={item.title}
-								/>
-								<Box
-									className='edition-title'
-									sx={{
-										cursor: 'pointer',
-										visibility: 'hidden',
-										position: 'absolute',
-										top: '50%',
-										left: '50%',
-										transform: 'translate(-50%, -50%)',
-									}}
-								>
-									<Heading textAlign='center' color='white' variant='h3'>
-										{item.title} Issue
-									</Heading>
-									<Text mt={3} textAlign='center' color='white' variant='h3'>
-										Click to view
-									</Text>
-								</Box>
-							</Flex>
-						)
-					);
-				})}
-			</Stack>
+			{content?.map((section) => {
+				if (!section || Object.keys(section).length === 0) {
+					return null;
+				}
 
-			{/* <QuoteBlock
-				content={quote || 'A reader lives a thousand lives before he dies. The man who never reads lives only one.'}
-				author={quoteAuthor || 'Jojen Reed'}
-				darkMode={darkMode.value}
-			/> */}
+				return <RenderSection key={section._key} section={section} />;
+			})}
 		</Layout>
 	);
 };

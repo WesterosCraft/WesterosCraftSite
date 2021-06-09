@@ -1,4 +1,5 @@
 import slug from 'slugify';
+import { contentObjects } from '../contentObjects';
 import { fieldsets } from '../fieldsets';
 
 export default {
@@ -63,14 +64,7 @@ export default {
 			title: 'Page sections',
 			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
-			of: [
-				{ type: 'twoColumnText' },
-				{ type: 'destinationSlider' },
-				{ type: 'banner' },
-				{ type: 'marquee' },
-				{ type: 'spacer' },
-				{ type: 'quoteBlock' },
-			],
+			of: contentObjects,
 		},
 	],
 };

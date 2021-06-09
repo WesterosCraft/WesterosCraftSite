@@ -44,3 +44,15 @@ export const marquee = `
 		}
 	}
 `;
+
+export const quote = `
+	_type == 'quoteBlock' => {
+		...
+	}
+`;
+
+export const editions = `
+	_type == 'editions' => {
+		...
+	}
+`;

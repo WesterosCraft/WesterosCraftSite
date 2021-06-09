@@ -1,49 +1,44 @@
-import { Flex, Box, Text, Image, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Box, Text, Heading, useColorModeValue } from '@chakra-ui/react';
+import { IoMdQuote } from 'react-icons/io';
 
-const Quote = ({ data: { content = '', author = '' } }) => (
-	<Box width={['80%', null, '75%', 800]} mx='auto' my={150} bg='red'>
+const Quote = ({ data: { quote = '', author = '', _type = 'quoteBlock' } }) => (
+	<Box className={`${_type}__section`} width={['80%', null, '75%', 800]} mx='auto'>
 		<Flex
 			as='blockquote'
 			p={[5, null, 10]}
-			bg='var(--theme-colors-background)'
 			sx={{
 				position: 'relative',
 				boxShadow:
 					'inset 0 0 0 4px var(--theme-colors-text, #333333), inset -4px -4px 0 6px var(--theme-colors-gray-400, #cccccc)',
 			}}
+			bg={useColorModeValue('white', 'black')}
 		>
-			<Text color='red'>
-				<Image
-					src={useColorModeValue('/close-quote.svg', '/close-quote-alt.svg')}
-					sx={{
-						position: 'absolute',
-						width: [56, null, 76],
-						height: 56,
-						bottom: -30,
-						right: -30,
-					}}
-				/>
-				<Image
-					src={useColorModeValue('/close-quote.svg', '/close-quote-alt.svg')}
-					sx={{
-						position: 'absolute',
-						width: [56, null, 76],
-						height: 56,
-						top: -30,
-						left: -30,
-						transform: 'rotate(180deg)',
-					}}
-				/>
-			</Text>
-			<Text
+			<Heading
+				size='lg'
 				lineHeight={2}
-				variant='heading3'
 				fontStyle='italic'
 				fontWeight='normal'
-				color='var(--theme-colors-text, #ffffff)'
+				color={useColorModeValue('black', 'white')}
 			>
-				{content}
-			</Text>
+				{quote}
+			</Heading>
+			<IoMdQuote
+				size={76}
+				style={{
+					position: 'absolute',
+					transform: 'rotate(180deg)',
+					top: -30,
+					left: -30,
+				}}
+			/>
+			<IoMdQuote
+				size={76}
+				style={{
+					position: 'absolute',
+					bottom: -30,
+					right: -30,
+				}}
+			/>
 		</Flex>
 		<Box
 			width='fit-content'
@@ -51,11 +46,11 @@ const Quote = ({ data: { content = '', author = '' } }) => (
 				boxShadow:
 					'inset 0 0 0 2px var(--theme-colors-text, #333333), inset -2px -2px 0 3px var(--theme-colors-gray-400, #cccccc)',
 			}}
-			bg='var(--theme-colors-background)'
+			bg={useColorModeValue('white', 'black')}
 			mt={4}
 			p={4}
 		>
-			<Text variant='heading5' color='var(--theme-colors-text, #ffffff)'>
+			<Text variant='heading5' color={useColorModeValue('black', 'white')}>
 				-- {author}
 			</Text>
 		</Box>

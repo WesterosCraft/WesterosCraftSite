@@ -1,5 +1,5 @@
-import {Box} from '@chakra-ui/react';
-import {Spacer as SpacerType} from '@/models/sections/spacer';
+import { Box } from '@chakra-ui/react';
+import { Spacer as SpacerType } from '@/models/sections/spacer';
 
 type Props = {
 	data: SpacerType;
@@ -24,10 +24,10 @@ const getSize = (size: string) => {
 	}
 };
 
-const Spacer = ({data}: Props) => {
+const Spacer = ({ data }: Props) => {
 	const padding = getSize(data?.size ?? 'medium');
 
-	return <Box paddingY={padding} backgroundColor='transparent' />;
+	return <Box className={`${data._type}__section`} paddingY={padding} backgroundColor='transparent' />;
 };
 
 export default Spacer;
