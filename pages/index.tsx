@@ -7,14 +7,14 @@ import { SiteSettings } from '@/models/site-settings';
 import { Layout } from '@/components/common';
 import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
-import { PageSections } from '@/models/sections';
+import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Heading, Text, Box, Button, useColorModeValue } from '@chakra-ui/react';
 import { Spacer } from '@/components/sections';
 import { GiRaven } from 'react-icons/gi';
 
 type PageProps = {
-	content?: PageSections[];
+	content?: Sections[];
 	meta?: MetaFields;
 	heading1?: string;
 	heading2?: string;

@@ -31,7 +31,7 @@ export default {
 					type: 'rookery',
 				},
 				{
-					type: 'launcher',
+					type: 'modpack',
 				},
 				{
 					type: 'wiki',

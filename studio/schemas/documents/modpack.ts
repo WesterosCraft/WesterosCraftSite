@@ -2,8 +2,8 @@ import slug from 'slugify';
 import { fieldsets } from '../fieldsets';
 
 export default {
-	title: 'Launcher',
-	name: 'launcher',
+	title: 'Modpack',
+	name: 'modpack',
 	type: 'document',
 	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fieldsets: [...fieldsets],

@@ -7,7 +7,7 @@ export default {
 	name: 'home',
 	type: 'document',
 	fieldsets: [...fieldsets],
-	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fields: [
 		{
 			name: 'title',

@@ -1,7 +1,7 @@
 import slug from 'slugify';
 
 export default {
-	title: 'Destinations',
+	title: 'Destination',
 	name: 'destination',
 	type: 'document',
 	initialValue: {

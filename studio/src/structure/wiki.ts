@@ -1,7 +1,4 @@
 import { StructureBuilder as S } from '@sanity/structure';
-import { RiQuestionnaireLine } from 'react-icons/ri';
+import { FaBook } from 'react-icons/fa';
 
-export const WikiMenuItem = S.listItem()
-	.title('Wiki')
-	.icon(RiQuestionnaireLine)
-	.child(S.documentTypeList('wiki').title('Wiki').filter('_type == $type').params({ type: 'wiki' }));
+export const WikiMenuItem = S.documentListItem().icon(FaBook).schemaType('wiki').id('wiki');

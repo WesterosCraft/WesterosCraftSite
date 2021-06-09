@@ -8,19 +8,18 @@ import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import Error from 'next/error';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import { RenderSection } from '@/components/utils';
-import { PageSections } from '@/models/sections';
+import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 
 type PageProps = {
-	content?: PageSections[];
+	content?: Sections[];
 	meta?: MetaFields;
 	heading?: string;
 	slug: Slug;
 	subheading?: string;
 	caption?: string;
 	title?: string;
-	caption?: string;
 	editions?: any;
 	_createdAt: string;
 	_id: 'rookery';

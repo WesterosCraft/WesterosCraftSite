@@ -1,7 +1,7 @@
 import slug from 'slugify';
 
 export default {
-	title: 'Guides',
+	title: 'Guide',
 	name: 'guide',
 	type: 'document',
 	fieldsets: [

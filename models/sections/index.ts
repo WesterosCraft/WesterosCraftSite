@@ -8,5 +8,3 @@ import { Youtube } from './youtube';
 import { Editions } from './editions';
 
 export type Sections = BlockContent | Grid | Image | Spacer | Youtube | Marquee | Quote | Editions;
-export type PageSections = BlockContent | Grid | Image | Spacer | Youtube;
-export type PostSections = BlockContent | Grid | Image | Youtube;

@@ -24,7 +24,7 @@ import editions from './sections/editions';
 // pages/documents
 import destination from './documents/destination';
 import about from './documents/about';
-import launcher from './documents/launcher';
+import modpack from './documents/modpack';
 import guide from './documents/guide';
 import home from './documents/home';
 import wiki from './documents/wiki';
@@ -77,7 +77,7 @@ export default createSchema({
 		video,
 		destination,
 		about,
-		launcher,
+		modpack,
 		figure,
 		simpleRichText,
 		callToAction,

@@ -6,4 +6,5 @@ export const contentObjects = [
 	{ type: 'spacer' },
 	{ type: 'quoteBlock' },
 	{ type: 'editions' },
+	{ type: 'youtube' },
 ];

@@ -1,7 +1,4 @@
 import { StructureBuilder as S } from '@sanity/structure';
-import { RiQuestionnaireLine } from 'react-icons/ri';
+import { GrInProgress } from 'react-icons/gr';
 
-export const ProgressMenuItem = S.listItem()
-	.title('Progress')
-	.icon(RiQuestionnaireLine)
-	.child(S.documentTypeList('progress').title('Progress').filter('_type == $type').params({ type: 'progress' }));
+export const ProgressMenuItem = S.documentListItem().icon(GrInProgress).schemaType('progress').id('progress');

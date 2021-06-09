@@ -1,11 +1,13 @@
 import slug from 'slugify';
 import { fieldsets } from '../fieldsets';
+import { contentObjects } from '../contentObjects';
 
 export default {
 	title: 'About',
 	name: 'about',
 	type: 'document',
 	fieldsets: [...fieldsets],
+	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fields: [
 		{
 			name: 'title',
@@ -38,13 +40,13 @@ export default {
 			type: 'string',
 			fieldset: 'content',
 		},
-		{ name: 'video', type: 'video', fieldset: 'content' },
 		{
-			name: 'pageBuilder',
+			name: 'content',
 			type: 'array',
-			title: 'Page builder',
+			title: 'Page sections',
+			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
-			of: [{ type: 'twoColumnText' }, { type: 'richText' }, { type: 'spacer' }],
+			of: contentObjects,
 		},
 	],
 };
