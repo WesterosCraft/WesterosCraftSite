@@ -1,8 +1,8 @@
 import React from 'react';
-import {ChakraProvider} from '@chakra-ui/react';
-import {render, cleanup} from '@testing-library/react';
-import {BlockContent} from '@/components/sections';
-import {Header} from '@/components/common';
+import { ChakraProvider } from '@chakra-ui/react';
+import { render, cleanup } from '@testing-library/react';
+import { BlockContent } from '@/components/sections';
+import { Header } from '@/components/common';
 import theme from '../constants/theme';
 
 afterEach(cleanup);
@@ -27,16 +27,16 @@ describe('Render textBlock', () => {
 							_key: 'e1c46425ef59',
 							_type: 'span',
 							marks: [],
-							text: 'This is BlockContent'
-						}
+							text: 'This is BlockContent',
+						},
 					],
 					markDefs: [],
-					style: 'h3'
-				}
-			]
+					style: 'h3',
+				},
+			],
 		};
 
-		const {getByText} = render(
+		const { getByText } = render(
 			<ChakraProvider theme={theme}>
 				<BlockContent data={data} />
 			</ChakraProvider>
@@ -59,22 +59,22 @@ describe('Render textBlock', () => {
 							_key: '64974fb8906c',
 							_type: 'span',
 							marks: ['051267172cd2'],
-							text: 'link'
-						}
+							text: 'link',
+						},
 					],
 					markDefs: [
 						{
 							_key: '051267172cd2',
 							_type: 'link',
-							href: 'https://google.com'
-						}
+							href: 'https://google.com',
+						},
 					],
-					style: 'normal'
-				}
-			]
+					style: 'normal',
+				},
+			],
 		};
 
-		const {getByText} = render(
+		const { getByText } = render(
 			<ChakraProvider theme={theme}>
 				<BlockContent data={data} />
 			</ChakraProvider>

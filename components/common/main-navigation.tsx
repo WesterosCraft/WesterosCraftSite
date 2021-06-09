@@ -8,7 +8,7 @@ type Props = {
 	direction?: 'row' | 'column';
 };
 
-const resolveLink = (item: InternalLink | ExternalLink | SubNavItem) => {
+const resolveLink = (item: InternalLink | ExternalLink) => {
 	if (item._type === 'externalLink' && item.slug?.current) {
 		return {
 			type: item._type,

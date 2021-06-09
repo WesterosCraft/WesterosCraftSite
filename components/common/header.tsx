@@ -30,8 +30,8 @@ export default function WithSubnavigation({
 	navigation,
 	maxWidth,
 }: {
-	navigation: NavItem[];
-	maxWidth: string | number;
+	navigation?: NavItem[];
+	maxWidth?: string | number;
 }) {
 	const { isOpen, onToggle } = useDisclosure();
 
@@ -62,14 +62,14 @@ export default function WithSubnavigation({
 
 				<Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} align='center' direction={'row'} spacing={6}>
 					<Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-						<DesktopNav navigation={navigation} />
+						{navigation && <DesktopNav navigation={navigation} />}
 					</Flex>
 					<DarkModeSwitch />
 				</Stack>
 			</Flex>
 
 			<Collapse in={isOpen} animateOpacity>
-				<MobileNav navigation={navigation} />
+				{navigation && <MobileNav navigation={navigation} />}
 			</Collapse>
 		</Box>
 	);

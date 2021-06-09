@@ -24,7 +24,7 @@ type Props = {
 };
 
 const Marquee = ({ data }: Props) => {
-	const myLoader = ({ src, width, quality }: any) => {
+	const myLoader = ({ src, width }: any) => {
 		return `${src}?fit=crop&h=${width}&w=${width}&q=100`;
 	};
 

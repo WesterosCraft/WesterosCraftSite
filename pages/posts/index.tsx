@@ -4,14 +4,13 @@ import { useRouter } from 'next/router';
 import { pageQuery, postsQuery, siteSettingsQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { Page as PageProps } from '@/models/page';
-import { Post as PostProps } from '@/models/post';
 import { SiteSettings } from '@/models/site-settings';
-import { Layout, PostList } from '@/components/common';
+import { Layout } from '@/components/common';
 import { RenderSection } from '@/components/utils';
 
 type Props = {
 	pageData: PageProps;
-	posts: PostProps[];
+	posts: any[];
 	siteSettings: SiteSettings;
 };
 
@@ -37,6 +36,7 @@ const Posts = ({ pageData, posts, siteSettings }: Props) => {
 
 				return <RenderSection key={section._key} section={section} />;
 			})}
+			{/* @ts-ignore */}
 			<PostList posts={posts} />
 		</Layout>
 	);
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		slug: 'posts',
 	});
 
-	const posts = await sanityClient.fetch<PostProps[]>(postsQuery, {
+	const posts = await sanityClient.fetch<any[]>(postsQuery, {
 		limit: 100,
 	});
 
