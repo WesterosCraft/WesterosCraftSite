@@ -1,10 +1,10 @@
-import {AppProps} from 'next/app';
-import {CSSReset, ChakraProvider} from '@chakra-ui/react';
-import {Global} from '@emotion/react';
-import {Head} from '@/components/common';
+import { AppProps } from 'next/app';
+import { CSSReset, ChakraProvider } from '@chakra-ui/react';
+import { Global } from '@emotion/react';
+import { Head } from '@/components/common';
 import theme from '../constants/theme';
 
-const MyApp = ({Component, pageProps}: AppProps) => (
+const MyApp = ({ Component, pageProps }: AppProps) => (
 	<ChakraProvider theme={theme}>
 		<Head />
 		<CSSReset />
@@ -16,7 +16,7 @@ const MyApp = ({Component, pageProps}: AppProps) => (
 					height: 0,
 					paddingBottom: '56.25%',
 					overflow: 'hidden',
-					marginBottom: '50px'
+					marginBottom: '50px',
 				},
 
 				'.youtubeContainer iframe': {
@@ -24,8 +24,8 @@ const MyApp = ({Component, pageProps}: AppProps) => (
 					height: '100%',
 					position: 'absolute',
 					top: 0,
-					left: 0
-				}
+					left: 0,
+				},
 			}}
 		/>
 		<Component {...pageProps} />

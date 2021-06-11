@@ -20,6 +20,7 @@ import youtube from './sections/youtube';
 import marquee from './sections/marquee';
 import quote from './sections/quote';
 import editions from './sections/editions';
+import tableBuilder from './sections/tableBuilder';
 
 // pages/documents
 import destination from './documents/destination';
@@ -49,8 +50,8 @@ import buttons from './objects/buttons';
 import banner from './objects/banner';
 import contentBanner from './objects/contentBanner';
 import dynmapData from './objects/dynmapData';
-import tableBuilder from './objects/tableBuilder';
 import navigationSection from './objects/navigationSection';
+import imageSlider from './objects/image-slider';
 
 export default createSchema({
 	name: 'default',
@@ -98,5 +99,6 @@ export default createSchema({
 		dynmapData,
 		downloads,
 		tableBuilder,
+		imageSlider,
 	]),
 });

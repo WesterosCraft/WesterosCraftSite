@@ -12,12 +12,15 @@ import { MetaFields } from '@/models/meta-fields';
 import { Heading, Text, Box, Button, useColorModeValue } from '@chakra-ui/react';
 import { Spacer } from '@/components/sections';
 import { GiRaven } from 'react-icons/gi';
+import ImageSlider from '@/components/sections/image-slider';
+import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
 
 type PageProps = {
 	content?: Sections[];
 	meta?: MetaFields;
 	heading1?: string;
 	heading2?: string;
+	heroSlider?: IImageSlider;
 	slug: Slug;
 	subheading?: string;
 	title?: string;
@@ -42,6 +45,7 @@ const Index = ({ pageData, siteSettings }: Props) => {
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
+	console.log('👉 ~ Index ~ page', page);
 
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
@@ -78,6 +82,7 @@ const Index = ({ pageData, siteSettings }: Props) => {
 					Begin Your Watch
 				</Button>
 			</Box>
+			{page.heroSlider?.slideItems && <ImageSlider images={page.heroSlider?.slideItems} />}
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {
 					return null;
@@ -90,7 +95,7 @@ const Index = ({ pageData, siteSettings }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<any>(pageQuery, { type: 'home', slug: 'homepage' });
+	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'home', slug: 'homepage' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {

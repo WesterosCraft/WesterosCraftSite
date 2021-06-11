@@ -1,11 +1,12 @@
 import slug from 'slugify';
 import { fieldsets } from '../fieldsets';
+import { contentObjects } from '../contentObjects';
 
 export default {
 	title: 'Downloads',
 	name: 'downloads',
 	type: 'document',
-	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fieldsets: [...fieldsets],
 	fields: [
 		{
@@ -46,11 +47,12 @@ export default {
 			fieldset: 'content',
 		},
 		{
-			name: 'pageBuilder',
+			name: 'content',
 			type: 'array',
-			title: 'Page builder',
+			title: 'Page sections',
+			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
-			of: [{ type: 'tableBuilder' }, { type: 'spacer' }],
+			of: contentObjects,
 		},
 	],
 };

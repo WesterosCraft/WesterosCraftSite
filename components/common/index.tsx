@@ -5,6 +5,6 @@ import Header from './header';
 import Layout from './layout';
 import MainNavigation from './main-navigation';
 import Seo from './seo';
-import Marquee from '../sections/marquee';
+import WikiLayout from './wiki-layout';
 
-export { Marquee, DarkModeSwitch, Footer, Head, Header, Layout, MainNavigation, Seo };
+export { DarkModeSwitch, Footer, Head, Header, Layout, MainNavigation, Seo, WikiLayout };

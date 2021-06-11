@@ -1,15 +1,15 @@
-import { GetStaticProps } from 'next';
 import { Heading } from '@chakra-ui/react';
-import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { pageQuery, siteSettingsQuery } from '@/lib/queries';
-import { SiteSettings } from '@/models/site-settings';
+import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
-import { Layout } from '@/components/common';
+import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
+import { pageQuery, siteSettingsQuery } from '@/lib/queries';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 import { RenderSection } from '@/components/utils';
+import { Layout } from '@/components/common';
+import { SiteSettings } from '@/models/site-settings';
 
 type PageProps = {
 	content?: Sections[];
@@ -28,11 +28,11 @@ type Props = {
 	siteSettings: SiteSettings;
 };
 
-const AboutPage = ({ pageData, siteSettings }: Props) => {
+const DownloadsPage = ({ pageData, siteSettings }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
-		params: { type: 'about', slug: pageData?.slug?.current },
+		params: { type: 'downloads', slug: pageData?.slug?.current },
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
@@ -43,10 +43,9 @@ const AboutPage = ({ pageData, siteSettings }: Props) => {
 
 	return (
 		<Layout meta={page?.meta} siteSettings={siteSettings}>
-			<Heading textAlign='center' mt={[12]}>
+			<Heading variant='heading2' textAlign='center' mt={[12]}>
 				{page.heading}
 			</Heading>
-
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {
 					return null;
@@ -59,7 +58,7 @@ const AboutPage = ({ pageData, siteSettings }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'about', slug: 'about' });
+	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'downloads', slug: 'downloads' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
@@ -71,4 +70,4 @@ export const getStaticProps: GetStaticProps = async () => {
 	return { props: { siteSettings, pageData }, revalidate: 60 };
 };
 
-export default AboutPage;
+export default DownloadsPage;

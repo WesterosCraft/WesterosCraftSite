@@ -1,25 +1,33 @@
 import { GetStaticProps } from 'next';
-import { Heading } from '@chakra-ui/react';
-import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { pageQuery, siteSettingsQuery } from '@/lib/queries';
 import { SiteSettings } from '@/models/site-settings';
+import { Heading, Box, Flex, Text, Button, Input } from '@chakra-ui/react';
+import { WikiLayout } from '@/components/common';
 import { useRouter } from 'next/router';
+import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import Error from 'next/error';
-import { Layout } from '@/components/common';
+import { RenderSection } from '@/components/utils';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
-import { RenderSection } from '@/components/utils';
+
+// import { WikiLayout } from '../components/templates/wikiLayout';
+// import { SliceZone } from '../components/slices/sliceZone';
+// import { computeBreadcrumbs } from '../utils/helpers';
 
 type PageProps = {
 	content?: Sections[];
 	meta?: MetaFields;
 	heading?: string;
 	slug: Slug;
+	subheading?: string;
+	caption?: string;
+	title?: string;
+	editions?: any;
 	_createdAt: string;
-	_id: 'about';
+	_id: 'wiki';
 	_rev: string;
-	_type: 'about';
+	_type: 'wiki';
 	_updatedAt: string;
 };
 
@@ -28,11 +36,11 @@ type Props = {
 	siteSettings: SiteSettings;
 };
 
-const AboutPage = ({ pageData, siteSettings }: Props) => {
+const WikiPage = ({ pageData, siteSettings }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
-		params: { type: 'about', slug: pageData?.slug?.current },
+		params: { type: 'wiki', slug: pageData?.slug?.current },
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
@@ -42,24 +50,14 @@ const AboutPage = ({ pageData, siteSettings }: Props) => {
 	}
 
 	return (
-		<Layout meta={page?.meta} siteSettings={siteSettings}>
-			<Heading textAlign='center' mt={[12]}>
-				{page.heading}
-			</Heading>
-
-			{page?.content?.map((section) => {
-				if (!section || Object.keys(section).length === 0) {
-					return null;
-				}
-
-				return <RenderSection key={section._key} section={section} />;
-			})}
-		</Layout>
+		<WikiLayout meta={page?.meta} siteSettings={siteSettings}>
+			layout
+		</WikiLayout>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'about', slug: 'about' });
+	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'wiki', slug: 'wiki' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
@@ -71,4 +69,4 @@ export const getStaticProps: GetStaticProps = async () => {
 	return { props: { siteSettings, pageData }, revalidate: 60 };
 };
 
-export default AboutPage;
+export default WikiPage;

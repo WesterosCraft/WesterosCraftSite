@@ -158,7 +158,7 @@ const RookeryPage = ({ pageData, siteSettings }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<any>(pageQuery, { type: 'rookery', slug: 'rookery' });
+	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'rookery', slug: 'rookery' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {

@@ -1,6 +1,6 @@
-const title = 'Hafffe.dev';
-const description = 'Developer, Javascript';
-const url = 'https://nextjs-sanity-template.now.sh/';
+const title = 'WesterosCraft';
+const description = 'WesterosCraft is faithfully recreating the world of Game of Thrones in Minecraft.';
+const url = 'https://westeroscraft.com/';
 
 const config = {
 	title,
@@ -10,18 +10,18 @@ const config = {
 		type: 'website',
 		locale: 'en_EN',
 		url,
-		site_name: 'nextjs-sanity-template.now.sh',
+		site_name: 'westeroscraft.com',
 		title,
 		description,
 		images: [
 			{
-				url: 'https://nextjs-sanity-template.now.sh/favicon.svg',
+				url: 'https://westeroscraft.com/favicon.svg',
 				alt: title,
 				width: 1280,
-				height: 720
-			}
-		]
-	}
+				height: 720,
+			},
+		],
+	},
 };
 
 export default config;

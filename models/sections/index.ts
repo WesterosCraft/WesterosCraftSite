@@ -6,5 +6,6 @@ import { Image } from './image';
 import { Spacer } from './spacer';
 import { Youtube } from './youtube';
 import { Editions } from './editions';
+import { ImageSlider } from './image-slider';
 
-export type Sections = BlockContent | Grid | Image | Spacer | Youtube | Marquee | Quote | Editions;
+export type Sections = BlockContent | ImageSlider | Grid | Image | Spacer | Youtube | Marquee | Quote | Editions;

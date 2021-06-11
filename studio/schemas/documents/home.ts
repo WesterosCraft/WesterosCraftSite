@@ -59,6 +59,12 @@ export default {
 			fieldset: 'content',
 		},
 		{
+			title: 'Hero Slider',
+			name: 'heroSlider',
+			type: 'imageSlider',
+			fieldset: 'content',
+		},
+		{
 			name: 'content',
 			type: 'array',
 			title: 'Page sections',

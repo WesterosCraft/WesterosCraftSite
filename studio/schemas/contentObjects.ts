@@ -7,4 +7,5 @@ export const contentObjects = [
 	{ type: 'quoteBlock' },
 	{ type: 'editions' },
 	{ type: 'youtube' },
+	{ type: 'tableBuilder' },
 ];

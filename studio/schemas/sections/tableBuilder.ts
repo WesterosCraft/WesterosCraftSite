@@ -1,8 +1,11 @@
+import { ImTable2 } from 'react-icons/im';
+
 export default {
 	name: 'tableBuilder',
 	type: 'object',
 	title: 'Table Builder',
 	description: 'A configurable table',
+	icon: ImTable2,
 	fields: [
 		{
 			title: 'Table Heading',
