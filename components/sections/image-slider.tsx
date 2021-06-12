@@ -1,36 +1,10 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { wrap } from 'popmotion';
+import { useState, useEffect, useCallback } from 'react';
 import { SanityAsset } from '@/models/utils';
 import { urlFor } from '@/lib/sanity';
-import { Box, Flex, IconButton, Image } from '@chakra-ui/react';
-// import Image from 'next/image';
+import { Box, Flex, IconButton } from '@chakra-ui/react';
+import Image from 'next/image';
 import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
-const variants = {
-	enter: (direction: number) => {
-		return {
-			x: direction > 0 ? 1000 : -1000,
-			opacity: 0,
-		};
-	},
-	center: {
-		zIndex: 1,
-		x: 0,
-		opacity: 1,
-	},
-	exit: (direction: number) => {
-		return {
-			zIndex: 0,
-			x: direction < 0 ? 1000 : -1000,
-			opacity: 0,
-		};
-	},
-};
-
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-	return Math.abs(offset) * velocity;
-};
+import { useEmblaCarousel } from 'embla-carousel/react';
 
 type Props = {
 	images: Array<{
@@ -42,91 +16,78 @@ type Props = {
 };
 
 const ImageSlider = ({ images }: Props) => {
-	const [[page, direction], setPage] = useState([0, 0]);
+	console.log('👉 ~ ImageSlider ~ images', images);
+	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
 
-	const imageIndex = wrap(0, images.length, page);
+	const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+	const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+	const onSelect = useCallback(() => {
+		if (!embla) return;
+	}, [embla]);
 
-	const paginate = (newDirection: number) => {
-		setPage([page + newDirection, newDirection]);
-	};
+	useEffect(() => {
+		if (!embla) return;
+		embla.on('select', onSelect);
+		onSelect();
+	}, [embla, onSelect]);
 
 	return (
-		<Flex width='100%' position='relative' justify='center' align='center'>
-			<AnimatePresence initial={false} custom={direction}>
-				<motion.div
-					className='motion div'
-					key={page}
-					custom={direction}
-					variants={variants}
-					initial='enter'
-					animate='center'
-					exit='exit'
-					transition={{
-						x: { type: 'spring', stiffness: 300, damping: 30 },
-						opacity: { duration: 0.2 },
-					}}
-					drag='x'
-					dragConstraints={{ left: 0, right: 0 }}
-					dragElastic={1}
-					onDragEnd={(e, { offset, velocity }) => {
-						e.preventDefault();
-						const swipe = swipePower(offset.x, velocity.x);
-
-						if (swipe < -swipeConfidenceThreshold) {
-							paginate(1);
-						} else if (swipe > swipeConfidenceThreshold) {
-							paginate(-1);
-						}
-					}}
-					style={{
-						width: 768,
-						height: 445,
-					}}
+		<Box className='embla' width='100%' bg='white' position='relative' maxW={756} mx='auto'>
+			<Box className='embla__viewport' overflow='hidden' width='100%' ref={viewportRef}>
+				<Flex
+					className='embla__container'
+					userSelect='none'
+					// ml='-10px'
 				>
-					<Image
-						src={urlFor?.(images?.[imageIndex]?.slideImage?.asset).width(768)?.height(445).url()!}
-						width={768}
-						height={445}
-					/>
-				</motion.div>
-			</AnimatePresence>
-			<IconButton
-				position='absolute'
-				aria-label='Next Button'
-				isRound
-				onClick={() => paginate(1)}
-				icon={<MdNavigateNext />}
-				top='calc(50% - 20px)'
-				right={10}
-				// right={45}
-				// transform='translate(-50%, -50%)'
-			/>
-			{/* top: calc(50% - 20px);
-  position: absolute;
-  background: white;
-  border-radius: 30px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  z-index: 2; */}
+					{images.map((image) => (
+						<Box
+							className='embla__slide'
+							position='relative'
+							minW='100%'
+							// pl='10px'
+							key={image._key}
+						>
+							<Box className='embla__slide__inner' position='relative' overflow='hidden' height='445px'>
+								<Image
+									className='embla__slide__img'
+									// position='absolute'
+									// display='block'
+									// top='50%'
+									// left='50%'
+									width={756}
+									height={445}
+									// transform='translate(-50%, -50%)'
+									src={urlFor(image.slideImage.asset).url()!}
+									alt={image.destination._ref || 'WesterosCraft destination'}
+								/>
+							</Box>
+						</Box>
+					))}
+				</Flex>
+			</Box>
 			<IconButton
 				position='absolute'
 				aria-label='Previous Button'
 				isRound
-				onClick={() => paginate(-1)}
 				icon={<MdNavigateBefore />}
 				top='calc(50% - 20px)'
 				left={10}
+				onClick={scrollPrev}
 				// left={45}
 				// transform='translate(-50%, -50%)'
 			/>
-		</Flex>
+			<IconButton
+				position='absolute'
+				aria-label='Next Button'
+				isRound
+				icon={<MdNavigateNext />}
+				top='calc(50% - 20px)'
+				right={10}
+				onClick={scrollNext}
+				// right={45}
+				// transform='translate(-50%, -50%)'
+			/>
+		</Box>
 	);
 };
 
