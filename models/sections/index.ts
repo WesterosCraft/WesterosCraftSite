@@ -7,5 +7,16 @@ import { Spacer } from './spacer';
 import { Youtube } from './youtube';
 import { Editions } from './editions';
 import { ImageSlider } from './image-slider';
+import { BlockBanner } from './block-banner';
 
-export type Sections = BlockContent | ImageSlider | Grid | Image | Spacer | Youtube | Marquee | Quote | Editions;
+export type Sections =
+	| BlockBanner
+	| BlockContent
+	| ImageSlider
+	| Grid
+	| Image
+	| Spacer
+	| Youtube
+	| Marquee
+	| Quote
+	| Editions;

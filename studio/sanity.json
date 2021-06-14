@@ -1,44 +1,44 @@
 {
-	"root": true,
-	"api": {
-		"projectId": "n9rqt6s5",
-		"dataset": "production"
-	},
-	"env": {
-		"development": {
-			"api": {
-				"dataset": "develop"
-			}
-		}
-	},
-	"project": {
-		"name": "WesterosCraft",
-		"basePath": "/studio"
-	},
-	"plugins": [
-		"@sanity/base",
-		"@sanity/components",
-		"@sanity/default-layout",
-		"@sanity/default-login",
-		"@sanity/desk-tool",
-		"@sanity/dashboard",
-		"dashboard-widget-document-list",
-		"@sanity/vision",
-		"table",
-		"media-library"
-	],
-	"parts": [
-		{
-			"name": "part:@sanity/base/schema",
-			"path": "./schemas/schema.ts"
-		},
-		{
-			"name": "part:@sanity/desk-tool/structure",
-			"path": "./src/structure/index.ts"
-		},
-		{
-			"implements": "part:@sanity/dashboard/config",
-			"path": "./src/dashboard-config.ts"
-		}
-	]
+  "root": true,
+  "api": {
+    "projectId": "n9rqt6s5",
+    "dataset": "production"
+  },
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "develop"
+      }
+    }
+  },
+  "project": {
+    "name": "WesterosCraft",
+    "basePath": "/studio"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/dashboard",
+    "dashboard-widget-document-list",
+    "@sanity/vision",
+    "table",
+    "media"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.ts"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/structure/index.ts"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./src/dashboard-config.ts"
+    }
+  ]
 }

@@ -6,5 +6,6 @@ import Youtube from './youtube';
 import Marquee from './marquee';
 import Quote from './quote';
 import Editions from './editions';
+import BlockBanner from './block-banner';
 
-export { BlockContent, Grid, MainImage, Spacer, Youtube, Marquee, Quote, Editions };
+export { BlockBanner, BlockContent, Grid, MainImage, Spacer, Youtube, Marquee, Quote, Editions };

@@ -137,15 +137,7 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 								</Link>
 							</PopoverTrigger>
 
-							<PopoverContent
-								borderWidth={1}
-								borderColor={useColorModeValue('black', 'white')}
-								boxShadow={'xl'}
-								bg={useColorModeValue('white', 'gray.800')}
-								p={4}
-								rounded={'none'}
-								minW={'sm'}
-							>
+							<PopoverContent boxShadow={'xl'} bg={useColorModeValue('white', 'gray.800')} p={4} minW={'sm'}>
 								<Stack>
 									{navItem.links.map((link) => (
 										<DesktopSubNav key={link._key} link={link} />

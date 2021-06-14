@@ -9,8 +9,7 @@ import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
-import { Heading, Text, Box, Button, useColorModeValue } from '@chakra-ui/react';
-import { Spacer } from '@/components/sections';
+import { Heading, Text, Box, Button, Flex, useColorModeValue } from '@chakra-ui/react';
 import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
@@ -45,7 +44,6 @@ const Index = ({ pageData, siteSettings }: Props) => {
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
-	console.log('👉 ~ Index ~ page', page);
 
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
@@ -53,36 +51,42 @@ const Index = ({ pageData, siteSettings }: Props) => {
 
 	return (
 		<Layout meta={page?.meta} siteSettings={siteSettings}>
-			<Spacer data={{ size: 'medium', _type: 'spacer', _key: '909' }} />
-			<Box textAlign='center'>
-				<Text textTransform='uppercase' fontWeight='bold' color='green.600'>
-					{page.caption}
-				</Text>
-				<Heading fontSize='5xl'>{page.heading2}</Heading>
-				<Heading fontSize='7xl' letterSpacing={5.3}>
-					{page.heading1}
-				</Heading>
-				<Text color={useColorModeValue('gray.500', 'gray.300')} mb='6'>
-					{page.subheading}
-				</Text>
-				<Button
-					size='lg'
-					leftIcon={<GiRaven size={20} />}
-					display={{ base: 'none', md: 'inline-flex' }}
-					fontSize={'md'}
-					fontWeight={600}
-					color={useColorModeValue('white', 'black')}
-					bg={useColorModeValue('blackAlpha.800', 'white')}
-					href={'#'}
-					_hover={{
-						color: 'white',
-						bg: 'blackAlpha.700',
-					}}
-				>
-					Begin Your Watch
-				</Button>
-			</Box>
-			{page.heroSlider?.slideItems && <ImageSlider images={page.heroSlider?.slideItems} />}
+			{page.heroSlider?.slideItems && (
+				<Flex justify='center' flexDirection='column' position='relative' borderRadius='50px' overflow='hidden'>
+					<Box position='absolute' textAlign='left' zIndex={5} pl={6}>
+						<Text textTransform='uppercase' fontWeight='bold' color='green.600'>
+							{page.caption}
+						</Text>
+						<Heading color='white' fontSize='5xl'>
+							{page.heading2}
+						</Heading>
+						<Heading color='white' fontSize='7xl' letterSpacing={5.3}>
+							{page.heading1}
+						</Heading>
+						<Text color='white' mb='6' maxW='50%'>
+							{page.subheading}
+						</Text>
+						<Button
+							size='lg'
+							leftIcon={<GiRaven size={20} />}
+							display={{ base: 'none', md: 'inline-flex' }}
+							fontSize={'md'}
+							fontWeight={600}
+							color={useColorModeValue('white', 'black')}
+							bg={useColorModeValue('blackAlpha.800', 'white')}
+							href={'#'}
+							_hover={{
+								color: 'white',
+								bg: 'blackAlpha.700',
+							}}
+						>
+							Join The Watch
+						</Button>
+					</Box>
+					<ImageSlider width={1152} height={756} images={page.heroSlider?.slideItems} />
+				</Flex>
+			)}
+
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {
 					return null;

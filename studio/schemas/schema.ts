@@ -21,6 +21,7 @@ import marquee from './sections/marquee';
 import quote from './sections/quote';
 import editions from './sections/editions';
 import tableBuilder from './sections/tableBuilder';
+import blockBanner from './sections/block-banner';
 
 // pages/documents
 import destination from './documents/destination';
@@ -77,6 +78,7 @@ export default createSchema({
 		guide,
 		video,
 		destination,
+		blockBanner,
 		about,
 		modpack,
 		figure,

@@ -8,4 +8,5 @@ export const contentObjects = [
 	{ type: 'editions' },
 	{ type: 'youtube' },
 	{ type: 'tableBuilder' },
+	{ type: 'blockBanner' },
 ];

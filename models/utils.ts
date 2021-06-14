@@ -10,3 +10,17 @@ export type SanityReference<_T> = {
 };
 
 export type SanityAsset = SanityReference<any>;
+
+export enum Regions {
+	CROWNLANDS = 'crownlands',
+	THEWALL = 'theWall',
+	DORNE = 'dorne',
+	RIVERLANDS = 'riverlands',
+	NORTH = 'north',
+	VALE = 'vale',
+	IRONISLANDS = 'ironIslands',
+	WESTERLANDS = 'westerlands',
+	STORMLANDS = 'stormlands',
+	REACH = 'reach',
+	BEYONDTHEWALL = 'beyondTheWall',
+}

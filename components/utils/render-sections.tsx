@@ -1,5 +1,15 @@
 import { Sections } from '@/models/sections';
-import { BlockContent, Grid, MainImage, Spacer, Youtube, Marquee, Quote, Editions } from '@/components/sections';
+import {
+	BlockContent,
+	Grid,
+	MainImage,
+	Spacer,
+	Youtube,
+	Marquee,
+	Quote,
+	Editions,
+	BlockBanner,
+} from '@/components/sections';
 
 const RenderSection = ({ section }: { section: Sections }) => {
 	switch (section._type) {
@@ -19,6 +29,8 @@ const RenderSection = ({ section }: { section: Sections }) => {
 			return <Quote data={section} />;
 		case 'editions':
 			return <Editions data={section} />;
+		case 'blockBanner':
+			return <BlockBanner data={section} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 
