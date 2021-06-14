@@ -1,5 +1,5 @@
 import { groq } from 'next-sanity';
-import { blockContent, grid, mainImage, spacer, youtube, marquee, quote, editions } from './fragments';
+import { blockContent, grid, mainImage, spacer, youtube, marquee, quote, editions, blockBanner } from './fragments';
 
 export const pageQuery = groq`
 	*[_type == $type && slug.current == $slug][0] {
@@ -12,7 +12,8 @@ export const pageQuery = groq`
 			${youtube},
 			${marquee},
 			${quote},
-			${editions}
+			${editions},
+			${blockBanner}
 		}
 	}
 `;

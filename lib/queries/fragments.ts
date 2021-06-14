@@ -56,3 +56,9 @@ export const editions = `
 		...
 	}
 `;
+
+export const blockBanner = `
+	_type == 'blockBanner' => {
+		...
+	}
+`;

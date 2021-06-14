@@ -26,9 +26,11 @@ const Marquee = ({ data }: Props) => {
 
 	useEffect(() => {
 		if (!embla) return;
+
+		// console.log(embla);
 	}, [embla]);
 
-	const regionDictionary = groupBy(data.marqueeItems, (o) => o.destination.region);
+	const regionDictionary = groupBy(data.marqueeItems, (o) => o?.destination?.region);
 
 	return (
 		<Flex flexDirection='column' className={`${data?._type || 'marquee'}__section`} justify='center' align='center'>
@@ -36,27 +38,47 @@ const Marquee = ({ data }: Props) => {
 				{data.heading}
 			</Heading>
 
-			<Box className='embla' position='relative' maxWidth={'100vw'} mx='auto'>
-				<Box className='embla__viewport' ref={viewportRef} overflow='hidden' width='100%' cursor='grab'>
-					<Flex className='embla__container' userSelect='none'>
-						{regionDictionary['theWall'].map((item, i) => (
-							<Box position='relative' overflow='hidden' minW='50%' className='embla__slide' key={i}>
-								<Box className='embla__slide__inner' position='relative' overflow='hidden' height={350}>
-									<Image
-										width={350}
-										height={350}
-										className='embla__slide__img'
-										src={urlFor(item.marqueeImage.asset).url()!}
-										alt='A cool cat.'
-									/>
+			<Tabs maxW='100%' isLazy lazyBehavior='unmount'>
+				<TabList>
+					{Object.keys(regionDictionary).map((item, index) => (
+						<Tab key={index}>
+							<Text>{nameFormatter(item)}</Text>
+						</Tab>
+					))}
+				</TabList>
+				<TabPanels>
+					{Object.keys(regionDictionary).map((region, index) => (
+						<TabPanel key={index}>
+							<Box className='embla' position='relative' maxWidth={'100vw'} mx='auto'>
+								<Box className='embla__viewport' ref={viewportRef} overflow='hidden' width='100%' cursor='grab'>
+									<Flex className='embla__container' userSelect='none'>
+										{regionDictionary[region].map((item, i) => (
+											<Box position='relative' overflow='hidden' minW='350px' className='embla__slide' key={i}>
+												<Box
+													className='embla__slide__inner'
+													position='relative'
+													overflow='hidden'
+													width={350}
+													height={350}
+												>
+													<Image
+														loader={myLoader}
+														width={350}
+														height={350}
+														className='embla__slide__img'
+														src={urlFor(item.marqueeImage.asset).url()!}
+														alt='A cool cat.'
+													/>
+												</Box>
+											</Box>
+										))}
+									</Flex>
 								</Box>
 							</Box>
-						))}
-					</Flex>
-				</Box>
-				{/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-				<NextButton onClick={scrollNext} enabled={nextBtnEnabled} /> */}
-			</Box>
+						</TabPanel>
+					))}
+				</TabPanels>
+			</Tabs>
 			{/* <Tabs width='100%' align='center'>
 				<TabList>
 					{Object.keys(regionDictionary).map((item, index) => (
