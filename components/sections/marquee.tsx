@@ -1,6 +1,6 @@
 import { Flex, Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel, Text } from '@chakra-ui/react';
 import { Marquee as MarqueeType } from '@/models/sections/marquee';
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 import { groupBy } from 'lodash';
@@ -34,15 +34,22 @@ const Marquee = ({ data }: Props) => {
 
 	return (
 		<Flex flexDirection='column' className={`${data?._type || 'marquee'}__section`} justify='center' align='center'>
-			<Heading textAlign='center' fontSize='5xl'>
+			<Heading as='h2' textAlign='center' fontSize='5xl' mb={8} fontWeight={800}>
 				{data.heading}
 			</Heading>
 
-			<Tabs maxW='100%' isLazy lazyBehavior='unmount'>
+			<Tabs maxW='100%' align='center' isLazy lazyBehavior='unmount' variant='unstyled' size='sm'>
 				<TabList>
 					{Object.keys(regionDictionary).map((item, index) => (
-						<Tab key={index}>
-							<Text>{nameFormatter(item)}</Text>
+						<Tab
+							key={index}
+							_selected={{ color: 'black' }}
+							_active={{ color: 'black' }}
+							_hover={{ color: 'black' }}
+							color='gray.400'
+							fontWeight={600}
+						>
+							{nameFormatter(item)}
 						</Tab>
 					))}
 				</TabList>
@@ -50,10 +57,19 @@ const Marquee = ({ data }: Props) => {
 					{Object.keys(regionDictionary).map((region, index) => (
 						<TabPanel key={index}>
 							<Box className='embla' position='relative' maxWidth={'100vw'} mx='auto'>
-								<Box className='embla__viewport' ref={viewportRef} overflow='hidden' width='100%' cursor='grab'>
-									<Flex className='embla__container' userSelect='none'>
+								<Box className='embla__viewport' ref={viewportRef} width='100%' cursor='grab'>
+									<Flex className='embla__container' userSelect='none' ml={-3}>
 										{regionDictionary[region].map((item, i) => (
-											<Box position='relative' overflow='hidden' minW='350px' className='embla__slide' key={i}>
+											<Box
+												position='relative'
+												overflow='hidden'
+												minW='350px'
+												className='embla__slide'
+												ml={3}
+												key={i}
+												borderRadius='lg'
+												shadow='lg'
+											>
 												<Box
 													className='embla__slide__inner'
 													position='relative'
@@ -66,10 +82,30 @@ const Marquee = ({ data }: Props) => {
 														width={350}
 														height={350}
 														className='embla__slide__img'
-														src={urlFor(item.marqueeImage.asset).url()!}
+														src={urlFor(item?.marqueeImage?.asset)?.url()! || ''}
 														alt='A cool cat.'
 													/>
 												</Box>
+												{item.destination.name && (
+													<Flex
+														flexDirection='row'
+														align='center'
+														// height={'78px'}
+														bg='white'
+														width={350}
+														borderTopLeftRadius={0}
+														borderTopRightRadius={0}
+														borderBottomLeftRadius='lg'
+														borderBottomRightRadius='lg'
+														position='absolute'
+														bottom={0}
+														left={0}
+													>
+														<Box p={3}>
+															<Heading size='md'>{item.destination?.name}</Heading>
+														</Box>
+													</Flex>
+												)}
 											</Box>
 										))}
 									</Flex>
@@ -79,90 +115,8 @@ const Marquee = ({ data }: Props) => {
 					))}
 				</TabPanels>
 			</Tabs>
-			{/* <Tabs width='100%' align='center'>
-				<TabList>
-					{Object.keys(regionDictionary).map((item, index) => (
-						<Tab key={index}>
-							<Text>{nameFormatter(item)}</Text>
-						</Tab>
-					))}
-				</TabList>
-				<TabPanels>
-					{Object.keys(regionDictionary).map((item, index) => (
-						<TabPanel key={index}>
-							<Box className='embla' width='100%' bg='white' position='relative' maxW='100%' mx='auto'>
-								<Box className='embla__viewport' overflow='hidden' width='100%' ref={viewportRef}>
-									<Flex className='embla__container' userSelect='none'>
-										{regionDictionary[item].map((item) => (
-											<Box className='embla__slide' idth={350} height={350} position='relative' mx={2} key={item._key}>
-												<Box
-													width={350}
-													height={350}
-													className='embla__slide__inner'
-													position='relative'
-													overflow='hidden'
-												>
-													<Image
-														className='embla__slide__img'
-														loader={myLoader}
-														width={350}
-														height={350}
-														src={urlFor(item.marqueeImage.asset).url()!}
-														alt={item?.destination?._ref || 'WesterosCraft destination'}
-													/>
-												</Box>
-											</Box>
-										))}
-									</Flex>
-								</Box>
-							</Box>
-						</TabPanel>
-					))}
-				</TabPanels>
-			</Tabs> */}
 		</Flex>
 	);
 };
 
 export default Marquee;
-
-// <Marquee>
-// {marquee.map((item, i) => (
-//   <Box
-// 	mx={3}
-// 	display="block"
-// 	width={350}
-// 	height={350}
-// 	key={i}
-// 	sx={{
-// 	  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);'
-// 	}}>
-// 	<Image
-// 	  loader={myLoader}
-// 	  src={`${urlFor(item.marqueeImage.asset._ref).url()}`}
-// 	  width={350}
-// 	  height={350}
-// 	/>
-
-// 	<Text color="white">{item.destination.name}</Text>
-//   </Box>
-// ))}
-
-//    <Box
-//      className="marquee"
-//       position="relative"
-//       width="100vw"
-//       maxWidth="100%"
-//       height={350}
-//       overflowX="hidden">
-//     <motion.div
-//       className="track"
-//       variants={marqueeVariants}
-//       animate="animate"
-//       style={{
-//         display: 'flex',
-//         flexDirection: 'row'
-//       }}>
-//       {children}
-//     </motion.div>
-//     </Box>

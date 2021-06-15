@@ -18,9 +18,21 @@ export default {
 			type: 'array',
 			of: [
 				{
-					title: 'Label',
-					name: 'label',
-					type: 'string',
+					type: 'object',
+					name: 'blockItem',
+					title: 'Block Item',
+					fields: [
+						{
+							title: 'Label',
+							name: 'label',
+							type: 'string',
+						},
+						{
+							name: 'link',
+							title: 'Link',
+							type: 'url',
+						},
+					],
 				},
 			],
 		},

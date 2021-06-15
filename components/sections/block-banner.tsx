@@ -10,15 +10,26 @@ type Props = {
 };
 
 const BlockBanner = ({ data }: Props) => {
-	console.log('👉 ~ BlockBanner ~ data', data);
 	return (
 		<Flex flexDirection='row' flexBasis='0 1 100%' justify='center' align='center'>
-			<Box>
-				<Heading maxW={360}>{data.heading || ''}</Heading>
+			<Box pr={2}>
+				<Heading as='h3' maxW={360} fontWeight={800}>
+					{data.heading || ''}
+				</Heading>
 			</Box>
-			<Stack spacing='24px' direction={['column', 'row']}>
+			<Stack spacing='24px' direction={['column', null, 'row']}>
 				{data.blocks.map((block) => (
-					<Flex borderRadius='md' bg='red' justify='center' align='center' width={180} height={180} p={3}>
+					<Flex
+						border='1px solid'
+						shadow={'xl'}
+						borderRadius='md'
+						bg='white'
+						justify='center'
+						align='center'
+						width={[160, null, 180]}
+						height={[160, null, 180]}
+						p={[2, null, 3]}
+					>
 						<Text fontWeight={500}>{block.label}</Text>
 					</Flex>
 				))}

@@ -27,7 +27,7 @@ const Layout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
 					as='main'
 					maxWidth={width}
 					width='100%'
-					padding={6}
+					padding={[4, 6]}
 					alignSelf='center'
 					justifyContent='center'
 					flex='1 0 auto'

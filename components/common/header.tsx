@@ -38,8 +38,6 @@ export default function WithSubnavigation({
 	return (
 		<Box maxW={maxWidth} w={'100%'} marginX='auto'>
 			<Flex
-				bg={useColorModeValue('white', 'gray.800')}
-				color={useColorModeValue('gray.600', 'white')}
 				minH={'60px'}
 				py={{ base: 2 }}
 				px={{ base: 4 }}

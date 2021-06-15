@@ -9,7 +9,17 @@ import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
-import { Heading, Text, Box, Button, Flex, useColorModeValue } from '@chakra-ui/react';
+import {
+	Heading,
+	Text,
+	Box,
+	Button,
+	Flex,
+	useColorModeValue,
+	AspectRatio,
+	Container,
+	SimpleGrid,
+} from '@chakra-ui/react';
 import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
@@ -53,19 +63,21 @@ const Index = ({ pageData, siteSettings }: Props) => {
 		<Layout meta={page?.meta} siteSettings={siteSettings}>
 			{page.heroSlider?.slideItems && (
 				<Flex justify='center' flexDirection='column' position='relative' borderRadius='50px' overflow='hidden'>
-					<Box position='absolute' textAlign='left' zIndex={5} pl={6}>
-						<Text textTransform='uppercase' fontWeight='bold' color='green.600'>
-							{page.caption}
-						</Text>
-						<Heading color='white' fontSize='5xl'>
-							{page.heading2}
-						</Heading>
-						<Heading color='white' fontSize='7xl' letterSpacing={5.3}>
-							{page.heading1}
-						</Heading>
-						<Text color='white' mb='6' maxW='50%'>
-							{page.subheading}
-						</Text>
+					<Box position='absolute' textAlign='left' zIndex='docked' pl={6}>
+						<Box userSelect='none'>
+							<Text textTransform='uppercase' fontWeight='bold' color='green.500'>
+								{page.caption}
+							</Text>
+							<Heading as='h2' color='white' fontSize='5xl' fontWeight={800}>
+								{page.heading2}
+							</Heading>
+							<Heading as='h1' color='white' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
+								{page.heading1}
+							</Heading>
+							<Text color='white' mb='6' maxW='50%'>
+								{page.subheading}
+							</Text>
+						</Box>
 						<Button
 							size='lg'
 							leftIcon={<GiRaven size={20} />}
@@ -86,6 +98,56 @@ const Index = ({ pageData, siteSettings }: Props) => {
 					<ImageSlider width={1152} height={756} images={page.heroSlider?.slideItems} />
 				</Flex>
 			)}
+
+			<Box width='100%' centerContent>
+				<SimpleGrid templateColumns='360px 1fr' gap='64px'>
+					<Box>
+						<Heading as='h2'>Build Saas with ease!</Heading>
+						<Text>aksjnckjansjckn</Text>
+						<Button
+							size='lg'
+							leftIcon={<GiRaven size={20} />}
+							display={{ base: 'none', md: 'inline-flex' }}
+							fontSize={'md'}
+							fontWeight={600}
+							color={useColorModeValue('white', 'black')}
+							bg={useColorModeValue('blackAlpha.800', 'white')}
+							href={'#'}
+							_hover={{
+								color: 'white',
+								bg: 'blackAlpha.700',
+							}}
+						>
+							Join The Watch
+						</Button>
+					</Box>
+					<Box>
+						<AspectRatio ratio={4 / 3} maxH={480}>
+							<iframe src='https://www.youtube.com/watch?v=Iuyf-naJ6pY' />
+						</AspectRatio>
+						<SimpleGrid gap={6}>
+							<Box>
+								<Text>dsfadf</Text>
+								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
+							</Box>
+							<Box>
+								<Text>dsfadf</Text>
+								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
+							</Box>
+							<Box>
+								<Text>dsfadf</Text>
+								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
+							</Box>
+						</SimpleGrid>
+					</Box>
+				</SimpleGrid>
+			</Box>
+
+			{/* <Box maxW={556}>
+				<AspectRatio ratio={9 / 16}>
+					<iframe src='https://mc.westeroscraft.com' />
+				</AspectRatio>
+			</Box> */}
 
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {

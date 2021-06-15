@@ -33,7 +33,7 @@ const ImageSlider = ({ images, width = 1152, height = 756 }: Props) => {
 	}, [embla, onSelect]);
 
 	const myLoader = ({ src, width }: any) => {
-		return `${src}?fit=crop&h=${width}&w=${width}&q=100`;
+		return `${src}?fit=crop&w=${width}&q=100`;
 	};
 
 	return (
