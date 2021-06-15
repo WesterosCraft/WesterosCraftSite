@@ -79,7 +79,7 @@ const Marquee = ({ data }: Props) => {
 												>
 													<Image
 														src={urlFor(item?.marqueeImage?.asset)?.url()!}
-														// placeholder='blur'
+														placeholder='empty'
 														loader={myLoader}
 														width={350}
 														height={350}

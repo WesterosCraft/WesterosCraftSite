@@ -6,5 +6,11 @@ export default {
 	type: 'object',
 	icon: RiLayoutColumnFill,
 	description: 'A two column layout with a video and description',
-	fields: [{}],
+	fields: [
+		{
+			type: 'string',
+			title: 'blah',
+			name: 'blah',
+		},
+	],
 };
