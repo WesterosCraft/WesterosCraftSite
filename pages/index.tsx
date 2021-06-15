@@ -99,10 +99,12 @@ const Index = ({ pageData, siteSettings }: Props) => {
 				</Flex>
 			)}
 
-			<Box width='100%' centerContent>
+			<Box width='100%' centerContent px={8}>
 				<SimpleGrid templateColumns='360px 1fr' gap='64px'>
 					<Box>
-						<Heading as='h2'>Build Saas with ease!</Heading>
+						<Heading as='h2' fontSize='5xl' fontWeight={800}>
+							Explore Westeros with ease!
+						</Heading>
 						<Text>aksjnckjansjckn</Text>
 						<Button
 							size='lg'
@@ -125,17 +127,23 @@ const Index = ({ pageData, siteSettings }: Props) => {
 						<AspectRatio ratio={4 / 3} maxH={480}>
 							<iframe src='https://www.youtube.com/watch?v=Iuyf-naJ6pY' />
 						</AspectRatio>
-						<SimpleGrid gap={6}>
+						<SimpleGrid gap={6} columns={3} mt={10}>
 							<Box>
-								<Text>dsfadf</Text>
+								<Text fontWeight='bold' mb={1}>
+									dsfadf
+								</Text>
 								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
 							</Box>
 							<Box>
-								<Text>dsfadf</Text>
+								<Text fontWeight='bold' mb={1}>
+									dsfadf
+								</Text>
 								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
 							</Box>
 							<Box>
-								<Text>dsfadf</Text>
+								<Text fontWeight='bold' mb={1}>
+									dsfadf
+								</Text>
 								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
 							</Box>
 						</SimpleGrid>

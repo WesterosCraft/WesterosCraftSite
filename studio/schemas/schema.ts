@@ -22,6 +22,7 @@ import quote from './sections/quote';
 import editions from './sections/editions';
 import tableBuilder from './sections/tableBuilder';
 import blockBanner from './sections/block-banner';
+import columnWithVideo from './sections/columnWithVideo';
 
 // pages/documents
 import destination from './documents/destination';
@@ -61,6 +62,7 @@ export default createSchema({
 		quote,
 		editions,
 		siteSettings,
+		columnWithVideo,
 		navigationSection,
 		metaFields,
 		columns,
