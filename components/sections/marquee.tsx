@@ -78,11 +78,12 @@ const Marquee = ({ data }: Props) => {
 													height={350}
 												>
 													<Image
+														src={urlFor(item?.marqueeImage?.asset)?.url()!}
+														// placeholder='blur'
 														loader={myLoader}
 														width={350}
 														height={350}
 														className='embla__slide__img'
-														src={urlFor(item?.marqueeImage?.asset)?.url()! || ''}
 														alt='A cool cat.'
 													/>
 												</Box>
