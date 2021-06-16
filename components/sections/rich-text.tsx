@@ -1,13 +1,14 @@
+/* eslint-disable react/display-name */
 import NextLink from 'next/link';
-import {Box, Flex, Heading, Link, Text} from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import BlockContent from '@sanity/block-content-to-react';
-import {IoIosQuote} from 'react-icons/io';
-import {BlockContent as BlockContentType} from '@/models/sections/block-content';
-import {SimpleBlockContent} from '@/models/objects/simple-block-content';
-import {MainImage} from '@/components/sections';
+import { IoIosQuote } from 'react-icons/io';
+import { RichText as RichTextType } from '@/models/sections/rich-text';
+import { SimpleBlockContent } from '@/models/objects/simple-block-content';
+import { MainImage } from '@/components/sections';
 
 type Props = {
-	data: BlockContentType | SimpleBlockContent;
+	data: RichTextType | SimpleBlockContent;
 };
 
 const resolveSize = (style: string | boolean) => {
@@ -33,7 +34,7 @@ const resolveSize = (style: string | boolean) => {
 const serializers = {
 	types: {
 		block: (props: any) => {
-			const {style = 'normal'} = props.node;
+			const { style = 'normal' } = props.node;
 			const center = /center/.test(style);
 			const heading = /^h\d/.test(style) && style.match(/^h\d/)[0];
 			const size = resolveSize(heading);
@@ -61,7 +62,7 @@ const serializers = {
 
 			return <Text textAlign={center ? 'center' : 'left'}>{props.children}</Text>;
 		},
-		image: (props: any) => <MainImage data={props.node} width={960} height={600} />
+		image: (props: any) => <MainImage data={props.node} width={960} height={600} />,
 	},
 	marks: {
 		link: (props: any) => (
@@ -69,10 +70,10 @@ const serializers = {
 				<Link>{props.children}</Link>
 			</NextLink>
 		),
-		italic: (props: any) => <Text as='i'>{props.children}</Text>
-	}
+		italic: (props: any) => <Text as='i'>{props.children}</Text>,
+	},
 };
 
-const TextBlock = ({data}: Props) => <BlockContent blocks={data?.text} serializers={serializers} />;
+const TextBlock = ({ data }: Props) => <BlockContent blocks={data?.text} serializers={serializers} />;
 
 export default TextBlock;

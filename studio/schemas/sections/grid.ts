@@ -1,4 +1,4 @@
-import {RiLayoutGridLine} from 'react-icons/ri';
+import { RiLayoutGridLine } from 'react-icons/ri';
 
 export default {
 	name: 'grid',
@@ -13,29 +13,29 @@ export default {
 			title: 'Columns',
 			options: {
 				collapsible: true,
-				collapsed: false
-			}
+				collapsed: false,
+			},
 		},
 		{
 			name: 'items',
 			title: 'Items',
 			options: {
 				collapsible: true,
-				collapsed: false
-			}
-		}
+				collapsed: false,
+			},
+		},
 	],
 	fields: [
 		{
 			title: 'Title',
 			name: 'title',
-			type: 'string'
+			type: 'string',
 		},
 		{
 			name: 'columns',
 			title: 'Columns',
 			type: 'columns',
-			fieldset: 'columns'
+			fieldset: 'columns',
 		},
 		{
 			name: 'items',
@@ -43,19 +43,19 @@ export default {
 			fieldset: 'items',
 			type: 'array',
 			options: {
-				layout: 'grid'
+				layout: 'grid',
 			},
-			of: [{type: 'mainImage'}, {type: 'blockContent'}, {type: 'youtube'}]
-		}
+			of: [{ type: 'mainImage' }, { type: 'richText' }, { type: 'youtube' }],
+		},
 	],
 	preview: {
 		select: {
-			title: 'title'
+			title: 'title',
 		},
-		prepare({title}: {title: string}) {
+		prepare({ title }: { title: string }) {
 			return {
-				title: `${title}`
+				title: `${title}`,
 			};
-		}
-	}
+		},
+	},
 };

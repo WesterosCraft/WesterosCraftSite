@@ -1,6 +1,6 @@
 import { Sections } from '@/models/sections';
 import {
-	BlockContent,
+	RichText,
 	Grid,
 	MainImage,
 	Spacer,
@@ -13,8 +13,8 @@ import {
 
 const RenderSection = ({ section }: { section: Sections }) => {
 	switch (section._type) {
-		case 'blockContent':
-			return <BlockContent data={section} />;
+		case 'richText':
+			return <RichText data={section} />;
 		case 'grid':
 			return <Grid data={section} />;
 		case 'mainImage':

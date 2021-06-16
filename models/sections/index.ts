@@ -1,6 +1,6 @@
 import { Quote } from './quote';
 import { Marquee } from './marquee';
-import { BlockContent } from './block-content';
+import { RichText } from './rich-text';
 import { Grid } from './grid';
 import { Image } from './image';
 import { Spacer } from './spacer';
@@ -11,7 +11,7 @@ import { BlockBanner } from './block-banner';
 
 export type Sections =
 	| BlockBanner
-	| BlockContent
+	| RichText
 	| ImageSlider
 	| Grid
 	| Image

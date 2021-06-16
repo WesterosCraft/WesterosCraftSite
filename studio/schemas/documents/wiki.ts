@@ -1,4 +1,5 @@
 import slug from 'slugify';
+import { contentObjects } from '../contentObjects';
 import { fieldsets } from '../fieldsets';
 
 export default {
@@ -6,7 +7,7 @@ export default {
 	name: 'wiki',
 	type: 'document',
 	fieldsets: [...fieldsets],
-	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fields: [
 		{
 			name: 'title',
@@ -45,7 +46,7 @@ export default {
 			type: 'array',
 			title: 'Page builder',
 			fieldset: 'content',
-			of: [{ type: 'twoColumnText' }, { type: 'documentGrid' }, { type: 'richText' }, { type: 'spacer' }],
+			of: contentObjects,
 		},
 	],
 };

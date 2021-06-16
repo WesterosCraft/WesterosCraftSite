@@ -1,11 +1,11 @@
 import { groq } from 'next-sanity';
-import { blockContent, grid, mainImage, spacer, youtube, marquee, quote, editions, blockBanner } from './fragments';
+import { richText, grid, mainImage, spacer, youtube, marquee, quote, editions, blockBanner } from './fragments';
 
 export const pageQuery = groq`
 	*[_type == $type && slug.current == $slug][0] {
 		...,
 		content[] {
-			${blockContent},
+			${richText},
 			${grid},
 			${mainImage},
 			${spacer},

@@ -6,5 +6,6 @@ import Layout from './layout';
 import MainNavigation from './main-navigation';
 import Seo from './seo';
 import WikiLayout from './wiki-layout';
+import WikiHeader from './wiki-header';
 
-export { DarkModeSwitch, Footer, Head, Header, Layout, MainNavigation, Seo, WikiLayout };
+export { DarkModeSwitch, Footer, Head, Header, Layout, MainNavigation, Seo, WikiLayout, WikiHeader };

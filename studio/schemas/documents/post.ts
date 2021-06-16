@@ -1,6 +1,6 @@
 import slug from 'slugify';
-import {format} from 'date-fns';
-import {RiArticleLine} from 'react-icons/ri';
+import { format } from 'date-fns';
+import { RiArticleLine } from 'react-icons/ri';
 
 export default {
 	name: 'post',
@@ -13,33 +13,33 @@ export default {
 			title: 'General',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
+				collapsed: true,
+			},
 		},
 		{
 			name: 'meta',
 			title: 'Meta infomation',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
+				collapsed: true,
+			},
 		},
 		{
 			name: 'excerpt',
 			title: 'Excerpt',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
+				collapsed: true,
+			},
 		},
 		{
 			name: 'content',
 			title: 'Content',
 			options: {
 				collapsible: true,
-				collapsed: true
-			}
-		}
+				collapsed: true,
+			},
+		},
 	],
 	fields: [
 		{
@@ -48,7 +48,7 @@ export default {
 			type: 'string',
 			description: 'Title of the page',
 			fieldset: 'general',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'slug',
@@ -57,24 +57,24 @@ export default {
 			type: 'slug',
 			options: {
 				source: 'title',
-				slugify: (input: string) => slug(input, {lower: true})
+				slugify: (input: string) => slug(input, { lower: true }),
 			},
 			fieldset: 'general',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			type: 'metaFields',
 			name: 'meta',
-			fieldset: 'meta'
+			fieldset: 'meta',
 		},
 		{
 			name: 'author',
 			title: 'Author',
 			type: 'reference',
 			description: 'Select author for post',
-			to: [{type: 'person'}],
+			to: [{ type: 'person' }],
 			fieldset: 'meta',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'publishedAt',
@@ -82,7 +82,7 @@ export default {
 			description: 'You can use this field to schedule post where you show them',
 			type: 'datetime',
 			fieldset: 'meta',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'keywords',
@@ -90,11 +90,11 @@ export default {
 			title: 'Keywords',
 			description: 'Tags for your post',
 			fieldset: 'meta',
-			of: [{type: 'string'}],
+			of: [{ type: 'string' }],
 			options: {
-				layout: 'tags'
+				layout: 'tags',
 			},
-			validation: (Rule: any) => Rule.unique()
+			validation: (Rule: any) => Rule.unique(),
 		},
 		{
 			name: 'excerpt',
@@ -102,14 +102,14 @@ export default {
 			title: 'Excerpt',
 			description: 'This ends up on summary pages, when people share your post in social media.',
 			fieldset: 'excerpt',
-			validation: (Rule: any) => Rule.required()
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'featuredImage',
 			title: 'Featured Image',
 			description: 'Image that is displayed in posts lists',
 			fieldset: 'excerpt',
-			type: 'mainImage'
+			type: 'mainImage',
 		},
 		{
 			name: 'content',
@@ -117,22 +117,22 @@ export default {
 			title: 'Content',
 			description: 'Add, edit, and reorder sections with content',
 			fieldset: 'content',
-			of: [{type: 'grid'}, {type: 'mainImage'}, {type: 'blockContent'}, {type: 'spacer'}, {type: 'youtube'}]
-		}
+			of: [{ type: 'grid' }, { type: 'mainImage' }, { type: 'richText' }, { type: 'spacer' }, { type: 'youtube' }],
+		},
 	],
 	initialValue: () => ({
-		publishedAt: new Date().toISOString()
+		publishedAt: new Date().toISOString(),
 	}),
 	preview: {
 		select: {
 			title: 'title',
-			publishedAt: 'publishedAt'
+			publishedAt: 'publishedAt',
 		},
-		prepare({title, publishedAt}: {title: string; publishedAt: string}) {
+		prepare({ title, publishedAt }: { title: string; publishedAt: string }) {
 			return {
 				title: `${title}`,
-				subtitle: format(new Date(publishedAt), 'MMM dd yyyy HH:mm')
+				subtitle: format(new Date(publishedAt), 'MMM dd yyyy HH:mm'),
 			};
-		}
-	}
+		},
+	},
 };

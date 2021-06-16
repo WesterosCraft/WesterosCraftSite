@@ -2,7 +2,6 @@ import { GetStaticProps } from 'next';
 import { pageQuery, siteSettingsQuery } from '@/lib/queries';
 import { SiteSettings } from '@/models/site-settings';
 import { Heading, Box, Flex, Text, Button, Input } from '@chakra-ui/react';
-import { WikiLayout } from '@/components/common';
 import { useRouter } from 'next/router';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import Error from 'next/error';
@@ -10,7 +9,7 @@ import { RenderSection } from '@/components/utils';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
-import { Layout } from '@/components/common';
+import { Layout, WikiLayout } from '@/components/common';
 
 // import { WikiLayout } from '../components/templates/wikiLayout';
 // import { SliceZone } from '../components/slices/sliceZone';
@@ -52,7 +51,7 @@ const WikiPage = ({ pageData, siteSettings }: Props) => {
 
 	return (
 		<Layout meta={page?.meta} siteSettings={siteSettings}>
-			layout
+			<WikiLayout>la la la</WikiLayout>
 		</Layout>
 	);
 };

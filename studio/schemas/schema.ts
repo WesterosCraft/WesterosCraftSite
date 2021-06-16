@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prefer-spread */
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 import siteSettings from './documents/site-settings';
@@ -12,7 +11,7 @@ import socialFields from './objects/social-fields';
 import simpleBlockContent from './objects/simple-block-content';
 
 // sections
-import blockContent from './sections/block-content';
+import richText from './sections/rich-text';
 import grid from './sections/grid';
 import mainImage from './sections/main-image';
 import spacer from './sections/spacer';
@@ -38,13 +37,11 @@ import downloads from './documents/downloads';
 // objects
 import figure from './objects/figure';
 import video from './objects/video';
-import simpleRichText from './objects/simpleRichText';
 import callToAction from './objects/callToAction';
 import documentGrid from './objects/documentGrid';
 import imageGallery from './objects/imageGallery';
 import accordion from './objects/accordion';
 import accordionContent from './objects/accordionContent';
-import richText from './objects/richText';
 import twoColumnText from './objects/twoColumnText';
 import destinationSlider from './objects/destinationSlider';
 import links from './objects/links';
@@ -73,7 +70,6 @@ export default createSchema({
 		grid,
 		mainImage,
 		socialFields,
-		blockContent,
 		spacer,
 		youtube,
 		home,
@@ -84,7 +80,6 @@ export default createSchema({
 		about,
 		modpack,
 		figure,
-		simpleRichText,
 		callToAction,
 		documentGrid,
 		imageGallery,

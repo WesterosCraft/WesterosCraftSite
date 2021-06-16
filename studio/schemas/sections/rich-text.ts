@@ -4,7 +4,7 @@ import CenterText from '../../src/components/block-content/centered-styles';
 
 export default {
 	title: 'Block Content',
-	name: 'blockContent',
+	name: 'richText',
 	description: 'Text Block',
 	type: 'object',
 	hidden: false,

@@ -19,7 +19,7 @@ const getTag = (style: string) => {
 	}
 };
 
-const BlockContent: React.FunctionComponent<Props> = (props) => {
+const RichText: React.FunctionComponent<Props> = (props) => {
 	if (props.children && !props.style) {
 		return <span>{props.children}</span>;
 	}
@@ -43,4 +43,4 @@ const BlockContent: React.FunctionComponent<Props> = (props) => {
 	);
 };
 
-export default BlockContent;
+export default RichText;

@@ -1,6 +1,6 @@
-import {Image} from './image';
-import {BlockContent} from './block-content';
-import {Youtube} from './youtube';
+import { Image } from './image';
+import { RichText } from './rich-text';
+import { Youtube } from './youtube';
 
 export interface Grid {
 	_type: 'grid';
@@ -12,5 +12,5 @@ export interface Grid {
 		medium: string;
 		large: string;
 	};
-	items?: Array<Image | BlockContent | Youtube>;
+	items?: Array<Image | RichText | Youtube>;
 }

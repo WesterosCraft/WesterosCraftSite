@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { render, cleanup } from '@testing-library/react';
-import { BlockContent } from '@/components/sections';
+import { RichText } from '@/components/sections';
 import { Header } from '@/components/common';
 import theme from '../constants/theme';
 
@@ -17,7 +17,7 @@ describe('Render textBlock', () => {
 	test('Renders a text ', async () => {
 		const data = {
 			_key: '5df1bc457b45',
-			_type: 'blockContent' as const,
+			_type: 'richText' as const,
 			text: [
 				{
 					_key: 'ab9801d55f96',
@@ -27,7 +27,7 @@ describe('Render textBlock', () => {
 							_key: 'e1c46425ef59',
 							_type: 'span',
 							marks: [],
-							text: 'This is BlockContent',
+							text: 'This is RichText',
 						},
 					],
 					markDefs: [],
@@ -38,18 +38,18 @@ describe('Render textBlock', () => {
 
 		const { getByText } = render(
 			<ChakraProvider theme={theme}>
-				<BlockContent data={data} />
+				<RichText data={data} />
 			</ChakraProvider>
 		);
 
-		const testSentence = getByText('This is BlockContent');
+		const testSentence = getByText('This is RichText');
 		expect(testSentence).toBeInTheDocument();
 	});
 
 	test('Renders a link', async () => {
 		const data = {
 			_key: '6b7e1f02ca47',
-			_type: 'blockContent' as const,
+			_type: 'richText' as const,
 			text: [
 				{
 					_key: 'af76f863b70c',
@@ -76,7 +76,7 @@ describe('Render textBlock', () => {
 
 		const { getByText } = render(
 			<ChakraProvider theme={theme}>
-				<BlockContent data={data} />
+				<RichText data={data} />
 			</ChakraProvider>
 		);
 

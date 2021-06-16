@@ -17,8 +17,8 @@ export const spacer = `
 	}
 `;
 
-export const blockContent = `
-	_type == 'blockContent' => {
+export const richText = `
+	_type == 'richText' => {
 		...
 	}
 `;

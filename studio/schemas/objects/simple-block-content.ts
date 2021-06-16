@@ -1,4 +1,4 @@
-import {RiFileTextLine} from 'react-icons/ri';
+import { RiFileTextLine } from 'react-icons/ri';
 
 export default {
 	title: 'Simple Block Content',
@@ -15,17 +15,17 @@ export default {
 				{
 					title: 'Block',
 					type: 'block',
-					styles: [{title: 'Normal', value: 'normal'}],
+					styles: [{ title: 'Normal', value: 'normal' }],
 					marks: {
 						decorators: [
-							{value: 'strong', title: 'Strong'},
-							{value: 'italic', title: 'Italic'},
-							{value: 'underline', title: 'Underline'}
+							{ value: 'strong', title: 'Strong' },
+							{ value: 'italic', title: 'Italic' },
+							{ value: 'underline', title: 'Underline' },
 						],
-						annotations: [{type: 'link'}]
-					}
-				}
-			]
-		}
-	]
+						annotations: [{ type: 'link' }],
+					},
+				},
+			],
+		},
+	],
 };
