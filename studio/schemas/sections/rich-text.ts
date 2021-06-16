@@ -3,7 +3,7 @@ import { AiOutlineItalic } from 'react-icons/ai';
 import CenterText from '../../src/components/block-content/centered-styles';
 
 export default {
-	title: 'Block Content',
+	title: 'Rich Text',
 	name: 'richText',
 	description: 'Text Block',
 	type: 'object',
@@ -11,8 +11,8 @@ export default {
 	icon: RiFileTextLine,
 	fields: [
 		{
-			name: 'text',
-			title: 'Text',
+			name: 'copy',
+			title: 'Copy',
 			type: 'array',
 			of: [
 				{

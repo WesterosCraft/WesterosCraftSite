@@ -40,13 +40,20 @@ export default {
 			type: 'string',
 			fieldset: 'content',
 		},
-
+		{
+			name: 'content',
+			type: 'array',
+			title: 'Page sections',
+			description: 'Add, edit, and reorder sections',
+			fieldset: 'content',
+			of: contentObjects,
+		},
 		{
 			name: 'pageBuilder',
 			type: 'array',
-			title: 'Page builder',
-			fieldset: 'content',
-			of: contentObjects,
+			title: 'Page sections',
+			description: 'OLD - DO NOT UPDATE',
+			of: [{ type: 'richText' }],
 		},
 	],
 };
