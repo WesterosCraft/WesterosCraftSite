@@ -9,17 +9,7 @@ import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
-import {
-	Heading,
-	Text,
-	Box,
-	Button,
-	Flex,
-	useColorModeValue,
-	AspectRatio,
-	Container,
-	SimpleGrid,
-} from '@chakra-ui/react';
+import { Heading, Text, Box, Button, Flex, useColorModeValue, AspectRatio, SimpleGrid } from '@chakra-ui/react';
 import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
@@ -99,7 +89,7 @@ const Index = ({ pageData, siteSettings }: Props) => {
 				</Flex>
 			)}
 
-			<Box width='100%' centerContent px={8}>
+			<Box width='100%' px={8}>
 				<SimpleGrid templateColumns='360px 1fr' gap='64px'>
 					<Box>
 						<Heading as='h2' fontSize='5xl' fontWeight={800}>

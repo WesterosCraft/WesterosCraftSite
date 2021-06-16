@@ -32,7 +32,7 @@ export default {
 								},
 							],
 						},
-						{ type: 'image', name: 'marqueeImage', title: 'Marquee Image' },
+						{ type: 'image', name: 'marqueeImage', title: 'Marquee Image', options: { metadata: ['lqip'] } },
 					],
 					preview: {
 						select: {

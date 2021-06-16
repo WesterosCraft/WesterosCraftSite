@@ -10,6 +10,7 @@ import { RenderSection } from '@/components/utils';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
+import { Layout } from '@/components/common';
 
 // import { WikiLayout } from '../components/templates/wikiLayout';
 // import { SliceZone } from '../components/slices/sliceZone';
@@ -50,9 +51,9 @@ const WikiPage = ({ pageData, siteSettings }: Props) => {
 	}
 
 	return (
-		<WikiLayout meta={page?.meta} siteSettings={siteSettings}>
+		<Layout meta={page?.meta} siteSettings={siteSettings}>
 			layout
-		</WikiLayout>
+		</Layout>
 	);
 };
 

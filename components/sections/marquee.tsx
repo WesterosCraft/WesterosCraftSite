@@ -21,13 +21,8 @@ const Marquee = ({ data }: Props) => {
 		containScroll: 'trimSnaps',
 	});
 
-	const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
-	const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
-
 	useEffect(() => {
 		if (!embla) return;
-
-		// console.log(embla);
 	}, [embla]);
 
 	const regionDictionary = groupBy(data.marqueeItems, (o) => o?.destination?.region);
@@ -78,20 +73,23 @@ const Marquee = ({ data }: Props) => {
 													height={350}
 												>
 													<Image
-														src={urlFor(item?.marqueeImage?.asset)?.url()!}
-														placeholder='empty'
+														src={item?.marqueeImage?.url!}
+														blurDataURL={
+															item?.marqueeImage?.metadata?.lqip ||
+															'data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMHAgj/xAAjEAACAgIBAgcAAAAAAAAAAAABAgADBBEGBRIhIjFBUmFx/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQIAMf/aAAwDAQACEQMRAD8A5t6bvGvoyq389bBwPsSpch5zXZx9WxwDl3V9pX4H3MkdBOo97GYAFiQIFVPHbRQCZNqszltEk+J/YTLMd+phDRv/2Q=='
+														}
+														placeholder='blur'
 														loader={myLoader}
 														width={350}
 														height={350}
 														className='embla__slide__img'
-														alt='A cool cat.'
+														alt={item.destination.name || 'WesterosCraft Location'}
 													/>
 												</Box>
 												{item.destination.name && (
 													<Flex
 														flexDirection='row'
 														align='center'
-														// height={'78px'}
 														bg='white'
 														width={350}
 														borderTopLeftRadius={0}

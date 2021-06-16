@@ -40,7 +40,13 @@ export const marquee = `
 		...,
 		marqueeItems[]{
 			...,
-			destination->{name, region, slug}
+			destination->{name, region, slug},
+			"marqueeImage": marqueeImage.asset->{
+				url,
+				metadata {
+				  lqip
+				}
+			  }
 		}
 	}
 `;

@@ -7,6 +7,9 @@ export type SanityReference<_T> = {
 	_type: 'reference';
 	_key?: string;
 	_ref: string;
+	metadata?: {
+		lqip: string;
+	};
 };
 
 export type SanityAsset = SanityReference<any>;

@@ -18,8 +18,9 @@ const BlockBanner = ({ data }: Props) => {
 				</Heading>
 			</Box>
 			<Stack spacing='24px' direction={['column', null, 'row']}>
-				{data.blocks.map((block) => (
+				{data.blocks.map((block, i) => (
 					<Flex
+						key={i}
 						border='1px solid'
 						shadow={'xl'}
 						borderRadius='md'
