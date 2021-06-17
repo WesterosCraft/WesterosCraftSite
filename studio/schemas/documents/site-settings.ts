@@ -1,4 +1,5 @@
 import { RiSettings5Line } from 'react-icons/ri';
+import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 
 export default {
 	name: 'siteSettings',
@@ -19,6 +20,14 @@ export default {
 		{
 			name: 'navigation',
 			title: 'Main Navigation',
+			options: {
+				collapsible: true,
+				collapsed: true,
+			},
+		},
+		{
+			name: 'wikiNavigation',
+			title: 'Wiki Navigation',
 			options: {
 				collapsible: true,
 				collapsed: true,
@@ -68,6 +77,26 @@ export default {
 				{
 					title: 'External Link',
 					type: 'externalLink',
+				},
+			],
+		},
+		{
+			title: 'Top Level Wiki Navigation',
+			name: 'topLevelWikiNavigation',
+			description: 'Select the top level nav for wiki pages',
+			fieldset: 'wikiNavigation',
+			type: 'navigation.section',
+		},
+		{
+			title: 'Wiki Navigation',
+			name: 'wikiNavigation',
+			description: 'Select pages or link for wiki side navigation',
+			fieldset: 'wikiNavigation',
+			type: 'array',
+			of: [
+				{
+					title: 'Navigation Section',
+					type: 'navigation.section',
 				},
 			],
 		},

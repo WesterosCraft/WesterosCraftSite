@@ -8,7 +8,11 @@ import { SimpleBlockContent } from '@/models/objects/simple-block-content';
 import { MainImage } from '@/components/sections';
 
 type Props = {
-	data: RichTextType | SimpleBlockContent;
+	data: {
+		_key: string;
+		_type: 'richText';
+		copy: RichTextType | SimpleBlockContent;
+	};
 };
 
 const resolveSize = (style: string | boolean) => {
@@ -41,7 +45,7 @@ const serializers = {
 
 			if (heading !== false) {
 				return (
-					<Heading textAlign={center ? 'center' : 'left'} as={heading} size={size}>
+					<Heading fontWeight='bolder' textAlign={center ? 'center' : 'left'} as={heading} size={size}>
 						{props.children}
 					</Heading>
 				);
@@ -60,20 +64,28 @@ const serializers = {
 				);
 			}
 
-			return <Text textAlign={center ? 'center' : 'left'}>{props.children}</Text>;
+			return (
+				<Text mt={6} textAlign={center ? 'center' : 'left'}>
+					{props.children}
+				</Text>
+			);
 		},
 		image: (props: any) => <MainImage data={props.node} width={960} height={600} />,
 	},
 	marks: {
 		link: (props: any) => (
 			<NextLink passHref href={`${props.mark.href}`}>
-				<Link>{props.children}</Link>
+				<Link color='red.700' fontWeight={600}>
+					{props.children}
+				</Link>
 			</NextLink>
 		),
 		italic: (props: any) => <Text as='i'>{props.children}</Text>,
 	},
 };
 
-const TextBlock = ({ data }: Props) => <BlockContent blocks={data?.text} serializers={serializers} />;
+const TextBlock = ({ data }: Props) => {
+	return <BlockContent blocks={data.copy} serializers={serializers} />;
+};
 
 export default TextBlock;

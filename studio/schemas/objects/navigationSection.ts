@@ -1,7 +1,10 @@
+import { IoIosArrowDropdown } from 'react-icons/io'
+
 export default {
 	name: 'navigation.section',
 	type: 'object',
 	title: 'Section',
+	icon: IoIosArrowDropdown,
 	fields: [
 		{
 			type: 'string',

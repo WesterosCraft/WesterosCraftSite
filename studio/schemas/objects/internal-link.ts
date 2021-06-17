@@ -1,4 +1,5 @@
 import { RiLinksLine } from 'react-icons/ri';
+import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 
 export default {
 	title: 'Internal Link',
@@ -49,6 +50,20 @@ export default {
 					type: 'destination',
 				},
 			],
+		},
+		{
+			title: 'Icon',
+			name: 'icon',
+			type: 'string',
+			description: 'Optional icon, typically used for wiki navigation',
+			options: {
+				list: [
+					{ title: 'HiCube', value: 'HiCube', icon: HiCube },
+					{ title: 'HiHome', value: 'HiHome', icon: HiHome },
+					{ title: 'HiDocumentText', value: 'HiDocumentText', icon: HiDocumentText },
+					{ title: 'HiLibrary', value: 'HiLibrary', icon: HiLibrary },
+				],
+			},
 		},
 	],
 	blockEditor: {

@@ -40,7 +40,12 @@ export const marquee = `
 		...,
 		marqueeItems[]{
 			...,
-			destination->{name, region, slug},
+			destination->{name, region, slug, "images": images[0].asset->{
+				url,
+				metadata {
+					lqip
+				}
+			}},
 			"marqueeImage": marqueeImage.asset->{
 				url,
 				metadata {

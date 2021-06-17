@@ -1,4 +1,4 @@
-import {RiCheckboxIndeterminateLine} from 'react-icons/ri';
+import { RiCheckboxIndeterminateLine } from 'react-icons/ri';
 
 export default {
 	name: 'spacer',
@@ -14,23 +14,23 @@ export default {
 			type: 'string',
 			options: {
 				list: [
-					{title: 'Small', value: 'small'},
-					{title: 'Medium', value: 'medium'},
-					{title: 'Large', value: 'large'},
-					{title: 'X-Large', value: 'xlarge'}
+					{ title: 'Small', value: 'small' },
+					{ title: 'Medium', value: 'medium' },
+					{ title: 'Large', value: 'large' },
+					{ title: 'X-Large', value: 'xlarge' },
 				],
-				layout: 'radio'
-			}
-		}
+				layout: 'radio',
+			},
+		},
 	],
 	preview: {
 		select: {
-			title: 'size'
+			title: 'size',
 		},
-		prepare({title}: {title: string}) {
+		prepare({ title }: { title: string }) {
 			return {
-				title: `Spacer ${title.charAt(0).toUpperCase() + title.slice(1)}`
+				title: `Spacer ${title.charAt(0).toUpperCase() + title.slice(1)}`,
 			};
-		}
-	}
+		},
+	},
 };

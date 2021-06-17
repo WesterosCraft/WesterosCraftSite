@@ -10,7 +10,7 @@ declare module '@sanity/block-content-to-react' {
 		}
 
 		interface PortableTextProps {
-			blocks?: PortableTextEntry[];
+			blocks?: RichText | SimpleBlockContent;
 			className?: string;
 			renderContainerOnSingleChild?: boolean;
 			serializers?: PortableTextSerializers;

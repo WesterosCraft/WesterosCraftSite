@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
-import { Flex, Stack, Box, Text } from '@chakra-ui/react';
+import { Flex, Stack, Box, VStack, Text, Heading, Icon } from '@chakra-ui/react';
 import { WikiHeader } from '@/components/common';
+import { MdLibraryBooks, MdHome, MdInsertDriveFile, MdBurstMode } from 'react-icons/md';
+import { FaHome } from 'react-icons/fa';
+import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 
 type Props = {
 	children?: ReactNode;
@@ -23,7 +26,36 @@ const WikiLayout = ({ children }: Props) => {
 					pb={6}
 					pt={4}
 				>
-					<Text>left nav</Text>
+					<VStack align='start' spacing={3}>
+						<Flex direction='row' align='center'>
+							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiHome} />
+
+							<Text fontWeight='bold' ml={3}>
+								Wiki Home
+							</Text>
+						</Flex>
+						<Flex direction='row' align='center'>
+							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiDocumentText} />
+							<Text color='gray.500' fontWeight='bold' ml={3}>
+								Guides
+							</Text>
+						</Flex>
+						<Flex direction='row' align='center'>
+							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiLibrary} />
+							<Text color='gray.500' fontWeight='bold' ml={3}>
+								Destinations
+							</Text>
+						</Flex>
+						<Flex direction='row' align='center'>
+							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiCube} />
+							<Text color='gray.500' fontWeight='bold' ml={3}>
+								Blocks
+							</Text>
+						</Flex>
+					</VStack>
+					<Heading as='h4' fontSize='md' textTransform='uppercase'>
+						Getting Started
+					</Heading>
 				</Stack>
 
 				<Box flex='1 1 0%'>
