@@ -1,4 +1,4 @@
-export interface BlockBanner {
+export interface IBlockBanner {
 	_type: 'blockBanner';
 	_key: string;
 	heading: string;

@@ -1,8 +1,6 @@
 import { ReactNode } from 'react';
 import { Flex, Stack, Box, VStack, Text, Heading, Icon } from '@chakra-ui/react';
 import { WikiHeader } from '@/components/common';
-import { MdLibraryBooks, MdHome, MdInsertDriveFile, MdBurstMode } from 'react-icons/md';
-import { FaHome } from 'react-icons/fa';
 import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 
 type Props = {
@@ -11,20 +9,23 @@ type Props = {
 
 const WikiLayout = ({ children }: Props) => {
 	return (
-		<Flex direction='column' height='100%'>
+		<Flex direction='column' height='100%' overflow='hidden'>
 			<WikiHeader />
 			<Flex>
 				<Stack
 					as='nav'
 					aria-label='Wiki Navigation'
 					display='block'
+					minWidth={280}
 					maxWidth={280}
 					position='sticky'
 					overflowY='auto'
 					flex='1 1 280px'
+					bg='white'
 					pr={8}
 					pb={6}
 					pt={4}
+					zIndex='dropdown'
 				>
 					<VStack align='start' spacing={3}>
 						<Flex direction='row' align='center'>

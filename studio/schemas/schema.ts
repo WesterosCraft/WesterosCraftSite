@@ -19,9 +19,10 @@ import youtube from './sections/youtube';
 import marquee from './sections/marquee';
 import quote from './sections/quote';
 import editions from './sections/editions';
-import tableBuilder from './sections/tableBuilder';
+import tableBuilder from './sections/table-builder';
 import blockBanner from './sections/block-banner';
-import columnWithVideo from './sections/columnWithVideo';
+import columnWithVideo from './sections/column-with-video';
+import referenceGrid from './sections/reference-grid';
 
 // pages/documents
 import destination from './documents/destination';
@@ -99,5 +100,6 @@ export default createSchema({
 		downloads,
 		tableBuilder,
 		imageSlider,
+		referenceGrid,
 	]),
 });

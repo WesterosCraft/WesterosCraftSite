@@ -1,22 +1,24 @@
-import { Quote } from './quote';
-import { Marquee } from './marquee';
-import { RichText } from './rich-text';
+import { IQuote } from './quote';
+import { IMarquee } from './marquee';
+import { IRichText } from './rich-text';
 import { Grid } from './grid';
 import { Image } from './image';
-import { Spacer } from './spacer';
+import { ISpacer } from './spacer';
 import { Youtube } from './youtube';
-import { Editions } from './editions';
+import { IEditions } from './editions';
 import { ImageSlider } from './image-slider';
-import { BlockBanner } from './block-banner';
+import { IBlockBanner } from './block-banner';
+import { IReferenceGrid } from './reference-grid';
 
 export type Sections =
-	| BlockBanner
-	| RichText
+	| IBlockBanner
+	| IRichText
 	| ImageSlider
 	| Grid
 	| Image
-	| Spacer
+	| ISpacer
 	| Youtube
-	| Marquee
-	| Quote
-	| Editions;
+	| IMarquee
+	| IQuote
+	| IReferenceGrid
+	| IEditions;

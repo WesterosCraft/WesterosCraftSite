@@ -73,3 +73,9 @@ export const blockBanner = `
 		...
 	}
 `;
+
+export const referenceGrid = `
+	_type == 'referenceGrid' => {
+		...
+	}
+`;

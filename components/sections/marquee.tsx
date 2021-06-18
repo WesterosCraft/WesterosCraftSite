@@ -1,11 +1,10 @@
 import { Flex, Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
-import { Marquee as MarqueeType } from '@/models/sections/marquee';
+import { IMarquee } from '@/models/sections/marquee';
 import { useEffect } from 'react';
-import Image from 'next/image';
 import { groupBy } from 'lodash';
 import { nameFormatter } from '../utils';
 import { useEmblaCarousel } from 'embla-carousel/react';
-import { DestinationCard } from '../common';
+import { SimpleDestinationCard } from '../common';
 
 const getFontSize = (size: string) => {
 	switch (size) {
@@ -23,7 +22,7 @@ const getFontSize = (size: string) => {
 	}
 };
 type Props = {
-	data: MarqueeType;
+	data: IMarquee;
 };
 
 const Marquee = ({ data }: Props) => {
@@ -49,65 +48,46 @@ const Marquee = ({ data }: Props) => {
 				{data?.heading || ''}
 			</Heading>
 
-			{data.groupItemsBy === 'region' ? (
-				<Tabs maxW='100%' align='center' isLazy lazyBehavior='unmount' variant='unstyled' size='sm'>
-					<TabList>
-						{Object.keys(regionDictionary).map((item, index) => (
-							<Tab
-								key={index}
-								_selected={{ color: 'black' }}
-								_active={{ color: 'black' }}
-								_hover={{ color: 'black' }}
-								color='gray.400'
-								fontWeight={600}
-							>
-								{nameFormatter(item)}
-							</Tab>
-						))}
-					</TabList>
-					<TabPanels>
-						{Object.keys(regionDictionary).map((region, index) => (
-							<TabPanel key={index}>
-								<Box className='embla' position='relative' maxWidth={'100vw'} mx='auto'>
-									<Box className='embla__viewport' ref={viewportRef} width='100%' cursor='grab'>
-										<Flex className='embla__container' userSelect='none' ml={-3}>
-											{regionDictionary[region].map((item, i) => (
-												<DestinationCard
-													key={i}
-													imageSrc={item?.marqueeImage ? item?.marqueeImage?.url : item.destination?.images?.url}
-													blurDataURL={
-														item?.marqueeImage
-															? item?.marqueeImage?.metadata?.lqip!
-															: item.destination?.images?.metadata?.lqip!
-													}
-													name={item.destination.name}
-												/>
-											))}
-										</Flex>
-									</Box>
+			<Tabs maxW='100%' align='center' isLazy lazyBehavior='unmount' variant='unstyled' size='sm'>
+				<TabList>
+					{Object.keys(regionDictionary).map((item, index) => (
+						<Tab
+							key={index}
+							_selected={{ color: 'black' }}
+							_active={{ color: 'black' }}
+							_hover={{ color: 'black' }}
+							color='gray.400'
+							fontWeight={600}
+						>
+							{nameFormatter(item)}
+						</Tab>
+					))}
+				</TabList>
+				<TabPanels>
+					{Object.keys(regionDictionary).map((region, index) => (
+						<TabPanel key={index}>
+							<Box className='embla' position='relative' maxWidth={'100vw'} mx='auto'>
+								<Box className='embla__viewport' ref={viewportRef} width='100%' cursor='grab'>
+									<Flex className='embla__container' userSelect='none' mr={-3}>
+										{regionDictionary[region].map((item, i) => (
+											<SimpleDestinationCard
+												key={i}
+												imageSrc={item?.marqueeImage ? item?.marqueeImage?.url : item.destination?.images?.url}
+												blurDataURL={
+													item?.marqueeImage
+														? item?.marqueeImage?.metadata?.lqip!
+														: item.destination?.images?.metadata?.lqip!
+												}
+												name={item.destination.name}
+											/>
+										))}
+									</Flex>
 								</Box>
-							</TabPanel>
-						))}
-					</TabPanels>
-				</Tabs>
-			) : (
-				<Box className='embla' position='relative' maxWidth={'100vw'} mx='auto'>
-					<Box className='embla__viewport' ref={viewportRef} width='100%' cursor='grab'>
-						<Flex className='embla__container' userSelect='none' ml={-3}>
-							{data.marqueeItems.map((item, i) => (
-								<DestinationCard
-									key={i}
-									imageSrc={item?.marqueeImage ? item?.marqueeImage?.url : item.destination?.images?.url}
-									blurDataURL={
-										item?.marqueeImage ? item?.marqueeImage?.metadata?.lqip! : item.destination?.images?.metadata?.lqip!
-									}
-									name={item.destination.name}
-								/>
-							))}
-						</Flex>
-					</Box>
-				</Box>
-			)}
+							</Box>
+						</TabPanel>
+					))}
+				</TabPanels>
+			</Tabs>
 		</Flex>
 	);
 };

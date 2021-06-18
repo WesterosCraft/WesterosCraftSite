@@ -1,7 +1,7 @@
 import { Stack, Flex, Box, Text, Heading } from '@chakra-ui/react';
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
-import { Editions as IEditions } from '@/models/sections/editions';
+import { IEditions } from '@/models/sections/editions';
 
 const Editions = ({ data }: { data: IEditions }) => (
 	<Box className={`${data._type}__section`}>

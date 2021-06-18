@@ -15,7 +15,7 @@ interface MarqueeItems {
 	marqueeImage?: { _type: 'image'; url: string; asset: SanityAsset; metadata?: { lqip: string } };
 }
 
-export interface Marquee {
+export interface IMarquee {
 	_type: 'marquee';
 	_key: string;
 	heading: string;

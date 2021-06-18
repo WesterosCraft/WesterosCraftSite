@@ -1,6 +1,6 @@
 import { SanityAsset } from '../utils';
 
-export interface Editions {
+export interface IEditions {
 	_type: 'editions';
 	_key: string;
 	heading: string;

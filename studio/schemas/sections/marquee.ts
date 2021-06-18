@@ -39,31 +39,7 @@ export default {
 				],
 			},
 		},
-		{
-			title: 'Group Items By',
-			name: 'groupItemsBy',
-			description: 'Assigns a property that the marquee items will be grouped by',
-			type: 'string',
-			options: {
-				list: [
-					{ title: 'None', value: 'none' },
-					{ title: 'Region', value: 'region' },
-				],
-			},
-			initialValue: () => 'none',
-		},
-		{
-			title: 'Marquee Variant',
-			name: 'marqueeVariant',
-			description: 'Choose what the marquee items look like',
-			type: 'string',
-			options: {
-				list: [
-					{ title: 'Condensed', value: 'condensed' },
-					{ title: 'Detailed', value: 'detailed' },
-				],
-			},
-		},
+
 		{
 			title: 'Marquee Items',
 			name: 'marqueeItems',
@@ -112,4 +88,14 @@ export default {
 			],
 		},
 	],
+	preview: {
+		select: {
+			title: 'heading',
+		},
+		prepare({ title }: { title: string }) {
+			return {
+				title: `Marquee | ${title.charAt(0).toUpperCase() + title.slice(1)}`,
+			};
+		},
+	},
 };

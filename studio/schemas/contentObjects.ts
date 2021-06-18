@@ -9,4 +9,5 @@ export const contentObjects = [
 	{ type: 'youtube' },
 	{ type: 'tableBuilder' },
 	{ type: 'richText' },
+	{ type: 'referenceGrid' },
 ];

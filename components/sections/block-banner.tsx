@@ -1,12 +1,8 @@
 import { Flex, Box, Heading, Text, Stack } from '@chakra-ui/react';
+import { IBlockBanner } from '@/models/sections/block-banner';
 
 type Props = {
-	data: {
-		heading: string;
-		blocks: Array<{ label: string }>;
-		_type: 'blockBanner';
-		_key: string;
-	};
+	data: IBlockBanner;
 };
 
 const BlockBanner = ({ data }: Props) => {

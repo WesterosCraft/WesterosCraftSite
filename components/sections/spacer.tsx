@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react';
-import { Spacer as SpacerType } from '@/models/sections/spacer';
+import { ISpacer } from '@/models/sections/spacer';
 
 type Props = {
-	data: SpacerType;
+	data: ISpacer;
 };
 
 const getSize = (size: string) => {

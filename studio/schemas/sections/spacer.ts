@@ -29,7 +29,7 @@ export default {
 		},
 		prepare({ title }: { title: string }) {
 			return {
-				title: `Spacer ${title.charAt(0).toUpperCase() + title.slice(1)}`,
+				title: `Spacer | ${title.charAt(0).toUpperCase() + title.slice(1)}`,
 			};
 		},
 	},

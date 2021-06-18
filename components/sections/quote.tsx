@@ -1,7 +1,12 @@
+import { IQuote } from '@/models/sections/quote';
 import { Flex, Box, Text, Heading, useColorModeValue } from '@chakra-ui/react';
 import { IoMdQuote } from 'react-icons/io';
 
-const Quote = ({ data: { quote = '', author = '', _type = 'quoteBlock' } }) => (
+type Props = {
+	data: IQuote;
+};
+
+const Quote = ({ data: { quote = '', author = '', _type = 'quoteBlock' } }: Props) => (
 	<Box className={`${_type}__section`} width={['80%', null, '75%', 800]} mx='auto'>
 		<Flex
 			as='blockquote'

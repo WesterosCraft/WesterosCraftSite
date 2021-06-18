@@ -8,5 +8,18 @@ import Quote from './quote';
 import Editions from './editions';
 import BlockBanner from './block-banner';
 import RichText from './rich-text';
+import ReferenceGrid from './reference-grid';
 
-export { BlockBanner, BlockContent, Grid, MainImage, Spacer, Youtube, Marquee, Quote, Editions, RichText };
+export {
+	BlockBanner,
+	BlockContent,
+	Grid,
+	MainImage,
+	Spacer,
+	Youtube,
+	Marquee,
+	Quote,
+	Editions,
+	RichText,
+	ReferenceGrid,
+};

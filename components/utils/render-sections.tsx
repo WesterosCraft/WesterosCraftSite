@@ -9,6 +9,7 @@ import {
 	Quote,
 	Editions,
 	BlockBanner,
+	ReferenceGrid,
 } from '@/components/sections';
 
 const RenderSection = ({ section }: { section: Sections }) => {
@@ -31,6 +32,8 @@ const RenderSection = ({ section }: { section: Sections }) => {
 			return <Editions data={section} />;
 		case 'blockBanner':
 			return <BlockBanner data={section} />;
+		case 'referenceGrid':
+			return <ReferenceGrid data={section} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 

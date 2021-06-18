@@ -14,14 +14,14 @@ type Props = {
 	name?: string;
 };
 
-const DestinationCard = ({ imageSrc, blurDataURL = DEFAULT_BLUR, name }: Props) => {
+const SimpleDestinationCard = ({ imageSrc, blurDataURL = DEFAULT_BLUR, name }: Props) => {
 	return (
 		<Box
 			position='relative'
 			overflow='hidden'
 			minW='350px'
 			className='embla__slide'
-			ml={3}
+			mr={3}
 			borderRadius='lg'
 			shadow='lg'
 		>
@@ -60,4 +60,4 @@ const DestinationCard = ({ imageSrc, blurDataURL = DEFAULT_BLUR, name }: Props) 
 	);
 };
 
-export default DestinationCard;
+export default SimpleDestinationCard;
