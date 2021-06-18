@@ -9,7 +9,7 @@ type Props = {
 
 const WikiLayout = ({ children }: Props) => {
 	return (
-		<Flex direction='column' height='100%' overflow='hidden'>
+		<Flex direction='column' height='100%'>
 			<WikiHeader />
 			<Flex>
 				<Stack
@@ -59,7 +59,7 @@ const WikiLayout = ({ children }: Props) => {
 					</Heading>
 				</Stack>
 
-				<Box flex='1 1 0%'>
+				<Box flex='1 1 0%' pl={3}>
 					<Flex flexDirection='row'>
 						<Box className='content' width='100%' pt={10}>
 							{children}

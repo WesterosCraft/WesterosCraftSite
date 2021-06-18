@@ -22,6 +22,5 @@ export interface IMarquee {
 	headingAlignment: 'left' | 'center';
 	headingSize: 'h1' | 'h2' | 'h3';
 	marqueeVariant: 'detailed' | 'condensed';
-	groupItemsBy: 'none' | 'region';
 	marqueeItems: MarqueeItems[];
 }

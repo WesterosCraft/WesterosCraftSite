@@ -5,22 +5,8 @@ import { groupBy } from 'lodash';
 import { nameFormatter } from '../utils';
 import { useEmblaCarousel } from 'embla-carousel/react';
 import { SimpleDestinationCard } from '../common';
+import { getFontSize } from '../utils/helpers';
 
-const getFontSize = (size: string) => {
-	switch (size) {
-		case 'h1':
-			return '8xl';
-
-		case 'h2':
-			return '5xl';
-
-		case 'h3':
-			return '3xl';
-
-		default:
-			return '5xl';
-	}
-};
 type Props = {
 	data: IMarquee;
 };
