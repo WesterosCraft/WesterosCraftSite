@@ -8,6 +8,8 @@ import Seo from './seo';
 import WikiLayout from './wiki-layout';
 import WikiHeader from './wiki-header';
 import SimpleDestinationCard from './simple-destination-card';
+import RegionTag from './region-tag';
+import DestinationCard from './destination-card';
 
 export {
 	DarkModeSwitch,
@@ -20,4 +22,6 @@ export {
 	WikiLayout,
 	WikiHeader,
 	SimpleDestinationCard,
+	RegionTag,
+	DestinationCard,
 };

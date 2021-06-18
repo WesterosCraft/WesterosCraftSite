@@ -16,13 +16,13 @@ const WikiLayout = ({ children }: Props) => {
 					as='nav'
 					aria-label='Wiki Navigation'
 					display='block'
-					minWidth={280}
-					maxWidth={280}
+					minWidth={260}
+					maxWidth={260}
 					position='sticky'
 					overflowY='auto'
-					flex='1 1 280px'
+					flex='1 1 260px'
 					bg='white'
-					pr={8}
+					pr={4}
 					pb={6}
 					pt={4}
 					zIndex='dropdown'

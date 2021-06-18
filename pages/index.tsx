@@ -37,6 +37,7 @@ type Props = {
 };
 
 const Index = ({ pageData, siteSettings }: Props) => {
+	console.log('🚀 ~ file: index.tsx ~ line 40 ~ Index ~ pageData', pageData);
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
