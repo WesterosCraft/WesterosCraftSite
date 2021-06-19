@@ -79,23 +79,27 @@ export const blockBanner = `
 	}
 `;
 
+export const destinationCard = `
+	name,
+	region,
+	slug,
+	projectStatus,
+	house,
+	buildType,
+	entry[0],
+	"images": images[0].asset->{
+		url,
+		metadata {
+			lqip
+		}
+	}
+`;
+
 export const referenceGrid = `
 	_type == 'referenceGrid' => {
 		...,
 		gridItems[]->{
-			name,
-			region,
-			slug,
-			projectStatus,
-			house,
-			buildType,
-			entry[0],
-			"images": images[0].asset->{
-				url,
-				metadata {
-					lqip
-				}
-			}
+			${destinationCard}
 		}
 	}
 `;

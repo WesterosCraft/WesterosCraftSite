@@ -11,7 +11,7 @@ export default {
 			title: 'Heading',
 			name: 'heading',
 			type: 'string',
-			description: 'A Heading that appears above the marquee',
+			description: 'A Heading that appears above the grid',
 		},
 		{
 			title: 'Heading Alignment',
@@ -53,6 +53,19 @@ export default {
 					],
 				},
 			],
+		},
+		{
+			title: 'Grid Options',
+			name: 'gridOptions',
+			description:
+				'Instead of assigning grid items, you can automatically get a limited query of items based on value.',
+			type: 'string',
+			options: {
+				list: [
+					{ title: 'Recently Updated', value: 'recentlyUpdated' },
+					{ title: 'Recently Created', value: 'recentlyCreated' },
+				],
+			},
 		},
 	],
 	preview: {

@@ -10,6 +10,7 @@ import {
 	editions,
 	blockBanner,
 	referenceGrid,
+	destinationCard,
 } from './fragments';
 
 export const pageQuery = groq`
@@ -30,6 +31,26 @@ export const pageQuery = groq`
 	}
 `;
 
-export const allPagesSlug = groq`
-	*[_type == 'page' && defined(slug.current) && slug.current != 'frontpage' && slug.current != 'posts'][].slug.current
+export const wikiQuery = groq`
+*[_type == 'wiki'][0] {
+	...,
+	content[] {
+		${richText},
+		${grid},
+		${mainImage},
+		${spacer},
+		${youtube},
+		${marquee},
+		${quote},
+		${editions},
+		${blockBanner},
+		${referenceGrid}
+	},
+	"createdDestinations": *[_type == 'destination'] | order(_createdAt desc)[0...6] {
+		${destinationCard}
+	},
+	"updatedDestinations": *[_type == 'destination'] | order(_updatedAt desc)[0...6] {
+		${destinationCard}
+	}
+	}
 `;

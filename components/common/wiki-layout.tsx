@@ -15,7 +15,7 @@ const WikiLayout = ({ children }: Props) => {
 				<Stack
 					as='nav'
 					aria-label='Wiki Navigation'
-					display='block'
+					display={['none', null, 'block']}
 					minWidth={260}
 					maxWidth={260}
 					position='sticky'
@@ -43,7 +43,7 @@ const WikiLayout = ({ children }: Props) => {
 						<Flex direction='row' align='center'>
 							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiLibrary} />
 							<Text color='gray.500' fontWeight='bold' ml={3}>
-								Destinations
+								Builds
 							</Text>
 						</Flex>
 						<Flex direction='row' align='center'>

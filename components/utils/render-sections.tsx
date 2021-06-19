@@ -12,7 +12,7 @@ import {
 	ReferenceGrid,
 } from '@/components/sections';
 
-const RenderSection = ({ section }: { section: Sections }) => {
+const RenderSection = ({ section, additionalData }: { section: Sections; additionalData: any }) => {
 	switch (section._type) {
 		case 'richText':
 			return <RichText data={section} />;
@@ -33,7 +33,7 @@ const RenderSection = ({ section }: { section: Sections }) => {
 		case 'blockBanner':
 			return <BlockBanner data={section} />;
 		case 'referenceGrid':
-			return <ReferenceGrid data={section} />;
+			return <ReferenceGrid data={section} additionalData={additionalData} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 

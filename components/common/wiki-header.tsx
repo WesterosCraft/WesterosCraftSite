@@ -3,7 +3,16 @@ import { Flex, HStack, Box, Text, Input } from '@chakra-ui/react';
 const WikiHeader = () => {
 	return (
 		<Flex>
-			<Box display='block' maxWidth={260} position='sticky' overflowY='auto' flex='1 1 260px' pr={4} pb={6} pt={4}>
+			<Box
+				display={['none', null, 'block']}
+				maxWidth={260}
+				position='sticky'
+				overflowY='auto'
+				flex='1 1 260px'
+				pr={4}
+				pb={6}
+				pt={4}
+			>
 				<Text></Text>
 			</Box>
 			<Box flex='1 1 0%' pl={3}>

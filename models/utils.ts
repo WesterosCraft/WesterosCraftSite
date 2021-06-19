@@ -28,7 +28,7 @@ export enum Regions {
 	beyondTheWall = 'beyondTheWall',
 }
 
-export enum DestinationStatuses {
+export enum BuildStatuses {
 	completed = 'completed',
 	inProgress = 'inProgress',
 	abandoned = 'abandoned',

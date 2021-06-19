@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { pageQuery, siteSettingsQuery } from '@/lib/queries';
+import { wikiQuery, siteSettingsQuery } from '@/lib/queries';
 import { SiteSettings } from '@/models/site-settings';
 import { useRouter } from 'next/router';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
@@ -9,6 +9,7 @@ import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 import { Layout, WikiLayout } from '@/components/common';
+import { IProjectDetails } from '@/models/objects/project-details';
 
 type PageProps = {
 	content?: Sections[];
@@ -24,6 +25,8 @@ type PageProps = {
 	_rev: string;
 	_type: 'wiki';
 	_updatedAt: string;
+	updatedDestinations?: Array<IProjectDetails>;
+	createdDestinations?: Array<IProjectDetails>;
 };
 
 type Props = {
@@ -32,10 +35,11 @@ type Props = {
 };
 
 const WikiPage = ({ pageData, siteSettings }: Props) => {
+	console.log('👉 ~ WikiPage ~ pageData', pageData);
 	const router = useRouter();
 
-	const { data: page } = usePreviewSubscription(pageQuery, {
-		params: { type: 'wiki', slug: pageData?.slug?.current },
+	const { data: page } = usePreviewSubscription(wikiQuery, {
+		params: { type: 'wiki' },
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
@@ -52,7 +56,16 @@ const WikiPage = ({ pageData, siteSettings }: Props) => {
 						return null;
 					}
 
-					return <RenderSection key={section._key} section={section} />;
+					return (
+						<RenderSection
+							key={section._key}
+							section={section}
+							additionalData={{
+								updatedDestinations: page.updatedDestinations,
+								createdDestinations: page.createdDestinations,
+							}}
+						/>
+					);
 				})}
 			</WikiLayout>
 		</Layout>
@@ -60,7 +73,7 @@ const WikiPage = ({ pageData, siteSettings }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'wiki', slug: 'wiki' });
+	const pageData = await sanityClient.fetch<PageProps>(wikiQuery, { type: 'wiki' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {

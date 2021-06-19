@@ -1,5 +1,5 @@
-import { allPagesSlug, pageQuery } from './page';
-import { allPostSlug, postQuery, postsQuery } from './post';
+import { pageQuery, wikiQuery } from './page';
+
 import { siteSettingsQuery } from './site-settings';
 
-export { allPagesSlug, pageQuery, allPostSlug, postQuery, postsQuery, siteSettingsQuery };
+export { pageQuery, siteSettingsQuery, wikiQuery };
