@@ -21,7 +21,6 @@ const WikiLayout = ({ children }: Props) => {
 					position='sticky'
 					overflowY='auto'
 					flex='1 1 260px'
-					bg='white'
 					pr={4}
 					pb={6}
 					pt={4}

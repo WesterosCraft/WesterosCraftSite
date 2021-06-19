@@ -1,5 +1,6 @@
-import { Regions } from '@/models/utils';
 import { createIcon } from '@chakra-ui/icons';
+import { Tooltip, IconProps } from '@chakra-ui/react';
+import { nameFormatter } from '../utils';
 
 const BeyondTheWall = createIcon({
 	displayName: 'BeyondTheWall',
@@ -136,9 +137,17 @@ const Icons = {
 	westerlands: Westerlands,
 };
 
-const RegionIcon = ({ region }: { region: keyof typeof Icons }) => {
+interface IRegionProps extends IconProps {
+	region: keyof typeof Icons;
+}
+
+const RegionIcon = ({ region, ...props }: IRegionProps) => {
 	const Component = Icons[region];
-	return <Component />;
+	return (
+		<Tooltip label={nameFormatter(region)}>
+			<Component {...props} />
+		</Tooltip>
+	);
 };
 
 export default RegionIcon;

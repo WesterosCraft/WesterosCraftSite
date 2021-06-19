@@ -1,5 +1,5 @@
 import { Slug } from '@sanity/types';
-import { Regions, DestinationStatuses } from './../utils';
+import { Regions, DestinationStatuses, BuildTypes } from './../utils';
 export interface IReferenceGrid {
 	_type: 'referenceGrid';
 	_key: string;
@@ -17,5 +17,6 @@ export interface IReferenceGrid {
 		entry?: any;
 		house?: string;
 		projectStatus?: DestinationStatuses;
+		buildType?: BuildTypes;
 	}>;
 }

@@ -28,6 +28,7 @@ const ReferenceGrid = ({ data }: Props) => {
 						house={item.house}
 						region={item.region}
 						status={item.projectStatus}
+						buildType={item.buildType}
 						url={`${item.region}/${item.slug?.current}`}
 					/>
 				))}

@@ -12,6 +12,9 @@ import RegionTag from './region-tag';
 import DestinationCard from './destination-card';
 import StatusTag from './status-tag';
 import BuildTypeTag from './build-type-tag';
+import ProjectStatusIcon from './project-status-icon';
+import RegionIcon from './region-icon';
+import BuildTypeIcon from './build-type-icon';
 
 export {
 	DarkModeSwitch,
@@ -28,4 +31,7 @@ export {
 	DestinationCard,
 	StatusTag,
 	BuildTypeTag,
+	ProjectStatusIcon,
+	RegionIcon,
+	BuildTypeIcon,
 };

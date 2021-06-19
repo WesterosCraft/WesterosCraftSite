@@ -1,9 +1,9 @@
-import { DestinationStatuses, Regions } from '@/models/utils';
-import { Heading, Text, Flex, Center, HStack, Button } from '@chakra-ui/react';
+import { BuildTypes, DestinationStatuses, Regions } from '@/models/utils';
+import { Heading, Text, Flex, Center, HStack, Button, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import BlockContent from '@sanity/block-content-to-react';
-import RegionIcon from './region-icon';
+import { RegionIcon, ProjectStatusIcon, BuildTypeIcon } from '@/components/common';
 
 const myLoader = ({ src, width }: { src: string; width: number | string }) => {
 	return `${src}?h=${width}&w=${width}&q=75`;
@@ -18,12 +18,20 @@ type Props = {
 	region?: Regions;
 	status?: DestinationStatuses;
 	url?: string;
+	buildType?: BuildTypes;
 };
 
-const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, status, url }: Props) => {
+const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, status, url, buildType }: Props) => {
 	return (
 		<Center>
-			<Flex direction='column' shadow='lg' borderRadius='base' overflow='hidden' flex='1 1 0%'>
+			<Flex
+				direction='column'
+				shadow='lg'
+				borderRadius='base'
+				overflow='hidden'
+				flex='1 1 0%'
+				bg={useColorModeValue('white', 'gray.700')}
+			>
 				{imageUrl && (
 					<Image
 						src={imageUrl!}
@@ -41,7 +49,7 @@ const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, st
 						{name}
 					</Heading>
 					{house && (
-						<Text fontSize='sm' textAlign='center' fontWeight='bold' color='gray.500'>
+						<Text fontSize='sm' textAlign='center' fontWeight='bold' color={useColorModeValue('gray.500', 'gray.300')}>
 							{house}
 						</Text>
 					)}
@@ -50,9 +58,13 @@ const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, st
 							<BlockContent blocks={entry} />
 						</Text>
 					)}
-					{region && <RegionIcon region={region} />}
 
-					<HStack width={'100%'} justify='flex-end' mt={6}>
+					<Flex width={'100%'} justify='space-between' mt={6}>
+						<HStack>
+							{region && <RegionIcon boxSize='16px' region={region} />}
+							{status && <ProjectStatusIcon boxSize='16px' projectStatus={status} />}
+							{buildType && <BuildTypeIcon boxSize='16px' buildType={buildType} />}
+						</HStack>
 						{url && (
 							<Link href={url} passHref>
 								<Button variant='outline' colorScheme='teal' size='xs' alignSelf='flex-end'>
@@ -60,7 +72,7 @@ const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, st
 								</Button>
 							</Link>
 						)}
-					</HStack>
+					</Flex>
 				</Center>
 			</Flex>
 		</Center>

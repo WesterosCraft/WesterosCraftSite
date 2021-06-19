@@ -35,3 +35,18 @@ export enum DestinationStatuses {
 	notStarted = 'notStarted',
 	redoInProgress = 'redoInProgress',
 }
+
+export enum BuildTypes {
+	castle = 'castle',
+	town = 'town',
+	village = 'village',
+	city = 'city',
+	holdfast = 'holdfast',
+	keep = 'keep',
+	landmark = 'landmark',
+	ruin = 'ruin',
+	tower = 'tower',
+	clan = 'clan',
+	crannog = 'crannog',
+	miscellaneous = 'miscellaneous',
+}
