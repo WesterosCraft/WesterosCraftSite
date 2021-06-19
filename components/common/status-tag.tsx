@@ -1,9 +1,9 @@
-import { Regions } from '@/models/utils';
+import { DestinationStatuses } from '@/models/utils';
 import { HStack, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { IoMdCube } from 'react-icons/io';
 import { nameFormatter } from '@/components/utils';
 
-const RegionTag = ({ label }: { label: Regions }) => {
+const StatusTag = ({ label }: { label: DestinationStatuses }) => {
 	return (
 		<HStack spacing={4}>
 			<Tag size={'sm'} variant='subtle' colorScheme='cyan'>
@@ -14,4 +14,4 @@ const RegionTag = ({ label }: { label: Regions }) => {
 	);
 };
 
-export default RegionTag;
+export default StatusTag;

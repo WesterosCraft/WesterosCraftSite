@@ -15,15 +15,23 @@ export type SanityReference<_T> = {
 export type SanityAsset = SanityReference<any>;
 
 export enum Regions {
-	CROWNLANDS = 'crownlands',
-	THEWALL = 'theWall',
-	DORNE = 'dorne',
-	RIVERLANDS = 'riverlands',
-	NORTH = 'north',
-	VALE = 'vale',
-	IRONISLANDS = 'ironIslands',
-	WESTERLANDS = 'westerlands',
-	STORMLANDS = 'stormlands',
-	REACH = 'reach',
-	BEYONDTHEWALL = 'beyondTheWall',
+	crownlands = 'crownlands',
+	theWall = 'theWall',
+	dorne = 'dorne',
+	riverlands = 'riverlands',
+	north = 'north',
+	vale = 'vale',
+	ironIslands = 'ironIslands',
+	westerlands = 'westerlands',
+	stormlands = 'stormlands',
+	reach = 'reach',
+	beyondTheWall = 'beyondTheWall',
+}
+
+export enum DestinationStatuses {
+	completed = 'completed',
+	inProgress = 'inProgress',
+	abandoned = 'abandoned',
+	notStarted = 'notStarted',
+	redoInProgress = 'redoInProgress',
 }

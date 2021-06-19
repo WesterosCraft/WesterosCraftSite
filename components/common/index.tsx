@@ -10,6 +10,8 @@ import WikiHeader from './wiki-header';
 import SimpleDestinationCard from './simple-destination-card';
 import RegionTag from './region-tag';
 import DestinationCard from './destination-card';
+import StatusTag from './status-tag';
+import BuildTypeTag from './build-type-tag';
 
 export {
 	DarkModeSwitch,
@@ -24,4 +26,6 @@ export {
 	SimpleDestinationCard,
 	RegionTag,
 	DestinationCard,
+	StatusTag,
+	BuildTypeTag,
 };

@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import BlockContent from '@sanity/block-content-to-react';
 import { IoIosQuote } from 'react-icons/io';
-import { RichText as RichTextType } from '@/models/sections/rich-text';
+import { IRichText } from '@/models/sections/rich-text';
 import { SimpleBlockContent } from '@/models/objects/simple-block-content';
 import { MainImage } from '@/components/sections';
 
@@ -11,7 +11,7 @@ type Props = {
 	data: {
 		_key: string;
 		_type: 'richText';
-		copy: RichTextType | SimpleBlockContent;
+		copy: IRichText | SimpleBlockContent;
 	};
 };
 
@@ -45,7 +45,7 @@ const serializers = {
 
 			if (heading !== false) {
 				return (
-					<Heading fontWeight='bolder' textAlign={center ? 'center' : 'left'} as={heading} size={size}>
+					<Heading textAlign={center ? 'center' : 'left'} as={heading} size={size}>
 						{props.children}
 					</Heading>
 				);

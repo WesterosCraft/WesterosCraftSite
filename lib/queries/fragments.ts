@@ -86,6 +86,10 @@ export const referenceGrid = `
 			name,
 			region,
 			slug,
+			projectStatus,
+			house,
+			buildType,
+			entry[0],
 			"images": images[0].asset->{
 				url,
 				metadata {
