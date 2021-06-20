@@ -1,69 +1,49 @@
 import { GetStaticProps } from 'next';
-import { wikiQuery, siteSettingsQuery, pageQuery } from '@/lib/queries';
-import { SiteSettings } from '@/models/site-settings';
-import { useRouter } from 'next/router';
-import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import Error from 'next/error';
-import { RenderSection } from '@/components/utils';
-import { Sections } from '@/models/sections';
-import { MetaFields } from '@/models/meta-fields';
-import { Slug } from '@sanity/types';
+import { useRouter } from 'next/router';
+import { siteSettingsQuery, allBuildsQuery } from '@/lib/queries';
+import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
+import { SiteSettings } from '@/models/site-settings';
 import { WikiLayout } from '@/components/common';
 
-type PageProps = {
-	content?: Sections[];
-	meta?: MetaFields;
-	heading?: string;
-	slug: Slug;
-	_createdAt: string;
-	_id: 'allBuilds';
-	_rev: string;
-	_type: 'allBuilds';
-	_updatedAt: string;
-};
-
-type Props = {
-	pageData: PageProps;
-	siteSettings: SiteSettings;
-};
-
-const BuildsPage = ({ pageData, siteSettings }: Props) => {
+const BuildsPage = ({ allBuildsData, siteSettings }: any) => {
 	const router = useRouter();
 
-	const { data: page } = usePreviewSubscription(wikiQuery, {
-		params: { type: 'wiki' },
-		initialData: pageData,
-		enabled: pageData && router.query.preview !== null,
+	const data = usePreviewSubscription(allBuildsQuery, {
+		initialData: allBuildsQuery,
+		enabled: allBuildsData && router.query.preview !== null,
 	});
 
-	if (!router.isFallback && !page) {
+	if (!router.isFallback && !data) {
 		return <Error statusCode={404} />;
 	}
 
 	return (
-		<WikiLayout meta={page?.meta} siteSettings={siteSettings}>
-			{page?.content?.map((section) => {
-				if (!section || Object.keys(section).length === 0) {
-					return null;
-				}
-
-				return <RenderSection key={section._key} section={section} />;
-			})}
+		<WikiLayout meta={allBuildsData?.meta} siteSettings={siteSettings}>
+			{allBuildsData.map((build: any) => (
+				<h5 key={build._key}>{build.name ?? 'missing name'}</h5>
+			))}
 		</WikiLayout>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'allBuilds', slug: 'allBuilds' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
+	const allBuildsData = await sanityClient.fetch<any>(allBuildsQuery);
 
-	if (!pageData) {
+	if (!allBuildsData) {
 		return {
 			notFound: true,
 		};
 	}
 
-	return { props: { siteSettings, pageData }, revalidate: 60 };
+	return {
+		props: {
+			allBuildsData,
+			siteSettings,
+		},
+		revalidate: 60,
+	};
 };
 
 export default BuildsPage;

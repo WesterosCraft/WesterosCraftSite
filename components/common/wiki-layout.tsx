@@ -31,7 +31,7 @@ const WikiLayout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
 				width='100%'
 				mx='auto'
 			>
-				<WikiHeader width={width} socialFields={siteSettings.socialFields} />
+				<WikiHeader width={width} socialFields={siteSettings?.socialFields} />
 				<Flex
 					as='main'
 					width='100%'
@@ -44,8 +44,8 @@ const WikiLayout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
 				>
 					<WikiNav
 						navData={{
-							topLevelNavigation: siteSettings.topLevelWikiNavigation,
-							wikiNavigation: siteSettings.wikiNavigation,
+							topLevelNavigation: siteSettings?.topLevelWikiNavigation,
+							wikiNavigation: siteSettings?.wikiNavigation,
 						}}
 					/>
 					<Box flex='1 1 0%' pl={3}>
