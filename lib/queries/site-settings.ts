@@ -5,11 +5,17 @@ export const siteSettingsQuery = groq`
 	...,
 	navigation[]{
 		...,
-		link->{_type, slug},
+		link->{
+			_type,
+			slug
+		},
 		links[]{
-	...,
-	link->{_type, slug}
-  }
+			...,
+			link->{
+				_type,
+				slug
+			}
+  		}
 	}
 }
 `;

@@ -48,7 +48,7 @@ const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, st
 					<Image src={BrightSquares} loader={myLoader} placeholder='blur' width={322} height={201} alt={name} />
 				)}
 
-				<Center flexDirection='column' p={3} justifyContent='space-between'>
+				<Center flexDirection='column' p={3} justifyContent='space-between' flexGrow={1}>
 					<Box>
 						<Heading textAlign='center' noOfLines={1} fontWeight='black' fontSize='2xl'>
 							{name}
@@ -63,7 +63,7 @@ const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, st
 						)}
 					</Box>
 
-					<Flex width={'100%'} justify='space-between' mt={6} flexGrow={1}>
+					<Flex width='100%' justify='space-between' mt={6}>
 						<HStack>
 							{region && <RegionIcon boxSize='16px' region={region} />}
 							{status && <ProjectStatusIcon boxSize='16px' projectStatus={status} />}

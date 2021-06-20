@@ -1,72 +1,59 @@
 import { ReactNode } from 'react';
-import { Flex, Stack, Box, VStack, Text, Heading, Icon } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 import { WikiHeader } from '@/components/common';
-import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
+import { SiteSettings } from '@/models/site-settings';
+import { MetaFields } from '@/models/meta-fields';
+import { Footer, Seo } from '.';
+import WikiNav from './wiki-nav';
 
 type Props = {
+	siteSettings: SiteSettings;
 	children?: ReactNode;
+	meta?: MetaFields;
+	width?: number;
 };
 
-const WikiLayout = ({ children }: Props) => {
+const WikiLayout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
+	const fallbackMeta = {
+		title: siteSettings?.title ?? undefined,
+		description: siteSettings?.description ?? undefined,
+		keywords: siteSettings?.keywords ?? undefined,
+	};
 	return (
-		<Flex direction='column' height='100%'>
-			<WikiHeader />
-			<Flex>
-				<Stack
-					as='nav'
-					aria-label='Wiki Navigation'
-					display={['none', null, 'block']}
-					minWidth={260}
-					maxWidth={260}
-					position='sticky'
-					overflowY='auto'
-					flex='1 1 260px'
-					pr={4}
-					pb={6}
-					pt={4}
-					zIndex='dropdown'
+		<>
+			<Seo meta={meta} fallbackMeta={fallbackMeta} />
+			<Flex
+				alignSelf='center'
+				justifyContent='center'
+				flex='1 0 auto'
+				flexDirection='column'
+				minHeight='100vh'
+				width='100%'
+				mx='auto'
+			>
+				<WikiHeader width={width} socialFields={siteSettings.socialFields} />
+				<Flex
+					as='main'
+					width='100%'
+					padding={[4, 6]}
+					alignSelf='center'
+					justifyContent='center'
+					flex='1 0 auto'
+					direction='row'
+					maxW={width}
 				>
-					<VStack align='start' spacing={3}>
-						<Flex direction='row' align='center'>
-							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiHome} />
-
-							<Text fontWeight='bold' ml={3}>
-								Wiki Home
-							</Text>
+					<WikiNav />
+					<Box flex='1 1 0%' pl={3}>
+						<Flex flexDirection='row'>
+							<Box className='content' width='100%' pt={10}>
+								{children}
+							</Box>
 						</Flex>
-						<Flex direction='row' align='center'>
-							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiDocumentText} />
-							<Text color='gray.500' fontWeight='bold' ml={3}>
-								Guides
-							</Text>
-						</Flex>
-						<Flex direction='row' align='center'>
-							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiLibrary} />
-							<Text color='gray.500' fontWeight='bold' ml={3}>
-								Builds
-							</Text>
-						</Flex>
-						<Flex direction='row' align='center'>
-							<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiCube} />
-							<Text color='gray.500' fontWeight='bold' ml={3}>
-								Blocks
-							</Text>
-						</Flex>
-					</VStack>
-					<Heading as='h4' fontSize='md' textTransform='uppercase'>
-						Getting Started
-					</Heading>
-				</Stack>
-
-				<Box flex='1 1 0%' pl={3}>
-					<Flex flexDirection='row'>
-						<Box className='content' width='100%' pt={10}>
-							{children}
-						</Box>
-					</Flex>
-				</Box>
+					</Box>
+				</Flex>
+				<Footer socialFields={siteSettings?.socialFields} />
 			</Flex>
-		</Flex>
+		</>
 	);
 };
 

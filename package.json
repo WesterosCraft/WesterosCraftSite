@@ -12,7 +12,7 @@
 		"tsc": "tsc"
 	},
 	"engines": {
-		"node": "12.x"
+		"node": "14.x"
 	},
 	"author": "Jacob Granberry",
 	"license": "MIT",

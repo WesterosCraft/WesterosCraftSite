@@ -1,5 +1,4 @@
 import { RiSettings5Line } from 'react-icons/ri';
-import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 
 export default {
 	name: 'siteSettings',

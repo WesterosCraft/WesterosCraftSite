@@ -16,14 +16,12 @@ import {
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { DarkModeSwitch } from '.';
-
 import NextLink from 'next/link';
 import { InternalLink } from '@/models/objects/internal-link';
 import { ExternalLink } from '@/models/objects/external-link';
 import { NavItem } from '@/models/objects/nav-item';
 import { isEmpty } from 'lodash';
 import { SubNavItem } from '@/models/objects/sub-nav-item';
-import Image from 'next/image';
 import { Logo } from './logo';
 
 export default function WithSubnavigation({
@@ -37,12 +35,7 @@ export default function WithSubnavigation({
 
 	return (
 		<Box maxW={maxWidth} w={'100%'} marginX='auto'>
-			<Flex
-				minH={'60px'}
-				py={{ base: 2 }}
-				px={{ base: 4 }}
-				align={'center'}
-			>
+			<Flex minH={'60px'} py={{ base: 2 }} px={{ base: 4 }} align={'center'}>
 				<Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
 					<IconButton
 						onClick={onToggle}
@@ -51,12 +44,8 @@ export default function WithSubnavigation({
 						aria-label={'Toggle Navigation'}
 					/>
 				</Flex>
-				<Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} align='center'>
-					<Image src='/shield-logomark.png' width={36} height={44.3} />
-					<Box ml={2}>
-						<Logo />
-					</Box>
-				</Flex>
+
+				<Logo />
 
 				<Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} align='center' direction={'row'} spacing={6}>
 					<Flex display={{ base: 'none', md: 'flex' }} ml={10}>

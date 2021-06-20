@@ -35,7 +35,6 @@ type Props = {
 };
 
 const WikiPage = ({ pageData, siteSettings }: Props) => {
-	console.log('👉 ~ WikiPage ~ pageData', pageData);
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(wikiQuery, {
@@ -49,26 +48,24 @@ const WikiPage = ({ pageData, siteSettings }: Props) => {
 	}
 
 	return (
-		<Layout meta={page?.meta} siteSettings={siteSettings}>
-			<WikiLayout>
-				{page?.content?.map((section) => {
-					if (!section || Object.keys(section).length === 0) {
-						return null;
-					}
+		<WikiLayout meta={page?.meta} siteSettings={siteSettings}>
+			{page?.content?.map((section) => {
+				if (!section || Object.keys(section).length === 0) {
+					return null;
+				}
 
-					return (
-						<RenderSection
-							key={section._key}
-							section={section}
-							additionalData={{
-								updatedDestinations: page.updatedDestinations,
-								createdDestinations: page.createdDestinations,
-							}}
-						/>
-					);
-				})}
-			</WikiLayout>
-		</Layout>
+				return (
+					<RenderSection
+						key={section._key}
+						section={section}
+						additionalData={{
+							updatedDestinations: page.updatedDestinations,
+							createdDestinations: page.createdDestinations,
+						}}
+					/>
+				);
+			})}
+		</WikiLayout>
 	);
 };
 

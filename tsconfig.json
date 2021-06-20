@@ -23,9 +23,11 @@
 		"paths": {
 			"@/components/*": ["components/*"],
 			"@/models/*": ["models/*"],
-			"@/lib/*": ["lib/*"]
+			"@/lib/*": ["lib/*"],
+			"@/data/*": ["constants/*"],
+			"@/utils/*": ["components/utils/*"]
 		}
 	},
 	"exclude": ["node_modules", "studio"],
-	"include": ["**/*.ts", "**/*.tsx", "./node_modules/@sanity/base/types/**/*.ts"]
+	"include": ["**/*.ts", "**/*.tsx", "./node_modules/@sanity/base/types/**/*.ts", "lib/create-manifest.js"]
 }

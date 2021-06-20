@@ -12,7 +12,7 @@ import {
 	ReferenceGrid,
 } from '@/components/sections';
 
-const RenderSection = ({ section, additionalData }: { section: Sections; additionalData: any }) => {
+const RenderSection = ({ section, additionalData }: { section: Sections; additionalData?: any }) => {
 	switch (section._type) {
 		case 'richText':
 			return <RichText data={section} />;

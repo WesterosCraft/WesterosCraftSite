@@ -1,5 +1,6 @@
 export interface SocialFields {
 	twitter?: string;
-	facebook?: string;
+	discord?: string;
 	instagram?: string;
+	youtube?: string;
 }

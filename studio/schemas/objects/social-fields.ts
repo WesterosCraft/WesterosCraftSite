@@ -1,4 +1,4 @@
-import {RiShareLine} from 'react-icons/ri';
+import { RiShareLine } from 'react-icons/ri';
 
 export default {
 	title: 'Social',
@@ -7,19 +7,24 @@ export default {
 	icon: RiShareLine,
 	fields: [
 		{
-			name: 'twitter',
+			name: 'discord',
 			type: 'url',
-			title: 'Twitter URL'
+			title: 'Discord URL',
+		},
+		{
+			name: 'youtube',
+			type: 'url',
+			title: 'Youtube URL',
 		},
 		{
 			name: 'instagram',
 			type: 'url',
-			title: 'Instagram URL'
+			title: 'Instagram URL',
 		},
 		{
-			name: 'facebook',
+			name: 'twitter',
 			type: 'url',
-			title: 'Facebook URL'
-		}
-	]
+			title: 'Twitter URL',
+		},
+	],
 };
