@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 
 export const Logo = ({ shield = true }) => (
 	<Link as={NextLink} href='/'>
-		<Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} align='center'>
+		<Flex justify={{ base: 'center', md: 'start' }} align='center'>
 			{shield && <Image src='/shield-logomark.png' width={36} height={44.3} alt='Shield Logomark' />}
 			<Box ml={2}>
 				<svg

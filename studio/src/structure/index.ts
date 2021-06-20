@@ -7,11 +7,25 @@ import { DownloadsMenuItem } from './downloads';
 import { RookeryMenuItem } from './rookery';
 import { GuidesMenuItem } from './guides';
 import { WikiMenuItem } from './wiki';
+import { AllBuildsMenuItem } from './builds';
+import { AllGuidesMenuItem } from './allGuides';
 import PagePreview from '../components/previews/page/page-preview';
 import { ProgressMenuItem } from './progress';
 import { RiPagesLine, RiPagesFill } from 'react-icons/ri';
 
-const pageList = ['about', 'modpack', 'rookery', 'destination', 'home', 'wiki', 'progress', 'downloads', 'guide'];
+const pageList = [
+	'about',
+	'modpack',
+	'rookery',
+	'destination',
+	'home',
+	'wiki',
+	'progress',
+	'downloads',
+	'guide',
+	'allBuilds',
+	'allGuides',
+];
 
 const hiddenDocTypes = (listItem: any) => !pageList.includes(listItem.getId());
 
@@ -34,6 +48,8 @@ const structure = () =>
 							WikiMenuItem,
 							ProgressMenuItem,
 							DownloadsMenuItem,
+							AllBuildsMenuItem,
+							AllGuidesMenuItem,
 						])
 				),
 			S.listItem()

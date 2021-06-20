@@ -34,6 +34,8 @@ import wiki from './documents/wiki';
 import rookery from './documents/rookery';
 import progress from './documents/progress';
 import downloads from './documents/downloads';
+import builds from './documents/builds';
+import allGuides from './documents/guides';
 
 // objects
 import figure from './objects/figure';
@@ -73,6 +75,7 @@ export default createSchema({
 		socialFields,
 		spacer,
 		youtube,
+		allGuides,
 		home,
 		guide,
 		video,
@@ -80,6 +83,7 @@ export default createSchema({
 		blockBanner,
 		about,
 		modpack,
+		builds,
 		figure,
 		callToAction,
 		documentGrid,

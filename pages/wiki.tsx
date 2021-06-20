@@ -8,7 +8,7 @@ import { RenderSection } from '@/components/utils';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
-import { Layout, WikiLayout } from '@/components/common';
+import { WikiLayout } from '@/components/common';
 import { IProjectDetails } from '@/models/objects/project-details';
 
 type PageProps = {

@@ -1,9 +1,8 @@
-import { Center, Flex, HStack, Box, Input, Link, Icon } from '@chakra-ui/react';
+import { Center, Flex, HStack, Box, Input, Link, Icon, useColorModeValue } from '@chakra-ui/react';
 import { FaDiscord, FaYoutube, FaInstagramSquare, FaTwitter } from 'react-icons/fa';
 import { nameFormatter } from '../utils';
 import { SocialFields } from '@/models/objects/social-fields';
 import { Logo } from './logo';
-import Image from 'next/image';
 import { DarkModeSwitch } from '.';
 
 interface IWikiHeader {
@@ -19,11 +18,13 @@ const IconMap: any = {
 };
 
 const WikiHeader = ({ socialFields, width }: IWikiHeader) => {
+	const hoverColor = useColorModeValue('red.700', 'red.600');
+	const iconColor = useColorModeValue('gray.500', 'whiteAlpha.900');
 	return (
 		<Box
 			as='header'
 			align-self='flex-start'
-			borderColor='gray.200'
+			borderColor={useColorModeValue('gray.200', 'gray.700')}
 			borderWidth={0}
 			borderBottomWidth={1}
 			borderStyle='solid'
@@ -31,15 +32,14 @@ const WikiHeader = ({ socialFields, width }: IWikiHeader) => {
 			top={0}
 			left={0}
 			right={0}
-			bg='white'
+			bg={useColorModeValue('white', 'gray.800')}
 			zIndex='banner'
 			boxShadow='sm'
 			px={6}
+			py={4}
 		>
 			<Center maxW={width} mx='auto'>
-				<Box display={['none', null, 'block']} maxWidth={260} overflowY='auto' flex='1 1 260px' pr={4} pb={6} pt={4}>
-					<Logo />
-				</Box>
+				<Logo />
 				<Flex flex='1 1 0%' pl={3}>
 					<Input placeholder='Search the wiki' />
 					<HStack ml={4} spacing={3}>
@@ -47,15 +47,15 @@ const WikiHeader = ({ socialFields, width }: IWikiHeader) => {
 							Object.entries(socialFields).map((key) => {
 								return (
 									key[0] !== '_type' && (
-										<Link href={key[1]} isExternal>
+										<Link key={key[0]} href={key[1]} isExternal>
 											<Icon
 												aria-label={nameFormatter(key[0])}
 												boxSize={'20px'}
-												color='gray.500'
+												color={iconColor}
 												transitionDuration='fast'
 												transitionProperty='common'
 												transitionTimingFunction='ease-out'
-												_hover={{ color: 'red.700' }}
+												_hover={{ color: hoverColor }}
 												as={IconMap[key[0]]}
 											/>
 										</Link>
