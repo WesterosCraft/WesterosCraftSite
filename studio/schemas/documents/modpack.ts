@@ -5,7 +5,7 @@ export default {
 	title: 'Modpack',
 	name: 'modpack',
 	type: 'document',
-	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fieldsets: [...fieldsets],
 	fields: [
 		{
@@ -38,13 +38,6 @@ export default {
 			name: 'heading',
 			type: 'string',
 			fieldset: 'content',
-		},
-		{
-			name: 'pageBuilder',
-			type: 'array',
-			title: 'Page builder',
-			fieldset: 'content',
-			of: [{ type: 'twoColumnText' }, { type: 'richText' }, { type: 'contentBanner' }, { type: 'spacer' }],
 		},
 	],
 };

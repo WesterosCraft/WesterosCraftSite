@@ -16,6 +16,23 @@ export const siteSettingsQuery = groq`
 				slug
 			}
   		}
+	},
+	topLevelWikiNavigation{
+		...,
+		link->{
+			_type,
+			slug
+		},
+		links[]{
+			...,
+			link->{
+				_type,
+				slug
+			}
+  		}
+	},
+	wikiNavigation[]{
+		...,
 	}
-}
+	}
 `;

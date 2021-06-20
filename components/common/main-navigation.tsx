@@ -1,33 +1,12 @@
 import NextLink from 'next/link';
 import { Flex, Link } from '@chakra-ui/react';
+import { resolveLink } from '../utils/helpers';
 import { InternalLink } from '@/models/objects/internal-link';
 import { ExternalLink } from '@/models/objects/external-link';
 
 type Props = {
 	navigation?: Array<InternalLink | ExternalLink>;
 	direction?: 'row' | 'column';
-};
-
-const resolveLink = (item: InternalLink | ExternalLink) => {
-	if (item._type === 'externalLink' && item.slug?.current) {
-		return {
-			type: item._type,
-			key: item._key,
-			title: item.title,
-			url: item.slug.current,
-		};
-	}
-
-	if (item._type === 'internalLink' && item.link?.slug?.current) {
-		return {
-			type: item._type,
-			key: item._key,
-			title: item.title,
-			url: item.link.slug.current === 'home' ? '/' : `/${item.link.slug.current}/`,
-		};
-	}
-
-	return null;
 };
 
 const MainNavigation = ({ navigation, direction = 'row' }: Props) => {

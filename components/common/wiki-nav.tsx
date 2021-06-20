@@ -1,7 +1,28 @@
-import { Flex, Stack, VStack, Text, Heading, Icon } from '@chakra-ui/react';
+import { Flex, Stack, VStack, Text, Heading, Icon, Link } from '@chakra-ui/react';
 import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
+import { InternalLink } from '@/models/objects/internal-link';
+import { ExternalLink } from '@/models/objects/external-link';
+import { resolveLink } from '../utils/helpers';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 
-const WikiNav = () => {
+interface IWikiNav {
+	navData: {
+		topLevelNavigation?: { links: Array<InternalLink | ExternalLink> };
+		wikiNavigation?: any;
+	};
+}
+
+const IconMap = {
+	HiCube,
+	HiHome,
+	HiDocumentText,
+	HiLibrary,
+};
+
+const WikiNav = ({ navData }: IWikiNav) => {
+	const router = useRouter();
+
 	return (
 		<Stack
 			as='nav'
@@ -20,31 +41,44 @@ const WikiNav = () => {
 			zIndex='dropdown'
 		>
 			<VStack align='start' spacing={3}>
-				<Flex direction='row' align='center'>
-					<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiHome} />
+				{navData.topLevelNavigation?.links.map((item) => {
+					const link = resolveLink(item);
 
-					<Text fontWeight='bold' ml={3}>
-						Wiki Home
-					</Text>
-				</Flex>
-				<Flex direction='row' align='center'>
-					<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiDocumentText} />
-					<Text color='gray.500' fontWeight='bold' ml={3}>
-						Guides
-					</Text>
-				</Flex>
-				<Flex direction='row' align='center'>
-					<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiLibrary} />
-					<Text color='gray.500' fontWeight='bold' ml={3}>
-						Builds
-					</Text>
-				</Flex>
-				<Flex direction='row' align='center'>
-					<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={HiCube} />
-					<Text color='gray.500' fontWeight='bold' ml={3}>
-						Blocks
-					</Text>
-				</Flex>
+					if (!link || !link.url || !link.title) {
+						return null;
+					}
+
+					if (link.type === 'internalLink') {
+						return (
+							<Link
+								as={NextLink}
+								key={link.key}
+								passHref
+								href={`${link.url === '/wiki' ? link.url : `/wiki` + link.url}`}
+							>
+								<Flex
+									direction='row'
+									align='center'
+									width='100%'
+									rounded={'md'}
+									cursor='pointer'
+									color={router.pathname === link.url ? 'black' : 'gray.500'}
+									_hover={{ color: 'black' }}
+								>
+									<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={IconMap[link.icon]} />
+									<Text fontWeight='bold' ml={3}>
+										{link.title}
+									</Text>
+								</Flex>
+							</Link>
+						);
+					}
+					return (
+						<Link key={link.key} isExternal href={link.url} padding={3}>
+							{link.title}
+						</Link>
+					);
+				})}
 			</VStack>
 			<Heading as='h4' fontSize='md' textTransform='uppercase'>
 				Getting Started

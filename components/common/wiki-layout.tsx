@@ -42,7 +42,12 @@ const WikiLayout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
 					direction='row'
 					maxW={width}
 				>
-					<WikiNav />
+					<WikiNav
+						navData={{
+							topLevelNavigation: siteSettings.topLevelWikiNavigation,
+							wikiNavigation: siteSettings.wikiNavigation,
+						}}
+					/>
 					<Box flex='1 1 0%' pl={3}>
 						<Flex flexDirection='row'>
 							<Box className='content' width='100%' pt={10}>

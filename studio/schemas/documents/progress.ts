@@ -5,7 +5,7 @@ export default {
 	title: 'Progress',
 	name: 'progress',
 	type: 'document',
-	// __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+	__experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
 	fieldsets: [...fieldsets],
 	fields: [
 		{

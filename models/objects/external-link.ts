@@ -6,4 +6,5 @@ export interface ExternalLink {
 	title: string;
 	slug?: Slug;
 	description?: string;
+	icon?: string;
 }

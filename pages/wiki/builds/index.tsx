@@ -9,24 +9,17 @@ import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 import { WikiLayout } from '@/components/common';
-import { IProjectDetails } from '@/models/objects/project-details';
 
 type PageProps = {
 	content?: Sections[];
 	meta?: MetaFields;
 	heading?: string;
 	slug: Slug;
-	subheading?: string;
-	caption?: string;
-	title?: string;
-	editions?: any;
 	_createdAt: string;
-	_id: 'wiki';
+	_id: 'allBuilds';
 	_rev: string;
-	_type: 'wiki';
+	_type: 'allBuilds';
 	_updatedAt: string;
-	updatedDestinations?: Array<IProjectDetails>;
-	createdDestinations?: Array<IProjectDetails>;
 };
 
 type Props = {
@@ -61,7 +54,7 @@ const BuildsPage = ({ pageData, siteSettings }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'allBuilds' });
+	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'allBuilds', slug: 'allBuilds' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {

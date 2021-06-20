@@ -8,4 +8,5 @@ export interface InternalLink {
 		slug: Slug;
 	};
 	description?: string;
+	icon?: string;
 }

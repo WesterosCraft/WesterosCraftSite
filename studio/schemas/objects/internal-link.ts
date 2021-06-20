@@ -49,6 +49,12 @@ export default {
 				{
 					type: 'destination',
 				},
+				{
+					type: 'allGuides',
+				},
+				{
+					type: 'allBuilds',
+				},
 			],
 		},
 		{

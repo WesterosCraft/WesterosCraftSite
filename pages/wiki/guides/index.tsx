@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { wikiQuery, siteSettingsQuery, pageQuery } from '@/lib/queries';
+import { pageQuery, siteSettingsQuery } from '@/lib/queries';
 import { SiteSettings } from '@/models/site-settings';
 import { useRouter } from 'next/router';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
@@ -9,24 +9,17 @@ import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 import { WikiLayout } from '@/components/common';
-import { IProjectDetails } from '@/models/objects/project-details';
 
 type PageProps = {
 	content?: Sections[];
 	meta?: MetaFields;
 	heading?: string;
 	slug: Slug;
-	subheading?: string;
-	caption?: string;
-	title?: string;
-	editions?: any;
 	_createdAt: string;
-	_id: 'wiki';
+	_id: 'allGuides';
 	_rev: string;
-	_type: 'wiki';
+	_type: 'allGuides';
 	_updatedAt: string;
-	updatedDestinations?: Array<IProjectDetails>;
-	createdDestinations?: Array<IProjectDetails>;
 };
 
 type Props = {
@@ -37,8 +30,8 @@ type Props = {
 const GuidesPage = ({ pageData, siteSettings }: Props) => {
 	const router = useRouter();
 
-	const { data: page } = usePreviewSubscription(wikiQuery, {
-		params: { type: 'wiki' },
+	const { data: page } = usePreviewSubscription(pageQuery, {
+		params: { type: 'allGuides' },
 		initialData: pageData,
 		enabled: pageData && router.query.preview !== null,
 	});
@@ -61,7 +54,7 @@ const GuidesPage = ({ pageData, siteSettings }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'allGuides' });
+	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'allGuides', slug: 'allGuides' });
 	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
