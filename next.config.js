@@ -14,4 +14,11 @@ module.exports = {
 	async rewrites() {
 		return [STUDIO_REWRITE];
 	},
+	// webpack: (config, { isServer }) => {
+	// 	if (isServer) {
+	// 		require('./scripts/create-manifest.ts');
+	// 	}
+
+	// 	return config;
+	// },
 };
