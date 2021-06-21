@@ -6,9 +6,8 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
 import { GetStaticProps } from 'next';
-import { pageQuery, siteSettingsQuery } from '@/lib/queries';
-import { SiteSettings } from '@/models/site-settings';
-import { Layout } from '@/components/common';
+import { pageQuery } from '@/lib/queries';
+import { Seo } from '@/components/common';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { RenderSection } from '@/components/utils';
 import { Sections } from '@/models/sections';
@@ -45,10 +44,9 @@ type PageProps = {
 
 type Props = {
 	pageData: PageProps;
-	siteSettings: SiteSettings;
 };
 
-const ProgressPage = ({ pageData, siteSettings }: Props) => {
+const ProgressPage = ({ pageData }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
@@ -276,7 +274,8 @@ const ProgressPage = ({ pageData, siteSettings }: Props) => {
 	}
 
 	return (
-		<Layout meta={page?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={page?.meta} />
 			<Heading variant='heading2' textAlign='center' px={5}>
 				{page.heading}
 			</Heading>
@@ -285,13 +284,12 @@ const ProgressPage = ({ pageData, siteSettings }: Props) => {
 			</Heading>
 
 			{/* <ProgressTable columns={columns} data={destinationData} /> */}
-		</Layout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
 	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'progress', slug: 'progress' });
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
 		return {
@@ -299,7 +297,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		};
 	}
 
-	return { props: { siteSettings, pageData }, revalidate: 60 };
+	return { props: { pageData }, revalidate: 60 };
 };
 
 export default ProgressPage;

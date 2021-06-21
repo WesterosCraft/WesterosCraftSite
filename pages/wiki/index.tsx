@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next';
-import { wikiQuery, siteSettingsQuery } from '@/lib/queries';
-import { SiteSettings } from '@/models/site-settings';
+import { wikiQuery } from '@/lib/queries';
 import { useRouter } from 'next/router';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import Error from 'next/error';
@@ -8,8 +7,10 @@ import { RenderSection } from '@/components/utils';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
-import { WikiLayout } from '@/components/common';
+import { Seo, WikiLayout, Layout } from '@/components/common';
 import { IProjectDetails } from '@/models/objects/project-details';
+import { siteSettings } from '@/data/.';
+import type { Page } from '../../globals';
 
 type PageProps = {
 	content?: Sections[];
@@ -31,10 +32,9 @@ type PageProps = {
 
 type Props = {
 	pageData: PageProps;
-	siteSettings: SiteSettings;
 };
 
-const WikiPage = ({ pageData, siteSettings }: Props) => {
+const WikiPage = ({ pageData }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(wikiQuery, {
@@ -48,7 +48,8 @@ const WikiPage = ({ pageData, siteSettings }: Props) => {
 	}
 
 	return (
-		<WikiLayout meta={page?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={page?.meta} />
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {
 					return null;
@@ -65,13 +66,12 @@ const WikiPage = ({ pageData, siteSettings }: Props) => {
 					/>
 				);
 			})}
-		</WikiLayout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
 	const pageData = await sanityClient.fetch<PageProps>(wikiQuery, { type: 'wiki' });
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
 		return {
@@ -79,7 +79,13 @@ export const getStaticProps: GetStaticProps = async () => {
 		};
 	}
 
-	return { props: { siteSettings, pageData }, revalidate: 60 };
+	return { props: { pageData }, revalidate: 60 };
 };
+
+WikiPage.getLayout = (page: Page) => (
+	<Layout siteSettings={siteSettings}>
+		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
+	</Layout>
+);
 
 export default WikiPage;

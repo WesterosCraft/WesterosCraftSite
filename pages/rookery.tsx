@@ -1,8 +1,7 @@
 import { GetStaticProps } from 'next';
-import { pageQuery, siteSettingsQuery } from '@/lib/queries';
-import { SiteSettings } from '@/models/site-settings';
+import { pageQuery } from '@/lib/queries';
 import { Heading, Box, Flex, Text, Button, Input } from '@chakra-ui/react';
-import { Layout } from '@/components/common';
+import { Seo } from '@/components/common';
 import { useRouter } from 'next/router';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import Error from 'next/error';
@@ -30,10 +29,9 @@ type PageProps = {
 
 type Props = {
 	pageData: PageProps;
-	siteSettings: SiteSettings;
 };
 
-const RookeryPage = ({ pageData, siteSettings }: Props) => {
+const RookeryPage = ({ pageData }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
@@ -99,7 +97,8 @@ const RookeryPage = ({ pageData, siteSettings }: Props) => {
 	}
 
 	return (
-		<Layout meta={page?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={page?.meta} />
 			<Flex
 				mt={[3, 10, 75]}
 				justifyContent='center'
@@ -153,13 +152,12 @@ const RookeryPage = ({ pageData, siteSettings }: Props) => {
 
 				return <RenderSection key={section._key} section={section} />;
 			})}
-		</Layout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
 	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'rookery', slug: 'rookery' });
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
 		return {
@@ -167,7 +165,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		};
 	}
 
-	return { props: { siteSettings, pageData }, revalidate: 60 };
+	return { props: { pageData }, revalidate: 60 };
 };
 
 export default RookeryPage;

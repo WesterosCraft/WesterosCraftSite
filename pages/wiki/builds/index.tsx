@@ -1,12 +1,13 @@
 import { GetStaticProps } from 'next';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
-import { siteSettingsQuery, allBuildsQuery } from '@/lib/queries';
+import { allBuildsQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { SiteSettings } from '@/models/site-settings';
-import { WikiLayout } from '@/components/common';
+import { WikiLayout, Layout, Seo } from '@/components/common';
+import { siteSettings } from '@/data/.';
+import type { Page } from '../../../globals';
 
-const BuildsPage = ({ allBuildsData, siteSettings }: any) => {
+const BuildsPage = ({ allBuildsData }: any) => {
 	const router = useRouter();
 
 	const data = usePreviewSubscription(allBuildsQuery, {
@@ -19,16 +20,16 @@ const BuildsPage = ({ allBuildsData, siteSettings }: any) => {
 	}
 
 	return (
-		<WikiLayout meta={allBuildsData?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={data?.meta} />
 			{allBuildsData.map((build: any) => (
 				<h5 key={build._key}>{build.name ?? 'missing name'}</h5>
 			))}
-		</WikiLayout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 	const allBuildsData = await sanityClient.fetch<any>(allBuildsQuery);
 
 	if (!allBuildsData) {
@@ -40,10 +41,15 @@ export const getStaticProps: GetStaticProps = async () => {
 	return {
 		props: {
 			allBuildsData,
-			siteSettings,
 		},
 		revalidate: 60,
 	};
 };
+
+BuildsPage.getLayout = (page: Page) => (
+	<Layout siteSettings={siteSettings}>
+		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
+	</Layout>
+);
 
 export default BuildsPage;

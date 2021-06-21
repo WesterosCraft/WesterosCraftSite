@@ -3,13 +3,12 @@ import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { pageQuery, siteSettingsQuery } from '@/lib/queries';
+import { pageQuery } from '@/lib/queries';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 import { RenderSection } from '@/components/utils';
-import { Layout } from '@/components/common';
-import { SiteSettings } from '@/models/site-settings';
+import { Seo } from '@/components/common';
 
 type PageProps = {
 	content?: Sections[];
@@ -25,10 +24,9 @@ type PageProps = {
 
 type Props = {
 	pageData: PageProps;
-	siteSettings: SiteSettings;
 };
 
-const DownloadsPage = ({ pageData, siteSettings }: Props) => {
+const DownloadsPage = ({ pageData }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
@@ -42,7 +40,8 @@ const DownloadsPage = ({ pageData, siteSettings }: Props) => {
 	}
 
 	return (
-		<Layout meta={page?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={page?.meta} />
 			<Heading variant='heading2' textAlign='center' mt={[12]}>
 				{page.heading}
 			</Heading>
@@ -53,13 +52,12 @@ const DownloadsPage = ({ pageData, siteSettings }: Props) => {
 
 				return <RenderSection key={section._key} section={section} />;
 			})}
-		</Layout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
 	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'downloads', slug: 'downloads' });
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
 		return {
@@ -67,7 +65,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		};
 	}
 
-	return { props: { siteSettings, pageData }, revalidate: 60 };
+	return { props: { pageData }, revalidate: 60 };
 };
 
 export default DownloadsPage;

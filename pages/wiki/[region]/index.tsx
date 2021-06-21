@@ -1,13 +1,14 @@
 import { GetStaticProps } from 'next';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
-import { siteSettingsQuery, regionQuery } from '@/lib/queries';
+import { regionQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { SiteSettings } from '@/models/site-settings';
-import { WikiLayout } from '@/components/common';
 import { camelCase } from 'lodash';
+import { Seo, WikiLayout, Layout } from '@/components/common';
+import { siteSettings } from '@/data/.';
+import type { Page } from '../../../globals';
 
-const RegionPage = ({ regionData, siteSettings }: any) => {
+const RegionPage = ({ regionData }: any) => {
 	const router = useRouter();
 
 	const region = usePreviewSubscription(regionQuery, {
@@ -21,17 +22,18 @@ const RegionPage = ({ regionData, siteSettings }: any) => {
 	}
 
 	return (
-		<WikiLayout meta={regionData?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={region?.meta} />
+
 			{regionData.map((item: any) => (
 				<h3 key={item._key}>{item.name}</h3>
 			))}
-		</WikiLayout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const slug = camelCase(params?.region?.toString());
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 	const regionData = await sanityClient.fetch<any>(regionQuery, {
 		slug,
 	});
@@ -45,7 +47,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	return {
 		props: {
 			regionData,
-			siteSettings,
 		},
 		revalidate: 60,
 	};
@@ -71,5 +72,11 @@ export const getStaticPaths = async () => {
 		fallback: true,
 	};
 };
+
+RegionPage.getLayout = (page: Page) => (
+	<Layout siteSettings={siteSettings}>
+		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
+	</Layout>
+);
 
 export default RegionPage;

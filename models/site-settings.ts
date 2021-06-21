@@ -6,7 +6,7 @@ import { ExternalLink } from '@/models/objects/external-link';
 
 export interface SiteSettings extends SanityDocument {
 	_type: 'siteSettings';
-	_key: string;
+	_key?: string;
 	title: string;
 	description: string;
 	navigation?: NavItem[];

@@ -1,26 +1,17 @@
 import { ReactNode } from 'react';
 import { Flex } from '@chakra-ui/react';
 import { SiteSettings } from '@/models/site-settings';
-import { MetaFields } from '@/models/meta-fields';
-import { Footer, Header, Seo } from '.';
+import { Footer, Header } from '.';
 
 type Props = {
 	siteSettings: SiteSettings;
 	children?: ReactNode;
-	meta?: MetaFields;
 	width?: number;
 };
 
-const Layout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
-	const fallbackMeta = {
-		title: siteSettings?.title ?? undefined,
-		description: siteSettings?.description ?? undefined,
-		keywords: siteSettings?.keywords ?? undefined,
-	};
-
+const Layout = ({ siteSettings, children, width = 1200 }: Props) => {
 	return (
 		<>
-			<Seo meta={meta} fallbackMeta={fallbackMeta} />
 			<Flex flexDirection='column' minHeight='100vh' overflow='hidden'>
 				{siteSettings?.navigation && <Header navigation={siteSettings?.navigation} maxWidth={width} />}
 				<Flex

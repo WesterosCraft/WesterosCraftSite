@@ -1,13 +1,14 @@
 import { GetStaticProps } from 'next';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
-import { siteSettingsQuery, allBuildsSlug, buildQuery } from '@/lib/queries';
+import { allBuildsSlug, buildQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { SiteSettings } from '@/models/site-settings';
-import { WikiLayout } from '@/components/common';
+import { Seo, WikiLayout, Layout } from '@/components/common';
 import { kebabCase } from 'lodash';
+import { siteSettings } from '@/data/.';
+import type { Page } from '../../../globals';
 
-const BuildPage = ({ buildData, siteSettings }: any) => {
+const BuildPage = ({ buildData }: any) => {
 	const router = useRouter();
 
 	const { data: build } = usePreviewSubscription(buildQuery, {
@@ -21,24 +22,22 @@ const BuildPage = ({ buildData, siteSettings }: any) => {
 	}
 
 	return (
-		<WikiLayout meta={build?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={build?.meta} />
 			BUILD: {buildData.name}
-		</WikiLayout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const slug = params?.slug?.toString();
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 	const buildData = await sanityClient.fetch<any>(buildQuery, {
 		slug,
 	});
-	console.log('👉 ~ constgetStaticProps:GetStaticProps= ~ buildData', buildData);
 
 	return {
 		props: {
 			buildData,
-			siteSettings,
 		},
 		revalidate: 60,
 	};
@@ -53,5 +52,11 @@ export const getStaticPaths = async () => {
 		fallback: true,
 	};
 };
+
+BuildPage.getLayout = (page: Page) => (
+	<Layout siteSettings={siteSettings}>
+		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
+	</Layout>
+);
 
 export default BuildPage;

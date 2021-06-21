@@ -3,7 +3,7 @@ import { Flex, Box } from '@chakra-ui/react';
 import { WikiHeader } from '@/components/common';
 import { SiteSettings } from '@/models/site-settings';
 import { MetaFields } from '@/models/meta-fields';
-import { Footer, Seo } from '.';
+import { Footer } from '.';
 import WikiNav from './wiki-nav';
 
 type Props = {
@@ -13,15 +13,9 @@ type Props = {
 	width?: number;
 };
 
-const WikiLayout = ({ siteSettings, meta, children, width = 1200 }: Props) => {
-	const fallbackMeta = {
-		title: siteSettings?.title ?? undefined,
-		description: siteSettings?.description ?? undefined,
-		keywords: siteSettings?.keywords ?? undefined,
-	};
+const WikiLayout = ({ siteSettings, children, width = 1200 }: Props) => {
 	return (
 		<>
-			<Seo meta={meta} fallbackMeta={fallbackMeta} />
 			<Flex
 				alignSelf='center'
 				justifyContent='center'

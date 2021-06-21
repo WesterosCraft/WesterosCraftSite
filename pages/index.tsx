@@ -1,10 +1,8 @@
 import { GetStaticProps } from 'next';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
-import { pageQuery, siteSettingsQuery } from '@/lib/queries';
+import { pageQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { SiteSettings } from '@/models/site-settings';
-import { Layout } from '@/components/common';
 import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { Sections } from '@/models/sections';
@@ -13,6 +11,7 @@ import { Heading, Text, Box, Button, Flex, useColorModeValue, AspectRatio, Simpl
 import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
+import { Seo } from '@/components/common';
 
 type PageProps = {
 	content?: Sections[];
@@ -33,10 +32,9 @@ type PageProps = {
 
 type Props = {
 	pageData: PageProps;
-	siteSettings: SiteSettings;
 };
 
-const Index = ({ pageData, siteSettings }: Props) => {
+const Index = ({ pageData }: Props) => {
 	const router = useRouter();
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
@@ -45,12 +43,16 @@ const Index = ({ pageData, siteSettings }: Props) => {
 		enabled: pageData && router.query.preview !== null,
 	});
 
+	const buttonColor = useColorModeValue('white', 'black');
+	const buttonHover = useColorModeValue('blackAlpha.800', 'white');
+
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
 	}
 
 	return (
-		<Layout meta={page?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={page?.meta} />
 			{page.heroSlider?.slideItems && (
 				<Flex justify='center' flexDirection='column' position='relative' borderRadius='50px' overflow='hidden'>
 					<Box position='absolute' textAlign='left' zIndex='docked' pl={6}>
@@ -74,8 +76,8 @@ const Index = ({ pageData, siteSettings }: Props) => {
 							display={{ base: 'none', md: 'inline-flex' }}
 							fontSize={'md'}
 							fontWeight={600}
-							color={useColorModeValue('white', 'black')}
-							bg={useColorModeValue('blackAlpha.800', 'white')}
+							color={buttonColor}
+							bg={buttonHover}
 							href={'#'}
 							_hover={{
 								color: 'white',
@@ -102,8 +104,8 @@ const Index = ({ pageData, siteSettings }: Props) => {
 							display={{ base: 'none', md: 'inline-flex' }}
 							fontSize={'md'}
 							fontWeight={600}
-							color={useColorModeValue('white', 'black')}
-							bg={useColorModeValue('blackAlpha.800', 'white')}
+							color={buttonColor}
+							bg={buttonHover}
 							href={'#'}
 							_hover={{
 								color: 'white',
@@ -154,13 +156,12 @@ const Index = ({ pageData, siteSettings }: Props) => {
 
 				return <RenderSection key={section._key} section={section} />;
 			})}
-		</Layout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
 	const pageData = await sanityClient.fetch<PageProps>(pageQuery, { type: 'home', slug: 'homepage' });
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 
 	if (!pageData) {
 		return {
@@ -168,10 +169,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		};
 	}
 
-	return { props: { siteSettings, pageData }, revalidate: 60 };
+	return { props: { pageData }, revalidate: 60 };
 };
-
-//@ts-ignore
-// Index.getLayout = (page: any) => <div className='bkjajsdj'>{page}</div>;
 
 export default Index;

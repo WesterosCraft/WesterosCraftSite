@@ -1,12 +1,13 @@
 import { GetStaticProps } from 'next';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
-import { siteSettingsQuery, allGuidesQuery } from '@/lib/queries';
+import { allGuidesQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { SiteSettings } from '@/models/site-settings';
-import { WikiLayout } from '@/components/common';
+import { Seo, WikiLayout, Layout } from '@/components/common';
+import type { Page } from '../../../globals';
+import { siteSettings } from '@/data/.';
 
-const GuidesPage = ({ allGuidesData, siteSettings }: any) => {
+const GuidesPage = ({ allGuidesData }: any) => {
 	const router = useRouter();
 
 	const data = usePreviewSubscription(allGuidesQuery, {
@@ -19,16 +20,17 @@ const GuidesPage = ({ allGuidesData, siteSettings }: any) => {
 	}
 
 	return (
-		<WikiLayout meta={allGuidesData?.meta} siteSettings={siteSettings}>
+		<>
+			{/* //@ts-ignore */}
+			<Seo meta={data?.meta} />
 			{allGuidesData.map((guide: any) => (
 				<h5 key={guide._key}>{guide.name ?? 'missing name'}</h5>
 			))}
-		</WikiLayout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 	const allGuidesData = await sanityClient.fetch<any>(allGuidesQuery);
 
 	if (!allGuidesData) {
@@ -40,10 +42,15 @@ export const getStaticProps: GetStaticProps = async () => {
 	return {
 		props: {
 			allGuidesData,
-			siteSettings,
 		},
 		revalidate: 60,
 	};
 };
+
+GuidesPage.getLayout = (page: Page) => (
+	<Layout siteSettings={siteSettings}>
+		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
+	</Layout>
+);
 
 export default GuidesPage;

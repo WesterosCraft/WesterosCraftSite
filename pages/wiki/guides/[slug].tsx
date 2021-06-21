@@ -1,12 +1,13 @@
 import { GetStaticProps } from 'next';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
-import { siteSettingsQuery, allGuidesSlug, guideQuery } from '@/lib/queries';
+import { allGuidesSlug, guideQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { SiteSettings } from '@/models/site-settings';
-import { WikiLayout } from '@/components/common';
+import { WikiLayout, Layout, Seo } from '@/components/common';
+import { siteSettings } from '@/data/.';
+import type { Page } from '../../../globals';
 
-const GuidePage = ({ guideData, siteSettings }: any) => {
+const GuidePage = ({ guideData }: any) => {
 	const router = useRouter();
 
 	const { data: guide } = usePreviewSubscription(guideQuery, {
@@ -20,15 +21,15 @@ const GuidePage = ({ guideData, siteSettings }: any) => {
 	}
 
 	return (
-		<WikiLayout meta={guide?.meta} siteSettings={siteSettings}>
+		<>
+			<Seo meta={guide?.meta} />
 			GUIDE: {guideData.slug.current}
-		</WikiLayout>
+		</>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const slug = params?.slug?.toString();
-	const siteSettings = await sanityClient.fetch<SiteSettings>(siteSettingsQuery);
 	const guideData = await sanityClient.fetch<any>(guideQuery, {
 		slug,
 	});
@@ -36,7 +37,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	return {
 		props: {
 			guideData,
-			siteSettings,
 		},
 		revalidate: 60,
 	};
@@ -51,5 +51,11 @@ export const getStaticPaths = async () => {
 		fallback: true,
 	};
 };
+
+GuidePage.getLayout = (page: Page) => (
+	<Layout siteSettings={siteSettings}>
+		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
+	</Layout>
+);
 
 export default GuidePage;

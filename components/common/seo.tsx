@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { MetaFields } from '@/models/meta-fields';
 import { urlFor } from '@/lib/sanity';
 import SEO from '../../next-seo.config';
+import siteSettings from '../../constants/site-settings.json';
 
 type Props = {
 	meta?: MetaFields;
@@ -12,7 +13,13 @@ type Props = {
 	};
 };
 
-const Seo = ({ meta, fallbackMeta }: Props) => {
+const Seo = ({ meta }: Props) => {
+	const fallbackMeta = {
+		title: siteSettings?.title ?? undefined,
+		description: siteSettings?.description ?? undefined,
+		// keywords: siteSettings?.keywords ?? undefined,
+	};
+
 	const router = useRouter();
 	const title = meta?.metaTitle ?? fallbackMeta?.title ?? SEO.title;
 	const description = meta?.metaDescription ?? fallbackMeta?.title ?? SEO.description;
