@@ -171,4 +171,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	return { props: { siteSettings, pageData }, revalidate: 60 };
 };
 
+//@ts-ignore
+// Index.getLayout = (page: any) => <div className='bkjajsdj'>{page}</div>;
+
 export default Index;

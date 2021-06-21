@@ -1,7 +1,47 @@
-import fs from 'fs';
+const fs = require('fs');
+const sanityClient = require('../lib/sanity');
+const groq = require('next-sanity');
+
+const siteSettingsQuery = groq.groq`
+*[_type == "siteSettings"][0]{
+	...,
+	navigation[]{
+		...,
+		link->{
+			_type,
+			slug
+		},
+		links[]{
+			...,
+			link->{
+				_type,
+				slug
+			}
+  		}
+	},
+	topLevelWikiNavigation{
+		...,
+		link->{
+			_type,
+			slug
+		},
+		links[]{
+			...,
+			link->{
+				_type,
+				slug
+			}
+  		}
+	},
+	wikiNavigation[]{
+		...,
+	}
+	}
+`;
+
 async function createManifestsFromCMS() {
 	const data = await sanityClient.fetch(siteSettingsQuery);
-	fs.writeFile('./src/data/global-manifest.json', JSON.stringify(data), (err) => {
+	fs.writeFile('./constants/global-manifest.json', JSON.stringify(data), (err) => {
 		if (err) throw err;
 		console.info('Global data manifest written to file');
 	});

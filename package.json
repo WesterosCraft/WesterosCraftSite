@@ -9,7 +9,8 @@
 		"start": "vercel dev",
 		"postinstall": "cd studio && rm -rf node_modules && yarn install --frozen-lockfile",
 		"test": "tsc && xo && jest",
-		"tsc": "tsc"
+		"tsc": "tsc",
+		"create-manifest": "node ./scripts/create-manifest"
 	},
 	"engines": {
 		"node": "14.x"
