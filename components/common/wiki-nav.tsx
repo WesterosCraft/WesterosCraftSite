@@ -1,4 +1,4 @@
-import { Flex, Stack, VStack, Text, Heading, Icon, Link } from '@chakra-ui/react';
+import { Flex, Stack, VStack, Text, Heading, Icon, Link, useColorModeValue } from '@chakra-ui/react';
 import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 import { InternalLink } from '@/models/objects/internal-link';
 import { ExternalLink } from '@/models/objects/external-link';
@@ -22,6 +22,7 @@ const IconMap = {
 
 const WikiNav = ({ navData }: IWikiNav) => {
 	const router = useRouter();
+	const navColor = useColorModeValue('black', 'white');
 
 	return (
 		<Stack
@@ -40,7 +41,7 @@ const WikiNav = ({ navData }: IWikiNav) => {
 			pt={4}
 			zIndex='dropdown'
 		>
-			<VStack align='start' spacing={3}>
+			<VStack align='start' spacing={3} mb={8}>
 				{navData.topLevelNavigation?.links.map((item) => {
 					const link = resolveLink(item);
 
@@ -62,9 +63,10 @@ const WikiNav = ({ navData }: IWikiNav) => {
 									width='100%'
 									rounded={'md'}
 									cursor='pointer'
-									color={router.pathname === link.url ? 'black' : 'gray.500'}
-									_hover={{ color: 'black' }}
+									color={router.pathname === `/wiki${link.url}` || router.pathname === link.url ? navColor : 'gray.500'}
+									_hover={{ color: navColor }}
 								>
+									{/* @ts-ignore */}
 									<Icon borderRadius='sm' boxSize='20px' bg='red.600' color='white' as={IconMap[link.icon]} />
 									<Text fontWeight='bold' ml={3}>
 										{link.title}
