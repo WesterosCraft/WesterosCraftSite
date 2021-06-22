@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { Flex } from '@chakra-ui/react';
-import { SiteSettings } from '@/models/site-settings';
 import { Footer, Header } from '.';
+import { siteSettings } from '@/data/.';
 
 type Props = {
-	siteSettings: SiteSettings;
+	siteSettings: typeof siteSettings;
 	children?: ReactNode;
 	width?: number;
 };

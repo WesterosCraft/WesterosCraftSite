@@ -21,7 +21,7 @@ const Town = createIcon({
 
 const Village = createIcon({
 	displayName: 'Village',
-	viewBox: '0 0 512512',
+	viewBox: '0 0 512 512',
 	path: (
 		<path
 			fill='currentColor'

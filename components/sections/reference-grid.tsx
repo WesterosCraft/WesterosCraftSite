@@ -3,7 +3,7 @@ import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
 import { getFontSize } from '../utils/helpers';
 import { DestinationCard } from '@/components/common';
 import { IProjectDetails } from '@/models/objects/project-details';
-import { kebabCase, snakeCase } from 'lodash';
+import { kebabCase } from 'lodash';
 
 type Props = {
 	data: IReferenceGrid;
@@ -37,7 +37,7 @@ const ReferenceGrid = ({ data, additionalData }: Props) => {
 							region={item.region}
 							status={item.projectStatus}
 							buildType={item.buildType}
-							url={`wiki/${kebabCase(item.region)}/${item.slug?.current}`}
+							url={`/wiki/${kebabCase(item.region)}/${item.slug?.current}`}
 						/>
 					))}
 				{data.gridOptions === 'recentlyUpdated' &&
@@ -53,7 +53,7 @@ const ReferenceGrid = ({ data, additionalData }: Props) => {
 							region={item.region}
 							status={item.projectStatus}
 							buildType={item.buildType}
-							url={`wiki/${kebabCase(item.region)}/${item.slug?.current}`}
+							url={`/wiki/${kebabCase(item.region)}/${item.slug?.current}`}
 						/>
 					))}
 				{data.gridItems?.map((item, i) => (
@@ -67,7 +67,7 @@ const ReferenceGrid = ({ data, additionalData }: Props) => {
 						region={item.region}
 						status={item.projectStatus}
 						buildType={item.buildType}
-						url={`wiki/${kebabCase(item.region)}/${item.slug?.current}`}
+						url={`/wiki/${kebabCase(item.region)}/${item.slug?.current}`}
 					/>
 				))}
 			</SimpleGrid>

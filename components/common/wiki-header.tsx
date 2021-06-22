@@ -1,13 +1,26 @@
-import { Center, Flex, HStack, Box, Input, Link, Icon, useColorModeValue } from '@chakra-ui/react';
+import {
+	Flex,
+	HStack,
+	Box,
+	Input,
+	Link,
+	useColorModeValue,
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	Icon,
+	InputGroup,
+	InputLeftElement,
+} from '@chakra-ui/react';
 import { FaDiscord, FaYoutube, FaInstagramSquare, FaTwitter } from 'react-icons/fa';
 import { nameFormatter } from '../utils';
 import { SocialFields } from '@/models/objects/social-fields';
-import { Logo } from './logo';
-import { DarkModeSwitch } from '.';
+import { useRouter } from 'next/router';
+import NextLink from 'next/link';
+import { FaChevronRight, FaSearch } from 'react-icons/fa';
 
 interface IWikiHeader {
 	socialFields?: SocialFields;
-	width?: number;
 }
 
 const IconMap: any = {
@@ -17,31 +30,63 @@ const IconMap: any = {
 	twitter: FaTwitter,
 };
 
-const WikiHeader = ({ socialFields, width }: IWikiHeader) => {
+const combineAccumulatively = (segments: string[]) => {
+	const links = segments.reduce((acc, cur, curIndex) => {
+		const last = curIndex > 1 ? acc[curIndex - 1] : '';
+		const newPath = last + '/' + cur;
+		acc.push(newPath);
+		return acc;
+	}, [] as string[]);
+	return links;
+};
+
+const WikiHeader = ({ socialFields }: IWikiHeader) => {
+	const router = useRouter();
 	const hoverColor = useColorModeValue('red.700', 'red.600');
 	const iconColor = useColorModeValue('gray.500', 'whiteAlpha.900');
+
+	const segments = router.asPath.split('/');
+	const crumbLinks = combineAccumulatively(segments);
+
 	return (
 		<Box
 			as='header'
-			align-self='flex-start'
+			align-self='flex-end'
 			borderColor={useColorModeValue('gray.200', 'gray.700')}
 			borderWidth={0}
-			borderBottomWidth={1}
+			borderTopWidth={1}
 			borderStyle='solid'
 			position='sticky'
 			top={0}
 			left={0}
 			right={0}
-			bg={useColorModeValue('white', 'gray.800')}
-			zIndex='banner'
-			boxShadow='sm'
-			px={6}
 			py={4}
 		>
-			<Center maxW={width} mx='auto'>
-				<Logo />
-				<Flex flex='1 1 0%' pl={3}>
-					<Input placeholder='Search the wiki' />
+			<Flex flex='1 1 0%' justifyContent='space-between' alignItems='center'>
+				<Breadcrumb separator={<Icon as={FaChevronRight} boxSize={3} />}>
+					{crumbLinks.map((crumb, i) =>
+						segments[i] === '' ? (
+							<BreadcrumbItem key={i} fontWeight='bold' fontSize='sm' color='gray.500'>
+								<BreadcrumbLink as={NextLink} href='/'>
+									Home
+								</BreadcrumbLink>
+							</BreadcrumbItem>
+						) : (
+							<BreadcrumbItem key={i} fontWeight='bold' fontSize='sm' color='gray.500'>
+								<BreadcrumbLink as={NextLink} href={crumb}>
+									{nameFormatter(segments[i])}
+								</BreadcrumbLink>
+							</BreadcrumbItem>
+						)
+					)}
+				</Breadcrumb>
+				<Flex direction='row' width='100%' justify='flex-end' flex='1 1 0%'>
+					<InputGroup maxWidth={600} shadow='sm'>
+						<InputLeftElement pointerEvents='none'>
+							<Icon as={FaSearch} color='gray.300' />
+						</InputLeftElement>
+						<Input placeholder='Search the wiki' />
+					</InputGroup>
 					<HStack ml={4} spacing={3}>
 						{socialFields &&
 							Object.entries(socialFields).map((key) => {
@@ -62,10 +107,9 @@ const WikiHeader = ({ socialFields, width }: IWikiHeader) => {
 									)
 								);
 							})}
-						<DarkModeSwitch />
 					</HStack>
 				</Flex>
-			</Center>
+			</Flex>
 		</Box>
 	);
 };

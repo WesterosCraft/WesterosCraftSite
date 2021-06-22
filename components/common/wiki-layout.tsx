@@ -1,13 +1,12 @@
 import { ReactNode } from 'react';
 import { Flex, Box } from '@chakra-ui/react';
 import { WikiHeader } from '@/components/common';
-import { SiteSettings } from '@/models/site-settings';
 import { MetaFields } from '@/models/meta-fields';
-import { Footer } from '.';
 import WikiNav from './wiki-nav';
+import { siteSettings } from '@/data/.';
 
 type Props = {
-	siteSettings: SiteSettings;
+	siteSettings: typeof siteSettings;
 	children?: ReactNode;
 	meta?: MetaFields;
 	width?: number;
@@ -16,41 +15,21 @@ type Props = {
 const WikiLayout = ({ siteSettings, children, width = 1200 }: Props) => {
 	return (
 		<>
-			<Flex
-				alignSelf='center'
-				justifyContent='center'
-				flex='1 0 auto'
-				flexDirection='column'
-				minHeight='100vh'
-				width='100%'
-				mx='auto'
-			>
-				<WikiHeader width={width} socialFields={siteSettings?.socialFields} />
-				<Flex
-					as='main'
-					width='100%'
-					padding={[4, 6]}
-					alignSelf='center'
-					justifyContent='center'
-					flex='1 0 auto'
-					direction='row'
-					maxW={width}
-				>
-					<WikiNav
-						navData={{
-							topLevelNavigation: siteSettings?.topLevelWikiNavigation,
-							wikiNavigation: siteSettings?.wikiNavigation,
-						}}
-					/>
-					<Box flex='1 1 0%' pl={3}>
-						<Flex flexDirection='row'>
-							<Box className='content' width='100%' pt={10}>
-								{children}
-							</Box>
-						</Flex>
-					</Box>
-				</Flex>
-				<Footer socialFields={siteSettings?.socialFields} />
+			<WikiHeader socialFields={siteSettings?.socialFields} />
+			<Flex width='100%' alignSelf='center' justifyContent='center' flex='1 0 auto' direction='row' maxW={width}>
+				<WikiNav
+					navData={{
+						topLevelNavigation: siteSettings?.topLevelWikiNavigation,
+						wikiNavigation: siteSettings?.wikiNavigation,
+					}}
+				/>
+				<Box flex='1 1 0%' pl={3}>
+					<Flex flexDirection='row'>
+						<Box className='content' width='100%' pt={10}>
+							{children}
+						</Box>
+					</Flex>
+				</Box>
 			</Flex>
 		</>
 	);
