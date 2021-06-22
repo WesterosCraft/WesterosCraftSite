@@ -83,7 +83,12 @@ export const allBuildsSlug = groq`
 `;
 
 export const allBuildsQuery = groq`
-	*[_type == 'destination' && defined(slug.current)] | order(name asc)
+	{
+		"builds":*[_type == 'destination' && defined(slug.current)]{
+		...,
+	} | order(name asc),
+		"totalBuilds":count(*[_type == 'destination' && defined(slug.current)])
+	}
 `;
 
 export const buildQuery = groq`

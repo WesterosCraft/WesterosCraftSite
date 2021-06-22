@@ -23,13 +23,13 @@ type PageProps = {
 		_createdAt: string;
 		_updatedAt: string;
 	};
-	allBuildsData: any;
+	allBuildsData: { builds: any; totalBuilds: number };
 };
 
 const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 	console.log('👉 ~ BuildsPage ~ allBuildsData', allBuildsData);
 	const router = useRouter();
-	const [items, setItems] = useState(allBuildsData);
+	const [items, setItems] = useState(allBuildsData.builds);
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
 		params: { type: 'allBuilds', slug: pageData?.slug?.current },
@@ -39,10 +39,10 @@ const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 
 	const onTypeChange = (option: { value: string; label: string }) => {
 		if (option === null) {
-			setItems(allBuildsData);
+			setItems(allBuildsData.builds);
 			return;
 		}
-		const filtered = allBuildsData.filter((thing) => thing.buildType === option.value);
+		const filtered = allBuildsData.builds.filter((thing) => thing.buildType === option.value);
 		setItems(filtered);
 	};
 
@@ -51,7 +51,7 @@ const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 			setItems(allBuildsData);
 			return;
 		}
-		const filtered = allBuildsData.filter((thing) => thing.projectStatus === option.value);
+		const filtered = allBuildsData.builds.filter((thing) => thing.projectStatus === option.value);
 		setItems(filtered);
 	};
 
