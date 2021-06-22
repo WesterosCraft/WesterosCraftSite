@@ -15,6 +15,7 @@ import BuildTypeTag from './build-type-tag';
 import ProjectStatusIcon from './project-status-icon';
 import RegionIcon from './region-icon';
 import BuildTypeIcon from './build-type-icon';
+import MultiSelect from './chakra-react-select';
 
 export {
 	DarkModeSwitch,
@@ -34,4 +35,5 @@ export {
 	ProjectStatusIcon,
 	RegionIcon,
 	BuildTypeIcon,
+	MultiSelect,
 };

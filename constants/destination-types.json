@@ -1,0 +1,14 @@
+[
+	{ "value": "castle", "label": "Castle" },
+	{ "value": "town", "label": "Town" },
+	{ "value": "keep", "label": "Keep" },
+	{ "value": "village", "label": "Village" },
+	{ "value": "city", "label": "City" },
+	{ "value": "landmark", "label": "Landmark" },
+	{ "value": "holdfast", "label": "Holdfast" },
+	{ "value": "ruin", "label": "Ruin" },
+	{ "value": "tower", "label": "Tower" },
+	{ "value": "miscellaneous", "label": "Miscellaneous" },
+	{ "value": "clan", "label": "Clan" },
+	{ "value": "crannog", "label": "Crannog" }
+]

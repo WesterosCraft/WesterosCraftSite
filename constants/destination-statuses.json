@@ -1,0 +1,7 @@
+[
+	{ "value": "completed", "label": "Completed" },
+	{ "value": "inProgress", "label": "In Progress" },
+	{ "value": "notStarted", "label": "Not Started" },
+	{ "value": "abandoned", "label": "Abandoned" },
+	{ "value": "redoInProgress", "label": "Redo In Progress" }
+]

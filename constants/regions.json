@@ -1,0 +1,13 @@
+[
+	{ "value": "crownlands", "label": "Crownlands" },
+	{ "value": "theWall", "label": "The Wall" },
+	{ "value": "dorne", "label": "Dorne" },
+	{ "value": "riverlands", "label": "Riverlands" },
+	{ "value": "north", "label": "North" },
+	{ "value": "vale", "label": "Vale" },
+	{ "value": "ironIslands", "label": "Iron Islands" },
+	{ "value": "westerlands", "label": "Westerlands" },
+	{ "value": "stormlands", "label": "Stormlands" },
+	{ "value": "reach", "label": "Reach" },
+	{ "value": "beyondTheWall", "label": "Beyond The Wall" }
+]
