@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import { SanityAsset } from '@/models/utils';
 import { urlFor } from '@/lib/sanity';
-import { Box, Flex, IconButton } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import Image from 'next/image';
-import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
+// import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import { useEmblaCarousel } from 'embla-carousel/react';
 
 type Props = {
@@ -20,8 +20,8 @@ type Props = {
 const ImageSlider = ({ images, width = 1152, height = 756 }: Props) => {
 	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true });
 
-	const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
-	const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+	// const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+	// const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
 	const onSelect = useCallback(() => {
 		if (!embla) return;
 	}, [embla]);

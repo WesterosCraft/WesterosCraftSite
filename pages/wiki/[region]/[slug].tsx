@@ -7,8 +7,13 @@ import { Seo, WikiLayout, Layout } from '@/components/common';
 import { kebabCase } from 'lodash';
 import { siteSettings } from '@/data/.';
 import type { Page } from '../../../globals';
+import { BuildEntry } from '@/models/objects/build-entry';
+interface IBuildPage {
+	buildData: BuildEntry;
+}
 
-const BuildPage = ({ buildData }: any) => {
+const BuildPage = ({ buildData }: IBuildPage) => {
+	console.log('🚀 ~ file: [slug].tsx ~ line 12 ~ BuildPage ~ buildData', buildData);
 	const router = useRouter();
 
 	const { data: build } = usePreviewSubscription(buildQuery, {
@@ -44,8 +49,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-	const data = await sanityClient.fetch<any>(allBuildsSlug);
-	const paths = data.map((build: any) => ({ params: { slug: build.slug.current, region: kebabCase(build.region) } }));
+	const data = await sanityClient.fetch<Array<BuildEntry>>(allBuildsSlug);
+	const paths = data.map((build) => ({ params: { slug: build.slug.current, region: kebabCase(build.region) } }));
 
 	return {
 		paths,

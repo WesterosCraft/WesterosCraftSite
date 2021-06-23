@@ -18,9 +18,7 @@ type PageProps = {
 	heading?: string;
 	slug: Slug;
 	subheading?: string;
-	caption?: string;
 	title?: string;
-	editions?: any;
 	_createdAt: string;
 	_id: 'wiki';
 	_rev: string;

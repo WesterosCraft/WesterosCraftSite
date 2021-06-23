@@ -23,12 +23,13 @@ import { NavItem } from '@/models/objects/nav-item';
 import { isEmpty } from 'lodash';
 import { SubNavItem } from '@/models/objects/sub-nav-item';
 import { Logo } from './logo';
+import { siteSettings } from '@/data/.';
 
 export default function WithSubnavigation({
 	navigation,
 	maxWidth,
 }: {
-	navigation?: NavItem[];
+	navigation?: typeof siteSettings.navigation;
 	maxWidth?: string | number;
 }) {
 	const { isOpen, onToggle } = useDisclosure();
@@ -62,7 +63,9 @@ export default function WithSubnavigation({
 	);
 }
 
-const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
+const DesktopNav = ({ navigation }: { navigation: typeof siteSettings.navigation }) => {
+	const linkColor = useColorModeValue('gray.600', 'gray.200');
+	const linkHover = useColorModeValue('gray.800', 'white');
 	return (
 		<Stack direction={'row'} spacing={4}>
 			{navigation.map((navItem) => {
@@ -95,10 +98,10 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 							href={navItem.slug.current ?? '#'}
 							fontSize={'sm'}
 							fontWeight='bold'
-							color={useColorModeValue('gray.600', 'gray.200')}
+							color={linkColor}
 							_hover={{
 								textDecoration: 'none',
-								color: useColorModeValue('gray.800', 'white'),
+								color: linkHover,
 							}}
 						>
 							{navItem.title}
@@ -114,10 +117,10 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 									p={2}
 									fontSize={'sm'}
 									fontWeight='bold'
-									color={useColorModeValue('gray.600', 'gray.200')}
+									color={linkColor}
 									_hover={{
 										textDecoration: 'none',
-										color: useColorModeValue('gray.800', 'white'),
+										color: linkHover,
 									}}
 								>
 									{navItem.title}
@@ -140,6 +143,8 @@ const DesktopNav = ({ navigation }: { navigation: NavItem[] }) => {
 };
 
 const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
+	const linkColor = useColorModeValue('gray.600', 'gray.200');
+
 	return link._type === 'internalLink' && link.link?.slug.current ? (
 		<NextLink passHref href={link.link.slug.current === 'home' ? '/' : `/${link.link.slug.current}/`}>
 			<Link
@@ -202,7 +207,7 @@ const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 	) : null;
 };
 
-const MobileNav = ({ navigation }: { navigation: NavItem[] }) => {
+const MobileNav = ({ navigation }: { navigation: typeof siteSettings.navigation }) => {
 	return (
 		<Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
 			{navigation.map((navItem) => (
@@ -214,6 +219,7 @@ const MobileNav = ({ navigation }: { navigation: NavItem[] }) => {
 
 const MobileNavItem = ({ link }: { link: InternalLink | ExternalLink | SubNavItem }) => {
 	const { isOpen, onToggle } = useDisclosure();
+	const linkColor = useColorModeValue('gray.600', 'gray.200');
 
 	return (
 		<Stack spacing={4} onClick={link._type === 'navigation.section' ? link?.links && onToggle : () => {}}>
@@ -228,7 +234,7 @@ const MobileNavItem = ({ link }: { link: InternalLink | ExternalLink | SubNavIte
 							textDecoration: 'none',
 						}}
 					>
-						<Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+						<Text fontWeight={600} color={linkColor}>
 							{link.title}
 						</Text>
 					</Flex>
@@ -244,7 +250,7 @@ const MobileNavItem = ({ link }: { link: InternalLink | ExternalLink | SubNavIte
 						textDecoration: 'none',
 					}}
 				>
-					<Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+					<Text fontWeight={600} color={linkColor}>
 						{link.title}
 					</Text>
 				</Flex>
@@ -260,7 +266,7 @@ const MobileNavItem = ({ link }: { link: InternalLink | ExternalLink | SubNavIte
 							textDecoration: 'none',
 						}}
 					>
-						<Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+						<Text fontWeight={600} color={linkColor}>
 							{link.title}
 						</Text>
 						{link?.links && (

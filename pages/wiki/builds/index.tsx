@@ -4,11 +4,11 @@ import Error from 'next/error';
 import { useRouter } from 'next/router';
 import { allBuildsQuery, pageQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { WikiLayout, Layout, Seo, DestinationCard, MultiSelect } from '@/components/common';
+import { WikiLayout, Layout, Seo, DestinationCard, Pagination, MultiSelect } from '@/components/common';
 import { siteSettings } from '@/data/.';
 import type { Page } from '../../../globals';
-import { sortBy } from 'lodash';
-import { SimpleGrid, HStack } from '@chakra-ui/react';
+// import { sortBy } from 'lodash';
+import { HStack, useControllableState } from '@chakra-ui/react';
 import { Slug } from '@sanity/types';
 import { MetaFields } from '@/models/meta-fields';
 import { destinationTypes, destinationStatuses, regions } from '@/data/.';
@@ -26,10 +26,28 @@ type PageProps = {
 	allBuildsData: { builds: any; totalBuilds: number };
 };
 
+const filterData = [
+	{
+		name: 'region',
+		options: regions,
+		placeholder: 'Region',
+	},
+	{
+		name: 'projectStatus',
+		options: destinationStatuses,
+		placeholder: 'Status',
+	},
+	{
+		name: 'buildType',
+		options: destinationTypes,
+		placeholder: 'Type',
+	},
+];
+
 const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
-	console.log('👉 ~ BuildsPage ~ allBuildsData', allBuildsData);
 	const router = useRouter();
 	const [items, setItems] = useState(allBuildsData.builds);
+	const [tabIndex, setTabIndex] = useControllableState({ defaultValue: 0 });
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
 		params: { type: 'allBuilds', slug: pageData?.slug?.current },
@@ -37,22 +55,21 @@ const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 		enabled: allBuildsData && router.query.preview !== null,
 	});
 
-	const onTypeChange = (option: { value: string; label: string }) => {
+	const onInputChange = (option: { value: string; label: string }, { name }: { name: string }) => {
 		if (option === null) {
 			setItems(allBuildsData.builds);
 			return;
 		}
-		const filtered = allBuildsData.builds.filter((thing) => thing.buildType === option.value);
+		const filtered = allBuildsData.builds.filter((b: any) => b[name] === option.value);
 		setItems(filtered);
 	};
 
-	const onStatusChange = (option: { value: string; label: string }) => {
-		if (option === null) {
-			setItems(allBuildsData);
-			return;
-		}
-		const filtered = allBuildsData.builds.filter((thing) => thing.projectStatus === option.value);
-		setItems(filtered);
+	const setPrevTab = () => {
+		setTabIndex(tabIndex - 1);
+	};
+
+	const setNextTab = () => {
+		setTabIndex(tabIndex + 1);
 	};
 
 	if (!router.isFallback && !page) {
@@ -71,56 +88,30 @@ const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 					},
 				}}
 			>
-				<MultiSelect
-					className='react-select'
-					instanceId='region'
-					size='sm'
-					width='100%'
-					name='region'
-					options={regions}
-					placeholder='Region'
-					isClearable
-				/>
-				<MultiSelect
-					className='react-select'
-					instanceId='status'
-					size='sm'
-					width='100%'
-					name='status'
-					onChange={onStatusChange}
-					options={destinationStatuses}
-					placeholder='Status'
-					isClearable
-				/>
-				<MultiSelect
-					className='react-select'
-					instanceId='type'
-					size='sm'
-					onChange={onTypeChange}
-					options={destinationTypes}
-					placeholder='Type'
-					isClearable
-				/>
-			</HStack>
-			<SimpleGrid
-				gridAutoRows='1fr'
-				templateColumns={['repeat(1, 1fr)', 'repeat(2, minmax(0px, 1fr))', null, 'repeat(3, minmax(0px, 1fr))']}
-				gap={4}
-			>
-				{sortBy(items, (o) => o.name).map((build: any, i: number) => (
-					<DestinationCard
-						key={i}
-						imageUrl={build.images?.url!}
-						blurDataUrl={build.images?.metadata?.lqip!}
-						name={build.name}
-						// entry={build.entry}
-						house={build.house}
-						region={build.region}
-						status={build.projectStatus}
-						buildType={build.buildType}
+				{filterData.map((select) => (
+					<MultiSelect
+						key={select.name}
+						className='react-select'
+						instanceId={select.name}
+						size='sm'
+						width='100%'
+						name={select.name}
+						options={select.options}
+						placeholder={select.placeholder}
+						isClearable
 					/>
 				))}
-			</SimpleGrid>
+			</HStack>
+
+			<Pagination
+				data={items}
+				tabIndex={tabIndex}
+				setTabIndex={setTabIndex}
+				onNextChange={setNextTab}
+				onPrevChange={setPrevTab}
+				RenderComponent={DestinationCard}
+				pageLimit={21}
+			/>
 		</>
 	);
 };
