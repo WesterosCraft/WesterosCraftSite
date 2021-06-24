@@ -52,7 +52,9 @@ const SimpleDestinationCard = ({ imageSrc, blurDataURL = DEFAULT_BLUR, name }: P
 					left={0}
 				>
 					<Box p={3}>
-						<Heading size='md'>{name}</Heading>
+						<Heading size='md' color='black'>
+							{name}
+						</Heading>
 					</Box>
 				</Flex>
 			)}

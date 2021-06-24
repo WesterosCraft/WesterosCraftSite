@@ -1,4 +1,4 @@
-import { Flex, Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+import { Flex, Box, Heading, Tabs, TabList, TabPanels, Tab, TabPanel, useColorModeValue } from '@chakra-ui/react';
 import { IMarquee } from '@/models/sections/marquee';
 import { useEffect } from 'react';
 import { groupBy } from 'lodash';
@@ -39,10 +39,9 @@ const Marquee = ({ data }: Props) => {
 					{Object.keys(regionDictionary).map((item, index) => (
 						<Tab
 							key={index}
-							_selected={{ color: 'black' }}
-							_active={{ color: 'black' }}
-							_hover={{ color: 'black' }}
-							color='gray.400'
+							_selected={{ color: useColorModeValue('black', 'white') }}
+							_hover={{ color: useColorModeValue('black', 'white') }}
+							color={'gray.400'}
 							fontWeight={600}
 						>
 							{nameFormatter(item)}

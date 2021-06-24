@@ -44,6 +44,9 @@ const ImageSlider = ({ images, width = 1152, height = 756 }: Props) => {
 						<Box className='embla__slide' position='relative' minW='100%' key={image._key}>
 							<Box height={height} className='embla__slide__inner' position='relative' overflow='hidden'>
 								<Image
+									priority
+									// layout='fill'
+									// objectFit='cover'
 									loader={myLoader}
 									width={width}
 									height={height}
@@ -56,28 +59,6 @@ const ImageSlider = ({ images, width = 1152, height = 756 }: Props) => {
 					))}
 				</Flex>
 			</Box>
-			{/* <IconButton
-				position='absolute'
-				aria-label='Previous Button'
-				isRound
-				icon={<MdNavigateBefore />}
-				top='calc(50% - 20px)'
-				left={10}
-				onClick={scrollPrev}
-				// left={45}
-				// transform='translate(-50%, -50%)'
-			/>
-			<IconButton
-				position='absolute'
-				aria-label='Next Button'
-				isRound
-				icon={<MdNavigateNext />}
-				top='calc(50% - 20px)'
-				right={10}
-				onClick={scrollNext}
-				// right={45}
-				// transform='translate(-50%, -50%)'
-			/> */}
 		</Box>
 	);
 };

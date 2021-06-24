@@ -9,7 +9,7 @@ type Props = {
 	width?: number;
 };
 
-const Layout = ({ siteSettings, children, width = 1200 }: Props) => {
+const Layout = ({ siteSettings, children, width = 1280 }: Props) => {
 	return (
 		<>
 			<Flex flexDirection='column' minHeight='100vh' overflow='hidden'>

@@ -12,7 +12,7 @@ type Props = {
 	width?: number;
 };
 
-const WikiLayout = ({ siteSettings, children, width = 1200 }: Props) => {
+const WikiLayout = ({ siteSettings, children, width = 1280 }: Props) => {
 	return (
 		<>
 			<WikiHeader socialFields={siteSettings?.socialFields} />

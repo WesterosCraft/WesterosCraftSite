@@ -9,6 +9,7 @@ import Editions from './editions';
 import BlockBanner from './block-banner';
 import RichText from './rich-text';
 import ReferenceGrid from './reference-grid';
+import FeaturesWithVideo from './features-with-video';
 
 export {
 	BlockBanner,
@@ -22,4 +23,5 @@ export {
 	Editions,
 	RichText,
 	ReferenceGrid,
+	FeaturesWithVideo,
 };

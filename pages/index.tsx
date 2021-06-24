@@ -7,11 +7,12 @@ import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
-import { Heading, Text, Box, Button, Flex, useColorModeValue, AspectRatio, SimpleGrid } from '@chakra-ui/react';
+import { Heading, Text, Box, Button, Flex, useColorModeValue } from '@chakra-ui/react';
 import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
 import { Seo } from '@/components/common';
+import { FeaturesWithVideo } from '@/components/sections';
 
 type PageProps = {
 	content?: Sections[];
@@ -91,57 +92,7 @@ const Index = ({ pageData }: Props) => {
 				</Flex>
 			)}
 
-			<Box width='100%' px={8}>
-				<SimpleGrid templateColumns='360px 1fr' gap='64px'>
-					<Box>
-						<Heading as='h2' fontSize='5xl' fontWeight={800}>
-							Explore Westeros with ease!
-						</Heading>
-						<Text>aksjnckjansjckn</Text>
-						<Button
-							size='lg'
-							leftIcon={<GiRaven size={20} />}
-							display={{ base: 'none', md: 'inline-flex' }}
-							fontSize={'md'}
-							fontWeight={600}
-							color={buttonColor}
-							bg={buttonHover}
-							href={'#'}
-							_hover={{
-								color: 'white',
-								bg: 'blackAlpha.700',
-							}}
-						>
-							Join The Watch
-						</Button>
-					</Box>
-					<Box>
-						<AspectRatio ratio={4 / 3} maxH={480}>
-							<iframe src='https://www.youtube.com/watch?v=Iuyf-naJ6pY' />
-						</AspectRatio>
-						<SimpleGrid gap={6} columns={3} mt={10}>
-							<Box>
-								<Text fontWeight='bold' mb={1}>
-									dsfadf
-								</Text>
-								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
-							</Box>
-							<Box>
-								<Text fontWeight='bold' mb={1}>
-									dsfadf
-								</Text>
-								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
-							</Box>
-							<Box>
-								<Text fontWeight='bold' mb={1}>
-									dsfadf
-								</Text>
-								<Text>asdfasdfasdfasdfasdfasdfasdf</Text>
-							</Box>
-						</SimpleGrid>
-					</Box>
-				</SimpleGrid>
-			</Box>
+			<FeaturesWithVideo />
 
 			{/* <Box maxW={556}>
 				<AspectRatio ratio={9 / 16}>
