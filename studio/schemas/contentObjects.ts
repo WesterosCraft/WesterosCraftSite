@@ -10,4 +10,6 @@ export const contentObjects = [
 	{ type: 'tableBuilder' },
 	{ type: 'richText' },
 	{ type: 'referenceGrid' },
+	{ type: 'featuresWithVideo' },
+	{ type: 'blockBanner' },
 ];

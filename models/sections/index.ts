@@ -9,6 +9,7 @@ import { IEditions } from './editions';
 import { ImageSlider } from './image-slider';
 import { IBlockBanner } from './block-banner';
 import { IReferenceGrid } from './reference-grid';
+import { IFeaturesWithVideo } from './features-with-video';
 
 export type Sections =
 	| IBlockBanner
@@ -21,4 +22,5 @@ export type Sections =
 	| IMarquee
 	| IQuote
 	| IReferenceGrid
-	| IEditions;
+	| IEditions
+	| IFeaturesWithVideo;

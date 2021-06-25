@@ -10,6 +10,7 @@ import {
 	Editions,
 	BlockBanner,
 	ReferenceGrid,
+	FeaturesWithVideo,
 } from '@/components/sections';
 
 const RenderSection = ({ section, additionalData }: { section: Sections; additionalData?: any }) => {
@@ -34,6 +35,8 @@ const RenderSection = ({ section, additionalData }: { section: Sections; additio
 			return <BlockBanner data={section} />;
 		case 'referenceGrid':
 			return <ReferenceGrid data={section} additionalData={additionalData} />;
+		case 'featuresWithVideo':
+			return <FeaturesWithVideo data={section} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 

@@ -92,14 +92,6 @@ const Index = ({ pageData }: Props) => {
 				</Flex>
 			)}
 
-			<FeaturesWithVideo />
-
-			{/* <Box maxW={556}>
-				<AspectRatio ratio={9 / 16}>
-					<iframe src='https://mc.westeroscraft.com' />
-				</AspectRatio>
-			</Box> */}
-
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {
 					return null;

@@ -103,3 +103,15 @@ export const referenceGrid = `
 		}
 	}
 `;
+
+export const featuresWithVideo = `
+	_type == 'featuresWithVideo' => {
+		...,
+		"thumbnail": youtubeThumbnail.asset->{
+			url,
+			metadata {
+				lqip
+			}
+		}
+	}
+`;

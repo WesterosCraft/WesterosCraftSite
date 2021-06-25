@@ -11,6 +11,7 @@ import {
 	blockBanner,
 	referenceGrid,
 	destinationCard,
+	featuresWithVideo,
 } from './fragments';
 
 export const pageQuery = groq`
@@ -26,7 +27,8 @@ export const pageQuery = groq`
 			${quote},
 			${editions},
 			${blockBanner},
-			${referenceGrid}
+			${referenceGrid},
+			${featuresWithVideo}
 		}
 	}
 `;
