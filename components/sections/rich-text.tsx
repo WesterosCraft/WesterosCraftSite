@@ -45,7 +45,7 @@ const serializers = {
 
 			if (heading !== false) {
 				return (
-					<Heading textAlign={center ? 'center' : 'left'} as={heading} size={size}>
+					<Heading mt={10} textAlign={center ? 'center' : 'left'} as={heading} size={size}>
 						{props.children}
 					</Heading>
 				);
@@ -70,6 +70,8 @@ const serializers = {
 				</Text>
 			);
 		},
+		figure: (props: any) => <MainImage data={props.node.image} width={960} height={600} />,
+		video: (props: any) => <h1>VIDEO</h1>,
 		image: (props: any) => <MainImage data={props.node} width={960} height={600} />,
 	},
 	marks: {

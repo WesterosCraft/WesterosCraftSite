@@ -6,7 +6,7 @@ import { allBuildsQuery, pageQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { WikiLayout, Layout, Seo, DestinationCard, Pagination, MultiSelect } from '@/components/common';
 import { siteSettings } from '@/data/.';
-import type { Page } from '../../../globals';
+import type { Page } from '../../..';
 // import { sortBy } from 'lodash';
 import { HStack, useControllableState } from '@chakra-ui/react';
 import { Slug } from '@sanity/types';

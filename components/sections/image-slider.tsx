@@ -37,7 +37,7 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 	};
 
 	return (
-		<Box className='embla' width='100%' bg='white' position='relative' maxW='100%' mx='auto'>
+		<Box className='embla' width='100%' position='relative' maxW='100%' mx='auto'>
 			<Box className='embla__viewport' overflow='hidden' width='100%' ref={viewportRef}>
 				<Flex className='embla__container' userSelect='none'>
 					{images.map((image) => (

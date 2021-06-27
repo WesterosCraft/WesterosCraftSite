@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { allGuidesQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { Seo, WikiLayout, Layout } from '@/components/common';
-import type { Page } from '../../../globals';
+import type { Page } from '../../..';
 import { siteSettings } from '@/data/.';
 
 const GuidesPage = ({ allGuidesData }: any) => {

@@ -6,7 +6,7 @@ import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { camelCase } from 'lodash';
 import { Seo, WikiLayout, Layout } from '@/components/common';
 import { siteSettings } from '@/data/.';
-import type { Page } from '../../../globals';
+import type { Page } from '../../..';
 import { BuildEntry } from '@/models/objects/build-entry';
 import { Regions } from '@/models/utils';
 

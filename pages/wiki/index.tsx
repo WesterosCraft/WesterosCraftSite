@@ -10,7 +10,7 @@ import { Slug } from '@sanity/types';
 import { Seo, WikiLayout, Layout } from '@/components/common';
 import { IProjectDetails } from '@/models/objects/project-details';
 import { siteSettings } from '@/data/.';
-import type { Page } from '../../globals';
+import type { Page } from '../..';
 
 type PageProps = {
 	content?: Sections[];
