@@ -24,6 +24,7 @@ import blockBanner from './sections/block-banner';
 import columnWithVideo from './sections/column-with-video';
 import referenceGrid from './sections/reference-grid';
 import featuresWithVideo from './sections/features-with-video';
+import map from './sections/map';
 
 // pages/documents
 import destination from './documents/destination';
@@ -72,6 +73,7 @@ export default createSchema({
 		link,
 		simpleBlockContent,
 		grid,
+		map,
 		mainImage,
 		socialFields,
 		spacer,

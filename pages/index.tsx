@@ -12,7 +12,6 @@ import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
 import { Seo } from '@/components/common';
-import { FeaturesWithVideo } from '@/components/sections';
 
 type PageProps = {
 	content?: Sections[];
@@ -54,42 +53,73 @@ const Index = ({ pageData }: Props) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
+			<Box userSelect='none' display={['block', null, 'none']} textAlign='center'>
+				<Text textTransform='uppercase' fontWeight='bold' color='green.500'>
+					{page.caption}
+				</Text>
+				<Heading as='h2' fontSize='3xl' fontWeight={800}>
+					{page.heading2}
+				</Heading>
+				<Heading as='h1' fontSize='5xl' letterSpacing={5.3} fontWeight={800}>
+					{page.heading1}
+				</Heading>
+				<Text mb='6'>{page.subheading}</Text>
+			</Box>
 			{page.heroSlider?.slideItems && (
-				<Flex justify='center' flexDirection='column' position='relative' borderRadius='50px' overflow='hidden'>
-					<Box position='absolute' textAlign='left' zIndex='docked' pl={6}>
-						<Box userSelect='none'>
-							<Text textTransform='uppercase' fontWeight='bold' color='green.500'>
-								{page.caption}
-							</Text>
-							<Heading as='h2' color='white' fontSize='5xl' fontWeight={800}>
-								{page.heading2}
-							</Heading>
-							<Heading as='h1' color='white' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
-								{page.heading1}
-							</Heading>
-							<Text color='white' mb='6' maxW='50%'>
-								{page.subheading}
-							</Text>
+				<>
+					<Flex justify='center' flexDirection='column' position='relative' overflow='hidden'>
+						<Box display={['none', null, 'block']} position='absolute' textAlign='left' zIndex='docked' pl={6}>
+							<Box userSelect='none'>
+								<Text textTransform='uppercase' fontWeight='bold' color='green.500'>
+									{page.caption}
+								</Text>
+								<Heading as='h2' color='white' fontSize='5xl' fontWeight={800}>
+									{page.heading2}
+								</Heading>
+								<Heading as='h1' color='white' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
+									{page.heading1}
+								</Heading>
+								<Text color='white' mb='6' maxW='50%'>
+									{page.subheading}
+								</Text>
+							</Box>
+							<Button
+								size='lg'
+								leftIcon={<GiRaven size={20} />}
+								display={{ base: 'none', md: 'inline-flex' }}
+								fontSize={'md'}
+								fontWeight={600}
+								color={buttonColor}
+								bg={buttonHover}
+								href={'#'}
+								_hover={{
+									color: 'white',
+									bg: 'blackAlpha.700',
+								}}
+							>
+								Join The Watch
+							</Button>
 						</Box>
-						<Button
-							size='lg'
-							leftIcon={<GiRaven size={20} />}
-							display={{ base: 'none', md: 'inline-flex' }}
-							fontSize={'md'}
-							fontWeight={600}
-							color={buttonColor}
-							bg={buttonHover}
-							href={'#'}
-							_hover={{
-								color: 'white',
-								bg: 'blackAlpha.700',
-							}}
-						>
-							Join The Watch
-						</Button>
-					</Box>
-					<ImageSlider width={1152} height={756} images={page.heroSlider?.slideItems} />
-				</Flex>
+						<ImageSlider width={1232} height={756} images={page.heroSlider?.slideItems} />
+					</Flex>
+					<Button
+						mt={4}
+						display={['inline-flex', null, 'none']}
+						size='lg'
+						leftIcon={<GiRaven size={20} />}
+						fontSize={'md'}
+						fontWeight={600}
+						color={buttonColor}
+						bg={buttonHover}
+						href={'#'}
+						_hover={{
+							color: 'white',
+							bg: 'blackAlpha.700',
+						}}
+					>
+						Join The Watch
+					</Button>
+				</>
 			)}
 
 			{page?.content?.map((section) => {

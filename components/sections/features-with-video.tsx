@@ -3,7 +3,6 @@ import { IFeaturesWithVideo } from '@/models/sections/features-with-video';
 import { Heading, Text, Box, Button, AspectRatio, SimpleGrid, Icon, Center, Flex } from '@chakra-ui/react';
 import Image from 'next/image';
 import ReactPlayer from 'react-player';
-import getYouTubeId from 'get-youtube-id';
 import { FaPlay } from 'react-icons/fa';
 
 type Props = {
@@ -17,7 +16,7 @@ const FeaturesWithVideo = ({ data }: Props) => {
 		<Box width='100%' px={8}>
 			<SimpleGrid templateColumns={['1fr', null, null, '416px 1fr']} gap='64px'>
 				<Flex direction='column'>
-					<Heading as='h2' fontSize='5xl' fontWeight={800}>
+					<Heading textAlign={['center', null, 'left']} as='h2' fontSize='5xl' fontWeight={800}>
 						{data?.heading ?? ''}
 					</Heading>
 					<Text fontSize='lg' mt={4} mb={8}>
@@ -28,8 +27,6 @@ const FeaturesWithVideo = ({ data }: Props) => {
 						display={{ base: 'none', md: 'inline-flex' }}
 						fontSize={'md'}
 						fontWeight={600}
-						// color={buttonColor}
-						// bg={buttonHover}
 						href={'#'}
 						_hover={{
 							color: 'white',

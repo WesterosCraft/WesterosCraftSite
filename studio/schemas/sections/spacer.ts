@@ -22,7 +22,23 @@ export default {
 				layout: 'radio',
 			},
 		},
+		{
+			name: 'mobileSize',
+			title: 'Mobile Size',
+			type: 'string',
+			options: {
+				list: [
+					{ title: 'None', value: 'none' },
+					{ title: 'Small', value: 'small' },
+					{ title: 'Medium', value: 'medium' },
+					{ title: 'Large', value: 'large' },
+					{ title: 'X-Large', value: 'xlarge' },
+				],
+				layout: 'radio',
+			},
+		},
 	],
+	columns: 2,
 	preview: {
 		select: {
 			title: 'size',

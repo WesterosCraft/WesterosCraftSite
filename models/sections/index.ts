@@ -10,6 +10,7 @@ import { ImageSlider } from './image-slider';
 import { IBlockBanner } from './block-banner';
 import { IReferenceGrid } from './reference-grid';
 import { IFeaturesWithVideo } from './features-with-video';
+import { IMap } from './map';
 
 export type Sections =
 	| IBlockBanner
@@ -23,4 +24,5 @@ export type Sections =
 	| IQuote
 	| IReferenceGrid
 	| IEditions
-	| IFeaturesWithVideo;
+	| IFeaturesWithVideo
+	| IMap;

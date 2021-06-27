@@ -12,4 +12,5 @@ export const contentObjects = [
 	{ type: 'referenceGrid' },
 	{ type: 'featuresWithVideo' },
 	{ type: 'blockBanner' },
+	{ type: 'map' },
 ];

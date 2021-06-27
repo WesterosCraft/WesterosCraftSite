@@ -12,6 +12,7 @@ import {
 	referenceGrid,
 	destinationCard,
 	featuresWithVideo,
+	map,
 } from './fragments';
 
 export const pageQuery = groq`
@@ -28,7 +29,8 @@ export const pageQuery = groq`
 			${editions},
 			${blockBanner},
 			${referenceGrid},
-			${featuresWithVideo}
+			${featuresWithVideo},
+			${map}
 		}
 	}
 `;

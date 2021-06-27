@@ -4,13 +4,13 @@ import {
 	Grid,
 	MainImage,
 	Spacer,
-	Youtube,
 	Marquee,
 	Quote,
 	Editions,
 	BlockBanner,
 	ReferenceGrid,
 	FeaturesWithVideo,
+	Map,
 } from '@/components/sections';
 
 const RenderSection = ({ section, additionalData }: { section: Sections; additionalData?: any }) => {
@@ -23,8 +23,7 @@ const RenderSection = ({ section, additionalData }: { section: Sections; additio
 			return <MainImage data={section} />;
 		case 'spacer':
 			return <Spacer data={section} />;
-		case 'youtube':
-			return <Youtube data={section} />;
+
 		case 'marquee':
 			return <Marquee data={section} />;
 		case 'quoteBlock':
@@ -37,6 +36,8 @@ const RenderSection = ({ section, additionalData }: { section: Sections; additio
 			return <ReferenceGrid data={section} additionalData={additionalData} />;
 		case 'featuresWithVideo':
 			return <FeaturesWithVideo data={section} />;
+		case 'map':
+			return <Map data={section} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 

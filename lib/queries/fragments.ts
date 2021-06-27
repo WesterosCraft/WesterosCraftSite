@@ -79,6 +79,12 @@ export const blockBanner = `
 	}
 `;
 
+export const map = `
+	_type == 'map' => {
+		...
+	}
+`;
+
 export const destinationCard = `
 	name,
 	region,

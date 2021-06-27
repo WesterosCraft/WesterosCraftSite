@@ -30,7 +30,13 @@ const Marquee = ({ data }: Props) => {
 			justify={data?.headingAlignment || 'center'}
 			align={data?.headingAlignment || 'center'}
 		>
-			<Heading as={data?.headingSize || 'h2'} fontSize={getFontSize(data?.headingSize)} mb={8} fontWeight={800}>
+			<Heading
+				as={data?.headingSize || 'h2'}
+				fontSize={getFontSize(data?.headingSize)}
+				mb={8}
+				fontWeight={800}
+				textAlign='center'
+			>
 				{data?.heading || ''}
 			</Heading>
 

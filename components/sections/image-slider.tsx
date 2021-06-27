@@ -1,10 +1,10 @@
 import { useEffect, useCallback } from 'react';
 import { SanityAsset } from '@/models/utils';
 import { urlFor } from '@/lib/sanity';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, IconButton } from '@chakra-ui/react';
 import Image from 'next/image';
-// import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import { useEmblaCarousel } from 'embla-carousel/react';
+import { GrFormNext } from 'react-icons/gr';
 
 type Props = {
 	width: number | string;
@@ -17,11 +17,11 @@ type Props = {
 	}>;
 };
 
-const ImageSlider = ({ images, width = 1152, height = 756 }: Props) => {
+const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true });
 
 	// const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
-	// const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+	const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
 	const onSelect = useCallback(() => {
 		if (!embla) return;
 	}, [embla]);
@@ -42,11 +42,20 @@ const ImageSlider = ({ images, width = 1152, height = 756 }: Props) => {
 				<Flex className='embla__container' userSelect='none'>
 					{images.map((image) => (
 						<Box className='embla__slide' position='relative' minW='100%' key={image._key}>
-							<Box height={height} className='embla__slide__inner' position='relative' overflow='hidden'>
+							<Box
+								height='100%'
+								maxHeight={height}
+								className='embla__slide__inner'
+								position='relative'
+								overflow='hidden'
+								sx={{
+									'.embla__slide__img': {
+										borderRadius: '3xl',
+									},
+								}}
+							>
 								<Image
 									priority
-									// layout='fill'
-									// objectFit='cover'
 									loader={myLoader}
 									width={width}
 									height={height}
@@ -59,6 +68,19 @@ const ImageSlider = ({ images, width = 1152, height = 756 }: Props) => {
 					))}
 				</Flex>
 			</Box>
+			{images?.length > 1 && (
+				<IconButton
+					onClick={scrollNext}
+					position='absolute'
+					bottom={5}
+					right={5}
+					colorScheme='whiteAlpha'
+					aria-label='Scroll Next Image'
+					fontSize='20px'
+					isRound
+					icon={<GrFormNext />}
+				/>
+			)}
 		</Box>
 	);
 };

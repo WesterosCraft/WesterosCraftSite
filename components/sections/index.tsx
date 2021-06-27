@@ -9,6 +9,7 @@ import BlockBanner from './block-banner';
 import RichText from './rich-text';
 import ReferenceGrid from './reference-grid';
 import FeaturesWithVideo from './features-with-video';
+import Map from './map';
 
 export {
 	BlockBanner,
@@ -22,4 +23,5 @@ export {
 	RichText,
 	ReferenceGrid,
 	FeaturesWithVideo,
+	Map,
 };

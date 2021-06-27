@@ -1,5 +1,6 @@
 export interface ISpacer {
 	_type: 'spacer';
 	_key: string;
-	size: 'small' | 'medium' | 'large' | 'xlarge';
+	size: 'none' | 'small' | 'medium' | 'large' | 'xlarge';
+	mobileSize: 'none' | 'small' | 'medium' | 'large' | 'xlarge';
 }
