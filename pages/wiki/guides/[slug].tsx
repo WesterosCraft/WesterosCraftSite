@@ -5,7 +5,7 @@ import { allGuidesSlug, guideQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { WikiLayout, Layout, Seo } from '@/components/common';
 import { siteSettings } from '@/data/.';
-import type { Page } from '../../../globals';
+import { LayoutPage } from '@/models/page';
 
 const GuidePage = ({ guideData }: any) => {
 	const router = useRouter();
@@ -52,7 +52,7 @@ export const getStaticPaths = async () => {
 	};
 };
 
-GuidePage.getLayout = (page: Page) => (
+GuidePage.getLayout = (page: LayoutPage) => (
 	<Layout siteSettings={siteSettings}>
 		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
 	</Layout>

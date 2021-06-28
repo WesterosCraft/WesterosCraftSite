@@ -3,12 +3,12 @@ import { CSSReset, ChakraProvider } from '@chakra-ui/react';
 import { Head } from '@/components/common';
 import { Global } from '@emotion/react';
 import theme from '../constants/theme';
-import type { Page } from '..';
 import siteSettings from '../constants/site-settings.json';
 import { Layout } from '@/components/common';
+import { LayoutPage } from '@/models/page';
 
 type Props = AppProps & {
-	Component: Page;
+	Component: LayoutPage;
 };
 
 const MyApp = ({ Component, pageProps }: Props) => {

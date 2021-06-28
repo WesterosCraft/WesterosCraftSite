@@ -50,3 +50,10 @@ export enum BuildTypes {
 	crannog = 'crannog',
 	miscellaneous = 'miscellaneous',
 }
+
+export interface ExpandedImage {
+	url: string;
+	metadata?: {
+		lqip: string;
+	};
+}

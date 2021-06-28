@@ -29,5 +29,5 @@
 		}
 	},
 	"exclude": ["node_modules", "studio"],
-	"include": ["**/*.ts", "**/*.tsx", "./node_modules/@sanity/base/types/**/*.ts", "lib/create-manifest.js"]
+	"include": ["**/*.ts", "**/*.tsx", "./node_modules/@sanity/base/types/**/*.ts"]
 }

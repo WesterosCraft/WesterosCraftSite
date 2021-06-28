@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import { allGuidesQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { Seo, WikiLayout, Layout } from '@/components/common';
-import type { Page } from '../../..';
 import { siteSettings } from '@/data/.';
+import { LayoutPage } from '@/models/page';
 
 const GuidesPage = ({ allGuidesData }: any) => {
 	const router = useRouter();
@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	};
 };
 
-GuidesPage.getLayout = (page: Page) => (
+GuidesPage.getLayout = (page: LayoutPage) => (
 	<Layout siteSettings={siteSettings}>
 		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
 	</Layout>

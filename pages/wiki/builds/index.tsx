@@ -6,12 +6,12 @@ import { allBuildsQuery, pageQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { WikiLayout, Layout, Seo, DestinationCard, Pagination, MultiSelect } from '@/components/common';
 import { siteSettings } from '@/data/.';
-import type { Page } from '../../..';
 // import { sortBy } from 'lodash';
 import { HStack, useControllableState } from '@chakra-ui/react';
 import { Slug } from '@sanity/types';
 import { MetaFields } from '@/models/meta-fields';
 import { destinationTypes, destinationStatuses, regions } from '@/data/.';
+import { LayoutPage } from '@/models/page';
 
 type PageProps = {
 	pageData: {
@@ -135,7 +135,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	};
 };
 
-BuildsPage.getLayout = (page: Page) => (
+BuildsPage.getLayout = (page: LayoutPage) => (
 	<Layout siteSettings={siteSettings}>
 		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
 	</Layout>

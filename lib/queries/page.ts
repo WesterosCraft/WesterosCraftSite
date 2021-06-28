@@ -98,5 +98,11 @@ export const allBuildsQuery = groq`
 export const buildQuery = groq`
 	*[_type == 'destination' && slug.current == $slug][0] {
 		...,
+		"banner": banner.asset->{
+			url,
+			metadata {
+				lqip
+			}
+		}
 	}
 `;

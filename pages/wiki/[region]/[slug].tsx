@@ -6,19 +6,34 @@ import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { Seo, WikiLayout, Layout } from '@/components/common';
 import { kebabCase, isEmpty } from 'lodash';
 import { siteSettings } from '@/data/.';
-import type { Page } from '../../../globals';
 import { BuildEntry } from '@/models/objects/build-entry';
-import { Heading, Flex, Box, Table, Tbody, Tr, Th, Td, Thead, useColorModeValue } from '@chakra-ui/react';
+import {
+	Heading,
+	Flex,
+	Box,
+	Table,
+	Tbody,
+	Tr,
+	Th,
+	Td,
+	Thead,
+	Tfoot,
+	Button,
+	useColorModeValue,
+} from '@chakra-ui/react';
 import { RichText } from '@/components/sections';
 import { nameFormatter } from '@/components/utils';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
+import BrightSquares from '../../../public/bright-squares.png';
+import { LayoutPage } from '@/models/page';
+
 interface IBuildPage {
 	buildData: BuildEntry;
 }
 
 const myLoader = ({ src, width }: any) => {
-	return `${src}?w=${width}&q=100`;
+	return `${src}?fit=min&crop=center&h=350&w=${width}&q=100`;
 };
 
 const BuildPage = ({ buildData }: IBuildPage) => {
@@ -88,22 +103,39 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 				borderRadius='3xl'
 				borderBottomLeftRadius='0px'
 				borderBottomRightRadius='0px'
-				bg='gray.500'
-				height='350px'
+				backgroundImage={isEmpty(build.images) ? `url(${BrightSquares.src})` : undefined}
+				maxHeight='350px'
 				width='100%'
 				overflow='hidden'
 			>
 				<Heading zIndex='docked' fontWeight='800' color='white' position='absolute' bottom={5} left={5}>
 					{build.name}
 				</Heading>
+				{build.banner && (
+					<Box
+						zIndex='docked'
+						color='white'
+						position='absolute'
+						bottom={5}
+						right={5}
+						filter='drop-shadow(15px 11px 6px rgb(41, 41, 43, .80))'
+					>
+						<Image
+							alt={`${build.name} Banner`}
+							src={build.banner?.url}
+							placeholder='blur'
+							blurDataURL={build?.banner?.metadata?.lqip!}
+							width={75}
+							height={150}
+						/>
+					</Box>
+				)}
 				{!isEmpty(build.images) && urlFor(build?.images?.[0]?.asset._ref).url() && (
 					<Image
 						loader={myLoader}
 						src={urlFor(build?.images?.[0]?.asset._ref).url()!}
-						layout='fill'
-						objectFit='cover'
-						// height={350}
-						// width={960}
+						height={350}
+						width={960}
 						alt={build.name}
 					/>
 				)}
@@ -123,7 +155,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 					<Table size='sm' variant='striped'>
 						<Thead>
 							<Tr>
-								<Th>
+								<Th colSpan={2}>
 									<Heading fontSize={['xl', null, null, '2xl']}>Project Details</Heading>
 								</Th>
 							</Tr>
@@ -136,15 +168,32 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 									</Td>
 								</Tr>
 							)}
-							{projectDetailsMap.map((deet) => (
-								<Tr key={deet.label}>
-									<Td fontSize='sm' fontWeight='bold'>
-										{deet.label}
-									</Td>
-									<Td fontSize='sm'>{deet.accessor}</Td>
-								</Tr>
-							))}
+							{projectDetailsMap.map(
+								(deet) =>
+									deet.accessor && (
+										<Tr key={deet.label}>
+											<Td fontSize='sm' fontWeight='bold'>
+												{deet.label}
+											</Td>
+											<Td fontSize='sm'>{deet.accessor}</Td>
+										</Tr>
+									)
+							)}
 						</Tbody>
+						<Tfoot>
+							<Tr>
+								<Td textAlign='center'>
+									<Button variant='outline' size='xs' colorScheme='gray'>
+										Application
+									</Button>
+								</Td>
+								<Td textAlign='center'>
+									<Button variant='outline' size='xs' colorScheme='gray'>
+										View On Map
+									</Button>
+								</Td>
+							</Tr>
+						</Tfoot>
 					</Table>
 				</Flex>
 				<RichText data={{ copy: build.entry }} />
@@ -177,7 +226,7 @@ export const getStaticPaths = async () => {
 	};
 };
 
-BuildPage.getLayout = (page: Page) => (
+BuildPage.getLayout = (page: LayoutPage) => (
 	<Layout siteSettings={siteSettings}>
 		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
 	</Layout>

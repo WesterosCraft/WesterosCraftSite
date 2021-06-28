@@ -6,9 +6,9 @@ import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { camelCase } from 'lodash';
 import { Seo, WikiLayout, Layout } from '@/components/common';
 import { siteSettings } from '@/data/.';
-import type { Page } from '../../..';
 import { BuildEntry } from '@/models/objects/build-entry';
 import { Regions } from '@/models/utils';
+import { LayoutPage } from '@/models/page';
 
 type PageProps = {
 	slug: Regions;
@@ -81,7 +81,7 @@ export const getStaticPaths = async () => {
 	};
 };
 
-RegionPage.getLayout = (page: Page) => (
+RegionPage.getLayout = (page: LayoutPage) => (
 	<Layout siteSettings={siteSettings}>
 		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
 	</Layout>

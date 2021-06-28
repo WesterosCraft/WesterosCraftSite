@@ -71,7 +71,7 @@ const DestinationCard = ({ imageUrl, blurDataUrl, name, entry, house, region, st
 						</HStack>
 						{url && (
 							<Link href={url} passHref>
-								<Button variant='outline' colorScheme='teal' size='xs' alignSelf='flex-end'>
+								<Button variant='outline' colorScheme='green' size='xs' alignSelf='flex-end'>
 									Read More
 								</Button>
 							</Link>
