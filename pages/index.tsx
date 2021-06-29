@@ -53,54 +53,41 @@ const Index = ({ pageData }: Props) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
-			<Box userSelect='none' display={['block', null, 'none']} textAlign='center'>
-				<Text textTransform='uppercase' fontWeight='bold' color='green.500'>
+			<Box userSelect='none' textAlign='center' mt={5}>
+				<Text fontSize='xl' textTransform='uppercase' fontWeight='bold' color='green.500'>
 					{page.caption}
 				</Text>
-				<Heading as='h2' fontSize='3xl' fontWeight={800}>
+				<Heading mt={4} as='h2' fontSize='5xl' fontWeight={800}>
 					{page.heading2}
 				</Heading>
-				<Heading as='h1' fontSize='5xl' letterSpacing={5.3} fontWeight={800}>
+				<Heading as='h1' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
 					{page.heading1}
 				</Heading>
-				<Text mb='6'>{page.subheading}</Text>
+				<Text fontSize='xl' mb='6'>
+					{page.subheading}
+				</Text>
+				<Button
+					mb={8}
+					size='lg'
+					leftIcon={<GiRaven size={20} />}
+					display={{ base: 'none', md: 'inline-flex' }}
+					fontSize={'md'}
+					fontWeight={600}
+					color={buttonColor}
+					bg={buttonHover}
+					href={'#'}
+					_hover={{
+						color: 'white',
+						bg: 'blackAlpha.700',
+					}}
+				>
+					Join The Watch
+				</Button>
 			</Box>
 			{page.heroSlider?.slideItems && (
 				<>
-					<Flex justify='center' flexDirection='column' position='relative' overflow='hidden'>
-						<Box display={['none', null, 'block']} position='absolute' textAlign='left' zIndex='docked' pl={6}>
-							<Box userSelect='none'>
-								<Text textTransform='uppercase' fontWeight='bold' color='green.500'>
-									{page.caption}
-								</Text>
-								<Heading as='h2' color='white' fontSize='5xl' fontWeight={800}>
-									{page.heading2}
-								</Heading>
-								<Heading as='h1' color='white' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
-									{page.heading1}
-								</Heading>
-								<Text color='white' mb='6' maxW='50%'>
-									{page.subheading}
-								</Text>
-							</Box>
-							<Button
-								size='lg'
-								leftIcon={<GiRaven size={20} />}
-								display={{ base: 'none', md: 'inline-flex' }}
-								fontSize={'md'}
-								fontWeight={600}
-								color={buttonColor}
-								bg={buttonHover}
-								href={'#'}
-								_hover={{
-									color: 'white',
-									bg: 'blackAlpha.700',
-								}}
-							>
-								Join The Watch
-							</Button>
-						</Box>
-						<ImageSlider width={1232} height={756} images={page.heroSlider?.slideItems} />
+					<Flex justify='center' align='center' flexDirection='column' position='relative'>
+						<ImageSlider width={958} height={555} images={page.heroSlider?.slideItems} />
 					</Flex>
 					<Button
 						mt={4}
