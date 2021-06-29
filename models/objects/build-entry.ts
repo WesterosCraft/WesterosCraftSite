@@ -3,22 +3,23 @@ import { BuildStatuses, BuildTypes, ExpandedImage, Regions } from '@/models/util
 import { MetaFields } from '@/models/meta-fields';
 
 export interface BuildEntry {
-	application: string;
+	application?: string;
 	meta?: MetaFields;
-	banner: ExpandedImage;
-	buildType: BuildTypes;
-	dateCompleted: string;
-	dateStarted: string;
-	difficultyLevel: string;
-	entry: Array<Block>;
-	house: string;
-	images: Array<Image>;
+	banner?: ExpandedImage;
+	buildType?: BuildTypes;
+	dateCompleted?: string;
+	dateStarted?: string;
+	difficultyLevel?: string;
+	entry?: Array<Block>;
+	house?: string;
+	images?: Array<Image>;
 	name: string;
-	projectLead: string;
-	projectStatus: BuildStatuses;
+	dynmapInformation?: { xCoord: string; yCoord: string; zoom: string };
+	projectLead?: string;
+	projectStatus?: BuildStatuses;
 	region: Regions;
 	slug: Slug;
-	warp: string;
+	warp?: string;
 	_createdAt: string;
 	_id: string;
 	_rev: string;

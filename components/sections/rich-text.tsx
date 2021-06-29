@@ -70,9 +70,10 @@ const serializers = {
 				</Text>
 			);
 		},
-		figure: (props: any) => <MainImage data={props.node.image} width={960} height={600} />,
+		figure: (props: any) => {
+			return <MainImage data={props.node} />;
+		},
 		video: (props: any) => <h1>VIDEO</h1>,
-		image: (props: any) => <MainImage data={props.node} width={960} height={600} />,
 	},
 	marks: {
 		link: (props: any) => (

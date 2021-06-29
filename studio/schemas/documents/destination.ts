@@ -242,11 +242,27 @@ export default {
 			name: 'entry',
 			type: 'array',
 			of: [
-				{ type: 'block' },
+				{
+					title: 'Block',
+					type: 'block',
+					styles: [{ title: 'Normal', value: 'normal' }],
+					marks: {
+						decorators: [
+							{ value: 'strong', title: 'Strong' },
+							{ value: 'italic', title: 'Italic' },
+							{ value: 'underline', title: 'Underline' },
+						],
+						annotations: [{ type: 'link' }],
+					},
+				},
 				{
 					name: 'figure',
 					type: 'object',
 					fields: [
+						{
+							name: 'image',
+							type: 'image',
+						},
 						{
 							name: 'alt',
 							type: 'string',
@@ -256,8 +272,15 @@ export default {
 							type: 'string',
 						},
 						{
-							name: 'image',
-							type: 'image',
+							name: 'float',
+							title: 'Float',
+							type: 'string',
+							options: {
+								list: [
+									{ title: 'left', value: 'left' },
+									{ title: 'right', value: 'right' },
+								],
+							},
 						},
 					],
 				},

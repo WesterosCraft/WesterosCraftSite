@@ -19,6 +19,7 @@ import {
 	Thead,
 	Tfoot,
 	Button,
+	Link,
 	useColorModeValue,
 } from '@chakra-ui/react';
 import { RichText } from '@/components/sections';
@@ -56,7 +57,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 	const projectDetailsMap = [
 		{
 			label: 'Region',
-			accessor: nameFormatter(build['region']),
+			accessor: build.region && nameFormatter(build['region']),
 		},
 		{
 			label: 'House',
@@ -64,18 +65,18 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 		},
 		{
 			label: 'Status',
-			accessor: nameFormatter(build['projectStatus']),
+			accessor: build.projectStatus && nameFormatter(build['projectStatus']),
 		},
 		{
 			label: 'Type',
-			accessor: nameFormatter(build['buildType']),
+			accessor: build.buildType && nameFormatter(build['buildType']),
 		},
 		{
 			label: 'Warp',
 			accessor: build['warp'],
 		},
 		{
-			label: projectLeadFormatter(build['projectLead']),
+			label: build.projectLead && projectLeadFormatter(build['projectLead']),
 			accessor: build['projectLead'],
 		},
 		{
@@ -97,7 +98,6 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 	return (
 		<>
 			<Seo meta={build?.meta} />
-
 			<Box
 				position='relative'
 				borderRadius='3xl'
@@ -130,10 +130,10 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 						/>
 					</Box>
 				)}
-				{!isEmpty(build.images) && urlFor(build?.images?.[0]?.asset._ref).url() && (
+				{!isEmpty(build.images) && build?.images && urlFor(build?.images?.[0]?.asset?._ref).url() && (
 					<Image
 						loader={myLoader}
-						src={urlFor(build?.images?.[0]?.asset._ref).url()!}
+						src={urlFor(build?.images?.[0]?.asset?._ref).url()!}
 						height={350}
 						width={960}
 						alt={build.name}
@@ -142,9 +142,9 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 			</Box>
 			<Box>
 				<Flex
-					ml={[0, null, null, 2]}
-					mt={[2, null, null, 0]}
-					mb={2}
+					ml={[0, null, null, 3]}
+					mt={[3, null, null, 0]}
+					mb={3}
 					borderRadius='md'
 					borderWidth='1px'
 					borderStyle='solid'
@@ -161,7 +161,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 							</Tr>
 						</Thead>
 						<Tbody>
-							{!isEmpty(build.images) && (
+							{!isEmpty(build.images) && build?.images && (
 								<Tr>
 									<Td textAlign='center' colSpan={2}>
 										<Image width={350} height={197} alt='iamge' src={urlFor(build.images[0].asset._ref).url() ?? ''} />
@@ -180,20 +180,48 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 									)
 							)}
 						</Tbody>
-						<Tfoot>
-							<Tr>
-								<Td textAlign='center'>
-									<Button variant='outline' size='xs' colorScheme='gray'>
-										Application
-									</Button>
-								</Td>
-								<Td textAlign='center'>
-									<Button variant='outline' size='xs' colorScheme='gray'>
-										View On Map
-									</Button>
-								</Td>
-							</Tr>
-						</Tfoot>
+						{(build.application && build.application !== '') ||
+							(build.dynmapInformation && !isEmpty(build.dynmapInformation) && (
+								<Tfoot>
+									<Tr>
+										{build.application !== '' && build.application && (
+											<Td
+												textAlign='center'
+												colSpan={!build.dynmapInformation || isEmpty(build.dynmapInformation) ? 2 : 1}
+											>
+												<Link
+													textDecoration='none'
+													href={build.application}
+													passHref
+													isExternal
+													_hover={{ textDecoration: 'none' }}
+												>
+													<Button variant='outline' size='xs' colorScheme='gray' textDecoration='none'>
+														Application
+													</Button>
+												</Link>
+											</Td>
+										)}
+										{build.dynmapInformation && !isEmpty(build.dynmapInformation) && (
+											<Td textAlign='center' colSpan={!build.application || build.application === '' ? 2 : 1}>
+												<Link
+													isExternal
+													textDecoration='none'
+													href={`https://mc.westeroscraft.com/?mapname=flat&zoom=${
+														build.dynmapInformation.zoom ?? '4'
+													}&x=${build.dynmapInformation.xCoord ?? '0'}&z=${build.dynmapInformation.yCoord ?? '0'}`}
+													passHref
+													_hover={{ textDecoration: 'none' }}
+												>
+													<Button variant='outline' size='xs' colorScheme='gray' textDecoration='none'>
+														View On Map
+													</Button>
+												</Link>
+											</Td>
+										)}
+									</Tr>
+								</Tfoot>
+							))}
 					</Table>
 				</Flex>
 				<RichText data={{ copy: build.entry }} />
@@ -218,7 +246,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
 	const data = await sanityClient.fetch<Array<BuildEntry>>(allBuildsSlug);
-	const paths = data.map((build) => ({ params: { slug: build.slug.current, region: kebabCase(build.region) } }));
+	const paths = data.map((build) => ({ params: { slug: build.slug.current, region: kebabCase(build?.region) } }));
 
 	return {
 		paths,
