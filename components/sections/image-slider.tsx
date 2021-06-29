@@ -18,7 +18,7 @@ type Props = {
 };
 
 const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
-	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true });
+	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true, containScroll: 'trimSnaps' });
 
 	// const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
 	const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -42,7 +42,14 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 
 	return (
 		<Box className='embla' width='100%' position='relative' maxW='100%' mx='auto'>
-			<Box className='embla__viewport' width='100%' ref={viewportRef}>
+			<Box
+				className='embla__viewport'
+				mb={100}
+				// overflow='hidden'
+				width='100vw'
+				ml='calc(-50vw + 50%)'
+				ref={viewportRef}
+			>
 				<Flex className='embla__container' userSelect='none'>
 					{images.map((image) => (
 						<Box className='embla__slide' position='relative' minW='100%' key={image._key}>
@@ -53,7 +60,7 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 								maxHeight={height}
 								className='embla__slide__inner'
 								position='relative'
-								overflow='hidden'
+								// overflow='hidden'
 							>
 								<Box
 									maxH={height}
