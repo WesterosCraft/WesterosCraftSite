@@ -23,7 +23,6 @@ const RenderSection = ({ section, additionalData }: { section: Sections; additio
 			return <MainImage data={section} />;
 		case 'spacer':
 			return <Spacer data={section} />;
-
 		case 'marquee':
 			return <Marquee data={section} />;
 		case 'quoteBlock':

@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Quote = ({ data: { quote = '', author = '', _type = 'quoteBlock' } }: Props) => (
-	<Box className={`${_type}__section`} width={['80%', null, '75%', 800]} mx='auto'>
+	<Box as='section' className={`${_type}__section`} width={['80%', null, '75%', 800]} mx='auto'>
 		<Flex
 			as='blockquote'
 			p={[5, null, 10]}

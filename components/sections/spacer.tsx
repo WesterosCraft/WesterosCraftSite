@@ -30,7 +30,7 @@ const getSize = (size: string) => {
 const Spacer = ({ data }: Props) => {
 	const padding = [getSize(data?.mobileSize ?? 'medium'), null, getSize(data?.size ?? 'medium')];
 
-	return <Box className={`${data._type}__section`} paddingY={padding} backgroundColor='transparent' />;
+	return <Box as='section' className={`${data._type}__section`} paddingY={padding} backgroundColor='transparent' />;
 };
 
 export default Spacer;

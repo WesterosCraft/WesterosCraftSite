@@ -4,7 +4,7 @@ import { urlFor } from '@/lib/sanity';
 import { IEditions } from '@/models/sections/editions';
 
 const Editions = ({ data }: { data: IEditions }) => (
-	<Box className={`${data._type}__section`}>
+	<Box as='section' className={`${data._type ?? 'editions'}__section`}>
 		<Heading variant='h3' textAlign='center'>
 			{data.heading || ''}
 		</Heading>

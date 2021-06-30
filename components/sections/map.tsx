@@ -9,7 +9,7 @@ type Props = {
 const Map = ({ data }: Props) => {
 	const [hoverRef, isHovered] = useHover<HTMLDivElement>();
 	return (
-		<Center flexDirection='column' height='100%'>
+		<Center as='section' className={`${data._type ?? 'map'}__section`} flexDirection='column' height='100%'>
 			<Heading as='h2' fontSize='5xl' fontWeight={800} mb={4} textAlign='center'>
 				{data.heading ?? ''}
 			</Heading>

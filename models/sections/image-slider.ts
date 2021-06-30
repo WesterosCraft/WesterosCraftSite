@@ -1,11 +1,11 @@
-import { SanityAsset } from '../utils';
+import { ExpandedImage } from '../utils';
 
 export interface ImageSlider {
 	_type: 'imageSlider';
 	_key: string;
 	slideItems: Array<{
-		destination: { _ref: string; _type: 'reference' };
-		slideImage: { _type: 'image'; asset: SanityAsset };
+		destination: { name: string; _type: 'destination' };
+		slideImage: ExpandedImage;
 		_key: string;
 		_type: 'slide';
 	}>;

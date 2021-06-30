@@ -35,7 +35,7 @@ export default function WithSubnavigation({
 	const { isOpen, onToggle } = useDisclosure();
 
 	return (
-		<Box maxW={maxWidth} w={'100%'} marginX='auto'>
+		<Box as='header' maxW={maxWidth} w={'100%'} marginX='auto'>
 			<Flex minH='60px' py={{ base: 2 }} px={{ base: 4 }} align='center' justify='space-between'>
 				<Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
 					<IconButton

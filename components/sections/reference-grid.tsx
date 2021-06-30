@@ -15,7 +15,7 @@ type Props = {
 
 const ReferenceGrid = ({ data, additionalData }: Props) => {
 	return (
-		<Box>
+		<Box as='section' className={`${data._type ?? 'referenceGrid'}__section`}>
 			<Heading as={data?.headingSize ?? 'h2'} fontSize={getFontSize(data?.headingSize)} mb={7} fontWeight={800}>
 				{data?.heading || ''}
 			</Heading>

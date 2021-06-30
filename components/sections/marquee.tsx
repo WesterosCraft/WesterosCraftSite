@@ -25,6 +25,7 @@ const Marquee = ({ data }: Props) => {
 
 	return (
 		<Flex
+			as='section'
 			flexDirection='column'
 			className={`${data?._type || 'marquee'}__section`}
 			justify={data?.headingAlignment || 'center'}

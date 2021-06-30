@@ -13,7 +13,7 @@ const FeaturesWithVideo = ({ data }: Props) => {
 	const [isPlaying, setPlaying] = useState(false);
 
 	return (
-		<Box width='100%' px={8}>
+		<Box as='section' className={`${data._type ?? 'featuresWithVideo'}__section`} width='100%' px={8}>
 			<SimpleGrid templateColumns={['1fr', null, null, '416px 1fr']} gap='64px'>
 				<Flex direction='column'>
 					<Heading textAlign={['center', null, 'left']} as='h2' fontSize='5xl' fontWeight={800}>

@@ -88,7 +88,9 @@ const serializers = {
 };
 
 const TextBlock = ({ data }: Props) => {
-	return <BlockContent blocks={data.copy} serializers={serializers} />;
+	return (
+		<BlockContent className={`${data._type ?? 'rich_text'}__section`} blocks={data.copy} serializers={serializers} />
+	);
 };
 
 export default TextBlock;

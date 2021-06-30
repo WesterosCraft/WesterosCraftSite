@@ -13,11 +13,13 @@ import {
 	destinationCard,
 	featuresWithVideo,
 	map,
+	heroSlider,
 } from './fragments';
 
 export const pageQuery = groq`
 	*[_type == $type && slug.current == $slug][0] {
 		...,
+		${heroSlider},
 		content[] {
 			${richText},
 			${grid},

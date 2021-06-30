@@ -12,10 +12,10 @@ type Props = {
 const Layout = ({ siteSettings, children, width = 1280 }: Props) => {
 	return (
 		<>
-			<Flex flexDirection='column' minHeight='100vh' overflow='hidden'>
+			<Flex as='main' flexDirection='column' minHeight='100vh' overflow='hidden'>
 				{siteSettings?.navigation && <Header navigation={siteSettings?.navigation} maxWidth={width} />}
 				<Flex
-					as='main'
+					as='article'
 					maxWidth={width}
 					width='100%'
 					padding={[4, 6]}

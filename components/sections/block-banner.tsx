@@ -8,7 +8,7 @@ type Props = {
 
 const BlockBanner = ({ data }: Props) => {
 	return (
-		<Flex direction='column'>
+		<Flex as='section' className={`${data._type ?? 'blockBanner'}__section`} direction='column'>
 			<Flex flexDirection='row' flexBasis='0 1 100%' justify='center' align='center'>
 				<Box pr={2}>
 					<Heading as='h3' maxW={360} fontWeight={800}>

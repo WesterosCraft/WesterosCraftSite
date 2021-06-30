@@ -121,3 +121,23 @@ export const featuresWithVideo = `
 		}
 	}
 `;
+
+export const heroSlider = `
+heroSlider{
+	...,
+	slideItems[]{
+		...,
+		destination->{
+			_ref,
+			_type,
+			name
+		},
+	"slideImage": slideImage.asset->{
+		url,
+		metadata {
+			lqip
+		}
+  	}
+  	}
+  }
+`;
