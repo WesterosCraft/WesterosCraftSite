@@ -57,10 +57,13 @@ const WikiHeader = ({ socialFields }: IWikiHeader) => {
 			borderTopWidth={1}
 			borderStyle='solid'
 			position='sticky'
-			top={0}
+			top={16}
 			left={0}
 			right={0}
 			py={4}
+			width='100%'
+			maxW={1280}
+			mx='auto'
 		>
 			<Flex flex='1 1 0%' justifyContent='space-between' alignItems='center'>
 				<Breadcrumb separator={<Icon as={FaChevronRight} boxSize={3} />}>

@@ -1,5 +1,5 @@
 import { Image } from './image';
-import { RichText } from './rich-text';
+import { IRichText } from './rich-text';
 import { Youtube } from './youtube';
 
 export interface Grid {
@@ -12,5 +12,5 @@ export interface Grid {
 		medium: string;
 		large: string;
 	};
-	items?: Array<Image | RichText | Youtube>;
+	items?: Array<Image | IRichText | Youtube>;
 }

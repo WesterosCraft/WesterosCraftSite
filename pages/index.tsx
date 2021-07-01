@@ -55,21 +55,10 @@ const Index = ({ pageData }: Props) => {
 		<>
 			<Seo meta={page?.meta} />
 
-			{/* <Box
-				className='image__overlay'
-				// zIndex='base'
-				width='100%'
-				height='100%'
-				position='absolute'
-				top={0}
-				left={0}
-				opacity={0.1}
-
-			/> */}
-			<Box as='section' position='relative' className='hero__section' bg='gray.800' pt={100} pb={200}>
+			<Box as='section' position='relative' className='hero__section' bg='gray.800' pb={200} pt={20}>
 				<Container
 					maxW='container.xl'
-					zIndex='docked'
+					zIndex='base'
 					_before={{
 						content: '""',
 						position: 'absolute',
@@ -81,7 +70,7 @@ const Index = ({ pageData }: Props) => {
 						backgroundImage: `url(${BrightSquares.src})`,
 					}}
 				>
-					<Box textAlign='center' mt={5}>
+					<Box textAlign='center' mt={5} zIndex='base' position='relative'>
 						<Text
 							fontSize='xl'
 							textTransform='uppercase'

@@ -224,6 +224,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 							))}
 					</Table>
 				</Flex>
+				{/* //@ts-ignore */}
 				<RichText data={{ copy: build.entry }} />
 			</Box>
 		</>

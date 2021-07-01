@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
 	Box,
 	Flex,
@@ -12,6 +13,7 @@ import {
 	PopoverContent,
 	useColorModeValue,
 	useDisclosure,
+	border,
 } from '@chakra-ui/react';
 
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
@@ -19,7 +21,7 @@ import { DarkModeSwitch } from '.';
 import NextLink from 'next/link';
 import { InternalLink } from '@/models/objects/internal-link';
 import { ExternalLink } from '@/models/objects/external-link';
-import { NavItem } from '@/models/objects/nav-item';
+// import { NavItem } from '@/models/objects/nav-item';
 import { isEmpty } from 'lodash';
 import { SubNavItem } from '@/models/objects/sub-nav-item';
 import { Logo } from './logo';
@@ -45,8 +47,9 @@ export default function WithSubnavigation({
 			maxW={maxWidth}
 			w={'100%'}
 			marginX='auto'
+			height={16}
 		>
-			<Flex minH='60px' py={{ base: 2 }} px={{ base: 4 }} align='center' justify='space-between'>
+			<Flex minH='60px' py={{ base: 2 }} align='center' justify='space-between'>
 				<Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
 					<IconButton
 						onClick={onToggle}
@@ -76,6 +79,8 @@ export default function WithSubnavigation({
 const DesktopNav = ({ navigation }: { navigation: typeof siteSettings.navigation }) => {
 	const linkColor = useColorModeValue('gray.600', 'gray.200');
 	const linkHover = useColorModeValue('gray.800', 'white');
+	const dropdownHover = useColorModeValue('white', 'gray.800');
+
 	return (
 		<Stack direction={'row'} spacing={4}>
 			{navigation.map((navItem) => {
@@ -137,7 +142,7 @@ const DesktopNav = ({ navigation }: { navigation: typeof siteSettings.navigation
 								</Link>
 							</PopoverTrigger>
 
-							<PopoverContent boxShadow={'xl'} bg={useColorModeValue('white', 'gray.800')} p={4} minW={'sm'}>
+							<PopoverContent boxShadow={'xl'} bg={dropdownHover} p={4} minW={'sm'}>
 								<Stack>
 									{navItem.links.map((link) => (
 										<DesktopSubNav key={link._key} link={link} />
@@ -154,16 +159,11 @@ const DesktopNav = ({ navigation }: { navigation: typeof siteSettings.navigation
 
 const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 	const linkColor = useColorModeValue('gray.600', 'gray.200');
+	const linkHover = useColorModeValue('red.50', 'gray.900');
 
 	return link._type === 'internalLink' && link.link?.slug.current ? (
 		<NextLink passHref href={link.link.slug.current === 'home' ? '/' : `/${link.link.slug.current}/`}>
-			<Link
-				role={'group'}
-				display={'block'}
-				p={2}
-				rounded={'md'}
-				_hover={{ bg: useColorModeValue('red.50', 'gray.900') }}
-			>
+			<Link role={'group'} display={'block'} p={2} rounded={'md'} _hover={{ bg: linkHover }}>
 				<Stack direction={'row'} align={'center'}>
 					<Box>
 						<Text transition={'all .3s ease'} _groupHover={{ color: 'red.600' }} fontWeight={'bold'}>
@@ -192,7 +192,7 @@ const DesktopSubNav = ({ link }: { link: InternalLink | ExternalLink }) => {
 			display={'block'}
 			p={2}
 			rounded={'md'}
-			_hover={{ bg: useColorModeValue('red.50', 'gray.900') }}
+			_hover={{ bg: linkHover }}
 		>
 			<Stack direction={'row'} align={'center'}>
 				<Box>
@@ -230,6 +230,7 @@ const MobileNav = ({ navigation }: { navigation: typeof siteSettings.navigation 
 const MobileNavItem = ({ link }: { link: InternalLink | ExternalLink | SubNavItem }) => {
 	const { isOpen, onToggle } = useDisclosure();
 	const linkColor = useColorModeValue('gray.600', 'gray.200');
+	const borderColor = useColorModeValue('gray.200', 'gray.700');
 
 	return (
 		<Stack spacing={4} onClick={link._type === 'navigation.section' ? link?.links && onToggle : () => {}}>
@@ -290,14 +291,7 @@ const MobileNavItem = ({ link }: { link: InternalLink | ExternalLink | SubNavIte
 						)}
 					</Flex>
 					<Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-						<Stack
-							mt={2}
-							pl={4}
-							borderLeft={1}
-							borderStyle={'solid'}
-							borderColor={useColorModeValue('gray.200', 'gray.700')}
-							align={'start'}
-						>
+						<Stack mt={2} pl={4} borderLeft={1} borderStyle={'solid'} borderColor={borderColor} align={'start'}>
 							{link?.links &&
 								link?.links.map((child) => {
 									if (child._type === 'internalLink' && child.link?.slug.current) {

@@ -35,11 +35,10 @@ const MyApp = ({ Component, pageProps }: Props) => {
 						top: 0,
 						left: 0,
 					},
-					'.embla__viewport.is-draggable': {
-						cursor: 'move',
+					'.embla__viewport.is-draggable img': {
 						cursor: 'grab',
 					},
-					'.embla__viewport.is-dragging': {
+					'.embla__viewport.is-dragging img': {
 						cursor: 'grabbing',
 					},
 				}}

@@ -33,12 +33,14 @@ export const resolveLink = (item: InternalLink | ExternalLink) => {
 		};
 	}
 
+	//@ts-ignore
 	if (item._type === 'internalLink' && item.link?.slug?.current) {
 		return {
 			type: item._type,
 			key: item._key,
 			title: item.title,
 			icon: item.icon,
+			//@ts-ignore
 			url: item.link.slug.current === 'home' ? '/' : `/${item.link.slug.current}`,
 		};
 	}
@@ -51,19 +53,16 @@ export function useHover<T>(): [MutableRefObject<T>, boolean] {
 	const ref: any = useRef<T | null>(null);
 	const handleMouseOver = (): void => setValue(true);
 	const handleMouseOut = (): void => setValue(false);
-	useEffect(
-		() => {
-			const node: any = ref.current;
-			if (node) {
-				node.addEventListener('mouseover', handleMouseOver);
-				node.addEventListener('mouseout', handleMouseOut);
-				return () => {
-					node.removeEventListener('mouseover', handleMouseOver);
-					node.removeEventListener('mouseout', handleMouseOut);
-				};
-			}
-		},
-		[ref.current] // Recall only if ref changes
-	);
+	useEffect(() => {
+		const node: any = ref.current;
+		if (node) {
+			node.addEventListener('mouseover', handleMouseOver);
+			node.addEventListener('mouseout', handleMouseOut);
+			return () => {
+				node.removeEventListener('mouseover', handleMouseOver);
+				node.removeEventListener('mouseout', handleMouseOut);
+			};
+		}
+	}, [ref.current]);
 	return [ref, value];
 }

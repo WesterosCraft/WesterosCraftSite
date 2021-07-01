@@ -46,6 +46,7 @@ const filterData = [
 
 const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 	const router = useRouter();
+	//@ts-ignore
 	const [items, setItems] = useState(allBuildsData.builds);
 	const [tabIndex, setTabIndex] = useControllableState({ defaultValue: 0 });
 
@@ -55,14 +56,14 @@ const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 		enabled: allBuildsData && router.query.preview !== null,
 	});
 
-	const onInputChange = (option: { value: string; label: string }, { name }: { name: string }) => {
-		if (option === null) {
-			setItems(allBuildsData.builds);
-			return;
-		}
-		const filtered = allBuildsData.builds.filter((b: any) => b[name] === option.value);
-		setItems(filtered);
-	};
+	// const onInputChange = (option: { value: string; label: string }, { name }: { name: string }) => {
+	// 	if (option === null) {
+	// 		setItems(allBuildsData.builds);
+	// 		return;
+	// 	}
+	// 	const filtered = allBuildsData.builds.filter((b: any) => b[name] === option.value);
+	// 	setItems(filtered);
+	// };
 
 	const setPrevTab = () => {
 		setTabIndex(tabIndex - 1);

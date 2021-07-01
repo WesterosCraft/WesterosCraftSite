@@ -1,8 +1,7 @@
-import { DestinationStatuses } from '@/models/utils';
 import { HStack, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { IoMdCube } from 'react-icons/io';
 
-const BuildTypeTag = ({ label }: { label: DestinationStatuses }) => {
+const BuildTypeTag = ({ label }: { label: string }) => {
 	return (
 		<HStack spacing={4}>
 			<Tag size={'sm'} variant='subtle' colorScheme='cyan'>

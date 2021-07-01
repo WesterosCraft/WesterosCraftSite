@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { regionQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { camelCase } from 'lodash';
-import { Seo, WikiLayout, Layout } from '@/components/common';
+import { WikiLayout, Layout } from '@/components/common';
 import { siteSettings } from '@/data/.';
 import { BuildEntry } from '@/models/objects/build-entry';
 import { Regions } from '@/models/utils';

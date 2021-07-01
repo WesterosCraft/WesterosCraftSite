@@ -17,8 +17,8 @@ const Pagination = ({
 	pageLimit,
 	onPrevChange,
 	onNextChange,
-	setTabIndex,
-}: IPagination) => {
+}: // setTabIndex,
+IPagination) => {
 	const getPaginatedData = () => {
 		return chunk(data, pageLimit);
 	};

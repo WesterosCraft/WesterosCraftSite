@@ -116,6 +116,9 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 					onClick={scrollPrev}
 					aria-label='Scroll to previous slide'
 					icon={<FaAngleLeft fill='white' />}
+					_hover={{
+						bg: 'whiteAlpha.300',
+					}}
 				/>
 				<Center width={300}>
 					<Link
@@ -146,6 +149,9 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 					onClick={scrollNext}
 					aria-label='Scroll to next slide'
 					icon={<FaAngleRight fill='white' />}
+					_hover={{
+						bg: 'whiteAlpha.300',
+					}}
 				/>
 			</Flex>
 		</Box>

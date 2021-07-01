@@ -32,7 +32,7 @@ const WikiNav = ({ navData }: IWikiNav) => {
 			display={['none', null, 'flex']}
 			minWidth={260}
 			maxWidth={260}
-			top='6.9rem'
+			top='8.3rem'
 			position='sticky'
 			overflowY='auto'
 			flex='1 1 260px'

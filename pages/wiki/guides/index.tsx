@@ -3,7 +3,7 @@ import Error from 'next/error';
 import { useRouter } from 'next/router';
 import { allGuidesQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { Seo, WikiLayout, Layout } from '@/components/common';
+import { WikiLayout, Layout } from '@/components/common';
 import { siteSettings } from '@/data/.';
 import { LayoutPage } from '@/models/page';
 
@@ -22,7 +22,7 @@ const GuidesPage = ({ allGuidesData }: any) => {
 	return (
 		<>
 			{/* //@ts-ignore */}
-			<Seo meta={data?.meta} />
+			{/* <Seo meta={data?.meta} /> */}
 			{allGuidesData.map((guide: any) => (
 				<h5 key={guide._key}>{guide.name ?? 'missing name'}</h5>
 			))}

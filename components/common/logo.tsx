@@ -1,4 +1,3 @@
-import { useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import { Flex, Box, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';

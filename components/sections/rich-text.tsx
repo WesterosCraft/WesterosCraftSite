@@ -3,16 +3,12 @@ import NextLink from 'next/link';
 import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import BlockContent from '@sanity/block-content-to-react';
 import { IoIosQuote } from 'react-icons/io';
-import { IRichText } from '@/models/sections/rich-text';
-import { SimpleBlockContent } from '@/models/objects/simple-block-content';
+// import { IRichText } from '@/models/sections/rich-text';
+// import { SimpleBlockContent } from '@/models/objects/simple-block-content';
 import { MainImage } from '@/components/sections';
 
 type Props = {
-	data: {
-		_key: string;
-		_type: 'richText';
-		copy: IRichText | SimpleBlockContent;
-	};
+	data: any;
 };
 
 const resolveSize = (style: string | boolean) => {
@@ -73,7 +69,7 @@ const serializers = {
 		figure: (props: any) => {
 			return <MainImage data={props.node} />;
 		},
-		video: (props: any) => <h1>VIDEO</h1>,
+		video: () => <h1>VIDEO</h1>,
 	},
 	marks: {
 		link: (props: any) => (

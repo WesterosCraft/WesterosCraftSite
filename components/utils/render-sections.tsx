@@ -16,6 +16,7 @@ import {
 const RenderSection = ({ section, additionalData }: { section: Sections; additionalData?: any }) => {
 	switch (section._type) {
 		case 'richText':
+			//@ts-ignore
 			return <RichText data={section} />;
 		case 'grid':
 			return <Grid data={section} />;
