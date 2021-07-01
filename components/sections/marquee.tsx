@@ -33,7 +33,7 @@ const Marquee = ({ data }: Props) => {
 	}, [embla]);
 
 	const regionDictionary = groupBy(data.marqueeItems, (o) => o?.destination?.region);
-
+	const tabHover = useColorModeValue('black', 'white');
 	return (
 		<Flex
 			as='section'
@@ -58,8 +58,8 @@ const Marquee = ({ data }: Props) => {
 						{Object.keys(regionDictionary).map((item, index) => (
 							<Tab
 								key={index}
-								_selected={{ color: useColorModeValue('black', 'white') }}
-								_hover={{ color: useColorModeValue('black', 'white') }}
+								_selected={{ color: tabHover }}
+								_hover={{ color: tabHover }}
 								color={'gray.400'}
 								fontWeight={600}
 							>

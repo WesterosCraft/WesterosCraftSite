@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Text, Flex, Heading, Button, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
