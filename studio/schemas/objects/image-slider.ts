@@ -17,13 +17,14 @@ export default {
 						{
 							type: 'reference',
 							name: 'destination',
+							validation: (Rule: any) => Rule.required(),
 							to: [
 								{
 									type: 'destination',
 								},
 							],
 						},
-						{ type: 'image', name: 'slideImage', title: 'Slide Image' },
+						{ type: 'image', name: 'slideImage', title: 'Slide Image', validation: (Rule: any) => Rule.required() },
 					],
 					preview: {
 						select: {

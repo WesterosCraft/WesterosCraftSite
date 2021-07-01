@@ -12,7 +12,12 @@ export const Logo = ({ shield = true }) => (
 					className='logo'
 					xmlns='http://www.w3.org/2000/svg'
 					viewBox='0 0 593.39 81.56'
-					style={{ fill: useColorModeValue('black', 'white'), height: '24px', cursor: 'pointer' }}
+					style={{
+						fill: 'white',
+						// fill: useColorModeValue('black', 'white'),
+						height: '24px',
+						cursor: 'pointer',
+					}}
 				>
 					<g id='Layer_2'>
 						<g id='Layer_1-2'>

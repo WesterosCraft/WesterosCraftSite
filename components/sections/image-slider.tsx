@@ -1,16 +1,17 @@
-import { useEffect, useCallback } from 'react';
-import { ExpandedImage } from '@/models/utils';
-import { urlFor } from '@/lib/sanity';
-import { Box, Flex, IconButton, Heading, chakra, useColorModeValue } from '@chakra-ui/react';
+import { useState, useEffect, useCallback } from 'react';
+import { ExpandedImage, Regions } from '@/models/utils';
+import { Box, Flex, Center, IconButton, Heading, chakra, useColorModeValue, Link } from '@chakra-ui/react';
 import NextImage from 'next/image';
+import NextLink from 'next/link';
 import { useEmblaCarousel } from 'embla-carousel/react';
-import { GrFormNext } from 'react-icons/gr';
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
+import { Slug } from '@sanity/types';
 
 type Props = {
 	width: number | string;
 	height: number | string;
 	images: Array<{
-		destination: { name: string; _type: 'destination' };
+		destination: { name: string; _type: 'destination'; region: Regions; slug: Slug };
 		slideImage: ExpandedImage;
 		_key: string;
 		_type: 'slide';
@@ -19,12 +20,14 @@ type Props = {
 
 const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true, containScroll: 'trimSnaps' });
-	console.log('👉 ~ ImageSlider ~ embla', embla);
+	const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-	// const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+	const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
 	const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+
 	const onSelect = useCallback(() => {
 		if (!embla) return;
+		setCurrentSlideIndex(embla?.selectedScrollSnap());
 	}, [embla]);
 
 	useEffect(() => {
@@ -106,7 +109,44 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 				</Box>
 			</Box>
 			<Flex mt={6} w='100%' justify='center' align='center' direction='row'>
-				<Heading fontSize='lg'>White Harobr</Heading>
+				<IconButton
+					bg='whiteAlpha.200'
+					size='sm'
+					isRound
+					onClick={scrollPrev}
+					aria-label='Scroll to previous slide'
+					icon={<FaAngleLeft fill='white' />}
+				/>
+				<Center width={300}>
+					<Link
+						as={NextLink}
+						passHref
+						href={`/wiki/${images?.[currentSlideIndex]?.destination?.region}/${images?.[currentSlideIndex]?.destination?.slug.current}`}
+					>
+						<Heading
+							cursor='pointer'
+							fontSize='lg'
+							color='whiteAlpha.900'
+							_hover={{
+								color: 'white',
+								textDecoration: 'underline',
+								textDecorationColor: 'white',
+								textDecorationThickness: '.125em',
+								textUnderlineOffset: '1.5px',
+							}}
+						>
+							{images?.[currentSlideIndex]?.destination?.name ?? ''}
+						</Heading>
+					</Link>
+				</Center>
+				<IconButton
+					bg='whiteAlpha.200'
+					size='sm'
+					isRound
+					onClick={scrollNext}
+					aria-label='Scroll to next slide'
+					icon={<FaAngleRight fill='white' />}
+				/>
 			</Flex>
 		</Box>
 	);

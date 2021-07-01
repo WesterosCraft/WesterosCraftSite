@@ -130,7 +130,9 @@ heroSlider{
 		destination->{
 			_ref,
 			_type,
-			name
+			name,
+			region,
+			slug
 		},
 	"slideImage": slideImage.asset->{
 		url,

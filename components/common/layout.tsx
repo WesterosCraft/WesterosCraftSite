@@ -12,18 +12,9 @@ type Props = {
 const Layout = ({ siteSettings, children, width = 1280 }: Props) => {
 	return (
 		<>
-			<Flex as='main' flexDirection='column' minHeight='100vh' overflow='hidden'>
+			<Flex as='main' flexDirection='column' minHeight='100vh' overflow='hidden' position='relative'>
 				{siteSettings?.navigation && <Header navigation={siteSettings?.navigation} maxWidth={width} />}
-				<Flex
-					as='article'
-					maxWidth={width}
-					width='100%'
-					padding={[4, 6]}
-					alignSelf='center'
-					justifyContent='center'
-					flex='1 0 auto'
-					direction='column'
-				>
+				<Flex as='article' width='100%' alignSelf='center' justifyContent='center' flex='1 0 auto' direction='column'>
 					{children}
 				</Flex>
 				<Footer socialFields={siteSettings?.socialFields} />

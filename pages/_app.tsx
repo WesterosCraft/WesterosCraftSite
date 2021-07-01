@@ -35,6 +35,13 @@ const MyApp = ({ Component, pageProps }: Props) => {
 						top: 0,
 						left: 0,
 					},
+					'.embla__viewport.is-draggable': {
+						cursor: 'move',
+						cursor: 'grab',
+					},
+					'.embla__viewport.is-dragging': {
+						cursor: 'grabbing',
+					},
 				}}
 			/>
 			{getLayout(<Component {...pageProps} />)}
