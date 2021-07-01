@@ -32,9 +32,7 @@ const RegionPage = ({ regionData, slug }: PageProps) => {
 		<>
 			{/* <Seo meta={region?.meta} /> */}
 
-			{data.map((item, i) => (
-				<h3 key={i}>{item.name}</h3>
-			))}
+			{data?.map((item, i) => <h3 key={i}>{item.name}</h3> ?? <p>no data</p>)}
 		</>
 	);
 };
@@ -53,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 	return {
 		props: {
-			slug: params?.region?.toString(),
+			slug: params?.region,
 			regionData,
 		},
 		revalidate: 60,

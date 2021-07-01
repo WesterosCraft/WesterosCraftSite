@@ -1,11 +1,13 @@
-'use strict';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+});
 
 const STUDIO_REWRITE = {
 	source: '/studio/:path*',
 	destination: process.env.NODE_ENV === 'development' ? 'http://localhost:3333/studio/:path*' : '/studio/index.html',
 };
 
-module.exports = {
+module.exports = withBundleAnalyzer({
 	poweredByHeader: false,
 	reactStrictMode: true,
 	images: {
@@ -21,4 +23,4 @@ module.exports = {
 
 	// 	return config;
 	// },
-};
+});

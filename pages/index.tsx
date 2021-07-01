@@ -54,7 +54,6 @@ const Index = ({ pageData }: Props) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
-
 			<Box as='section' position='relative' className='hero__section' bg='gray.800' pb={200} pt={20}>
 				<Container
 					maxW='container.xl'
@@ -98,12 +97,12 @@ const Index = ({ pageData }: Props) => {
 							display={{ base: 'none', md: 'inline-flex' }}
 							fontSize={'md'}
 							fontWeight={600}
-							color={buttonColor}
-							bg={buttonHover}
+							color='white'
+							bg='black'
 							href={'#'}
 							_hover={{
-								color: 'white',
-								bg: 'blackAlpha.700',
+								color: 'black',
+								bg: 'white',
 							}}
 						>
 							Join The Watch

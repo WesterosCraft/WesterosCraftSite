@@ -46,7 +46,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 		enabled: buildData && router.query.preview !== null,
 	});
 
-	console.log('👉 ~ BuildPage ~ build', build);
+	// console.log('👉 ~ BuildPage ~ build', build);
 	const projectLeadFormatter = (string: string) => {
 		if (!string) {
 			return null;
@@ -57,35 +57,35 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 	const projectDetailsMap = [
 		{
 			label: 'Region',
-			accessor: build.region && nameFormatter(build['region']),
+			accessor: build?.region && nameFormatter(build?.['region']),
 		},
 		{
 			label: 'House',
-			accessor: build['house'],
+			accessor: build?.['house'],
 		},
 		{
 			label: 'Status',
-			accessor: build.projectStatus && nameFormatter(build['projectStatus']),
+			accessor: build?.projectStatus && nameFormatter(build?.['projectStatus']),
 		},
 		{
 			label: 'Type',
-			accessor: build.buildType && nameFormatter(build['buildType']),
+			accessor: build?.buildType && nameFormatter(build?.['buildType']),
 		},
 		{
 			label: 'Warp',
-			accessor: build['warp'],
+			accessor: build?.['warp'],
 		},
 		{
-			label: build.projectLead && projectLeadFormatter(build['projectLead']),
-			accessor: build['projectLead'],
+			label: build?.projectLead && projectLeadFormatter(build?.['projectLead']),
+			accessor: build?.['projectLead'],
 		},
 		{
 			label: 'Date Started',
-			accessor: build['dateStarted'],
+			accessor: build?.['dateStarted'],
 		},
 		{
 			label: 'Date Completed',
-			accessor: build['dateCompleted'],
+			accessor: build?.['dateCompleted'],
 		},
 	];
 
@@ -103,15 +103,15 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 				borderRadius='3xl'
 				borderBottomLeftRadius='0px'
 				borderBottomRightRadius='0px'
-				backgroundImage={isEmpty(build.images) ? `url(${BrightSquares.src})` : undefined}
+				backgroundImage={isEmpty(build?.images) ? `url(${BrightSquares.src})` : undefined}
 				maxHeight='350px'
 				width='100%'
 				overflow='hidden'
 			>
 				<Heading zIndex='docked' fontWeight='800' color='white' position='absolute' bottom={5} left={5}>
-					{build.name}
+					{build?.name}
 				</Heading>
-				{build.banner && (
+				{build?.banner && (
 					<Box
 						zIndex='docked'
 						color='white'
@@ -121,8 +121,8 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 						filter='drop-shadow(15px 11px 6px rgb(41, 41, 43, .80))'
 					>
 						<Image
-							alt={`${build.name} Banner`}
-							src={build.banner?.url}
+							alt={`${build?.name} Banner`}
+							src={build?.banner?.url}
 							placeholder='blur'
 							blurDataURL={build?.banner?.metadata?.lqip!}
 							width={75}
@@ -130,13 +130,13 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 						/>
 					</Box>
 				)}
-				{!isEmpty(build.images) && build?.images && urlFor(build?.images?.[0]?.asset?._ref).url() && (
+				{!isEmpty(build?.images) && build?.images && urlFor(build?.images?.[0]?.asset?._ref).url() && (
 					<Image
 						loader={myLoader}
 						src={urlFor(build?.images?.[0]?.asset?._ref).url()!}
 						height={350}
 						width={960}
-						alt={build.name}
+						alt={build?.name}
 					/>
 				)}
 			</Box>
@@ -161,10 +161,15 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 							</Tr>
 						</Thead>
 						<Tbody>
-							{!isEmpty(build.images) && build?.images && (
+							{!isEmpty(build?.images) && build?.images && (
 								<Tr>
 									<Td textAlign='center' colSpan={2}>
-										<Image width={350} height={197} alt='iamge' src={urlFor(build.images[0].asset._ref).url() ?? ''} />
+										<Image
+											width={350}
+											height={197}
+											alt='iamge'
+											src={urlFor(build?.images?.[0]?.asset?._ref).url() ?? ''}
+										/>
 									</Td>
 								</Tr>
 							)}
@@ -180,18 +185,18 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 									)
 							)}
 						</Tbody>
-						{(build.application && build.application !== '') ||
-							(build.dynmapInformation && !isEmpty(build.dynmapInformation) && (
+						{(build?.application && build?.application !== '') ||
+							(build?.dynmapInformation && !isEmpty(build?.dynmapInformation) && (
 								<Tfoot>
 									<Tr>
-										{build.application !== '' && build.application && (
+										{build?.application !== '' && build?.application && (
 											<Td
 												textAlign='center'
-												colSpan={!build.dynmapInformation || isEmpty(build.dynmapInformation) ? 2 : 1}
+												colSpan={!build?.dynmapInformation || isEmpty(build?.dynmapInformation) ? 2 : 1}
 											>
 												<Link
 													textDecoration='none'
-													href={build.application}
+													href={build?.application}
 													passHref
 													isExternal
 													_hover={{ textDecoration: 'none' }}
@@ -202,14 +207,14 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 												</Link>
 											</Td>
 										)}
-										{build.dynmapInformation && !isEmpty(build.dynmapInformation) && (
-											<Td textAlign='center' colSpan={!build.application || build.application === '' ? 2 : 1}>
+										{build?.dynmapInformation && !isEmpty(build?.dynmapInformation) && (
+											<Td textAlign='center' colSpan={!build?.application || build?.application === '' ? 2 : 1}>
 												<Link
 													isExternal
 													textDecoration='none'
 													href={`https://mc.westeroscraft.com/?mapname=flat&zoom=${
-														build.dynmapInformation.zoom ?? '4'
-													}&x=${build.dynmapInformation.xCoord ?? '0'}&z=${build.dynmapInformation.yCoord ?? '0'}`}
+														build?.dynmapInformation.zoom ?? '4'
+													}&x=${build?.dynmapInformation.xCoord ?? '0'}&z=${build?.dynmapInformation.yCoord ?? '0'}`}
 													passHref
 													_hover={{ textDecoration: 'none' }}
 												>
@@ -225,7 +230,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 					</Table>
 				</Flex>
 				{/* //@ts-ignore */}
-				<RichText data={{ copy: build.entry }} />
+				<RichText data={{ copy: build?.entry }} />
 			</Box>
 		</>
 	);
@@ -247,7 +252,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
 	const data = await sanityClient.fetch<Array<BuildEntry>>(allBuildsSlug);
-	const paths = data.map((build) => ({ params: { slug: build.slug.current, region: kebabCase(build?.region) } }));
+	const paths = data?.map((build) => ({ params: { slug: build?.slug?.current, region: kebabCase(build?.region) } }));
 
 	return {
 		paths,
