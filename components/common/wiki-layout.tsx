@@ -16,16 +16,16 @@ const WikiLayout = ({ siteSettings, children, width = 1280 }: Props) => {
 	return (
 		<>
 			<WikiHeader socialFields={siteSettings?.socialFields} />
-			<Flex width='100%' alignSelf='center' justifyContent='center' flex='1 0 auto' direction='row' maxW={width}>
+			<Flex px={4} width='100%' alignSelf='center' justifyContent='center' flex='1 0 auto' direction='row' maxW={width}>
 				<WikiNav
 					navData={{
 						topLevelNavigation: siteSettings?.topLevelWikiNavigation,
 						wikiNavigation: siteSettings?.wikiNavigation,
 					}}
 				/>
-				<Box flex='1 1 0%' pl={3}>
+				<Box flex='1 1 0%' pl={[0, null, 3]}>
 					<Flex flexDirection='row'>
-						<Box className='content' width='100%' pt={10}>
+						<Box className='content' width='100%' pt={16}>
 							{children}
 						</Box>
 					</Flex>

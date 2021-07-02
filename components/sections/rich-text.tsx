@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import NextLink from 'next/link';
-import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import BlockContent from '@sanity/block-content-to-react';
 import { IoIosQuote } from 'react-icons/io';
 // import { IRichText } from '@/models/sections/rich-text';
@@ -57,6 +57,14 @@ const serializers = {
 							</Text>
 						</Box>
 					</Flex>
+				);
+			}
+
+			if (props.listItem === 'bullet') {
+				return (
+					<UnorderedList>
+						<ListItem>{props.children}</ListItem>
+					</UnorderedList>
 				);
 			}
 

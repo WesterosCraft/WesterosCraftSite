@@ -60,13 +60,13 @@ const WikiHeader = ({ socialFields }: IWikiHeader) => {
 			top={16}
 			left={0}
 			right={0}
-			py={4}
+			p={4}
 			width='100%'
 			maxW={1280}
 			mx='auto'
 		>
 			<Flex flex='1 1 0%' justifyContent='space-between' alignItems='center'>
-				<Breadcrumb separator={<Icon as={FaChevronRight} boxSize={3} />}>
+				<Breadcrumb display={['none', null, null, 'block']} separator={<Icon as={FaChevronRight} boxSize={3} />}>
 					{crumbLinks.map((crumb, i) =>
 						segments[i] === '' ? (
 							<BreadcrumbItem key={i} fontWeight='bold' fontSize='sm' color='gray.500'>

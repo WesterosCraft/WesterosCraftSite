@@ -46,7 +46,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 		enabled: buildData && router.query.preview !== null,
 	});
 
-	// console.log('👉 ~ BuildPage ~ build', build);
+	console.log('👉 ~ BuildPage ~ build', build);
 	const projectLeadFormatter = (string: string) => {
 		if (!string) {
 			return null;
@@ -215,7 +215,6 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 													href={`https://mc.westeroscraft.com/?mapname=flat&zoom=${
 														build?.dynmapInformation.zoom ?? '4'
 													}&x=${build?.dynmapInformation.xCoord ?? '0'}&z=${build?.dynmapInformation.yCoord ?? '0'}`}
-													passHref
 													_hover={{ textDecoration: 'none' }}
 												>
 													<Button variant='outline' size='xs' colorScheme='gray' textDecoration='none'>

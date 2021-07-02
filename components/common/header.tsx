@@ -50,6 +50,7 @@ export default function WithSubnavigation({
 			w={'100%'}
 			marginX='auto'
 			height={16}
+			px={4}
 		>
 			<Flex minH='60px' py={{ base: 2 }} align='center' justify='space-between'>
 				<Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
