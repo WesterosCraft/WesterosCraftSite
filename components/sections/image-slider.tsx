@@ -45,17 +45,18 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 			['width', 'height', 'src', 'alt', 'layout', 'placeholder', 'priority', 'blurDataURL'].includes(prop),
 	});
 
-	const heroGradient = useColorModeValue('linear(to-r,  #F57A49,#AF2024)', 'linear(to-r,  #5096C5,#28587E)');
+	const heroGradient = useColorModeValue('linear(to-r,  #ED213A,#93291E)', 'linear(to-r,  #5096C5,#28587E)');
+
+	// const heroGradient = useColorModeValue('radial(#F57A49,#AF2024)', 'radial(#033649,#036564)');
 
 	return (
 		<Box position='relative'>
 			<Box
-				zIndex='base'
+				zIndex={'base'}
 				filter='blur(6rem)'
 				w='100%'
 				maxW={width}
 				maxH={height}
-				opacity='0.5'
 				transform='translateZ(0)'
 				bgGradient={heroGradient}
 				className='slider-gradient'
@@ -64,6 +65,7 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 				left={0}
 				right={0}
 				bottom={0}
+				opacity={0.6}
 				mx='auto'
 			/>
 			<Box className='embla' width='100%' position='relative' maxW='100%' mx='auto'>
@@ -110,15 +112,12 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 			</Box>
 			<Flex mt={6} w='100%' justify='center' align='center' direction='row'>
 				<IconButton
-					bg='whiteAlpha.200'
 					size='sm'
 					isRound
 					onClick={scrollPrev}
 					aria-label='Scroll to previous slide'
-					icon={<FaAngleLeft fill='white' />}
-					_hover={{
-						bg: 'whiteAlpha.300',
-					}}
+					icon={<FaAngleLeft />}
+					bg='whiteAlpha.500'
 				/>
 				<Center width={300}>
 					<Link
@@ -127,13 +126,13 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 						href={`/wiki/${images?.[currentSlideIndex]?.destination?.region}/${images?.[currentSlideIndex]?.destination?.slug.current}`}
 					>
 						<Heading
+							zIndex='docked'
 							cursor='pointer'
 							fontSize='lg'
-							color='whiteAlpha.900'
+							color='whiteAlpha.800'
 							_hover={{
-								color: 'white',
 								textDecoration: 'underline',
-								textDecorationColor: 'white',
+								textDecorationColor: 'inherit',
 								textDecorationThickness: '.125em',
 								textUnderlineOffset: '1.5px',
 							}}
@@ -143,15 +142,12 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 					</Link>
 				</Center>
 				<IconButton
-					bg='whiteAlpha.200'
 					size='sm'
 					isRound
 					onClick={scrollNext}
 					aria-label='Scroll to next slide'
-					icon={<FaAngleRight fill='white' />}
-					_hover={{
-						bg: 'whiteAlpha.300',
-					}}
+					icon={<FaAngleRight />}
+					bg='whiteAlpha.500'
 				/>
 			</Flex>
 		</Box>

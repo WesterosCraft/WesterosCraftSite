@@ -1,5 +1,17 @@
 import { IMap } from '@/models/sections/map';
-import { Center, Heading, Text, Box, AspectRatio, Button, Flex, Fade, Link, Container } from '@chakra-ui/react';
+import {
+	useColorModeValue,
+	Center,
+	Heading,
+	Text,
+	Box,
+	AspectRatio,
+	Button,
+	Flex,
+	Fade,
+	Link,
+	Container,
+} from '@chakra-ui/react';
 import { useHover } from '../utils';
 
 type Props = {
@@ -8,13 +20,15 @@ type Props = {
 
 const Map = ({ data }: Props) => {
 	const [hoverRef, isHovered] = useHover<HTMLDivElement>();
+	const subheadingText = useColorModeValue('gray.600', 'gray.400');
+
 	return (
 		<Center as='section' className={`${data._type ?? 'map'}__section`} flexDirection='column' height='100%'>
 			<Container maxW='container.xl'>
 				<Heading as='h2' fontSize='5xl' fontWeight={800} mb={4} textAlign='center'>
 					{data.heading ?? ''}
 				</Heading>
-				<Text fontWeight='bold' color='gray.400' mb={8} textAlign='center'>
+				<Text fontWeight='bold' color={subheadingText} mb={8} textAlign='center'>
 					{data.subheading ?? ''}
 				</Text>
 				<Box width='100%' overflow='hidden' borderRadius='3xl' position='relative' shadow='dark-lg'>
@@ -25,7 +39,13 @@ const Map = ({ data }: Props) => {
 						<Fade in={isHovered} style={{ width: '100%', height: '100%' }}>
 							<Flex justify='center' align='center' width='100%' height='100%' bg='blackAlpha.400'>
 								<Link isExternal href={data.buttonLink} textDecoration='none' _hover={{ textDecoration: 'none' }}>
-									<Button variant='outline' size='lg' zIndex='base' colorScheme='white'>
+									<Button
+										variant='outline'
+										size='lg'
+										zIndex='base'
+										color='white'
+										_hover={{ color: 'black', bg: 'white' }}
+									>
 										{data.buttonText ?? 'View The Map'}
 									</Button>
 								</Link>

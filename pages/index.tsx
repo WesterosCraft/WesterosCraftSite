@@ -7,14 +7,14 @@ import { RenderSection } from '@/components/utils';
 import { Slug } from '@sanity/types';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
-import { Heading, Text, Box, Button, Flex, useColorModeValue, Container } from '@chakra-ui/react';
+import { Heading, Text, Box, Button, Flex, Container } from '@chakra-ui/react';
 import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
-import { Seo, Layout } from '@/components/common';
-import BrightSquares from '../public/bright-squares.png';
-import { siteSettings } from '../constants';
+import { Layout, Seo } from '@/components/common';
+// import BrightSquares from '../public/bright-squares.png';
 import { LayoutPage } from '@/models/page';
+import { siteSettings } from '../constants';
 
 type PageProps = {
 	content?: Sections[];
@@ -46,8 +46,8 @@ const Index = ({ pageData }: Props) => {
 		enabled: pageData && router.query.preview !== null,
 	});
 
-	const buttonColor = useColorModeValue('white', 'black');
-	const buttonHover = useColorModeValue('blackAlpha.800', 'white');
+	// const buttonColor = useColorModeValue('white', 'black');
+	// const buttonHover = useColorModeValue('blackAlpha.800', 'white');
 
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
@@ -56,22 +56,22 @@ const Index = ({ pageData }: Props) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
-			<Box as='section' position='relative' className='hero__section' bg='gray.800' pb={200} pt={20}>
+			<Box as='section' position='relative' className='hero__section' pb={200} pt={20} bg='gray.800'>
 				<Container
 					maxW='container.xl'
 					zIndex='base'
-					_before={{
-						content: '""',
-						position: 'absolute',
-						left: 0,
-						top: 0,
-						width: '100%',
-						height: '100%',
-						opacity: 0.1,
-						backgroundImage: `url(${BrightSquares.src})`,
-					}}
+					// _before={{
+					// 	content: '""',
+					// 	position: 'absolute',
+					// 	left: 0,
+					// 	top: 0,
+					// 	width: '100%',
+					// 	height: '100%',
+					// 	opacity: 0.1,
+					// 	backgroundImage: `url(${BrightSquares.src})`,
+					// }}
 				>
-					<Box textAlign='center' mt={5} zIndex='base' position='relative'>
+					<Box textAlign='center' mt={5} zIndex='docked' position='relative'>
 						<Text
 							fontSize='xl'
 							textTransform='uppercase'
@@ -82,17 +82,16 @@ const Index = ({ pageData }: Props) => {
 						>
 							{page.caption}
 						</Text>
-						<Heading color='whiteAlpha.900' mt={4} as='h2' fontSize='5xl' fontWeight={800}>
+						<Heading color='white' mt={4} as='h2' fontSize='5xl' fontWeight={800}>
 							{page.heading2}
 						</Heading>
-						<Heading color='whiteAlpha.900' as='h1' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
+						<Heading color='white' as='h1' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
 							{page.heading1}
 						</Heading>
-						<Text color='whiteAlpha.700' fontSize='xl' mb='6'>
+						<Text color='whiteAlpha.800' fontSize='xl' mb='6'>
 							{page.subheading}
 						</Text>
 						<Button
-							zIndex='docked'
 							mb={8}
 							size='lg'
 							leftIcon={<GiRaven size={20} />}
@@ -111,29 +110,17 @@ const Index = ({ pageData }: Props) => {
 						</Button>
 					</Box>
 					{page.heroSlider?.slideItems && (
-						<>
-							<Flex justify='center' align='center' flexDirection='column' position='relative'>
-								<ImageSlider width={958} height={555} images={page.heroSlider?.slideItems} />
-							</Flex>
-							<Button
-								mt={4}
-								display={['inline-flex', null, 'none']}
-								size='lg'
-								leftIcon={<GiRaven size={20} />}
-								fontSize={'md'}
-								fontWeight={600}
-								color={buttonColor}
-								bg={buttonHover}
-								href={'#'}
-								_hover={{
-									color: 'white',
-									bg: 'blackAlpha.700',
-								}}
-							>
-								Join The Watch
-							</Button>
-						</>
+						<Flex justify='center' align='center' flexDirection='column' position='relative'>
+							<ImageSlider width={958} height={555} images={page.heroSlider?.slideItems} />
+						</Flex>
 					)}
+					<Container maxW='container.md'>
+						<Text color='gray.400' fontSize='lg' mb='6' textAlign='center'>
+							Our servers goal is to recreate the universe imagined by author George R. R. Martin in his fantasy series,
+							A Song of Ice and Fire. Through the joint efforts of our global community, we are faithfully recreating
+							Westeros within Minecraft.
+						</Text>
+					</Container>
 				</Container>
 			</Box>
 

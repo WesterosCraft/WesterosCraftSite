@@ -62,7 +62,7 @@ export default function WithSubnavigation({
 					/>
 				</Flex>
 
-				<Logo />
+				<Logo lightHeader={lightHeader} />
 
 				<Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} align='center' direction={'row'} spacing={6}>
 					<Flex display={{ base: 'none', md: 'flex' }} ml={10}>

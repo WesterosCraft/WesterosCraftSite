@@ -39,7 +39,12 @@ export default {
 				],
 			},
 		},
-
+		{
+			title: 'Subheading',
+			name: 'subheading',
+			type: 'string',
+			description: 'A Heading that appears below the heading',
+		},
 		{
 			title: 'Marquee Items',
 			name: 'marqueeItems',

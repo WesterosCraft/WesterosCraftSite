@@ -9,6 +9,7 @@ import {
 	TabPanel,
 	Container,
 	useColorModeValue,
+	Text,
 } from '@chakra-ui/react';
 import { IMarquee } from '@/models/sections/marquee';
 import { useEffect } from 'react';
@@ -34,6 +35,7 @@ const Marquee = ({ data }: Props) => {
 
 	const regionDictionary = groupBy(data.marqueeItems, (o) => o?.destination?.region);
 	const tabHover = useColorModeValue('black', 'white');
+	const subheadingText = useColorModeValue('gray.600', 'gray.400');
 	return (
 		<Flex
 			as='section'
@@ -45,13 +47,20 @@ const Marquee = ({ data }: Props) => {
 			<Container maxW='container.xl'>
 				<Heading
 					as={data?.headingSize || 'h2'}
-					fontSize={getFontSize(data?.headingSize)}
-					mb={8}
+					fontSize={getFontSize(data?.headingSize ?? 'h2')}
+					mb={data?.subheading ? 4 : 8}
 					fontWeight={800}
 					textAlign='center'
 				>
 					{data?.heading || ''}
 				</Heading>
+				{data?.subheading && (
+					<Container maxW='container.md'>
+						<Text mb={8} fontWeight='bold' textAlign='center' color={subheadingText}>
+							{data?.subheading}
+						</Text>
+					</Container>
+				)}
 
 				<Tabs maxW='100%' align='center' isLazy lazyBehavior='unmount' variant='unstyled' size='sm'>
 					<TabList>
@@ -82,7 +91,7 @@ const Marquee = ({ data }: Props) => {
 															? item?.marqueeImage?.metadata?.lqip!
 															: item.destination?.images?.metadata?.lqip!
 													}
-													name={item.destination.name}
+													name={item?.destination?.name ?? ''}
 												/>
 											))}
 										</Flex>

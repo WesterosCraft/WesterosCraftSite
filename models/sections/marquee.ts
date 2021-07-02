@@ -19,8 +19,8 @@ export interface IMarquee {
 	_type: 'marquee';
 	_key: string;
 	heading: string;
-	headingAlignment: 'left' | 'center';
-	headingSize: 'h1' | 'h2' | 'h3';
-	marqueeVariant: 'detailed' | 'condensed';
+	headingAlignment?: 'left' | 'center';
+	headingSize?: 'h1' | 'h2' | 'h3';
 	marqueeItems: MarqueeItems[];
+	subheading?: string;
 }

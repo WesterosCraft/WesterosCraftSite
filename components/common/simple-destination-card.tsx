@@ -41,7 +41,7 @@ const SimpleDestinationCard = ({ imageSrc, blurDataURL = DEFAULT_BLUR, name }: P
 				<Flex
 					flexDirection='row'
 					align='center'
-					bg='white'
+					bg='whiteAlpha.800'
 					width={350}
 					borderTopLeftRadius={0}
 					borderTopRightRadius={0}
