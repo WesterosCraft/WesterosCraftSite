@@ -2,8 +2,8 @@ import { SanityImageSource } from '@sanity/asset-utils';
 import { createClient, createImageUrlBuilder, createPreviewSubscriptionHook } from 'next-sanity';
 
 const config = {
-	projectId: process.env.SANITY_API_PROJECT_ID,
-	dataset: process.env.SANITY_API_DATASET,
+	projectId: process.env.SANITY_API_PROJECT_ID ?? 'undefined',
+	dataset: process.env.SANITY_API_DATASET ?? 'develop',
 	useCdn: process.env.NODE_ENV === 'production',
 };
 
