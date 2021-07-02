@@ -11,8 +11,10 @@ import { Heading, Text, Box, Button, Flex, useColorModeValue, Container } from '
 import { GiRaven } from 'react-icons/gi';
 import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
-import { Seo } from '@/components/common';
+import { Seo, Layout } from '@/components/common';
 import BrightSquares from '../public/bright-squares.png';
+import { siteSettings } from '../constants';
+import { LayoutPage } from '@/models/page';
 
 type PageProps = {
 	content?: Sections[];
@@ -157,5 +159,11 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return { props: { pageData }, revalidate: 60 };
 };
+
+Index.getLayout = (page: LayoutPage) => (
+	<Layout lightHeader siteSettings={siteSettings}>
+		{page}
+	</Layout>
+);
 
 export default Index;

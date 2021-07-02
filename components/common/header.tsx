@@ -30,9 +30,11 @@ import { siteSettings } from '@/data/.';
 export default function WithSubnavigation({
 	navigation,
 	maxWidth,
+	lightHeader,
 }: {
 	navigation?: typeof siteSettings.navigation;
 	maxWidth?: string | number;
+	lightHeader?: boolean;
 }) {
 	const { isOpen, onToggle } = useDisclosure();
 

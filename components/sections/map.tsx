@@ -17,7 +17,7 @@ const Map = ({ data }: Props) => {
 				<Text fontWeight='bold' color='gray.400' mb={8} textAlign='center'>
 					{data.subheading ?? ''}
 				</Text>
-				<Box width='100%' overflow='hidden' borderRadius='3xl' position='relative'>
+				<Box width='100%' overflow='hidden' borderRadius='3xl' position='relative' shadow='dark-lg'>
 					<AspectRatio ratio={[4 / 3, null, 21 / 9]} maxH={700} pointerEvents='none'>
 						<iframe src={data.url ?? 'https://mc.westeroscraft.com/?nogui=true&zoom=4&x=2870&z=13000'} />
 					</AspectRatio>
