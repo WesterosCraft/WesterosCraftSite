@@ -4,6 +4,7 @@ import { ExpandedImage, Regions } from '../utils';
 export interface ImageSlider {
 	_type: 'imageSlider';
 	_key: string;
+	subheading?: string;
 	slideItems: Array<{
 		destination: { name: string; _type: 'destination'; region: Regions; slug: Slug };
 		slideImage: ExpandedImage;

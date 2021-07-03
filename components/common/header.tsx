@@ -44,7 +44,7 @@ export default function WithSubnavigation({
 			top={0}
 			left={0}
 			right={0}
-			zIndex='docked'
+			zIndex='dropdown'
 			as='header'
 			maxW={maxWidth}
 			w={'100%'}
@@ -66,9 +66,9 @@ export default function WithSubnavigation({
 
 				<Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} align='center' direction={'row'} spacing={6}>
 					<Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-						{navigation && <DesktopNav navigation={navigation} />}
+						{navigation && <DesktopNav lightHeader={lightHeader} navigation={navigation} />}
 					</Flex>
-					<DarkModeSwitch />
+					<DarkModeSwitch lightHeader={lightHeader} />
 				</Stack>
 			</Flex>
 
@@ -79,7 +79,7 @@ export default function WithSubnavigation({
 	);
 }
 
-const DesktopNav = ({ navigation }: { navigation: typeof siteSettings.navigation }) => {
+const DesktopNav = ({ navigation, lightHeader = false }: { navigation: typeof siteSettings.navigation }) => {
 	const linkColor = useColorModeValue('gray.600', 'gray.200');
 	const linkHover = useColorModeValue('gray.800', 'white');
 	const dropdownHover = useColorModeValue('white', 'gray.800');
@@ -116,10 +116,10 @@ const DesktopNav = ({ navigation }: { navigation: typeof siteSettings.navigation
 							href={navItem.slug.current ?? '#'}
 							fontSize={'sm'}
 							fontWeight='bold'
-							color={linkColor}
+							color={lightHeader ? 'gray.200' : linkColor}
 							_hover={{
 								textDecoration: 'none',
-								color: linkHover,
+								color: lightHeader ? 'white' : linkHover,
 							}}
 						>
 							{navItem.title}
@@ -135,10 +135,10 @@ const DesktopNav = ({ navigation }: { navigation: typeof siteSettings.navigation
 									p={2}
 									fontSize={'sm'}
 									fontWeight='bold'
-									color={linkColor}
+									color={lightHeader ? 'gray.200' : linkColor}
 									_hover={{
 										textDecoration: 'none',
-										color: linkHover,
+										color: lightHeader ? 'white' : linkHover,
 									}}
 								>
 									{navItem.title}

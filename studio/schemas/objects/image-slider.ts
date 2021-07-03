@@ -5,6 +5,12 @@ export default {
 	description: 'A sliding display of images',
 	fields: [
 		{
+			title: 'Subheading',
+			name: 'subheading',
+			type: 'string',
+			description: 'Text that appears below the image slider',
+		},
+		{
 			title: 'Slide Items',
 			name: 'slideItems',
 			type: 'array',

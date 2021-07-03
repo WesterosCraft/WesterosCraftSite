@@ -1,15 +1,29 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ExpandedImage, Regions } from '@/models/utils';
-import { Box, Flex, Center, IconButton, Heading, chakra, useColorModeValue, Link } from '@chakra-ui/react';
+import {
+	Box,
+	Flex,
+	Center,
+	IconButton,
+	Container,
+	Text,
+	Heading,
+	chakra,
+	useColorModeValue,
+	Link,
+	Image,
+} from '@chakra-ui/react';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 import { useEmblaCarousel } from 'embla-carousel/react';
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 import { Slug } from '@sanity/types';
+import Coin from '../../public/coin.gif';
 
 type Props = {
 	width: number | string;
 	height: number | string;
+	subheading?: string;
 	images: Array<{
 		destination: { name: string; _type: 'destination'; region: Regions; slug: Slug };
 		slideImage: ExpandedImage;
@@ -18,7 +32,7 @@ type Props = {
 	}>;
 };
 
-const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
+const ImageSlider = ({ images, width = 1232, height = 756, subheading = '' }: Props) => {
 	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true, containScroll: 'trimSnaps' });
 	const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
@@ -150,6 +164,14 @@ const ImageSlider = ({ images, width = 1232, height = 756 }: Props) => {
 					bg='whiteAlpha.500'
 				/>
 			</Flex>
+			{subheading && (
+				<Container centerContent maxW='container.md' mt={20}>
+					<Text color='gray.400' fontSize='lg' mb={8} textAlign='center'>
+						{subheading}
+					</Text>
+					<Image src={Coin} alt='Spinning coin' />
+				</Container>
+			)}
 		</Box>
 	);
 };

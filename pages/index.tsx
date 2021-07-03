@@ -56,7 +56,7 @@ const Index = ({ pageData }: Props) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
-			<Box as='section' position='relative' className='hero__section' pb={200} pt={20} bg='gray.800'>
+			<Box as='section' position='relative' className='hero__section' pb={[37, null, 117]} pt={20} bg='gray.800'>
 				<Container
 					maxW='container.xl'
 					zIndex='base'
@@ -111,16 +111,14 @@ const Index = ({ pageData }: Props) => {
 					</Box>
 					{page.heroSlider?.slideItems && (
 						<Flex justify='center' align='center' flexDirection='column' position='relative'>
-							<ImageSlider width={958} height={555} images={page.heroSlider?.slideItems} />
+							<ImageSlider
+								width={958}
+								height={555}
+								images={page.heroSlider?.slideItems}
+								subheading={page.heroSlider?.subheading}
+							/>
 						</Flex>
 					)}
-					<Container maxW='container.md'>
-						<Text color='gray.400' fontSize='lg' mb='6' textAlign='center'>
-							Our servers goal is to recreate the universe imagined by author George R. R. Martin in his fantasy series,
-							A Song of Ice and Fire. Through the joint efforts of our global community, we are faithfully recreating
-							Westeros within Minecraft.
-						</Text>
-					</Container>
 				</Container>
 			</Box>
 
