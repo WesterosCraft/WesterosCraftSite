@@ -5,7 +5,6 @@ export default {
 	name: 'blockBanner',
 	type: 'object',
 	icon: HiOutlineViewGridAdd,
-	description: 'A heading layed next to three info boxes',
 	fields: [
 		{
 			title: 'Heading',
@@ -13,28 +12,19 @@ export default {
 			type: 'string',
 		},
 		{
-			title: 'Blocks',
-			name: 'blocks',
-			type: 'array',
-			of: [
-				{
-					type: 'object',
-					name: 'blockItem',
-					title: 'Block Item',
-					fields: [
-						{
-							title: 'Label',
-							name: 'label',
-							type: 'string',
-						},
-						{
-							name: 'link',
-							title: 'Link',
-							type: 'url',
-						},
-					],
-				},
-			],
+			title: 'Subheading',
+			name: 'subheading',
+			type: 'string',
+		},
+		{
+			title: 'Left Button Text',
+			name: 'leftButtonText',
+			type: 'string',
+		},
+		{
+			title: 'Right Button Text',
+			name: 'rightButtonText',
+			type: 'string',
 		},
 	],
 };

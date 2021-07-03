@@ -20,7 +20,9 @@ const Layout = ({ siteSettings, lightHeader = false, children, width = 1280 }: P
 				<Flex as='article' width='100%' alignSelf='center' justifyContent='center' flex='1 0 auto' direction='column'>
 					{children}
 				</Flex>
-				<Footer socialFields={siteSettings?.socialFields} />
+				<Footer
+				// socialFields={siteSettings?.socialFields}
+				/>
 			</Flex>
 		</>
 	);

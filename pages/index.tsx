@@ -56,7 +56,17 @@ const Index = ({ pageData }: Props) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
-			<Box as='section' position='relative' className='hero__section' pb={[37, null, 117]} pt={20} bg='gray.800'>
+			<Box
+				as='section'
+				position='relative'
+				className='hero__section'
+				pb={[37, null, 117]}
+				pt={20}
+				bg='gray.800'
+				borderBottomWidth={1}
+				borderBottomStyle='solid'
+				borderBottomColor='whiteAlpha.200'
+			>
 				<Container
 					maxW='container.xl'
 					zIndex='base'

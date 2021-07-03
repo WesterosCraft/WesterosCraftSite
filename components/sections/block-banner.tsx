@@ -1,6 +1,5 @@
-import { Flex, Box, Heading, Text, Stack, Button, Container } from '@chakra-ui/react';
+import { Flex, Heading, Text, Button, Container, ButtonGroup } from '@chakra-ui/react';
 import { IBlockBanner } from '@/models/sections/block-banner';
-import { FaArrowRight } from 'react-icons/fa';
 
 type Props = {
 	data: IBlockBanner;
@@ -9,35 +8,17 @@ type Props = {
 const BlockBanner = ({ data }: Props) => {
 	return (
 		<Flex as='section' className={`${data._type ?? 'blockBanner'}__section`} direction='column'>
-			<Container maxW='container.xl'>
-				<Flex flexDirection='row' flexBasis='0 1 100%' justify='center' align='center'>
-					<Box pr={2}>
-						<Heading as='h3' maxW={360} fontWeight={800}>
-							{data.heading || ''}
-						</Heading>
-					</Box>
-					<Stack spacing='24px' direction={['column', null, 'row']}>
-						{data.blocks.map((block, i) => (
-							<Flex
-								key={i}
-								border='1px solid'
-								shadow={'xl'}
-								borderRadius='md'
-								bg='white'
-								justify='center'
-								align='center'
-								width={[160, null, 180]}
-								height={[160, null, 180]}
-								p={[2, null, 3]}
-							>
-								<Text fontWeight={500}>{block.label}</Text>
-							</Flex>
-						))}
-					</Stack>
-				</Flex>
-				<Button colorScheme='red' rightIcon={<FaArrowRight />} alignSelf='flex-end'>
-					Get the Modpack
-				</Button>
+			<Container maxW='container.sm' centerContent textAlign='center'>
+				<Heading fontWeight={800} fontSize='6xl'>
+					Start your journey across Westeros
+				</Heading>
+				<Text fontSize='lg' mt={4}>
+					Your business is going places - are your products? Ship products to customers with speed using Chakra UI Pro
+				</Text>
+				<ButtonGroup mt={8} spacing={6} size='lg'>
+					<Button>Get Modpack</Button>
+					<Button variant='outline'>View Wiki</Button>
+				</ButtonGroup>
 			</Container>
 		</Flex>
 	);
