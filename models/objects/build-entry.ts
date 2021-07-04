@@ -20,6 +20,7 @@ export interface BuildEntry {
 	region: Regions;
 	slug: Slug;
 	warp?: string;
+	displayImage?: ExpandedImage;
 	_createdAt: string;
 	_id: string;
 	_rev: string;

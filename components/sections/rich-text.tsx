@@ -1,10 +1,8 @@
 /* eslint-disable react/display-name */
 import NextLink from 'next/link';
-import { Box, Flex, Heading, Link, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, ListItem, OrderedList, Text, UnorderedList } from '@chakra-ui/react';
 import BlockContent from '@sanity/block-content-to-react';
 import { IoIosQuote } from 'react-icons/io';
-// import { IRichText } from '@/models/sections/rich-text';
-// import { SimpleBlockContent } from '@/models/objects/simple-block-content';
 import { MainImage } from '@/components/sections';
 
 type Props = {
@@ -60,14 +58,6 @@ const serializers = {
 				);
 			}
 
-			if (props.listItem === 'bullet') {
-				return (
-					<UnorderedList>
-						<ListItem>{props.children}</ListItem>
-					</UnorderedList>
-				);
-			}
-
 			return (
 				<Text mt={6} textAlign={center ? 'center' : 'left'}>
 					{props.children}
@@ -79,6 +69,15 @@ const serializers = {
 		},
 		video: () => <h1>VIDEO</h1>,
 	},
+	list: (props: any) => {
+		const { type } = props;
+		const bullet = type === 'bullet';
+		if (bullet) {
+			return <UnorderedList>{props.children}</UnorderedList>;
+		}
+		return <OrderedList>{props.children}</OrderedList>;
+	},
+	listItem: (props: any) => <ListItem>{props.children}</ListItem>,
 	marks: {
 		link: (props: any) => (
 			<NextLink passHref href={`${props.mark.href}`}>

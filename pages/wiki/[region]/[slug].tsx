@@ -46,7 +46,6 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 		enabled: buildData && router.query.preview !== null,
 	});
 
-	console.log('👉 ~ BuildPage ~ build', build);
 	const projectLeadFormatter = (string: string) => {
 		if (!string) {
 			return null;
@@ -121,8 +120,8 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 						filter='drop-shadow(15px 11px 6px rgb(41, 41, 43, .80))'
 					>
 						<Image
-							alt={`${build?.name} Banner`}
 							src={build?.banner?.url}
+							alt={`${build?.name} Banner`}
 							placeholder='blur'
 							blurDataURL={build?.banner?.metadata?.lqip!}
 							width={75}
@@ -130,12 +129,15 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 						/>
 					</Box>
 				)}
-				{!isEmpty(build?.images) && build?.images && urlFor(build?.images?.[0]?.asset?._ref).url() && (
+				{build?.displayImage && (
+					//@ts-ignore
 					<Image
+						src={build?.displayImage?.url}
 						loader={myLoader}
-						src={urlFor(build?.images?.[0]?.asset?._ref).url()!}
+						placeholder='blur'
+						blurDataURL={build.displayImage?.metadata?.lqip}
 						height={350}
-						width={960}
+						width={976}
 						alt={build?.name}
 					/>
 				)}

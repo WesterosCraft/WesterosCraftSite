@@ -67,10 +67,15 @@ const Icons = {
 
 interface IProjectStatusProps extends IconProps {
 	projectStatus: keyof typeof Icons;
+	tooltip?: boolean;
 }
 
-const ProjectStatusIcon = ({ projectStatus, ...props }: IProjectStatusProps) => {
+const ProjectStatusIcon = ({ projectStatus, tooltip, ...props }: IProjectStatusProps) => {
 	const Component = Icons[projectStatus];
+
+	if (!tooltip) {
+		return <Component {...props} />;
+	}
 	return (
 		<Tooltip label={nameFormatter(projectStatus)}>
 			<Component {...props} />

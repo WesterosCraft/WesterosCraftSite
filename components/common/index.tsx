@@ -17,6 +17,7 @@ import RegionIcon from './region-icon';
 import BuildTypeIcon from './build-type-icon';
 import MultiSelect from './chakra-react-select';
 import Pagination from './pagination';
+import ProgressTable from './progress-table';
 
 export {
 	DarkModeSwitch,
@@ -37,5 +38,6 @@ export {
 	RegionIcon,
 	BuildTypeIcon,
 	MultiSelect,
-	Pagination
+	Pagination,
+	ProgressTable,
 };

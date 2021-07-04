@@ -1,17 +1,16 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 import { GetStaticProps } from 'next';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
 import { allBuildsQuery, pageQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { WikiLayout, Layout, Seo, DestinationCard, Pagination, MultiSelect } from '@/components/common';
+import { WikiLayout, Layout, Seo, ProgressTable, StatusTag } from '@/components/common';
 import { siteSettings } from '@/data/.';
-// import { sortBy } from 'lodash';
-import { HStack, useControllableState } from '@chakra-ui/react';
+import { Heading, Select, Input } from '@chakra-ui/react';
 import { Slug } from '@sanity/types';
 import { MetaFields } from '@/models/meta-fields';
-import { destinationTypes, destinationStatuses, regions } from '@/data/.';
 import { LayoutPage } from '@/models/page';
+import { nameFormatter } from '@/components/utils';
 
 type PageProps = {
 	pageData: {
@@ -26,29 +25,9 @@ type PageProps = {
 	allBuildsData: { builds: any; totalBuilds: number };
 };
 
-const filterData = [
-	{
-		name: 'region',
-		options: regions,
-		placeholder: 'Region',
-	},
-	{
-		name: 'projectStatus',
-		options: destinationStatuses,
-		placeholder: 'Status',
-	},
-	{
-		name: 'buildType',
-		options: destinationTypes,
-		placeholder: 'Type',
-	},
-];
-
 const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
+	console.log('👉 ~ BuildsPage ~ allBuildsData', allBuildsData);
 	const router = useRouter();
-	//@ts-ignore
-	const [items, setItems] = useState(allBuildsData.builds);
-	const [tabIndex, setTabIndex] = useControllableState({ defaultValue: 0 });
 
 	const { data: page } = usePreviewSubscription(pageQuery, {
 		params: { type: 'allBuilds', slug: pageData?.slug?.current },
@@ -56,22 +35,75 @@ const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 		enabled: allBuildsData && router.query.preview !== null,
 	});
 
-	// const onInputChange = (option: { value: string; label: string }, { name }: { name: string }) => {
-	// 	if (option === null) {
-	// 		setItems(allBuildsData.builds);
-	// 		return;
-	// 	}
-	// 	const filtered = allBuildsData.builds.filter((b: any) => b[name] === option.value);
-	// 	setItems(filtered);
-	// };
+	function SelectColumnFilter({ column: { filterValue, setFilter, preFilteredRows, id } }: any) {
+		// Calculate the options for filtering
+		// using the preFilteredRows
+		const options = useMemo(() => {
+			const options = new Set();
+			preFilteredRows.forEach((row: any) => {
+				options.add(row.values[id]);
+			});
+			return [...options.values()];
+		}, [id, preFilteredRows]);
 
-	const setPrevTab = () => {
-		setTabIndex(tabIndex - 1);
-	};
+		// Render a multi-select box
+		return (
+			<Select
+				size='xs'
+				value={filterValue}
+				onChange={(e) => {
+					setFilter(e.target.value || undefined);
+				}}
+			>
+				<option value=''>All</option>
+				{options.map((option: any, i) => (
+					<option key={i} value={option}>
+						{option}
+					</option>
+				))}
+			</Select>
+		);
+	}
 
-	const setNextTab = () => {
-		setTabIndex(tabIndex + 1);
-	};
+	const columns = useMemo(
+		() => [
+			{
+				Header: 'Name',
+				accessor: 'name',
+				Cell: ({ cell: { value } }: any) => <Heading size='sm'>{value}</Heading>,
+			},
+			{
+				Header: 'Region',
+				accessor: 'region',
+				Filter: SelectColumnFilter,
+				filter: 'includes',
+				defaultCanFilter: true,
+				Cell: ({ cell: { value } }: any) => <>{nameFormatter(value)}</>,
+			},
+			{
+				Header: 'Status',
+				accessor: 'projectStatus',
+				Filter: SelectColumnFilter,
+				filter: 'includes',
+				defaultCanFilter: true,
+				Cell: ({ cell: { value } }: any) => <StatusTag>{value}</StatusTag>,
+			},
+			{
+				Header: 'Type',
+				accessor: 'buildType',
+				Filter: SelectColumnFilter,
+				filter: 'includes',
+				defaultCanFilter: true,
+				Cell: ({ cell: { value } }: any) => <>{nameFormatter(value)}</>,
+			},
+			// {
+			// 	accessor: 'uri',
+			// 	Cell: ({ cell: { value } }: any) => <>{value ?? 'uri'}</>,
+			// 	Filter: false,
+			// },
+		],
+		[]
+	);
 
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
@@ -80,39 +112,7 @@ const BuildsPage = ({ pageData, allBuildsData }: PageProps) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
-			<HStack
-				spacing={2}
-				py={4}
-				sx={{
-					'.react-select': {
-						width: '100%',
-					},
-				}}
-			>
-				{filterData.map((select) => (
-					<MultiSelect
-						key={select.name}
-						className='react-select'
-						instanceId={select.name}
-						size='sm'
-						width='100%'
-						name={select.name}
-						options={select.options}
-						placeholder={select.placeholder}
-						isClearable
-					/>
-				))}
-			</HStack>
-
-			<Pagination
-				data={items}
-				tabIndex={tabIndex}
-				setTabIndex={setTabIndex}
-				onNextChange={setNextTab}
-				onPrevChange={setPrevTab}
-				RenderComponent={DestinationCard}
-				pageLimit={21}
-			/>
+			<ProgressTable columns={columns} data={allBuildsData?.builds} />
 		</>
 	);
 };

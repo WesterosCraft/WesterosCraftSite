@@ -1,16 +1,23 @@
-import { HStack, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
-import { IoMdCube } from 'react-icons/io';
+import { Flex, Icon, Badge } from '@chakra-ui/react';
 import { nameFormatter } from '@/components/utils';
 import { BuildStatuses } from '@/models/utils';
+import ProjectStatusIcon from './project-status-icon';
 
-const StatusTag = ({ label }: { label: BuildStatuses }) => {
+const StatusTag = ({ children }: { children: BuildStatuses }) => {
+	const colorMap = {
+		completed: 'green',
+		inProgress: 'yellow',
+		abandoned: 'red',
+		notStarted: 'gray',
+		redoInProgress: 'orange',
+	};
 	return (
-		<HStack spacing={4}>
-			<Tag size={'sm'} variant='subtle' colorScheme='cyan'>
-				<TagLeftIcon boxSize='12px' as={IoMdCube} />
-				<TagLabel>{nameFormatter(label)}</TagLabel>
-			</Tag>
-		</HStack>
+		<Badge size={'sm'} variant='subtle' colorScheme={colorMap[children]}>
+			<Flex direction='row' align='center'>
+				<Icon tooltip={false} projectStatus={children} as={ProjectStatusIcon} mr={1} />
+				{nameFormatter(children)}
+			</Flex>
+		</Badge>
 	);
 };
 

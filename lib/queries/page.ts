@@ -92,6 +92,7 @@ export const allBuildsQuery = groq`
 	{
 		"builds":*[_type == 'destination' && defined(slug.current)]{
 		...,
+		"uri": "wiki/" + region + '/' + slug.current,
 	} | order(name asc),
 		"totalBuilds":count(*[_type == 'destination' && defined(slug.current)])
 	}
@@ -100,6 +101,13 @@ export const allBuildsQuery = groq`
 export const buildQuery = groq`
 	*[_type == 'destination' && slug.current == $slug][0] {
 		...,
+		"uri": "wiki/" + region + '/' + slug.current,
+		"displayImage": images[0].asset->{
+			url,
+			metadata {
+				lqip
+			}
+		},
 		"banner": banner.asset->{
 			url,
 			metadata {

@@ -9,7 +9,7 @@ const DarkModeSwitch = ({ lightHeader = false }) => {
 		<IconButton
 			aria-label='Switch colors'
 			size='sm'
-			color={lightHeader ? 'white' : undefined}
+			color={lightHeader || isDark ? 'gray.200' : 'gray.600'}
 			_hover={{
 				bg: lightHeader && 'whiteAlpha.200',
 			}}
