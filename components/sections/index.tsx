@@ -10,6 +10,7 @@ import RichText from './rich-text';
 import ReferenceGrid from './reference-grid';
 import FeaturesWithVideo from './features-with-video';
 import Map from './map';
+import HeroImageSlider from './hero-image-slider';
 
 export {
 	BlockBanner,
@@ -24,4 +25,5 @@ export {
 	ReferenceGrid,
 	FeaturesWithVideo,
 	Map,
+	HeroImageSlider,
 };

@@ -9,12 +9,12 @@ import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Heading, Text, Box, Button, Flex, Container } from '@chakra-ui/react';
 import { GiRaven } from 'react-icons/gi';
-import ImageSlider from '@/components/sections/image-slider';
 import { ImageSlider as IImageSlider } from '@/models/sections/image-slider';
 import { Layout, Seo } from '@/components/common';
 // import BrightSquares from '../public/bright-squares.png';
 import { LayoutPage } from '@/models/page';
 import { siteSettings } from '../constants';
+import { HeroImageSlider } from '@/components/sections';
 
 type PageProps = {
 	content?: Sections[];
@@ -121,7 +121,7 @@ const Index = ({ pageData }: Props) => {
 					</Box>
 					{page.heroSlider?.slideItems && (
 						<Flex justify='center' align='center' flexDirection='column' position='relative'>
-							<ImageSlider
+							<HeroImageSlider
 								width={958}
 								height={555}
 								images={page.heroSlider?.slideItems}

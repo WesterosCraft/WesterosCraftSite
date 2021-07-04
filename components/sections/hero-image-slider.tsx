@@ -11,7 +11,6 @@ import {
 	chakra,
 	useColorModeValue,
 	Link,
-	Image,
 } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
@@ -32,7 +31,7 @@ type Props = {
 	}>;
 };
 
-const ImageSlider = ({ images, width = 1232, height = 756, subheading = '' }: Props) => {
+const HeroImageSlider = ({ images, width = 1232, height = 756, subheading = '' }: Props) => {
 	const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false, loop: true, containScroll: 'trimSnaps' });
 	const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
@@ -109,12 +108,12 @@ const ImageSlider = ({ images, width = 1232, height = 756, subheading = '' }: Pr
 											zIndex='docked'
 											priority={i === 0}
 											placeholder='blur'
-											blurDataURL={image.slideImage.metadata?.lqip}
+											blurDataURL={image?.slideImage?.metadata?.lqip}
 											loader={myLoader}
 											width={width}
 											height={height}
 											className='embla__slide__img'
-											src={image.slideImage.url}
+											src={image?.slideImage?.url}
 											alt={image?.destination?.name || 'WesterosCraft destination'}
 										/>
 									</Box>
@@ -176,4 +175,4 @@ const ImageSlider = ({ images, width = 1232, height = 756, subheading = '' }: Pr
 	);
 };
 
-export default ImageSlider;
+export default HeroImageSlider;

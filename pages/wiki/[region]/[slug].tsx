@@ -3,7 +3,7 @@ import Error from 'next/error';
 import { useRouter } from 'next/router';
 import { allBuildsSlug, buildQuery } from '@/lib/queries';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
-import { Seo, WikiLayout, Layout } from '@/components/common';
+import { Seo, WikiLayout, Layout, ImageSlider } from '@/components/common';
 import { kebabCase, isEmpty } from 'lodash';
 import { siteSettings } from '@/data/.';
 import { BuildEntry } from '@/models/objects/build-entry';
@@ -21,10 +21,16 @@ import {
 	Button,
 	Link,
 	useColorModeValue,
+	useDisclosure,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalBody,
+	ModalCloseButton,
 } from '@chakra-ui/react';
 import { RichText } from '@/components/sections';
 import { nameFormatter } from '@/components/utils';
-import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import BrightSquares from '../../../public/bright-squares.png';
 import { LayoutPage } from '@/models/page';
@@ -33,12 +39,14 @@ interface IBuildPage {
 	buildData: BuildEntry;
 }
 
-const myLoader = ({ src, width }: any) => {
+const myLoader = ({ src = '', width = 0 }) => {
 	return `${src}?fit=min&crop=center&h=350&w=${width}&q=100`;
 };
 
 const BuildPage = ({ buildData }: IBuildPage) => {
 	const router = useRouter();
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const borderColor = useColorModeValue('blackAlpha.300', 'whiteAlpha.300');
 
 	const { data: build } = usePreviewSubscription(buildQuery, {
 		params: { slug: buildData?.slug?.current },
@@ -88,8 +96,6 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 		},
 	];
 
-	const borderColor = useColorModeValue('blackAlpha.300', 'whiteAlpha.300');
-
 	if (!router.isFallback && !build) {
 		return <Error statusCode={404} />;
 	}
@@ -115,9 +121,10 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 						zIndex='docked'
 						color='white'
 						position='absolute'
-						bottom={5}
-						right={5}
+						bottom={[2, null, 5]}
+						right={[2, null, 5]}
 						filter='drop-shadow(15px 11px 6px rgb(41, 41, 43, .80))'
+						maxW={[45, 65, null, 75]}
 					>
 						<Image
 							src={build?.banner?.url}
@@ -130,15 +137,14 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 					</Box>
 				)}
 				{build?.displayImage && (
-					//@ts-ignore
 					<Image
-						src={build?.displayImage?.url}
-						loader={myLoader}
-						placeholder='blur'
-						blurDataURL={build.displayImage?.metadata?.lqip}
-						height={350}
-						width={976}
+						src={build?.displayImage?.url ?? ''}
 						alt={build?.name}
+						placeholder='blur'
+						blurDataURL={build.displayImage?.metadata?.lqip!}
+						width={976}
+						height={350}
+						loader={myLoader}
 					/>
 				)}
 			</Box>
@@ -153,6 +159,7 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 					borderColor={borderColor}
 					float={['none', null, null, 'right']}
 					display='inline-flex'
+					width={['100%', null, 'auto']}
 				>
 					<Table size='sm' variant='striped'>
 						<Thead>
@@ -166,12 +173,40 @@ const BuildPage = ({ buildData }: IBuildPage) => {
 							{!isEmpty(build?.images) && build?.images && (
 								<Tr>
 									<Td textAlign='center' colSpan={2}>
-										<Image
-											width={350}
-											height={197}
-											alt='iamge'
-											src={urlFor(build?.images?.[0]?.asset?._ref).url() ?? ''}
-										/>
+										<Box position='relative'>
+											<Image
+												src={(build?.images?.[1]?.url || build?.images?.[0]?.url) ?? ''}
+												placeholder='blur'
+												blurDataURL={(build?.images?.[1]?.metadata?.lqip || build?.images?.[0]?.metadata?.lqip) ?? ''}
+												width={350}
+												height={197}
+												alt='Project status display image'
+											/>
+											<Box position='absolute' bottom={3} right={[3]}>
+												<Button
+													onClick={onOpen}
+													variant='outline'
+													size='xs'
+													bg='whiteAlpha.400'
+													color='blackAlpha.900'
+													textDecoration='none'
+												>
+													More Images
+												</Button>
+												<Modal size='3xl' isOpen={isOpen} onClose={onClose}>
+													<ModalOverlay />
+													<ModalContent>
+														<ModalHeader>
+															<Heading size='1xl'>{build.name}</Heading>
+														</ModalHeader>
+														<ModalCloseButton />
+														<ModalBody>
+															<ImageSlider slides={build?.images} />
+														</ModalBody>
+													</ModalContent>
+												</Modal>
+											</Box>
+										</Box>
 									</Td>
 								</Tr>
 							)}

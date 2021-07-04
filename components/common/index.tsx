@@ -18,6 +18,7 @@ import BuildTypeIcon from './build-type-icon';
 import MultiSelect from './chakra-react-select';
 import Pagination from './pagination';
 import ProgressTable from './progress-table';
+import ImageSlider from './image-slider';
 
 export {
 	DarkModeSwitch,
@@ -40,4 +41,5 @@ export {
 	MultiSelect,
 	Pagination,
 	ProgressTable,
+	ImageSlider,
 };

@@ -127,11 +127,11 @@ const ProgressTable = ({ columns, data, updateMyData, skipReset }: any) => {
 	// Render the UI for your table
 	return (
 		<>
-			{/* <GlobalFilter
-			preGlobalFilteredRows={preGlobalFilteredRows}
+			<GlobalFilter
+				preGlobalFilteredRows={preGlobalFilteredRows}
 				globalFilter={state.globalFilter}
 				setGlobalFilter={setGlobalFilter}
-			/>	 */}
+			/>
 			<Table
 				fontSize='sm'
 				width='full'

@@ -1,4 +1,4 @@
-import { Block, Image, Slug } from '@sanity/types';
+import { Block, Slug } from '@sanity/types';
 import { BuildStatuses, BuildTypes, ExpandedImage, Regions } from '@/models/utils';
 import { MetaFields } from '@/models/meta-fields';
 
@@ -12,7 +12,7 @@ export interface BuildEntry {
 	difficultyLevel?: string;
 	entry?: Array<Block>;
 	house?: string;
-	images?: Array<Image>;
+	images?: Array<ExpandedImage>;
 	name: string;
 	dynmapInformation?: { xCoord: string; yCoord: string; zoom: string };
 	projectLead?: string;

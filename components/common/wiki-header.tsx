@@ -11,6 +11,14 @@ import {
 	Icon,
 	InputGroup,
 	InputLeftElement,
+	useDisclosure,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalFooter,
+	ModalBody,
+	ModalCloseButton,
 } from '@chakra-ui/react';
 import { FaDiscord, FaYoutube, FaInstagramSquare, FaTwitter } from 'react-icons/fa';
 import { nameFormatter } from '../utils';
@@ -42,6 +50,8 @@ const combineAccumulatively = (segments: string[]) => {
 
 const WikiHeader = ({ socialFields }: IWikiHeader) => {
 	const router = useRouter();
+	const { isOpen, onOpen, onClose } = useDisclosure();
+
 	const hoverColor = useColorModeValue('red.700', 'red.600');
 	const iconColor = useColorModeValue('gray.500', 'whiteAlpha.900');
 
@@ -60,13 +70,12 @@ const WikiHeader = ({ socialFields }: IWikiHeader) => {
 			top={16}
 			left={0}
 			right={0}
-			p={4}
 			width='100%'
 			maxW={1280}
 			mx='auto'
 		>
-			<Flex flex='1 1 0%' justifyContent='space-between' alignItems='center'>
-				<Breadcrumb display={['none', null, null, 'block']} separator={<Icon as={FaChevronRight} boxSize={3} />}>
+			<Flex flex='1 1 0%' justifyContent='flex-end' alignItems='center'>
+				{/* <Breadcrumb display={['none', null, null, 'block']} separator={<Icon as={FaChevronRight} boxSize={3} />}>
 					{crumbLinks.map((crumb, i) =>
 						segments[i] === '' ? (
 							<BreadcrumbItem key={i} fontWeight='bold' fontSize='sm' color='gray.500'>
@@ -82,13 +91,26 @@ const WikiHeader = ({ socialFields }: IWikiHeader) => {
 							</BreadcrumbItem>
 						)
 					)}
-				</Breadcrumb>
-				<Flex direction='row' width='100%' justify='flex-end' flex='1 1 0%'>
+				</Breadcrumb> */}
+				<Flex direction='row' maxW={998} width='full' justify='space-between' flex='1 1 0%' p={4} pl={0}>
 					<InputGroup maxWidth={600} shadow='sm'>
 						<InputLeftElement pointerEvents='none'>
 							<Icon as={FaSearch} color='gray.300' />
 						</InputLeftElement>
-						<Input placeholder='Search the wiki' />
+						<Input type='button' role='button' onClick={onOpen} />
+						<Modal isOpen={isOpen} onClose={onClose} size='xl'>
+							<ModalOverlay />
+							<ModalContent>
+								<ModalBody p={4}>
+									<InputGroup maxWidth={756} shadow='sm'>
+										<InputLeftElement pointerEvents='none'>
+											<Icon as={FaSearch} color='gray.300' />
+										</InputLeftElement>
+										<Input variant='flushed' size='lg' placeholder='Search the wiki' />
+									</InputGroup>
+								</ModalBody>
+							</ModalContent>
+						</Modal>
 					</InputGroup>
 					<HStack ml={4} spacing={3}>
 						{socialFields &&

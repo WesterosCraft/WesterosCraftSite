@@ -108,6 +108,12 @@ export const buildQuery = groq`
 				lqip
 			}
 		},
+		"images": images[].asset->{
+			url,
+			metadata {
+				lqip
+			}
+		},
 		"banner": banner.asset->{
 			url,
 			metadata {

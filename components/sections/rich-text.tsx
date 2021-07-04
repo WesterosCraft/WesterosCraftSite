@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import NextLink from 'next/link';
-import { Box, Flex, Heading, Link, ListItem, OrderedList, Text, UnorderedList } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, ListItem, OrderedList, Text, UnorderedList, AspectRatio } from '@chakra-ui/react';
 import BlockContent from '@sanity/block-content-to-react';
 import { IoIosQuote } from 'react-icons/io';
 import { MainImage } from '@/components/sections';
@@ -67,7 +67,14 @@ const serializers = {
 		figure: (props: any) => {
 			return <MainImage data={props.node} />;
 		},
-		video: () => <h1>VIDEO</h1>,
+		video: (props: any) => {
+			const { url } = props.node;
+			return (
+				<AspectRatio my={4} ratio={16 / 9} maxW={['100%', null, '50%']}>
+					<iframe src={url} allowFullScreen />
+				</AspectRatio>
+			);
+		},
 	},
 	list: (props: any) => {
 		const { type } = props;
