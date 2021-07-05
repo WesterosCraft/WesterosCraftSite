@@ -19,6 +19,7 @@ import MultiSelect from './chakra-react-select';
 import Pagination from './pagination';
 import ProgressTable from './progress-table';
 import ImageSlider from './image-slider';
+import AlgoliaSearch from './algolia-search';
 
 export {
 	DarkModeSwitch,
@@ -42,4 +43,5 @@ export {
 	Pagination,
 	ProgressTable,
 	ImageSlider,
+	AlgoliaSearch,
 };

@@ -8,14 +8,15 @@ type Props = {
 	children?: ReactNode;
 	width?: number;
 	lightHeader?: boolean;
+	border?: boolean;
 };
 
-const Layout = ({ siteSettings, lightHeader = false, children, width = 1280 }: Props) => {
+const Layout = ({ border, siteSettings, lightHeader = false, children, width = 1280 }: Props) => {
 	return (
 		<>
 			<Flex as='main' flexDirection='column' minHeight='100vh' overflow='hidden' position='relative'>
 				{siteSettings?.navigation && (
-					<Header lightHeader={lightHeader} navigation={siteSettings?.navigation} maxWidth={width} />
+					<Header border={border} lightHeader={lightHeader} navigation={siteSettings?.navigation} maxWidth={width} />
 				)}
 				<Flex as='article' width='100%' alignSelf='center' justifyContent='center' flex='1 0 auto' direction='column'>
 					{children}

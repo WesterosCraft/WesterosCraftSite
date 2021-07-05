@@ -31,12 +31,15 @@ export default function WithSubnavigation({
 	navigation,
 	maxWidth,
 	lightHeader,
+	border,
 }: {
 	navigation?: typeof siteSettings.navigation;
 	maxWidth?: string | number;
 	lightHeader?: boolean;
+	border?: boolean;
 }) {
 	const { isOpen, onToggle } = useDisclosure();
+	const borderColor = useColorModeValue('gray.200', 'gray.700');
 
 	return (
 		<Box
@@ -51,6 +54,10 @@ export default function WithSubnavigation({
 			marginX='auto'
 			height={16}
 			px={4}
+			borderColor={border ? borderColor : undefined}
+			borderWidth={0}
+			borderBottomWidth={border ? '1px' : 0}
+			borderStyle='solid'
 		>
 			<Flex minH='60px' py={{ base: 2 }} align='center' justify='space-between'>
 				<Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>

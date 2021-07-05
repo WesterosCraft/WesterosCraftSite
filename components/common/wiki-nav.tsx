@@ -1,10 +1,29 @@
-import { Flex, Stack, VStack, Text, Heading, Icon, Link, useColorModeValue } from '@chakra-ui/react';
+import {
+	Flex,
+	Stack,
+	VStack,
+	Text,
+	Icon,
+	Link,
+	useColorModeValue,
+	InputGroup,
+	InputLeftElement,
+	useDisclosure,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalBody,
+	Heading,
+	Input,
+} from '@chakra-ui/react';
 import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 import { InternalLink } from '@/models/objects/internal-link';
 import { ExternalLink } from '@/models/objects/external-link';
 import { resolveLink } from '../utils/helpers';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import { FaSearch } from 'react-icons/fa';
+import AlgoliaSearch from './algolia-search';
 
 interface IWikiNav {
 	navData: {
@@ -23,6 +42,7 @@ const IconMap = {
 const WikiNav = ({ navData }: IWikiNav) => {
 	const router = useRouter();
 	const navColor = useColorModeValue('black', 'white');
+	const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
 
 	return (
 		<Stack
@@ -32,7 +52,7 @@ const WikiNav = ({ navData }: IWikiNav) => {
 			display={['none', null, 'flex']}
 			minWidth={260}
 			maxWidth={260}
-			top='8.3rem'
+			top={20}
 			position='sticky'
 			overflowY='auto'
 			flex='1 1 260px'
@@ -41,6 +61,20 @@ const WikiNav = ({ navData }: IWikiNav) => {
 			pt={4}
 			zIndex='dropdown'
 		>
+			<InputGroup maxWidth={540} shadow='md' mb={4}>
+				<InputLeftElement pointerEvents='none'>
+					<Icon as={FaSearch} color='gray.300' />
+				</InputLeftElement>
+				<Input isReadOnly placeholder='Search the wiki' role='button' onClick={onOpen} />
+				<Modal isOpen={isOpen} onClose={onClose} size='xl'>
+					<ModalOverlay />
+					<ModalContent>
+						<ModalBody p={4}>
+							<AlgoliaSearch modalHandler={onToggle} />
+						</ModalBody>
+					</ModalContent>
+				</Modal>
+			</InputGroup>
 			<VStack align='start' spacing={3} mb={8}>
 				{navData.topLevelNavigation?.links.map((item) => {
 					const link = resolveLink(item);
@@ -82,7 +116,7 @@ const WikiNav = ({ navData }: IWikiNav) => {
 					);
 				})}
 			</VStack>
-			<Heading as='h4' fontSize='md' textTransform='uppercase'>
+			<Heading as='h4' fontSize='md' textTransform='uppercase' mt={10}>
 				Getting Started
 			</Heading>
 		</Stack>

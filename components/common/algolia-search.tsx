@@ -1,68 +1,97 @@
-import { useState, useCallback, forwardRef } from 'react';
-import { Box, Flex, Text, Input } from '@chakra-ui/react';
-
+import { useState, useCallback, useMemo } from 'react';
+import {
+	Box,
+	Flex,
+	Heading,
+	Input,
+	VStack,
+	Spinner,
+	InputGroup,
+	Icon,
+	InputLeftElement,
+	useColorModeValue,
+} from '@chakra-ui/react';
 import algoliaClient from 'algoliasearch/lite';
 import debounce from 'lodash/debounce';
-import Link from 'next/link';
-import { BiSearchAlt } from 'react-icons/bi';
+import NextLink from 'next/link';
+import { FaSearch, FaLink } from 'react-icons/fa';
 
 const algolia = algoliaClient(
-	process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-	process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY
+	process.env.NEXT_PUBLIC_ALGOLIA_APP_ID ?? 'undefined',
+	process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY ?? 'undefined'
 ).initIndex('Wiki');
 
-const search = (query, params = {}) =>
+const search = (query: string, params = {}) =>
 	algolia.search(query, {
-		attributesToHighlight: null,
+		attributesToHighlight: undefined,
 		hitsPerPage: 60,
 		...params,
 	});
 
-const DropdownLink = forwardRef(({ children, href }, ref) => {
+type ResultProps = {
+	results: Array<{ objectID: string; title: string; url: string }>;
+	modalHandler?: () => void;
+};
+
+const Results = ({ results, modalHandler }: ResultProps) => {
+	const resultColor = useColorModeValue('black', 'white');
+	const resultBg = useColorModeValue('gray.200', 'gray.600');
 	return (
-		<Box
-			as='a'
-			href={href}
-			ref={ref}
-			px={4}
-			py={2}
-			sx={{
-				'&:hover': {
-					cursor: 'pointer',
-					color: 'red.medium',
-					backgroundColor: 'rgba(120, 120, 120, 0.1)',
-				},
-			}}
-		>
-			{children}
-		</Box>
+		<VStack direction='column' spacing={2} width='full' mt={4}>
+			{results?.map((result) => (
+				<NextLink href={result.url} passHref key={result?.objectID}>
+					<Flex
+						onClick={modalHandler}
+						width='full'
+						borderRadius='lg'
+						py={5}
+						px={4}
+						align='center'
+						justify='space-between'
+						bg={resultBg}
+						color={resultColor}
+						_hover={{
+							color: 'white',
+							bg: 'red.700',
+						}}
+						cursor='pointer'
+					>
+						<Heading fontSize='lg'>{result.title}</Heading>
+						<Icon as={FaLink} />
+					</Flex>
+				</NextLink>
+			))}
+		</VStack>
 	);
-});
+};
 
-const Results = ({ results }) =>
-	results.map((result) => (
-		<Link href={result.url} passHref key={result.objectID}>
-			<DropdownLink>
-				<Text py={2} color='black'>
-					{result.title}
-				</Text>
-			</DropdownLink>
-		</Link>
-	));
+type Props = {
+	modalHandler?: () => void;
+};
 
-export const Search = () => {
+const AlgoliaSearch = ({ modalHandler }: Props) => {
 	const [loading, setLoading] = useState(false);
-	const [results, setResults] = useState([]);
+	const [results, setResults] = useState<Array<{ objectID: string; title: string; url: string }>>([]);
 	const [query, setQuery] = useState('');
 
-	const updateResults = useCallback(
-		debounce((currentQuery) => {
-			search(currentQuery).then(({ hits }) => {
-				setResults(hits);
-				setLoading(false);
-			});
-		}, 850),
+	// This is the solution
+	const debouncedSearch = useMemo(
+		() =>
+			debounce((currentQuery) => {
+				search(currentQuery).then(({ hits }) => {
+					//@ts-ignore
+					setResults(hits);
+					setLoading(false);
+				});
+			}, 850),
 		[]
+	);
+
+	const updateResults = useCallback(
+		(value) => {
+			debouncedSearch(value);
+		},
+		[debouncedSearch]
 	);
 
 	const handleChange = useCallback(
@@ -80,28 +109,23 @@ export const Search = () => {
 	);
 
 	return (
-		<Box sx={{ position: 'relative' }} mb='44px'>
-			<Input placeholder='Search Wiki' type='search' onChange={handleChange} />
-			{results.length > 0 ? (
-				<Flex
-					width={1}
-					bg='white'
-					flexDirection='column'
-					sx={{
-						position: 'absolute',
-						boxShadow: `0 3.9px 3.5px rgba(0, 0, 0, 0.046),
-          0 9.4px 8.4px rgba(0, 0, 0, 0.065),
-          0 17.7px 15.9px rgba(0, 0, 0, 0.073),
-          0 31.5px 28.4px rgba(0, 0, 0, 0.076)
-        `,
-					}}
-				>
-					<Results results={results} />
-				</Flex>
-			) : (
-				query.length > 2 && !loading && <div>No results</div>
-			)}
-			<BiSearchAlt color='#666' size={24} style={{ position: 'absolute', right: 12, top: 16 }} />
+		<Box width='full'>
+			<InputGroup maxWidth={756} shadow='sm'>
+				<InputLeftElement pointerEvents='none'>
+					<Icon as={FaSearch} color='gray.300' />
+				</InputLeftElement>
+				<Input variant='flushed' size='lg' placeholder='Search the wiki' onChange={handleChange} />
+			</InputGroup>
+			<Flex direction='column' align='center' justify='center' width='full' mx='auto'>
+				{loading && <Spinner size='lg' mt={4} />}
+				{results.length > 0 ? (
+					<Results results={results} modalHandler={modalHandler} />
+				) : (
+					query.length > 2 && !loading && <div>No results</div>
+				)}
+			</Flex>
 		</Box>
 	);
 };
+
+export default AlgoliaSearch;

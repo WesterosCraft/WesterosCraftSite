@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 WikiPage.getLayout = (page: LayoutPage) => (
-	<Layout siteSettings={siteSettings}>
+	<Layout border siteSettings={siteSettings}>
 		<WikiLayout siteSettings={siteSettings}>{page}</WikiLayout>
 	</Layout>
 );

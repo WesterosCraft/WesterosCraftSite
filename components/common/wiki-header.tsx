@@ -5,9 +5,6 @@ import {
 	Input,
 	Link,
 	useColorModeValue,
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbLink,
 	Icon,
 	InputGroup,
 	InputLeftElement,
@@ -15,17 +12,14 @@ import {
 	Modal,
 	ModalOverlay,
 	ModalContent,
-	ModalHeader,
-	ModalFooter,
 	ModalBody,
-	ModalCloseButton,
+	Heading,
 } from '@chakra-ui/react';
 import { FaDiscord, FaYoutube, FaInstagramSquare, FaTwitter } from 'react-icons/fa';
 import { nameFormatter } from '../utils';
 import { SocialFields } from '@/models/objects/social-fields';
-import { useRouter } from 'next/router';
-import NextLink from 'next/link';
-import { FaChevronRight, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
+import AlgoliaSearch from './algolia-search';
 
 interface IWikiHeader {
 	socialFields?: SocialFields;
@@ -38,25 +32,11 @@ const IconMap: any = {
 	twitter: FaTwitter,
 };
 
-const combineAccumulatively = (segments: string[]) => {
-	const links = segments.reduce((acc, cur, curIndex) => {
-		const last = curIndex > 1 ? acc[curIndex - 1] : '';
-		const newPath = last + '/' + cur;
-		acc.push(newPath);
-		return acc;
-	}, [] as string[]);
-	return links;
-};
-
 const WikiHeader = ({ socialFields }: IWikiHeader) => {
-	const router = useRouter();
-	const { isOpen, onOpen, onClose } = useDisclosure();
+	// const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
 
 	const hoverColor = useColorModeValue('red.700', 'red.600');
 	const iconColor = useColorModeValue('gray.500', 'whiteAlpha.900');
-
-	const segments = router.asPath.split('/');
-	const crumbLinks = combineAccumulatively(segments);
 
 	return (
 		<Box
@@ -75,43 +55,21 @@ const WikiHeader = ({ socialFields }: IWikiHeader) => {
 			mx='auto'
 		>
 			<Flex flex='1 1 0%' justifyContent='flex-end' alignItems='center'>
-				{/* <Breadcrumb display={['none', null, null, 'block']} separator={<Icon as={FaChevronRight} boxSize={3} />}>
-					{crumbLinks.map((crumb, i) =>
-						segments[i] === '' ? (
-							<BreadcrumbItem key={i} fontWeight='bold' fontSize='sm' color='gray.500'>
-								<BreadcrumbLink as={NextLink} href='/'>
-									Home
-								</BreadcrumbLink>
-							</BreadcrumbItem>
-						) : (
-							<BreadcrumbItem key={i} fontWeight='bold' fontSize='sm' color='gray.500'>
-								<BreadcrumbLink as={NextLink} href={crumb}>
-									{nameFormatter(segments[i])}
-								</BreadcrumbLink>
-							</BreadcrumbItem>
-						)
-					)}
-				</Breadcrumb> */}
-				<Flex direction='row' maxW={998} width='full' justify='space-between' flex='1 1 0%' p={4} pl={0}>
-					<InputGroup maxWidth={600} shadow='sm'>
+				<Flex direction='row' width='full' justify='flex-end' flex='1 1 0%' p={4} pl={0}>
+					{/* <InputGroup maxWidth={540} shadow='sm'>
 						<InputLeftElement pointerEvents='none'>
 							<Icon as={FaSearch} color='gray.300' />
 						</InputLeftElement>
-						<Input type='button' role='button' onClick={onOpen} />
+						<Input isReadOnly placeholder='Search the wiki' role='button' onClick={onOpen} />
 						<Modal isOpen={isOpen} onClose={onClose} size='xl'>
 							<ModalOverlay />
 							<ModalContent>
 								<ModalBody p={4}>
-									<InputGroup maxWidth={756} shadow='sm'>
-										<InputLeftElement pointerEvents='none'>
-											<Icon as={FaSearch} color='gray.300' />
-										</InputLeftElement>
-										<Input variant='flushed' size='lg' placeholder='Search the wiki' />
-									</InputGroup>
+									<AlgoliaSearch modalHandler={onToggle} />
 								</ModalBody>
 							</ModalContent>
 						</Modal>
-					</InputGroup>
+					</InputGroup> */}
 					<HStack ml={4} spacing={3}>
 						{socialFields &&
 							Object.entries(socialFields).map((key) => {
