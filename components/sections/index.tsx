@@ -11,6 +11,7 @@ import ReferenceGrid from './reference-grid';
 import FeaturesWithVideo from './features-with-video';
 import Map from './map';
 import HeroImageSlider from './hero-image-slider';
+import WikiInfoCards from './wiki-info-cards';
 
 export {
 	BlockBanner,
@@ -26,4 +27,5 @@ export {
 	FeaturesWithVideo,
 	Map,
 	HeroImageSlider,
+	WikiInfoCards,
 };

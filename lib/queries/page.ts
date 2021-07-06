@@ -14,6 +14,7 @@ import {
 	featuresWithVideo,
 	map,
 	heroSlider,
+	wikiInfoCards,
 } from './fragments';
 
 export const pageQuery = groq`
@@ -50,7 +51,8 @@ export const wikiQuery = groq`
 		${quote},
 		${editions},
 		${blockBanner},
-		${referenceGrid}
+		${referenceGrid},
+		${wikiInfoCards}
 	},
 	"createdDestinations": *[_type == 'destination'] | order(_createdAt desc)[0...6] {
 		${destinationCard}

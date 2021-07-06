@@ -11,6 +11,7 @@ import { IBlockBanner } from './block-banner';
 import { IReferenceGrid } from './reference-grid';
 import { IFeaturesWithVideo } from './features-with-video';
 import { IMap } from './map';
+import { IWikiInfoCards } from './wiki-info-cards';
 
 export type Sections =
 	| IBlockBanner
@@ -25,4 +26,5 @@ export type Sections =
 	| IReferenceGrid
 	| IEditions
 	| IFeaturesWithVideo
-	| IMap;
+	| IMap
+	| IWikiInfoCards;

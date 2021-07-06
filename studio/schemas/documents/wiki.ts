@@ -46,7 +46,7 @@ export default {
 			title: 'Page sections',
 			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
-			of: contentObjects,
+			of: [...contentObjects, { type: 'wikiInfoCards' }],
 		},
 		{
 			name: 'pageBuilder',

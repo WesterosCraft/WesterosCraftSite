@@ -11,12 +11,12 @@ import {
 	ReferenceGrid,
 	FeaturesWithVideo,
 	Map,
+	WikiInfoCards,
 } from '@/components/sections';
 
 const RenderSection = ({ section, additionalData }: { section: Sections; additionalData?: any }) => {
 	switch (section._type) {
 		case 'richText':
-			//@ts-ignore
 			return <RichText data={section} />;
 		case 'grid':
 			return <Grid data={section} />;
@@ -38,6 +38,8 @@ const RenderSection = ({ section, additionalData }: { section: Sections; additio
 			return <FeaturesWithVideo data={section} />;
 		case 'map':
 			return <Map data={section} />;
+		case 'wikiInfoCards':
+			return <WikiInfoCards data={section} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 

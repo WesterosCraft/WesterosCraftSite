@@ -25,6 +25,21 @@ const overrides = {
 		bold: 600,
 		bolder: 700,
 	},
+	components: {
+		Button: {
+			variants: {
+				'with-black-gradient': {
+					bgGradient: 'linear(to-t, black,blackAlpha.300)',
+					color: 'white',
+					_hover: {
+						color: 'black',
+						bgGradient: 'linear(to-t, white,whiteAlpha.700)',
+					},
+				},
+				'with-red-gradient': {},
+			},
+		},
+	},
 };
 
 const customTheme = extendTheme(overrides);

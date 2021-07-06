@@ -103,18 +103,13 @@ const Index = ({ pageData }: Props) => {
 						</Text>
 						<Button
 							mb={8}
+							variant='with-black-gradient'
 							size='lg'
 							leftIcon={<GiRaven size={20} />}
 							display={{ base: 'none', md: 'inline-flex' }}
 							fontSize={'md'}
 							fontWeight={600}
-							color='white'
-							bg='black'
 							href={'#'}
-							_hover={{
-								color: 'black',
-								bg: 'white',
-							}}
 						>
 							Join The Watch
 						</Button>

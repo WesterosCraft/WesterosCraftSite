@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
-import { Flex, Box, useColorModeValue } from '@chakra-ui/react';
-import { WikiHeader } from '@/components/common';
+import { Flex, Box } from '@chakra-ui/react';
 import { MetaFields } from '@/models/meta-fields';
 import WikiNav from './wiki-nav';
 import { siteSettings } from '@/data/.';
@@ -15,7 +14,6 @@ type Props = {
 const WikiLayout = ({ siteSettings, children, width = 1280 }: Props) => {
 	return (
 		<>
-			{/* <WikiHeader socialFields={siteSettings?.socialFields} /> */}
 			<Flex px={4} width='100%' alignSelf='center' justifyContent='center' flex='1 0 auto' direction='row' maxW={width}>
 				<WikiNav
 					navData={{

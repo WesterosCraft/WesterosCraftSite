@@ -25,6 +25,8 @@ import columnWithVideo from './sections/column-with-video';
 import referenceGrid from './sections/reference-grid';
 import featuresWithVideo from './sections/features-with-video';
 import map from './sections/map';
+import resourceHub from './sections/resource-hub';
+import wikiInfoCards from './sections/wiki-info-cards';
 
 // pages/documents
 import destination from './documents/destination';
@@ -78,6 +80,7 @@ export default createSchema({
 		socialFields,
 		spacer,
 		youtube,
+		wikiInfoCards,
 		allGuides,
 		home,
 		featuresWithVideo,
@@ -109,5 +112,6 @@ export default createSchema({
 		tableBuilder,
 		imageSlider,
 		referenceGrid,
+		resourceHub,
 	]),
 });

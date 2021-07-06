@@ -35,6 +35,24 @@ export const youtube = `
 	}
 `;
 
+export const wikiInfoCards = `
+	_type == 'wikiInfoCards' => {
+		...,
+		infoCards[]{
+			...,
+			"icon": icon.asset->{
+				url,
+				metadata {
+					lqip
+				  }
+			},
+			linkReference->{
+				slug
+			}
+		}
+	}
+`;
+
 export const marquee = `
 	_type == 'marquee' => {
 		...,

@@ -115,10 +115,10 @@
 					"_type": "internalLink",
 					"description": "Everything you need to join the server",
 					"link": {
-						"_type": "launcher",
+						"_type": "modpack",
 						"slug": {
 							"_type": "slug",
-							"current": "launcher"
+							"current": "modpack"
 						}
 					},
 					"title": "Modpack"
