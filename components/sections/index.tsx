@@ -12,6 +12,7 @@ import FeaturesWithVideo from './features-with-video';
 import Map from './map';
 import HeroImageSlider from './hero-image-slider';
 import WikiInfoCards from './wiki-info-cards';
+import WikiBanner from './wiki-banner';
 
 export {
 	BlockBanner,
@@ -28,4 +29,5 @@ export {
 	Map,
 	HeroImageSlider,
 	WikiInfoCards,
+	WikiBanner,
 };

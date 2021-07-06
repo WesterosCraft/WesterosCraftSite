@@ -27,6 +27,7 @@ import featuresWithVideo from './sections/features-with-video';
 import map from './sections/map';
 import resourceHub from './sections/resource-hub';
 import wikiInfoCards from './sections/wiki-info-cards';
+import wikiBanner from './sections/wiki-banner';
 
 // pages/documents
 import destination from './documents/destination';
@@ -73,6 +74,7 @@ export default createSchema({
 		externalLink,
 		internalLink,
 		link,
+		wikiBanner,
 		simpleBlockContent,
 		grid,
 		map,

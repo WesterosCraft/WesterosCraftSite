@@ -75,7 +75,7 @@ const WikiNav = ({ navData }: IWikiNav) => {
 					</ModalContent>
 				</Modal>
 			</InputGroup>
-			<VStack align='start' spacing={3} mb={8}>
+			<VStack align='start' spacing={3} mb={12}>
 				{navData.topLevelNavigation?.links.map((item) => {
 					const link = resolveLink(item);
 
@@ -116,7 +116,7 @@ const WikiNav = ({ navData }: IWikiNav) => {
 					);
 				})}
 			</VStack>
-			<Heading as='h4' fontSize='md' textTransform='uppercase' mt={10}>
+			<Heading as='h4' fontSize='md' textTransform='uppercase'>
 				Getting Started
 			</Heading>
 		</Stack>

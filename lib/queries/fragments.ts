@@ -17,6 +17,12 @@ export const spacer = `
 	}
 `;
 
+export const wikiBanner = `
+	_type == 'wikiBanner' => {
+		...
+	}
+`;
+
 export const richText = `
 	_type == 'richText' => {
 		...

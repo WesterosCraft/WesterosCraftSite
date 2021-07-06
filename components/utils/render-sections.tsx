@@ -12,6 +12,7 @@ import {
 	FeaturesWithVideo,
 	Map,
 	WikiInfoCards,
+	WikiBanner,
 } from '@/components/sections';
 
 const RenderSection = ({ section, additionalData }: { section: Sections; additionalData?: any }) => {
@@ -40,6 +41,8 @@ const RenderSection = ({ section, additionalData }: { section: Sections; additio
 			return <Map data={section} />;
 		case 'wikiInfoCards':
 			return <WikiInfoCards data={section} />;
+		case 'wikiBanner':
+			return <WikiBanner data={section} />;
 		default:
 			console.warn(`Section couldn't be rendered`);
 
