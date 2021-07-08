@@ -12,18 +12,23 @@ import {
 	CircularProgress,
 	CircularProgressLabel,
 	Center,
+	SimpleGrid,
+	Progress,
+	Button,
+	StatGroup,
 } from '@chakra-ui/react';
 import BrightSquares from '../public/bright-squares.png';
 import { useRouter } from 'next/router';
 import Error from 'next/error';
 import { GetStaticProps } from 'next';
-import { Seo, ProjectStatusIcon } from '@/components/common';
+import { Seo, ProjectStatusIcon, RegionIcon } from '@/components/common';
 import { sanityClient, urlFor, usePreviewSubscription } from '@/lib/sanity';
 import { Sections } from '@/models/sections';
 import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 import { progressQuery } from '@/lib/queries/page';
 import Image from 'next/image';
+import { calcCompletionPercentage } from 'utils';
 
 type PageProps = {
 	meta?: MetaFields;
@@ -61,6 +66,12 @@ const ProgressPage = ({ pageData }: Props) => {
 	});
 	console.log('👉 ~ ProgressPage ~ page', page);
 
+	const TOTAL_PERCENTAGE_COMPLETED = calcCompletionPercentage(
+		page.totalCompleted,
+		page.totalInProgress + page.totalRedoInProgress,
+		page.totalNotStarted + page.totalAbandoned
+	);
+
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
 	}
@@ -93,7 +104,7 @@ const ProgressPage = ({ pageData }: Props) => {
 						backgroundImage: `url(${BrightSquares.src})`,
 					}}
 				>
-					<Box minH={250} zIndex='base'>
+					<Box minH={250} zIndex='base' width='50%'>
 						<Heading fontSize='5xl' color='white'>
 							{page.heading}
 						</Heading>
@@ -101,10 +112,10 @@ const ProgressPage = ({ pageData }: Props) => {
 							{page.subheading}
 						</Text>
 					</Box>
-					<Center flexDirection='column' zIndex='base'>
+					<Center flexDirection='column' zIndex='base' flexGrow={1} flexShrink={1}>
 						<CircularProgress capIsRound size='180px' value={40} color='green.400'>
 							<CircularProgressLabel color='white' fontWeight='bold'>
-								40%
+								{TOTAL_PERCENTAGE_COMPLETED}%
 							</CircularProgressLabel>
 						</CircularProgress>
 						<Heading mt={2} color='white' fontSize='3xl' textAlign='center'>
@@ -155,6 +166,40 @@ const ProgressPage = ({ pageData }: Props) => {
 						<StatHelpText color='whiteAlpha.900'>Including {page.totalAbandoned} Abandoned</StatHelpText>
 					</Stat>
 				</HStack>
+
+				<SimpleGrid columns={2} gap={6}>
+					<Box bg='orange' height={250} p={4}>
+						<Flex height='full' flexDirection='column' justifyContent='space-between'>
+							<Flex flexDirection='row' alignItems='center'>
+								<Heading mr={2} color='white'>
+									Dorne
+								</Heading>
+								<RegionIcon boxSize='32px' region='dorne' />
+							</Flex>
+							<StatGroup>
+								<Stat>
+									<StatLabel>Completed</StatLabel>
+									<StatNumber>£0.00</StatNumber>
+								</Stat>
+								<Stat>
+									<StatLabel>In Progress</StatLabel>
+									<StatNumber>£0.00</StatNumber>
+								</Stat>
+								<Stat>
+									<StatLabel>Not Started</StatLabel>
+									<StatNumber>£0.00</StatNumber>
+								</Stat>
+							</StatGroup>
+							<Box>
+								<Progress size='md' colorScheme='orange' value={60} />
+								<Button colorScheme='blackAlpha' mt={4}>
+									View All
+								</Button>
+							</Box>
+						</Flex>
+					</Box>
+					<Box bg='orange' height={250}></Box>
+				</SimpleGrid>
 			</Container>
 		</>
 	);

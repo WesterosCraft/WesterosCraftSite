@@ -139,10 +139,15 @@ const Icons = {
 
 interface IRegionProps extends IconProps {
 	region: keyof typeof Icons;
+	tooltip?: boolean;
 }
 
-const RegionIcon = ({ region, ...props }: IRegionProps) => {
+const RegionIcon = ({ region, tooltip, ...props }: IRegionProps) => {
 	const Component = Icons[region];
+
+	if (!tooltip) {
+		return <Component {...props} />;
+	}
 	return (
 		<Tooltip label={nameFormatter(region)}>
 			<Component {...props} />
