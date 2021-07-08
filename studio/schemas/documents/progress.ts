@@ -45,5 +45,11 @@ export default {
 			type: 'string',
 			fieldset: 'content',
 		},
+		{
+			title: 'Hero Image',
+			name: 'heroImage',
+			type: 'image',
+			fieldset: 'content',
+		},
 	],
 };

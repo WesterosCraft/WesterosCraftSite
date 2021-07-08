@@ -66,21 +66,18 @@ const Index = ({ pageData }: Props) => {
 				borderBottomWidth={1}
 				borderBottomStyle='solid'
 				borderBottomColor='whiteAlpha.200'
+				// _before={{
+				// 	content: '""',
+				// 	position: 'absolute',
+				// 	left: 0,
+				// 	top: 0,
+				// 	width: '100%',
+				// 	height: '100%',
+				// 	opacity: 0.1,
+				// 	backgroundImage: `url(${BrightSquares.src})`,
+				// }}
 			>
-				<Container
-					maxW='container.xl'
-					zIndex='base'
-					// _before={{
-					// 	content: '""',
-					// 	position: 'absolute',
-					// 	left: 0,
-					// 	top: 0,
-					// 	width: '100%',
-					// 	height: '100%',
-					// 	opacity: 0.1,
-					// 	backgroundImage: `url(${BrightSquares.src})`,
-					// }}
-				>
+				<Container maxW='container.xl' zIndex='base' position='relative'>
 					<Box textAlign='center' mt={5} zIndex='docked' position='relative'>
 						<Text
 							fontSize='xl'

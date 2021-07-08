@@ -22,6 +22,7 @@ const WikiInfoCards = ({ data }: Props) => {
 		<SimpleGrid columns={[1, 2, null, 3]} spacing={5}>
 			{data.infoCards?.map((card, i) => (
 				<Flex
+					shadow='lg'
 					className='wiki-info-card'
 					flexDirection='column'
 					justifyContent='space-between'

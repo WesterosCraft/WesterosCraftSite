@@ -126,3 +126,30 @@ export const buildQuery = groq`
 		}
 	}
 `;
+
+export const progressQuery = groq`
+	*[_type == $type && slug.current == $slug][0] {
+		...,
+		content[] {
+			${richText},
+			${grid},
+			${mainImage},
+			${spacer},
+			${youtube},
+			${marquee},
+			${quote},
+			${editions},
+			${blockBanner},
+			${referenceGrid},
+			${featuresWithVideo},
+			${map}
+		},
+		"totalBuilds": count(*[_type == 'destination' && defined(slug.current)]),
+		"totalCompleted": count(*[_type == 'destination'&& projectStatus == 'completed' && defined(slug.current)]),
+		"totalInProgress": count(*[_type == 'destination'&& projectStatus == 'inProgress' && defined(slug.current)]),
+		"totalNotStarted": count(*[_type == 'destination'&& projectStatus == 'notStarted' && defined(slug.current)]),
+		"totalAbandoned": count(*[_type == 'destination'&& projectStatus == 'abandoned' && defined(slug.current)]),
+		"totalRedoInProgress": count(*[_type == 'destination'&& projectStatus == 'redoInProgress' && defined(slug.current)]),
+
+	}
+`;

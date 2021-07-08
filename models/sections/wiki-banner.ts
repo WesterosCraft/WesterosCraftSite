@@ -5,4 +5,6 @@ export interface IWikiBanner {
 	subheading: string;
 	buttonText: string;
 	buttonUrl: string;
+	icon: { asset: { _ref: string } };
+	backgroundColor: string;
 }

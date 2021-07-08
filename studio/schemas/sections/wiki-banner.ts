@@ -27,6 +27,11 @@ export default {
 			type: 'url',
 		},
 		{
+			title: 'Background Color',
+			name: 'backgroundColor',
+			type: 'string',
+		},
+		{
 			title: 'Icon',
 			name: 'icon',
 			type: 'image',
