@@ -16,6 +16,7 @@ import {
 	Progress,
 	Button,
 	StatGroup,
+	useColorModeValue,
 } from '@chakra-ui/react';
 import BrightSquares from '../public/bright-squares.png';
 import { useRouter } from 'next/router';
@@ -29,6 +30,8 @@ import { Slug } from '@sanity/types';
 import { progressQuery } from '@/lib/queries/page';
 import Image from 'next/image';
 import { calcCompletionPercentage } from 'utils';
+import { Regions } from '@/models/utils';
+import { nameFormatter } from '@/components/utils';
 
 type PageProps = {
 	meta?: MetaFields;
@@ -50,6 +53,15 @@ type PageProps = {
 	totalInProgress: number;
 	totalNotStarted: number;
 	totalRedoInProgress: number;
+	regions: {
+		[key in Regions]: {
+			totalAbandoned: number;
+			totalCompleted: number;
+			totalInProgress: number;
+			totalNotStarted: number;
+			totalRedoInProgress: number;
+		};
+	};
 };
 
 type Props = {
@@ -72,6 +84,12 @@ const ProgressPage = ({ pageData }: Props) => {
 		page.totalNotStarted + page.totalAbandoned
 	);
 
+	const BORDER_COLOR = useColorModeValue('gray.200', 'gray.600');
+
+	function typedKeys<T>(o: T): (keyof T)[] {
+		return Object.keys(o) as (keyof T)[];
+	}
+
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
 	}
@@ -80,7 +98,7 @@ const ProgressPage = ({ pageData }: Props) => {
 		<>
 			<Seo meta={page?.meta} />
 
-			<Container as='section' maxW='container.xl'>
+			<Container as='section' maxW='container.xl' pt={20}>
 				<Flex
 					flexDirection='row'
 					alignItems='flex-start'
@@ -92,6 +110,7 @@ const ProgressPage = ({ pageData }: Props) => {
 					position='relative'
 					overflow='hidden'
 					width='full'
+					shadow='dark-lg'
 					_before={{
 						content: '""',
 						position: 'absolute',
@@ -100,7 +119,7 @@ const ProgressPage = ({ pageData }: Props) => {
 						top: 0,
 						width: '100%',
 						height: '100%',
-						opacity: 0.7,
+						opacity: 0.5,
 						backgroundImage: `url(${BrightSquares.src})`,
 					}}
 				>
@@ -113,7 +132,7 @@ const ProgressPage = ({ pageData }: Props) => {
 						</Text>
 					</Box>
 					<Center flexDirection='column' zIndex='base' flexGrow={1} flexShrink={1}>
-						<CircularProgress capIsRound size='180px' value={40} color='green.400'>
+						<CircularProgress capIsRound size='180px' value={TOTAL_PERCENTAGE_COMPLETED} color='green.400'>
 							<CircularProgressLabel color='white' fontWeight='bold'>
 								{TOTAL_PERCENTAGE_COMPLETED}%
 							</CircularProgressLabel>
@@ -167,38 +186,60 @@ const ProgressPage = ({ pageData }: Props) => {
 					</Stat>
 				</HStack>
 
-				<SimpleGrid columns={2} gap={6}>
-					<Box bg='orange' height={250} p={4}>
-						<Flex height='full' flexDirection='column' justifyContent='space-between'>
-							<Flex flexDirection='row' alignItems='center'>
-								<Heading mr={2} color='white'>
-									Dorne
-								</Heading>
-								<RegionIcon boxSize='32px' region='dorne' />
+				<SimpleGrid columns={2} gap={6} my={20}>
+					{typedKeys(page.regions).map((key, i) => (
+						<Box
+							borderWidth={1}
+							borderColor={BORDER_COLOR}
+							bg='white'
+							height={250}
+							p={4}
+							key={i}
+							borderRadius='lg'
+							shadow='lg'
+						>
+							<Flex height='full' flexDirection='column' justifyContent='space-between'>
+								<Flex flexDirection='row' alignItems='center'>
+									<Heading mr={2} color='black'>
+										{nameFormatter(key.toString())}
+									</Heading>
+
+									<RegionIcon boxSize='32px' region={key} />
+									<Button ml='auto' colorScheme='blackAlpha' size='sm'>
+										View All
+									</Button>
+								</Flex>
+								<StatGroup>
+									<Stat textAlign='center'>
+										<StatLabel fontWeight='bold'>Completed</StatLabel>
+										<StatNumber fontSize='5xl'>{page.regions[key].totalCompleted}</StatNumber>
+									</Stat>
+									<Stat textAlign='center'>
+										<StatLabel fontWeight='bold'>In Progress</StatLabel>
+										<StatNumber fontSize='5xl'>
+											{page.regions[key].totalInProgress + page.regions[key].totalRedoInProgress}
+										</StatNumber>
+									</Stat>
+									<Stat textAlign='center'>
+										<StatLabel fontWeight='bold'>Not Started</StatLabel>
+										<StatNumber fontSize='5xl'>
+											{page.regions[key].totalNotStarted + page.regions[key].totalAbandoned}
+										</StatNumber>
+									</Stat>
+								</StatGroup>
+
+								<Progress
+									size='md'
+									colorScheme='orange'
+									value={calcCompletionPercentage(
+										page.regions[key].totalCompleted,
+										page.regions[key].totalInProgress + page.regions[key].totalRedoInProgress,
+										page.regions[key].totalNotStarted + page.regions[key].totalAbandoned
+									)}
+								/>
 							</Flex>
-							<StatGroup>
-								<Stat>
-									<StatLabel>Completed</StatLabel>
-									<StatNumber>£0.00</StatNumber>
-								</Stat>
-								<Stat>
-									<StatLabel>In Progress</StatLabel>
-									<StatNumber>£0.00</StatNumber>
-								</Stat>
-								<Stat>
-									<StatLabel>Not Started</StatLabel>
-									<StatNumber>£0.00</StatNumber>
-								</Stat>
-							</StatGroup>
-							<Box>
-								<Progress size='md' colorScheme='orange' value={60} />
-								<Button colorScheme='blackAlpha' mt={4}>
-									View All
-								</Button>
-							</Box>
-						</Flex>
-					</Box>
-					<Box bg='orange' height={250}></Box>
+						</Box>
+					))}
 				</SimpleGrid>
 			</Container>
 		</>
