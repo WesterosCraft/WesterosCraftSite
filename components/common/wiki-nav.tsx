@@ -15,6 +15,7 @@ import {
 	ModalBody,
 	Heading,
 	Input,
+	Box,
 } from '@chakra-ui/react';
 import { HiCube, HiHome, HiDocumentText, HiLibrary } from 'react-icons/hi';
 import { InternalLink } from '@/models/objects/internal-link';
@@ -40,6 +41,7 @@ const IconMap = {
 };
 
 const WikiNav = ({ navData }: IWikiNav) => {
+	console.log('🚀 ~ file: wiki-nav.tsx ~ line 44 ~ WikiNav ~ navData', navData);
 	const router = useRouter();
 	const navColor = useColorModeValue('black', 'white');
 	const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
@@ -75,7 +77,7 @@ const WikiNav = ({ navData }: IWikiNav) => {
 					</ModalContent>
 				</Modal>
 			</InputGroup>
-			<VStack align='start' spacing={3} mb={12}>
+			<VStack align='start' spacing={3}>
 				{navData.topLevelNavigation?.links.map((item) => {
 					const link = resolveLink(item);
 
@@ -116,9 +118,20 @@ const WikiNav = ({ navData }: IWikiNav) => {
 					);
 				})}
 			</VStack>
-			<Heading as='h4' fontSize='md' textTransform='uppercase'>
-				Getting Started
-			</Heading>
+			<Box>
+				<VStack>
+					{navData.wikiNavigation.map((section) => {
+						return (
+							<>
+								<Heading>{section.title}</Heading>
+								{section.links?.map((item) => {
+									return <h5>{item.title}</h5>;
+								})}
+							</>
+						);
+					})}
+				</VStack>
+			</Box>
 		</Stack>
 	);
 };

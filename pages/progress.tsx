@@ -252,41 +252,19 @@ const ProgressPage = ({ pageData }: Props) => {
 											)}
 										/>
 										<StatGroup flexGrow={1}>
-											<Stat px={6} py={4} textAlign='left' bg='white' borderRadius='md' mr={4}>
-												<StatLabel fontWeight='bold'>
-													<Flex direction='row' alignItems='center'>
-														<ProjectStatusIcon projectStatus='completed' />
-														<Text ml={2}>Completed</Text>
-													</Flex>
-												</StatLabel>
-												<StatNumber fontSize='4xl'>
-													{returnLength('projectStatus', 'completed', 'region', region)}
-												</StatNumber>
-											</Stat>
-											<Stat px={6} py={4} textAlign='left' bg='white' borderRadius='md'>
-												<StatLabel fontWeight='bold'>
-													<Flex direction='row' alignItems='center'>
-														<ProjectStatusIcon projectStatus='inProgress' />
-														<Text ml={2}>In Progress</Text>
-													</Flex>
-												</StatLabel>
-												<StatNumber fontSize='4xl'>
-													{returnLength('projectStatus', 'inProgress', 'region', region) +
-														returnLength('projectStatus', 'redoInProgress', 'region', region)}
-												</StatNumber>
-											</Stat>
-											<Stat px={6} py={4} textAlign='left' bg='white' borderRadius='md' ml={4}>
-												<StatLabel fontWeight='bold'>
-													<Flex direction='row' alignItems='center'>
-														<ProjectStatusIcon projectStatus='notStarted' />
-														<Text ml={2}>Not Started</Text>
-													</Flex>
-												</StatLabel>
-												<StatNumber fontSize='4xl'>
-													{returnLength('projectStatus', 'notStarted', 'region', region) +
-														returnLength('projectStatus', 'abandoned', 'region', region)}
-												</StatNumber>
-											</Stat>
+											{['completed', 'inProgress', 'notStarted'].map((s: any) => (
+												<Stat key={s} px={6} py={4} textAlign='left' bg='white' borderRadius='md' mr={4}>
+													<StatLabel fontWeight='bold'>
+														<Flex direction='row' alignItems='center'>
+															<ProjectStatusIcon boxSize='20px' projectStatus={s} />
+															<Text fontSize='md' ml={2}>
+																{nameFormatter(s)}
+															</Text>
+														</Flex>
+													</StatLabel>
+													<StatNumber fontSize='5xl'>{returnLength('projectStatus', s, 'region', region)}</StatNumber>
+												</Stat>
+											))}
 										</StatGroup>
 									</Flex>
 								</TabPanel>

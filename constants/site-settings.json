@@ -1,255 +1,293 @@
 {
 	"_createdAt": "2021-06-05T03:26:41Z",
 	"_id": "d3fd86c6-6a07-4388-8263-eeb985364e11",
-	"_rev": "4bkywvdxwr74CEFzobpRVG",
+	"_rev": "pFQZSqCP4NJZPFPEyhTSnj",
 	"_type": "siteSettings",
-	"_updatedAt": "2021-06-20T15:07:01Z",
+	"_updatedAt": "2021-07-06T22:44:25Z",
 	"description": "WesterosCraft is a Minecraft server dedicated to recreating the world of Game of Thrones.",
 	"navigation": [
-		{
-			"_key": "6ffa819f1469",
-			"_type": "navigation.section",
-			"link": null,
-			"links": [
-				{
-					"_key": "a695e1d2b0e0",
-					"_type": "internalLink",
-					"description": "Learn more about the project",
-					"link": {
-						"_type": "about",
-						"slug": {
-							"_type": "slug",
-							"current": "about"
-						}
-					},
-					"title": "About Us"
-				},
-				{
-					"_key": "86d12d05e6cc",
-					"_type": "internalLink",
-					"description": "Check up on our progress",
-					"link": {
-						"_type": "progress",
-						"slug": {
-							"_type": "slug",
-							"current": "progress"
-						}
-					},
-					"title": "Progress"
-				},
-				{
-					"_key": "b4bc4c9e15c1",
-					"_type": "internalLink",
-					"description": "Our quarterly newsletter",
-					"link": {
-						"_type": "rookery",
-						"slug": {
-							"_type": "slug",
-							"current": "rookery"
-						}
-					},
-					"title": "Rookery"
-				}
-			],
-			"title": "About"
-		},
-		{
-			"_key": "f5af68f6384b",
-			"_type": "navigation.section",
-			"link": null,
-			"links": [
-				{
-					"_key": "db9bcffdd8c8",
-					"_type": "externalLink",
-					"description": "Where we plan all of our builds",
-					"link": null,
-					"slug": {
-						"_type": "slug",
-						"current": "https://forum.westeroscraft.com/"
-					},
-					"title": "Forums"
-				},
-				{
-					"_key": "7d3fa5a7d122",
-					"_type": "externalLink",
-					"description": "Chat and hang out with the community",
-					"link": null,
-					"slug": {
-						"_type": "slug",
-						"current": "https://discord.com/invite/pBS5TH4"
-					},
-					"title": "Discord"
-				},
-				{
-					"_key": "acc44cb59aa6",
-					"_type": "externalLink",
-					"description": "Swag courtesy of our creative community",
-					"link": null,
-					"slug": {
-						"_type": "slug",
-						"current": "https://www.redbubble.com/people/westeroscraft/shop?asc=u"
-					},
-					"title": "Merch"
-				},
-				{
-					"_key": "1fef25524647",
-					"_type": "externalLink",
-					"description": "If you think you got the skills, help us build",
-					"link": null,
-					"slug": {
-						"_type": "slug",
-						"current": "https://forum.westeroscraft.com/form/builder-application.3/select"
-					},
-					"title": "Apply"
-				}
-			],
-			"title": "Community"
-		},
-		{
-			"_key": "092d9a812c5b",
-			"_type": "navigation.section",
-			"link": null,
-			"links": [
-				{
-					"_key": "bebbff59bca9",
-					"_type": "internalLink",
-					"description": "Everything you need to join the server",
-					"link": {
-						"_type": "modpack",
-						"slug": {
-							"_type": "slug",
-							"current": "modpack"
-						}
-					},
-					"title": "Modpack"
-				},
-				{
-					"_key": "1bf1d695cb94",
-					"_type": "internalLink",
-					"description": "A knowledge base of all of our builds",
-					"link": {
-						"_type": "wiki",
-						"slug": {
-							"_type": "slug",
-							"current": "wiki"
-						}
-					},
-					"title": "Wiki"
-				},
-				{
-					"_key": "41e096751451",
-					"_type": "internalLink",
-					"description": "Wallpapers, maps and more",
-					"link": {
-						"_type": "downloads",
-						"slug": {
-							"_type": "slug",
-							"current": "downloads"
-						}
-					},
-					"title": "Downloads"
-				},
-				{
-					"_key": "2ee753e4caec",
-					"_type": "internalLink",
-					"description": "If you got a question, it's probably answered",
-					"link": {
-						"_type": "guide",
-						"slug": {
-							"_type": "slug",
-							"current": "frequently-asked-questions"
-						}
-					},
-					"title": "FAQ"
-				},
-				{
-					"_key": "89541563e804",
-					"_type": "internalLink",
-					"description": "Read the server codes of conduct",
-					"link": {
-						"_type": "guide",
-						"slug": {
-							"_type": "slug",
-							"current": "rules-and-guides"
-						}
-					},
-					"title": "Rules & Guides"
-				}
-			],
-			"title": "Resources"
-		},
-		{
-			"_key": "0fb3c9e302f5",
-			"_type": "externalLink",
-			"link": null,
-			"links": null,
-			"slug": {
+	  {
+		"_key": "6ffa819f1469",
+		"_type": "navigation.section",
+		"links": [
+		  {
+			"_key": "a695e1d2b0e0",
+			"_type": "internalLink",
+			"description": "Learn more about the project",
+			"link": {
+			  "_type": "about",
+			  "slug": {
 				"_type": "slug",
-				"current": "http://mc.westeroscraft.com/"
+				"current": "about"
+			  }
 			},
-			"title": "Map"
-		}
+			"title": "About Us"
+		  },
+		  {
+			"_key": "86d12d05e6cc",
+			"_type": "internalLink",
+			"description": "Check up on our progress",
+			"link": {
+			  "_type": "progress",
+			  "slug": {
+				"_type": "slug",
+				"current": "progress"
+			  }
+			},
+			"title": "Progress"
+		  },
+		  {
+			"_key": "b4bc4c9e15c1",
+			"_type": "internalLink",
+			"description": "Our quarterly newsletter",
+			"link": {
+			  "_type": "rookery",
+			  "slug": {
+				"_type": "slug",
+				"current": "rookery"
+			  }
+			},
+			"title": "Rookery"
+		  }
+		],
+		"title": "About"
+	  },
+	  {
+		"_key": "f5af68f6384b",
+		"_type": "navigation.section",
+		"links": [
+		  {
+			"_key": "db9bcffdd8c8",
+			"_type": "externalLink",
+			"description": "Where we plan all of our builds",
+			"slug": {
+			  "_type": "slug",
+			  "current": "https://forum.westeroscraft.com/"
+			},
+			"title": "Forums"
+		  },
+		  {
+			"_key": "7d3fa5a7d122",
+			"_type": "externalLink",
+			"description": "Chat and hang out with the community",
+			"slug": {
+			  "_type": "slug",
+			  "current": "https://discord.com/invite/pBS5TH4"
+			},
+			"title": "Discord"
+		  },
+		  {
+			"_key": "acc44cb59aa6",
+			"_type": "externalLink",
+			"description": "Swag courtesy of our creative community",
+			"slug": {
+			  "_type": "slug",
+			  "current": "https://www.redbubble.com/people/westeroscraft/shop?asc=u"
+			},
+			"title": "Merch"
+		  },
+		  {
+			"_key": "1fef25524647",
+			"_type": "externalLink",
+			"description": "If you think you got the skills, help us build",
+			"slug": {
+			  "_type": "slug",
+			  "current": "https://forum.westeroscraft.com/form/builder-application.3/select"
+			},
+			"title": "Apply"
+		  }
+		],
+		"title": "Community"
+	  },
+	  {
+		"_key": "092d9a812c5b",
+		"_type": "navigation.section",
+		"links": [
+		  {
+			"_key": "bebbff59bca9",
+			"_type": "internalLink",
+			"description": "Everything you need to join the server",
+			"link": {
+			  "_type": "modpack",
+			  "slug": {
+				"_type": "slug",
+				"current": "modpack"
+			  }
+			},
+			"title": "Modpack"
+		  },
+		  {
+			"_key": "1bf1d695cb94",
+			"_type": "internalLink",
+			"description": "A knowledge base of all of our builds",
+			"link": {
+			  "_type": "wiki",
+			  "slug": {
+				"_type": "slug",
+				"current": "wiki"
+			  }
+			},
+			"title": "Wiki"
+		  },
+		  {
+			"_key": "41e096751451",
+			"_type": "internalLink",
+			"description": "Wallpapers, maps and more",
+			"link": {
+			  "_type": "downloads",
+			  "slug": {
+				"_type": "slug",
+				"current": "downloads"
+			  }
+			},
+			"title": "Downloads"
+		  },
+		  {
+			"_key": "2ee753e4caec",
+			"_type": "internalLink",
+			"description": "If you got a question, it's probably answered",
+			"link": {
+			  "_type": "guide",
+			  "slug": {
+				"_type": "slug",
+				"current": "frequently-asked-questions"
+			  }
+			},
+			"title": "FAQ"
+		  },
+		  {
+			"_key": "89541563e804",
+			"_type": "internalLink",
+			"description": "Read the server codes of conduct",
+			"link": {
+			  "_type": "guide",
+			  "slug": {
+				"_type": "slug",
+				"current": "rules-and-guides"
+			  }
+			},
+			"title": "Rules & Guides"
+		  }
+		],
+		"title": "Resources"
+	  },
+	  {
+		"_key": "0fb3c9e302f5",
+		"_type": "externalLink",
+		"slug": {
+		  "_type": "slug",
+		  "current": "http://mc.westeroscraft.com/"
+		},
+		"title": "Map"
+	  }
 	],
 	"socialFields": {
-		"_type": "socialFields",
-		"discord": "https://discord.gg/pBS5TH4",
-		"instagram": "https://www.instagram.com/westeroscraft",
-		"twitter": "https://twitter.com/westeroscraft",
-		"youtube": "https://www.youtube.com/user/WesterosCraft"
+	  "_type": "socialFields",
+	  "discord": "https://discord.gg/pBS5TH4",
+	  "instagram": "https://www.instagram.com/westeroscraft",
+	  "twitter": "https://twitter.com/westeroscraft",
+	  "youtube": "https://www.youtube.com/user/WesterosCraft"
 	},
 	"title": "WesterosCraft",
 	"topLevelWikiNavigation": {
-		"_type": "navigation.section",
-		"link": null,
-		"links": [
-			{
-				"_key": "77191db41ec6",
-				"_type": "internalLink",
-				"icon": "HiHome",
-				"link": {
-					"_type": "wiki",
-					"slug": {
-						"_type": "slug",
-						"current": "wiki"
-					}
-				},
-				"title": "Wiki Home"
-			},
-			{
-				"_key": "8b65b8cbaa54",
-				"_type": "internalLink",
-				"icon": "HiLibrary",
-				"link": {
-					"_type": "allBuilds",
-					"slug": {
-						"_type": "slug",
-						"current": "builds"
-					}
-				},
-				"title": "Builds"
-			},
-			{
-				"_key": "b0f15706520a",
-				"_type": "internalLink",
-				"icon": "HiDocumentText",
-				"link": {
-					"_type": "allGuides",
-					"slug": {
-						"_type": "slug",
-						"current": "guides"
-					}
-				},
-				"title": "Guides"
-			},
-			{
-				"_key": "55165ae51e6d",
-				"_type": "internalLink",
-				"description": "Coming Soon",
-				"icon": "HiCube",
-				"link": null,
-				"title": "Blocks"
+	  "_type": "navigation.section",
+	  "links": [
+		{
+		  "_key": "77191db41ec6",
+		  "_type": "internalLink",
+		  "icon": "HiHome",
+		  "link": {
+			"_type": "wiki",
+			"slug": {
+			  "_type": "slug",
+			  "current": "wiki"
 			}
-		]
+		  },
+		  "title": "Wiki Home"
+		},
+		{
+		  "_key": "8b65b8cbaa54",
+		  "_type": "internalLink",
+		  "icon": "HiLibrary",
+		  "link": {
+			"_type": "allBuilds",
+			"slug": {
+			  "_type": "slug",
+			  "current": "builds"
+			}
+		  },
+		  "title": "Builds"
+		},
+		{
+		  "_key": "b0f15706520a",
+		  "_type": "internalLink",
+		  "icon": "HiDocumentText",
+		  "link": {
+			"_type": "allGuides",
+			"slug": {
+			  "_type": "slug",
+			  "current": "guides"
+			}
+		  },
+		  "title": "Guides"
+		},
+		{
+		  "_key": "55165ae51e6d",
+		  "_type": "internalLink",
+		  "description": "Coming Soon",
+		  "icon": "HiCube",
+		  "title": "Blocks"
+		}
+	  ]
 	},
-	"wikiNavigation": []
-}
+	"wikiNavigation": [
+	  {
+		"_key": "0715c14d9746",
+		"_type": "navigation.section",
+		"links": [
+		  {
+			"_key": "e7049fe8b8b7",
+			"_type": "internalLink",
+			"link": {
+			  "_ref": "server-rules",
+			  "_type": "reference"
+			},
+			"title": "Server Rules"
+		  },
+		  {
+			"_key": "3874b8791c1a",
+			"_type": "internalLink",
+			"link": {
+			  "_ref": "25b97444-c41b-4a66-a055-eee288b54d2d",
+			  "_type": "reference"
+			},
+			"title": "Application Guide"
+		  },
+		  {
+			"_key": "3438351b8dfd",
+			"_type": "internalLink",
+			"link": {
+			  "_ref": "new-builders-guide",
+			  "_type": "reference"
+			},
+			"title": "New Builders' Guide"
+		  },
+		  {
+			"_key": "1decc1b59acb",
+			"_type": "internalLink",
+			"link": {
+			  "_ref": "troubleshooting-guide",
+			  "_type": "reference"
+			},
+			"title": "Troubleshooting"
+		  }
+		],
+		"title": "Getting Started"
+	  },
+	  {
+		"_key": "e882d6b83cab",
+		"_type": "navigation.section",
+		"title": "Regions"
+	  }
+	]
+  }

@@ -9,7 +9,7 @@ import { MetaFields } from '@/models/meta-fields';
 import { Slug } from '@sanity/types';
 import { Seo, WikiLayout, Layout } from '@/components/common';
 import { IProjectDetails } from '@/models/objects/project-details';
-import { siteSettings } from '@/data/.';
+import { siteSettings } from '../../constants';
 import { LayoutPage } from '@/models/page';
 
 type PageProps = {
