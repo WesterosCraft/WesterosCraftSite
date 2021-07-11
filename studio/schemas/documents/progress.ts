@@ -1,5 +1,6 @@
 import slug from 'slugify';
 import { fieldsets } from '../fieldsets';
+import { contentObjects } from '../contentObjects';
 
 export default {
 	title: 'Progress',
@@ -46,10 +47,12 @@ export default {
 			fieldset: 'content',
 		},
 		{
-			title: 'Hero Image',
-			name: 'heroImage',
-			type: 'image',
+			name: 'content',
+			type: 'array',
+			title: 'Page sections',
+			description: 'Add, edit, and reorder sections',
 			fieldset: 'content',
+			of: contentObjects,
 		},
 	],
 };
