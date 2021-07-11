@@ -27,6 +27,8 @@
 		"@fontsource/raleway": "^4.4.5",
 		"@fontsource/sen": "^4.4.5",
 		"@next/bundle-analyzer": "^11.0.1",
+		"@nivo/bar": "^0.72.0",
+		"@nivo/core": "^0.72.0",
 		"@sanity/asset-utils": "^1.1.4",
 		"@sanity/block-content-to-react": "^2.0.7",
 		"@sanity/types": "^2.10.0",

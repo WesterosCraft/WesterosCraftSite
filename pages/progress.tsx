@@ -17,14 +17,7 @@ import {
 	Button,
 	StatGroup,
 	useColorModeValue,
-	Grid,
-	GridItem,
-	VStack,
-	Tabs,
-	TabList,
-	TabPanels,
-	Tab,
-	TabPanel,
+	useBreakpointValue,
 } from '@chakra-ui/react';
 import BrightSquares from '../public/bright-squares.png';
 import { useRouter } from 'next/router';
@@ -40,6 +33,8 @@ import Image from 'next/image';
 import { calcCompletionPercentage } from 'utils';
 import { BuildStatuses, Regions } from '@/models/utils';
 import { nameFormatter, RenderSection } from '@/components/utils';
+import { ResponsiveBar } from '@nivo/bar';
+import { Spacer } from '@/components/sections';
 
 type PageProps = {
 	meta?: MetaFields;
@@ -101,6 +96,8 @@ const ProgressPage = ({ pageData }: Props) => {
 		returnLength('projectStatus', 'inProgress') + returnLength('projectStatus', 'redoInProgress'),
 		returnLength('projectStatus', 'notStarted') + returnLength('projectStatus', 'abandoned')
 	);
+
+	const chartOrientation = useBreakpointValue({ base: 'horizontal', md: 'vertical' }) as 'horizontal' | 'vertical';
 
 	const BORDER_COLOR = useColorModeValue('gray.200', 'gray.600');
 
@@ -221,57 +218,84 @@ const ProgressPage = ({ pageData }: Props) => {
 						</StatHelpText>
 					</Stat>
 				</HStack>
+				<Spacer data={{ _type: 'spacer', _key: 'sadasd', size: 'xlarge', mobileSize: 'none' }} />
+				<Box height={650}>
+					<ResponsiveBar
+						data={(regions as Regions[]).map((r) => ({
+							region: nameFormatter(r),
+							Completed: returnLength('projectStatus', 'completed', 'region', r),
+							CompletedColor: 'hsl(108, 70%, 50%)',
+							'Not Started': returnLength('projectStatus', 'notStarted', 'region', r),
+							'Not StartedColor': 'hsl(302, 70%, 50%)',
+							'In Progress': returnLength('projectStatus', 'inProgress', 'region', r),
+							'In ProgressColor': 'hsl(296, 70%, 50%)',
+							'Redo in Progress': returnLength('projectStatus', 'redoInProgress', 'region', r),
+							'Redo in ProgressColor': 'hsl(137, 70%, 50%)',
+							Abandoned: returnLength('projectStatus', 'abandoned', 'region', r),
+							AbandonedColor: 'hsl(18, 70%, 50%)',
+						}))}
+						keys={['Completed', 'Not Started', 'In Progress', 'Redo in Progress', 'Abandoned']}
+						indexBy='region'
+						margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+						padding={0.3}
+						layout={chartOrientation}
+						valueScale={{ type: 'linear' }}
+						indexScale={{ type: 'band', round: true }}
+						theme={{
+							axis: {
+								legend: { text: { fontWeight: 'bold' } },
+							},
+						}}
+						borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+						axisTop={undefined}
+						axisRight={undefined}
+						axisBottom={{
+							tickSize: 5,
+							tickPadding: 5,
+							tickRotation: 0,
+							legend: 'Region',
+							legendPosition: 'middle',
+							legendOffset: 40,
+						}}
+						axisLeft={{
+							tickSize: 5,
+							tickPadding: 5,
+							tickRotation: 0,
+							legend: 'Number of Builds',
+							legendPosition: 'middle',
+							legendOffset: -40,
+						}}
+						labelSkipWidth={12}
+						labelSkipHeight={12}
+						labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+						legends={[
+							{
+								dataFrom: 'keys',
+								anchor: 'bottom-right',
+								direction: 'column',
+								justify: false,
+								translateX: 120,
+								translateY: 0,
+								itemsSpacing: 2,
+								itemWidth: 100,
+								itemHeight: 20,
+								itemDirection: 'left-to-right',
+								itemOpacity: 0.85,
+								symbolSize: 20,
+								effects: [
+									{
+										on: 'hover',
+										style: {
+											itemOpacity: 1,
+										},
+									},
+								],
+							},
+						]}
+					/>
+				</Box>
 
-				<Container maxW='container.xl'>
-					<Tabs orientation='vertical' my={24} borderWidth={1} borderColor={BORDER_COLOR}>
-						<TabList>
-							{(regions as Regions[]).map((region, i) => (
-								<Tab key={i}>
-									<Heading fontSize='sm' mr={2} color='black'>
-										{nameFormatter(region.toString())}
-									</Heading>
-								</Tab>
-							))}
-						</TabList>
-						<TabPanels>
-							{(regions as Regions[]).map((region, i) => (
-								<TabPanel key={i} bg='gray.100' height='full'>
-									<Flex direction='column' p={4}>
-										<Heading textAlign='center' fontSize='2xl' mr={2} color='black'>
-											{nameFormatter(region.toString())}
-										</Heading>
-										<Progress
-											size='md'
-											colorScheme='orange'
-											value={calcCompletionPercentage(
-												returnLength('projectStatus', 'completed', 'region', region),
-												returnLength('projectStatus', 'inProgress', 'region', region) +
-													returnLength('projectStatus', 'redoInProgress', 'region', region),
-												returnLength('projectStatus', 'notStarted', 'region', region) +
-													returnLength('projectStatus', 'abandoned', 'region', region)
-											)}
-										/>
-										<StatGroup flexGrow={1}>
-											{['completed', 'inProgress', 'notStarted'].map((s: any) => (
-												<Stat key={s} px={6} py={4} textAlign='left' bg='white' borderRadius='md' mr={4}>
-													<StatLabel fontWeight='bold'>
-														<Flex direction='row' alignItems='center'>
-															<ProjectStatusIcon boxSize='20px' projectStatus={s} />
-															<Text fontSize='md' ml={2}>
-																{nameFormatter(s)}
-															</Text>
-														</Flex>
-													</StatLabel>
-													<StatNumber fontSize='5xl'>{returnLength('projectStatus', s, 'region', region)}</StatNumber>
-												</Stat>
-											))}
-										</StatGroup>
-									</Flex>
-								</TabPanel>
-							))}
-						</TabPanels>
-					</Tabs>
-				</Container>
+				{/* <Conta
 
 				{/* <Container maxW='container.lg' my={24}>
 					<VStack spacing={6}>
