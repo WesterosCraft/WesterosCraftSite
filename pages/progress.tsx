@@ -17,6 +17,14 @@ import {
 	Button,
 	StatGroup,
 	useColorModeValue,
+	Grid,
+	GridItem,
+	VStack,
+	Tabs,
+	TabList,
+	TabPanels,
+	Tab,
+	TabPanel,
 } from '@chakra-ui/react';
 import BrightSquares from '../public/bright-squares.png';
 import { useRouter } from 'next/router';
@@ -30,7 +38,7 @@ import { Slug } from '@sanity/types';
 import { progressQuery } from '@/lib/queries/page';
 import Image from 'next/image';
 import { calcCompletionPercentage } from 'utils';
-import { Regions } from '@/models/utils';
+import { BuildStatuses, Regions } from '@/models/utils';
 import { nameFormatter } from '@/components/utils';
 
 type PageProps = {
@@ -47,21 +55,21 @@ type PageProps = {
 	_type: 'progress';
 	_updatedAt: string;
 	heroImage?: { asset: { _ref: string } };
-	totalBuilds: number;
-	totalAbandoned: number;
-	totalCompleted: number;
-	totalInProgress: number;
-	totalNotStarted: number;
-	totalRedoInProgress: number;
-	regions: {
-		[key in Regions]: {
-			totalAbandoned: number;
-			totalCompleted: number;
-			totalInProgress: number;
-			totalNotStarted: number;
-			totalRedoInProgress: number;
-		};
-	};
+	totalBuilds: Array<{ region: keyof typeof Regions; projectStatus: keyof typeof BuildStatuses }>;
+	// totalAbandoned: number;
+	// totalCompleted: number;
+	// totalInProgress: number;
+	// totalNotStarted: number;
+	// totalRedoInProgress: number;
+	// regions: {
+	// 	[key in Regions]: {
+	// 		totalAbandoned: number;
+	// 		totalCompleted: number;
+	// 		totalInProgress: number;
+	// 		totalNotStarted: number;
+	// 		totalRedoInProgress: number;
+	// 	};
+	// };
 };
 
 type Props = {
@@ -78,10 +86,20 @@ const ProgressPage = ({ pageData }: Props) => {
 	});
 	console.log('👉 ~ ProgressPage ~ page', page);
 
+	const returnLength = (
+		key: 'projectStatus' | 'region',
+		target: keyof typeof Regions | keyof typeof BuildStatuses,
+		key2?: 'projectStatus' | 'region',
+		target2?: keyof typeof Regions | keyof typeof BuildStatuses
+	) => {
+		return key && key2 && target && target2
+			? page.totalBuilds.filter((b) => b[key] === target && b[key2] === target2).length
+			: page.totalBuilds.filter((b) => b[key] === target).length;
+	};
 	const TOTAL_PERCENTAGE_COMPLETED = calcCompletionPercentage(
-		page.totalCompleted,
-		page.totalInProgress + page.totalRedoInProgress,
-		page.totalNotStarted + page.totalAbandoned
+		returnLength('projectStatus', 'completed'),
+		returnLength('projectStatus', 'inProgress') + returnLength('projectStatus', 'redoInProgress'),
+		returnLength('projectStatus', 'notStarted') + returnLength('projectStatus', 'abandoned')
 	);
 
 	const BORDER_COLOR = useColorModeValue('gray.200', 'gray.600');
@@ -89,6 +107,20 @@ const ProgressPage = ({ pageData }: Props) => {
 	function typedKeys<T>(o: T): (keyof T)[] {
 		return Object.keys(o) as (keyof T)[];
 	}
+
+	const regions = [
+		'crownlands',
+		'theWall',
+		'dorne',
+		'riverlands',
+		'north',
+		'vale',
+		'ironIslands',
+		'westerlands',
+		'stormlands',
+		'reach',
+		'beyondTheWall',
+	];
 
 	if (!router.isFallback && !page) {
 		return <Error statusCode={404} />;
@@ -149,7 +181,7 @@ const ProgressPage = ({ pageData }: Props) => {
 							Total Builds
 						</StatLabel>
 						<StatNumber textAlign='left' color='white' fontSize='5xl'>
-							{page.totalBuilds}
+							{page.totalBuilds.length}
 						</StatNumber>
 						<StatHelpText color='whiteAlpha.900'>&nbsp;</StatHelpText>
 						{/* <ProjectStatusIcon boxSize='32px' projectStatus='completed' /> */}
@@ -160,7 +192,7 @@ const ProgressPage = ({ pageData }: Props) => {
 							Total Completed
 						</StatLabel>
 						<StatNumber color='white' fontSize='5xl'>
-							{page.totalCompleted}
+							{returnLength('projectStatus', 'completed')}
 						</StatNumber>
 						<StatHelpText color='whiteAlpha.900'>&nbsp;</StatHelpText>
 					</Stat>
@@ -170,9 +202,11 @@ const ProgressPage = ({ pageData }: Props) => {
 							Total In Progress
 						</StatLabel>
 						<StatNumber color='white' fontSize='5xl'>
-							{page.totalInProgress + page.totalRedoInProgress}
+							{returnLength('projectStatus', 'inProgress') + returnLength('projectStatus', 'redoInProgress')}
 						</StatNumber>
-						<StatHelpText color='whiteAlpha.900'>Including {page.totalRedoInProgress} Redos</StatHelpText>
+						<StatHelpText color='whiteAlpha.900'>
+							Including {returnLength('projectStatus', 'redoInProgress')} Redos
+						</StatHelpText>
 					</Stat>
 
 					<Stat bg='gray.600' p={4} borderRadius='lg'>
@@ -180,67 +214,134 @@ const ProgressPage = ({ pageData }: Props) => {
 							Total Not Started
 						</StatLabel>
 						<StatNumber color='white' fontSize='5xl'>
-							{page.totalNotStarted + page.totalAbandoned}
+							{returnLength('projectStatus', 'notStarted') + returnLength('projectStatus', 'abandoned')}
 						</StatNumber>
-						<StatHelpText color='whiteAlpha.900'>Including {page.totalAbandoned} Abandoned</StatHelpText>
+						<StatHelpText color='whiteAlpha.900'>
+							Including {returnLength('projectStatus', 'abandoned')} Abandoned
+						</StatHelpText>
 					</Stat>
 				</HStack>
 
-				<SimpleGrid columns={2} gap={6} my={20}>
-					{typedKeys(page.regions).map((key, i) => (
-						<Box
-							borderWidth={1}
-							borderColor={BORDER_COLOR}
-							bg='white'
-							height={250}
-							p={4}
-							key={i}
-							borderRadius='lg'
-							shadow='lg'
-						>
-							<Flex height='full' flexDirection='column' justifyContent='space-between'>
-								<Flex flexDirection='row' alignItems='center'>
-									<Heading mr={2} color='black'>
-										{nameFormatter(key.toString())}
+				<Container maxW='container.lg'>
+					<Tabs orientation='vertical' my={24} borderWidth={1} borderColor={BORDER_COLOR}>
+						<TabList>
+							{(regions as Regions[]).map((region, i) => (
+								<Tab key={i}>
+									<Heading fontSize='sm' mr={2} color='black'>
+										{nameFormatter(region.toString())}
 									</Heading>
+								</Tab>
+							))}
+						</TabList>
+						<TabPanels>
+							{(regions as Regions[]).map((region, i) => (
+								<TabPanel key={i} bg='gray.100' height='full'>
+									<Flex direction='column' p={4}>
+										<Heading textAlign='center' fontSize='2xl' mr={2} color='black'>
+											{nameFormatter(region.toString())}
+										</Heading>
+										<Progress
+											size='md'
+											colorScheme='orange'
+											value={calcCompletionPercentage(
+												returnLength('projectStatus', 'completed', 'region', region),
+												returnLength('projectStatus', 'inProgress', 'region', region) +
+													returnLength('projectStatus', 'redoInProgress', 'region', region),
+												returnLength('projectStatus', 'notStarted', 'region', region) +
+													returnLength('projectStatus', 'abandoned', 'region', region)
+											)}
+										/>
+										<StatGroup>
+											<Stat px={6} py={4} textAlign='left' bg='white' borderRadius='md' mr={4}>
+												<StatLabel fontWeight='bold'>Completed</StatLabel>
+												<StatNumber fontSize='4xl'>
+													{returnLength('projectStatus', 'completed', 'region', region)}
+												</StatNumber>
+											</Stat>
+											<Stat px={6} py={4} textAlign='left' bg='white' borderRadius='md'>
+												<StatLabel fontWeight='bold'>In Progress</StatLabel>
+												<StatNumber fontSize='4xl'>
+													{returnLength('projectStatus', 'inProgress', 'region', region) +
+														returnLength('projectStatus', 'redoInProgress', 'region', region)}
+												</StatNumber>
+											</Stat>
+											<Stat px={6} py={4} textAlign='left' bg='white' borderRadius='md' ml={4}>
+												<StatLabel fontWeight='bold'>Not Started</StatLabel>
+												<StatNumber fontSize='4xl'>
+													{returnLength('projectStatus', 'notStarted', 'region', region) +
+														returnLength('projectStatus', 'abandoned', 'region', region)}
+												</StatNumber>
+											</Stat>
+										</StatGroup>
+									</Flex>
+								</TabPanel>
+							))}
+						</TabPanels>
+					</Tabs>
+				</Container>
 
-									<RegionIcon boxSize='32px' region={key} />
-									<Button ml='auto' colorScheme='blackAlpha' size='sm'>
-										View All
-									</Button>
+				{/* <Container maxW='container.lg' my={24}>
+					<VStack spacing={6}>
+						{(regions as Regions[]).map((region, i) => (
+							<Box
+								borderWidth={1}
+								borderColor={BORDER_COLOR}
+								bg='white'
+								p={4}
+								key={i}
+								borderRadius='lg'
+								shadow='lg'
+								width='full'
+							>
+								<Flex height='full' flexDirection='column' justifyContent='space-between'>
+									<Flex flexDirection='row' alignItems='center'>
+										<Heading fontSize='3xl' mr={2} color='black'>
+											{nameFormatter(region.toString())}
+										</Heading>
+										<RegionIcon boxSize='32px' region={region} />
+										<Button ml='auto' colorScheme='blackAlpha' size='sm'>
+											View All
+										</Button>
+									</Flex>
+									<StatGroup>
+										<Stat textAlign='center'>
+											<StatLabel fontWeight='bold'>Completed</StatLabel>
+											<StatNumber fontSize='5xl'>
+												{returnLength('projectStatus', 'completed', 'region', region)}
+											</StatNumber>
+										</Stat>
+										<Stat textAlign='center'>
+											<StatLabel fontWeight='bold'>In Progress</StatLabel>
+											<StatNumber fontSize='5xl'>
+												{returnLength('projectStatus', 'inProgress', 'region', region) +
+													returnLength('projectStatus', 'redoInProgress', 'region', region)}
+											</StatNumber>
+										</Stat>
+										<Stat textAlign='center'>
+											<StatLabel fontWeight='bold'>Not Started</StatLabel>
+											<StatNumber fontSize='5xl'>
+												{returnLength('projectStatus', 'notStarted', 'region', region) +
+													returnLength('projectStatus', 'abandoned', 'region', region)}
+											</StatNumber>
+										</Stat>
+									</StatGroup>
+
+									<Progress
+										size='md'
+										colorScheme='orange'
+										value={calcCompletionPercentage(
+											returnLength('projectStatus', 'completed', 'region', region),
+											returnLength('projectStatus', 'inProgress', 'region', region) +
+												returnLength('projectStatus', 'redoInProgress', 'region', region),
+											returnLength('projectStatus', 'notStarted', 'region', region) +
+												returnLength('projectStatus', 'abandoned', 'region', region)
+										)}
+									/>
 								</Flex>
-								<StatGroup>
-									<Stat textAlign='center'>
-										<StatLabel fontWeight='bold'>Completed</StatLabel>
-										<StatNumber fontSize='5xl'>{page.regions[key].totalCompleted}</StatNumber>
-									</Stat>
-									<Stat textAlign='center'>
-										<StatLabel fontWeight='bold'>In Progress</StatLabel>
-										<StatNumber fontSize='5xl'>
-											{page.regions[key].totalInProgress + page.regions[key].totalRedoInProgress}
-										</StatNumber>
-									</Stat>
-									<Stat textAlign='center'>
-										<StatLabel fontWeight='bold'>Not Started</StatLabel>
-										<StatNumber fontSize='5xl'>
-											{page.regions[key].totalNotStarted + page.regions[key].totalAbandoned}
-										</StatNumber>
-									</Stat>
-								</StatGroup>
-
-								<Progress
-									size='md'
-									colorScheme='orange'
-									value={calcCompletionPercentage(
-										page.regions[key].totalCompleted,
-										page.regions[key].totalInProgress + page.regions[key].totalRedoInProgress,
-										page.regions[key].totalNotStarted + page.regions[key].totalAbandoned
-									)}
-								/>
-							</Flex>
-						</Box>
-					))}
-				</SimpleGrid>
+							</Box>
+						))}
+					</VStack>
+				</Container> */}
 			</Container>
 		</>
 	);
