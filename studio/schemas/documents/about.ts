@@ -41,6 +41,24 @@ export default {
 			fieldset: 'content',
 		},
 		{
+			title: 'Subheading',
+			name: 'subheading',
+			type: 'string',
+			fieldset: 'content',
+		},
+		{
+			title: 'YouTube video URL',
+			name: 'url',
+			type: 'url',
+			fieldset: 'content',
+		},
+		{
+			title: 'Youtube thumbnail',
+			name: 'youtubeThumbnail',
+			type: 'image',
+			fieldset: 'content',
+		},
+		{
 			name: 'content',
 			type: 'array',
 			title: 'Page sections',

@@ -9,15 +9,17 @@ const BlockBanner = ({ data }: Props) => {
 	return (
 		<Flex as='section' className={`${data._type ?? 'blockBanner'}__section`} direction='column'>
 			<Container maxW='container.sm' centerContent textAlign='center'>
-				<Heading fontWeight={800} fontSize='6xl'>
+				<Heading fontWeight={800} fontSize={['4xl', '6xl']}>
 					Start your journey across Westeros
 				</Heading>
-				<Text fontSize='lg' mt={4}>
+				<Text fontSize={['md', 'lg']} mt={4}>
 					Your business is going places - are your products? Ship products to customers with speed using Chakra UI Pro
 				</Text>
-				<ButtonGroup mt={8} spacing={6} size='lg'>
-					<Button>Get Modpack</Button>
-					<Button variant='outline'>View Wiki</Button>
+				<ButtonGroup flexDirection={['column', 'row']} mt={8} spacing={[0, 6]} size={'lg'} width={['full', 'auto']}>
+					<Button variant='with-red-gradient'>Get Modpack</Button>
+					<Button mt={[6, 0]} variant='outline'>
+						View Wiki
+					</Button>
 				</ButtonGroup>
 			</Container>
 		</Flex>

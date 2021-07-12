@@ -13,6 +13,7 @@ import Map from './map';
 import HeroImageSlider from './hero-image-slider';
 import WikiInfoCards from './wiki-info-cards';
 import WikiBanner from './wiki-banner';
+import Testimonial from './testimonial';
 
 export {
 	BlockBanner,
@@ -30,4 +31,5 @@ export {
 	HeroImageSlider,
 	WikiInfoCards,
 	WikiBanner,
+	Testimonial,
 };

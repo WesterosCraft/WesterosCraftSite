@@ -1,3 +1,4 @@
+import { ITestimonial } from './testimonial';
 import { IQuote } from './quote';
 import { IMarquee } from './marquee';
 import { IRichText } from './rich-text';
@@ -29,4 +30,5 @@ export type Sections =
 	| IFeaturesWithVideo
 	| IMap
 	| IWikiInfoCards
-	| IWikiBanner;
+	| IWikiBanner
+	| ITestimonial;

@@ -28,6 +28,7 @@ import map from './sections/map';
 import resourceHub from './sections/resource-hub';
 import wikiInfoCards from './sections/wiki-info-cards';
 import wikiBanner from './sections/wiki-banner';
+import testimonial from './sections/testimonial';
 
 // pages/documents
 import destination from './documents/destination';
@@ -77,6 +78,7 @@ export default createSchema({
 		wikiBanner,
 		simpleBlockContent,
 		grid,
+		testimonial,
 		map,
 		mainImage,
 		socialFields,

@@ -71,7 +71,7 @@ const HeroImageSlider = ({ images, width = 1232, height = 756, subheading = '' }
 				maxW={width}
 				maxH={height}
 				transform='translateZ(0)'
-				bgGradient={heroGradient}
+				bgGradient={'linear(to-r,  #5096C5,#28587E)'}
 				className='slider-gradient'
 				position='absolute'
 				top={0}
@@ -164,8 +164,8 @@ const HeroImageSlider = ({ images, width = 1232, height = 756, subheading = '' }
 				/>
 			</Flex>
 			{subheading && (
-				<Container centerContent maxW='container.md' mt={20}>
-					<Text color='gray.400' fontSize='lg' mb={8} textAlign='center'>
+				<Container zIndex='docked' centerContent maxW='container.md' mt={[20]} position='relative' px={4}>
+					<Text color='gray.400' fontSize={['md', 'lg']} mb={8} textAlign='center'>
 						{subheading}
 					</Text>
 					<Image src={Coin} alt='Spinning coin' />

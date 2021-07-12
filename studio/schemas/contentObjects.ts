@@ -1,7 +1,4 @@
 export const contentObjects = [
-	// { type: 'twoColumnText' },
-	// { type: 'destinationSlider' },
-	// { type: 'banner' },
 	{ type: 'marquee' },
 	{ type: 'spacer' },
 	{ type: 'quoteBlock' },
@@ -13,4 +10,5 @@ export const contentObjects = [
 	{ type: 'featuresWithVideo' },
 	{ type: 'blockBanner' },
 	{ type: 'map' },
+	{ type: 'testimonial' },
 ];

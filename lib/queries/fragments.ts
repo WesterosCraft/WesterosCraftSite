@@ -41,6 +41,18 @@ export const youtube = `
 	}
 `;
 
+export const testimonial = `
+	_type == 'testimonial' => {
+		...,
+		"image": image.asset->{
+			url,
+			metadata {
+				lqip
+			  }
+		},
+	}
+`;
+
 export const wikiInfoCards = `
 	_type == 'wikiInfoCards' => {
 		...,

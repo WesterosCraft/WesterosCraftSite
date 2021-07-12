@@ -47,7 +47,7 @@ const Marquee = ({ data }: Props) => {
 			<Container maxW='container.xl'>
 				<Heading
 					as={data?.headingSize || 'h2'}
-					fontSize={getFontSize(data?.headingSize ?? 'h2')}
+					fontSize={['4xl', getFontSize(data?.headingSize ?? 'h2')]}
 					mb={data?.subheading ? 4 : 8}
 					fontWeight={800}
 					textAlign='center'
@@ -71,6 +71,7 @@ const Marquee = ({ data }: Props) => {
 								_hover={{ color: tabHover }}
 								color={'gray.400'}
 								fontWeight={600}
+								fontSize={['xs', 'sm']}
 							>
 								{nameFormatter(item)}
 							</Tab>

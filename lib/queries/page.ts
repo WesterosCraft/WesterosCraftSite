@@ -16,6 +16,7 @@ import {
 	heroSlider,
 	wikiInfoCards,
 	wikiBanner,
+	testimonial,
 } from './fragments';
 
 export const pageQuery = groq`
@@ -34,7 +35,8 @@ export const pageQuery = groq`
 			${blockBanner},
 			${referenceGrid},
 			${featuresWithVideo},
-			${map}
+			${map},
+			${testimonial}
 		}
 	}
 `;

@@ -62,6 +62,10 @@ export default function WithSubnavigation({
 			<Flex minH='60px' py={{ base: 2 }} align='center' justify='space-between'>
 				<Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
 					<IconButton
+						color={lightHeader ? 'gray.200' : 'black'}
+						_hover={{
+							bg: lightHeader && 'whiteAlpha.200',
+						}}
 						onClick={onToggle}
 						icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
 						variant={'ghost'}

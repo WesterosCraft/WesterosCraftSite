@@ -36,7 +36,13 @@ const overrides = {
 						bgGradient: 'linear(to-t, white,whiteAlpha.700)',
 					},
 				},
-				'with-red-gradient': {},
+				'with-red-gradient': {
+					bgGradient: 'linear(to-t, rgba(147, 41, 30, .9), rgba(237, 33, 58, .9))',
+					color: 'white',
+					_hover: {
+						bgGradient: 'linear(to-t, rgba(147, 41, 30, .7), rgba(237, 33, 58, .7))',
+					},
+				},
 			},
 		},
 	},

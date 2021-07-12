@@ -13,19 +13,20 @@ const FeaturesWithVideo = ({ data }: Props) => {
 	const [isPlaying, setPlaying] = useState(false);
 
 	return (
-		<Box as='section' className={`${data._type ?? 'featuresWithVideo'}__section`} width='100%' px={8}>
+		<Box as='section' className={`${data._type ?? 'featuresWithVideo'}__section`} width='100%' px={[0, 8]}>
 			<Container maxW='container.xl'>
 				<SimpleGrid templateColumns={['1fr', null, null, '416px 1fr']} gap='64px'>
 					<Flex direction='column'>
-						<Heading textAlign={['center', null, 'left']} as='h2' fontSize='5xl' fontWeight={800}>
+						<Heading textAlign={['center', null, 'left']} as='h2' fontSize={['4xl', '5xl']} fontWeight={800}>
 							{data?.heading ?? ''}
 						</Heading>
-						<Text fontSize='lg' mt={4} mb={8}>
+						<Text textAlign={['center', 'left']} fontSize={['md', 'lg']} mt={4} mb={8}>
 							{data?.subheading ?? ''}
 						</Text>
 						<Button
 							size='lg'
-							display={{ base: 'none', md: 'inline-flex' }}
+							variant='with-red-gradient'
+							display={{ md: 'inline-flex' }}
 							fontSize={'md'}
 							fontWeight={600}
 							href={'#'}
@@ -36,7 +37,7 @@ const FeaturesWithVideo = ({ data }: Props) => {
 						>
 							{data.buttonText ?? 'Get Started'}
 						</Button>
-						<Box mt={10} flexGrow={1} borderRadius='lg' bg='gray.600' width='100%' height='auto'></Box>
+						<Box mt={[0, 10]} flexGrow={1} borderRadius='lg' bg='gray.600' width='100%' height='auto'></Box>
 					</Flex>
 					<Box>
 						<Box

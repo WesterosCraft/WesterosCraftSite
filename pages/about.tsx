@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { Heading } from '@chakra-ui/react';
+import { Heading, Container, Flex, Box, Text, AspectRatio } from '@chakra-ui/react';
 import { sanityClient, usePreviewSubscription } from '@/lib/sanity';
 import { pageQuery } from '@/lib/queries';
 import { useRouter } from 'next/router';
@@ -42,9 +42,46 @@ const AboutPage = ({ pageData }: Props) => {
 	return (
 		<>
 			<Seo meta={page?.meta} />
-			<Heading textAlign='center' mt={[12]}>
-				{page.heading}
-			</Heading>
+			<Container as='section' maxW='container.xl' pt={20}>
+				<Flex
+					flexDirection='row'
+					alignItems='flex-start'
+					bgGradient={'linear(to-b, #373B44 , #4286f4)'}
+					pt={20}
+					pb={'8rem'}
+					borderRadius='xl'
+					px={10}
+					position='relative'
+					// overflow='hidden'
+					width='full'
+					shadow='dark-lg'
+					// _before={{
+					// 	content: '""',
+					// 	position: 'absolute',
+					// 	zIndex: '0',
+					// 	left: 0,
+					// 	top: 0,
+					// 	width: '100%',
+					// 	height: '100%',
+					// 	opacity: 0.5,
+					// 	backgroundImage: `url(${BrightSquares.src})`,
+					// }}
+				>
+					<Box minH={250} zIndex='base' width='40%'>
+						<Heading fontSize='5xl' color='white'>
+							{page.heading}
+						</Heading>
+						{/* <Text mt={2} fontWeight='bold' fontSize='lg' color='whiteAlpha.800'>
+							{page.subheading}
+						</Text> */}
+					</Box>
+					<Box flexGrow={1} mb={'-14rem'}>
+						<AspectRatio ratio={16 / 9}>
+							<iframe src={'https://www.youtube.com/embed/M7YuI0PST2Y'} />
+						</AspectRatio>
+					</Box>
+				</Flex>
+			</Container>
 
 			{page?.content?.map((section) => {
 				if (!section || Object.keys(section).length === 0) {

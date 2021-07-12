@@ -101,10 +101,6 @@ const ProgressPage = ({ pageData }: Props) => {
 
 	const BORDER_COLOR = useColorModeValue('gray.200', 'gray.600');
 
-	function typedKeys<T>(o: T): (keyof T)[] {
-		return Object.keys(o) as (keyof T)[];
-	}
-
 	const regions = [
 		'crownlands',
 		'theWall',

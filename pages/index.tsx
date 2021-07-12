@@ -77,10 +77,10 @@ const Index = ({ pageData }: Props) => {
 				// 	backgroundImage: `url(${BrightSquares.src})`,
 				// }}
 			>
-				<Container maxW='container.xl' zIndex='base' position='relative'>
+				<Container maxW='container.xl' zIndex='base' position='relative' px={5}>
 					<Box textAlign='center' mt={5} zIndex='docked' position='relative'>
 						<Text
-							fontSize='xl'
+							fontSize={['lg', 'xl']}
 							textTransform='uppercase'
 							fontWeight='bold'
 							color='green.500'
@@ -89,13 +89,13 @@ const Index = ({ pageData }: Props) => {
 						>
 							{page.caption}
 						</Text>
-						<Heading color='white' mt={4} as='h2' fontSize='5xl' fontWeight={800}>
+						<Heading color='white' mt={4} as='h2' fontSize={['3xl', '5xl']} fontWeight={800}>
 							{page.heading2}
 						</Heading>
-						<Heading color='white' as='h1' fontSize='7xl' letterSpacing={5.3} fontWeight={800}>
+						<Heading color='white' as='h1' fontSize={['5xl', '7xl']} letterSpacing={5.3} fontWeight={800}>
 							{page.heading1}
 						</Heading>
-						<Text color='whiteAlpha.800' fontSize='xl' mb='6'>
+						<Text color='whiteAlpha.800' fontSize={['lg', 'xl']} mb='6'>
 							{page.subheading}
 						</Text>
 						<Button
