@@ -33,6 +33,30 @@ export default {
 			type: 'image',
 		},
 		{
+			title: 'Logos',
+			name: 'logos',
+			type: 'array',
+			of: [
+				{
+					title: 'Logo',
+					name: 'logo',
+					type: 'object',
+					fields: [
+						{
+							title: 'Logo Image',
+							name: 'logoImage',
+							type: 'image',
+						},
+						{
+							title: 'Logo Link',
+							name: 'logoLink',
+							type: 'url',
+						},
+					],
+				},
+			],
+		},
+		{
 			title: 'Feature List',
 			name: 'featureList',
 			type: 'array',

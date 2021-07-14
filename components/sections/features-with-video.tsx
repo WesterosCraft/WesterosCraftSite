@@ -1,9 +1,23 @@
 import { useState } from 'react';
 import { IFeaturesWithVideo } from '@/models/sections/features-with-video';
-import { Heading, Text, Box, Button, AspectRatio, SimpleGrid, Icon, Center, Flex, Container } from '@chakra-ui/react';
-import Image from 'next/image';
+import {
+	Heading,
+	Text,
+	Box,
+	Button,
+	AspectRatio,
+	SimpleGrid,
+	Icon,
+	Center,
+	Flex,
+	Container,
+	Image,
+	VStack,
+} from '@chakra-ui/react';
+// import Image from 'next/image';
 import ReactPlayer from 'react-player';
 import { FaPlay } from 'react-icons/fa';
+import { urlFor } from '@/lib/sanity';
 
 type Props = {
 	data: IFeaturesWithVideo;
@@ -37,7 +51,30 @@ const FeaturesWithVideo = ({ data }: Props) => {
 						>
 							{data.buttonText ?? 'Get Started'}
 						</Button>
-						<Box mt={[0, 10]} flexGrow={1} borderRadius='lg' bg='gray.600' width='100%' height='auto'></Box>
+						<Box
+							mt={[0, 10]}
+							flexGrow={1}
+							borderRadius='lg'
+							borderWidth={1}
+							borderColor='gray.200'
+							width='100%'
+							height='auto'
+							p={6}
+						>
+							<Text textAlign='center' color='blackAlpha.900' fontWeight='bold' fontSize='xl'>
+								As featured in
+							</Text>
+							<VStack spacing={6} height='full' mt={8}>
+								{data.logos.map((logo, i) => (
+									<Image
+										src={urlFor(logo?.logoImage?.asset?._ref).url() ?? ''}
+										maxHeight={'42px'}
+										alt='Featured logo'
+										key={i}
+									/>
+								))}
+							</VStack>
+						</Box>
 					</Flex>
 					<Box>
 						<Box

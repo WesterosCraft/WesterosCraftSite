@@ -10,4 +10,5 @@ export interface IFeaturesWithVideo {
 	thumbnail: { url: string; metadata: { lqip: string } };
 	youtubeThumbnail: SanityAsset;
 	featureList: Array<{ _type: 'feature'; _key: string; heading: string; description: string }>;
+	logos: Array<{ logoImage: { _type: 'image'; asset: { _ref: string } }; logoLink: string }>;
 }
