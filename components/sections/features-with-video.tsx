@@ -11,10 +11,10 @@ import {
 	Center,
 	Flex,
 	Container,
-	Image,
 	VStack,
+	Link,
 } from '@chakra-ui/react';
-// import Image from 'next/image';
+import Image from 'next/image';
 import ReactPlayer from 'react-player';
 import { FaPlay } from 'react-icons/fa';
 import { urlFor } from '@/lib/sanity';
@@ -29,7 +29,7 @@ const FeaturesWithVideo = ({ data }: Props) => {
 	return (
 		<Box as='section' className={`${data._type ?? 'featuresWithVideo'}__section`} width='100%' px={[0, 8]}>
 			<Container maxW='container.xl'>
-				<SimpleGrid templateColumns={['1fr', null, null, '416px 1fr']} gap='64px'>
+				<SimpleGrid templateColumns={['1fr', null, null, '416px 1fr']} gap={['20px', '64px']}>
 					<Flex direction='column'>
 						<Heading textAlign={['center', null, 'left']} as='h2' fontSize={['4xl', '5xl']} fontWeight={800}>
 							{data?.heading ?? ''}
@@ -52,7 +52,7 @@ const FeaturesWithVideo = ({ data }: Props) => {
 							{data.buttonText ?? 'Get Started'}
 						</Button>
 						<Box
-							mt={[0, 10]}
+							mt={[5, 10]}
 							flexGrow={1}
 							borderRadius='lg'
 							borderWidth={1}
@@ -64,14 +64,23 @@ const FeaturesWithVideo = ({ data }: Props) => {
 							<Text textAlign='center' color='blackAlpha.900' fontWeight='bold' fontSize='xl'>
 								As featured in
 							</Text>
-							<VStack spacing={6} height='full' mt={8}>
+							<VStack spacing={6} mt={[6, 8]}>
 								{data.logos.map((logo, i) => (
-									<Image
-										src={urlFor(logo?.logoImage?.asset?._ref).url() ?? ''}
-										maxHeight={'42px'}
-										alt='Featured logo'
+									<Link
+										isExternal
+										href={logo.logoLink ?? '#'}
+										height={['36px', '42px']}
 										key={i}
-									/>
+										width='full'
+										position='relative'
+									>
+										<Image
+											objectFit='contain'
+											layout='fill'
+											src={urlFor(logo?.logoImage?.asset?._ref).url() ?? ''}
+											alt='Featured logo'
+										/>
+									</Link>
 								))}
 							</VStack>
 						</Box>
